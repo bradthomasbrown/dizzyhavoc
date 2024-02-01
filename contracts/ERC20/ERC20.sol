@@ -3,6 +3,8 @@ pragma solidity 0.8.23;
 
 contract ERC20 {
 
+    address owner;
+
     function name() external pure returns (string memory) { return "DizzyHavoc"; }
     function symbol() external pure returns (string memory) { return "DZHV"; }
     function decimals() external pure returns (uint8) { return 18; }
@@ -14,7 +16,7 @@ contract ERC20 {
     event Approval(address indexed owner, address indexed spender, uint value);
 
     function initErc20() external {
-        require(balanceOf[msg.sender] == 0 && msg.sender == 0xC9c423f875677351ab79C058eD1C38F2b36061a4);
+        require(balanceOf[msg.sender] == 0 && msg.sender == owner);
         uint amount = this.totalSupply();
         balanceOf[msg.sender] = amount;
         emit Transfer(address(0), msg.sender, amount);
