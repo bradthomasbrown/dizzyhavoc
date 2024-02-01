@@ -1,0 +1,22 @@
+#-MAKE----------#       #       #
+PUSH1 09        # 00    # 6009  #       cc size [rs]
+DUP1            # 02    # 80    #       cc offset [ms, ms]
+RETURNDATASIZE  # 03    # 3d    #       cc destOffset [0, ms, rs]
+CODECOPY        # 04    # 39    #   cc []
+#---------------#
+PUSH1 09        # 05    # 6009  #       ret size [rs]
+DUP1            # 07    # 80    #       ret offset [ms, rs]
+RETURN          # 08    # f3    #   ret []
+#-RUN-----------#
+CALLDATASIZE    # 00    # 36    #       cdc size [cds]
+RETURNDATASIZE  # 01    # 3d    #       cdc offset [0, cds]
+RETURNDATASIZE  # 02    # 3d    #       cdc destOffset [0, 0, cds]
+CALLDATACOPY    # 03    # 37    #   cdc []
+#---------------#
+CALLVALUE       # 04    # 3d    #       c2 salt [val]
+CALLDATASIZE    # 05    # 36    #       c2 size [cds, val]
+RETURNDATASIZE  # 06    # 3d    #       c2 offset [0, cds, val]
+CALLVALUE       # 07    # 34    #       c2 value [val, 0, cds, val]
+CREATE2         # 08    # f5    #   c2 []
+
+6009803d39600980f3363d3d373d363d34f5
