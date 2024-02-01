@@ -1,0 +1,43 @@
+#-MAKE----------#
+PUSH1 22        # 00 # 6022       #       cc size [22]
+PUSH1 28        # 02 # 6025       #       cc offset [28, 22]
+RETURNDATASIZE  # 04 # 3d         #       cc destOffset [0, 27, 22]
+CODECOPY        # 05 # 39         #   cc []
+#---------------#
+PUSH1 22        # 06 # 6022       #       ret size [22]
+RETURNDATASIZE  # 08 # 3d         #       ret offset [0, 22]
+RETURN          # 09 # f3         #   ret []
+#-RUN-----------#
+CALLDATASIZE    # 00 # 36         #       cdc size [cds]
+RETURNDATASIZE  # 01 # 3d         #       cdc offset [0, cds]
+RETURNDATASIZE  # 02 # 3d         #       cdc destOffset [0, 0, cds]
+CALLDATACOPY    # 03 # 37         #   cdc []
+#---------------#   
+RETURNDATASIZE  # 04 # 3d         #       dc retSize [0]
+RETURNDATASIZE  # 05 # 3d         #       dc retOffset [0, 0]
+CALLDATASIZE    # 06 # 36         #       dc argsSize [cds, 0, 0]
+RETURNDATASIZE  # 07 # 3d         #       dc argsOffset [0, cds, 0, 0]
+
+                # 0d # 54         #       dc address [sload, 0, cds, 0, 0]
+GAS             # 0e # 5a         #       dc gas [gas, sload, 0, cds, 0, 0]
+DELEGATECALL    # 0f # f4         #   dc [dc]
+#---------------#   
+RETURNDATASIZE  # 10 # 3d         #       cdc size [rds, dc]
+PUSH1 00        # 11 # 6000       #       cdc offset [0, rds, dc]
+PUSH1 00        # 13 # 6000       #       cdc destOffset [0, 0, rds, dc]
+RETURNDATACOPY  # 15 # 3e         #   rdc [dc]
+#---------------#   
+                                  #       jmp b [dc]
+PUSH1 1d        # 16 # 601d       #       jmp counter [1d, dc]
+JUMPI           # 18 # 57         #   jmp []
+#---------------#   
+RETURNDATASIZE  # 19 # 3d         #       rev size [rds]
+PUSH1 00        # 1a # 6000       #       rev offset [0, rds]
+REVERT          # 1c # fd         #   rev []
+#---------------#   
+JUMPDEST        # 1d # 5b         #   ret-jd []
+RETURNDATASIZE  # 1e # 3d         #       ret size [rds]
+PUSH1 00        # 1f # 6000       #       ret offset [0, rds]
+RETURN          # 21 # f3         #   ret []
+
+333d5573????????????????????????????????????????63ea81ee9555602260253d3960223df3363d3d373d3d363d3d3560e01c545af43d600060003e601d573d6000fd5b3d6000f3
