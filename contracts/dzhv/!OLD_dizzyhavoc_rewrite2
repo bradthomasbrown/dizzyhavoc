@@ -1,0 +1,78 @@
+363d3d37363d3df03d557b635c60da1b345260203460043434335af134513b80343434513c34f33d5234601c3d3df5
+
+#-MAKE----------#
+MSTORE 
+#---------------#
+RETURNDATASIZE  #       #                       #       c2 salt
+PUSH1 2F        #       #                       #       c2 size
+RETURNDATASIZE  #       #                       #       c2 offset
+RETURNDATASIZE  #       #                       #       c2 value
+CREATE2         #       #                       #   c2
+#---------------#
+PUSH1 69        #   00  #   6069                #       ret size (size of RUN code), trickles down
+DUP1            #   02  #   80                  #       cc size (size of RUN code)
+PUSH1 08        #   03  #   6008                #       cc offset (size of MAKE code)
+RETURNDATASIZE  #   05  #   3d                  #       cc destOffset
+CODECOPY        #   06  #   39                  #   cc
+#---------------#                   
+RETURNDATASIZE  #   07  #   3d                  #       ret offset
+RETURN          #   08  #   f3                  #   ret (requires cc) in mem
+#-RUN-----------#                                             
+CALLDATASIZE    #   00  #   36                  #       cdc size
+RETURNDATASIZE  #   01  #   3d                  #       cdc offset
+RETURNDATASIZE  #   02  #   3d                  #       cdc destOffset
+CALLDATACOPY    #   03  #   37                  #   cdc
+#---------------#
+PUSH32 ff...000 #   04  #   7f
+                            ff??????????????
+                            ????????????????
+                            ??????????000000
+                            0000000000000000    #           or b, msL value (0xff . sender_address part)
+RETURNDATASIZE  #   24  #   3d                  #                   cdl i
+CALLDATALOAD    #   25  #   35                  #               shr value, cdl
+PUSH1 E0        #   26  #   60e0                #               shr shift
+SHR             #   28  #   1c                  #           or a, msL value (selector part), shr
+OR              #   29  #   17                  #       OR
+MSIZE           #   2a  #   59                  #       msL offset
+MSTORE          #   2b  #   52                  #   msL
+#---------------#                   
+PUSH32 ...      #   2c  #   74
+                            ????????????????
+                            ????????????????
+                            ????????????????
+                            ????????????????    #       msR value (k(init_code))
+MSIZE           #   4c  #   59                  #       msR offset
+MSTORE          #   4d  #   52                  #   msR
+#---------------#                   
+RETURNDATASIZE  #   4e  #   3d                  #       dc retSize
+RETURNDATASIZE  #   4f  #   3d                  #       dc retOffset
+CALLDATASIZE    #   50  #   36                  #       dc argsSize
+RETURNDATASIZE  #   51  #   3d                  #       dc argsOffset
+PUSH1 40        #   52  #   6040                #           k size
+CALLDATASIZE    #   54  #   36                  #           k offset
+SHA3            #   55  #   20                  #       dc address, k (requires msL & msR in mem)
+GAS             #   56  #   5a                  #       dc gas
+DELEGATECALL    #   57  #   f4                  #   dc (reverse proxy the client request to server) (requires cdc in mem)
+#---------------#                   
+RETURNDATASIZE  #   58  #   3d                  #       cdc size
+PUSH1 00        #   59  #   6000                #       cdc offset
+PUSH1 00        #   5b  #   6000                #       cdc destOffset
+RETURNDATACOPY  #   5d  #   3d                  #   rdc (put dc results into memory)
+#---------------#                   
+                #       #                       #       jmp b (falls into place from dc results, causes jmp to jump if not zero, dc results in 0 on revert, 1 otherwise)
+PUSH1 65        #   5e  #   6065                #       jmp counter (program counter address of beginning of ret block)
+JUMPI           #   60  #   57                  #   jmp (logic to return or revert based off delegatecall success)
+#---------------#                   
+RETURNDATASIZE  #   61  #   3d                  #       rev size
+PUSH1 00        #   62  #   6000                #       rev offset
+REVERT          #   64  #   fd                  #   rev (revert)
+#---------------#                   
+JUMPDEST        #   65  #   5b                  #   ret-jd
+RETURNDATASIZE  #   66  #   3d                  #       ret size
+PUSH1 00        #   67  #   6000                #       ret offset
+RETURN          #   69  #   f3                  #   ret (return)
+
+1st ?s - address of Deployer
+2nd ?s - k256 of fetcher init code
+
+60698060083d393df3363d3d3774ff????????????????????????????????????????00000000000000000000003d3560e01c17595274????????????????????????????????????????????????????????????????59523d3d363d604036205af43d600060003d6065573d6000fd5b3d6000f3

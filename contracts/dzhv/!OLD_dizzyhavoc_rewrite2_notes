@@ -1,0 +1,130 @@
+# is it possible to write this in a way where the resultant contract maps the selector to a value to be used as a delegatecall address
+# and we can deploy contracts to those addresses in a predictable and efficient way?
+# aka, can we do this without using storage?
+
+# what is the absolute bare minimum?
+CALLDATASIZE    # 00 # 36                                         #       cdc size
+RETURNDATASIZE  # 01 # 6000                                       #       cdc offset
+RETURNDATASIZE  # 03 # 6000                                       #       cdc destOffset
+CALLDATACOPY    # 05 # 37                                         #   cdc (put calldata into memory for delegatecall to use)
+#---------------#
+RETURNDATASIZE  #       #       #       dc retSize
+RETURNDATASIZE  #       #       #       dc retOffset
+CALLDATASIZE    #       #       #       dc argsSize
+RETURNDATASIZE  #       #       #       dc argsOffset
+???             #       #       #       dc address
+GAS             #       #       #       dc gas
+DELEGATECALL    #       # f4    #   dc (reverse proxy the client request to server)
+
+# in memory, at calldatasize, we need 0xff . sender_address . salt . s3(init_code)
+# if we do an 11 byte salt, the args for create2 will be exactly 64 bytes, or 2 words, so we can use 2 MSTOREs
+# below should be 82 bytes to get the dc addr, instead of the 2100 from sload
+
+# PUSH32 ff...000           or b, msL value (0xff . sender_address part)
+# RETURNDATASIZE                        cdl i
+# CALLDATALOAD                      shr value, cdl
+# PUSH1 E0                      shr shift
+# SHR                       or a, msL value (selector part), shr
+# OR                    OR
+# MSIZE                 msL offset
+# MSTORE            msL
+
+# PUSH32 ...            msR value (sR(init_code))
+# MSIZE                 msR offset
+# MSTORE            msR
+
+# PUSH1 40              s3 size
+# CALLDATASIZE          s3 offset
+# SHA3              dc addr, s3 (requires msL & msR in mem)
+
+CALLDATASIZE    #       #       #       cdc size
+RETURNDATASIZE  #       #       #       cdc offset
+RETURNDATASIZE  #       #       #       cdc destOffset
+CALLDATACOPY    #       #       #   cdc
+#---------------#
+PUSH32 ff...000 #       #       #           or b, msL value (0xff . sender_address part)
+RETURNDATASIZE  #       #       #                       cdl i
+CALLDATALOAD    #       #       #                   shr value, cdl
+PUSH1 E0        #       #       #               shr shift
+SHR             #       #       #           or a, msL value (selector part), shr
+OR              #       #       #       OR
+MSIZE           #       #       #       msL offset
+MSTORE          #       #       #   msL
+#---------------#
+PUSH32 ...      #       #       #       msR value (sR(init_code))
+MSIZE           #       #       #       msR offset
+MSTORE          #       #       #   msR
+#---------------#
+RETURNDATASIZE  #       #       #       dc retSize
+RETURNDATASIZE  #       #       #       dc retOffset
+CALLDATASIZE    #       #       #       dc argsSize
+RETURNDATASIZE  #       #       #       dc argsOffset
+PUSH1 40        #       #       #           s3 size
+CALLDATASIZE    #       #       #           s3 offset
+SHA3            #       #       #       dc address, s3 (requires msL & msR in mem)
+GAS             #       #       #       dc gas
+DELEGATECALL    #       #       #   dc (reverse proxy the client request to server) (requires cdc in mem)
+#---------------#
+RETURNDATASIZE  #       #       #       cdc size
+PUSH1 00        #       #       #       cdc offset
+PUSH1 00        #       #       #       cdc destOffset
+RETURNDATACOPY  #       #       #   rdc (put dc results into memory)
+#---------------#   
+                #       #       #       jmp b (falls into place from dc results, causes jmp to jump if not zero, dc results in 0 on revert, 1 otherwise)
+PUSH1 23        #       #       #       jmp counter (program counter address of beginning of ret block)
+JUMPI           #       #       #   jmp (logic to return or revert based off delegatecall success)
+#---------------#   
+RETURNDATASIZE  #       #       #       rev size
+PUSH1 00        #       #       #       rev offset
+REVERT          #       #       #   rev (revert)
+#---------------#   
+JUMPDEST        #       #       #   ret-jd
+RETURNDATASIZE  #       #       #       ret size
+PUSH1 00        #       #       #       ret offset
+RETURN          #       #       #   ret (return)
+
+
+
+# let's try one selector mapping, approve, going to be used a lot (095ea7b3)
+# can we get just the selector using arithmetic trickery? before, we used 60003560e01c, which is 6 bytes and 11 gas
+# we can compress this to 5 bytes and 10 gas replacing 6000 with 3d, 3d3560e01c
+# 3d353d1a, 4 bytes, 10 gas to get the first byte of the selector
+# can we convert this byte to an address that we can reliably deploy code to
+# well, how can we convert this byte to an address?, we can hash it, keccak offset size, 6008 (maybe even PC 58) 3d 20
+# each selector is now mapped to an address
+# but can we deploy code reliably to these addresses? (there's no fucking way)
+# i don't think so, since if we use create or the default way, we'd need to deploy many contracts to get to where we need
+# and if we use create2, then we need the initcode, which will be different for every implementation
+# that is, unless the initcode is constant, a code that just delegates again to a desired address
+# but then we would need to deploy an extra contract for every selector, which is much more expensive than adding a slot
+# even worse, is that delegatecall on a cold address consumes more gas than sload, so we may as well just have used sload
+# so perhaps we hash the selector and then sload, 583d2054, now every selector maps to a slot in 4 bytes and (2 + 2 + 36) gas
+# whoa, keccak is expensive
+# so load first word load first byte. 4 bytes 10 gas, gives us a unique map for every standard ERC20 as well as up to 256 implementation contracts
+# what if we hash the selector with a salt, which should we calculated so that a certain byte index of the hash for each ERC20 is the first N necessary nonces?
+# ah, you know what the problem with the idea of calculating this without storage is?
+# we can add to the 'diamond', but we can never remove, or maybe we can if we embed a self destruct in every single implementation
+# maybe we could implement a self destruct in every single implementation, that would be kinda fucking nuts and quite advanced
+# no, we couldn't self destruct, because we're delegate calling. it would self-destruct the main contract, not the implementation, right?
+# no, we could implement a self destruct on the implementation, we just would call it on the implementation directly and not via the proxy
+# so create is keccak(rlp([sender_address,sender_nonce]))[12:]
+# we can't point multiple selectors to one address with this scheme, so it's much more expensive to set up
+# what about a compromise, we change X storage slot(s) to get changes in Y proxy address(es)
+# no point, we're trying to eliminate the single storage slot access used to determine proxy address, as it would save a decent amount of gas and i feel like it should be possible
+# this would be a longshot and the most insane thing i would have ever imagined making,
+# but we could use create2, where the initcode is constant but doesn't use delegatecall
+# the only way the initcode could be constant is if the runtime code is not in the initcode
+# and i think the only way to do this is by using value producing and arithmetic opcodes to "pack" the runtime code into built-ins like GAS, GASPRICE, GASLIMIT, ADDRESS, CALLVALUE, etc.
+# or, more simply, but expensive to set up, the initcode just fetches the run code from a contract in order to build it, generalizing the make code to fit any run code
+# so, to 
+
+# 30    "dd62ed3e": "allowance(address,address)",
+# 3c    "095ea7b3": "approve(address,uint256)",
+# 1c    "70a08231": "balanceOf(address)",
+# 08    "313ce567": "decimals()",
+# 08    "06fdde03": "name()",
+# 08    "95d89b41": "symbol()",
+# 08    "18160ddd": "totalSupply()",
+# 3c    "a9059cbb": "transfer(address,uint256)",
+# 50    "23b872dd": "transferFrom(address,address,uint256)"
+
