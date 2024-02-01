@@ -1,3 +1,4 @@
 .cache
 **/foo.*
 **/foo
+**/.log
