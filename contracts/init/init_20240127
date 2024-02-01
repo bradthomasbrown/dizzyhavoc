@@ -1,0 +1,25 @@
+#---------------# call create2 contract to get create implementation address
+PUSH1 20        # 00    # 6020  #       c rs [rs]
+CALLVALUE       # 02    # 34    #       c ro [ro, rs]
+CALLVALUE       # 03    # 34    #       c as [as, ro, rs]
+CALLVALUE       # 04    # 34    #       c ao [ao, as, ro, rs]
+CALLER          # 05    # 33    #       c a [a, ao, as, ro, rs]
+GAS             # 06    # 5a    #       c g [g, a, ao, as, ro, rs]
+STATICCALL      # 07    # fa    #   c [] m00,20=a
+#---------------# get code size
+CALLVALUE       # 08    # 34    #           ml o [o]
+MLOAD           # 09    # 51    #       ecs a, ml [a]
+CALLVALUE       # 0a    # 34    #       [0, a]
+DUP2            # 0b    # 81    #       [a, 0, a]
+EXTCODESIZE     # 0c    # 3b    #   ecs [s, 0, a]
+#---------------# [s, 0, a] -> [a, 0, 0, s, 0, s]
+CALLVALUE       # 0d    # 34    #   [0, s, 0, a]
+CALLVALUE       # 0e    # 34    #   [0, 0, s, 0, a]
+DUP3            # 0f    # 82    #   [s, 0, 0, s, 0, a]
+SWAP5           # 10    # 94    #   [a, 0, 0, s, 0, s]
+#---------------# copy code to mem
+EXTCODECOPY     # 11    # 3c    #   ecc [0, s] m00,size=c
+#---------------# return code from mem
+RETURN          # 12    # f3    #   ret []
+
+6020343434335afa345134813b343482943cf3
