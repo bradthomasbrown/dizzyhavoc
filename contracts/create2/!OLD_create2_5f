@@ -1,0 +1,25 @@
+#-MAKE----------#       #       #
+PUSH1 0e        # 00    # 600e  #       size of RUN code, trickle ret size
+DUP1            # 02    # 80    #       cc size
+PUSH1 09        # 03    # 6009  #       cc offset
+PUSH0           # 05    # 5f    #       cc destOffset
+CODECOPY        # 06    # 39    #   cc
+#---------------#
+PUSH0           # 07    # 5f    #       ret offset
+RETURN          # 08    # f3    #   ret (return the RUN code)
+#-RUN-----------#
+CALLDATASIZE    # 00    # 36    #       cdc size
+PUSH0           # 01    # 5f    #       cdc offset
+PUSH0           # 02    # 5f    #       cdc destOffset
+CALLDATACOPY    # 03    # 37    #   cdc (put calldata into memory, where first 32 bytes are salt and remainder is initcode)
+#---------------#
+PUSH0           # 04    # 5f    #           cdl i
+CALLDATALOAD    # 05    # 35    #       c2 salt, cdl
+PUSH1 20        # 06    # 6020  #           sub b, 32 (salt bytes)
+CALLDATASIZE    # 08    # 36    #           sub a initcode size
+SUB             # 09    # 03    #       c2 size (calldata (initcode) - 32 byte salt), sub
+PUSH1 20        # 0a    # 6020  #       c2 offset
+PUSH0           # 0c    # 5f    #       c2 value
+CREATE2         # 0d    # f5    #   c2 (deploy contract)
+
+0x600e8060095f395ff3365f5f375f356020360360205ff5
