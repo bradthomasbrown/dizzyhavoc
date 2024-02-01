@@ -3,20 +3,23 @@ import Signer from './Signer.ts'
 import getChainId from './getChainId.ts'
 
 type Opts = {
-    signer:Signer
+    signer?:Signer
+    signers?:Signer[]
     log?:true
 }
 
-export default async function ({ signer, log }:Opts) {
+export default async function ({ signer, signers=[], log }:Opts) {
+
+    if (signer && signers.length == 0) signers.push(signer)
 
     const cacheDir = fromFileUrl(import.meta.resolve('../.cache'))
     const gethDir = `${cacheDir}/geth`
     const gethPath = `${gethDir}/1.13.8`
-    const { secret, address } = signer
     
     // create genesis object
+    const alloc = Object.fromEntries(signers.map(({ address }) => [address, { balance: '1000000000000000000000000000' }]))
     const genesis = JSON.stringify({
-        alloc: { [address]: { balance: '1000000000000000000000000000' } }, // prefunds defined account
+        alloc, // prefunds defined accounts
         config: {
             chainId: await getChainId(), // karalabe can go fuck himself
             clique: { period: 0 }, // required to mine on-demand
@@ -30,7 +33,11 @@ export default async function ({ signer, log }:Opts) {
             eip155Block: 0, // required to use rawTxArray with chainId
             eip158Block: 0, // required for byzantium
         },
-        extraData: `0x${''.padEnd(32*2, '0')/*32B vanity*/}${address.slice(2)/*signer*/}${''.padEnd(65*2, '0')/*65B proposer seal*/}`,
+        extraData: `0x${
+            ''.padEnd(32*2, '0')/*32B vanity*/
+            }${signers[0].address.slice(2)/*signer*/
+            }${''.padEnd(65*2, '0')/*65B proposer seal*/
+        }`,
         gasLimit: "0x989680", // required
         difficulty: "0x0" // required
     })
@@ -43,8 +50,8 @@ export default async function ({ signer, log }:Opts) {
     await Deno.writeTextFile(genesisPath, genesis)
     
     // write secret so we can import that secret
-    const keyPath = await Deno.makeTempFile()
-    await Deno.writeTextFile(keyPath, secret)
+    const keyPaths = await Promise.all(signers.map(() => Deno.makeTempFile()))
+    await Promise.all(signers.map(({ secret }, i) => Deno.writeTextFile(keyPaths[i], secret)))
     
     const killProcs:Set<Deno.ChildProcess> = new Set()
     Deno.addSignalListener('SIGINT', async () => {
@@ -52,27 +59,29 @@ export default async function ({ signer, log }:Opts) {
         [...killProcs].map(proc => proc.kill())
         // clean up temps
         await Promise.all([
-            Deno.remove(keyPath),
+            ...keyPaths.map(keyPath => Deno.remove(keyPath)),
             Deno.remove(dataDir, { recursive: true })
         ])
         Deno.exit()
     })
     
-    // geth account import
-    let args = [
-        '--lightkdf',
-        '--datadir', dataDir,
-        'account', 'import', keyPath
-    ]
-    const gethAccountImport = new Deno.Command(gethPath, { args, stdin: 'piped', stdout: 'null', stderr: log ? 'inherit' : 'null' }).spawn()
-    killProcs.add(gethAccountImport)
-    const writer = gethAccountImport.stdin.getWriter()
-    writer.write(new Uint8Array([0x0a, 0x0a]))
-    await gethAccountImport.output()
-    killProcs.delete(gethAccountImport)
+    // geth account imports
+    await Promise.all(signers.map(async (_, i) => {
+        const args = [
+            '--lightkdf',
+            '--datadir', dataDir,
+            'account', 'import', keyPaths[i]
+        ]
+        const gethAccountImport = new Deno.Command(gethPath, { args, stdin: 'piped', stdout: 'null', stderr: log ? 'inherit' : 'null' }).spawn()
+        killProcs.add(gethAccountImport)
+        const writer = gethAccountImport.stdin.getWriter()
+        writer.write(new Uint8Array([0x0a, 0x0a]))
+        await gethAccountImport.output()
+        killProcs.delete(gethAccountImport)
+    }))
     
     // geth init
-    args = [
+    let args = [
         'init',
         '--datadir', dataDir,
         genesisPath
@@ -93,9 +102,9 @@ export default async function ({ signer, log }:Opts) {
         '--nat', 'none',
         '--netrestrict', '127.0.0.1/32',
         '--mine',
-        '--miner.etherbase', address,
+        '--miner.etherbase', signers[0].address,
         '--allow-insecure-unlock',
-        '--unlock', address,
+        '--unlock', signers[0].address,
         '--password', await Deno.makeTempFile()
     ]
     const geth = new Deno.Command(gethPath, { args, stderr: 'piped' }).spawn()
