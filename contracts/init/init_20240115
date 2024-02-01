@@ -1,0 +1,34 @@
+# ms stores the selector of a call that gets the most recent implementation address from Deployer
+# call gets the most recent implementation address from Deployer using selector
+# ret size, ecs, trickle gets the code size of the code being deployed by Deployer
+# ecc gets the code deployed by Deployer and puts it into memory
+# ret returns the code deployed by Deployer
+
+PUSH4 5c60da1b  # 00    # 635c60da1b    #       ms value
+CALLVALUE       # 05    # 34            #       ms offset
+MSTORE          # 06    # 52            #   ms
+#---------------#               
+PUSH1 20        # 07    # 6020          #       call retSize
+CALLVALUE       # 09    # 34            #       call retOffset
+PUSH1 04        # 0a    # 6004          #       call argsSize
+CALLVALUE       # 0c    # 34            #       call argsOffset
+CALLVALUE       # 0d    # 34            #       call value
+CALLER          # 0e    # 33            #       call address
+GAS             # 0f    # 5a            #       call gas
+CALL            # 10    # f1            #   call (requires ms in mem)
+#---------------#               
+CALLVALUE       # 11    # 34            #               ml offset
+MLOAD           # 12    # 51            #           ecs address, ml
+EXTCODESIZE     # 13    # 3b            #       ret size, ecs, trickle
+#---------------#               
+DUP1            # 14    # 80            #       ecc size
+CALLVALUE       # 15    # 34            #       ecc offset
+CALLVALUE       # 16    # 34            #       ecc destOffset
+CALLVALUE       # 17    # 34            #           ml i
+MLOAD           # 18    # 51            #       ecc address, ml (requires call completed)
+EXTCODECOPY     # 19    # 3c            #   ecc
+#---------------#               
+CALLVALUE       # 1a    # 34            #   ret offset
+RETURN          # 1b    # f3            #   ret (requires ecc in mem)
+
+635c60da1b345260203460043434335af134513b80343434513c34f3
