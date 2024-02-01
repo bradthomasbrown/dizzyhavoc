@@ -1,0 +1,63 @@
+#-MAKE----------# copy runcode to mem
+PUSH1 ?r        # 00    # 60?r  #       ret s ?r=6c
+DUP1            # 02    # 80    #       cc s [22] 
+PUSH1 09        # 03    # 6009  #       cc o [28, 22]
+RETURNDATASIZE  # 05    # 3d    #       cc do [0, 27, 22]
+CODECOPY        # 06    # 39    #   cc []
+#---------------# return runcode from mem
+RETURNDATASIZE  # 07    # 3d    #       ret o [0, 22]
+RETURN          # 08    # f3    #   ret []
+#-RUN-----------# if caller is destroyer, jump to ?1
+CALLER          # 00    # 33    #           eq b
+PUSH20 ?D       # 01    # 73?D  #           eq a ?D=?D??????????????????????????????????????
+EQ              # 16    # 14    #       ji b, eq
+PUSH1 ?1        # 17    # 60?1  #       ji c ?1=55
+JMPI            # 19    # 57    #   ji
+#-?0------------# copy calldata to mem
+CALLDATASIZE    # 1a    # 36    #       cdc s [cds]
+RETURNDATASIZE  # 1b    # 3d    #       cdc o [0, cds]
+RETURNDATASIZE  # 1c    # 3d    #       cdc do [0, 0, cds]
+CALLDATACOPY    # 1d    # 37    #   cdc []
+#---------------# part 1 delegatecall
+RETURNDATASIZE  # 1e    # 3d    #       dc rs [0]
+RETURNDATASIZE  # 1f    # 3d    #       dc ro [0, 0]
+CALLDATASIZE    # 20    # 36    #       dc as [cds, 0, 0]
+RETURNDATASIZE  # 21    # 3d    #       dc ao [0, cds, 0, 0]
+#---------------# get implementation address from resolver
+MSIZE           # 22    # 59    #           ml o [o]
+PUSH1 20        # 23    # 6020  #       call rs [rs, o]
+DUP2            # 25    # 81    #       call ro [ro, rs, o]
+CALLDATASIZE    # 26    # 36    #       call as [as, ro, rs, o]
+RETURNDATASIZE  # 27    # 3d    #       call ao [ao, as, ro, rs, o]
+PUSH20 ?R       # 28    # 73?R  #       call a [a, ao, as, ro, rs, o] ?R=?R??????????????????????????????????????
+GAS             # 3d    # 5a    #       call g [g, a, ao, as, ro, rs, o]
+STATICCALL      # 3e    # fa    #   call [s, o]
+POP             # 3f    # 50    #   [o]
+MLOAD           # 40    # 51    #       dc a, ml [dcAddress]
+#---------------# delegatecall
+GAS             # 41    # 5a    #       dc gas [gas, sload, 0, cds, 0, 0]
+DELEGATECALL    # 42    # f4    #   dc [dc]
+#---------------# copy return data into mem
+RETURNDATASIZE  # 43    # 3d    #       cdc size [rds, dc]
+PUSH1 00        # 44    # 6000  #       cdc offset [0, rds, dc]
+PUSH1 00        # 46    # 6000  #       cdc destOffset [0, 0, rds, dc]
+RETURNDATACOPY  # 48    # 3e    #   rdc [dc]
+#---------------# jump if successful, continue if fail  
+                                #       jmp b [dc]
+PUSH1 ?s        # 49    # 60?s  #       jmp counter [1d, dc] ?s=50
+JUMPI           # 4b    # 57    #   jmp []
+#-?f------------# revert with returndata
+RETURNDATASIZE  # 4c    # 3d    #       rev size [rds]
+PUSH1 00        # 4d    # 6000  #       rev offset [0, rds]
+REVERT          # 4f    # fd    #   rev []
+#-?s------------# return returndata
+JUMPDEST        # 50    # 5b    #   ret-jd []
+RETURNDATASIZE  # 51    # 3d    #       ret size [rds]
+PUSH1 00        # 52    # 6000  #       ret offset [0, rds]
+RETURN          # 54    # f3    #   ret []
+#-?1------------# destroy this
+JUMPDEST        # 55    # 5b    #
+PUSH20 ?W       # 56    # 33    #       sd address ?W=?R??????????????????????????????????????
+SELFDESTRUCT    # 6b    # ff    #   sd
+
+606c8060093d393df33373?D??????????????????????????????????????14605557363d3d373d3d363d59602081363d73?R??????????????????????????????????????5afa50515af43d600060003e6050573d6000fd5b3d6000f35b33ff
