@@ -19,7 +19,7 @@ export default function Home() {
           ETH, AVAX, ARB, BSC, BASE
         </p>
         <div class="flex gap-3 px-[25px] py-[20px] rounded-[100px] bg-gradient-to-r from-[#21191911] to-[#21191928]">
-          <a href="https://t.me/dizzyhavoc">
+          <a href="https://t.me/dizzyhavoc_portal">
             <img src="/telegram32.png"></img>
           </a>
           <a href="https://twitter.com/dizzyhavoc">
