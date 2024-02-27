@@ -5,7 +5,7 @@ export default function Home() {
   const count = useSignal(3);
   return (
     <div>
-      <div class="flex flex-col items-center justify-center">
+      <div class="flex flex-col items-center justify-center min-w-full max-w-full">
         <div class="mb-5 w-[1920px] h-[400px] overflow-hidden flex justify-center items-center">
           <image class="h-[600px] lg:h-auto" src="/dizzyhavoc_eye_3.jpeg"/>
         </div>
