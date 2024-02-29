@@ -11,7 +11,7 @@ export default function Home() {
         </div>
         <h1 class="text-4xl font-bold font-mono">dizzyhavoc</h1>
         <p class="font-medium mx-3 my-4 mb-5">
-          Upgradeable, assembly cross-chain token.
+          Upgradeable, machine-coded, multi-chain, DeFi/GameFi ecosystem. New cross-chain web3 library.
         </p>
         <p class="font-[monospace] text-center mb-7">
           Contract Address<br/>
@@ -20,13 +20,16 @@ export default function Home() {
         </p>
         <div class="flex gap-3 px-[25px] py-[20px] rounded-[100px] bg-gradient-to-r from-[#21191911] to-[#21191928]">
           <a href="https://t.me/dizzyhavoc_portal">
-            <img src="/telegram32.png"></img>
+            <img class="w-8 h-8" src="/telegram-mark-black.png"></img>
           </a>
-          <a href="https://twitter.com/dizzyhavoc">
-            <img src="/twitter32.png"></img>
+          <a class="pt-1" href="https://discord.gg/XExN8YktHg">
+            <img class="w-8 h-6" src="/discord-mark-black.png"></img>
+          </a>
+          <a class="pt-[2px]" href="https://x.com/dizzyhavoc">
+            <img class="w-7 h-7" src="/x-mark-black.png"></img>
           </a>
           <a href="https://github.com/bradbrown-llc/dizzyhavoc">
-            <img src="/github32.png"></img>
+            <img class="w-8 h-8" src="/github-mark-black.png"></img>
           </a>
         </div>
       </div>

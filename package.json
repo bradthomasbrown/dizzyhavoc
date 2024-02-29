@@ -1,0 +1,6 @@
+{
+  "dependencies": {
+    "@alloc/quick-lru": "^5.2.0",
+    "@material-tailwind/react": "^2.1.9"
+  }
+}
