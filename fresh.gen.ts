@@ -8,7 +8,9 @@ import * as $api_joke from "./routes/api/joke.ts";
 import * as $bridge from "./routes/bridge.tsx";
 import * as $greet_name_ from "./routes/greet/[name].tsx";
 import * as $index from "./routes/index.tsx";
+import * as $Button from "./islands/Button.tsx";
 import * as $Counter from "./islands/Counter.tsx";
+import * as $Web3Input from "./islands/Web3Input.tsx";
 import { type Manifest } from "$fresh/server.ts";
 
 const manifest = {
@@ -21,7 +23,9 @@ const manifest = {
     "./routes/index.tsx": $index,
   },
   islands: {
+    "./islands/Button.tsx": $Button,
     "./islands/Counter.tsx": $Counter,
+    "./islands/Web3Input.tsx": $Web3Input,
   },
   baseUrl: import.meta.url,
 } satisfies Manifest;
