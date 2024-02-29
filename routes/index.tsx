@@ -16,7 +16,11 @@ export default function Home() {
         <p class="font-[monospace] text-center mb-7">
           Contract Address<br/>
           0x3419875B4D3Bca7F3FddA2dB7a476A79fD31B4fE<br/>
-          ETH, AVAX, ARB, BSC, BASE
+          <a href="https://etherscan.io/address/0x3419875b4d3bca7f3fdda2db7a476a79fd31b4fe">ETH</a>,&nbsp;
+          <a href="https://subnets.avax.network/c-chain/address/0x3419875B4D3Bca7F3FddA2dB7a476A79fD31B4fE">AVAX</a>,&nbsp;
+          <a href="https://arbiscan.io/address/0x3419875b4d3bca7f3fdda2db7a476a79fd31b4fe">ARB</a>,&nbsp;
+          <a href="https://bscscan.com/address/0x3419875b4d3bca7f3fdda2db7a476a79fd31b4fe">BSC</a>,&nbsp;
+          <a href="https://basescan.org/address/0x3419875b4d3bca7f3fdda2db7a476a79fd31b4fe">BASE</a>
         </p>
         <div class="flex gap-3 px-[25px] py-[20px] rounded-[100px] bg-gradient-to-r from-[#21191911] to-[#21191928]">
           <a href="https://t.me/dizzyhavoc_portal">
