@@ -1,5 +1,3 @@
-import { useSignal } from "@preact/signals";
-
 export default function Home() {
   return (
     <div class="w-screen h-screen flex justify-center items-center">
@@ -46,9 +44,9 @@ export default function Home() {
             <img src="/google.png" class="size-8 hover:scale-[110%]" title="whitepaper" alt="whitepaper"/>
           </a>
         </div> 
-      </div>
-      <div class="w-full h-full absolute z-[-10]">
-        <img src="/dzhv.png" alt="dizzyhavoc eye" class="absolute top-0 right-0 w-[45%]" />
+      </div
+      <div className="w-full h-full absolute z-[-10]">
+        <img className="absolute top-0 right-0" style={{ width: "45%" }} src="/dizzyhavoc_eye_3.png" alt="dizzyhavoc eye"></img>
       </div>
     </div>
   );
