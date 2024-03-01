@@ -44,9 +44,9 @@ export default function Home() {
             <img src="/google.png" class="size-8 hover:scale-[110%]" title="whitepaper" alt="whitepaper"/>
           </a>
         </div> 
-      </div
+      </div>
       <div className="w-full h-full absolute z-[-10]">
-        <img className="absolute top-0 right-0" style={{ width: "45%" }} src="/dizzyhavoc_eye_3.png" alt="dizzyhavoc eye"></img>
+        <img className="absolute top-0 right-0 sm:w-[45%] w-[100%]" src="/dzhv.png" alt="dizzyhavoc eye"></img>
       </div>
     </div>
   );
