@@ -4,7 +4,6 @@
 
 import * as $_404 from "./routes/_404.tsx";
 import * as $_app from "./routes/_app.tsx";
-import * as $bridge from "./routes/bridge.tsx";
 import * as $index from "./routes/index.tsx";
 import * as $Button from "./islands/Button.tsx";
 import * as $Web3Input from "./islands/Web3Input.tsx";
@@ -14,7 +13,6 @@ const manifest = {
   routes: {
     "./routes/_404.tsx": $_404,
     "./routes/_app.tsx": $_app,
-    "./routes/bridge.tsx": $bridge,
     "./routes/index.tsx": $index,
   },
   islands: {
