@@ -1,7 +1,9 @@
+import { IS_BROWSER } from "$fresh/runtime.ts";
 import { JSX } from "preact";
 import { useState, useEffect } from "preact/hooks";
 
 export default function TokenData() {
+    if (!IS_BROWSER) return (<></>)
     const [price, setprice] = useState<number>(localStorage.getItem("price") ? Number(localStorage.getItem("price")) : 0);
     const fetchdata = async () => { // get price
       try {
