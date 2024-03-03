@@ -6,9 +6,11 @@ type Opts = {
     signer?:Signer
     signers?:Signer[]
     log?:true
+    httpPort?:number
+    chainId?:number
 }
 
-export default async function ({ signer, signers=[], log }:Opts) {
+export default async function ({ signer, signers=[], log, httpPort, chainId }:Opts) {
 
     if (signer && signers.length == 0) signers.push(signer)
 
@@ -21,8 +23,8 @@ export default async function ({ signer, signers=[], log }:Opts) {
     const genesis = JSON.stringify({
         alloc, // prefunds defined accounts
         config: {
-            chainId: await getChainId(), // karalabe can go fuck himself
-            clique: { period: 0 }, // required to mine on-demand
+            chainId: chainId ?? await getChainId(), // karalabe can go fuck himself
+            clique: { period: 1 }, // required to mine on-demand
             homesteadBlock: 0, // required to use eip150Block
             byzantiumBlock: 0, // REVERT, RETURNDATASIZE, RETURNDATACOPY, STATICCALL opcodes
             istanbulBlock: 0, // required for berlinBlock
@@ -94,8 +96,12 @@ export default async function ({ signer, signers=[], log }:Opts) {
     // geth
     args = [
         '--datadir', dataDir,
+        '--authrpc.port', '0',
+        '--discovery.port', '0',
+        '--port', '0',
         '--http',
         '--http.addr', '0.0.0.0',
+        '--http.port', ''+httpPort ?? '0',
         '--http.api', 'eth,web3,net,debug',
         '--http.corsdomain', '*',
         '--http.vhosts', '*',
@@ -132,13 +138,3 @@ export default async function ({ signer, signers=[], log }:Opts) {
     return { url, geth }
     
 }
-
-
-
-
-
-
-
-
-
-
