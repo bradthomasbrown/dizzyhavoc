@@ -7,7 +7,7 @@ export default function Home() {
         <p class="font-medium italic text-[1.3rem] mx-3 my-4 mb-5">
           Upgradeable, machine-coded, multi-chain, DeFi/GameFi ecosystem. New cross-chain web3 library.
         </p>
-        <div class="flex sm:flex-row flex-col gap-3 px-[40px] py-[15px] md:w-[95%] w-full shadow-lg rounded-lg sm:rounded-[100px] bg-gradient-to-r from-[#21191911] to-[#21191928]">
+        <div class="flex sm:flex-row flex-col mt-6 gap-3 px-[40px] py-[15px] md:w-[95%] w-full shadow-lg rounded-lg sm:rounded-[100px] bg-gradient-to-r from-[#21191911] to-[#21191928]">
           <div class="flex flex-col items-center justify-center">
           <p class="font-[monospace] underline  text-[1.1rem] text-center mb-[-15px]  mt-2">
          Available on:<br/>
