@@ -7,7 +7,7 @@ export default function Home() {
         <p class="font-medium italic text-[1.3rem] mx-3 my-4 mb-5">
           Upgradeable, machine-coded, multi-chain, DeFi/GameFi ecosystem. New cross-chain web3 library.
         </p>
-        <div class="flex sm:flex-row flex-col mt-6 gap-3 px-[40px] py-[15px] md:w-[95%] w-full shadow-lg rounded-lg sm:rounded-[100px] bg-gradient-to-r from-[#21191911] to-[#21191928]">
+        <div class="flex sm:flex-row flex-col mt-6 gap-3 px-[40px] py-[15px] md:w-[95%] w-full rounded-lg sm:rounded-[100px] bg-gradient-to-r from-transparent to-[#21191909]">
           <div class="flex flex-col items-center justify-center">
           <p class="font-[monospace] underline  text-[1.1rem] text-center mb-[-15px]  mt-2">
          Available on:<br/>
@@ -37,7 +37,7 @@ export default function Home() {
           </div>
            <Tokendata />
         </div> 
-        <div class="flex gap-3 sm:fixed absolute bottom-5 px-[25px] py-[20px] shadow-lg rounded-[100px] bg-gradient-to-r from-[#21191911] to-[#21191928]">
+        <div class="flex gap-3 sm:fixed absolute bottom-5 px-[25px] py-[20px] shadow-lg rounded-[100px] bg-gradient-to-r from-[#21191900] to-[#2119190e]">
           <a target="_blank" href="https://t.me/dizzyhavoc_portal">
             <img src="/telegram.png" class="size-8 hover:scale-[110%]" title="telegram" alt="telegram"/>
           </a>
