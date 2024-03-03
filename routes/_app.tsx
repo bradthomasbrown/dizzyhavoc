@@ -1,6 +1,5 @@
+import Footer from '../components/Footer.tsx';
 import { type PageProps } from "$fresh/server.ts";
-import Footer from "../components/Footer.tsx";
-import More from "../components/More.tsx";
 export default function App({ Component }: PageProps) {
   return (
     <html>
@@ -13,8 +12,7 @@ export default function App({ Component }: PageProps) {
       </head>
       <body class="bg-[#DED5C6]">
         <Component />
-        <More/>
-        <Footer />
+        <Footer/>
       </body>
     </html>
   );

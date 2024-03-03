@@ -1,6 +1,8 @@
+import More from "../components/More.tsx";
 import Tokendata  from "../islands/tokendata.tsx";
 export default function Home() {
   return (
+    <>
     <div class="w-full h-screen flex justify-center">
       <div class="flex flex-col items-center mb-[5rem]">
         <h1 class="lg:text-[8rem] text-[3rem] mt-[5rem] underline font-bold font-mono">dizzyhavoc</h1>
@@ -46,33 +48,33 @@ export default function Home() {
           <br/>
         </p>
         <div class="flex scale-125 flex-row  justify-center">
-        <ol class="flex items-center gap-4 text-center  w-full text-xs text-gray-900 font-medium sm:text-base">
- 	<li class="flex w-full relative text-indigo-600  after:content-['']  after:w-full after:h-0.5  after:bg-indigo-100 after:inline-block after:absolute lg:after:top-5 after:top-3 after:left-4">
- 		<div class="block whitespace-nowrap z-10">
- 			<span class="w-6 h-6 bg-gray-50 border-4 border-indigo-800 rounded-full flex  justify-center items-center mx-auto mb-3 text-[6px] text-sm text-indigo-800 lg:w-8 lg:h-8">I</span>
- 		</div>
- 	</li>
- 	<li class="flex w-full relative text-gray-900  after:content-['']  after:w-full after:h-0.5  after:bg-gray-200 after:inline-block after:absolute lg:after:top-5 after:top-3 after:left-4">
- 		<div class="block whitespace-nowrap z-10">
- 			<span class="w-6 h-6 bg-gray-50 border-2 border-gray-200 rounded-full flex justify-center items-center mx-auto mb-3 text-sm text-gray-900 lg:w-8 lg:h-8">II</span>
- 		</div>
- 	</li>
- 	<li class="flex w-full relative text-gray-900  after:content-['']  after:w-full after:h-0.5  after:bg-gray-200 after:inline-block after:absolute lg:after:top-5  after:top-3 after:left-4">
- 		<div class="block whitespace-nowrap z-10">
- 			<span class="w-6 h-6 bg-gray-50 border-2 border-gray-200 rounded-full flex justify-center items-center mx-auto mb-3 text-sm  lg:w-8 lg:h-8">III</span>
- 		</div>
- 	</li>
- 	<li class="flex w-full relative text-gray-900  after:content-['']  after:w-full after:h-0.5  after:bg-gray-200 after:inline-block after:absolute lg:after:top-5 after:top-3 after:left-4">
- 		<div class="block whitespace-nowrap z-10">
- 			<span class="w-6 h-6 bg-gray-50 border-2 border-gray-200 rounded-full flex justify-center items-center mx-auto mb-3 text-sm  lg:w-8 lg:h-8">IV</span>
- 		</div>
- 	</li>
- 	<li class="flex w-full relative text-gray-900  ">
- 		<div class="block whitespace-nowrap z-10">
- 			<span class="w-6 h-6 bg-gray-50 border-2 border-gray-200 rounded-full flex justify-center items-center mx-auto mb-3 text-sm  lg:w-8 lg:h-8">V</span>
- 		</div>
- 	</li>
- </ol>
+            <ol class="flex items-center gap-4 text-center  w-full text-xs text-gray-900 font-medium sm:text-base">
+            <li class="flex w-full relative text-indigo-600  after:content-['']  after:w-full after:h-0.5  after:bg-indigo-100 after:inline-block after:absolute lg:after:top-5 after:top-3 after:left-4">
+              <div class="block whitespace-nowrap z-10">
+                <span class="w-6 h-6 bg-gray-50 border-4 border-indigo-800 rounded-full flex  justify-center items-center mx-auto mb-3 text-[6px] text-sm text-indigo-800 lg:w-8 lg:h-8">I</span>
+              </div>
+            </li>
+            <li class="flex w-full relative text-gray-900  after:content-['']  after:w-full after:h-0.5  after:bg-gray-200 after:inline-block after:absolute lg:after:top-5 after:top-3 after:left-4">
+              <div class="block whitespace-nowrap z-10">
+                <span class="w-6 h-6 bg-gray-50 border-2 border-gray-200 rounded-full flex justify-center items-center mx-auto mb-3 text-sm text-gray-900 lg:w-8 lg:h-8">II</span>
+              </div>
+            </li>
+            <li class="flex w-full relative text-gray-900  after:content-['']  after:w-full after:h-0.5  after:bg-gray-200 after:inline-block after:absolute lg:after:top-5  after:top-3 after:left-4">
+              <div class="block whitespace-nowrap z-10">
+                <span class="w-6 h-6 bg-gray-50 border-2 border-gray-200 rounded-full flex justify-center items-center mx-auto mb-3 text-sm  lg:w-8 lg:h-8">III</span>
+              </div>
+            </li>
+            <li class="flex w-full relative text-gray-900  after:content-['']  after:w-full after:h-0.5  after:bg-gray-200 after:inline-block after:absolute lg:after:top-5 after:top-3 after:left-4">
+              <div class="block whitespace-nowrap z-10">
+                <span class="w-6 h-6 bg-gray-50 border-2 border-gray-200 rounded-full flex justify-center items-center mx-auto mb-3 text-sm  lg:w-8 lg:h-8">IV</span>
+              </div>
+            </li>
+            <li class="flex w-full relative text-gray-900  ">
+              <div class="block whitespace-nowrap z-10">
+                <span class="w-6 h-6 bg-gray-50 border-2 border-gray-200 rounded-full flex justify-center items-center mx-auto mb-3 text-sm  lg:w-8 lg:h-8">V</span>
+              </div>
+            </li>
+          </ol>
           </div>
           <p class="font-[monospace] mt-2 text-center">
          litepaper: <a class="text-indigo-600" href="https://docs.google.com/document/d/1HK-X5rmBqlDGgu5w3GbfYTaGQ7UwjgWm3WPd4_ei5BE/edit" target="_blank">doc</a><br/>
@@ -86,5 +88,7 @@ export default function Home() {
         <img className="absolute top-0 right-0 w-[45%]" src="/dzhv.png" alt="dizzyhavoc eye"></img>
       </div>
     </div>
+    <More/>
+</>
   );
 }

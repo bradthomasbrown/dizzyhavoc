@@ -1,5 +1,6 @@
 export default function More() {
   return (
+    <>
     <div class="w-full flex-col h-screen justify-center flex">
         <div class="flex sm:flex-row flex-col top-0  sm:justify-center justify-start h-[80%] w-screen sm:w-[100%] gap-[1%] rounded-xl px-0 sm:px-[1rem] bg-blur">
             <div class="w-full">
@@ -31,5 +32,6 @@ export default function More() {
         <img className="absolute bottom-2 left-4 blur-sm w-[25%]" src="/dzhv.png" alt="dizzyhavoc eye"></img>
       </div>
     </div>
+    </>
   );
 }

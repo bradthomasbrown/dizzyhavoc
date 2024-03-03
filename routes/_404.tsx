@@ -6,15 +6,9 @@ export default function Error404() {
       <Head>
         <title>404 - Not found</title>
       </Head>
-      <div class="px-0 py-8 mx-auto">
-        <div class="max-w-screen-md mx-auto flex flex-col items-center justify-center">
-          <img
-            class="my-6"
-            src="/dzhv-art.jpg"
-            width="55%"
-            height="55%"
-            alt="dzhv eye"
-          />
+      <div class="px-0 pt-9 mx-auto">
+        <div class="max-w-screen-md h-screen mx-auto flex flex-col items-center justify-center">
+        <img src="1.gif" alt="404 image"  width="550" alt="404 image"/>
           <h1 class="text-4xl font-bold">404 - Page not found</h1>
           <p class="my-4">
             The page you were looking for doesn't exist.

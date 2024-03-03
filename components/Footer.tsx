@@ -1,6 +1,6 @@
 export default function Footer() {
   return (
-    <footer id="footer" class="bg-[#DDCEB5] h-[230px] flex flex-row gap-4 justify-center">
+    <footer id="footer" class="bg-[#DDCEB5] h-[230px] w-full flex flex-row gap-4 justify-center">
       <div class="flex flex-col gap-4 justify-center">
         <div class="flex items-center gap-8">
         <a target="_blank" href="https://t.me/dizzyhavoc_portal">
@@ -21,7 +21,6 @@ export default function Footer() {
         </div>
         <span class="flex justify-center mt-4">{new Date().getFullYear()}, bradbrown-llc.</span>
       </div>
-
     </footer>
   );
 }
