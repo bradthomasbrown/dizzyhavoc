@@ -37,8 +37,12 @@ export default function Home() {
           </p>
           </div>
           <div class="flex flex-col sm:ml-[50px]  items-center ml-0 ">
-          <p class="font-[monospace] underline  text-[1.1rem] text-center mb-[-15px] mt-2">
-         Roadmap Goals:<br/>
+          <p class="font-[monospace] underline flex  text-[1.1rem] text-center mb-[-15px] mt-2">
+            Stage 1 progress:<img
+              title="see page 8 of litepaper for more infos."
+              class="size-[20px] flex mt-1 mx-1 hover:scale-110"
+              src="/help.png"
+            ></img><br/> 
           <br/>
         </p>
         <div class="flex scale-125 flex-row  justify-center">

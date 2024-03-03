@@ -16,6 +16,7 @@ export default function More() {
             </ul>
             </div>
             </div>
+            <div class="h-full border-4 border-[#DED5C6]"></div>
             <div class="w-full ">
             <h1 class="flex col-end-1 sm:text-[2rem] text-[1rem] underline text-center font-bold flex-col">█████████████████████████</h1> 
             <div class="mt-8  max-h-[90%] overflow-y-scroll">
