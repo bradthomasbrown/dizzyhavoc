@@ -30,11 +30,11 @@ export default function TokenData() {
  
 return (
     <section class="rounded flex flex-col p-3 my-1 gap-3 mx-3">
-            <h1 class="sm:text-[1.6rem] text-[1rem] flex justify-center items-center tracking-wide">Average Price
+            <h1 class="sm:text-[1.6rem] text-[1rem] flex justify-center items-center">Average Price
              <img title="Average price from all available pairs accros all chains" class="size-[17px] mt-1 mx-1 hover:scale-110" src="/help.png"></img>
              : ${price.toFixed(5)}
              </h1>
-            <h2 class="sm:text-[1.6rem] text-[1rem] flex justify-center items-center tracking-wide">Market Cap
+            <h2 class="sm:text-[1.6rem] text-[1rem] flex justify-center items-center">Market Cap
             <img title="Market Cap = Current Price x Circulating Supply" class="size-[17px] mt-1 mx-1 hover:scale-110" src="/help.png"></img>
             : ${(price*910778379).toLocaleString('en-US', {minimumFractionDigits: 2, maximumFractionDigits: 2})}
             </h2>
