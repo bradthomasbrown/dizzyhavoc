@@ -6,7 +6,7 @@ export default function Footer() {
         <a target="_blank" href="https://t.me/dizzyhavoc_portal">
             <img src="/telegram.png" class="size-8 hover:scale-[110%]" title="telegram" alt="telegram"/>
           </a>
-          <a target="_blank" class="pt-1" href="https://discord.gg/XExN8YktHg">
+          <a target="_blank" class="pt-1" href="https://discord.gg/stcbzS4KNq">
             <img src="/discord.png" class="w-8 h-6 hover:scale-[110%]" title="discord" alt="discord"/>
           </a>
           <a target="_blank" class="pt-[2px]" href="https://x.com/dizzyhavoc">
