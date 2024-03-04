@@ -22,7 +22,7 @@ export default function Footer() {
             <img src="/cg.png" class="size-11 hover:scale-[110%]" title="coingecko" alt="coingecko"/>
           </a>
         </div>
-        <span class="flex justify-center mt-4">{new Date().getFullYear()}, bradbrown-llc.</span>
+        <span class="flex justify-center mt-4">Brad Brown LLC © {new Date().getFullYear()}</span>
       </div>
     </footer>
   );

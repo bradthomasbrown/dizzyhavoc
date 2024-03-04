@@ -5,6 +5,8 @@
 import * as $_404 from "./routes/_404.tsx";
 import * as $_app from "./routes/_app.tsx";
 import * as $index from "./routes/index.tsx";
+import * as $Button from "./islands/Button.tsx";
+import * as $Web3Input from "./islands/Web3Input.tsx";
 import * as $tokendata from "./islands/tokendata.tsx";
 import { type Manifest } from "$fresh/server.ts";
 
@@ -15,6 +17,8 @@ const manifest = {
     "./routes/index.tsx": $index,
   },
   islands: {
+    "./islands/Button.tsx": $Button,
+    "./islands/Web3Input.tsx": $Web3Input,
     "./islands/tokendata.tsx": $tokendata,
   },
   baseUrl: import.meta.url,
