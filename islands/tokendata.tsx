@@ -4,6 +4,10 @@ import { useState, useEffect } from "preact/hooks";
 
 export default function TokenData() {
   if (!IS_BROWSER) return <></>;
+  const [count, setcount] = useState();
+  const [totalsupply, settotalsupply] = useState<number>(
+    localStorage.getItem("supply") ? Number(localStorage.getItem("supply")) : 0
+  )
   const [price, setprice] = useState<number>(
     localStorage.getItem("price") ? Number(localStorage.getItem("price")) : 0
   );
@@ -13,7 +17,7 @@ export default function TokenData() {
   const [ath, setath] = useState<number>(
     localStorage.getItem("ath") ? Number(localStorage.getItem("ath")) : 0
   );
-  const fetchdata = async () => {
+  const fetchdata = async () => {    
     // get price
     try {
       const response = await fetch(
@@ -31,25 +35,42 @@ export default function TokenData() {
         seth24percent(data.market_data.price_change_percentage_24h);
         setprice(avrgprice); // set price
         setath(data.market_data.ath.usd); // set ath
+        settotalsupply(data.market_data.total_supply);
         localStorage.setItem("price", avrgprice.toString()); // save price to localstorage
         localStorage.setItem(
           "h24",
           data.market_data.price_change_percentage_24h.toString()
         ); // save price to localstorage
         localStorage.setItem("ath", data.market_data.ath.usd.toString()); // save price to localstorage
+        localStorage.setItem("supply", data.market_data.total_supply.toString()); // save supply to localstorage
       }
     } catch (error) {
       console.log(error);
     }
   };
+
+  const starttimer = () => {
+    let x = 30;
+    const intervalId = setInterval(() => {
+      if (x > 0) {
+        x -= 1;
+        setcount(x); // Update the progress value
+      } else{
+        fetchdata();
+        clearInterval(intervalId); // Stop the interval when x reaches 100
+        starttimer()
+      }
+    }, 1000)}
+  
   useState(() => {
-    fetchdata();
-    setInterval(fetchdata, 60000); // update price every minute
-  });
+    fetchdata()
+    starttimer()
+   ;})
 
   return (
+    
     <div class="sm:w-[80%] w-full h-[15%] justify-center rounded-xl items-center gap-3 bg-blur flex flex-row">
-      <div class="flex-col flex ">
+     <div class="flex-col flex ">
         <section class="rounded flex flex-col mx-auto w-full py-3 my-1 gap-3 ml-3">
           <h1 class="lg:text-[1.6rem] sm:text-[1rem] text-[0.8rem] flex justify-center tracking-tight items-center">
             Average Price
@@ -68,7 +89,7 @@ export default function TokenData() {
               src="/help.png"
             ></img>
             : $
-            {(price * 910778379).toLocaleString("en-US", {
+            {(price * totalsupply).toLocaleString("en-US", {
               minimumFractionDigits: 2,
               maximumFractionDigits: 2,
             })}
@@ -93,6 +114,7 @@ export default function TokenData() {
           </h2>
         </section>
       </div>{" "}
+      <div className="absolute bottom-1 left-1 text-[10px]">update in: {count}</div>
     </div>
   );
 }
