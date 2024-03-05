@@ -1,13 +1,13 @@
 export default function Roadmap(){
     return (
-        <div class="flex flex-col justify-center w-full xl:w-[90%] mb-[1rem] h-[100%] rounded-xl bg-blur">
+        <div class="flex flex-col justify-center w-full xl:w-[50%] mb-[1rem] h-[100%] rounded-xl shadow-lg bg-blur">
         <div class="flex flex-col mt-7 w-full items-center ml-0 ">
         <p class="font-[Poppins] underline flex  text-[1.4rem] text-center mb-[-15px] mt-2">
           Stage 1 progress:
           <br />
           <br />
         </p>
-        <div class="flex flex-row justify-center">
+        <div class="flex flex-row justify-start top-0">
           <ol class="flex items-center scale-125  gap-4 text-center  w-full text-xs text-gray-900 font-medium xl:text-base">
             <li class="flex w-full relative text-indigo-600  after:content-['']  after:w-full after:h-0.5  after:bg-indigo-100 after:inline-block after:absolute lg:after:top-5 after:top-3 after:left-4">
               <div class="block whitespace-nowrap z-10">

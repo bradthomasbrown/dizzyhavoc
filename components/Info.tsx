@@ -10,7 +10,7 @@ export default function Info() {
   const content5 =
     "The primary focus at the moment is on constructing the cross chain bridge. The token doesn't have immediate utility; it's utility is part of the planned future developments. However, it's worth mentioning that one of the upcoming plans involves using the token as payment for a convenient service, allowing users to deploy contracts.";
   return (
-    <div class="flex flex-col justify-center w-full xl:w-[60%] mb-[1rem] h-[100%] rounded-xl bg-blur">
+    <div class="flex flex-col justify-center w-full xl:w-[60%] mb-[1rem] h-[100%] rounded-xl shadow-lg bg-blur">
       <div class="flex w-full flex-col">
         <p class="font-[Poppins] underline text-[1.4rem] text-center mb-[-15px]">
           Utility and Goals:
@@ -21,7 +21,9 @@ export default function Info() {
           <ul>
             <li class="text-2xl font-[Poppins]">What's the innovation ?</li>
             <p class="mt-2">{content1}</p>
-            <li class="text-2xl mt-2 font-[Poppins]">What would be its impact ?</li>
+            <li class="text-2xl mt-2 font-[Poppins]">
+              What would be its impact ?
+            </li>
             <p class="text-lg mt-2 italic">
               Deploying in this manner is expected to have several positive
               effects:
@@ -32,7 +34,16 @@ export default function Info() {
               <li>{content4}</li>
             </ul>
             <li class="text-2xl mt-2 font-[Poppins]">What to expect next ?</li>
-            <p class="mt-2">{content5}  More infos in the litepaper <a class="text-indigo-900 bold" target="_blank" href="https://docs.google.com/document/d/1HK-X5rmBqlDGgu5w3GbfYTaGQ7UwjgWm3WPd4_ei5BE/edit">here</a></p>
+            <p class="mt-2">
+              {content5} More infos in the litepaper{" "}
+              <a
+                class="text-indigo-900 bold"
+                target="_blank"
+                href="https://docs.google.com/document/d/1HK-X5rmBqlDGgu5w3GbfYTaGQ7UwjgWm3WPd4_ei5BE/edit"
+              >
+                here
+              </a>
+            </p>
           </ul>
         </div>
       </div>

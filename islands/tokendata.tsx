@@ -1,6 +1,6 @@
 import { IS_BROWSER } from "$fresh/runtime.ts";
 import { JSX } from "preact";
-import { useState, useEffect } from "preact/hooks";
+import { useEffect, useState } from "preact/hooks";
 
 export default function TokenData() {
   if (!IS_BROWSER) return <></>;
@@ -11,50 +11,50 @@ export default function TokenData() {
   let arbprice = 0;
   const [count, setcount] = useState();
   const [delta, setdelta] = useState<number>(
-    localStorage.getItem("delta") ? Number(localStorage.getItem("delta")) : 0
+    localStorage.getItem("delta") ? Number(localStorage.getItem("delta")) : 0,
   );
   const [low, setlow] = useState<number>(
-    localStorage.getItem("low") ? Number(localStorage.getItem("low")) : 0
+    localStorage.getItem("low") ? Number(localStorage.getItem("low")) : 0,
   );
   const [high, sethigh] = useState<number>(
-    localStorage.getItem("high") ? Number(localStorage.getItem("high")) : 0
+    localStorage.getItem("high") ? Number(localStorage.getItem("high")) : 0,
   );
   const [totalsupply, settotalsupply] = useState<number>(
-    localStorage.getItem("supply") ? Number(localStorage.getItem("supply")) : 0
+    localStorage.getItem("supply") ? Number(localStorage.getItem("supply")) : 0,
   );
   const [avrgprice, setavrgprice] = useState<number>(
-    localStorage.getItem("price") ? Number(localStorage.getItem("price")) : 0
+    localStorage.getItem("price") ? Number(localStorage.getItem("price")) : 0,
   );
   const [h24percent, seth24percent] = useState<number>(
-    localStorage.getItem("h24") ? Number(localStorage.getItem("h24")) : 0
+    localStorage.getItem("h24") ? Number(localStorage.getItem("h24")) : 0,
   );
   const [ath, setath] = useState<number>(
-    localStorage.getItem("ath") ? Number(localStorage.getItem("ath")) : 0
+    localStorage.getItem("ath") ? Number(localStorage.getItem("ath")) : 0,
   );
   const [token_eth, settoken_eth] = useState<number>(
-    localStorage.getItem("price_eth") ? Number(localStorage.getItem("eth")) : 0
+    localStorage.getItem("price_eth") ? Number(localStorage.getItem("eth")) : 0,
   );
   const [token_arb, settoken_arb] = useState<number>(
-    localStorage.getItem("price_arb") ? Number(localStorage.getItem("arb")) : 0
+    localStorage.getItem("price_arb") ? Number(localStorage.getItem("arb")) : 0,
   );
   const [token_bsc, settoken_bsc] = useState<number>(
-    localStorage.getItem("price_bsc") ? Number(localStorage.getItem("bsc")) : 0
+    localStorage.getItem("price_bsc") ? Number(localStorage.getItem("bsc")) : 0,
   );
   const [token_base, settoken_base] = useState<number>(
     localStorage.getItem("price_base")
       ? Number(localStorage.getItem("base"))
-      : 0
+      : 0,
   );
-  const [token_avax, settoken_avax] = useState<number>(
-    localStorage.getItem("price_avax")
-      ? Number(localStorage.getItem("avax"))
-      : 0
-  );
+  // const [token_avax, settoken_avax] = useState<number>(
+  //   localStorage.getItem("price_avax")
+  //     ? Number(localStorage.getItem("avax"))
+  //     : 0,
+  // );
   function largestPriceDelta(
     token_eth: number,
     token_arb: number,
     token_bsc: number,
-    token_base: number
+    token_base: number,
   ) {
     const tokens = {
       Eth: token_eth,
@@ -70,13 +70,13 @@ export default function TokenData() {
       token_eth,
       token_arb,
       token_bsc,
-      token_base
+      token_base,
     );
     const minVal: number = Math.min(
       token_eth,
       token_arb,
       token_bsc,
-      token_base
+      token_base,
     );
     // Calculate the largest price delta difference
     const maxDelta: number = maxVal - minVal;
@@ -88,7 +88,7 @@ export default function TokenData() {
     // get price
     try {
       const response = await fetch(
-        "https://api.coingecko.com/api/v3/coins/dizzyhavoc"
+        "https://api.coingecko.com/api/v3/coins/dizzyhavoc",
       );
       const data = await response.json();
       if (data) {
@@ -102,7 +102,7 @@ export default function TokenData() {
             settoken_eth(tickerdata[i].converted_last.usd);
             localStorage.setItem(
               "price_eth",
-              tickerdata[i].converted_last.usd.toString()
+              tickerdata[i].converted_last.usd.toString(),
             );
           }
           if (tickerdata[i].market.name == "Pancakeswap V3 (BSC)") {
@@ -110,7 +110,7 @@ export default function TokenData() {
             settoken_bsc(tickerdata[i].converted_last.usd);
             localStorage.setItem(
               "price_bsc",
-              tickerdata[i].converted_last.usd.toString()
+              tickerdata[i].converted_last.usd.toString(),
             );
           }
           if (tickerdata[i].market.name == "Uniswap V3 (Base)") {
@@ -118,7 +118,7 @@ export default function TokenData() {
             settoken_base(tickerdata[i].converted_last.usd);
             localStorage.setItem(
               "price_base",
-              tickerdata[i].converted_last.usd.toString()
+              tickerdata[i].converted_last.usd.toString(),
             );
           }
           if (tickerdata[i].market.name == "Uniswap V3 (Arbitrum One)") {
@@ -126,7 +126,7 @@ export default function TokenData() {
             settoken_arb(tickerdata[i].converted_last.usd);
             localStorage.setItem(
               "price_arb",
-              tickerdata[i].converted_last.usd.toString()
+              tickerdata[i].converted_last.usd.toString(),
             );
           }
         }
@@ -139,12 +139,12 @@ export default function TokenData() {
         localStorage.setItem("price", avrgprice.toString()); // save price to localstorage
         localStorage.setItem(
           "h24",
-          data.market_data.price_change_percentage_24h.toString()
+          data.market_data.price_change_percentage_24h.toString(),
         ); // save price to localstorage
         localStorage.setItem("ath", data.market_data.ath.usd.toString()); // save price to localstorage
         localStorage.setItem(
           "supply",
-          data.market_data.total_supply.toString()
+          data.market_data.total_supply.toString(),
         ); // save supply to localstorage
       }
     } catch (error) {
@@ -162,8 +162,8 @@ export default function TokenData() {
     ];
     const found = map.find((x) => Math.abs(num) >= x.threshold);
     if (found) {
-      const formatted =
-        (num / found.threshold).toFixed(precision) + found.suffix;
+      const formatted = (num / found.threshold).toFixed(precision) +
+        found.suffix;
       return formatted;
     }
     return num;
@@ -189,46 +189,49 @@ export default function TokenData() {
   });
 
   return (
-    <div class="2xl:w-[60%] w-full h-full xl:h-[10%] justify-center rounded-xl items-center gap-3 bg-blur flex flex-col sm:flex-row">
+    <div class="w-full shadow-lg px-0  2xl:px-3 h-[30%] mt-[2rem] justify-center items-center gap-0 xl:gap-3 bg-blur flex flex-col xl:flex-row">
       <div class="flex flex-row">
         <div class="flex-col flex ">
           <section class="rounded flex flex-col mx-auto w-full py-3 my-1 gap-3 ml-3">
-            <h2 class="lg:text-[1.4rem] sm:text-[1rem] font-[Poppins] text-[0.8rem] flex justify-center tracking-tight items-center">
-              <img
+            <h2 class="text-[1rem] font-[Poppins] flex justify-center tracking-tight items-center">
+              {
+                /* <img
                 src="/token_avax.png"
-                class="size-9 hover:scale-[105%]"
+                class="size-8 hover:scale-[105%]"
                 title="$DZHV on avalanche"
                 alt="avalanche"
               />
               <img
-                title="not available from coingecko api yet."
+                title="To be implemented."
                 class="size-[17px] mt-1 mx-1 hover:scale-110"
                 src="/help.png"
               ></img>
               <a
                 class="text-indigo-900 font-[Poppins]"
+                target="_blank"
                 href="https://dexscreener.com/avalanche/0xd1bfb54595ed5346f4fc87eb3813b7793c5a7ead"
               >
                 here
-              </a>
+              </a> */
+              }
             </h2>
           </section>
         </div>
         <div class="flex-col flex ">
           <section class="rounded flex flex-col mx-auto w-full py-3 my-1 gap-3 ml-3">
-            <h1 class="lg:text-[1.4rem] sm:text-[1rem] font-[Poppins] text-[0.8rem] flex justify-center tracking-tight items-center">
+            <h1 class="text-[1rem] font-[Poppins] flex justify-center tracking-tight items-center">
               <img
                 src="/token_eth.png"
-                class="size-9 hover:scale-[105%] mr-2"
+                class="size-8 hover:scale-[105%] mr-2"
                 title="$DZHV on ethereum"
                 alt="ethereum"
               />{" "}
               ${token_eth.toFixed(5)}
             </h1>
-            <h1 class="lg:text-[1.4rem] sm:text-[1rem] font-[Poppins] text-[0.8rem] flex justify-center tracking-tight items-center">
+            <h1 class="text-[1rem] font-[Poppins] flex justify-center tracking-tight items-center">
               <img
                 src="/token_arb.png"
-                class="size-9 hover:scale-[105%] mr-2"
+                class="size-8 hover:scale-[105%] mr-2"
                 title="$DZHV on arbitrum"
                 alt="arbitrum"
               />{" "}
@@ -238,19 +241,19 @@ export default function TokenData() {
         </div>
         <div class="flex-col flex ">
           <section class="rounded flex flex-col mx-auto w-full py-3 my-1 gap-3 ml-3">
-            <h1 class="lg:text-[1.4rem] sm:text-[1rem] font-[Poppins] text-[0.8rem] flex justify-center tracking-tight items-center">
+            <h1 class="text-[1rem] font-[Poppins] flex justify-center tracking-tight items-center">
               <img
                 src="/token_bsc.png"
-                class="size-9 hover:scale-[105%] mr-2"
+                class="size-8 hover:scale-[105%] mr-2"
                 title="$DZHV on binance chain"
                 alt="binance chain"
               />{" "}
               ${token_bsc.toFixed(5)}
             </h1>
-            <h1 class="lg:text-[1.4rem] sm:text-[1rem] font-[Poppins] text-[0.8rem] flex justify-center tracking-tight items-center">
+            <h1 class="text-[1rem] font-[Poppins] flex justify-center tracking-tight items-center">
               <img
                 src="/token_base.png"
-                class="size-9 hover:scale-[105%] mr-2"
+                class="size-8 hover:scale-[105%] mr-2"
                 title="$DZHV on base"
                 alt="base"
               />{" "}
@@ -262,20 +265,20 @@ export default function TokenData() {
       <div class="flex flex-row">
         <div class="flex-col flex ">
           <section class="rounded flex flex-col w-full py-3 my-1 gap-3 ml-3">
-            <h1 class="lg:text-[1.4rem] sm:text-[1rem] font-[Poppins] text-[0.8rem] inline justify-center tracking-tight items-center">
+            <h1 class="font-[Poppins] lg:text-[1rem] text-[0.8rem] inline justify-center tracking-tight items-center">
               Average Price : ${avrgprice.toFixed(5)}
             </h1>
-            <h2 class="lg:text-[1.4rem] sm:text-[1rem] font-[Poppins] text-[0.8rem] inline justify-center tracking-tight items-center">
+            <h2 class="font-[Poppins] lg:text-[1rem] text-[0.8rem] inline justify-center tracking-tight items-center">
               Market Cap : ${formatNumber(avrgprice * totalsupply)}
             </h2>
           </section>
         </div>
         <div class="flex-col flex">
           <section class="rounded flex flex-col mx-auto w-full py-3 my-1 gap-3 ml-3">
-            <h2 class="lg:text-[1.4rem] sm:text-[1rem] font-[Poppins] text-[0.8rem] inline justify-center tracking-tight items-center">
+            <h2 class="font-[Poppins] lg:text-[1rem] text-[0.8rem] inline justify-center tracking-tight items-center">
               Max Δ : ${delta} {`↓ ${low} | ↑ ${high}`}
             </h2>
-            <h1 class="lg:text-[1.4rem] sm:text-[1rem] font-[Poppins] text-[0.8rem] inline justify-center  tracking-tight items-center">
+            <h1 class="font-[Poppins] lg:text-[1rem] text-[0.8rem] inline justify-center  tracking-tight items-center">
               ATH : ${ath.toFixed(5)}
             </h1>
           </section>
