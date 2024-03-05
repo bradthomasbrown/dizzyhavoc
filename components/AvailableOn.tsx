@@ -1,7 +1,7 @@
 export default function Available() {
   return (
     <div>
-      <p class="font-[Poppins] mb-2 underline text-[1.1rem] text-center">
+      <p class="font-[Poppins] my-4 underline text-[1.1rem] text-center">
         Available on:
         <br />
       </p>

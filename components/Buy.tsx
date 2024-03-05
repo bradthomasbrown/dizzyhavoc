@@ -2,14 +2,14 @@ import Tokendata from "../islands/tokendata.tsx";
 import AvailableOn from "../components/AvailableOn.tsx";
 export default function Buy() {
   return (
-    <div class="flex xl:flex-row flex-col shadow-lg  sm:justify-center justify-start h-[50rem] w-full sm:w-[100%] rounded-xl bg-blur">
+    <div class="flex xl:flex-row flex-col shadow-lg  mx-auto lg:h-[50rem] h-[55rem] w-full lg:w-[50%] rounded-xl bg-blur">
       <div class="w-full">
-        <h1 className="flex col-start-1 text-[2rem] underline text-center font-[Poppins] flex-col">
+        <h1 className="flex col-start-1 text-[1.4rem] underline mt-3 text-center font-[Poppins] flex-col">
           How to buy/ DEXes
         </h1>
         <Tokendata />
         <div class="mt-4 text-[1.5rem]">
-          <h1 class="text-[1.4rem] font-[Poppins] text-center">
+          <h1 class="text-[1.2rem] italic font-[Poppins] text-center">
             You'll need a browser wallet, like{" "}
             <a
               class="text-indigo-900"
@@ -23,8 +23,25 @@ export default function Buy() {
               Rabby
             </a>.
           </h1>
+          <h1 class="text-[1.2rem] italic font-[Poppins] text-center">
+            An account on CEX to buy Eth, Avax or Bnb. Like{" "}
+            <a
+              class="text-indigo-900"
+              target="_blank"
+              href="https://www.binance.com"
+            >
+              Binance
+            </a>,{" "}
+            <a class="text-indigo-900" target="_blank" href="https://www.coinbase.com/">
+              Coinbase
+            </a>{" "}
+            or{" "}
+            <a class="text-indigo-900" target="_blank" href="https://www.kraken.com/">
+              Kraken
+            </a>
+          </h1>
           <h1 class="text-[1.4rem] text-center"></h1>
-          <ul class="ml-2 sm:ml-0  mt-2 sm:scale-100 scale-75">
+          <ul class="sm:ml-0 text-center mt-2 sm:scale-100 scale-75">
             <li>
               Ethereum {">"}{" "}
               <a

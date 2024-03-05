@@ -44,7 +44,6 @@ export default function Home() {
       </div>
       <div class="flex flex-col gap-3 px-3 xl:flex-row">
         <Buy />
-        <Secret />
       </div>
     </>
   );
