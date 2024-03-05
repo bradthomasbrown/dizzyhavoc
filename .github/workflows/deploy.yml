@@ -1,7 +1,9 @@
 name: Deploy
 on:
   push:
-    branches: [0.0.0, 0.0.0-preview]
+    branches: [main]
+  pull_request:
+    branches: main
 
 jobs:
   deploy:
