@@ -1,7 +1,6 @@
 import More from "../components/More.tsx";
 import Tokendata from "../islands/tokendata.tsx";
 import Info from "../components/Info.tsx";
-import Roadmap from "../components/Roadmap.tsx";
 export default function Home() {
   return (
     <>
@@ -14,22 +13,21 @@ export default function Home() {
             Upgradeable, machine-coded, multi-chain, DeFi/GameFi ecosystem. New
             cross-chain web3 library.
           </p>
-         
           <Info />
-          <Roadmap />
           <Tokendata />
         </div>
-        <div class="absolute top-4 left-4">
-        <img
-            className="w-[10%] z-[-10]"
+        <div className="w-full h-full absolute z-[-10]">
+          <img
+            className="absolute top-4 left-4 w-[5%]"
             src="/dzhv-art.jpg"
             alt="dizzyhavoc eye"
-          ></img><a target="_blank" href="https://linktr.ee/dizzyhavoc" class="bottom-5 text-lg bold text-indigo-900">socials{`(`}linktree{`)`}</a></div>
-               <img
-            className="absolute top-0 right-0 w-[45%]  z-[-10]"
+          ></img>
+          <img
+            className="absolute top-0 right-0 w-[45%]"
             src="/dzhv.png"
             alt="dizzyhavoc eye"
           ></img>
+        </div>
       </div>
       <More />
     </>
