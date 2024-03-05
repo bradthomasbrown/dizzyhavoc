@@ -11,13 +11,13 @@
   }
   
   ::-webkit-scrollbar-thumb {
-    background-color:   #DDCEB5;    /* color of the scroll thumb */
+    background-color:   #e0e0e0;    /* color of the scroll thumb */
     border-radius: 12px;       /* roundness of the scroll thumb */
-    border: 1px solid #DDCEB5;  /* creates padding around scroll thumb */
+    border: 1px solid #313131;  /* creates padding around scroll thumb */
   }
 
   .bg-blur {
   -webkit-backdrop-filter: blur(4px); 
   backdrop-filter: blur(4px); 
-  background: #eee4d270 0 0 no-repeat padding-box; 
+  background: #6969691f 0 0 no-repeat padding-box; 
   }

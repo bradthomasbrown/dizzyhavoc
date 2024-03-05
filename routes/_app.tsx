@@ -10,7 +10,7 @@ export default function App({ Component }: PageProps) {
         <link rel="stylesheet" href="/styles.css" />
         <style>@import url('https://fonts.googleapis.com/css2?family=Roboto+Mono:ital,wght@1,300&display=swap')</style>
       </head>
-      <body class="bg-[#DED5C6]">
+      <body class="bg-[#E6E6E6]">
         <Component />
         <Footer/>
       </body>
