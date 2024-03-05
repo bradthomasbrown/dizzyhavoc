@@ -11,7 +11,7 @@ export default function Home() {
           <h1 class="lg:text-[8rem] text-[3rem] mt-[5rem] underline font-Poppins text-[#2f2f2f]">
             DizzyHavoc
           </h1>
-          <p class="font-medium italic text-[1.3rem] text-center w-full text-[#646464] shadow-lg sm:w-[50%] mt-[0.5rem] bg-blur rounded-xl px-2 mb-[1rem]">
+          <p class="font-medium italic text-[1.3rem] text-center w-full text-[#000000] shadow-lg sm:w-[50%] mt-[0.5rem] bg-blur2 rounded-xl px-2 mb-[1rem]">
             Upgradeable, machine-coded, multi-chain, DeFi/GameFi ecosystem. New
             cross-chain web3 library.
           </p>

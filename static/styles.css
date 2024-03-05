@@ -21,3 +21,8 @@
   backdrop-filter: blur(4px); 
   background: #6969691f 0 0 no-repeat padding-box; 
   }
+  .bg-blur2 {
+    -webkit-backdrop-filter: blur(4px); 
+    backdrop-filter: blur(4px); 
+    background: #d4d4d4b0 0 0 no-repeat padding-box; 
+    }
