@@ -1,6 +1,7 @@
 import More from "../components/More.tsx";
 import Tokendata from "../islands/tokendata.tsx";
 import Info from "../components/Info.tsx";
+import Roadmap from "../components/Roadmap.tsx";
 export default function Home() {
   return (
     <>
@@ -14,6 +15,7 @@ export default function Home() {
             cross-chain web3 library.
           </p>
           <Info />
+          <Roadmap />
           <Tokendata />
         </div>
         <div className="w-full h-full absolute z-[-10]">
