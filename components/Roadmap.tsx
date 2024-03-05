@@ -2,7 +2,7 @@ export default function Roadmap(){
     return (
         <div class="flex flex-col justify-center w-full xl:w-[90%] mb-[1rem] h-[100%] rounded-xl bg-blur">
         <div class="flex flex-col mt-7 w-full items-center ml-0 ">
-        <p class="font-[monospace] underline flex  text-[1.4rem] text-center mb-[-15px] mt-2">
+        <p class="font-[Poppins] underline flex  text-[1.4rem] text-center mb-[-15px] mt-2">
           Stage 1 progress:
           <br />
           <br />
@@ -98,7 +98,7 @@ export default function Roadmap(){
             </ul>
           </div>
         </div>
-        <p class="font-[monospace] text-lg font-bold mt-2 text-center">
+        <p class="font-[Poppins] text-lg mt-2 text-center">
          more details in the{" "}
           <a
             class="text-indigo-600"

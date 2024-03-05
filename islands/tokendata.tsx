@@ -4,6 +4,11 @@ import { useState, useEffect } from "preact/hooks";
 
 export default function TokenData() {
   if (!IS_BROWSER) return <></>;
+  let ethprice = 0;
+  // let avaxprice = 0;
+  let bscprice = 0;
+  let baseprice = 0;
+  let arbprice = 0;
   const [count, setcount] = useState();
   const [delta, setdelta] = useState<number>(
     localStorage.getItem("delta") ? Number(localStorage.getItem("delta")) : 0
@@ -87,13 +92,7 @@ export default function TokenData() {
       );
       const data = await response.json();
       if (data) {
-        var ethprice = 0;
-        var avaxprice = 0;
-        var bscprice = 0;
-        var baseprice = 0;
-        var arbprice = 0;
         const tickerdata = data.tickers;
-        console.log(tickerdata);
         let totalprice = 0;
         for (let i = 0; i < tickerdata.length; i++) {
           // get average price from all available pairs
@@ -194,7 +193,7 @@ export default function TokenData() {
       <div class="flex flex-row">
         <div class="flex-col flex ">
           <section class="rounded flex flex-col mx-auto w-full py-3 my-1 gap-3 ml-3">
-            <h2 class="lg:text-[1.4rem] sm:text-[1rem] text-[0.8rem] flex justify-center tracking-tight items-center">
+            <h2 class="lg:text-[1.4rem] sm:text-[1rem] font-[Poppins] text-[0.8rem] flex justify-center tracking-tight items-center">
               <img
                 src="/token_avax.png"
                 class="size-9 hover:scale-[105%]"
@@ -207,7 +206,7 @@ export default function TokenData() {
                 src="/help.png"
               ></img>
               <a
-                class="text-indigo-900"
+                class="text-indigo-900 font-[Poppins]"
                 href="https://dexscreener.com/avalanche/0xd1bfb54595ed5346f4fc87eb3813b7793c5a7ead"
               >
                 here
@@ -217,7 +216,7 @@ export default function TokenData() {
         </div>
         <div class="flex-col flex ">
           <section class="rounded flex flex-col mx-auto w-full py-3 my-1 gap-3 ml-3">
-            <h1 class="lg:text-[1.4rem] sm:text-[1rem] text-[0.8rem] flex justify-center tracking-tight items-center">
+            <h1 class="lg:text-[1.4rem] sm:text-[1rem] font-[Poppins] text-[0.8rem] flex justify-center tracking-tight items-center">
               <img
                 src="/token_eth.png"
                 class="size-9 hover:scale-[105%] mr-2"
@@ -226,7 +225,7 @@ export default function TokenData() {
               />{" "}
               ${token_eth.toFixed(5)}
             </h1>
-            <h1 class="lg:text-[1.4rem] sm:text-[1rem] text-[0.8rem] flex justify-center tracking-tight items-center">
+            <h1 class="lg:text-[1.4rem] sm:text-[1rem] font-[Poppins] text-[0.8rem] flex justify-center tracking-tight items-center">
               <img
                 src="/token_arb.png"
                 class="size-9 hover:scale-[105%] mr-2"
@@ -239,7 +238,7 @@ export default function TokenData() {
         </div>
         <div class="flex-col flex ">
           <section class="rounded flex flex-col mx-auto w-full py-3 my-1 gap-3 ml-3">
-            <h1 class="lg:text-[1.4rem] sm:text-[1rem] text-[0.8rem] flex justify-center tracking-tight items-center">
+            <h1 class="lg:text-[1.4rem] sm:text-[1rem] font-[Poppins] text-[0.8rem] flex justify-center tracking-tight items-center">
               <img
                 src="/token_bsc.png"
                 class="size-9 hover:scale-[105%] mr-2"
@@ -248,7 +247,7 @@ export default function TokenData() {
               />{" "}
               ${token_bsc.toFixed(5)}
             </h1>
-            <h1 class="lg:text-[1.4rem] sm:text-[1rem] text-[0.8rem] flex justify-center tracking-tight items-center">
+            <h1 class="lg:text-[1.4rem] sm:text-[1rem] font-[Poppins] text-[0.8rem] flex justify-center tracking-tight items-center">
               <img
                 src="/token_base.png"
                 class="size-9 hover:scale-[105%] mr-2"
@@ -263,20 +262,20 @@ export default function TokenData() {
       <div class="flex flex-row">
         <div class="flex-col flex ">
           <section class="rounded flex flex-col w-full py-3 my-1 gap-3 ml-3">
-            <h1 class="lg:text-[1.4rem] sm:text-[1rem] text-[0.8rem] inline justify-center tracking-tight items-center">
+            <h1 class="lg:text-[1.4rem] sm:text-[1rem] font-[Poppins] text-[0.8rem] inline justify-center tracking-tight items-center">
               Average Price : ${avrgprice.toFixed(5)}
             </h1>
-            <h2 class="lg:text-[1.4rem] sm:text-[1rem] text-[0.8rem] inline justify-center tracking-tight items-center">
+            <h2 class="lg:text-[1.4rem] sm:text-[1rem] font-[Poppins] text-[0.8rem] inline justify-center tracking-tight items-center">
               Market Cap : ${formatNumber(avrgprice * totalsupply)}
             </h2>
           </section>
         </div>
         <div class="flex-col flex">
           <section class="rounded flex flex-col mx-auto w-full py-3 my-1 gap-3 ml-3">
-            <h2 class="lg:text-[1.4rem] sm:text-[1rem] text-[0.8rem] inline justify-center tracking-tight items-center">
-              Max Δ : ${delta} {`(↓ ${low} ↑ ${high})`}
+            <h2 class="lg:text-[1.4rem] sm:text-[1rem] font-[Poppins] text-[0.8rem] inline justify-center tracking-tight items-center">
+              Max Δ : ${delta} {`↓ ${low} | ↑ ${high}`}
             </h2>
-            <h1 class="lg:text-[1.4rem] sm:text-[1rem] text-[0.8rem] inline justify-center  tracking-tight items-center">
+            <h1 class="lg:text-[1.4rem] sm:text-[1rem] font-[Poppins] text-[0.8rem] inline justify-center  tracking-tight items-center">
               ATH : ${ath.toFixed(5)}
             </h1>
           </section>

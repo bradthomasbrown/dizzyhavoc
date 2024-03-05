@@ -12,16 +12,16 @@ export default function Info() {
   return (
     <div class="flex flex-col justify-center w-full xl:w-[60%] mb-[1rem] h-[100%] rounded-xl bg-blur">
       <div class="flex w-full flex-col">
-        <p class="font-[monospace] underline text-[1.4rem] text-center mb-[-15px]">
+        <p class="font-[Poppins] underline text-[1.4rem] text-center mb-[-15px]">
           Utility and Goals:
           <br />
           <br />
         </p>
         <div class="xl:max-h-[90%] px-2 max-h-full">
           <ul>
-            <li class="text-2xl">What's the innovation ?</li>
+            <li class="text-2xl font-[Poppins]">What's the innovation ?</li>
             <p class="mt-2">{content1}</p>
-            <li class="text-2xl mt-2">What would be its impact ?</li>
+            <li class="text-2xl mt-2 font-[Poppins]">What would be its impact ?</li>
             <p class="text-lg mt-2 italic">
               Deploying in this manner is expected to have several positive
               effects:
@@ -31,7 +31,7 @@ export default function Info() {
               <li>{content3}</li>
               <li>{content4}</li>
             </ul>
-            <li class="text-2xl mt-2">What to expect next ?</li>
+            <li class="text-2xl mt-2 font-[Poppins]">What to expect next ?</li>
             <p class="mt-2">{content5}  More infos in the litepaper <a class="text-indigo-900 bold" target="_blank" href="https://docs.google.com/document/d/1HK-X5rmBqlDGgu5w3GbfYTaGQ7UwjgWm3WPd4_ei5BE/edit">here</a></p>
           </ul>
         </div>
