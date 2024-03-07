@@ -292,7 +292,7 @@ export default function TokenData() {
         />{" "}
         ${poloniexprice != null ? poloniexprice.value : ''}</a>
         </h1>
-    <a target="_blank" style={{ order: avaxorder != null ? -avaxorder : 0 }} href="https://kyberswap.com/swap/avalanche/avax-to-dzhv">
+    <a target="_blank" style={{ order: avaxorder != null ? -avaxorder : 0 }} href="https://kyberswap.com/swap/avalanche?outputCurrency=0x3419875B4D3Bca7F3FddA2dB7a476A79fD31B4fE&inputCurrency=ETH">
       <h1 class={`text-[1.1rem] font-[Poppins] flex`}>
         <img
             src="/token_avax.png"
