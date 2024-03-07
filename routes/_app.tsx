@@ -1,7 +1,13 @@
 import Footer from '../components/Footer.tsx';
 import { type PageProps } from "$fresh/server.ts";
+import { IS_BROWSER } from "$fresh/runtime.ts";
 export default function App({ Component }: PageProps) {
-  const theme = localStorage.getItem("theme") ? localStorage.getItem("theme") : "E6E6E6";
+  const defaultTheme = 'E6E6E6'
+  let theme = defaultTheme
+  if (IS_BROWSER) {
+    const savedTheme = localStorage.getItem("theme")
+    if (savedTheme) theme = savedTheme
+  }
   return (
     <html>
       <head>
