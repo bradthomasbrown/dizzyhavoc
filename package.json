@@ -1,6 +1,7 @@
 {
   "dependencies": {
     "@alloc/quick-lru": "^5.2.0",
-    "@material-tailwind/react": "^2.1.9"
+    "@material-tailwind/react": "^2.1.9",
+    "preact-media-hook": "^1.0.3"
   }
 }

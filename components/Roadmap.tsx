@@ -1,7 +1,7 @@
 export default function Roadmap(){
     return (
-        <div class="flex flex-col justify-center w-full xl:w-[50%] mb-[1rem] h-[100%] rounded-xl shadow-lg bg-blur">
-        <div class="flex flex-col mt-7 w-full items-center ml-0 ">
+        <div class="flex flex-col w-full mx-auto  min-w-full xl:min-w-[50rem] max-w-[70rem] xl:max-w-[70rem] rounded-xl shadow-lg bg-blur2">
+        <div class="flex flex-col w-full items-center p-4 ml-0 ">
         <p class="font-[Poppins] underline flex  text-[1.4rem] text-center mb-[-15px] mt-2">
           Stage 1 progress:
           <br />
@@ -51,14 +51,14 @@ export default function Roadmap(){
             <ul>
               <div class="flex items-start">
                 <li class="text-xl mx-2 inline">I. </li>
-                <p class="inline">
+                <p class="text-xl inline">
                   Building the bridge so holders on all chains can exchange
                   $DZHV across chains freely, 1 : 1 ratio.
                 </p>
               </div>
               <div class="flex items-start mt-2">
                 <li class="text-xl mx-2  inline">II. </li>
-                <p class=" inline">
+                <p class="text-xl inline">
                   Expanding to as many mainnet chains to broaden our reach, with
                   the goal of expanding to numerous chains (potentially dozens
                   or even hundreds) by bridging coins and deploying various
@@ -67,14 +67,14 @@ export default function Roadmap(){
               </div>
               <div class="flex items-start mt-2">
                 <li class="text-xl mx-2  inline">III. </li>
-                <p class=" inline">
+                <p class="text-xl inline">
                   First gameFi feature: Trading game as a gas-efficient
                   improvement to rebasing.
                 </p>
               </div>
               <div class="flex items-start mt-2">
                 <li class="text-xl mx-2  inline">IV. </li>
-                <p class=" inline">
+                <p class="text-xl inline">
                   Second gameFi feature: Dusting, a system to incentivize token
                   holders to engage in on-chain advertising. The system is going
                   to strategically send tokens to individuals who have yet to
@@ -84,7 +84,7 @@ export default function Roadmap(){
               </div>
               <div class="flex items-start mt-2">
                 <li class="text-xl mx-2  inline">V. </li>
-                <p class=" inline">
+                <p class="text-xl inline">
                   Last objective for Stage 1 is to finely tune the efficiency of
                   ERC20 standards and potentially integrate some elements from
                   GameFi concepts to it. This process aims to minimize gas
@@ -98,7 +98,8 @@ export default function Roadmap(){
             </ul>
           </div>
         </div>
-        <p class="font-[Poppins] text-lg mt-2 text-center">
+
+        <p class="font-[Poppins] mt-7 text-lg">
          more details in the{" "}
           <a
             class="text-indigo-600"
@@ -110,6 +111,8 @@ export default function Roadmap(){
           <br />
           <br />
         </p>
+
+        
       </div>
       </div>
     )

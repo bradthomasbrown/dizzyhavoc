@@ -2,7 +2,8 @@ import Tokendata from "../islands/tokendata.tsx";
 import AvailableOn from "../components/AvailableOn.tsx";
 export default function Buy() {
   return (
-    <div class="flex xl:flex-row flex-col shadow-lg  mx-auto lg:h-[50rem] h-[55rem] w-full lg:w-[50%] rounded-xl bg-blur">
+    <>
+    <div class="flex xl:flex-row flex-col shadow-lg  mx-auto  min-w-full xl:min-w-[50rem] max-w-[70rem] xl:max-w-[70rem] rounded-xl bg-blur2">
       <div class="w-full">
         <h1 className="flex col-start-1 text-[1.4rem] underline mt-3 text-center font-[Poppins] flex-col">
           How to buy/ DEXes
@@ -133,6 +134,16 @@ export default function Buy() {
           <AvailableOn />
         </div>
       </div>
+
     </div>
+    <div className="absolute z-[-10]">
+          <img
+            className="bottom-2 left-4 blur-lg w-[25%]"
+            src="/dzhv.png"
+            alt="dizzyhavoc eye"
+          >
+          </img>
+        </div>
+    </>
   );
 }
