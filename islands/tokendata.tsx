@@ -140,17 +140,6 @@ export default function TokenData() {
     try {
       const response = await fetch(
         "https://corsproxy.io/?https%3A%2F%2Fapi.poloniex.com%2Fmarkets%2FDZHV_USDT%2Fprice",
-        {
-          mode: "cors",
-          headers: {
-            "Access-Control-Allow-Origin": "*",
-            "Host" : "localhost:8000",
-            "User-Agent" : "null",
-            "Accept" : "*/*",
-            "Accept-Encoding" : "gzip, deflate, br",
-            "Connection" : "keep-alive",
-          },
-        }
       ).then((response) => response.json());
       poloniexprice.value = response.price
     } catch (error) {
