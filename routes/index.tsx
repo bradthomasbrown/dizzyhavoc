@@ -3,49 +3,102 @@ import Roadmap from "../components/Roadmap.tsx";
 import Buy from "../components/Buy.tsx";
 
 export default function Home() {
-
   return (
     <>
-       
-      <div class="w-full h-full flex justify-center">
-        <div class="flex w-full flex-col items-center mb-[5rem]">
-          <h1 class="lg:text-[8rem] text-[3rem] mt-[5rem] underline font-Poppins text-[#2f2f2f]">
-            DizzyHavoc
-          </h1>
-          <p class="font-medium italic text-[1.3rem] text-center text-[#000000] shadow-lg mt-[0.5rem] bg-blur2 rounded-xl px-2 mb-[1rem]">
-            Upgradeable, machine-coded, multi-chain, DeFi/GameFi ecosystem. New
-            cross-chain web3 library.
-          </p>
-          <div class="flex flex-col mx-auto justify-center gap-3 px-3">
-            <Info />
-            <Roadmap />
+
+      <div class="sm:min-h-[4rem] min-h-[6.5rem] bg-[#1c1c1c] dark:sm:bg-transparent w-full sm:w-[40rem] justify-center mx-auto items-center px-4 flex  border-e-transparent border-s-transparent border-t-transparent dark:border-e-transparent dark:border-s-transparent dark:border-t-transparent dark:border-[#5e5e5e4d] border-[#dbdbdb] border">
+        <div class="justify-start w-full flex">
+          <div class="lg:text-[1.8rem] my-auto justify-center text-[1.5rem] font-[Poppins] font-medium  z-10 font-Poppins dark:text-[#d2d2d2]  text-[#282828]">
+            Dizzy Havoc
           </div>
         </div>
-        <div class="absolute top-4 left-4">
-          <img
-            className="shadow-lg w-[10%]"
-            src="/dzhv-art.jpg"
-            alt="dizzyhavoc eye"
+        <div class="justify-end w-full flex">
+          <div>
+            <div
+              className="text-2xl unselectable text-[#3d3d3d] dark:text-[#e0cdad] text-center w-[180px] shadow-lg font-[Poppins] rounded-lg hover:scale-[105%] border border-[#e9e9e9] dark:border-[#ffffff1f] cursor-pointer dark:bg-[#191919] bg-[#f1f1f1]"
+            >
+             {"/{menu}"}
+            </div>
+          </div>
+        </div>
+     
+      </div>
+      <div class="w-full xl:mt-[25rem] mt-[6rem] h-full flex justify-center">
+        <div class="flex w-full flex-col items-center">
+   
+          {/* <div class="h-full absolute top-[1rem] lg:top-[55rem] min-w-full">
+          <div
+            className="w-full z-[10] shadow-xl"
           >
-          </img>
-          <a
-            class="bottom-0 text-indigo-900"
+            <p class="font-medium font-[Poppins] z-10 w-full tracking-tighter -top-5 italic absolute text-[1.7rem] sm:text-[2rem] text-center dark:text-[#d2d2d2] text-[#3d3d3d] px-2">
+              Upgradeable, machine-coded*, multi-chain, DeFi/GameFi ecosystem.
+            </p>
+          </div>
+          <div
+            className="trapeze invisible  sm:visible sm:max-w-[63rem] max-w-[70%] mx-auto z-[-10] shadow-lg"
+            id="trapeze"
+          ></div>
+          </div> */}
+           <p class="font-medium mt-[0rem] font-[Poppins] z-10 tracking-tighter italic absolute text-[1.6rem] sm:text-[2.5rem] text-center dark:text-[#d2d2d2] text-[#3d3d3d]">
+              Upgradeable, machine-coded*, multi-chain, DeFi/GameFi ecosystem.
+            </p>
+            <div class="cursor-pointer hover:scale-[105%] font-medium sm:mt-[5rem] invisible sm:visible mt-[8rem] font-[Poppins] z-10 tracking-tighter italic absolute text-[1.4rem] sm:text-[2rem] text-center dark:text-[#d2d2d2] text-[#3d3d3d]">Learn more</div>
+          <div class="flex flex-col mx-auto justify-center gap-3 px-3">
+         
+          <div class="sm:mt-[50%] mt-[12rem] Infos">
+            <Info />
+            </div>
+            <div class="sm:mt-[8rem] mt-[2rem]">
+            <Roadmap />
+            </div>
+          </div>
+        </div>
+        <div class="absolute lg:top-4 top-[6.8rem] left-1 sm:left-4">
+        <a
+            class="bottom-0"
             target="_blank"
             href="https://linktr.ee/dizzyhavoc"
           >
-            socials{" (linktree)"}
-          </a>
+        <div
+              className="text-lg text-[#3d3d3d] dark:text-[#d2d2d2] dark:bg-[#191919] text-center w-[100px] shadow-md dark:shadow-[#bfbfbf04] shadow-[#e9e9e9] font-[Poppins] rounded-lg hover:scale-[105%] dark:border-[#d2d2d228] border border-[#e9e9e9] cursor-pointer bg-[#f1f1f1]"
+            >
+            🌐Socials
+            </div>
+            </a>
+        </div>
+        <div class="absolute lg:top-4 top-[6.5rem] right-1 sm:right-4">
+        <a
+
+          >
+        <img src="/token.png"
+              className="lg:size-[55px] lg:visible invisible  hover:scale-[105%] cursor-pointer"
+            >
+           
+            </img>
+            </a>
         </div>
         <img
-          className="absolute top-0 z-[-10] right-0 w-[45%]"
+          className="absolute hidden top-0 z-[-10] right-0 w-[25%]"
           src="/dzhv.png"
           alt="dizzyhavoc eye"
-        >
-        </img>
+        ></img>
       </div>
-      <div class="flex flex-col gap-3 px-3 xl:flex-row">
+      <div class="flex mt-[10rem] flex-col gap-3 px-3 xl:flex-row">
         <Buy />
       </div>
+      <div class="absolute h-screen w-[100%] overflow-hidden -z-10 top-0">
+    <div id="stars-container">
+			<div id='stars'></div>
+			<div id='stars2'></div>
+			<div id='stars3'></div>
+</div>
+<section2>
+  <div class='air air1'></div>
+  <div class='air air2'></div>
+  <div class='air air3'></div>
+  <div class='air air4'></div>
+</section2>
+    </div>
     </>
   );
 }

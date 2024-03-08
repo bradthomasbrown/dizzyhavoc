@@ -112,16 +112,20 @@ export default function TokenData() {
   const fetchAvax = async () => { // req just for avax, if success req the rest (order needed for averageprice and largestdelta)
     try {
       const response = await fetch(
-        "https://api.diadata.org/v1/assetQuotation/Avalanche/0x3419875B4D3Bca7F3FddA2dB7a476A79fD31B4fE",
+        "https://api.dexscreener.com/latest/dex/tokens/0x3419875B4D3Bca7F3FddA2dB7a476A79fD31B4fE",
       );
       const data = await response.json();
       if (data) {
-        token_avax.value = (data.Price);
-        avaxprice = data.Price;
-        localStorage.setItem(
-          "price_avax",
-          (data.Price).toFixed(8),
-        )
+        for (let i = 0; i < data.pairs.length; i++) {
+          if (data.pairs[i].pairCreatedAt == "1708990072000") { // filtering via pair epoch creation time 
+            token_avax.value = Number(data.pairs[i].priceUsd);
+            avaxprice = Number(data.pairs[i].priceUsd);
+            localStorage.setItem(
+              "price_avax",
+              (Number(data.pairs[i].priceUsd)).toFixed(8),
+            )
+          }
+        }
       }
     } catch (error) {
       console.log(error)
@@ -256,25 +260,25 @@ export default function TokenData() {
 
   return (
 
-    <div class="w-full shadow-lg px-0  2xl:px-3 h-[30%] justify-center  items-center mt-[2rem] gap-0 xl:gap-3 bg-blur flex flex-col">
+    <div class="w-full shadow-lg px-0  2xl:px-3 h-[30%] justify-center  items-center rounded-lg gap-0 xl:gap-3 bg-blur3 flex flex-col">
             <div class="flex flex-row ">
         <div class="flex-col flex ">
           <section class="rounded flex flex-col w-full py-3 my-1 gap-3 ml-3">
-            <h1 class="font-[Poppins] text-[0.8rem] sm:text-[1.2rem] inline justify-center tracking-tight items-center">
-              Average Price : ${avrgprice.value.toFixed(5)}
+            <h1 class="font-[Poppins] dark:text-[#d2d2d2] text-[0.8rem] sm:text-[1.2rem] inline justify-center tracking-tight items-center">
+              Avrg. Price : ${avrgprice.value.toFixed(5)}
             </h1>
-            <h2 class="font-[Poppins] text-[0.8rem] sm:text-[1.2rem] inline justify-center tracking-tight items-center">
-              Market Cap : ${formatNumber(avrgprice.value * totalsupply.value)}
+            <h2 class="font-[Poppins] dark:text-[#d2d2d2] text-[0.8rem] sm:text-[1.2rem] inline justify-center tracking-tight items-center">
+              Mk. Cap : ${formatNumber(avrgprice.value * totalsupply.value)}
             </h2>
           </section>
         </div>
         <div class="flex-row flex">
           <section class="rounded flex flex-col mx-auto w-full py-3 my-1 gap-3 ml-3">
-            <h2 class="font-[Poppins] text-[0.8rem] sm:text-[1.2rem] inline justify-center tracking-tight items-center">
-              Max Δ : {delta}% {` ↑ ${high} | ↓ ${low}`}
+            <h2 class="font-[Poppins] dark:text-[#d2d2d2] text-[0.8rem] sm:text-[1.2rem] inline justify-center tracking-tight items-center">
+              Max Δ : {delta}%
             </h2>
-            <h1 class="font-[Poppins] text-[0.8rem] sm:text-[1.2rem] inline justify-center  tracking-tight items-center">
-              ATH : ${ath.value.toFixed(5)} {` (${athdate.value})`}
+            <h1 class="font-[Poppins] dark:text-[#d2d2d2] text-[0.8rem] sm:text-[1.2rem] inline justify-center  tracking-tight items-center">
+              ATH : ${ath.value.toFixed(5)}
             </h1>
           </section>
         </div>
@@ -283,17 +287,17 @@ export default function TokenData() {
         <section class="rounded justify-center flex flex-wrap gap-3">
           
         <h1 style={{ order: poloorder != null ? -poloorder : 0 }}  >
-          <a class={`text-[1.1rem] font-[Poppins] flex`} target="_blank"  href="https://poloniex.com/trade/DZHV_USDT/?type=spot">
+          <a class={`text-[1.1rem] dark:text-[#d2d2d2] font-[Poppins] flex`} target="_blank"  href="https://poloniex.com/trade/DZHV_USDT/?type=spot">
         <img
             src="/token_polo.png"
             class="size-6 flex flex-nowrap sm:size-8 hover:scale-[105%] mr-2"
-            title="$DZHV on Poloniex"
+            title="$DZHV on Poloniex exchange"
             alt="poloniex"
         />{" "}
         ${poloniexprice != null ? poloniexprice.value : ''}</a>
         </h1>
     <a target="_blank" style={{ order: avaxorder != null ? -avaxorder : 0 }} href="https://kyberswap.com/swap/avalanche?outputCurrency=0x3419875B4D3Bca7F3FddA2dB7a476A79fD31B4fE&inputCurrency=ETH">
-      <h1 class={`text-[1.1rem] font-[Poppins] flex`}>
+      <h1 class={`text-[1.1rem] dark:text-[#d2d2d2] font-[Poppins] flex`}>
         <img
             src="/token_avax.png"
             class="size-6 sm:size-8 hover:scale-[105%] mr-2"
@@ -303,7 +307,7 @@ export default function TokenData() {
         ${token_avax != null ? token_avax.value.toFixed(5) : ''}
     </h1></a>
     <a target="_blank" style={{ order: ethorder != null ? -ethorder : 0 }} href="https://app.uniswap.org/swap?chain=mainnet&inputCurrency=ETH&outputCurrency=0x3419875b4d3bca7f3fdda2db7a476a79fd31b4fe">
-    <h1 class={`text-[1.1rem] font-[Poppins] flex`}>
+    <h1 class={`text-[1.1rem] dark:text-[#d2d2d2] font-[Poppins] flex`}>
         <img
             src="/token_eth.png"
             class="size-6 sm:size-8 hover:scale-[105%] mr-2"
@@ -314,7 +318,7 @@ export default function TokenData() {
     </h1>
     </a>
     <a target="_blank" style={{ order: arborder != null ? -arborder : 0 }} href="https://app.uniswap.org/swap?chain=arbitrum&inputCurrency=ETH&outputCurrency=0x3419875b4d3bca7f3fdda2db7a476a79fd31b4fe">
-    <h1 class={`text-[1.1rem] font-[Poppins] flex`}>
+    <h1 class={`text-[1.1rem] dark:text-[#d2d2d2] font-[Poppins] flex`}>
         <img
             src="/token_arb.png"
             class="size-6 sm:size-8 hover:scale-[105%] mr-2"
@@ -325,7 +329,7 @@ export default function TokenData() {
     </h1>
     </a> 
     <a target="_blank" style={{ order: bscorder != null ? -bscorder : 0 }} href="https://pancakeswap.finance/swap?chain=bnb&inputCurrency=ETH&outputCurrency=0x3419875b4d3bca7f3fdda2db7a476a79fd31b4fe">
-    <h1 class={`text-[1.1rem] font-[Poppins] flex`}>
+    <h1 class={`text-[1.1rem] dark:text-[#d2d2d2] font-[Poppins] flex`}>
         <img
             src="/token_bsc.png"
             class="size-6 sm:size-8 hover:scale-[105%] mr-2"
@@ -336,7 +340,7 @@ export default function TokenData() {
     </h1>
 </a>
 <a target="_blank" style={{ order: baseorder != null ? -baseorder : 0 }} href="https://app.uniswap.org/swap?chain=base&inputCurrency=ETH&outputCurrency=0x3419875b4d3bca7f3fdda2db7a476a79fd31b4fe">
-    <h1 class={`text-[1.1rem] font-[Poppins] flex`}>
+    <h1 class={`text-[1.1rem] dark:text-[#d2d2d2] font-[Poppins] flex`}>
         <img
             src="/token_base.png"
             class="size-6 sm:size-8 hover:scale-[105%] mr-2"
@@ -348,7 +352,7 @@ export default function TokenData() {
     </a>
 </section>
       </div>
-      <div className="mt-5 text-[13px]">update in: {count}</div>
+      <div className="mb-2 dark:text-[#d2d2d2] text-[10px] sm:text-[13px]">update in: {count}</div>
     </div>
      
 
