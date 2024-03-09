@@ -7,13 +7,13 @@ export default function Home() {
 
   return (
     <>
-      <div class="absolute h-[100%] w-full overflow-hidden -z-10 top-0">
-    <div id="stars-container">
+      <div class="absolute h-[100%] border-[#595959] border-2 border-t-transparent border-e-transparent border-s-transparent w-full overflow-hidden -z-10 top-0">
+    <div class="opacity-25 sm:opacity-100" id="stars-container">
 			<div id='stars'></div>
 			<div id='stars2'></div>
 			<div id='stars3'></div>
 </div>
-<section2 class="border-[#595959a6] border-2 border-t-transparent border-e-transparent border-s-transparent">
+<section2 class="">
   <div class='air air1'></div>
   <div class='air air2'></div>
   <div class='air air3'></div>

@@ -8,38 +8,38 @@ export default function Roadmap() {
       <div class="flex flex-col w-full mx-auto  min-w-full xl:min-w-[50rem] max-w-[70rem] xl:max-w-[70rem] rounded-xl shadow-lg bg-blur2">
         <div class="flex mt-5 flex-col w-full items-center sm:p-4 p-1 ml-0 ">
           <div class="flex flex-row justify-start  top-0">
-            <ol class="flex items-center scale-125  gasm:p-4 p-1 text-center  w-full text-xs  text-gray-900 font-medium xl:text-base">
+            <ol class="flex items-center scale-125  sm:p-4 p-1 text-center  w-full text-xs  text-gray-900 font-medium xl:text-base">
               <li class="flex w-full relative text-indigo-600 dark:text-[#9f7d44]  after:content-['']  after:w-full after:h-0.5  after:bg-indigo-100 after:inline-block after:absolute lg:after:top-5 after:top-3 after:left-4">
                 <div class="block whitespace-nowrap z-10">
-                  <span class="w-6 h-6 bg-gray-50 border-4 dark:border-[#cf983f] border-indigo-800 rounded-full flex  justify-center items-center mx-auto mb-3 text-[6px] text-sm text-indigo-800 lg:w-8 lg:h-8">
+                  <span class="w-6 h-6 bg-gray-50 border-4 dark:border-[#cf983f] border-indigo-800 rounded-full flex  justify-center items-center mx-2 mb-3 text-[6px] text-sm text-indigo-800 lg:w-8 lg:h-8">
                     I
                   </span>
                 </div>
               </li>
               <li class="flex w-full relative text-gray-900  after:content-['']  after:w-full after:h-0.5  after:bg-gray-200 after:inline-block after:absolute lg:after:top-5 after:top-3 after:left-4">
                 <div class="block whitespace-nowrap z-10">
-                  <span class="w-6 h-6 bg-gray-50 border-2 border-gray-200 rounded-full flex justify-center items-center mx-auto mb-3 text-sm text-gray-900 lg:w-8 lg:h-8">
+                  <span class="w-6 h-6 bg-gray-50 border-2 border-gray-200 rounded-full flex justify-center items-center mx-2 mb-3 text-sm text-gray-900 lg:w-8 lg:h-8">
                     II
                   </span>
                 </div>
               </li>
               <li class="flex w-full relative text-gray-900  after:content-['']  after:w-full after:h-0.5  after:bg-gray-200 after:inline-block after:absolute lg:after:top-5  after:top-3 after:left-4">
                 <div class="block whitespace-nowrap z-10">
-                  <span class="w-6 h-6 bg-gray-50 border-2 border-gray-200 rounded-full flex justify-center items-center mx-auto mb-3 text-sm  lg:w-8 lg:h-8">
+                  <span class="w-6 h-6 bg-gray-50 border-2 border-gray-200 rounded-full flex justify-center items-center mx-2 mb-3 text-sm  lg:w-8 lg:h-8">
                     III
                   </span>
                 </div>
               </li>
               <li class="flex w-full relative text-gray-900  after:content-['']  after:w-full after:h-0.5  after:bg-gray-200 after:inline-block after:absolute lg:after:top-5 after:top-3 after:left-4">
                 <div class="block whitespace-nowrap z-10">
-                  <span class="w-6 h-6 bg-gray-50 border-2 border-gray-200 rounded-full flex justify-center items-center mx-auto mb-3 text-sm  lg:w-8 lg:h-8">
+                  <span class="w-6 h-6 bg-gray-50 border-2 border-gray-200 rounded-full flex justify-center items-center mx-2 mb-3 text-sm  lg:w-8 lg:h-8">
                     IV
                   </span>
                 </div>
               </li>
               <li class="flex w-full relative text-gray-900  ">
                 <div class="block whitespace-nowrap z-10">
-                  <span class="w-6 h-6 bg-gray-50 border-2 border-gray-200 rounded-full flex justify-center items-center mx-auto mb-3 text-sm  lg:w-8 lg:h-8">
+                  <span class="w-6 h-6 bg-gray-50 border-2 border-gray-200 rounded-full flex justify-center items-center mx-2 mb-3 text-sm  lg:w-8 lg:h-8">
                     V
                   </span>
                 </div>
