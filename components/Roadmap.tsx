@@ -48,7 +48,7 @@ export default function Roadmap() {
           </div>
           <div class="flex p-2 flex-col w-full">
             <div class="xl:flex-row gap-2 flex-col flex p-2">
-              <div class="flex flex-row  dark:text-[#d2d2d2] text-[#3d3d3d] border dark:border-[#e0cdad] border-indigo-800 rounded-xl shadow-lg dark:bg-blur4 bg-blur3">
+              <div class="flex flex-row  dark:text-[#d2d2d2] text-[#3d3d3d] border-2 dark:border-[#e0cdad] border-indigo-800 rounded-xl shadow-lg dark:bg-blur4 bg-blur3">
                 <div class="flex sm:p-4 p-3 flex-col">
                   <ul>
                     <h1 class="text-3xl font-[Poppins]">I.</h1>

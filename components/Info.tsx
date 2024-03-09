@@ -16,7 +16,7 @@ export default function Info() {
     "● The primary focus at the moment is on constructing the cross chain bridge.";
   const content6 =
     "● Then, expanding to as many mainnet chains as possible.";
-  const content7 = "● Multi Chain support.";
+  const content7 = "● With multi-Chain support.";
   const content8 = "● Multi-Node Support.";
   const content9 = "● Smarter Network Resource Usage: Optimization of network resource utilization, minimizing congestion, and maximizing overall performance for efficient blockchain interactions. ";
   const content10 = "● Better Batching Support: Streamlining transaction processing by grouping multiple transactions into batches, leading to reduced overhead and enhanced gas efficiency.";
@@ -58,7 +58,7 @@ export default function Info() {
       <div class="xl:flex-row gap-9 flex-col flex">
       <div class="flex flex-row mt-[25px] p-6 min-w-full xl:min-w-[35rem] max-w-[40rem] dark:text-[#d2d2d2] text-[#3d3d3d] xl:max-w-[40rem] mx-auto mb-[1rem] h-full rounded-xl shadow-lg dark:bg-blur4 bg-blur2">
        <div class="flex flex-col">
-       <h1 class="text-3xl font-[Poppins]">What would be its impact ?</h1>
+       <h1 class="text-3xl font-[Poppins]">What would be its impact?</h1>
         <ul class="mt-2">
           <li class="text-xl">{content2}</li>
           <li class="text-xl">{content3}</li>
@@ -69,7 +69,7 @@ export default function Info() {
       </div>
       <div class="flex flex-row mt-[25px] p-6 min-w-full xl:min-w-[35rem] xl:pb-[6.7rem] dark:text-[#d2d2d2] text-[#3d3d3d] pb-4  max-w-[40rem] xl:max-w-[40rem] mx-auto mb-[1rem] h-[100%] rounded-xl shadow-lg dark:bg-blur4 bg-blur2">
        <div class="flex flex-col">
-       <h1 class="text-3xl font-[Poppins]">What to expect next ?</h1>
+       <h1 class="text-3xl font-[Poppins]">What to expect next?</h1>
         <p class="mt-2 text-xl">
           <ul>
             <li class="text-xl">{content5}</li>
