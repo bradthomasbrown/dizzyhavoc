@@ -52,7 +52,8 @@ export default function Home() {
            <p class="font-medium unselectable mt-[0rem] font-[Poppins] z-10 tracking-tighter italic absolute text-[1.6rem] sm:text-[2.5rem] text-center dark:text-[#d2d2d2] text-[#3d3d3d]">
               Upgradeable, machine-coded*, multi-chain, DeFi/GameFi ecosystem.
             </p>
-            <div class="cursor-pointer hover:scale-[105%] font-medium sm:mt-[8rem] invisible xl:visible mt-[8rem] font-[Poppins] z-10 tracking-tighter italic absolute text-[1.4rem] sm:text-[2rem] text-center dark:text-[#d2d2d2] text-[#3d3d3d]">Learn more</div>
+            <a target="_blank" class="font-medium sm:mt-[8rem] invisible xl:visible mt-[8rem] font-[Poppins] z-10 tracking-tighter italic absolute text-[1.4rem] sm:text-[2rem] text-center dark:text-[#d2d2d2] text-[#3d3d3d]" href="https://docs.google.com/document/d/1HK-X5rmBqlDGgu5w3GbfYTaGQ7UwjgWm3WPd4_ei5BE/edit"> <div class="cursor-pointer hover:scale-[105%]">Learn more</div> </a>
+           
           <div class="flex flex-col mx-auto justify-center gap-3 px-3">
          
           <div class="sm:mt-[50%] mt-[12rem] Info">
