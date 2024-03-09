@@ -1,14 +1,14 @@
 export default function Roadmap() {
   return (
     <div class="w-full">
-      <p class="font-medium italic bg-blur2 sm:max-w-[40%] max-w-full  mb-[1rem] mx-auto text-[2.5rem] text-center text-[#3d3d3d] dark:text-[#d2d2d2] underline font-[Poppins] shadow-lg mt-[0.5rem] py-3 rounded-xl px-6">
+      <p class="font-medium unselectable italic bg-blur2 lg:max-w-[40%] max-w-full  mb-[1rem] mx-auto text-[2.5rem] text-center text-[#3d3d3d] dark:text-[#d2d2d2] underline font-[Poppins] shadow-lg mt-[0.5rem] py-3 rounded-xl px-6">
         Stage 1 Roadmap.
       </p>
 
       <div class="flex flex-col w-full mx-auto  min-w-full xl:min-w-[50rem] max-w-[70rem] xl:max-w-[70rem] rounded-xl shadow-lg bg-blur2">
-        <div class="flex mt-5 flex-col w-full items-center p-4 ml-0 ">
+        <div class="flex mt-5 flex-col w-full items-center sm:p-4 p-1 ml-0 ">
           <div class="flex flex-row justify-start  top-0">
-            <ol class="flex items-center scale-125  gap-4 text-center  w-full text-xs  text-gray-900 font-medium xl:text-base">
+            <ol class="flex items-center scale-125  gasm:p-4 p-1 text-center  w-full text-xs  text-gray-900 font-medium xl:text-base">
               <li class="flex w-full relative text-indigo-600 dark:text-[#9f7d44]  after:content-['']  after:w-full after:h-0.5  after:bg-indigo-100 after:inline-block after:absolute lg:after:top-5 after:top-3 after:left-4">
                 <div class="block whitespace-nowrap z-10">
                   <span class="w-6 h-6 bg-gray-50 border-4 dark:border-[#cf983f] border-indigo-800 rounded-full flex  justify-center items-center mx-auto mb-3 text-[6px] text-sm text-indigo-800 lg:w-8 lg:h-8">
@@ -47,9 +47,9 @@ export default function Roadmap() {
             </ol>
           </div>
           <div class="flex p-2 flex-col w-full">
-            <div class="xl:flex-row gap-2 flex-col flex p-6">
+            <div class="xl:flex-row gap-2 flex-col flex p-2">
               <div class="flex flex-row  dark:text-[#d2d2d2] text-[#3d3d3d] border dark:border-[#e0cdad] border-indigo-800 rounded-xl shadow-lg dark:bg-blur4 bg-blur3">
-                <div class="flex p-4 flex-col">
+                <div class="flex sm:p-4 p-3 flex-col">
                   <ul>
                     <h1 class="text-3xl font-[Poppins]">I.</h1>
                     <li class="text-xl">
@@ -60,7 +60,7 @@ export default function Roadmap() {
                 </div>
               </div>
               <div class="flex flex-row  dark:text-[#d2d2d2] text-[#3d3d3d] rounded-xl shadow-lg bg-blur3">
-                <div class="flex p-4 flex-col">
+                <div class="flex sm:p-4 p-3 flex-col">
                   <h1 class="text-3xl font-[Poppins]">II.</h1>
                   <p class="mt-2 text-xl">
                     <ul>
@@ -76,7 +76,7 @@ export default function Roadmap() {
               </div>
               <div class="xl:flex-row gap-2 flex-col flex">
                 <div class="flex flex-row dark:text-[#d2d2d2] text-[#3d3d3d] rounded-xl shadow-lg dark:bg-blur4 bg-blur3">
-                  <div class="flex p-4 flex-col">
+                  <div class="flex sm:p-4 p-3 flex-col">
                     <ul>
                       <h1 class="text-3xl font-[Poppins]">III.</h1>
                       <li class="text-xl">
@@ -88,9 +88,9 @@ export default function Roadmap() {
                 </div>
               </div>
             </div>
-            <div class="xl:flex-row gap-2 flex-col flex p-6">
+            <div class="xl:flex-row gap-2 flex-col flex p-2">
               <div class="flex flex-row dark:text-[#d2d2d2] text-[#3d3d3d] rounded-xl shadow-lg dark:bg-blur4 bg-blur3">
-                <div class="flex p-4 flex-col">
+                <div class="flex sm:p-4 p-3 flex-col">
                   <ul>
                     <h1 class="text-3xl font-[Poppins]">IV.</h1>
                     <li class="text-xl">
@@ -105,7 +105,7 @@ export default function Roadmap() {
                 </div>
               </div>
               <div class="flex flex-row dark:text-[#d2d2d2] text-[#3d3d3d] rounded-xl shadow-lg bg-blur3">
-                <div class="flex p-4 flex-col">
+                <div class="flex sm:p-4 p-3 flex-col">
                   <h1 class="text-3xl font-[Poppins]">V.</h1>
                   <p class="mt-2 text-xl">
                     <ul>
@@ -128,7 +128,7 @@ export default function Roadmap() {
             </div>
             {/* 
           </div>
-          <div class="flex flex-row w-full bg-blur3  p-4 mb-4">
+          <div class="flex flex-row w-full bg-blur3  sm:p-4 p-1 mb-4">
           <div class="flex flex-col">
                 <li class="text-xl dark:text-[#d2d2d2]  mx-2 inline">III. </li>
                 <p class="text-xl dark:text-[#d2d2d2]  inline">
@@ -137,7 +137,7 @@ export default function Roadmap() {
                 </p>
               </div>
           </div>
-          <div class="flex flex-row w-full bg-blur3  p-4 mb-4">
+          <div class="flex flex-row w-full bg-blur3  sm:p-4 p-1 mb-4">
           <div class="flex flex-col">
                 <li class="text-xl dark:text-[#d2d2d2]  mx-2 inline">IV. </li>
                 <p class="text-xl dark:text-[#d2d2d2]  inline">
@@ -149,7 +149,7 @@ export default function Roadmap() {
                 </p>
               </div>
           </div>
-          <div class="flex flex-row w-full bg-blur3  p-4 mb-4">
+          <div class="flex flex-row w-full bg-blur3  sm:p-4 p-1 mb-4">
           <div class="flex flex-col">
                 <li class="text-xl dark:text-[#d2d2d2]  mx-2 inline">V. </li>
                 <p class="text-xl dark:text-[#d2d2d2]  inline">

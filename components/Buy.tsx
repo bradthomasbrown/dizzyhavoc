@@ -1,10 +1,14 @@
 import Tokendata from "../islands/tokendata.tsx";
 import AvailableOn from "../components/AvailableOn.tsx";
 export default function Buy() {
+  const dropdownitems = []
   return (
     <>
-    <div class="w-full">
-      <p class="font-medium italic bg-blur2 sm:max-w-[30%] max-w-full  mb-[1rem] mx-auto text-[2.5rem] text-center text-[#3d3d3d] dark:text-[#d2d2d2] underline font-[Poppins] shadow-lg mt-[0.5rem] rounded-xl px-6">How to buy/ DEXs.</p>
+   
+   <div class="w-full">
+      <p class="font-medium unselectable italic bg-blur2 lg:max-w-[15%] max-w-full  mb-[1rem] mx-auto text-[2.5rem] text-center text-[#3d3d3d] dark:text-[#d2d2d2] underline font-[Poppins] shadow-lg mt-[0.5rem] py-3 rounded-xl px-6">
+        Buy/ DEXs.
+      </p>
     <div class="flex xl:flex-row flex-col shadow-lg  mx-auto min-w-full xl:min-w-[50rem] max-w-[70rem] xl:max-w-[70rem] rounded-xl bg-blur2">
       <div class="w-full p-4">
         <Tokendata />

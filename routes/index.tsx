@@ -1,29 +1,39 @@
 import Info from "../components/Info.tsx";
 import Roadmap from "../components/Roadmap.tsx";
 import Buy from "../components/Buy.tsx";
+import MenuButton from "../islands/menuButton.tsx";
 
 export default function Home() {
+
   return (
     <>
-
-      <div class="sm:min-h-[4rem] min-h-[6.5rem] w-full sm:w-[40rem] justify-center mx-auto items-center px-4 flex  border-e-transparent border-s-transparent border-t-transparent dark:border-e-transparent dark:border-s-transparent dark:border-t-transparent dark:border-[#5e5e5e4d] border-[#dbdbdb] border">
+      <div class="absolute h-[100%] w-full overflow-hidden -z-10 top-0">
+    <div id="stars-container">
+			<div id='stars'></div>
+			<div id='stars2'></div>
+			<div id='stars3'></div>
+</div>
+<section2 class="border-[#595959a6] border-2 border-t-transparent border-e-transparent border-s-transparent">
+  <div class='air air1'></div>
+  <div class='air air2'></div>
+  <div class='air air3'></div>
+  <div class='air air4'></div>
+</section2>
+    </div>
+      <div class="sm:min-h-[4rem] min-h-[6.5rem] w-full sm:bg-transparent dark:sm:bg-transparent dark:bg-[#282828bc]  bg-[#dbdbdbaa] sm:w-[40rem] justify-center mx-auto items-center px-4 flex  border-e-transparent border-s-transparent border-t-transparent dark:border-e-transparent dark:border-s-transparent dark:border-t-transparent dark:border-[#5e5e5e4d] border-[#dbdbdb] border">
         <div class="justify-start w-full flex">
-          <div class="lg:text-[1.8rem] my-auto justify-center text-[1.5rem] font-[Poppins] font-medium  z-10 font-Poppins dark:text-[#d2d2d2]  text-[#282828]">
+          <div class="lg:text-[1.8rem] unselectable my-auto justify-center text-[1.5rem] font-[Poppins] font-medium  z-10 font-Poppins dark:text-[#d2d2d2]  text-[#282828]">
             Dizzy Havoc
           </div>
         </div>
         <div class="justify-end w-full flex">
           <div>
-            <div
-              className="text-2xl unselectable text-[#3d3d3d] dark:text-[#e0cdad] text-center w-[180px] shadow-lg font-[Poppins] rounded-lg hover:scale-[105%] border border-[#e9e9e9] dark:border-[#ffffff1f] cursor-pointer dark:bg-[#191919] bg-[#f1f1f1]"
-            >
-             {"/{menu}"}
-            </div>
+          <MenuButton/>
           </div>
         </div>
      
       </div>
-      <div class="w-full xl:mt-[25rem] mt-[6rem] h-full flex justify-center">
+      <div class="w-full xl:mt-[25rem] mt-[6rem] h-full flex justify-center divcontainer">
         <div class="flex w-full flex-col items-center">
    
           {/* <div class="h-full absolute top-[1rem] lg:top-[55rem] min-w-full">
@@ -39,16 +49,16 @@ export default function Home() {
             id="trapeze"
           ></div>
           </div> */}
-           <p class="font-medium mt-[0rem] font-[Poppins] z-10 tracking-tighter italic absolute text-[1.6rem] sm:text-[2.5rem] text-center dark:text-[#d2d2d2] text-[#3d3d3d]">
+           <p class="font-medium unselectable mt-[0rem] font-[Poppins] z-10 tracking-tighter italic absolute text-[1.6rem] sm:text-[2.5rem] text-center dark:text-[#d2d2d2] text-[#3d3d3d]">
               Upgradeable, machine-coded*, multi-chain, DeFi/GameFi ecosystem.
             </p>
-            <div class="cursor-pointer hover:scale-[105%] font-medium sm:mt-[5rem] invisible sm:visible mt-[8rem] font-[Poppins] z-10 tracking-tighter italic absolute text-[1.4rem] sm:text-[2rem] text-center dark:text-[#d2d2d2] text-[#3d3d3d]">Learn more</div>
+            <div class="cursor-pointer hover:scale-[105%] font-medium sm:mt-[8rem] invisible xl:visible mt-[8rem] font-[Poppins] z-10 tracking-tighter italic absolute text-[1.4rem] sm:text-[2rem] text-center dark:text-[#d2d2d2] text-[#3d3d3d]">Learn more</div>
           <div class="flex flex-col mx-auto justify-center gap-3 px-3">
          
-          <div class="sm:mt-[50%] mt-[12rem] Infos">
+          <div class="sm:mt-[50%] mt-[12rem] Info">
             <Info />
             </div>
-            <div class="sm:mt-[8rem] mt-[2rem]">
+            <div class="sm:mt-[8rem] mt-[2rem] Roadmap">
             <Roadmap />
             </div>
           </div>
@@ -83,22 +93,10 @@ export default function Home() {
           alt="dizzyhavoc eye"
         ></img>
       </div>
-      <div class="flex mt-[10rem] flex-col gap-3 px-3 xl:flex-row">
+      <div class="flex mt-[10rem] flex-col gap-3 px-3 xl:flex-row Buy">
         <Buy />
       </div>
-      <div class="absolute h-screen w-[100%] overflow-hidden -z-10 top-0">
-    <div id="stars-container">
-			<div id='stars'></div>
-			<div id='stars2'></div>
-			<div id='stars3'></div>
-</div>
-<section2>
-  <div class='air air1'></div>
-  <div class='air air2'></div>
-  <div class='air air3'></div>
-  <div class='air air4'></div>
-</section2>
-    </div>
+
     </>
   );
 }
