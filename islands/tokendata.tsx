@@ -285,7 +285,7 @@ export default function TokenData() {
         />{" "}
         ${poloniexprice != null ? poloniexprice.value : ''}</a>
         </h1>
-    <a target="_blank" style={{ order: avaxorder != null ? -avaxorder : 0 }} href="https://kyberswap.com/swap/avalanche?outputCurrency=0x3419875B4D3Bca7F3FddA2dB7a476A79fD31B4fE&inputCurrency=ETH">
+    <a target="_blank" style={{ order: avaxorder != null ? -avaxorder : 0 }} href="https://dexscreener.com/avalanche/0x523a04633b6c0c4967824471dda0abbce7c5e643">
       <h1 class={`text-[1.1rem] dark:text-[#d2d2d2] font-[Poppins] flex`}>
         <img
             src="/token_avax.png"
@@ -295,7 +295,7 @@ export default function TokenData() {
         />{" "}
         ${token_avax != null ? token_avax.value.toFixed(5) : ''}
     </h1></a>
-    <a target="_blank" style={{ order: ethorder != null ? -ethorder : 0 }} href="https://app.uniswap.org/swap?chain=mainnet&inputCurrency=ETH&outputCurrency=0x3419875b4d3bca7f3fdda2db7a476a79fd31b4fe">
+    <a target="_blank" style={{ order: ethorder != null ? -ethorder : 0 }} href="https://dexscreener.com/ethereum/0xb7a71c2e31920019962cb62aeea1dbf502905b81">
     <h1 class={`text-[1.1rem] dark:text-[#d2d2d2] font-[Poppins] flex`}>
         <img
             src="/token_eth.png"
@@ -306,7 +306,7 @@ export default function TokenData() {
         ${token_eth != null ? token_eth.value.toFixed(5) : ''}
     </h1>
     </a>
-    <a target="_blank" style={{ order: arborder != null ? -arborder : 0 }} href="https://app.uniswap.org/swap?chain=arbitrum&inputCurrency=ETH&outputCurrency=0x3419875b4d3bca7f3fdda2db7a476a79fd31b4fe">
+    <a target="_blank" style={{ order: arborder != null ? -arborder : 0 }} href="https://dexscreener.com/arbitrum/0x05c5bdbc7b3c64109ddcce058ce99f4515fe1c83">
     <h1 class={`text-[1.1rem] dark:text-[#d2d2d2] font-[Poppins] flex`}>
         <img
             src="/token_arb.png"
@@ -317,7 +317,7 @@ export default function TokenData() {
         ${token_arb != null ? token_arb.value.toFixed(5) : ''}
     </h1>
     </a> 
-    <a target="_blank" style={{ order: bscorder != null ? -bscorder : 0 }} href="https://pancakeswap.finance/swap?chain=bnb&inputCurrency=ETH&outputCurrency=0x3419875b4d3bca7f3fdda2db7a476a79fd31b4fe">
+    <a target="_blank" style={{ order: bscorder != null ? -bscorder : 0 }} href="https://dexscreener.com/bsc/0x642089a5da2512db761d325a868882ece6e387f5">
     <h1 class={`text-[1.1rem] dark:text-[#d2d2d2] font-[Poppins] flex`}>
         <img
             src="/token_bsc.png"
@@ -328,7 +328,7 @@ export default function TokenData() {
         ${token_bsc != null ? token_bsc.value.toFixed(5) : ''}
     </h1>
 </a>
-<a target="_blank" style={{ order: baseorder != null ? -baseorder : 0 }} href="https://app.uniswap.org/swap?chain=base&inputCurrency=ETH&outputCurrency=0x3419875b4d3bca7f3fdda2db7a476a79fd31b4fe">
+<a target="_blank" style={{ order: baseorder != null ? -baseorder : 0 }} href="https://dexscreener.com/base/0xb64dff20dd5c47e6dbb56ead80d23568006dec1e">
     <h1 class={`text-[1.1rem] dark:text-[#d2d2d2] font-[Poppins] flex`}>
         <img
             src="/token_base.png"

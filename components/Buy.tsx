@@ -83,7 +83,7 @@ export default function Buy() {
                 KyberSwap
               </a>
               <a
-                href="https://subnets.avax.network/c-chain/address/0xd1bfb54595ed5346f4fc87eb3813b7793c5a7ead"
+                href="https://subnets.avax.network/c-chain/address/0x523A04633b6C0c4967824471ddA0AbbcE7c5e643"
                 target="_blank"
                 class="text-[1.1rem] text-indigo-900 dark:text-[#e0cdad] font-[Poppins] italic"
               >
