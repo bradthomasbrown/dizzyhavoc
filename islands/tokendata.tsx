@@ -4,7 +4,6 @@ import { useSignal } from "@preact/signals";
 
 export default function TokenData() {
   if (!IS_BROWSER) return <></>;
-  let avaxprice = 0;
   const count = useSignal<number>(30);
   // global market data
   const delta = useSignal<number>(0);
@@ -186,6 +185,7 @@ export default function TokenData() {
     let ethprice = 0;
     let bscprice = 0;
     let baseprice = 0;
+    let avaxprice = 0;
     const poloprice = poloniexprice.value;
     try {
       const response = await fetch(
@@ -222,17 +222,11 @@ export default function TokenData() {
           }
         }
       }
-      console.log(avaxprice)
       // Set other market data
       ath.value = Number(data.market_data.ath.usd);
       totalsupply.value = Number(data.market_data.total_supply);
       // Calculate average price
-      if(avaxprice!==0){
-      avrgprice.value = ((Number(poloniexprice) + avaxprice + totalprice) / 6).toFixed(5);
-      }
-      if(avaxprice===0){
       avrgprice.value = ((Number(poloniexprice) + totalprice) / 5).toFixed(5);
-      }
     } catch (error) {
       console.error(error);
     }

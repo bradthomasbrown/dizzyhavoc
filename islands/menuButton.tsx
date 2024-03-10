@@ -6,7 +6,7 @@ export default function MenuButton() {
 
     const handleCategoryChange = (category: string) => {
         setCategory(category);
-        window.location.pathname = `${category}`;
+        window.location.pathname = `${category.toLocaleLowerCase()}`;
         setCategory(null);
     }
     return (

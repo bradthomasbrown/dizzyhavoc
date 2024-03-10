@@ -59,7 +59,7 @@ export default function Info() {
         </div>
       </div>
 
-      <div class="flex flex-row p-4 mt-7 sm:mt-0  sm:size-[440px] size-[350px] dark:text-[#d2d2d2] text-[#3d3d3d] mx-auto  rounded-xl shadow-lg dark:bg-blur4 bg-blur2">
+      <div class="flex flex-row p-4 mt-7 sm:mt-0  sm:size-[440px] size-[320px] dark:text-[#d2d2d2] text-[#3d3d3d] mx-auto  rounded-xl shadow-lg dark:bg-blur4 bg-blur2">
   <div class="w-full h-full">
     <div class="size-[100%] rounded-lg dark:bg-[url('/darksolvsbytecode.png')] bg-[url('/solvsbytecode.png')]" style="background-size: contain; background-repeat: no-repeat;"></div>
   </div>
@@ -76,7 +76,7 @@ export default function Info() {
             </ul>
         </div>
     </div>
-    <div class="flex flex-row p-4 mt-7 sm:mt-0 sm:size-[440px] size-[350px] dark:text-[#d2d2d2] text-[#3d3d3d] mx-auto  rounded-xl shadow-lg dark:bg-blur4 bg-blur2">
+    <div class="flex flex-row p-4 mt-7 sm:mt-0 sm:size-[440px] size-[320px] dark:text-[#d2d2d2] text-[#3d3d3d] mx-auto  rounded-xl shadow-lg dark:bg-blur4 bg-blur2">
   <div class="w-full h-full">
     <div class="size-[100%] rounded-lg dark:bg-[url('/darkNodes.png')] bg-[url('/whiteNodes.png')]" style="background-size: contain; background-repeat: no-repeat;"></div>
   </div>

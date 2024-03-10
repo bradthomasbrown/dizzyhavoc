@@ -2,7 +2,7 @@ import Available from "../components/AvailableOn.tsx";
 export default function Animated() {
   return (
     <>
-      <div class="absolute h-[100%] border-transparent sm:border-[#595959] border-2 sm:border-t-transparent sm:border-e-transparent sm:border-s-transparent border-t-transparent border-e-transparent border-s-transparent w-full overflow-hidden -z-10 top-0">
+      <div class="absolute h-screen border-transparent sm:border-[#595959] border-2 sm:border-t-transparent sm:border-e-transparent sm:border-s-transparent border-t-transparent border-e-transparent border-s-transparent w-full overflow-hidden -z-10 top-0">
         <div class="opacity-25 sm:opacity-100" id="stars-container">
           <div id="stars"></div>
           <div id="stars2"></div>
@@ -41,7 +41,7 @@ export default function Animated() {
             {" "}
             <div class="cursor-pointer hover:scale-[105%]">Learn more</div>{" "}
           </a>
-          <div class="sm:bottom-5 sm:absolute relative bottom-[-15rem]">
+          <div class="sm:bottom-5 sm:absolute relative bottom-[-25rem]">
             <Available />
           </div>
         </div>
