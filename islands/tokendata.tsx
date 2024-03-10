@@ -181,7 +181,7 @@ export default function TokenData() {
     );
   };
 
-  const fetchGecko = async () => {  // failsafe req for arb, eth, bsc, base price
+  const fetchGecko = async () => {  // failsafe req for arb, eth, bsc, base price // isnt as reliable as dexscreener
     let arbprice = 0;
     let ethprice = 0;
     let bscprice = 0;
@@ -263,6 +263,7 @@ export default function TokenData() {
     }
     return num;
   }
+
   const starttimer = () => { // auto refresh logic
     let x = 30;
     const intervalId = setInterval(() => {

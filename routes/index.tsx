@@ -24,7 +24,7 @@ export default function Home() {
         <div class="flex w-full flex-col items-center">
           <Animated/>
           <div class="flex flex-col gap-3 px-3">
-          <div class="sm:mt-[4rem] mt-[-40svh] Info">
+          <div class="Info">
             <Info />
             </div>
             <div class="mt-[10rem] Roadmap">
