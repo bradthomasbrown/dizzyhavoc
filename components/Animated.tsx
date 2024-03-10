@@ -17,7 +17,7 @@ export default function Animated() {
       </div>
       <div class="w-full h-screen flex justify-center divcontainer">
         <div class="flex w-full flex-col items-center">
-                                {/* <div class="h-full absolute top-[1rem] lg:top-[55rem] min-w-full">
+          {/* <div class="h-full absolute top-[1rem] lg:top-[55rem] min-w-full">
                         <div
                             className="w-full z-[10] shadow-xl"
                         >
@@ -42,8 +42,8 @@ export default function Animated() {
             <div class="cursor-pointer hover:scale-[105%]">Learn more</div>{" "}
           </a>
           <div class="sm:bottom-5 sm:absolute relative bottom-[-15rem]">
-<Available />
-</div>
+            <Available />
+          </div>
         </div>
         <div class="absolute lg:top-4 top-[6.8rem] z-20 left-1 sm:left-4">
           <a
