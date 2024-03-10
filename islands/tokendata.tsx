@@ -117,33 +117,23 @@ export default function TokenData() {
         const fixedvalue = Number(data.pairs[i].priceUsd).toFixed(5);
         switch (data.pairs[i].url) {
           case "https://dexscreener.com/ethereum/0xb7a71c2e31920019962cb62aeea1dbf502905b81":
-            ethorder.value = i;
-            token_eth.value = Number(fixedvalue);
-            ethprice = Number(fixedvalue);
+            token_eth.value = ethprice = Number(fixedvalue);
             totalprice += Number(fixedvalue);
             break;
           case "https://dexscreener.com/arbitrum/0x05c5bdbc7b3c64109ddcce058ce99f4515fe1c83":
-            arborder.value = i;
-            token_arb.value = Number(fixedvalue);
-            arbprice = Number(fixedvalue);
+            token_arb.value = arbprice = Number(fixedvalue);
             totalprice += Number(fixedvalue);
             break;
           case "https://dexscreener.com/bsc/0x642089a5da2512db761d325a868882ece6e387f5":
-            bscorder.value = i;
-            token_bsc.value = Number(fixedvalue);
-            bscprice = Number(fixedvalue);
+            token_bsc.value = bscprice = Number(fixedvalue);
             totalprice += Number(fixedvalue);
             break;
           case "https://dexscreener.com/base/0xb64dff20dd5c47e6dbb56ead80d23568006dec1e":
-            baseorder.value = i;
-            token_base.value = Number(fixedvalue);
-            baseprice = Number(fixedvalue);
+            token_base.value = baseprice = Number(fixedvalue);
             totalprice += Number(fixedvalue);
             break;
           case "https://dexscreener.com/avalanche/0x523a04633b6c0c4967824471dda0abbce7c5e643":
-            avaxorder.value = i;
-            token_avax.value = Number(fixedvalue);
-            avaxprice = Number(fixedvalue);
+            token_avax.value = avaxprice = Number(fixedvalue);
             totalprice += Number(fixedvalue);
             break;
           default:
