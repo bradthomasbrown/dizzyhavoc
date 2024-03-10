@@ -1,8 +1,8 @@
 export default function Available() {
   return (
     <div>
-      <p class="font-[Poppins] dark:text-[#d2d2d2] my-4 underline text-[1.1rem] text-center">
-        Chains supported:
+      <p class="font-[Poppins]  dark:text-[#d2d2d2] mb-2 text-[0.8rem] text-center">
+        Chains
         <br />
       </p>
       <div class="flex flex-row mb-2 gap-5 justify-center">
@@ -62,11 +62,6 @@ export default function Available() {
           />
         </a>
       </div>
-      <p class="font-[Poppins] dark:text-[#d2d2d2] mx-auto text-sm text-center">
-        0x3419875B4D3Bca7F3FddA2dB7a476A79fD31B4fE
-        <br />
-        <br />
-      </p>
     </div>
   );
 }

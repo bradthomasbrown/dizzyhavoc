@@ -1,14 +1,14 @@
 export default function Roadmap() {
   return (
     <div class="w-full">
-      <p class="font-medium unselectable italic bg-blur2 lg:max-w-[40%] max-w-full  mb-[1rem] mx-auto text-[2.5rem] text-center text-[#3d3d3d] dark:text-[#d2d2d2] underline font-[Poppins] shadow-lg mt-[0.5rem] py-3 rounded-xl px-6">
+      <p class="font-medium italic text-[1.7rem] unselectable sm:text-[2.5rem] text-center dark:text-[#d0d0d0] text-[#3d3d3d] mx-auto font-[Poppins] shadow-lg mt-[0.5rem] py-3 bg-blur2 lg:max-w-[32rem] max-w-full rounded-xl px-6 mb-[1rem]">
         Stage 1 Roadmap.
       </p>
 
       <div class="flex flex-col w-full mx-auto  min-w-full xl:min-w-[50rem] max-w-[70rem] xl:max-w-[70rem] rounded-xl shadow-lg bg-blur2">
         <div class="flex mt-5 flex-col w-full items-center sm:p-4 p-1 ml-0 ">
-          <div class="flex flex-row justify-start  top-0">
-            <ol class="flex items-center scale-125  sm:p-4 p-1 text-center  w-full text-xs  text-gray-900 font-medium xl:text-base">
+          <div class="flex flex-row justify-start  top-0"> {/* Roadmap stepper */}
+            <ol class="flex items-center scale-125  sm:p-4 p-1 text-center  w-full text-xs  text-gray-900 font-medium xl:text-base"> {/* First stepper element (circle+bar) */}
               <li class="flex w-full relative text-indigo-600 dark:text-[#9f7d44]  after:content-['']  after:w-full after:h-0.5  after:bg-indigo-100 after:inline-block after:absolute lg:after:top-5 after:top-3 after:left-4">
                 <div class="block whitespace-nowrap z-10">
                   <span class="w-6 h-6 bg-gray-50 border-4 dark:border-[#cf983f] border-indigo-800 rounded-full flex  justify-center items-center mx-2 mb-3 text-[6px] text-sm text-indigo-800 lg:w-8 lg:h-8">
@@ -46,25 +46,25 @@ export default function Roadmap() {
               </li>
             </ol>
           </div>
-          <div class="flex p-2 flex-col w-full">
-            <div class="xl:flex-row gap-2 flex-col flex p-2">
+          <div class="flex p-2 flex-col w-full"> {/* Roadmap card elements */}
+            <div class="xl:flex-row gap-2 flex-col flex p-2"> {/* First element */}
               <div class="flex flex-row  dark:text-[#d2d2d2] text-[#3d3d3d] border-2 dark:border-[#e0cdad] border-indigo-800 rounded-xl shadow-lg dark:bg-blur4 bg-blur3">
-                <div class="flex sm:p-4 p-3 flex-col">
+                <div class="flex p-7 flex-col">
                   <ul>
-                    <h1 class="text-3xl font-[Poppins]">I.</h1>
-                    <li class="text-xl">
+                    <h1 class="text-3xl text-center font-bold font-[Poppins]">I.</h1>
+                    <li class="items-center pb-3 flex h-full text-xl">
                       Building the bridge so holders on all chains can exchange
                       $DZHV across chains freely, 1 : 1 ratio.
                     </li>
                   </ul>
                 </div>
               </div>
-              <div class="flex flex-row  dark:text-[#d2d2d2] text-[#3d3d3d] rounded-xl shadow-lg bg-blur3">
-                <div class="flex sm:p-4 p-3 flex-col">
-                  <h1 class="text-3xl font-[Poppins]">II.</h1>
+              <div class="flex flex-row w-full sm:w-[90%] dark:text-[#d2d2d2] text-[#3d3d3d] rounded-xl shadow-lg bg-blur3">
+                <div class="flex p-7 flex-col">
+                  <h1 class="text-3xl text-center font-bold font-[Poppins]">II.</h1>
                   <p class="mt-2 text-xl">
                     <ul>
-                      <li class="text-xl">
+                      <li class="items-center flex h-full text-xl">
                         Expanding to as many mainnet chains to broaden our
                         reach, with the goal of expanding to numerous chains
                         (potentially dozens or even hundreds) by bridging coins
@@ -76,10 +76,10 @@ export default function Roadmap() {
               </div>
               <div class="xl:flex-row gap-2 flex-col flex">
                 <div class="flex flex-row dark:text-[#d2d2d2] text-[#3d3d3d] rounded-xl shadow-lg dark:bg-blur4 bg-blur3">
-                  <div class="flex sm:p-4 p-3 flex-col">
+                  <div class="flex p-7 flex-col">
                     <ul>
-                      <h1 class="text-3xl font-[Poppins]">III.</h1>
-                      <li class="text-xl">
+                      <h1 class="text-3xl text-center font-bold font-[Poppins]">III.</h1>
+                      <li class="items-center pb-5 flex h-full text-xl">
                         First gameFi feature: Trading game as a gas-efficient
                         improvement to rebasing.
                       </li>
@@ -90,10 +90,10 @@ export default function Roadmap() {
             </div>
             <div class="xl:flex-row gap-2 flex-col flex p-2">
               <div class="flex flex-row dark:text-[#d2d2d2] text-[#3d3d3d] rounded-xl shadow-lg dark:bg-blur4 bg-blur3">
-                <div class="flex sm:p-4 p-3 flex-col">
+                <div class="flex p-7 flex-col">
                   <ul>
-                    <h1 class="text-3xl font-[Poppins]">IV.</h1>
-                    <li class="text-xl">
+                    <h1 class="text-3xl text-center font-bold font-[Poppins]">IV.</h1>
+                    <li class="items-center pb-5 flex h-full text-xl">
                       Second gameFi feature: Dusting, a system to incentivize
                       token holders to engage in on-chain advertising. The
                       system is going to strategically send tokens to
@@ -105,11 +105,11 @@ export default function Roadmap() {
                 </div>
               </div>
               <div class="flex flex-row dark:text-[#d2d2d2] text-[#3d3d3d] rounded-xl shadow-lg bg-blur3">
-                <div class="flex sm:p-4 p-3 flex-col">
-                  <h1 class="text-3xl font-[Poppins]">V.</h1>
+                <div class="flex p-7 flex-col">
+                  <h1 class="text-3xl text-center font-bold font-[Poppins]">V.</h1>
                   <p class="mt-2 text-xl">
                     <ul>
-                      <li class="text-xl">
+                      <li class="items-center pb-5 flex h-full text-xl">
                         {" "}
                         Last objective for Stage 1 is to finely tune the
                         efficiency of ERC20 standards and potentially integrate

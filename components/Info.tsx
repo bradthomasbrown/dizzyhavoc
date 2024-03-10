@@ -25,56 +25,85 @@ export default function Info() {
  return (
   <>
   <div class="">
-  <p id="Infos" class="font-medium italic text-[1.7rem] unselectable sm:text-[2.5rem] text-center dark:text-[#d0d0d0] text-[#3d3d3d] mx-auto underline font-[Poppins] shadow-lg mt-[0.5rem] py-3 bg-blur2 lg:max-w-[50%] max-w-full rounded-xl px-6 mb-[1rem]">What is DizzyHavoc ?</p>
-  <div class="xl:flex-row gap-9 w-full flex-col flex">
-      <div class="flex flex-row p-6 min-w-full xl:min-w-[35rem] max-w-[40rem] xl:max-w-[40rem] dark:text-[#d2d2d2] text-[#3d3d3d] mx-auto mb-[1rem] h-[100%] rounded-xl shadow-lg dark:bg-blur4 bg-blur2">
+  <p id="Infos"
+  class="font-medium
+  italic
+  text-[1.7rem]
+  unselectable
+  sm:text-[2.5rem]
+  text-center
+  dark:text-[#d0d0d0]
+  text-[#3d3d3d]
+  mx-auto
+  font-[Poppins]
+  shadow-lg
+  mt-[0.5rem]
+  py-3
+  bg-blur2
+  lg:max-w-[32rem]
+  max-w-full
+  rounded-xl
+  px-6
+  mb-[3.5rem]">
+  What is DizzyHavoc ?</p>
+  <div class="xl:flex-row w-full flex-col flex">
+      <div class="flex flex-row p-11 min-w-full xl:min-w-[30rem] max-w-[40rem] xl:max-w-[20rem] dark:text-[#d2d2d2] text-[#3d3d3d] mx-auto h-[100%] rounded-xl shadow-lg dark:bg-blur4 bg-blur2">
        <div class="flex flex-col">
         <ul>
-        <h1 class="text-3xl font-[Poppins]">Simplified Cross-Chain contracts.</h1>
-        <p class="mt-2 text-xl">{content1}</p>
-        <p class="mt-2 text-xl">{content1_2}</p>
-        <p class="mt-2 text-xl">{content1_3}</p>
+        <h1 class="sm:text-3xl text-2xl font-[Poppins]">Simplified Cross-Chain contracts.</h1>
+        <p class="mt-4 dark:sm:font-normal sm:font-normal font-normal dark:font-light text-xl">{content1}</p>
+        {/* <p class="mt-2 dark:sm:font-normal sm:font-normal font-normal dark:font-light text-xl">{content1_2}</p>
+        <p class="mt-2 dark:sm:font-normal sm:font-normal font-normal dark:font-light text-xl">{content1_3}</p> */}
         <p class="mt-2 font-medium text-xl">{content1_4}</p>
       </ul>
         </div>
-  
       </div>
-      <div class="flex flex-row p-6 min-w-full xl:min-w-[35rem] max-w-[40rem] xl:max-w-[40rem] dark:text-[#d2d2d2] text-[#3d3d3d] mx-auto mb-[1rem] xl:pb-[4.6rem] pb-4  h-[100%] rounded-xl shadow-lg bg-blur2">
+
+      <div class="flex flex-row p-4 mt-7 sm:mt-0  sm:size-[440px] size-[350px] dark:text-[#d2d2d2] text-[#3d3d3d] mx-auto  rounded-xl shadow-lg dark:bg-blur4 bg-blur2">
+  <div class="w-full h-full">
+    <div class="size-[100%] rounded-lg dark:bg-[url('/darksolvsbytecode.png')] bg-[url('/solvsbytecode.png')]" style="background-size: contain; background-repeat: no-repeat;"></div>
+  </div>
+</div>
+      </div>
+      <div class="xl:flex-row w-full sm:mt-[5rem] mt-9 flex-col flex">
+    <div class="flex flex-row p-11 min-w-full xl:min-w-[30rem] max-w-[40rem] xl:max-w-[20rem] dark:text-[#d2d2d2] text-[#3d3d3d] mx-auto h-[100%] pb-[5.72rem] rounded-xl shadow-lg dark:bg-blur4 bg-blur2 sm:flex-col-reverse">
+        <div class="flex col-start flex-col">
+            <h1 class="sm:text-3xl text-2xl font-[Poppins]">A new Cross-Chain Web3 Library.</h1>
+            <ul class="mt-2">
+                <li class="text-xl mt-2 dark:sm:font-normal sm:font-normal font-normal dark:font-light">{content7}</li>
+                <li class="text-xl mt-2 dark:sm:font-normal sm:font-normal font-normal dark:font-light">{content8}</li>
+                <li class="text-xl mt-2 dark:sm:font-normal sm:font-normal font-normal dark:font-light">{content9}</li>
+            </ul>
+        </div>
+    </div>
+    <div class="flex flex-row p-4 mt-7 sm:mt-0 sm:size-[440px] size-[350px] dark:text-[#d2d2d2] text-[#3d3d3d] mx-auto  rounded-xl shadow-lg dark:bg-blur4 bg-blur2">
+  <div class="w-full h-full">
+    <div class="size-[100%] rounded-lg dark:bg-[url('/darkNodes.png')] bg-[url('/whiteNodes.png')]" style="background-size: contain; background-repeat: no-repeat;"></div>
+  </div>
+</div>
+
+</div>
+      <div class="xl:flex-row sm:mt-[5rem] mt-9 flex-col flex">
+      <div class="flex flex-row p-11 min-w-full xl:min-w-[30rem] max-w-[40rem] xl:max-w-[20rem] dark:text-[#d2d2d2] text-[#3d3d3d] mx-auto h-[100%] rounded-xl shadow-lg dark:bg-blur4 bg-blur2">
        <div class="flex flex-col">
-       <h1 class="text-3xl font-[Poppins]">A new Cross-Chain Web3 Library.</h1>
-        <p class="mt-2 text-xl">
-          <ul>
-            <li class="text-xl">{content7}</li>
-            <li class="text-xl">{content8}</li>
-            <li class="text-xl">{content9}</li>
-            <li class="text-xl">{content10}</li>
-            <li class="text-xl">{content11}</li>
-          </ul>
-        </p>
-       </div>
-      </div>
-      
-      </div>
-      <div class="xl:flex-row gap-9 flex-col flex">
-      <div class="flex flex-row mt-[25px] p-6 min-w-full xl:min-w-[35rem] max-w-[40rem] dark:text-[#d2d2d2] text-[#3d3d3d] xl:max-w-[40rem] mx-auto mb-[1rem] h-full rounded-xl shadow-lg dark:bg-blur4 bg-blur2">
-       <div class="flex flex-col">
-       <h1 class="text-3xl font-[Poppins]">What would be its impact?</h1>
+       <h1 class="sm:text-3xl text-2xl font-[Poppins]">What would be its impact?</h1>
         <ul class="mt-2">
-          <li class="text-xl">{content2}</li>
-          <li class="text-xl">{content3}</li>
-          <li class="text-xl">{content4}</li>
+          <li class="text-xl mt-2 dark:sm:font-normal sm:font-normal font-normal dark:font-light">{content2}</li>
+          <li class="text-xl mt-2 dark:sm:font-normal sm:font-normal font-normal dark:font-light">{content3}</li>
+          <li class="text-xl mt-2 dark:sm:font-normal sm:font-normal font-normal dark:font-light">{content4}</li>
         </ul>
        </div>
+       
   
       </div>
-      <div class="flex flex-row mt-[25px] p-6 min-w-full xl:min-w-[35rem] xl:pb-[6.7rem] dark:text-[#d2d2d2] text-[#3d3d3d] pb-4  max-w-[40rem] xl:max-w-[40rem] mx-auto mb-[1rem] h-[100%] rounded-xl shadow-lg dark:bg-blur4 bg-blur2">
+      <div class="flex flex-row  sm:mt-0 mt-8 p-11 min-w-full xl:min-w-[30rem] max-w-[40rem] xl:max-w-[20rem] dark:text-[#d2d2d2] text-[#3d3d3d] mx-auto h-[100%] rounded-xl shadow-lg dark:bg-blur4 bg-blur2">
        <div class="flex flex-col">
-       <h1 class="text-3xl font-[Poppins]">What to expect next?</h1>
-        <p class="mt-2 text-xl">
-          <ul>
-            <li class="text-xl">{content5}</li>
-            <li class="text-xl">{content6}</li>
-            <li class="text-xl">
+       <h1 class="sm:text-3xl text-2xl font-[Poppins]">What to expect next?</h1>
+
+          <ul class="mt-2">
+            <li class="text-xl mt-2 dark:sm:font-normal sm:font-normal font-normal dark:font-light">{content5}</li>
+            <li class="text-xl mt-2 dark:sm:font-normal sm:font-normal font-normal dark:font-light">{content6}</li>
+            <li class="text-xl mt-2 dark:sm:font-normal sm:font-normal font-normal dark:font-light">
             ● More infos in the litepaper{" "}
           <a
             class="text-indigo-900 dark:text-[#e0cdad] bold"
@@ -85,12 +114,10 @@ export default function Info() {
           </a>
               </li>
           </ul>
-  
-        </p>
        </div>
-  
       </div>
       </div>
+      
       </div>
       </>
     );

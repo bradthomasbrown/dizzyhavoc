@@ -1,18 +1,24 @@
-import Tokendata from "../islands/tokendata.tsx";
-import AvailableOn from "../components/AvailableOn.tsx";
+import TokenData from "./tokendata.tsx";
+import Button from  "./Button.tsx";
+import { IS_BROWSER } from "$fresh/runtime.ts";
+
 export default function Buy() {
-  const dropdownitems = []
+  if(!IS_BROWSER) return <></>;
+  function togglehelp(){
+    globalThis.document.getElementById("helpbox")?.classList.toggle("invisible")
+  }
+  // Function to toggle the visibility of the helpbox
   return (
     <>
-   
-   <div class="w-full">
-      <p class="font-medium unselectable italic bg-blur2 lg:max-w-[25%] min-w-[15%] lg:min-w-[25%] max-w-full  mb-[1rem] mx-auto text-[2.5rem] text-center text-[#3d3d3d] dark:text-[#d2d2d2] underline font-[Poppins] shadow-lg mt-[0.5rem] py-3 rounded-xl px-6">
-        Buy/ DEXs.
-      </p>
-    <div class="flex xl:flex-row flex-col shadow-lg  mx-auto min-w-full xl:min-w-[50rem] max-w-[70rem] xl:max-w-[70rem] rounded-xl bg-blur2">
-      <div class="w-full p-4">
-        <Tokendata />
-        <div class="mt-4 text-[1.5rem]">
+      <div class="w-full mb-[20vh]">
+        <p class="font-medium italic text-[1.7rem] unselectable sm:text-[2.5rem] text-center dark:text-[#d0d0d0] text-[#3d3d3d] mx-auto font-[Poppins] shadow-lg mt-[0.5rem] py-3 bg-blur2 lg:max-w-[32rem] max-w-full rounded-xl px-6 mb-[1rem]">
+          Exchanges/ Chains.
+        </p>
+        <div class="flex xl:flex-row flex-col pb-1 sm:pb-7 h-full shadow-lg mx-auto min-w-full xl:min-w-[50rem] max-w-[70rem] xl:max-w-[55rem] rounded-xl bg-blur2">
+          <div id="helpbox" class="flex h-[160%] xl:h-[100%] shadow-lg absolute invisible z-50 min-w-full min-h-full rounded-xl bg-[#ededed] dark:bg-[#191919]"> {/* Help box */}
+          <div class="w-full p-4 sm:p-9">
+            <div class=" text-[1.5rem]">
+            <div class="mt-4 text-[1.5rem]">
           <h1 class="text-[1.2rem] dark:text-[#d2d2d2] italic font-[Poppins] text-center">
             To buy you'll need a browser wallet, like{" "}
             <a
@@ -143,13 +149,18 @@ export default function Buy() {
             </li>
           </ul>
         </div>
-        <div class="">
-          <AvailableOn />
+              <Button addClass="text-[1rem] translate-x-[-50%] left-[50%] flex justify-center absolute bottom-3 p-0" onclick={togglehelp}>Close</Button>
+            </div>
+          </div>
+          </div>  {/* end Help box */}
+          <div class="w-full p-4 sm:p-9">
+            <TokenData />
+            <div class="mt-4 text-[1.5rem]">
+              <Button addClass="text-[1rem] mx-auto bottom-3 p-0" onclick={togglehelp}>Basics/ Pools info</Button>
+            </div>
+          </div>
         </div>
-      </div>
-
-    </div>
-    <div className="absolute z-[-10]">
+        <div className="absolute z-[-10]">
           <img
             className="bottom-2 left-4 blur-lg w-[25%]"
             src="/dzhv.png"
@@ -157,7 +168,7 @@ export default function Buy() {
           >
           </img>
         </div>
-        </div>
+      </div>
     </>
   );
 }

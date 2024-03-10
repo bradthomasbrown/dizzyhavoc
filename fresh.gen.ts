@@ -6,6 +6,7 @@ import * as $_404 from "./routes/_404.tsx";
 import * as $_app from "./routes/_app.tsx";
 import * as $index from "./routes/index.tsx";
 import * as $Button from "./islands/Button.tsx";
+import * as $Buy from "./islands/Buy.tsx";
 import * as $Web3Input from "./islands/Web3Input.tsx";
 import * as $menuButton from "./islands/menuButton.tsx";
 import * as $tokendata from "./islands/tokendata.tsx";
@@ -19,6 +20,7 @@ const manifest = {
   },
   islands: {
     "./islands/Button.tsx": $Button,
+    "./islands/Buy.tsx": $Buy,
     "./islands/Web3Input.tsx": $Web3Input,
     "./islands/menuButton.tsx": $menuButton,
     "./islands/tokendata.tsx": $tokendata,
