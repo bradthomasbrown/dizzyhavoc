@@ -1,11 +1,11 @@
 export default function Info() {
   const content1 =
-    "DizzyHavoc is a new deployment method for smart contracts, specifically designed to reduce costs and enhance flexibility.";
+    "Dizzy Havoc is a new deployment method for smart contracts, specifically designed to reduce costs and enhance flexibility.";
     const content1_2 =
     "Instead of redeploying the same code multiple times, it utilizes an upgradable proxy that points to a specialized resolver, which in turn links to one or more implementations.";
     const content1_3 =
     "By doing this, it significantly lowers deployment costs and allows for easier maintenance and upgrades of smart contracts.";
-    const content1_4 = "* What makes DizzyHavoc unique is the utilization of the EVM bytecode language instead of Solidity. This implies a more low-level and hardware-specific form of programming, closely tied to the architecture of CPUs.";
+    const content1_4 = "* What makes Dizzy Havoc unique is the utilization of the EVM bytecode language instead of Solidity. This implies a more low-level and hardware-specific form of programming, closely tied to the architecture of CPUs.";
   const content2 =
     "● Reduction in deployment costs by reusing implementation code instead of redeploying it.";
   const content3 =
@@ -24,7 +24,6 @@ export default function Info() {
  
  return (
   <>
-
   <p
   class="font-medium
   italic
@@ -45,10 +44,10 @@ export default function Info() {
   rounded-xl
   px-6
   mb-[3.5rem]">
-  What is DizzyHavoc ?</p>
+  What is Dizzy Havoc ?</p>
   <div class="w-full">
   <div class="xl:flex-row w-full  gap-5 justify-center flex-col flex">
-      <div class="flex flex-row p-11 min-w-full xl:min-w-[30rem] max-w-[40rem] xl:max-w-[20rem] dark:text-[#d2d2d2] text-[#3d3d3d] h-[100%] rounded-xl shadow-lg dark:bg-blur4 bg-blur2 sm:flex-col">
+      <div class="flex flex-row p-9 sm:size-[450px] size-full dark:text-[#d2d2d2] text-[#3d3d3d] h-full rounded-xl shadow-lg dark:bg-blur4 bg-blur2 sm:flex-col">
        <div class="flex flex-col">
         <ul>
         <h1 class="sm:text-3xl text-2xl font-[Poppins]">Simplified Cross-Chain contracts.</h1>
@@ -58,14 +57,14 @@ export default function Info() {
         </div>
       </div>
 
-      <div class="flex flex-row p-4 mt-7 sm:mt-0 sm:size-[440px] size-[315px] dark:text-[#d2d2d2] text-[#3d3d3d] rounded-xl shadow-lg dark:bg-blur4 bg-blur2">
+      <div class="flex flex-row p-4 mt-7 sm:mt-0 sm:size-[450px] size-[315px] dark:text-[#d2d2d2] text-[#3d3d3d] rounded-xl shadow-lg dark:bg-blur4 bg-blur2">
   <div class="w-full h-full">
     <div class="size-[100%] rounded-lg dark:bg-[url('/darksolvsbytecode.png')] bg-[url('/solvsbytecode.png')]" style="background-size: contain; background-repeat: no-repeat;"></div>
   </div>
 </div>
       </div>
       <div class="xl:flex-row w-full  gap-5 justify-center sm:mt-[5rem] mt-9 flex-col flex">
-    <div class="flex flex-row p-11 min-w-full xl:min-w-[30rem] max-w-[40rem] xl:max-w-[20rem] dark:text-[#d2d2d2] text-[#3d3d3d] h-[100%] pb-[5.72rem] rounded-xl shadow-lg dark:bg-blur4 bg-blur2 sm:flex-col-reverse">
+    <div class="flex flex-row p-9 sm:size-[450px] size-full dark:text-[#d2d2d2] text-[#3d3d3d] h-[100%] pb-[5.72rem] rounded-xl shadow-lg dark:bg-blur4 bg-blur2 sm:flex-col-reverse">
         <div class="flex col-start flex-col">
             <h1 class="sm:text-3xl text-2xl font-[Poppins]">A new Cross-Chain Web3 Library.</h1>
             <ul class="mt-2">
@@ -75,7 +74,7 @@ export default function Info() {
             </ul>
         </div>
     </div>
-    <div class="flex flex-row p-4 mt-7 sm:mt-0 sm:size-[440px] size-[315px] dark:text-[#d2d2d2] text-[#3d3d3d] rounded-xl shadow-lg dark:bg-blur4 bg-blur2">
+    <div class="flex flex-row p-4 mt-7 sm:mt-0 sm:size-[450px] size-[315px] dark:text-[#d2d2d2] text-[#3d3d3d] rounded-xl shadow-lg dark:bg-blur4 bg-blur2">
   <div class="w-full h-full">
     <div class="size-[100%] rounded-lg dark:bg-[url('/darkNodes.png')] bg-[url('/whiteNodes.png')]" style="background-size: contain; background-repeat: no-repeat;"></div>
   </div>
@@ -83,7 +82,7 @@ export default function Info() {
 
 </div>
       <div class="xl:flex-row w-full  gap-5 justify-center sm:mt-[5rem] mt-9 flex-col flex">
-      <div class="flex flex-row p-11 min-w-full xl:min-w-[30rem] max-w-[40rem] xl:max-w-[20rem] dark:text-[#d2d2d2] text-[#3d3d3d] h-[100%] rounded-xl shadow-lg dark:bg-blur4 bg-blur2">
+      <div class="flex flex-row p-9 sm:size-[450px] size-full dark:text-[#d2d2d2] text-[#3d3d3d] h-[100%] rounded-xl shadow-lg dark:bg-blur4 bg-blur2">
        <div class="flex flex-col">
        <h1 class="sm:text-3xl text-2xl font-[Poppins]">What would be its impact?</h1>
         <ul class="mt-2">
@@ -95,7 +94,7 @@ export default function Info() {
        
   
       </div>
-      <div class="flex flex-row  sm:mt-0  gap-5 mt-8 p-11 min-w-full xl:min-w-[30rem] max-w-[40rem] xl:max-w-[20rem] dark:text-[#d2d2d2] text-[#3d3d3d] h-[100%] rounded-xl shadow-lg dark:bg-blur4 bg-blur2">
+      <div class="flex flex-row sm:size-[440px] size-full  sm:mt-0  gap-5 mt-8 p-9 dark:text-[#d2d2d2] text-[#3d3d3d] h-[100%] rounded-xl shadow-lg dark:bg-blur4 bg-blur2">
        <div class="flex flex-col">
        <h1 class="sm:text-3xl text-2xl font-[Poppins]">What to expect next?</h1>
 
