@@ -1,6 +1,6 @@
 export default function Footer() {
   return (
-    <footer id="footer" class=" h-[230px] dark:bg-[#191919] bg-[#fafafa] mt-[230px] w-full flex flex-row gap-4 justify-center">
+    <footer id="footer" class=" h-[230px] dark:bg-[#191919] bg-[#fafafa] w-full flex flex-row gap-4 justify-center">
       <div class="flex flex-col gap-4 justify-center">
         <div class="flex items-center gap-8">
         <a target="_blank" href="https://t.me/dizzyhavoc_portal">

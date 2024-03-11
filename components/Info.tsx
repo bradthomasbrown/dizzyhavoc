@@ -24,8 +24,8 @@ export default function Info() {
  
  return (
   <>
-  <div class="">
-  <p id="Infos"
+
+  <p
   class="font-medium
   italic
   text-[1.7rem]
@@ -46,27 +46,26 @@ export default function Info() {
   px-6
   mb-[3.5rem]">
   What is DizzyHavoc ?</p>
-  <div class="xl:flex-row w-full flex-col flex">
-      <div class="flex flex-row p-11 min-w-full xl:min-w-[30rem] max-w-[40rem] xl:max-w-[20rem] dark:text-[#d2d2d2] text-[#3d3d3d] mx-auto h-[100%] rounded-xl shadow-lg dark:bg-blur4 bg-blur2">
+  <div class="w-full">
+  <div class="xl:flex-row w-full  gap-5 justify-center flex-col flex">
+      <div class="flex flex-row p-11 min-w-full xl:min-w-[30rem] max-w-[40rem] xl:max-w-[20rem] dark:text-[#d2d2d2] text-[#3d3d3d] h-[100%] rounded-xl shadow-lg dark:bg-blur4 bg-blur2 sm:flex-col">
        <div class="flex flex-col">
         <ul>
         <h1 class="sm:text-3xl text-2xl font-[Poppins]">Simplified Cross-Chain contracts.</h1>
         <p class="mt-4 dark:sm:font-normal sm:font-normal font-normal dark:font-light text-xl">{content1}</p>
-        {/* <p class="mt-2 dark:sm:font-normal sm:font-normal font-normal dark:font-light text-xl">{content1_2}</p>
-        <p class="mt-2 dark:sm:font-normal sm:font-normal font-normal dark:font-light text-xl">{content1_3}</p> */}
         <p class="mt-2 font-medium text-xl">{content1_4}</p>
       </ul>
         </div>
       </div>
 
-      <div class="flex flex-row p-4 mt-7 sm:mt-0  sm:size-[440px] size-[320px] dark:text-[#d2d2d2] text-[#3d3d3d] mx-auto  rounded-xl shadow-lg dark:bg-blur4 bg-blur2">
+      <div class="flex flex-row p-4 mt-7 sm:mt-0 sm:size-[440px] size-[315px] dark:text-[#d2d2d2] text-[#3d3d3d] rounded-xl shadow-lg dark:bg-blur4 bg-blur2">
   <div class="w-full h-full">
     <div class="size-[100%] rounded-lg dark:bg-[url('/darksolvsbytecode.png')] bg-[url('/solvsbytecode.png')]" style="background-size: contain; background-repeat: no-repeat;"></div>
   </div>
 </div>
       </div>
-      <div class="xl:flex-row w-full sm:mt-[5rem] mt-9 flex-col flex">
-    <div class="flex flex-row p-11 min-w-full xl:min-w-[30rem] max-w-[40rem] xl:max-w-[20rem] dark:text-[#d2d2d2] text-[#3d3d3d] mx-auto h-[100%] pb-[5.72rem] rounded-xl shadow-lg dark:bg-blur4 bg-blur2 sm:flex-col-reverse">
+      <div class="xl:flex-row w-full  gap-5 justify-center sm:mt-[5rem] mt-9 flex-col flex">
+    <div class="flex flex-row p-11 min-w-full xl:min-w-[30rem] max-w-[40rem] xl:max-w-[20rem] dark:text-[#d2d2d2] text-[#3d3d3d] h-[100%] pb-[5.72rem] rounded-xl shadow-lg dark:bg-blur4 bg-blur2 sm:flex-col-reverse">
         <div class="flex col-start flex-col">
             <h1 class="sm:text-3xl text-2xl font-[Poppins]">A new Cross-Chain Web3 Library.</h1>
             <ul class="mt-2">
@@ -76,15 +75,15 @@ export default function Info() {
             </ul>
         </div>
     </div>
-    <div class="flex flex-row p-4 mt-7 sm:mt-0 sm:size-[440px] size-[320px] dark:text-[#d2d2d2] text-[#3d3d3d] mx-auto  rounded-xl shadow-lg dark:bg-blur4 bg-blur2">
+    <div class="flex flex-row p-4 mt-7 sm:mt-0 sm:size-[440px] size-[315px] dark:text-[#d2d2d2] text-[#3d3d3d] rounded-xl shadow-lg dark:bg-blur4 bg-blur2">
   <div class="w-full h-full">
     <div class="size-[100%] rounded-lg dark:bg-[url('/darkNodes.png')] bg-[url('/whiteNodes.png')]" style="background-size: contain; background-repeat: no-repeat;"></div>
   </div>
 </div>
 
 </div>
-      <div class="xl:flex-row sm:mt-[5rem] mt-9 flex-col flex">
-      <div class="flex flex-row p-11 min-w-full xl:min-w-[30rem] max-w-[40rem] xl:max-w-[20rem] dark:text-[#d2d2d2] text-[#3d3d3d] mx-auto h-[100%] rounded-xl shadow-lg dark:bg-blur4 bg-blur2">
+      <div class="xl:flex-row w-full  gap-5 justify-center sm:mt-[5rem] mt-9 flex-col flex">
+      <div class="flex flex-row p-11 min-w-full xl:min-w-[30rem] max-w-[40rem] xl:max-w-[20rem] dark:text-[#d2d2d2] text-[#3d3d3d] h-[100%] rounded-xl shadow-lg dark:bg-blur4 bg-blur2">
        <div class="flex flex-col">
        <h1 class="sm:text-3xl text-2xl font-[Poppins]">What would be its impact?</h1>
         <ul class="mt-2">
@@ -96,7 +95,7 @@ export default function Info() {
        
   
       </div>
-      <div class="flex flex-row  sm:mt-0 mt-8 p-11 min-w-full xl:min-w-[30rem] max-w-[40rem] xl:max-w-[20rem] dark:text-[#d2d2d2] text-[#3d3d3d] mx-auto h-[100%] rounded-xl shadow-lg dark:bg-blur4 bg-blur2">
+      <div class="flex flex-row  sm:mt-0  gap-5 mt-8 p-11 min-w-full xl:min-w-[30rem] max-w-[40rem] xl:max-w-[20rem] dark:text-[#d2d2d2] text-[#3d3d3d] h-[100%] rounded-xl shadow-lg dark:bg-blur4 bg-blur2">
        <div class="flex flex-col">
        <h1 class="sm:text-3xl text-2xl font-[Poppins]">What to expect next?</h1>
 
@@ -117,7 +116,6 @@ export default function Info() {
        </div>
       </div>
       </div>
-      
       </div>
       </>
     );
