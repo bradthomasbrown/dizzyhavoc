@@ -449,14 +449,10 @@ export default function TokenData() {
         </h1>
       </a>
     </section>
-    <div className="absolute bottom-1 left-[50%] translate-x-[-50%] dark:text-[#d2d2d2] unselectable text-[10px] sm:text-[13px]">
-    update in: {count}
-  
-  </div>
   </div>
    
-  <div class="bottom-1 sm:visible invisible dark:text-[#d2d2d2] unselectable text-[#6e6e6e] absolute left-1 text-[7x] sm:text-[11px]">
-    data from dexscreener, coingecko & poloniex
+  <div class="bottom-1 dark:text-[#d2d2d2] unselectable text-[#6e6e6e] absolute left-1 text-[11px]">
+  data from dexscreener, coingecko & poloniex ({count})
     
   </div>
 </div>
@@ -486,7 +482,7 @@ export default function TokenData() {
       </section>
     </div>
   </div>
-  <div class="flex-row flex w-full">
+  <div class="flex-row relative flex w-full">
     <section class="rounded ml-3 justify-center flex flex-wrap gap-3">
       <h1 style={{ order: poloorder != null ? -poloorder : 0 }}>
         <a
@@ -588,15 +584,13 @@ export default function TokenData() {
           ${token_base != null ? token_base : ""}
         </h1>
       </a>
+      
     </section>
 
   </div>
-          <div className="absolute bottom-1 left-[50%] translate-x-[-50%] dark:text-[#d2d2d2] unselectable text-[10px] sm:text-[13px]">
-    update in: {count}
-  
-  </div>
-  <div class="bottom-1 sm:visible invisible dark:text-[#d2d2d2] unselectable text-[#6e6e6e] absolute left-1 text-[7x] sm:text-[11px]">
-    data from dexscreener, coingecko & poloniex
+
+  <div class="bottom-1 dark:text-[#d2d2d2] unselectable text-[#6e6e6e] absolute left-1 text-[11px]">
+    data from dexscreener, coingecko & poloniex ({count})
     
   </div>
 </div>
