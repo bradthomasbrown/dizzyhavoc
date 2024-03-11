@@ -29,3 +29,4 @@ jobs:
         with:
           project: "dizzyhavoc-web" # 📝 Update the deploy project name if necessary
           entrypoint: "./main.ts" # 📝 Update the entrypoint if necessary
+ 
