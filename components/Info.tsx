@@ -25,7 +25,9 @@ export default function Info() {
  return (
   <>
   <p
-  class="font-medium
+  id="Info"
+  class="Info
+  font-medium
   italic
   text-[1.7rem]
   unselectable
@@ -45,7 +47,7 @@ export default function Info() {
   px-6
   mb-[3.5rem]">
   What is Dizzy Havoc ?</p>
-  <div class="w-full">
+  <div class="w-full mb-[230px]">
   <div class="xl:flex-row w-full  gap-5 justify-center flex-col flex">
       <div class="flex flex-row p-9 sm:size-[450px] size-full dark:text-[#d2d2d2] text-[#3d3d3d] h-full rounded-xl shadow-lg dark:bg-blur4 bg-blur2 sm:flex-col">
        <div class="flex flex-col">
@@ -57,7 +59,7 @@ export default function Info() {
         </div>
       </div>
 
-      <div class="flex flex-row p-4 mt-7 sm:mt-0 sm:size-[450px] size-[315px] dark:text-[#d2d2d2] text-[#3d3d3d] rounded-xl shadow-lg dark:bg-blur4 bg-blur2">
+      <div class="flex flex-row p-4 mt-7 sm:mt-0 sm:size-[450px] size-[100%] dark:text-[#d2d2d2] text-[#3d3d3d] rounded-xl shadow-lg dark:bg-blur4 bg-blur2">
   <div class="w-full h-full">
     <div class="size-[100%] rounded-lg dark:bg-[url('/darksolvsbytecode.png')] bg-[url('/solvsbytecode.png')]" style="background-size: contain; background-repeat: no-repeat;"></div>
   </div>
@@ -74,7 +76,7 @@ export default function Info() {
             </ul>
         </div>
     </div>
-    <div class="flex flex-row p-4 mt-7 sm:mt-0 sm:size-[450px] size-[315px] dark:text-[#d2d2d2] text-[#3d3d3d] rounded-xl shadow-lg dark:bg-blur4 bg-blur2">
+    <div class="flex flex-row p-4 mt-7 sm:mt-0 sm:size-[450px] size-[100%] dark:text-[#d2d2d2] text-[#3d3d3d] rounded-xl shadow-lg dark:bg-blur4 bg-blur2">
   <div class="w-full h-full">
     <div class="size-[100%] rounded-lg dark:bg-[url('/darkNodes.png')] bg-[url('/whiteNodes.png')]" style="background-size: contain; background-repeat: no-repeat;"></div>
   </div>
@@ -94,15 +96,15 @@ export default function Info() {
        
   
       </div>
-      <div class="flex flex-row sm:size-[440px] size-full  sm:mt-0  gap-5 mt-8 p-9 dark:text-[#d2d2d2] text-[#3d3d3d] h-[100%] rounded-xl shadow-lg dark:bg-blur4 bg-blur2">
+      <div class="flex flex-row sm:size-[450px] size-full  sm:mt-0  gap-5 mt-8 p-9 dark:text-[#d2d2d2] text-[#3d3d3d] h-[100%] rounded-xl shadow-lg dark:bg-blur4 bg-blur2">
        <div class="flex flex-col">
        <h1 class="sm:text-3xl text-2xl font-[Poppins]">What to expect next?</h1>
 
           <ul class="mt-2">
             <li class="text-xl mt-2 dark:sm:font-normal sm:font-normal font-normal dark:font-light">{content5}</li>
             <li class="text-xl mt-2 dark:sm:font-normal sm:font-normal font-normal dark:font-light">{content6}</li>
-            <li class="text-xl mt-2 dark:sm:font-normal sm:font-normal font-normal dark:font-light">
-            ● More infos in the litepaper{" "}
+            <li class="text-2xl mt-7 dark:sm:font-normal sm:font-medium tracking-tight font-normal dark:font-light">
+            More infos in the litepaper{" "}
           <a
             class="text-indigo-900 dark:text-[#e0cdad] bold"
             target="_blank"
@@ -116,6 +118,7 @@ export default function Info() {
       </div>
       </div>
       </div>
+
       </>
     );
     

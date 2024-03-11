@@ -4,6 +4,7 @@ import { useSignal } from "@preact/signals";
 
 export default function TokenData() {
   if (!IS_BROWSER) return <></>;
+  const isloading = useSignal<boolean>(true);
   const count = useSignal<number>(30);
   // global market data
   const delta = useSignal<number>(0);
@@ -76,6 +77,7 @@ export default function TokenData() {
   }
 
   const fetchPoloniex = async () => {
+    isloading.value = true;
     try {
       const response = await fetch(
         "https://corsproxy.io/?https%3A%2F%2Fapi.poloniex.com%2Fmarkets%2FDZHV_USDT%2Fprice"
@@ -100,11 +102,11 @@ export default function TokenData() {
   };
 
   const fetchScreener = async () => { // main req to dexscreener for prices, failsafe with gecko
-    let arbprice = 0;
-    let ethprice = 0;
-    let bscprice = 0;
-    let baseprice = 0;
-    let avaxprice = 0;
+    let arbprice,
+    ethprice,
+    bscprice,
+    baseprice,
+    avaxprice = 0
     let poloprice = Number(poloniexprice.value) ? Number(poloniexprice.value) : 0;
     try {
       const response = await fetch(
@@ -178,14 +180,15 @@ export default function TokenData() {
       avaxprice,
       poloprice
     );
+    isloading.value = false;
   };
 
   const fetchGecko = async () => {  // failsafe req for arb, eth, bsc, base price // isnt as reliable as dexscreener
-    let arbprice = 0;
-    let ethprice = 0;
-    let bscprice = 0;
-    let baseprice = 0;
-    let avaxprice = 0;
+    let arbprice,
+    ethprice,
+    bscprice,
+    baseprice,
+    avaxprice = 0
     const poloprice = poloniexprice.value;
     try {
       const response = await fetch(
@@ -239,6 +242,7 @@ export default function TokenData() {
       avaxprice,
       poloprice
     );
+    isloading.value = false;
   };
 
   function formatNumber(num: number, precision = 2) { // format num in K, M, B
@@ -281,7 +285,7 @@ export default function TokenData() {
   return (
     <>
       <div class="w-full shadow-lg px-0  2xl:px-3 h-full justify-center  items-center rounded-lg gap-0 xl:gap-3 bg-blur3 flex flex-col">
-        <div class="flex flex-row ">
+        <div class="flex flex-row">
           <div class="flex-col flex ">
             <section class="rounded flex flex-col w-full py-3 my-1 gap-3 ml-3">
               <h1 class="font-[Poppins] dark:text-[#d2d2d2] text-[0.8rem] sm:text-[1.2rem] inline justify-center tracking-tight items-center">
@@ -409,11 +413,14 @@ export default function TokenData() {
         </div>
         <div className="mb-2 mt-4 dark:text-[#d2d2d2] unselectable text-[10px] sm:text-[13px]">
           update in: {count}
+        
         </div>
         <div class="bottom-1 sm:visible invisible dark:text-[#d2d2d2] unselectable text-[#6e6e6e] absolute left-1 text-[7x] sm:text-[11px]">
           data from dexscreener, coingecko & poloniex
+          
         </div>
       </div>
+      {isloading.value ? <div className="text-2xl">loading...</div> : null}
     </>
   );
 }

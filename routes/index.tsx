@@ -1,9 +1,7 @@
 import Info from "../components/Info.tsx";
 import MenuButton from "../islands/menuButton.tsx";
 import Animated from "../components/Animated.tsx";
-
 export default function Home() {
-
   return (
     <>
       <div class="sm:min-h-[4rem] min-h-[6.5rem] w-full sm:bg-transparent dark:sm:bg-transparent dark:bg-[#282828bc] bg-[#dbdbdbaa] sm:w-[45rem] justify-center mx-auto items-center px-4 flex  border-e-transparent border-s-transparent border-t-transparent dark:border-e-transparent dark:border-s-transparent dark:border-t-transparent dark:border-[#5e5e5e4d] border-[#dbdbdb] border">

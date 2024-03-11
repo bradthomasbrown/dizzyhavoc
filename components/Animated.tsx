@@ -27,8 +27,8 @@ export default function Animated() {
         <div class="trapeze invisible sm:visible sm:max-w-[63rem] max-w-[70%] mx-auto z-[-10] shadow-lg" id="trapeze"></div>
         
       </div>
-      <a target="_blank" class="font-medium font-[Poppins] z-10 tracking-tighter italic sm:mt-[3.5rem] mt-[7.5rem] text-[1.1rem] sm:text-[1.7rem] text-center dark:text-[#d2d2d2] text-[#3d3d3d]" href="https://docs.google.com/document/d/1HK-X5rmBqlDGgu5w3GbfYTaGQ7UwjgWm3WPd4_ei5BE/edit">
-        <div class="cursor-pointer hover:scale-[105%]">Learn more</div>
+      <a class="font-medium font-[Poppins] z-10 tracking-tighter italic sm:mt-[3.5rem] mt-[7.5rem] text-[1.1rem] sm:text-[1.7rem] text-center dark:text-[#d2d2d2] text-[#3d3d3d]" href="#Info">
+        <div class="cursor-pointer text-indigo-900 dark:text-[#e0cdad] hover:scale-[105%]">Learn more</div>
       </a>
      
     </div>
