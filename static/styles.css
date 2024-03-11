@@ -7,14 +7,9 @@
 }
 
 ::-webkit-scrollbar-track {
-  background: #17182c; /* color of the tracking area */
+  background: #17182c00; /* color of the tracking area */
 }
 
-::-webkit-scrollbar-thumb {
-  background-color: #e0e0e0; /* color of the scroll thumb */
-  border-radius: 12px; /* roundness of the scroll thumb */
-  border: 1px solid #313131; /* creates padding around scroll thumb */
-}
 .unselectable{
 -webkit-user-select: none; /* Safari */        
 -moz-user-select: none; /* Firefox */
@@ -22,6 +17,11 @@
 user-select: none; /* Standard */
 }
 @media (prefers-color-scheme: light) {
+  ::-webkit-scrollbar-thumb {
+    background-color: #313131; /* color of the scroll thumb */
+    border-radius: 12px; /* roundness of the scroll thumb */
+    border: 1px solid #e0e0e0; /* creates padding around scroll thumb */
+  }
   .trapeze {
     color: white;
     height: 50px;
@@ -116,6 +116,12 @@ user-select: none; /* Standard */
 
 
   @media (prefers-color-scheme: dark) {
+    ::-webkit-scrollbar-thumb {
+      background-color: #e0e0e0; /* color of the scroll thumb */
+      border-radius: 12px; /* roundness of the scroll thumb */
+      border: 1px solid #313131; /* creates padding around scroll thumb */
+    }
+
     .trapeze {
       color: #191919;
       height: 50px;
