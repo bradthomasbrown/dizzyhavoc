@@ -449,12 +449,12 @@ export default function TokenData() {
         </h1>
       </a>
     </section>
-
-  </div>
-          <div className="absolute bottom-1 left-[50%] translate-x-[-50%] dark:text-[#d2d2d2] unselectable text-[10px] sm:text-[13px]">
+    <div className="absolute bottom-1 left-[50%] translate-x-[-50%] dark:text-[#d2d2d2] unselectable text-[10px] sm:text-[13px]">
     update in: {count}
   
   </div>
+  </div>
+   
   <div class="bottom-1 sm:visible invisible dark:text-[#d2d2d2] unselectable text-[#6e6e6e] absolute left-1 text-[7x] sm:text-[11px]">
     data from dexscreener, coingecko & poloniex
     
