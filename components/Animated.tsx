@@ -35,11 +35,11 @@ export default function Animated() {
           </p>
           <a
             target="_blank"
-            class="font-medium sm:mt-[32rem] invisible xl:visible mt-[50%] font-[Poppins] z-10 tracking-tighter italic absolute text-[1.4rem] sm:text-[2rem] text-center dark:text-[#d2d2d2] text-[#3d3d3d]"
+            class="font-medium sm:mt-[32rem] invisible xl:visible mt-[50%] font-[Poppins] z-10 tracking-tighter absolute text-[1.4rem] sm:text-[2rem] text-center dark:text-[#d2d2d2] text-[#3d3d3d]"
             href="https://docs.google.com/document/d/1HK-X5rmBqlDGgu5w3GbfYTaGQ7UwjgWm3WPd4_ei5BE/edit"
           >
             {" "}
-            <div class="cursor-pointer hover:scale-[105%]">Learn more</div>{" "}
+            <div class="cursor-pointer dark:text-[#e0cdad] hover:scale-[105%]">Learn more</div>{" "}
           </a>
           <div class="sm:bottom-5 sm:absolute relative bottom-[-25rem]">
             <Available />

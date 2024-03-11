@@ -1,8 +1,8 @@
 export default function Roadmap() {
   return (
     <div class="w-full">
-      <p class="font-medium italic text-[1.7rem] unselectable sm:text-[2.5rem] text-center dark:text-[#d0d0d0] text-[#3d3d3d] mx-auto font-[Poppins] shadow-lg mt-[0.5rem] py-3 bg-blur2 lg:max-w-[32rem] max-w-full rounded-xl px-6 mb-[1rem]">
-        Stage 1 Roadmap.
+      <p class="font-medium text-[1.7rem] unselectable sm:text-[2.5rem] text-center dark:text-[#d0d0d0] text-[#3d3d3d] mx-auto font-[Poppins] shadow-lg mt-[0.5rem] py-3 bg-blur2 lg:max-w-[32rem] max-w-full rounded-xl px-6 mb-[1rem]">
+        Roadmap
       </p>
 
       <div class="flex flex-col w-full mx-auto  min-w-full xl:min-w-[50rem] max-w-[70rem] xl:max-w-[70rem] rounded-xl shadow-lg bg-blur2">
