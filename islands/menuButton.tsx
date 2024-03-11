@@ -5,6 +5,8 @@ export default function MenuButton() {
     const [category, setCategory] = useState('');
 
     const handleCategoryChange = (category: string) => {
+        history.pushState("", document.title, window.location.pathname
+        + window.location.search);
         let newCategory = category;
         if (category === '/Home') {
             newCategory = '/';
