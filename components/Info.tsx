@@ -25,8 +25,8 @@ export default function Info() {
  return (
   <>
   <p
-  id="Info"
-  class="Info
+  id="info"
+  class="info
   font-medium
   italic
   text-[1.7rem]
@@ -48,7 +48,7 @@ export default function Info() {
   mb-[3.5rem]">
   What is Dizzy Havoc ?</p>
   <div class="w-full mb-[230px]">
-  <div class="xl:flex-row w-full  gap-5 justify-center flex-col flex">
+  <div class="md:flex-row w-full gap-5 justify-center flex-col flex">
       <div class="flex flex-row p-9 sm:size-[450px] size-full dark:text-[#d2d2d2] text-[#3d3d3d] h-full rounded-xl shadow-lg dark:bg-blur4 bg-blur2 sm:flex-col">
        <div class="flex flex-col">
         <ul>
@@ -59,13 +59,13 @@ export default function Info() {
         </div>
       </div>
 
-      <div class="flex flex-row p-4 mt-7 sm:mt-0 sm:size-[450px] size-[100%] dark:text-[#d2d2d2] text-[#3d3d3d] rounded-xl shadow-lg dark:bg-blur4 bg-blur2">
+      <div class="flex flex-row p-4 mt-7 sm:visible invisible sm:mt-0 sm:size-[450px] size-[100%] dark:text-[#d2d2d2] text-[#3d3d3d] rounded-xl shadow-lg dark:bg-blur4 bg-blur2">
   <div class="w-full h-full">
     <div class="size-[100%] rounded-lg dark:bg-[url('/darksolvsbytecode.png')] bg-[url('/solvsbytecode.png')]" style="background-size: contain; background-repeat: no-repeat;"></div>
   </div>
 </div>
       </div>
-      <div class="xl:flex-row w-full  gap-5 justify-center sm:mt-[5rem] mt-9 flex-col flex">
+      <div class="md:flex-row w-full  gap-5 justify-center sm:mt-[5rem] mt-9 flex-col flex">
     <div class="flex flex-row p-9 sm:size-[450px] size-full dark:text-[#d2d2d2] text-[#3d3d3d] h-[100%] pb-[5.72rem] rounded-xl shadow-lg dark:bg-blur4 bg-blur2 sm:flex-col-reverse">
         <div class="flex col-start flex-col">
             <h1 class="sm:text-3xl text-2xl font-[Poppins]">A new Cross-Chain Web3 Library.</h1>
@@ -76,14 +76,14 @@ export default function Info() {
             </ul>
         </div>
     </div>
-    <div class="flex flex-row p-4 mt-7 sm:mt-0 sm:size-[450px] size-[100%] dark:text-[#d2d2d2] text-[#3d3d3d] rounded-xl shadow-lg dark:bg-blur4 bg-blur2">
+    <div class="flex flex-row p-4 mt-7 sm:visible invisible sm:mt-0 sm:size-[450px] size-[100%] dark:text-[#d2d2d2] text-[#3d3d3d] rounded-xl shadow-lg dark:bg-blur4 bg-blur2">
   <div class="w-full h-full">
     <div class="size-[100%] rounded-lg dark:bg-[url('/darkNodes.png')] bg-[url('/whiteNodes.png')]" style="background-size: contain; background-repeat: no-repeat;"></div>
   </div>
 </div>
 
 </div>
-      <div class="xl:flex-row w-full  gap-5 justify-center sm:mt-[5rem] mt-9 flex-col flex">
+      <div class="md:flex-row w-full  gap-5 justify-center sm:mt-[5rem] mt-9 flex-col flex">
       <div class="flex flex-row p-9 sm:size-[450px] size-full dark:text-[#d2d2d2] text-[#3d3d3d] h-[100%] rounded-xl shadow-lg dark:bg-blur4 bg-blur2">
        <div class="flex flex-col">
        <h1 class="sm:text-3xl text-2xl font-[Poppins]">What would be its impact?</h1>

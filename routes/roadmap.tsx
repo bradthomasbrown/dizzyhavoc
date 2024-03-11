@@ -1,5 +1,6 @@
 import MenuButton from "../islands/menuButton.tsx";
 import Roadmap from "../components/Roadmap.tsx";
+import Roadmap2 from "../components/Roadmap2.tsx";
 export default function Ecosystem() {
   return (
     <>
@@ -16,6 +17,7 @@ export default function Ecosystem() {
       </div>
       <div class="">
         <Roadmap />
+        <Roadmap2/>
       </div>
     </>
   );

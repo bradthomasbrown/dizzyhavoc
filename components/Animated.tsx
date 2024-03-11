@@ -20,14 +20,14 @@ export default function Animated() {
     <div class="flex flex-col mt-[10rem] sm:mt-0  items-center">
       <div class="absolute min-w-full">
         <div class="w-full z-[10] shadow-xl">
-          <p class="font-medium font-[Poppins] unselectable z-10 w-full tracking-tighter italic absolute text-[1.5rem] sm:text-[2rem] text-center dark:text-[#d2d2d2] text-[#3d3d3d] px-2">
+          <p class="font-medium font-[Poppins] unselectable z-10 w-full tracking-tighter italic absolute text-[1.5rem] sm:text-[2.3rem] text-center dark:text-[#d2d2d2] text-[#3d3d3d] px-2">
             Upgradeable, machine-coded*, multi-chain, DeFi/GameFi ecosystem.
           </p>
         </div>
-        <div class="trapeze invisible sm:visible sm:max-w-[63rem] max-w-[70%] mx-auto z-[-10] shadow-lg" id="trapeze"></div>
+        <div class="trapeze invisible sm:visible mt-4 sm:max-w-[73rem] max-w-[70%] mx-auto z-[-10] shadow-lg" id="trapeze"></div>
         
       </div>
-      <a class="font-medium font-[Poppins] z-10 tracking-tighter italic sm:mt-[3.5rem] mt-[7.5rem] text-[1.1rem] sm:text-[1.7rem] text-center dark:text-[#d2d2d2] text-[#3d3d3d]" href="#Info">
+      <a class="font-medium font-[Poppins] z-10 tracking-tighter italic sm:mt-[7.5rem] mt-[7.5rem] text-[1.1rem] sm:text-[1.7rem] text-center dark:text-[#d2d2d2] text-[#3d3d3d]" href="#info">
         <div class="cursor-pointer text-indigo-900 dark:text-[#e0cdad] hover:scale-[105%]">Learn more</div>
       </a>
      

@@ -1,7 +1,31 @@
 export default function Roadmap() {
   return (
+    <>
+
     <div class="w-full h-full sm:h-screen max-w-screen-lg  mx-auto flex flex-col justify-center">
       <div class="flex p-7 flex-col rounded-xl shadow-lg bg-blur2">
+      <p
+  id="info"
+  class="info
+  font-medium
+  italic
+  text-[1rem]
+  unselectable
+  sm:text-[2rem]
+  text-center
+  dark:text-[#d0d0d0]
+  text-[#3d3d3d]
+  mx-auto
+  font-[Poppins]
+  shadow-lg
+  py-3
+  bg-blur2
+  lg:max-w-[32rem]
+  max-w-full
+  rounded-xl
+  px-6
+  mb-[0.5rem]">
+  Stage 1</p>
             <div class="xl:flex-row gap-2 flex-col flex p-2">
             <div class="xl:flex-row gap-2 flex-col flex">
                 <div class="flex flex-row dark:text-[#d2d2d2] border-[#e0cdad] border-2 text-[#3d3d3d] rounded-xl shadow-lg dark:bg-blur4 bg-blur3">
@@ -103,5 +127,6 @@ export default function Roadmap() {
 
       </div>
     </div>
+    </>
   );
 }
