@@ -128,7 +128,6 @@ export default function TokenData() {
       "https://api.dexscreener.com/latest/dex/tokens/0x3419875B4D3Bca7F3FddA2dB7a476A79fD31B4fE"
       );
       const data = await response.json();
-      console.log(data)
       let totalprice = 0;
       for (let i = 0; i < data.pairs.length; i++) {
         const fixedvalue = Number(data.pairs[i].priceUsd).toFixed(5);
