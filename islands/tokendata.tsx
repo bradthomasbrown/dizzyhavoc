@@ -318,7 +318,7 @@ export default function TokenData() {
       ) : isloading.value ? (
         <>
           <div class="w-full h-full flex justify-center items-center">
-            <div class="w-full shadow-lg px-0 absolute z-50 2xl:px-3 h-full justify-center  items-center rounded-lg gap-0 xl:gap-3 dark:bg-[#212121B3] bg-[#e8e8e8B3] flex flex-col">
+            <div class="w-full shadow-lg px-0 absolute z-50 2xl:px-3 h-full justify-center invisible sm:visible  items-center rounded-lg gap-0 xl:gap-3 dark:bg-[#212121B3] bg-[#e8e8e8B3] flex flex-col">
               <img src="./loader.svg"></img>
             </div>
             <div class="w-full shadow-lg px-0  2xl:px-3 h-full justify-center  items-center rounded-lg gap-0 xl:gap-3 bg-blur3 flex flex-col">
