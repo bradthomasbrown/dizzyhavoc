@@ -52,7 +52,7 @@ export default function Info() {
       >
         What is DizzyHavoc?
       </p>
-      <div class="w-full mb-[230px]">
+      <div class="w-full">
         <div class="md:flex-row w-full gap-5 justify-center items-center mx-auto sm:mx-0 flex-col flex">
           <div class="flex flex-row p-9 sm:size-[450px] size-full dark:text-[#d2d2d2] text-[#3d3d3d] h-full rounded-xl shadow-lg dark:bg-blur4 bg-blur2 sm:flex-col">
             <div class="flex flex-col">

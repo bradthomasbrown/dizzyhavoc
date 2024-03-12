@@ -13,7 +13,7 @@ export default function App({ Component }: PageProps) {
       </head>
       <body class="bg-[#ededed] dark:bg-[#191919]">
         <NavBar/>
-        <Component />
+        <Component/>
         <Footer/>
       </body>
     </html>

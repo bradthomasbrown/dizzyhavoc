@@ -1,7 +1,7 @@
 export default function Error404() {
   return (
     <>
-      <div class="h-screen flex flex-col justify-center items-center">
+      <div class="h-screen sm:mb-[230px] mb-[100px] flex flex-col justify-center items-center">
         <img
           class="invert-0 dark:invert"
           src="/misc/1.gif"

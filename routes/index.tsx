@@ -3,7 +3,7 @@ import Animated from "../components/index/Animated.tsx";
 export default function Home() {
   return (
     <>
-      <div class="w-full h-full flex justify-center">
+      <div class="w-full h-full flex justify-center sm:mb-[230px] mb-[100px]">
         <div class="w-full h-full">
           <Animated />
           <Info />
