@@ -1,8 +1,8 @@
 export default function Available() {
   return (
-    <div>
+    <div class=" mt-[1rem]">
       <p class="font-[Poppins]  dark:text-[#d2d2d2] mb-2 text-[0.8rem] text-center">
-        Chains
+        Available on:
         <br />
       </p>
       <div class="flex flex-row mb-2 gap-5 justify-center">

@@ -1,4 +1,3 @@
-import Available from "../components/AvailableOn.tsx";
 export default function Animated() {
   return (
     <div>
@@ -39,9 +38,6 @@ export default function Animated() {
               </div>
             </a>
           </div>
-        </div>
-        <div class="flex relative mt-[8rem] sm:mt-0 sm:absolute bottom-5">
-          <Available />
         </div>
       </div>
     </div>
