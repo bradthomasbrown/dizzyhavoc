@@ -13,7 +13,6 @@ export default function MarketBar() {
   const liq_bsc = useSignal<number>(0);
   const liq_base = useSignal<number>(0);
   const liq_avax = useSignal<number>(0);
-  const liq_polo = useSignal<number>(0);
   // daily volume
   const vol24_eth = useSignal<number>(0);
   const vol24_arb = useSignal<number>(0);
@@ -28,7 +27,6 @@ export default function MarketBar() {
       "https://api.dexscreener.com/latest/dex/tokens/0x3419875B4D3Bca7F3FddA2dB7a476A79fD31B4fE"
       );
       const data = await response.json();
-
       for (let i = 0; i < data.pairs.length; i++) {
         const fixedliq = Number(data.pairs[i].liquidity.usd).toFixed(2);
         switch (data.pairs[i].url) {
@@ -110,16 +108,16 @@ export default function MarketBar() {
         <div class="w-full h-full flex justify-center items-center">
           <img src="./loader.svg"></img>
         </div>
-      ) : (
+      ) : ( // loaded bar
         <div class="w-full flex sm:flex-row flex-col gap-2">
-          <div class="w-full shadow-lg px-0 relative  2xl:px-3 h-[4rem] justify-center  items-center rounded-lg gap-0 xl:gap-3 bg-blur3 flex flex-row">
+          <div class="w-full shadow-lg px-0 relative  2xl:px-3 h-[4rem] items-center rounded-lg gap-0 xl:gap-3 bg-blur3 flex flex-row">
             <img
               src="/eth.svg"
-              class="size-9 pl-4 hover:scale-[105%]"
+              class="sm:size-9 size-7"
               title="ethereum"
               alt="ethereum"
             />
-            <div class="flex flex-col ">
+            <div class="flex flex-row sm:gap-0 gap-4 sm:flex-col">
               <div class="flex-col flex ">
                 <section class="rounded flex flex-col w-full py-1 gap-3 ml-0">
                   <h1 class="font-[Poppins] dark:text-[#d2d2d2] text-[0.8rem] sm:text-[1rem] inline justify-center tracking-tight items-center">
@@ -127,7 +125,7 @@ export default function MarketBar() {
                   </h1>
                 </section>
               </div>
-              <div class="flex-col flex">
+              <div class="flex flex-row sm:gap-0 gap-4 sm:flex-col">
                 <section class="rounded flex flex-col mx-auto w-full py-1 gap-3 ml-0">
                   <h2 class="font-[Poppins] dark:text-[#d2d2d2] text-[0.8rem] sm:text-[1rem] inline justify-center tracking-tight items-center">
                     24h Vol. : ${vol24_eth.value.toLocaleString("en-US")}
@@ -136,14 +134,14 @@ export default function MarketBar() {
               </div>
             </div>
           </div>
-          <div class="w-full shadow-lg px-0 relative  2xl:px-3 h-[4rem] justify-center  items-center rounded-lg gap-0 xl:gap-3 bg-blur3 flex flex-row">
+          <div class="w-full shadow-lg px-0 relative  2xl:px-3 h-[4rem] items-center rounded-lg gap-0 xl:gap-3 bg-blur3 flex flex-row">
             <img
               src="/arb.svg"
-              class="size-9 hover:scale-[105%]"
+              class="sm:size-9 size-7"
               title="arbitrum"
               alt="arbitrum"
             />
-            <div class="flex flex-col ">
+            <div class="flex flex-row sm:gap-0 gap-4 sm:flex-col">
               <div class="flex-col flex ">
                 <section class="rounded flex flex-col w-full py-1 gap-3 ml-0">
                   <h1 class="font-[Poppins] dark:text-[#d2d2d2] text-[0.8rem] sm:text-[1rem] inline justify-center tracking-tight items-center">
@@ -151,7 +149,7 @@ export default function MarketBar() {
                   </h1>
                 </section>
               </div>
-              <div class="flex-col flex">
+              <div class="flex flex-row sm:gap-0 gap-4 sm:flex-col">
                 <section class="rounded flex flex-col mx-auto w-full py-1 gap-3 ml-0">
                   <h2 class="font-[Poppins] dark:text-[#d2d2d2] text-[0.8rem] sm:text-[1rem] inline justify-center tracking-tight items-center">
                     24h Vol. : ${vol24_arb.value.toLocaleString("en-US")}
@@ -160,14 +158,14 @@ export default function MarketBar() {
               </div>
             </div>
           </div>
-          <div class="w-full shadow-lg px-0 relative  2xl:px-3 h-[4rem] justify-center  items-center rounded-lg gap-0 xl:gap-3 bg-blur3 flex flex-row">
+          <div class="w-full shadow-lg px-0 relative  2xl:px-3 h-[4rem] items-center rounded-lg gap-0 xl:gap-3 bg-blur3 flex flex-row">
             <img
               src="/avax.svg"
-              class="size-9 hover:scale-[105%]"
+              class="sm:size-9 size-7"
               title="avalanche"
               alt="avalanche"
             />
-            <div class="flex flex-col ">
+            <div class="flex flex-row sm:gap-0 gap-4 sm:flex-col">
               <div class="flex-col flex ">
                 <section class="rounded flex flex-col w-full py-1 gap-3 ml-0">
                   <h1 class="font-[Poppins] dark:text-[#d2d2d2] text-[0.8rem] sm:text-[1rem] inline justify-center tracking-tight items-center">
@@ -175,7 +173,7 @@ export default function MarketBar() {
                   </h1>
                 </section>
               </div>
-              <div class="flex-col flex">
+              <div class="flex flex-row sm:gap-0 gap-4 sm:flex-col">
                 <section class="rounded flex flex-col mx-auto w-full py-1 gap-3 ml-0">
                   <h2 class="font-[Poppins] dark:text-[#d2d2d2] text-[0.8rem] sm:text-[1rem] inline justify-center tracking-tight items-center">
                     24h Vol. : ${vol24_avax.value.toLocaleString("en-US")}
@@ -184,14 +182,14 @@ export default function MarketBar() {
               </div>
             </div>
           </div>
-          <div class="w-full shadow-lg px-0 relative  2xl:px-3 h-[4rem] justify-center  items-center rounded-lg gap-0 xl:gap-3 bg-blur3 flex flex-row">
+          <div class="w-full shadow-lg px-0 relative  2xl:px-3 h-[4rem] items-center rounded-lg gap-0 xl:gap-3 bg-blur3 flex flex-row">
             <img
               src="/base.svg"
-              class="size-9 hover:scale-[105%]"
+              class="sm:size-9 size-7"
               title="base"
               alt="base"
             />
-            <div class="flex flex-col ">
+            <div class="flex flex-row sm:gap-0 gap-4 sm:flex-col">
               <div class="flex-col flex ">
                 <section class="rounded flex flex-col w-full py-1 gap-3 ml-0">
                   <h1 class="font-[Poppins] dark:text-[#d2d2d2] text-[0.8rem] sm:text-[1rem] inline justify-center tracking-tight items-center">
@@ -199,7 +197,7 @@ export default function MarketBar() {
                   </h1>
                 </section>
               </div>
-              <div class="flex-col flex">
+              <div class="flex flex-row sm:gap-0 gap-4 sm:flex-col">
                 <section class="rounded flex flex-col mx-auto w-full py-1 gap-3 ml-0">
                   <h2 class="font-[Poppins] dark:text-[#d2d2d2] text-[0.8rem] sm:text-[1rem] inline justify-center tracking-tight items-center">
                     24h Vol. : ${vol24_base.value.toLocaleString("en-US")}
@@ -208,14 +206,14 @@ export default function MarketBar() {
               </div>
             </div>
           </div>
-          <div class="w-full shadow-lg px-0 relative  2xl:px-3 h-[4rem] justify-center  items-center rounded-lg gap-0 xl:gap-3 bg-blur3 flex flex-row">
+          <div class="w-full shadow-lg px-0 relative  2xl:px-3 h-[4rem] items-center rounded-lg gap-0 xl:gap-3 bg-blur3 flex flex-row">
             <img
               src="/bsc.svg"
-              class="size-9 hover:scale-[105%]"
+              class="sm:size-9 size-7"
               title="binance chain"
               alt="binance chain"
             />
-            <div class="flex flex-col ">
+            <div class="flex flex-row sm:gap-0 gap-4 sm:flex-col">
               <div class="flex-col flex ">
                 <section class="rounded flex flex-col w-full py-1 gap-3 ml-0">
                   <h1 class="font-[Poppins] dark:text-[#d2d2d2] text-[0.8rem] sm:text-[1rem] inline justify-center tracking-tight items-center">
@@ -223,7 +221,7 @@ export default function MarketBar() {
                   </h1>
                 </section>
               </div>
-              <div class="flex-col flex">
+              <div class="flex flex-row sm:gap-0 gap-4 sm:flex-col">
                 <section class="rounded flex flex-col mx-auto w-full py-1 gap-3 ml-0">
                   <h2 class="font-[Poppins] dark:text-[#d2d2d2] text-[0.8rem] sm:text-[1rem] inline justify-center tracking-tight items-center">
                     24h Vol. : ${vol24_bsc.value.toLocaleString("en-US")}

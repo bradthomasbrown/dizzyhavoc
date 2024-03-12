@@ -15,8 +15,8 @@ export default function Footer() {
           <a target="_blank" href="https://github.com/bradbrown-llc/dizzyhavoc">
             <img src="/git.png" class="size-8 hover:scale-[110%] dark:invert invert-0" title="github" alt="github"/>
           </a>
-          <a target="_blank" class="pt-[1px]" href="https://docs.google.com/document/d/1HK-X5rmBqlDGgu5w3GbfYTaGQ7UwjgWm3WPd4_ei5BE/edit">
-            <img src="/google.png" class="size-8 hover:scale-[110%] dark:invert invert-0" title="whitepaper" alt="whitepaper"/>
+          <a target="_blank" class="pt-[1px]" href="https://dizzyhavoc.gitbook.io/dizzyhavoc">
+            <img src="/GitBook.png" class="size-8 hover:scale-[110%] dark:invert invert-0" title="gitbook" alt="whitepaper"/>
           </a>
           <a target="_blank" class="pt-[1px]" href="https://www.coingecko.com/en/coins/dizzyhavoc">
             <img src="/cg.png" class="size-11 hover:scale-[110%] dark:invert invert-0" title="coingecko" alt="coingecko"/>

@@ -25,14 +25,12 @@ export default function TokenData() {
   const liq_bsc = useSignal<number>(0);
   const liq_base = useSignal<number>(0);
   const liq_avax = useSignal<number>(0);
-  const liq_polo = useSignal<number>(0);
   // daily volume
   const vol24_eth = useSignal<number>(0);
   const vol24_arb = useSignal<number>(0);
   const vol24_bsc = useSignal<number>(0);
   const vol24_base = useSignal<number>(0);
   const vol24_avax = useSignal<number>(0);
-  const vol24_polo = useSignal<number>(0);
   // index in token widget
   const arborder = useSignal<number>(0);
   const bscorder = useSignal<number>(0);
@@ -311,17 +309,17 @@ export default function TokenData() {
 
   return (
     <>
-      {initialloading.value ? ( // display loader
-        <div class="w-full h-full flex justify-center items-center">
+      {initialloading.value ? ( // no data : display loader
+        <div class="w-[360px] sm:w-[460px] shadow-lg px-0 relative  2xl:px-3 h-full justify-center  items-center rounded-lg gap-0 xl:gap-3 bg-blur3 flex flex-col">
           <img src="./loader.svg"></img>
         </div>
-      ) : isloading.value ? (
-        <>
+      ) : isloading.value ? ( // widget with blurred loader for desktop
+        <> 
           <div class="w-full h-full flex justify-center items-center">
             <div class="w-full shadow-lg px-0 absolute z-50 2xl:px-3 h-full justify-center invisible sm:visible  items-center rounded-lg gap-0 xl:gap-3 dark:bg-[#212121B3] bg-[#e8e8e8B3] flex flex-col">
               <img src="./loader.svg"></img>
             </div>
-            <div class="w-full shadow-lg px-0  2xl:px-3 h-full justify-center  items-center rounded-lg gap-0 xl:gap-3 bg-blur3 flex flex-col">
+            <div class="w-full shadow-lg px-0 relative  2xl:px-3 h-full justify-center  items-center rounded-lg gap-0 xl:gap-1 bg-blur3 flex flex-col">
               <div class="flex flex-row ">
                 <div class="flex-col flex ">
                   <section class="rounded flex flex-col w-full py-3 my-1 gap-3 ml-3">
@@ -450,16 +448,16 @@ export default function TokenData() {
                 </section>
               </div>
 
-              <div class="bottom-1 dark:text-[#d2d2d2] unselectable text-[#6e6e6e] absolute left-1 text-[11px]">
-                data from dexscreener, coingecko & poloniex ({count})
-              </div>
+
+              <div title="data from dexscreener, coingecko & poloniex." class="bottom-1 unselectable dark:text-[#d2d2d2] text-[#6e6e6e] absolute left-1 text-[11px]">
+            {count}
+          </div>
             </div>
           </div>
         </>
-      ) : (
+      ) : ( // loaded
         <>
-        <div class="w-full shadow-lg px-0 relative  2xl:px-3 h-full justify-center  items-center rounded-lg gap-0 xl:gap-3 bg-blur3 flex flex-col">
-
+        <div class="w-full shadow-lg px-0 relative  2xl:px-3 h-full justify-center  items-center rounded-lg gap-0 xl:gap-1 bg-blur3 flex flex-col">
           <div class="flex flex-row ">
             <div class="flex-col flex ">
               <section class="rounded flex flex-col w-full py-3 my-1 gap-3 ml-3">

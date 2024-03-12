@@ -138,10 +138,9 @@ export default function Info() {
                 <h1 class="text-xl mt-7 dark:sm:font-normal sm:font-medium tracking-tight font-normal dark:font-light">
                   More infos in the litepaper{" "}
                   <a
-                    class="text-[#3b2d82] dark:text-[#e0cdad] bold"
+                    href="/litepaper.pdf"
                     target="_blank"
-                    href="https://docs.google.com/document/d/1HK-X5rmBqlDGgu5w3GbfYTaGQ7UwjgWm3WPd4_ei5BE/edit"
-                  >
+                    class="text-[#3b2d82] dark:text-[#e0cdad] bold">
                     here
                   </a>
                 </h1>

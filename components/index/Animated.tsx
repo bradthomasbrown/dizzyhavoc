@@ -3,7 +3,7 @@ export default function Animated() {
     <div>
       <div class="flex flex-col h-screen justify-start sm:justify-center items-center">
         <div class="absolute h-screen border-transparent lg:border-[#595959] border-2 lg:border-t-transparent lg:border-e-transparent lg:border-s-transparent border-t-transparent border-e-transparent border-s-transparent w-full overflow-hidden -z-10 top-[6.5rem] sm:top-0">
-          <div class="opacity-25 sm:opacity-100" id="stars-container">
+          <div class="opacity-[30%] sm:opacity-100" id="stars-container">
             <div id="stars"></div>
             <div id="stars2"></div>
             <div id="stars3"></div>
@@ -15,8 +15,8 @@ export default function Animated() {
             <div class="air air4"></div>
           </section2>
         </div>
-        <div class="w-full flex justify-center divcontainer">
-          <div class="flex flex-col mt-[10rem] sm:mt-0  items-center">
+        <div class="w-full flex justify-center">
+          <div class="flex flex-col mt-[13rem] sm:mt-0 items-center">
             <div class="absolute min-w-full">
               <div class="w-full z-[10] shadow-xl">
                 <p class="font-medium font-[Poppins] unselectable z-10 w-full tracking-tighter italic absolute text-[1.5rem] sm:text-[2.3rem] text-center dark:text-[#d2d2d2] text-[#3d3d3d] px-2">

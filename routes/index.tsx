@@ -4,7 +4,7 @@ export default function Home() {
   return (
     <>
       <div class="w-full h-full flex justify-center">
-        <div class="w-full h-full items-center">
+        <div class="w-full h-full">
           <Animated />
           <Info />
         </div>
