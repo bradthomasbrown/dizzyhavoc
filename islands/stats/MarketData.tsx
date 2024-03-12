@@ -17,7 +17,6 @@ export default function MarketData() {
             <TokenData />
           </div>
         </div>
-        
     </>
   );
 }

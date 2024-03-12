@@ -59,7 +59,9 @@ export default function MarketBar() {
     } catch (error) {
       // dexscreener error for prices, failsafe gecko
       console.error(error);
-      fetchScreener()
+      setTimeout(() => {
+        fetchScreener();
+      }, 500);
     }
     isloading.value = false;
     initialloading.value = false;

@@ -9,22 +9,22 @@ export default function Info() {
   const content1_4 =
     "* What makes DizzyHavoc unique is the utilization of the EVM bytecode language instead of Solidity. This implies a more low-level and hardware-specific form of programming, closely tied to the architecture of CPUs.";
   const content2 =
-    "● Reduction in deployment costs by reusing implementation code instead of redeploying it.";
+    "Reduction in deployment costs by reusing implementation code instead of redeploying it.";
   const content3 =
-    "● Flexibility in configuring the resolver to point to different implementations, promoting code reusability.";
+    "Flexibility in configuring the resolver to point to different implementations, promoting code reusability.";
   const content4 =
-    "● Ability to evolve and optimize smart contracts over time, with all deployments benefiting from updates to the underlying implementation.";
+    "Ability to evolve and optimize smart contracts over time, with all deployments benefiting from updates to the underlying implementation.";
   const content5 =
-    "● The primary focus at the moment is on constructing the cross chain bridge.";
-  const content6 = "● Then, expanding to as many mainnet chains as possible.";
-  const content7 = "● With multi-Chain support.";
-  const content8 = "● Multi-Node Support.";
+    "The primary focus at the moment is on constructing the cross chain bridge.";
+  const content6 = "Then, expanding to as many mainnet chains as possible.";
+  const content7 = "With multi-Chain support.";
+  const content8 = "Multi-Node Support.";
   const content9 =
-    "● Smarter Network Resource Usage: Optimization of network resource utilization, minimizing congestion, and maximizing overall performance for efficient blockchain interactions. ";
+    "Smarter Network Resource Usage: Optimization of network resource utilization, minimizing congestion, and maximizing overall performance for efficient blockchain interactions. ";
   const content10 =
-    "● Better Batching Support: Streamlining transaction processing by grouping multiple transactions into batches, leading to reduced overhead and enhanced gas efficiency.";
+    "Better Batching Support: Streamlining transaction processing by grouping multiple transactions into batches, leading to reduced overhead and enhanced gas efficiency.";
   const content11 =
-    "● Easier to write with: Simplification of the development process, more intuitive and user-friendly interface.";
+    "Easier to write with: Simplification of the development process, more intuitive and user-friendly interface.";
 
   return (
     <>
@@ -82,7 +82,7 @@ export default function Info() {
               <h1 class="sm:text-3xl text-2xl font-[Poppins]">
                 A new Cross-Chain Web3 Library.
               </h1>
-              <ul class="mt-2">
+              <ul class="mt-2 list-disc list-inside">
                 <li class="text-xl mt-2 dark:sm:font-normal sm:font-normal font-normal dark:font-light">
                   {content7}
                 </li>
@@ -110,7 +110,7 @@ export default function Info() {
               <h1 class="sm:text-3xl text-2xl font-[Poppins]">
                 What would be its impact?
               </h1>
-              <ul class="mt-2">
+              <ul class="mt-2 list-disc list-inside">
                 <li class="text-xl mt-2 dark:sm:font-normal sm:font-normal font-normal dark:font-light">
                   {content2}
                 </li>
@@ -128,7 +128,7 @@ export default function Info() {
               <h1 class="sm:text-3xl text-2xl font-[Poppins]">
                 What to expect next?
               </h1>
-              <ul class="mt-2">
+              <ul class="mt-2 list-disc list-inside">
                 <li class="text-xl mt-2 dark:sm:font-normal sm:font-normal font-normal dark:font-light">
                   {content5}
                 </li>
