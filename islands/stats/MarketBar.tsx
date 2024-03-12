@@ -110,7 +110,7 @@ export default function MarketBar() {
         </div>
       ) : ( // loaded bar
         <div class="w-full flex sm:flex-row flex-col gap-2">
-          <div class="w-full shadow-lg px-0 relative  2xl:px-3 h-[4rem] items-center rounded-lg gap-0 xl:gap-3 bg-blur3 flex flex-row">
+          <div class="w-full shadow-lg px-0 relative justify-center 2xl:px-3 h-[4rem] items-center rounded-lg gap-0 xl:gap-3 bg-blur3 flex flex-row">
             <img
               src="/eth.svg"
               class="sm:size-9 size-7"
@@ -121,20 +121,20 @@ export default function MarketBar() {
               <div class="flex-col flex ">
                 <section class="rounded flex flex-col w-full py-1 gap-3 ml-0">
                   <h1 class="font-[Poppins] dark:text-[#d2d2d2] text-[0.8rem] sm:text-[1rem] inline justify-center tracking-tight items-center">
-                    Eth. Liquidity : ${formatNumber(liq_eth.value)}
+                  Liquidity: ${formatNumber(liq_eth.value)}
                   </h1>
                 </section>
               </div>
               <div class="flex flex-row sm:gap-0 gap-4 sm:flex-col">
                 <section class="rounded flex flex-col mx-auto w-full py-1 gap-3 ml-0">
                   <h2 class="font-[Poppins] dark:text-[#d2d2d2] text-[0.8rem] sm:text-[1rem] inline justify-center tracking-tight items-center">
-                    24h Vol. : ${vol24_eth.value.toLocaleString("en-US")}
+                    24h Vol: ${formatNumber(vol24_eth.value)}
                   </h2>
                 </section>
               </div>
             </div>
           </div>
-          <div class="w-full shadow-lg px-0 relative  2xl:px-3 h-[4rem] items-center rounded-lg gap-0 xl:gap-3 bg-blur3 flex flex-row">
+          <div class="w-full shadow-lg px-0 relative justify-center 2xl:px-3 h-[4rem] items-center rounded-lg gap-0 xl:gap-3 bg-blur3 flex flex-row">
             <img
               src="/arb.svg"
               class="sm:size-9 size-7"
@@ -145,20 +145,20 @@ export default function MarketBar() {
               <div class="flex-col flex ">
                 <section class="rounded flex flex-col w-full py-1 gap-3 ml-0">
                   <h1 class="font-[Poppins] dark:text-[#d2d2d2] text-[0.8rem] sm:text-[1rem] inline justify-center tracking-tight items-center">
-                    Arb. Liquidity : ${formatNumber(liq_arb.value)}
+                  Liquidity: ${formatNumber(liq_arb.value)}
                   </h1>
                 </section>
               </div>
               <div class="flex flex-row sm:gap-0 gap-4 sm:flex-col">
                 <section class="rounded flex flex-col mx-auto w-full py-1 gap-3 ml-0">
                   <h2 class="font-[Poppins] dark:text-[#d2d2d2] text-[0.8rem] sm:text-[1rem] inline justify-center tracking-tight items-center">
-                    24h Vol. : ${vol24_arb.value.toLocaleString("en-US")}
+                    24h Vol: ${formatNumber(vol24_arb.value)}
                   </h2>
                 </section>
               </div>
             </div>
           </div>
-          <div class="w-full shadow-lg px-0 relative  2xl:px-3 h-[4rem] items-center rounded-lg gap-0 xl:gap-3 bg-blur3 flex flex-row">
+          <div class="w-full shadow-lg px-0 relative justify-center 2xl:px-3 h-[4rem] items-center rounded-lg gap-0 xl:gap-3 bg-blur3 flex flex-row">
             <img
               src="/avax.svg"
               class="sm:size-9 size-7"
@@ -169,20 +169,20 @@ export default function MarketBar() {
               <div class="flex-col flex ">
                 <section class="rounded flex flex-col w-full py-1 gap-3 ml-0">
                   <h1 class="font-[Poppins] dark:text-[#d2d2d2] text-[0.8rem] sm:text-[1rem] inline justify-center tracking-tight items-center">
-                    Avax Liquidity: ${formatNumber(liq_avax.value)}
+                  Liquidity: ${formatNumber(liq_avax.value)}
                   </h1>
                 </section>
               </div>
               <div class="flex flex-row sm:gap-0 gap-4 sm:flex-col">
                 <section class="rounded flex flex-col mx-auto w-full py-1 gap-3 ml-0">
                   <h2 class="font-[Poppins] dark:text-[#d2d2d2] text-[0.8rem] sm:text-[1rem] inline justify-center tracking-tight items-center">
-                    24h Vol. : ${vol24_avax.value.toLocaleString("en-US")}
+                    24h Vol: ${formatNumber(vol24_avax.value)}
                   </h2>
                 </section>
               </div>
             </div>
           </div>
-          <div class="w-full shadow-lg px-0 relative  2xl:px-3 h-[4rem] items-center rounded-lg gap-0 xl:gap-3 bg-blur3 flex flex-row">
+          <div class="w-full shadow-lg px-0 relative justify-center 2xl:px-3 h-[4rem] items-center rounded-lg gap-0 xl:gap-3 bg-blur3 flex flex-row">
             <img
               src="/base.svg"
               class="sm:size-9 size-7"
@@ -193,20 +193,20 @@ export default function MarketBar() {
               <div class="flex-col flex ">
                 <section class="rounded flex flex-col w-full py-1 gap-3 ml-0">
                   <h1 class="font-[Poppins] dark:text-[#d2d2d2] text-[0.8rem] sm:text-[1rem] inline justify-center tracking-tight items-center">
-                    Base Liquidity: ${formatNumber(liq_base.value)}
+                  Liquidity: ${formatNumber(liq_base.value)}
                   </h1>
                 </section>
               </div>
               <div class="flex flex-row sm:gap-0 gap-4 sm:flex-col">
                 <section class="rounded flex flex-col mx-auto w-full py-1 gap-3 ml-0">
                   <h2 class="font-[Poppins] dark:text-[#d2d2d2] text-[0.8rem] sm:text-[1rem] inline justify-center tracking-tight items-center">
-                    24h Vol. : ${vol24_base.value.toLocaleString("en-US")}
+                    24h Vol: ${formatNumber(vol24_base.value)}
                   </h2>
                 </section>
               </div>
             </div>
           </div>
-          <div class="w-full shadow-lg px-0 relative  2xl:px-3 h-[4rem] items-center rounded-lg gap-0 xl:gap-3 bg-blur3 flex flex-row">
+          <div class="w-full shadow-lg px-0 relative justify-center 2xl:px-3 h-[4rem] items-center rounded-lg gap-0 xl:gap-3 bg-blur3 flex flex-row">
             <img
               src="/bsc.svg"
               class="sm:size-9 size-7"
@@ -217,14 +217,14 @@ export default function MarketBar() {
               <div class="flex-col flex ">
                 <section class="rounded flex flex-col w-full py-1 gap-3 ml-0">
                   <h1 class="font-[Poppins] dark:text-[#d2d2d2] text-[0.8rem] sm:text-[1rem] inline justify-center tracking-tight items-center">
-                    Bsc Liquidity: ${formatNumber(liq_bsc.value)}
+                  Liquidity: ${formatNumber(liq_bsc.value)}
                   </h1>
                 </section>
               </div>
               <div class="flex flex-row sm:gap-0 gap-4 sm:flex-col">
                 <section class="rounded flex flex-col mx-auto w-full py-1 gap-3 ml-0">
                   <h2 class="font-[Poppins] dark:text-[#d2d2d2] text-[0.8rem] sm:text-[1rem] inline justify-center tracking-tight items-center">
-                    24h Vol. : ${vol24_bsc.value.toLocaleString("en-US")}
+                    24h Vol: ${formatNumber(vol24_bsc.value)}
                   </h2>
                 </section>
               </div>
