@@ -19,7 +19,7 @@ export default function Footer() {
             <img src="/GitBook.png" class="size-8 hover:scale-[110%] dark:invert invert-0" title="gitbook" alt="whitepaper"/>
           </a>
           <a target="_blank" class="pt-[1px]" href="https://www.coingecko.com/en/coins/dizzyhavoc">
-            <img src="/cg.png" class="size-11 hover:scale-[110%] dark:invert invert-0" title="coingecko" alt="coingecko"/>
+            <img src="/cg.png" class="size-8 hover:scale-[110%] dark:invert invert-0" title="coingecko" alt="coingecko"/>
           </a>
         </div>
         <span class="flex dark:text-[#d2d2d2] justify-center mt-4">Brad Brown LLC © {new Date().getFullYear()}</span>
