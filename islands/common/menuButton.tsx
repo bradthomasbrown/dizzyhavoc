@@ -22,7 +22,6 @@ export default function MenuButton() {
                 <option >{"/Home"}</option>
                 <option >{"/Stats"}</option>
                 {/* <option >{"/Bridge"}</option> */}
-                <option >{"/Bridge"}</option>
                 <option>{"/About"}</option>
             </select>
         </div>

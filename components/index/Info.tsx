@@ -135,7 +135,7 @@ export default function Info() {
                 <li class="text-xl mt-2 dark:sm:font-normal sm:font-normal font-normal dark:font-light">
                   {content6}
                 </li>
-                <li class="text-2xl mt-7 dark:sm:font-normal sm:font-medium tracking-tight font-normal dark:font-light">
+                <h1 class="text-xl mt-7 dark:sm:font-normal sm:font-medium tracking-tight font-normal dark:font-light">
                   More infos in the litepaper{" "}
                   <a
                     class="text-[#3b2d82] dark:text-[#e0cdad] bold"
@@ -144,7 +144,7 @@ export default function Info() {
                   >
                     here
                   </a>
-                </li>
+                </h1>
               </ul>
             </div>
           </div>
