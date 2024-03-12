@@ -11,7 +11,7 @@ export default function Buy() {
   return (
     <>
       <div class="w-full mb-[20vh]">
-        <p class="font-medium https://github.com/PaulTheProtocol/dizzyhavoc-web.gittext-[1.7rem] unselectable sm:text-[2.5rem] text-center dark:text-[#d0d0d0] text-[#3d3d3d] mx-auto font-[Poppins] shadow-lg mt-[0.5rem] py-3 bg-blur2 lg:max-w-[32rem] max-w-full rounded-xl px-6 mb-[1rem]">
+        <p class="font-medium text-[1.7rem] unselectable sm:text-[2.5rem] text-center dark:text-[#d0d0d0] text-[#3d3d3d] mx-auto font-[Poppins] shadow-lg mt-[0.5rem] py-3 bg-blur2 lg:max-w-[32rem] max-w-full rounded-xl px-6 mb-[1rem]">
           Exchanges & Chains
         </p>
         <div class="flex xl:flex-row flex-col pb-1 sm:pb-7 h-full shadow-lg mx-auto min-w-full xl:min-w-[50rem] max-w-[70rem] xl:max-w-[55rem] rounded-xl bg-blur2">
