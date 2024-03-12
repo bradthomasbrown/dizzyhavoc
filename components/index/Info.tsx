@@ -140,7 +140,7 @@ export default function Info() {
                   <a
                     href="/info/litepaper.pdf"
                     target="_blank"
-                    class="text-[#3b2d82] dark:text-[#e0cdad] bold">
+                    class="text-[#3b2d82] dark:text-[#ccb286] bold">
                     here
                   </a>
                 </h1>

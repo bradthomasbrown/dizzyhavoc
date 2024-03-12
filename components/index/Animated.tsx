@@ -33,7 +33,7 @@ export default function Animated() {
               class="font-medium font-[Poppins] z-10 tracking-tighter sm:mt-[7.5rem] mt-[7.5rem] text-[1.1rem] sm:text-[1.7rem] text-center dark:text-[#d2d2d2] text-[#3d3d3d]"
               href="#info"
             >
-              <div class="cursor-pointer text-[#3b2d82] dark:text-[#e0cdad] hover:scale-[105%]">
+              <div class="cursor-pointer text-[#3b2d82] dark:text-[#ccb286] hover:scale-[105%]">
                 Learn more
               </div>
             </a>
