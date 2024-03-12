@@ -1,7 +1,6 @@
 export default function Roadmap2() {
     return (
       <>
-  
       <div class="w-full h-full sm:h-screen max-w-screen-xl  mx-auto flex flex-col justify-center">
         <div class="flex p-7 flex-col rounded-xl shadow-lg bg-blur2">
         <p
@@ -39,7 +38,6 @@ export default function Roadmap2() {
                       </ul>
                     </p>
                   </div>
-  
                   </div>
                   </div>
                   <div class="xl:flex-row gap-2 flex-col flex">
@@ -54,7 +52,6 @@ export default function Roadmap2() {
                       </ul>
                     </p>
                   </div>
-  
                   </div>
                   </div>
                 <div class="xl:flex-row gap-2 flex-col flex">
@@ -70,8 +67,6 @@ export default function Roadmap2() {
                   </div>
                 </div>
               </div>
-
-  
             <p class="font-[Poppins] dark:text-[#d2d2d2] mt-7 text-center text-lg">
               more details in the{" "}
               <a
@@ -84,7 +79,6 @@ export default function Roadmap2() {
               <br />
               <br />
             </p>
-  
         </div>
       </div>
       </>

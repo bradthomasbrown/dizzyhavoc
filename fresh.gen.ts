@@ -4,13 +4,15 @@
 
 import * as $_404 from "./routes/_404.tsx";
 import * as $_app from "./routes/_app.tsx";
-import * as $ecosystem from "./routes/ecosystem.tsx";
+import * as $about from "./routes/about.tsx";
 import * as $index from "./routes/index.tsx";
 import * as $roadmap from "./routes/roadmap.tsx";
+import * as $stats from "./routes/stats.tsx";
 import * as $Button from "./islands/Button.tsx";
 import * as $MarketData from "./islands/MarketData.tsx";
 import * as $Web3Input from "./islands/Web3Input.tsx";
 import * as $menuButton from "./islands/menuButton.tsx";
+import * as $navbar from "./islands/navbar.tsx";
 import * as $tokendata from "./islands/tokendata.tsx";
 import { type Manifest } from "$fresh/server.ts";
 
@@ -18,15 +20,17 @@ const manifest = {
   routes: {
     "./routes/_404.tsx": $_404,
     "./routes/_app.tsx": $_app,
-    "./routes/ecosystem.tsx": $ecosystem,
+    "./routes/about.tsx": $about,
     "./routes/index.tsx": $index,
     "./routes/roadmap.tsx": $roadmap,
+    "./routes/stats.tsx": $stats,
   },
   islands: {
     "./islands/Button.tsx": $Button,
     "./islands/MarketData.tsx": $MarketData,
     "./islands/Web3Input.tsx": $Web3Input,
     "./islands/menuButton.tsx": $menuButton,
+    "./islands/navbar.tsx": $navbar,
     "./islands/tokendata.tsx": $tokendata,
   },
   baseUrl: import.meta.url,

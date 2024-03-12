@@ -7,8 +7,8 @@ export default function MarketData() {
   return (
     <>
       <div class="w-full h-screen">
-        <div class="flex h-[30rem] shadow-lg rounded-xl bg-blur2">
-          <div class="w-full p-4 sm:p-9">
+        <div class="flex h-[20rem] shadow-lg rounded-xl bg-blur2">
+          <div class="w-full p-4">
             <TokenData />
           </div>
         </div>

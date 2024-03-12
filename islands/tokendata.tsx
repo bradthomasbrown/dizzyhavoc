@@ -310,431 +310,286 @@ export default function TokenData() {
   });
 
   return (
-<>
- {initialloading.value? // display loader
- <div class="w-full h-full flex justify-center items-center">
- <img src="./loader.svg" ></img>
- </div>
- : 
- isloading.value?
- <>
- <div class="w-full h-full flex justify-center items-center">
-  <div class="w-full shadow-lg px-0 absolute z-50 2xl:px-3 h-full justify-center  items-center rounded-lg gap-0 xl:gap-3 dark:bg-[#212121B3] bg-[#e8e8e8B3] flex flex-col">
- <img src="./loader.svg" ></img>
- </div>
- <div class="w-full shadow-lg px-0  2xl:px-3 h-full justify-center  items-center rounded-lg gap-0 xl:gap-3 bg-blur3 flex flex-col">
-  <div class="flex flex-row ">
-    <div class="flex-col flex ">
-      <section class="rounded flex flex-col w-full py-3 my-1 gap-3 ml-3">
-        <h1 class="font-[Poppins] dark:text-[#d2d2d2] text-[0.8rem] sm:text-[1.2rem] inline justify-center tracking-tight items-center">
-          Avrg. Price : ${avrgprice.value}
-        </h1>
-        <h2 class="font-[Poppins] dark:text-[#d2d2d2] text-[0.8rem] sm:text-[1.2rem] inline justify-center tracking-tight items-center">
-          Mk. Cap : ${formatNumber(avrgprice.value * totalsupply.value)}
-        </h2>
-      </section>
-    </div>
-    <div class="flex-row flex">
-      <section class="rounded flex flex-col mx-auto w-full py-3 my-1 gap-3 ml-3">
-        <h2 class="font-[Poppins] dark:text-[#d2d2d2] text-[0.8rem] sm:text-[1.2rem] inline justify-center tracking-tight items-center">
-          Max Δ : {delta}%
-        </h2>
-        <h1 class="font-[Poppins] dark:text-[#d2d2d2] text-[0.8rem] sm:text-[1.2rem] inline justify-center  tracking-tight items-center">
-          ATH : ${ath.value.toFixed(5)}
-        </h1>
-      </section>
-    </div>
-  </div>
-  <div class="flex-row flex w-full">
-    <section class="rounded ml-3 justify-center flex flex-wrap gap-3">
-      <h1 style={{ order: poloorder != null ? -poloorder : 0 }}>
-        <a
-          class={`text-[1.1rem] dark:text-[#d2d2d2] font-[Poppins] flex`}
-          target="_blank"
-          href="https://poloniex.com/trade/DZHV_USDT/?type=spot"
-        >
-          <img
-            src="/token_polo.png"
-            class="size-6 flex flex-nowrap sm:size-8 hover:scale-[105%] mr-2"
-            title="$DZHV on Poloniex exchange"
-            alt="poloniex"
-          />{" "}
-          ${poloniexprice != null ? poloniexprice.value : ""}
-        </a>
-      </h1>
-      <a
-        target="_blank"
-        style={{ order: avaxorder != null ? -avaxorder : 0 }}
-        href="https://dexscreener.com/avalanche/0x523a04633b6c0c4967824471dda0abbce7c5e643"
-      >
-        <h1
-          class={`text-[1.1rem] dark:text-[#d2d2d2] font-[Poppins] flex`} 
-        >
-          <img
-            src="/token_avax.png"
-            class="size-6 sm:size-8 hover:scale-[105%] mr-2"
-            title="$DZHV on avax"
-            alt="avax"
-          />{" "}
-          ${token_avax != null ? token_avax : ""}
-        </h1>
-      </a>
-      <a
-        target="_blank"
-        style={{ order: ethorder != null ? -ethorder : 0 }}
-        href="https://dexscreener.com/ethereum/0xb7a71c2e31920019962cb62aeea1dbf502905b81"
-      >
-        <h1
-          class={`text-[1.1rem] dark:text-[#d2d2d2] font-[Poppins] flex`}
-        >
-          <img
-            src="/token_eth.png"
-            class="size-6 sm:size-8 hover:scale-[105%] mr-2"
-            title="$DZHV on ethereum"
-            alt="ethereum"
-          />{" "}
-          ${token_eth != null ? token_eth : ""}
-        </h1>
-      </a>
-      <a
-        target="_blank"
-        style={{ order: arborder != null ? -arborder : 0 }}
-        href="https://dexscreener.com/arbitrum/0x05c5bdbc7b3c64109ddcce058ce99f4515fe1c83"
-      >
-        <h1
-          class={`text-[1.1rem] dark:text-[#d2d2d2] font-[Poppins] flex`}
-        >
-          <img
-            src="/token_arb.png"
-            class="size-6 sm:size-8 hover:scale-[105%] mr-2"
-            title="$DZHV on arbitrum"
-            alt="arbitrum"
-          />{" "}
-          ${token_arb != null ? token_arb : ""}
-        </h1>
-      </a>
-      <a
-        target="_blank"
-        style={{ order: bscorder != null ? -bscorder : 0 }}
-        href="https://dexscreener.com/bsc/0x642089a5da2512db761d325a868882ece6e387f5"
-      >
-        <h1
-          class={`text-[1.1rem] dark:text-[#d2d2d2] font-[Poppins] flex`}
-        >
-          <img
-            src="/token_bsc.png"
-            class="size-6 sm:size-8 hover:scale-[105%] mr-2"
-            title="$DZHV on binance chain"
-            alt="binance chain"
-          />{" "}
-          ${token_bsc != null ? token_bsc : ""}
-        </h1>
-      </a>
-      <a
-        target="_blank"
-        style={{ order: baseorder != null ? -baseorder : 0 }}
-        href="https://dexscreener.com/base/0xb64dff20dd5c47e6dbb56ead80d23568006dec1e"
-      >
-        <h1
-          class={`text-[1.1rem] dark:text-[#d2d2d2] font-[Poppins] flex`}
-        >
-          <img
-            src="/token_base.png"
-            class="size-6 sm:size-8 hover:scale-[105%] mr-2"
-            title="$DZHV on base"
-            alt="base"
-          />{" "}
-          ${token_base != null ? token_base : ""}
-        </h1>
-      </a>
-    </section>
-  </div>
-   
-  <div class="bottom-1 dark:text-[#d2d2d2] unselectable text-[#6e6e6e] absolute left-1 text-[11px]">
-  data from dexscreener, coingecko & poloniex ({count})
-    
-  </div>
-</div>
- </div>
- </>
- : 
-<div class="w-full shadow-lg px-0 relative  2xl:px-3 h-full justify-center  items-center rounded-lg gap-0 xl:gap-3 bg-blur3 flex flex-col">
-  <div class="flex flex-row ">
-    <div class="flex-col flex ">
-      <section class="rounded flex flex-col w-full py-3 my-1 gap-3 ml-3">
-        <h1 class="font-[Poppins] dark:text-[#d2d2d2] text-[0.8rem] sm:text-[1.2rem] inline justify-center tracking-tight items-center">
-          Avrg. Price : ${avrgprice.value}
-        </h1>
-        <h2 class="font-[Poppins] dark:text-[#d2d2d2] text-[0.8rem] sm:text-[1.2rem] inline justify-center tracking-tight items-center">
-          Mk. Cap : ${formatNumber(avrgprice.value * totalsupply.value)}
-        </h2>
-      </section>
-    </div>
-    <div class="flex-row flex">
-      <section class="rounded flex flex-col mx-auto w-full py-3 my-1 gap-3 ml-3">
-        <h2 class="font-[Poppins] dark:text-[#d2d2d2] text-[0.8rem] sm:text-[1.2rem] inline justify-center tracking-tight items-center">
-          Max Δ : {delta}%
-        </h2>
-        <h1 class="font-[Poppins] dark:text-[#d2d2d2] text-[0.8rem] sm:text-[1.2rem] inline justify-center  tracking-tight items-center">
-          ATH : ${ath.value.toFixed(5)}
-        </h1>
-      </section>
-    </div>
-  </div>
-  <div class="flex-row relative flex w-full">
-    <section class="rounded ml-3 justify-center flex flex-wrap gap-3">
-      <h1 style={{ order: poloorder != null ? -poloorder : 0 }}>
-        <a
-          class={`text-[1.1rem] dark:text-[#d2d2d2] font-[Poppins] flex`}
-          target="_blank"
-          href="https://poloniex.com/trade/DZHV_USDT/?type=spot"
-        >
-          <img
-            src="/token_polo.png"
-            class="size-6 flex flex-nowrap sm:size-8 hover:scale-[105%] mr-2"
-            title="$DZHV on Poloniex exchange"
-            alt="poloniex"
-          />{" "}
-          ${poloniexprice != null ? poloniexprice.value : ""}
-        </a>
-      </h1>
-      <a
-        target="_blank"
-        style={{ order: avaxorder != null ? -avaxorder : 0 }}
-        href="https://dexscreener.com/avalanche/0x523a04633b6c0c4967824471dda0abbce7c5e643"
-      >
-        <h1
-          class={`text-[1.1rem] dark:text-[#d2d2d2] font-[Poppins] flex`} 
-        >
-          <img
-            src="/token_avax.png"
-            class="size-6 sm:size-8 hover:scale-[105%] mr-2"
-            title="$DZHV on avax"
-            alt="avax"
-          />{" "}
-          ${token_avax != null ? token_avax : ""}
-        </h1>
-      </a>
-      <a
-        target="_blank"
-        style={{ order: ethorder != null ? -ethorder : 0 }}
-        href="https://dexscreener.com/ethereum/0xb7a71c2e31920019962cb62aeea1dbf502905b81"
-      >
-        <h1
-          class={`text-[1.1rem] dark:text-[#d2d2d2] font-[Poppins] flex`}
-        >
-          <img
-            src="/token_eth.png"
-            class="size-6 sm:size-8 hover:scale-[105%] mr-2"
-            title="$DZHV on ethereum"
-            alt="ethereum"
-          />{" "}
-          ${token_eth != null ? token_eth : ""}
-        </h1>
-      </a>
-      <a
-        target="_blank"
-        style={{ order: arborder != null ? -arborder : 0 }}
-        href="https://dexscreener.com/arbitrum/0x05c5bdbc7b3c64109ddcce058ce99f4515fe1c83"
-      >
-        <h1
-          class={`text-[1.1rem] dark:text-[#d2d2d2] font-[Poppins] flex`}
-        >
-          <img
-            src="/token_arb.png"
-            class="size-6 sm:size-8 hover:scale-[105%] mr-2"
-            title="$DZHV on arbitrum"
-            alt="arbitrum"
-          />{" "}
-          ${token_arb != null ? token_arb : ""}
-        </h1>
-      </a>
-      <a
-        target="_blank"
-        style={{ order: bscorder != null ? -bscorder : 0 }}
-        href="https://dexscreener.com/bsc/0x642089a5da2512db761d325a868882ece6e387f5"
-      >
-        <h1
-          class={`text-[1.1rem] dark:text-[#d2d2d2] font-[Poppins] flex`}
-        >
-          <img
-            src="/token_bsc.png"
-            class="size-6 sm:size-8 hover:scale-[105%] mr-2"
-            title="$DZHV on binance chain"
-            alt="binance chain"
-          />{" "}
-          ${token_bsc != null ? token_bsc : ""}
-        </h1>
-      </a>
-      <a
-        target="_blank"
-        style={{ order: baseorder != null ? -baseorder : 0 }}
-        href="https://dexscreener.com/base/0xb64dff20dd5c47e6dbb56ead80d23568006dec1e"
-      >
-        <h1
-          class={`text-[1.1rem] dark:text-[#d2d2d2] font-[Poppins] flex`}
-        >
-          <img
-            src="/token_base.png"
-            class="size-6 sm:size-8 hover:scale-[105%] mr-2"
-            title="$DZHV on base"
-            alt="base"
-          />{" "}
-          ${token_base != null ? token_base : ""}
-        </h1>
-      </a>
-      
-    </section>
+    <>
+      {initialloading.value ? ( // display loader
+        <div class="w-full h-full flex justify-center items-center">
+          <img src="./loader.svg"></img>
+        </div>
+      ) : isloading.value ? (
+        <>
+          <div class="w-full h-full flex justify-center items-center">
+            <div class="w-full shadow-lg px-0 absolute z-50 2xl:px-3 h-full justify-center  items-center rounded-lg gap-0 xl:gap-3 dark:bg-[#212121B3] bg-[#e8e8e8B3] flex flex-col">
+              <img src="./loader.svg"></img>
+            </div>
+            <div class="w-full shadow-lg px-0  2xl:px-3 h-full justify-center  items-center rounded-lg gap-0 xl:gap-3 bg-blur3 flex flex-col">
+              <div class="flex flex-row ">
+                <div class="flex-col flex ">
+                  <section class="rounded flex flex-col w-full py-3 my-1 gap-3 ml-3">
+                    <h1 class="font-[Poppins] dark:text-[#d2d2d2] text-[0.8rem] sm:text-[1.2rem] inline justify-center tracking-tight items-center">
+                      Avrg. Price : ${avrgprice.value}
+                    </h1>
+                    <h2 class="font-[Poppins] dark:text-[#d2d2d2] text-[0.8rem] sm:text-[1.2rem] inline justify-center tracking-tight items-center">
+                      Mk. Cap : $
+                      {formatNumber(avrgprice.value * totalsupply.value)}
+                    </h2>
+                  </section>
+                </div>
+                <div class="flex-row flex">
+                  <section class="rounded flex flex-col mx-auto w-full py-3 my-1 gap-3 ml-3">
+                    <h2 class="font-[Poppins] dark:text-[#d2d2d2] text-[0.8rem] sm:text-[1.2rem] inline justify-center tracking-tight items-center">
+                      Max Δ : {delta}%
+                    </h2>
+                    <h1 class="font-[Poppins] dark:text-[#d2d2d2] text-[0.8rem] sm:text-[1.2rem] inline justify-center  tracking-tight items-center">
+                      ATH : ${ath.value.toFixed(5)}
+                    </h1>
+                  </section>
+                </div>
+              </div>
+              <div class="flex-row flex w-full">
+                <section class="rounded ml-3 justify-center flex flex-wrap gap-3">
+                  <h1 style={{ order: poloorder != null ? -poloorder : 0 }}>
+                    <a
+                      class={`text-[1.1rem] dark:text-[#d2d2d2] font-[Poppins] flex`}
+                      target="_blank"
+                      href="https://poloniex.com/trade/DZHV_USDT/?type=spot"
+                    >
+                      <img
+                        src="/token_polo.png"
+                        class="size-6 flex flex-nowrap sm:size-8 hover:scale-[105%] mr-2"
+                        title="$DZHV on Poloniex exchange"
+                        alt="poloniex"
+                      />{" "}
+                      ${poloniexprice != null ? poloniexprice.value : ""}
+                    </a>
+                  </h1>
+                  <a
+                    target="_blank"
+                    style={{ order: avaxorder != null ? -avaxorder : 0 }}
+                    href="https://dexscreener.com/avalanche/0x523a04633b6c0c4967824471dda0abbce7c5e643"
+                  >
+                    <h1
+                      class={`text-[1.1rem] dark:text-[#d2d2d2] font-[Poppins] flex`}
+                    >
+                      <img
+                        src="/token_avax.png"
+                        class="size-6 sm:size-8 hover:scale-[105%] mr-2"
+                        title="$DZHV on avax"
+                        alt="avax"
+                      />{" "}
+                      ${token_avax != null ? token_avax : ""}
+                    </h1>
+                  </a>
+                  <a
+                    target="_blank"
+                    style={{ order: ethorder != null ? -ethorder : 0 }}
+                    href="https://dexscreener.com/ethereum/0xb7a71c2e31920019962cb62aeea1dbf502905b81"
+                  >
+                    <h1
+                      class={`text-[1.1rem] dark:text-[#d2d2d2] font-[Poppins] flex`}
+                    >
+                      <img
+                        src="/token_eth.png"
+                        class="size-6 sm:size-8 hover:scale-[105%] mr-2"
+                        title="$DZHV on ethereum"
+                        alt="ethereum"
+                      />{" "}
+                      ${token_eth != null ? token_eth : ""}
+                    </h1>
+                  </a>
+                  <a
+                    target="_blank"
+                    style={{ order: arborder != null ? -arborder : 0 }}
+                    href="https://dexscreener.com/arbitrum/0x05c5bdbc7b3c64109ddcce058ce99f4515fe1c83"
+                  >
+                    <h1
+                      class={`text-[1.1rem] dark:text-[#d2d2d2] font-[Poppins] flex`}
+                    >
+                      <img
+                        src="/token_arb.png"
+                        class="size-6 sm:size-8 hover:scale-[105%] mr-2"
+                        title="$DZHV on arbitrum"
+                        alt="arbitrum"
+                      />{" "}
+                      ${token_arb != null ? token_arb : ""}
+                    </h1>
+                  </a>
+                  <a
+                    target="_blank"
+                    style={{ order: bscorder != null ? -bscorder : 0 }}
+                    href="https://dexscreener.com/bsc/0x642089a5da2512db761d325a868882ece6e387f5"
+                  >
+                    <h1
+                      class={`text-[1.1rem] dark:text-[#d2d2d2] font-[Poppins] flex`}
+                    >
+                      <img
+                        src="/token_bsc.png"
+                        class="size-6 sm:size-8 hover:scale-[105%] mr-2"
+                        title="$DZHV on binance chain"
+                        alt="binance chain"
+                      />{" "}
+                      ${token_bsc != null ? token_bsc : ""}
+                    </h1>
+                  </a>
+                  <a
+                    target="_blank"
+                    style={{ order: baseorder != null ? -baseorder : 0 }}
+                    href="https://dexscreener.com/base/0xb64dff20dd5c47e6dbb56ead80d23568006dec1e"
+                  >
+                    <h1
+                      class={`text-[1.1rem] dark:text-[#d2d2d2] font-[Poppins] flex`}
+                    >
+                      <img
+                        src="/token_base.png"
+                        class="size-6 sm:size-8 hover:scale-[105%] mr-2"
+                        title="$DZHV on base"
+                        alt="base"
+                      />{" "}
+                      ${token_base != null ? token_base : ""}
+                    </h1>
+                  </a>
+                </section>
+              </div>
 
-  </div>
+              <div class="bottom-1 dark:text-[#d2d2d2] unselectable text-[#6e6e6e] absolute left-1 text-[11px]">
+                data from dexscreener, coingecko & poloniex ({count})
+              </div>
+            </div>
+          </div>
+        </>
+      ) : (
+        <div class="w-full shadow-lg px-0 relative  2xl:px-3 h-full justify-center  items-center rounded-lg gap-0 xl:gap-3 bg-blur3 flex flex-col">
+          <div class="flex flex-row ">
+            <div class="flex-col flex ">
+              <section class="rounded flex flex-col w-full py-3 my-1 gap-3 ml-3">
+                <h1 class="font-[Poppins] dark:text-[#d2d2d2] text-[0.8rem] sm:text-[1.2rem] inline justify-center tracking-tight items-center">
+                  Avrg. Price : ${avrgprice.value}
+                </h1>
+                <h2 class="font-[Poppins] dark:text-[#d2d2d2] text-[0.8rem] sm:text-[1.2rem] inline justify-center tracking-tight items-center">
+                  Mk. Cap : ${formatNumber(avrgprice.value * totalsupply.value)}
+                </h2>
+              </section>
+            </div>
+            <div class="flex-row flex">
+              <section class="rounded flex flex-col mx-auto w-full py-3 my-1 gap-3 ml-3">
+                <h2 class="font-[Poppins] dark:text-[#d2d2d2] text-[0.8rem] sm:text-[1.2rem] inline justify-center tracking-tight items-center">
+                  Max Δ : {delta}%
+                </h2>
+                <h1 class="font-[Poppins] dark:text-[#d2d2d2] text-[0.8rem] sm:text-[1.2rem] inline justify-center  tracking-tight items-center">
+                  ATH : ${ath.value.toFixed(5)}
+                </h1>
+              </section>
+            </div>
+          </div>
+          <div class="flex-row relative flex w-full">
+            <section class="rounded ml-3 justify-center flex flex-wrap gap-3">
+              <h1 style={{ order: poloorder != null ? -poloorder : 0 }}>
+                <a
+                  class={`text-[1.1rem] dark:text-[#d2d2d2] font-[Poppins] flex`}
+                  target="_blank"
+                  href="https://poloniex.com/trade/DZHV_USDT/?type=spot"
+                >
+                  <img
+                    src="/token_polo.png"
+                    class="size-6 flex flex-nowrap sm:size-8 hover:scale-[105%] mr-2"
+                    title="$DZHV on Poloniex exchange"
+                    alt="poloniex"
+                  />{" "}
+                  ${poloniexprice != null ? poloniexprice.value : ""}
+                </a>
+              </h1>
+              <a
+                target="_blank"
+                style={{ order: avaxorder != null ? -avaxorder : 0 }}
+                href="https://dexscreener.com/avalanche/0x523a04633b6c0c4967824471dda0abbce7c5e643"
+              >
+                <h1
+                  class={`text-[1.1rem] dark:text-[#d2d2d2] font-[Poppins] flex`}
+                >
+                  <img
+                    src="/token_avax.png"
+                    class="size-6 sm:size-8 hover:scale-[105%] mr-2"
+                    title="$DZHV on avax"
+                    alt="avax"
+                  />{" "}
+                  ${token_avax != null ? token_avax : ""}
+                </h1>
+              </a>
+              <a
+                target="_blank"
+                style={{ order: ethorder != null ? -ethorder : 0 }}
+                href="https://dexscreener.com/ethereum/0xb7a71c2e31920019962cb62aeea1dbf502905b81"
+              >
+                <h1
+                  class={`text-[1.1rem] dark:text-[#d2d2d2] font-[Poppins] flex`}
+                >
+                  <img
+                    src="/token_eth.png"
+                    class="size-6 sm:size-8 hover:scale-[105%] mr-2"
+                    title="$DZHV on ethereum"
+                    alt="ethereum"
+                  />{" "}
+                  ${token_eth != null ? token_eth : ""}
+                </h1>
+              </a>
+              <a
+                target="_blank"
+                style={{ order: arborder != null ? -arborder : 0 }}
+                href="https://dexscreener.com/arbitrum/0x05c5bdbc7b3c64109ddcce058ce99f4515fe1c83"
+              >
+                <h1
+                  class={`text-[1.1rem] dark:text-[#d2d2d2] font-[Poppins] flex`}
+                >
+                  <img
+                    src="/token_arb.png"
+                    class="size-6 sm:size-8 hover:scale-[105%] mr-2"
+                    title="$DZHV on arbitrum"
+                    alt="arbitrum"
+                  />{" "}
+                  ${token_arb != null ? token_arb : ""}
+                </h1>
+              </a>
+              <a
+                target="_blank"
+                style={{ order: bscorder != null ? -bscorder : 0 }}
+                href="https://dexscreener.com/bsc/0x642089a5da2512db761d325a868882ece6e387f5"
+              >
+                <h1
+                  class={`text-[1.1rem] dark:text-[#d2d2d2] font-[Poppins] flex`}
+                >
+                  <img
+                    src="/token_bsc.png"
+                    class="size-6 sm:size-8 hover:scale-[105%] mr-2"
+                    title="$DZHV on binance chain"
+                    alt="binance chain"
+                  />{" "}
+                  ${token_bsc != null ? token_bsc : ""}
+                </h1>
+              </a>
+              <a
+                target="_blank"
+                style={{ order: baseorder != null ? -baseorder : 0 }}
+                href="https://dexscreener.com/base/0xb64dff20dd5c47e6dbb56ead80d23568006dec1e"
+              >
+                <h1
+                  class={`text-[1.1rem] dark:text-[#d2d2d2] font-[Poppins] flex`}
+                >
+                  <img
+                    src="/token_base.png"
+                    class="size-6 sm:size-8 hover:scale-[105%] mr-2"
+                    title="$DZHV on base"
+                    alt="base"
+                  />{" "}
+                  ${token_base != null ? token_base : ""}
+                </h1>
+              </a>
+            </section>
+          </div>
 
-  <div class="bottom-1 dark:text-[#d2d2d2] unselectable text-[#6e6e6e] absolute left-1 text-[11px]">
-    data from dexscreener, coingecko & poloniex ({count})
-    
-  </div>
-</div>
- }
-</>
+          <div class="bottom-1 dark:text-[#d2d2d2] unselectable text-[#6e6e6e] absolute left-1 text-[11px]">
+            data from dexscreener, coingecko & poloniex ({count})
+          </div>
+        </div>
+      )}
+    </>
   );
 }
-
-{/* <>
-<div class="w-full shadow-lg px-0  2xl:px-3 h-full justify-center  items-center rounded-lg gap-0 xl:gap-3 bg-blur3 flex flex-col">
-  <div class="flex flex-row ">
-    <div class="flex-col flex ">
-      <section class="rounded flex flex-col w-full py-3 my-1 gap-3 ml-3">
-        <h1 class="font-[Poppins] dark:text-[#d2d2d2] text-[0.8rem] sm:text-[1.2rem] inline justify-center tracking-tight items-center">
-          Avrg. Price : ${avrgprice.value}
-        </h1>
-        <h2 class="font-[Poppins] dark:text-[#d2d2d2] text-[0.8rem] sm:text-[1.2rem] inline justify-center tracking-tight items-center">
-          Mk. Cap : ${formatNumber(avrgprice.value * totalsupply.value)}
-        </h2>
-      </section>
-    </div>
-    <div class="flex-row flex">
-      <section class="rounded flex flex-col mx-auto w-full py-3 my-1 gap-3 ml-3">
-        <h2 class="font-[Poppins] dark:text-[#d2d2d2] text-[0.8rem] sm:text-[1.2rem] inline justify-center tracking-tight items-center">
-          Max Δ : {delta}%
-        </h2>
-        <h1 class="font-[Poppins] dark:text-[#d2d2d2] text-[0.8rem] sm:text-[1.2rem] inline justify-center  tracking-tight items-center">
-          ATH : ${ath.value.toFixed(5)}
-        </h1>
-      </section>
-    </div>
-  </div>
-  <div class="flex-row flex w-full">
-    <section class="rounded ml-3 justify-center flex flex-wrap gap-3">
-      <h1 style={{ order: poloorder != null ? -poloorder : 0 }}>
-        <a
-          class={`text-[1.1rem] dark:text-[#d2d2d2] font-[Poppins] flex`}
-          target="_blank"
-          href="https://poloniex.com/trade/DZHV_USDT/?type=spot"
-        >
-          <img
-            src="/token_polo.png"
-            class="size-6 flex flex-nowrap sm:size-8 hover:scale-[105%] mr-2"
-            title="$DZHV on Poloniex exchange"
-            alt="poloniex"
-          />{" "}
-          ${poloniexprice != null ? poloniexprice.value : ""}
-        </a>
-      </h1>
-      <a
-        target="_blank"
-        style={{ order: avaxorder != null ? -avaxorder : 0 }}
-        href="https://dexscreener.com/avalanche/0x523a04633b6c0c4967824471dda0abbce7c5e643"
-      >
-        <h1
-          class={`text-[1.1rem] dark:text-[#d2d2d2] font-[Poppins] flex`} 
-        >
-          <img
-            src="/token_avax.png"
-            class="size-6 sm:size-8 hover:scale-[105%] mr-2"
-            title="$DZHV on avax"
-            alt="avax"
-          />{" "}
-          ${token_avax != null ? token_avax : ""}
-        </h1>
-      </a>
-      <a
-        target="_blank"
-        style={{ order: ethorder != null ? -ethorder : 0 }}
-        href="https://dexscreener.com/ethereum/0xb7a71c2e31920019962cb62aeea1dbf502905b81"
-      >
-        <h1
-          class={`text-[1.1rem] dark:text-[#d2d2d2] font-[Poppins] flex`}
-        >
-          <img
-            src="/token_eth.png"
-            class="size-6 sm:size-8 hover:scale-[105%] mr-2"
-            title="$DZHV on ethereum"
-            alt="ethereum"
-          />{" "}
-          ${token_eth != null ? token_eth : ""}
-        </h1>
-      </a>
-      <a
-        target="_blank"
-        style={{ order: arborder != null ? -arborder : 0 }}
-        href="https://dexscreener.com/arbitrum/0x05c5bdbc7b3c64109ddcce058ce99f4515fe1c83"
-      >
-        <h1
-          class={`text-[1.1rem] dark:text-[#d2d2d2] font-[Poppins] flex`}
-        >
-          <img
-            src="/token_arb.png"
-            class="size-6 sm:size-8 hover:scale-[105%] mr-2"
-            title="$DZHV on arbitrum"
-            alt="arbitrum"
-          />{" "}
-          ${token_arb != null ? token_arb : ""}
-        </h1>
-      </a>
-      <a
-        target="_blank"
-        style={{ order: bscorder != null ? -bscorder : 0 }}
-        href="https://dexscreener.com/bsc/0x642089a5da2512db761d325a868882ece6e387f5"
-      >
-        <h1
-          class={`text-[1.1rem] dark:text-[#d2d2d2] font-[Poppins] flex`}
-        >
-          <img
-            src="/token_bsc.png"
-            class="size-6 sm:size-8 hover:scale-[105%] mr-2"
-            title="$DZHV on binance chain"
-            alt="binance chain"
-          />{" "}
-          ${token_bsc != null ? token_bsc : ""}
-        </h1>
-      </a>
-      <a
-        target="_blank"
-        style={{ order: baseorder != null ? -baseorder : 0 }}
-        href="https://dexscreener.com/base/0xb64dff20dd5c47e6dbb56ead80d23568006dec1e"
-      >
-        <h1
-          class={`text-[1.1rem] dark:text-[#d2d2d2] font-[Poppins] flex`}
-        >
-          <img
-            src="/token_base.png"
-            class="size-6 sm:size-8 hover:scale-[105%] mr-2"
-            title="$DZHV on base"
-            alt="base"
-          />{" "}
-          ${token_base != null ? token_base : ""}
-        </h1>
-      </a>
-    </section>
-
-  </div>
-          <div className="absolute bottom-1 left-[50%] translate-x-[-50%] dark:text-[#d2d2d2] unselectable text-[10px] sm:text-[13px]">
-    update in: {count}
-  
-  </div>
-  <div class="bottom-1 sm:visible invisible dark:text-[#d2d2d2] unselectable text-[#6e6e6e] absolute left-1 text-[7x] sm:text-[11px]">
-    data from dexscreener, coingecko & poloniex
-    
-  </div>
-</div>
-{isloading.value ? <div className="text-2xl">loading...</div> : null}
-</> */}
