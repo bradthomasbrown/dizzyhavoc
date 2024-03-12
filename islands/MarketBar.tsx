@@ -108,131 +108,8 @@ export default function MarketBar() {
         <div class="w-full h-full flex justify-center items-center">
           <img src="./loader.svg"></img>
         </div>
-      ) : isloading.value ? (
-        <div class="w-full flex sm:flex-row flex-col gap-4">
-        <div class="w-full shadow-lg px-0 relative  2xl:px-3 h-full justify-center  items-center rounded-lg gap-0 xl:gap-3 bg-blur3 flex flex-row">
-          <img
-            src="/eth.svg"
-            class="size-11 pl-4 hover:scale-[105%]"
-            title="ethereum"
-            alt="ethereum"
-          />
-          <div class="flex flex-col ">
-            <div class="flex-col flex ">
-              <section class="rounded flex flex-col w-full py-1 gap-3 ml-3">
-                <h1 class="font-[Poppins] dark:text-[#d2d2d2] text-[0.8rem] sm:text-[1rem] inline justify-center tracking-tight items-center">
-                  Eth. Liquidity : ${formatNumber(liq_eth.value)}
-                </h1>
-              </section>
-            </div>
-            <div class="flex-col flex">
-              <section class="rounded flex flex-col mx-auto w-full py-1 gap-3 ml-3">
-                <h2 class="font-[Poppins] dark:text-[#d2d2d2] text-[0.8rem] sm:text-[1rem] inline justify-center tracking-tight items-center">
-                  24h Vol. : ${vol24_eth.value.toLocaleString("en-US")}
-                </h2>
-              </section>
-            </div>
-          </div>
-        </div>
-        <div class="w-full shadow-lg px-0 relative  2xl:px-3 h-full justify-center  items-center rounded-lg gap-0 xl:gap-3 bg-blur3 flex flex-row">
-          <img
-            src="/arb.svg"
-            class="size-11 hover:scale-[105%]"
-            title="arbitrum"
-            alt="arbitrum"
-          />
-          <div class="flex flex-col ">
-            <div class="flex-col flex ">
-              <section class="rounded flex flex-col w-full py-1 gap-3 ml-3">
-                <h1 class="font-[Poppins] dark:text-[#d2d2d2] text-[0.8rem] sm:text-[1rem] inline justify-center tracking-tight items-center">
-                  Arb. Liquidity : ${formatNumber(liq_arb.value)}
-                </h1>
-              </section>
-            </div>
-            <div class="flex-col flex">
-              <section class="rounded flex flex-col mx-auto w-full py-1 gap-3 ml-3">
-                <h2 class="font-[Poppins] dark:text-[#d2d2d2] text-[0.8rem] sm:text-[1rem] inline justify-center tracking-tight items-center">
-                  24h Vol. : ${vol24_arb.value.toLocaleString("en-US")}
-                </h2>
-              </section>
-            </div>
-          </div>
-        </div>
-        <div class="w-full shadow-lg px-0 relative  2xl:px-3 h-full justify-center  items-center rounded-lg gap-0 xl:gap-3 bg-blur3 flex flex-row">
-          <img
-            src="/avax.svg"
-            class="size-11 hover:scale-[105%]"
-            title="avalanche"
-            alt="avalanche"
-          />
-          <div class="flex flex-col ">
-            <div class="flex-col flex ">
-              <section class="rounded flex flex-col w-full py-1 gap-3 ml-3">
-                <h1 class="font-[Poppins] dark:text-[#d2d2d2] text-[0.8rem] sm:text-[1rem] inline justify-center tracking-tight items-center">
-                  Avax Liquidity: ${formatNumber(liq_avax.value)}
-                </h1>
-              </section>
-            </div>
-            <div class="flex-col flex">
-              <section class="rounded flex flex-col mx-auto w-full py-1 gap-3 ml-3">
-                <h2 class="font-[Poppins] dark:text-[#d2d2d2] text-[0.8rem] sm:text-[1rem] inline justify-center tracking-tight items-center">
-                  24h Vol. : ${vol24_avax.value.toLocaleString("en-US")}
-                </h2>
-              </section>
-            </div>
-          </div>
-        </div>
-        <div class="w-full shadow-lg px-0 relative  2xl:px-3 h-full justify-center  items-center rounded-lg gap-0 xl:gap-3 bg-blur3 flex flex-row">
-          <img
-            src="/base.svg"
-            class="size-11 hover:scale-[105%]"
-            title="base"
-            alt="base"
-          />
-          <div class="flex flex-col ">
-            <div class="flex-col flex ">
-              <section class="rounded flex flex-col w-full py-1 gap-3 ml-3">
-                <h1 class="font-[Poppins] dark:text-[#d2d2d2] text-[0.8rem] sm:text-[1rem] inline justify-center tracking-tight items-center">
-                  Base Liquidity: ${formatNumber(liq_base.value)}
-                </h1>
-              </section>
-            </div>
-            <div class="flex-col flex">
-              <section class="rounded flex flex-col mx-auto w-full py-1 gap-3 ml-3">
-                <h2 class="font-[Poppins] dark:text-[#d2d2d2] text-[0.8rem] sm:text-[1rem] inline justify-center tracking-tight items-center">
-                  24h Vol. : ${vol24_base.value.toLocaleString("en-US")}
-                </h2>
-              </section>
-            </div>
-          </div>
-        </div>
-        <div class="w-full shadow-lg px-0 relative  2xl:px-3 h-full justify-center  items-center rounded-lg gap-0 xl:gap-3 bg-blur3 flex flex-row">
-          <img
-            src="/bsc.svg"
-            class="size-11 hover:scale-[105%]"
-            title="binance chain"
-            alt="binance chain"
-          />
-          <div class="flex flex-col ">
-            <div class="flex-col flex ">
-              <section class="rounded flex flex-col w-full py-1 gap-3 ml-3">
-                <h1 class="font-[Poppins] dark:text-[#d2d2d2] text-[0.8rem] sm:text-[1rem] inline justify-center tracking-tight items-center">
-                  Bsc Liquidity: ${formatNumber(liq_bsc.value)}
-                </h1>
-              </section>
-            </div>
-            <div class="flex-col flex">
-              <section class="rounded flex flex-col mx-auto w-full py-1 gap-3 ml-3">
-                <h2 class="font-[Poppins] dark:text-[#d2d2d2] text-[0.8rem] sm:text-[1rem] inline justify-center tracking-tight items-center">
-                  24h Vol. : ${vol24_bsc.value.toLocaleString("en-US")}
-                </h2>
-              </section>
-            </div>
-          </div>
-        </div>
-      </div>
       ) : (
-        <div class="w-full flex sm:flex-row flex-col gap-4">
+        <div class="w-full flex sm:flex-row flex-col gap-2">
           <div class="w-full shadow-lg px-0 relative  2xl:px-3 h-[4rem] justify-center  items-center rounded-lg gap-0 xl:gap-3 bg-blur3 flex flex-row">
             <img
               src="/eth.svg"
@@ -356,5 +233,5 @@ export default function MarketBar() {
         </div>
       )}
     </>
-  );
+  )
 }
