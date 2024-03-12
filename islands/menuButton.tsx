@@ -1,9 +1,8 @@
 import { IS_BROWSER } from "$fresh/runtime.ts";
-import { useSignal } from "@preact/signals";
+import { useState } from "preact/hooks";
 export default function MenuButton() {
   if(!IS_BROWSER) return <></>;
-    let category = useSignal<string>('');
-
+    let [category, setCategory] = useState<string>('');
     const handleCategoryChange = (category: string) => {
         history.pushState("", document.title, window.location.pathname
         + window.location.search);
@@ -11,8 +10,9 @@ export default function MenuButton() {
         if (category === '/Home') {
             newCategory = '/';
         }
+        category = newCategory;
         window.location.pathname = `${newCategory.toLocaleLowerCase()}`;
-        category = "";
+        setCategory(null);
     }
     
     return (
