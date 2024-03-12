@@ -7,10 +7,10 @@ export default function NavBar() {
       <div class="justify-start w-full flex">
         <div class="lg:text-[1.8rem] unselectable gap-2 items-center flex justify-center text-[1.5rem] font-[Poppins] font-medium  z-10 font-Poppins dark:text-[#d2d2d2]  text-[#282828]">
           <img
-            src="/token.png"
+            src="/misc/token.png"
             className="lg:size-[50px] size-[0px] flex hover:scale-[105%]"
           ></img>
-          DizzyHavoc/ Beta
+          DizzyHavoc/ β
         </div>
       </div>
       <div class="justify-end w-full flex">

@@ -70,7 +70,7 @@ export default function Info() {
           <div class="flex flex-row p-4 mt-7 sm:mt-0 sm:size-[450px] size-[320px] dark:text-[#d2d2d2] text-[#3d3d3d] rounded-xl shadow-lg dark:bg-blur4 bg-blur2">
             <div class="w-full h-full">
               <div
-                class="size-[100%] rounded-lg dark:bg-[url('/darksolvsbytecode.png')] bg-[url('/solvsbytecode.png')]"
+                class="size-[100%] rounded-lg dark:bg-[url('/info/darksolvsbytecode.png')] bg-[url('/info/solvsbytecode.png')]"
                 style="background-size: contain; background-repeat: no-repeat;"
               ></div>
             </div>
@@ -98,7 +98,7 @@ export default function Info() {
           <div class="flex flex-row sm:mx-0 mx-auto p-4 mt-7 sm:mt-0 sm:size-[450px] size-[320px] dark:text-[#d2d2d2] text-[#3d3d3d] rounded-xl shadow-lg dark:bg-blur4 bg-blur2">
             <div class="w-full h-full">
               <div
-                class="size-[100%] rounded-lg dark:bg-[url('/darkNodes.png')] bg-[url('/whiteNodes.png')]"
+                class="size-[100%] rounded-lg dark:bg-[url('/info/darkNodes.png')] bg-[url('/info/whiteNodes.png')]"
                 style="background-size: contain; background-repeat: no-repeat;"
               ></div>
             </div>
@@ -138,7 +138,7 @@ export default function Info() {
                 <h1 class="text-xl mt-7 dark:sm:font-normal sm:font-medium tracking-tight font-normal dark:font-light">
                   More infos in the litepaper{" "}
                   <a
-                    href="/litepaper.pdf"
+                    href="/info/litepaper.pdf"
                     target="_blank"
                     class="text-[#3b2d82] dark:text-[#e0cdad] bold">
                     here

@@ -11,7 +11,7 @@ export default function Available() {
           href="https://etherscan.io/address/0x3419875b4d3bca7f3fdda2db7a476a79fd31b4fe"
         >
           <img
-            src="/eth.svg"
+            src="/chains/eth.svg"
             class="size-11 pl-4 hover:scale-[105%]"
             title="ethereum"
             alt="ethereum"
@@ -22,7 +22,7 @@ export default function Available() {
           href="https://subnets.avax.network/c-chain/address/0x3419875B4D3Bca7F3FddA2dB7a476A79fD31B4fE"
         >
           <img
-            src="/avax.svg"
+            src="/chains/avax.svg"
             class="size-11 hover:scale-[105%]"
             title="avalanche"
             alt="avalanche"
@@ -33,7 +33,7 @@ export default function Available() {
           href="https://arbiscan.io/address/0x3419875b4d3bca7f3fdda2db7a476a79fd31b4fe"
         >
           <img
-            src="/arb.svg"
+            src="/chains/arb.svg"
             class="size-11 hover:scale-[105%]"
             title="arbitrum"
             alt="arbitrum"
@@ -44,7 +44,7 @@ export default function Available() {
           href="https://bscscan.com/address/0x3419875b4d3bca7f3fdda2db7a476a79fd31b4fe"
         >
           <img
-            src="/bsc.svg"
+            src="/chains/bsc.svg"
             class="size-11 hover:scale-[105%]"
             title="binance chain"
             alt="binance chain"
@@ -55,7 +55,7 @@ export default function Available() {
           href="https://basescan.org/address/0x3419875b4d3bca7f3fdda2db7a476a79fd31b4fe"
         >
           <img
-            src="/base.svg"
+            src="/chains/base.svg"
             class="size-11 hover:scale-[105%]"
             title="base"
             alt="base"

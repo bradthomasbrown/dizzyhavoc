@@ -107,13 +107,13 @@ export default function MarketBar() {
     <>
       {initialloading.value ? ( // display loader
         <div class="w-full h-full flex justify-center items-center">
-          <img src="./loader.svg"></img>
+          <img src="./misc/loader.svg"></img>
         </div>
       ) : ( // loaded bar
         <div class="w-full flex sm:flex-row flex-col gap-2">
           <div class="w-full shadow-lg px-0 relative justify-center 2xl:px-3 h-[4rem] items-center rounded-lg gap-0 xl:gap-3 bg-blur3 flex flex-row">
             <img
-              src="/eth.svg"
+              src="/chains/eth.svg"
               class="sm:size-9 size-7"
               title="ethereum"
               alt="ethereum"
@@ -137,7 +137,7 @@ export default function MarketBar() {
           </div>
           <div class="w-full shadow-lg px-0 relative justify-center 2xl:px-3 h-[4rem] items-center rounded-lg gap-0 xl:gap-3 bg-blur3 flex flex-row">
             <img
-              src="/arb.svg"
+              src="/chains/arb.svg"
               class="sm:size-9 size-7"
               title="arbitrum"
               alt="arbitrum"
@@ -161,7 +161,7 @@ export default function MarketBar() {
           </div>
           <div class="w-full shadow-lg px-0 relative justify-center 2xl:px-3 h-[4rem] items-center rounded-lg gap-0 xl:gap-3 bg-blur3 flex flex-row">
             <img
-              src="/avax.svg"
+              src="/chains/avax.svg"
               class="sm:size-9 size-7"
               title="avalanche"
               alt="avalanche"
@@ -185,7 +185,7 @@ export default function MarketBar() {
           </div>
           <div class="w-full shadow-lg px-0 relative justify-center 2xl:px-3 h-[4rem] items-center rounded-lg gap-0 xl:gap-3 bg-blur3 flex flex-row">
             <img
-              src="/base.svg"
+              src="/chains/base.svg"
               class="sm:size-9 size-7"
               title="base"
               alt="base"
@@ -209,7 +209,7 @@ export default function MarketBar() {
           </div>
           <div class="w-full shadow-lg px-0 relative justify-center 2xl:px-3 h-[4rem] items-center rounded-lg gap-0 xl:gap-3 bg-blur3 flex flex-row">
             <img
-              src="/bsc.svg"
+              src="/chains/bsc.svg"
               class="sm:size-9 size-7"
               title="binance chain"
               alt="binance chain"

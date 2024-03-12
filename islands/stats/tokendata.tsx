@@ -311,13 +311,13 @@ export default function TokenData() {
     <>
       {initialloading.value ? ( // no data : display loader
         <div class="w-[360px] sm:w-[460px] shadow-lg px-0 relative  2xl:px-3 h-full justify-center  items-center rounded-lg gap-0 xl:gap-3 bg-blur3 flex flex-col">
-          <img src="./loader.svg"></img>
+          <img src="./misc/loader.svg"></img>
         </div>
       ) : isloading.value ? ( // widget with blurred loader for desktop
         <> 
           <div class="w-full h-full flex justify-center items-center">
             <div class="w-full shadow-lg px-0 absolute z-50 2xl:px-3 h-full justify-center invisible sm:visible  items-center rounded-lg gap-0 xl:gap-3 dark:bg-[#212121B3] bg-[#e8e8e8B3] flex flex-col">
-              <img src="./loader.svg"></img>
+              <img src="./misc/loader.svg"></img>
             </div>
             <div class="w-full shadow-lg px-0 relative  2xl:px-3 h-full justify-center  items-center rounded-lg gap-0 xl:gap-1 bg-blur3 flex flex-col">
             <div class="flex flex-row ">
@@ -351,7 +351,7 @@ export default function TokenData() {
                       href="https://poloniex.com/trade/DZHV_USDT/?type=spot"
                     >
                       <img
-                        src="/token_polo.png"
+                        src="/chains/token_polo.png"
                         class="size-6 flex flex-nowrap sm:size-8 hover:scale-[105%] mr-2"
                         title="$DZHV on Poloniex exchange"
                         alt="poloniex"
@@ -368,7 +368,7 @@ export default function TokenData() {
                       class={`text-[1.1rem] dark:text-[#d2d2d2] font-[Poppins] flex`}
                     >
                       <img
-                        src="/token_avax.png"
+                        src="/chains/token_avax.png"
                         class="size-6 sm:size-8 hover:scale-[105%] mr-2"
                         title="$DZHV on avax"
                         alt="avax"
@@ -385,7 +385,7 @@ export default function TokenData() {
                       class={`text-[1.1rem] dark:text-[#d2d2d2] font-[Poppins] flex`}
                     >
                       <img
-                        src="/token_eth.png"
+                        src="/chains/token_eth.png"
                         class="size-6 sm:size-8 hover:scale-[105%] mr-2"
                         title="$DZHV on ethereum"
                         alt="ethereum"
@@ -402,7 +402,7 @@ export default function TokenData() {
                       class={`text-[1.1rem] dark:text-[#d2d2d2] font-[Poppins] flex`}
                     >
                       <img
-                        src="/token_arb.png"
+                        src="/chains/token_arb.png"
                         class="size-6 sm:size-8 hover:scale-[105%] mr-2"
                         title="$DZHV on arbitrum"
                         alt="arbitrum"
@@ -419,7 +419,7 @@ export default function TokenData() {
                       class={`text-[1.1rem] dark:text-[#d2d2d2] font-[Poppins] flex`}
                     >
                       <img
-                        src="/token_bsc.png"
+                        src="/chains/token_bsc.png"
                         class="size-6 sm:size-8 hover:scale-[105%] mr-2"
                         title="$DZHV on binance chain"
                         alt="binance chain"
@@ -436,7 +436,7 @@ export default function TokenData() {
                       class={`text-[1.1rem] dark:text-[#d2d2d2] font-[Poppins] flex`}
                     >
                       <img
-                        src="/token_base.png"
+                        src="/chains/token_base.png"
                         class="size-6 sm:size-8 hover:scale-[105%] mr-2"
                         title="$DZHV on base"
                         alt="base"
@@ -488,7 +488,7 @@ export default function TokenData() {
                   href="https://poloniex.com/trade/DZHV_USDT/?type=spot"
                 >
                   <img
-                    src="/token_polo.png"
+                    src="/chains/token_polo.png"
                     class="size-6 flex flex-nowrap sm:size-8 hover:scale-[105%] mr-2"
                     title="$DZHV on Poloniex exchange"
                     alt="poloniex"
@@ -505,7 +505,7 @@ export default function TokenData() {
                   class={`text-[1.1rem] dark:text-[#d2d2d2] font-[Poppins] flex`}
                 >
                   <img
-                    src="/token_avax.png"
+                    src="/chains/token_avax.png"
                     class="size-6 sm:size-8 hover:scale-[105%] mr-2"
                     title="$DZHV on avax"
                     alt="avax"
@@ -522,7 +522,7 @@ export default function TokenData() {
                   class={`text-[1.1rem] dark:text-[#d2d2d2] font-[Poppins] flex`}
                 >
                   <img
-                    src="/token_eth.png"
+                    src="/chains/token_eth.png"
                     class="size-6 sm:size-8 hover:scale-[105%] mr-2"
                     title="$DZHV on ethereum"
                     alt="ethereum"
@@ -539,7 +539,7 @@ export default function TokenData() {
                   class={`text-[1.1rem] dark:text-[#d2d2d2] font-[Poppins] flex`}
                 >
                   <img
-                    src="/token_arb.png"
+                    src="/chains/token_arb.png"
                     class="size-6 sm:size-8 hover:scale-[105%] mr-2"
                     title="$DZHV on arbitrum"
                     alt="arbitrum"
@@ -556,7 +556,7 @@ export default function TokenData() {
                   class={`text-[1.1rem] dark:text-[#d2d2d2] font-[Poppins] flex`}
                 >
                   <img
-                    src="/token_bsc.png"
+                    src="/chains/token_bsc.png"
                     class="size-6 sm:size-8 hover:scale-[105%] mr-2"
                     title="$DZHV on binance chain"
                     alt="binance chain"
@@ -573,7 +573,7 @@ export default function TokenData() {
                   class={`text-[1.1rem] dark:text-[#d2d2d2] font-[Poppins] flex`}
                 >
                   <img
-                    src="/token_base.png"
+                    src="/chains/token_base.png"
                     class="size-6 sm:size-8 hover:scale-[105%] mr-2"
                     title="$DZHV on base"
                     alt="base"
