@@ -320,29 +320,28 @@ export default function TokenData() {
               <img src="./loader.svg"></img>
             </div>
             <div class="w-full shadow-lg px-0 relative  2xl:px-3 h-full justify-center  items-center rounded-lg gap-0 xl:gap-1 bg-blur3 flex flex-col">
-              <div class="flex flex-row ">
-                <div class="flex-col flex ">
-                  <section class="rounded flex flex-col w-full py-3 my-1 gap-3 ml-3">
-                    <h1 class="font-[Poppins] dark:text-[#d2d2d2] text-[0.8rem] sm:text-[1.2rem] inline justify-center tracking-tight items-center">
-                      Avrg. Price : ${avrgprice.value}
-                    </h1>
-                    <h2 class="font-[Poppins] dark:text-[#d2d2d2] text-[0.8rem] sm:text-[1.2rem] inline justify-center tracking-tight items-center">
-                      Mk. Cap : $
-                      {formatNumber(avrgprice.value * totalsupply.value)}
-                    </h2>
-                  </section>
-                </div>
-                <div class="flex-row flex">
-                  <section class="rounded flex flex-col mx-auto w-full py-3 my-1 gap-3 ml-3">
-                    <h2 class="font-[Poppins] dark:text-[#d2d2d2] text-[0.8rem] sm:text-[1.2rem] inline justify-center tracking-tight items-center">
-                      Max Δ : {delta}%
-                    </h2>
-                    <h1 class="font-[Poppins] dark:text-[#d2d2d2] text-[0.8rem] sm:text-[1.2rem] inline justify-center  tracking-tight items-center">
-                      ATH : ${ath.value.toFixed(5)}
-                    </h1>
-                  </section>
-                </div>
-              </div>
+            <div class="flex flex-row ">
+            <div class="flex-col flex ">
+              <section class="rounded flex flex-col w-full py-3 my-1 gap-3 ml-3">
+                <h1 class="font-[Poppins] dark:text-[#d2d2d2] text-[1rem] sm:text-[1.1rem] inline justify-center tracking-tight items-center">
+                  Avrg. Price : <h1 class="font-[Poppins] text-[#000000] dark:text-[#ffffff] text-[1rem] sm:text-[1.15rem] inline">${avrgprice.value}</h1>
+                </h1>
+                <h2 class="font-[Poppins] dark:text-[#d2d2d2] text-[1rem] sm:text-[1.1rem] inline justify-center tracking-tight items-center">
+                  Mk. Cap : <h1 class="font-[Poppins] text-[#000000] dark:text-[#ffffff] text-[1rem] sm:text-[1.15rem] inline">${formatNumber(avrgprice.value * totalsupply.value)}</h1>
+                </h2>
+              </section>
+            </div>
+            <div class="flex-row flex">
+              <section class="rounded flex flex-col mx-auto w-full py-3 my-1 gap-3 ml-3">
+                <h2 class="font-[Poppins] dark:text-[#d2d2d2] text-[1rem] sm:text-[1.1rem] inline justify-center tracking-tight items-center">
+                  Max Δ : <h1 class="font-[Poppins] text-[#000000] dark:text-[#ffffff] text-[1rem] sm:text-[1.15rem] inline">{delta}%</h1>
+                </h2>
+                <h1 class="font-[Poppins] dark:text-[#d2d2d2] text-[1rem] sm:text-[1.1rem] inline justify-center  tracking-tight items-center">
+                  ATH : <h1 class="font-[Poppins] text-[#000000] dark:text-[#ffffff] text-[1rem] sm:text-[1.15rem] inline">${ath.value.toFixed(5)}</h1>
+                </h1>
+              </section>
+            </div>
+          </div>
               <div class="flex-row flex w-full">
                 <section class="rounded ml-3 justify-center flex flex-wrap gap-3">
                   <h1 style={{ order: poloorder != null ? -poloorder : 0 }}>
@@ -461,21 +460,21 @@ export default function TokenData() {
           <div class="flex flex-row ">
             <div class="flex-col flex ">
               <section class="rounded flex flex-col w-full py-3 my-1 gap-3 ml-3">
-                <h1 class="font-[Poppins] dark:text-[#d2d2d2] text-[0.8rem] sm:text-[1.2rem] inline justify-center tracking-tight items-center">
-                  Avrg. Price : ${avrgprice.value}
+                <h1 class="font-[Poppins] dark:text-[#d2d2d2] text-[1rem] sm:text-[1.1rem] inline justify-center tracking-tight items-center">
+                  Avrg. Price : <h1 class="font-[Poppins] text-[#000000] dark:text-[#ffffff] text-[1rem] sm:text-[1.15rem] inline">${avrgprice.value}</h1>
                 </h1>
-                <h2 class="font-[Poppins] dark:text-[#d2d2d2] text-[0.8rem] sm:text-[1.2rem] inline justify-center tracking-tight items-center">
-                  Mk. Cap : ${formatNumber(avrgprice.value * totalsupply.value)}
+                <h2 class="font-[Poppins] dark:text-[#d2d2d2] text-[1rem] sm:text-[1.1rem] inline justify-center tracking-tight items-center">
+                  Mk. Cap : <h1 class="font-[Poppins] text-[#000000] dark:text-[#ffffff] text-[1rem] sm:text-[1.15rem] inline">${formatNumber(avrgprice.value * totalsupply.value)}</h1>
                 </h2>
               </section>
             </div>
             <div class="flex-row flex">
               <section class="rounded flex flex-col mx-auto w-full py-3 my-1 gap-3 ml-3">
-                <h2 class="font-[Poppins] dark:text-[#d2d2d2] text-[0.8rem] sm:text-[1.2rem] inline justify-center tracking-tight items-center">
-                  Max Δ : {delta}%
+                <h2 class="font-[Poppins] dark:text-[#d2d2d2] text-[1rem] sm:text-[1.1rem] inline justify-center tracking-tight items-center">
+                  Max Δ : <h1 class="font-[Poppins] text-[#000000] dark:text-[#ffffff] text-[1rem] sm:text-[1.15rem] inline">{delta}%</h1>
                 </h2>
-                <h1 class="font-[Poppins] dark:text-[#d2d2d2] text-[0.8rem] sm:text-[1.2rem] inline justify-center  tracking-tight items-center">
-                  ATH : ${ath.value.toFixed(5)}
+                <h1 class="font-[Poppins] dark:text-[#d2d2d2] text-[1rem] sm:text-[1.1rem] inline justify-center  tracking-tight items-center">
+                  ATH : <h1 class="font-[Poppins] text-[#000000] dark:text-[#ffffff] text-[1rem] sm:text-[1.15rem] inline">${ath.value.toFixed(5)}</h1>
                 </h1>
               </section>
             </div>

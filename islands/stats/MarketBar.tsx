@@ -27,6 +27,7 @@ export default function MarketBar() {
       "https://api.dexscreener.com/latest/dex/tokens/0x3419875B4D3Bca7F3FddA2dB7a476A79fD31B4fE"
       );
       const data = await response.json();
+      console.log(data)
       for (let i = 0; i < data.pairs.length; i++) {
         const fixedliq = Number(data.pairs[i].liquidity.usd).toFixed(2);
         switch (data.pairs[i].url) {
@@ -120,15 +121,15 @@ export default function MarketBar() {
             <div class="flex flex-row sm:gap-0 gap-4 sm:flex-col">
               <div class="flex-col flex ">
                 <section class="rounded flex flex-col w-full py-1 gap-3 ml-0">
-                  <h1 class="font-[Poppins] dark:text-[#d2d2d2] text-[0.8rem] sm:text-[1rem] inline justify-center tracking-tight items-center">
-                  Liquidity: ${formatNumber(liq_eth.value)}
+                  <h1 class="font-[Poppins] dark:text-[#d2d2d2] text-[#1a1a1a] text-[0.8rem] sm:text-[1rem] inline justify-center tracking-tight items-center">
+                  Liquidity: <h1 class="font-[Poppins] text-[#000000] dark:text-[#ffffff] text-[1rem] sm:text-[1.2rem] inline">${formatNumber(liq_eth.value)}</h1>
                   </h1>
                 </section>
               </div>
               <div class="flex flex-row sm:gap-0 gap-4 sm:flex-col">
                 <section class="rounded flex flex-col mx-auto w-full py-1 gap-3 ml-0">
-                  <h2 class="font-[Poppins] dark:text-[#d2d2d2] text-[0.8rem] sm:text-[1rem] inline justify-center tracking-tight items-center">
-                    24h Vol: ${formatNumber(vol24_eth.value)}
+                  <h2 class="font-[Poppins] dark:text-[#d2d2d2] text-[#1a1a1a] text-[0.8rem] sm:text-[1rem] inline justify-center tracking-tight items-center">
+                    24h Vol: <h1 class="font-[Poppins] text-[#000000] dark:text-[#ffffff] text-[1rem] sm:text-[1.2rem] inline">${formatNumber(vol24_eth.value)}</h1>
                   </h2>
                 </section>
               </div>
@@ -144,15 +145,15 @@ export default function MarketBar() {
             <div class="flex flex-row sm:gap-0 gap-4 sm:flex-col">
               <div class="flex-col flex ">
                 <section class="rounded flex flex-col w-full py-1 gap-3 ml-0">
-                  <h1 class="font-[Poppins] dark:text-[#d2d2d2] text-[0.8rem] sm:text-[1rem] inline justify-center tracking-tight items-center">
-                  Liquidity: ${formatNumber(liq_arb.value)}
+                  <h1 class="font-[Poppins] dark:text-[#d2d2d2] text-[#1a1a1a]  text-[0.8rem] sm:text-[1rem] inline justify-center tracking-tight items-center">
+                  Liquidity: <h1 class="font-[Poppins] text-[#000000] dark:text-[#ffffff] text-[1rem] sm:text-[1.2rem] inline">${formatNumber(liq_arb.value)}</h1>
                   </h1>
                 </section>
               </div>
               <div class="flex flex-row sm:gap-0 gap-4 sm:flex-col">
                 <section class="rounded flex flex-col mx-auto w-full py-1 gap-3 ml-0">
-                  <h2 class="font-[Poppins] dark:text-[#d2d2d2] text-[0.8rem] sm:text-[1rem] inline justify-center tracking-tight items-center">
-                    24h Vol: ${formatNumber(vol24_arb.value)}
+                  <h2 class="font-[Poppins] dark:text-[#d2d2d2] text-[#1a1a1a] text-[0.8rem] sm:text-[1rem] inline justify-center tracking-tight items-center">
+                    24h Vol: <h1 class="font-[Poppins] text-[#000000] dark:text-[#ffffff] text-[1rem] sm:text-[1.2rem] inline">${formatNumber(vol24_arb.value)}</h1>
                   </h2>
                 </section>
               </div>
@@ -168,15 +169,15 @@ export default function MarketBar() {
             <div class="flex flex-row sm:gap-0 gap-4 sm:flex-col">
               <div class="flex-col flex ">
                 <section class="rounded flex flex-col w-full py-1 gap-3 ml-0">
-                  <h1 class="font-[Poppins] dark:text-[#d2d2d2] text-[0.8rem] sm:text-[1rem] inline justify-center tracking-tight items-center">
-                  Liquidity: ${formatNumber(liq_avax.value)}
+                  <h1 class="font-[Poppins] dark:text-[#d2d2d2] text-[#1a1a1a]  text-[0.8rem] sm:text-[1rem] inline justify-center tracking-tight items-center">
+                  Liquidity: <h1 class="font-[Poppins] text-[#000000] dark:text-[#ffffff] text-[1rem] sm:text-[1.2rem] inline">${formatNumber(liq_avax.value)}</h1>
                   </h1>
                 </section>
               </div>
               <div class="flex flex-row sm:gap-0 gap-4 sm:flex-col">
                 <section class="rounded flex flex-col mx-auto w-full py-1 gap-3 ml-0">
-                  <h2 class="font-[Poppins] dark:text-[#d2d2d2] text-[0.8rem] sm:text-[1rem] inline justify-center tracking-tight items-center">
-                    24h Vol: ${formatNumber(vol24_avax.value)}
+                  <h2 class="font-[Poppins] dark:text-[#d2d2d2] text-[#1a1a1a]  text-[0.8rem] sm:text-[1rem] inline justify-center tracking-tight items-center">
+                    24h Vol: <h1 class="font-[Poppins] text-[#000000] dark:text-[#ffffff] text-[1rem] sm:text-[1.2rem] inline">${formatNumber(vol24_avax.value)}</h1>
                   </h2>
                 </section>
               </div>
@@ -192,15 +193,15 @@ export default function MarketBar() {
             <div class="flex flex-row sm:gap-0 gap-4 sm:flex-col">
               <div class="flex-col flex ">
                 <section class="rounded flex flex-col w-full py-1 gap-3 ml-0">
-                  <h1 class="font-[Poppins] dark:text-[#d2d2d2] text-[0.8rem] sm:text-[1rem] inline justify-center tracking-tight items-center">
-                  Liquidity: ${formatNumber(liq_base.value)}
+                  <h1 class="font-[Poppins] dark:text-[#d2d2d2] text-[#1a1a1a]  text-[0.8rem] sm:text-[1rem] inline justify-center tracking-tight items-center">
+                  Liquidity: <h1 class="font-[Poppins] text-[#000000] dark:text-[#ffffff] text-[1rem] sm:text-[1.2rem] inline">${formatNumber(liq_base.value)}</h1>
                   </h1>
                 </section>
               </div>
               <div class="flex flex-row sm:gap-0 gap-4 sm:flex-col">
                 <section class="rounded flex flex-col mx-auto w-full py-1 gap-3 ml-0">
-                  <h2 class="font-[Poppins] dark:text-[#d2d2d2] text-[0.8rem] sm:text-[1rem] inline justify-center tracking-tight items-center">
-                    24h Vol: ${formatNumber(vol24_base.value)}
+                  <h2 class="font-[Poppins] dark:text-[#d2d2d2] text-[#1a1a1a]  text-[0.8rem] sm:text-[1rem] inline justify-center tracking-tight items-center">
+                    24h Vol: <h1 class="font-[Poppins] text-[#000000] dark:text-[#ffffff] text-[1rem] sm:text-[1.2rem] inline">${formatNumber(vol24_base.value)}</h1>
                   </h2>
                 </section>
               </div>
@@ -216,15 +217,15 @@ export default function MarketBar() {
             <div class="flex flex-row sm:gap-0 gap-4 sm:flex-col">
               <div class="flex-col flex ">
                 <section class="rounded flex flex-col w-full py-1 gap-3 ml-0">
-                  <h1 class="font-[Poppins] dark:text-[#d2d2d2] text-[0.8rem] sm:text-[1rem] inline justify-center tracking-tight items-center">
-                  Liquidity: ${formatNumber(liq_bsc.value)}
+                  <h1 class="font-[Poppins] dark:text-[#d2d2d2] text-[#1a1a1a]  text-[0.8rem] sm:text-[1rem] inline justify-center tracking-tight items-center">
+                  Liquidity: <h1 class="font-[Poppins] text-[#000000] dark:text-[#ffffff] text-[1rem] sm:text-[1.2rem] inline">${formatNumber(liq_bsc.value)}</h1>
                   </h1>
                 </section>
               </div>
               <div class="flex flex-row sm:gap-0 gap-4 sm:flex-col">
                 <section class="rounded flex flex-col mx-auto w-full py-1 gap-3 ml-0">
-                  <h2 class="font-[Poppins] dark:text-[#d2d2d2] text-[0.8rem] sm:text-[1rem] inline justify-center tracking-tight items-center">
-                    24h Vol: ${formatNumber(vol24_bsc.value)}
+                  <h2 class="font-[Poppins] dark:text-[#d2d2d2] text-[#1a1a1a]  text-[0.8rem] sm:text-[1rem] inline justify-center tracking-tight items-center">
+                    24h Vol: <h1 class="font-[Poppins] text-[#000000] dark:text-[#ffffff] text-[1rem] sm:text-[1.2rem] inline">${formatNumber(vol24_bsc.value)}</h1>
                   </h2>
                 </section>
               </div>
