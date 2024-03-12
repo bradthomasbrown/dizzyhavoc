@@ -3,7 +3,7 @@ export default function Animated() {
   return (
     <div>
       <div class="flex flex-col h-screen justify-start sm:justify-center items-center">
-        <div class="absolute h-screen border-transparent sm:border-[#595959] border-2 sm:border-t-transparent sm:border-e-transparent sm:border-s-transparent border-t-transparent border-e-transparent border-s-transparent w-full overflow-hidden -z-10 top-[6.5rem] sm:top-0">
+        <div class="absolute h-screen border-transparent lg:border-[#595959] border-2 lg:border-t-transparent lg:border-e-transparent lg:border-s-transparent border-t-transparent border-e-transparent border-s-transparent w-full overflow-hidden -z-10 top-[6.5rem] sm:top-0">
           <div class="opacity-25 sm:opacity-100" id="stars-container">
             <div id="stars"></div>
             <div id="stars2"></div>
@@ -26,7 +26,7 @@ export default function Animated() {
                 </p>
               </div>
               <div
-                class="trapeze invisible sm:visible mt-4 sm:max-w-[73rem] max-w-[70%] mx-auto z-[-10] shadow-lg"
+                class="trapeze invisible lg:visible mt-4 sm:max-w-[73rem] max-w-[70%] mx-auto z-[-10] shadow-lg"
                 id="trapeze"
               ></div>
             </div>

@@ -117,10 +117,10 @@ export default function TokenData() {
   };
 
   const fetchScreener = async () => { // main req to dexscreener for prices, failsafe with gecko
-    let arbprice,
-    ethprice,
-    bscprice,
-    baseprice,
+    let arbprice = 0,
+    ethprice = 0,
+    bscprice = 0,
+    baseprice = 0,
     avaxprice = 0
     let poloprice = Number(poloniexprice.value) ? Number(poloniexprice.value) : 0;
     try {
@@ -210,10 +210,10 @@ export default function TokenData() {
   };
 
   const fetchGecko = async () => {  // failsafe req for arb, eth, bsc, base price // isnt as reliable as dexscreener
-    let arbprice,
-    ethprice,
-    bscprice,
-    baseprice,
+    let arbprice = 0,
+    ethprice = 0,
+    bscprice = 0,
+    baseprice = 0,
     avaxprice = 0
     const poloprice = poloniexprice.value;
     try {
@@ -457,7 +457,9 @@ export default function TokenData() {
           </div>
         </>
       ) : (
+        <>
         <div class="w-full shadow-lg px-0 relative  2xl:px-3 h-full justify-center  items-center rounded-lg gap-0 xl:gap-3 bg-blur3 flex flex-col">
+
           <div class="flex flex-row ">
             <div class="flex-col flex ">
               <section class="rounded flex flex-col w-full py-3 my-1 gap-3 ml-3">
@@ -585,10 +587,12 @@ export default function TokenData() {
             </section>
           </div>
 
-          <div class="bottom-1 dark:text-[#d2d2d2] unselectable text-[#6e6e6e] absolute left-1 text-[11px]">
-            data from dexscreener, coingecko & poloniex ({count})
+          <div title="data from dexscreener, coingecko & poloniex." class="bottom-1 unselectable dark:text-[#d2d2d2] text-[#6e6e6e] absolute left-1 text-[11px]">
+            {count}
           </div>
         </div>
+        
+        </>
       )}
     </>
   );
