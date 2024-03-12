@@ -1,4 +1,4 @@
-import Available from "../components/AvailableOn.tsx";
+import Available from "./AvailableOn.tsx";
 export default function Info() {
   const content1 =
     "DizzyHavoc is a new deployment method for smart contracts, specifically designed to reduce costs and enhance flexibility.";
@@ -32,7 +32,6 @@ export default function Info() {
         id="info"
         class="info
   font-medium
-  italic
   text-[1.7rem]
   unselectable
   sm:text-[2.5rem]

@@ -1,4 +1,4 @@
-import MenuButton from "../islands/menuButton.tsx";
+import MenuButton from "../common/menuButton.tsx";
 import { IS_BROWSER } from "$fresh/runtime.ts";
 export default function NavBar() {
     if(!IS_BROWSER) return <></>;

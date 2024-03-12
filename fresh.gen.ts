@@ -8,13 +8,13 @@ import * as $about from "./routes/about.tsx";
 import * as $index from "./routes/index.tsx";
 import * as $roadmap from "./routes/roadmap.tsx";
 import * as $stats from "./routes/stats.tsx";
-import * as $Button from "./islands/Button.tsx";
-import * as $MarketBar from "./islands/MarketBar.tsx";
-import * as $MarketData from "./islands/MarketData.tsx";
-import * as $Web3Input from "./islands/Web3Input.tsx";
-import * as $menuButton from "./islands/menuButton.tsx";
-import * as $navbar from "./islands/navbar.tsx";
-import * as $tokendata from "./islands/tokendata.tsx";
+import * as $bridge_Web3Input from "./islands/bridge/Web3Input.tsx";
+import * as $common_Button from "./islands/common/Button.tsx";
+import * as $common_menuButton from "./islands/common/menuButton.tsx";
+import * as $common_navbar from "./islands/common/navbar.tsx";
+import * as $stats_MarketBar from "./islands/stats/MarketBar.tsx";
+import * as $stats_MarketData from "./islands/stats/MarketData.tsx";
+import * as $stats_tokendata from "./islands/stats/tokendata.tsx";
 import { type Manifest } from "$fresh/server.ts";
 
 const manifest = {
@@ -27,13 +27,13 @@ const manifest = {
     "./routes/stats.tsx": $stats,
   },
   islands: {
-    "./islands/Button.tsx": $Button,
-    "./islands/MarketBar.tsx": $MarketBar,
-    "./islands/MarketData.tsx": $MarketData,
-    "./islands/Web3Input.tsx": $Web3Input,
-    "./islands/menuButton.tsx": $menuButton,
-    "./islands/navbar.tsx": $navbar,
-    "./islands/tokendata.tsx": $tokendata,
+    "./islands/bridge/Web3Input.tsx": $bridge_Web3Input,
+    "./islands/common/Button.tsx": $common_Button,
+    "./islands/common/menuButton.tsx": $common_menuButton,
+    "./islands/common/navbar.tsx": $common_navbar,
+    "./islands/stats/MarketBar.tsx": $stats_MarketBar,
+    "./islands/stats/MarketData.tsx": $stats_MarketData,
+    "./islands/stats/tokendata.tsx": $stats_tokendata,
   },
   baseUrl: import.meta.url,
 } satisfies Manifest;

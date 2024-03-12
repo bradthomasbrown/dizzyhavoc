@@ -1,5 +1,5 @@
-import Footer from '../components/Footer.tsx';
-import NavBar from '../islands/navbar.tsx';
+import Footer from '../components/common/Footer.tsx';
+import NavBar from '../islands/common/navbar.tsx';
 import { type PageProps } from "$fresh/server.ts";
 export default function App({ Component }: PageProps) {
   return (

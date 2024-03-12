@@ -1,7 +1,7 @@
 export default function Available() {
   return (
     <div class=" mt-[1rem]">
-      <p class="font-[Poppins]  dark:text-[#d2d2d2] mb-2 text-[0.8rem] text-center">
+      <p class="font-[Poppins]  dark:text-[#d2d2d2] mb-2 text-[1.5rem] text-center">
         Available on:
         <br />
       </p>
