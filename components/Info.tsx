@@ -1,12 +1,12 @@
 export default function Info() {
   const content1 =
-    "Dizzy Havoc is a new deployment method for smart contracts, specifically designed to reduce costs and enhance flexibility.";
+    "DizzyHavoc is a new deployment method for smart contracts, specifically designed to reduce costs and enhance flexibility.";
   const content1_2 =
     "Instead of redeploying the same code multiple times, it utilizes an upgradable proxy that points to a specialized resolver, which in turn links to one or more implementations.";
   const content1_3 =
     "By doing this, it significantly lowers deployment costs and allows for easier maintenance and upgrades of smart contracts.";
   const content1_4 =
-    "* What makes Dizzy Havoc unique is the utilization of the EVM bytecode language instead of Solidity. This implies a more low-level and hardware-specific form of programming, closely tied to the architecture of CPUs.";
+    "* What makes DizzyHavoc unique is the utilization of the EVM bytecode language instead of Solidity. This implies a more low-level and hardware-specific form of programming, closely tied to the architecture of CPUs.";
   const content2 =
     "● Reduction in deployment costs by reusing implementation code instead of redeploying it.";
   const content3 =
@@ -50,10 +50,10 @@ export default function Info() {
   px-6
   mb-[3.5rem]"
       >
-        What is Dizzy Havoc ?
+        What is DizzyHavoc?
       </p>
       <div class="w-full mb-[230px]">
-        <div class="md:flex-row w-full gap-5 justify-center flex-col flex">
+        <div class="md:flex-row w-full gap-5 justify-center items-center mx-auto sm:mx-0 flex-col flex">
           <div class="flex flex-row p-9 sm:size-[450px] size-full dark:text-[#d2d2d2] text-[#3d3d3d] h-full rounded-xl shadow-lg dark:bg-blur4 bg-blur2 sm:flex-col">
             <div class="flex flex-col">
               <ul>
@@ -67,7 +67,7 @@ export default function Info() {
               </ul>
             </div>
           </div>
-          <div class="flex flex-row p-4 mt-7 sm:visible invisible sm:mt-0 sm:size-[450px] size-[100%] dark:text-[#d2d2d2] text-[#3d3d3d] rounded-xl shadow-lg dark:bg-blur4 bg-blur2">
+          <div class="flex flex-row p-4 mt-7 sm:mt-0 sm:size-[450px] size-[320px] dark:text-[#d2d2d2] text-[#3d3d3d] rounded-xl shadow-lg dark:bg-blur4 bg-blur2">
             <div class="w-full h-full">
               <div
                 class="size-[100%] rounded-lg dark:bg-[url('/darksolvsbytecode.png')] bg-[url('/solvsbytecode.png')]"
@@ -95,7 +95,7 @@ export default function Info() {
               </ul>
             </div>
           </div>
-          <div class="flex flex-row p-4 mt-7 sm:visible invisible sm:mt-0 sm:size-[450px] size-[100%] dark:text-[#d2d2d2] text-[#3d3d3d] rounded-xl shadow-lg dark:bg-blur4 bg-blur2">
+          <div class="flex flex-row sm:mx-0 mx-auto p-4 mt-7 sm:mt-0 sm:size-[450px] size-[320px] dark:text-[#d2d2d2] text-[#3d3d3d] rounded-xl shadow-lg dark:bg-blur4 bg-blur2">
             <div class="w-full h-full">
               <div
                 class="size-[100%] rounded-lg dark:bg-[url('/darkNodes.png')] bg-[url('/whiteNodes.png')]"
