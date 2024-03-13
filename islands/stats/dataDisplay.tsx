@@ -17,7 +17,7 @@ export default function MarketData() {
             <TokenData />
           </div>
         </div>
-        <div class="flex max-h-[50%] mx-[30%] order-3 sm:order-3 shadow-lg rounded-xl bg-blur2">
+        <div class="flex max-h-[50%] mx-0 sm:mx-[30%] order-3 sm:order-3 shadow-lg rounded-xl bg-blur2">
           <div class="w-full p-[10px]">
 
       <ChartIsland />
