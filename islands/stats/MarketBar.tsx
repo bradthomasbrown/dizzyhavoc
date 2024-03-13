@@ -27,7 +27,6 @@ export default function MarketBar() {
       "https://api.dexscreener.com/latest/dex/tokens/0x3419875B4D3Bca7F3FddA2dB7a476A79fD31B4fE"
       );
       const data = await response.json();
-      console.log(data)
       for (let i = 0; i < data.pairs.length; i++) {
         const fixedliq = Number(data.pairs[i].liquidity.usd).toFixed(2);
         switch (data.pairs[i].url) {

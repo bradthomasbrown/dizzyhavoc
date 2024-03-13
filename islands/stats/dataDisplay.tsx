@@ -1,7 +1,7 @@
-import TokenData from "./tokendata.tsx";
-import MarketBar from "./MarketBar.tsx";
+import TokenData from "./tokenData.tsx";
+import MarketBar from "./marketBar.tsx";
+import ChartIsland from "./chartisland.tsx";
 import { IS_BROWSER } from "$fresh/runtime.ts";
-
 export default function MarketData() {
   if(!IS_BROWSER) return <></>;
   // Function to toggle the visibility of the helpbox
@@ -12,9 +12,16 @@ export default function MarketData() {
             <MarketBar />
           </div>
         </div>
-        <div class="flex h-[16rem] mt-0 sm:mt-[4%] max-w-[480px] order-1 sm:order-2 mx-auto shadow-lg rounded-xl bg-blur2">
+        <div class="flex h-[16rem] max-w-[480px] mx-auto  order-1 sm:order-2 shadow-lg rounded-xl bg-blur2">
           <div class="w-full p-[10px]">
             <TokenData />
+          </div>
+        </div>
+        <div class="flex max-h-[50%] mx-[30%] order-3 sm:order-3 shadow-lg rounded-xl bg-blur2">
+          <div class="w-full p-[10px]">
+
+      <ChartIsland />
+
           </div>
         </div>
     </div>

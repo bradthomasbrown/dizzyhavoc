@@ -2,7 +2,7 @@ import { IS_BROWSER } from "$fresh/runtime.ts";
 import { useState } from "preact/hooks";
 import { useSignal } from "@preact/signals";
 
-export default function TokenData() {
+export default function tokenData() {
   if (!IS_BROWSER) return <></>;
   const initialloading = useSignal<boolean>(true);
   const isloading = useSignal<boolean>(true);
@@ -113,7 +113,7 @@ export default function TokenData() {
       console.error(error);
     }
   };
-
+ 
   const fetchScreener = async () => { // main req to dexscreener for prices, failsafe with gecko
     let arbprice = 0,
     ethprice = 0,
@@ -456,7 +456,7 @@ export default function TokenData() {
         </>
       ) : ( // loaded
         <>
-        <div class="w-full shadow-lg px-0 relative  2xl:px-3 h-full justify-center  items-center rounded-lg gap-0 xl:gap-1 bg-blur3 flex flex-col">
+        <div class="w-full shadow-lg px-0 2xl:px-3 h-full justify-center items-center rounded-lg gap-0 xl:gap-1 bg-blur3 flex flex-col">
           <div class="flex flex-row ">
             <div class="flex-col flex ">
               <section class="rounded flex flex-col w-full py-3 my-1 gap-3 ml-3">
