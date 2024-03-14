@@ -16,7 +16,7 @@ import * as $stats_chart from "./islands/stats/chart.tsx";
 import * as $stats_chartIsland from "./islands/stats/chartIsland.tsx";
 import * as $stats_dataDisplay from "./islands/stats/dataDisplay.tsx";
 import * as $stats_marketBar from "./islands/stats/marketBar.tsx";
-import * as $stats_tokenData from "./islands/stats/tokenData.tsx";
+import * as $stats_tokendata from "./islands/stats/tokendata.tsx";
 import { type Manifest } from "$fresh/server.ts";
 
 const manifest = {
@@ -37,7 +37,7 @@ const manifest = {
     "./islands/stats/chartIsland.tsx": $stats_chartIsland,
     "./islands/stats/dataDisplay.tsx": $stats_dataDisplay,
     "./islands/stats/marketBar.tsx": $stats_marketBar,
-    "./islands/stats/tokenData.tsx": $stats_tokenData,
+    "./islands/stats/tokendata.tsx": $stats_tokendata,
   },
   baseUrl: import.meta.url,
 } satisfies Manifest;
