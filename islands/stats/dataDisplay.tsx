@@ -1,6 +1,6 @@
-import TokenData from "./tokenData.tsx";
-import MarketBar from "./marketBar.tsx";
-import ChartIsland from "./chartisland.tsx";
+import TokenData from "../stats/tokenData.tsx";
+import MarketBar from "../stats/marketBar.tsx";
+import ChartIsland from "../stats/chartIsland.tsx";
 import { IS_BROWSER } from "$fresh/runtime.ts";
 export default function MarketData() {
   if(!IS_BROWSER) return <></>;
