@@ -35,7 +35,7 @@ export default function Animated() {
               href="#info"
             >
               <div class="cursor-pointer text-[#3b2d82] dark:text-[#ccb286] hover:scale-[105%]">
-                Learn more ⮟
+                Learn more ⯆
               </div>
             </a>
           </div>
