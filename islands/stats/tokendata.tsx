@@ -261,7 +261,7 @@ export default function TokenData() {
         </div>
       ) : isloading.value ? ( // widget with blurred loader for desktop
       <>
-      <div class="w-full shadow-lg mx-auto px-0 2xl:px-3 h-full justify-center items-center rounded-lg gap-0 xl:gap-1 bg-blur3 flex flex-col">
+      <div class="w-full shadow-lg mx-auto px-0 2xl:px-3 relative h-full justify-center items-center rounded-lg gap-0 xl:gap-1 bg-blur3 flex flex-col">
         <div class="flex flex-row ">
         <div class="w-full shadow-lg px-0 absolute z-50 2xl:px-3 h-full justify-center invisible sm:visible  items-center rounded-lg gap-0 xl:gap-3 dark:bg-[#212121B3] bg-[#e8e8e8B3] flex flex-col">
             <img src="./misc/loader.svg"></img>
@@ -291,7 +291,7 @@ export default function TokenData() {
       </>
       ) : ( // loaded
         <>
-        <div class="w-full shadow-lg px-0 2xl:px-3 h-full justify-center  rounded-lg gap-0 xl:gap-1 bg-blur3 flex flex-col">
+        <div class="w-full shadow-lg px-0 2xl:px-3 h-full justify-center relative  rounded-lg gap-0 xl:gap-1 bg-blur3 flex flex-col">
           <div class="flex flex-row ">
 
               <section class="rounded flex flex-row w-full py-3 my-1 gap-3 ml-3">
