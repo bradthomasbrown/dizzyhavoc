@@ -176,7 +176,7 @@ export default function MarketBar() {
         </div>
       ) : ( // loaded bar
         <div class="w-full flex flex-col gap-2">
-          <div style={{ order: ethorder != null ? -ethorder : 0 }} class="w-full shadow-lg flex h-[9rem] rounded-lg xl:gap-3 gap-0 bg-blur3 flex">
+          <div style={{ order: ethorder != null ? -ethorder : 0 }} class="w-full shadow-lg flex h-[7rem] sm:h-[9rem] rounded-lg xl:gap-3 gap-0 bg-blur3 flex">
           <img
               src="/chains/eth.svg"
               class="sm:size-9 ml-6 mt-6 justify-start size-7"
@@ -209,7 +209,7 @@ export default function MarketBar() {
               </div>
             </div>
           </div>
-          <div style={{ order: arborder != null ? -arborder : 0 }} class="w-full shadow-lg flex h-[9rem] rounded-lg xl:gap-3 gap-0 bg-blur3 flex">
+          <div style={{ order: arborder != null ? -arborder : 0 }} class="w-full shadow-lg h-[7rem] sm:h-[9rem] rounded-lg xl:gap-3 gap-0 bg-blur3 flex">
           <img
               src="/chains/arb.svg"
               class="sm:size-9 ml-6 mt-6 justify-start size-7"
@@ -242,7 +242,7 @@ export default function MarketBar() {
               </div>
             </div>
           </div>
-          <div style={{ order: avaxorder != null ? -avaxorder : 0 }} class="w-full shadow-lg flex h-[9rem] rounded-lg xl:gap-3 gap-0 bg-blur3 flex">
+          <div style={{ order: avaxorder != null ? -avaxorder : 0 }} class="w-full shadow-lg flex h-[7rem] sm:h-[9rem] rounded-lg xl:gap-3 gap-0 bg-blur3 flex">
           <img
               src="/chains/avax.svg"
               class="sm:size-9 ml-6 mt-6 justify-start size-7"
@@ -275,7 +275,7 @@ export default function MarketBar() {
               </div>
             </div>
           </div>
-          <div style={{ order: baseorder != null ? -baseorder : 0 }} class="w-full shadow-lg flex h-[9rem] rounded-lg xl:gap-3 gap-0 bg-blur3 flex">
+          <div style={{ order: baseorder != null ? -baseorder : 0 }} class="w-full shadow-lg flex h-[7rem] sm:h-[9rem] rounded-lg xl:gap-3 gap-0 bg-blur3 flex">
           <img
               src="/chains/base.svg"
               class="sm:size-9 ml-6 mt-6 justify-start size-7"
@@ -308,7 +308,7 @@ export default function MarketBar() {
               </div>
             </div>
           </div>
-          <div style={{ order: bscorder != null ? -bscorder : 0 }} class="w-full shadow-lg flex h-[9rem] rounded-lg xl:gap-3 gap-0 bg-blur3 flex">
+          <div style={{ order: bscorder != null ? -bscorder : 0 }} class="w-full shadow-lg flex h-[7rem] sm:h-[9rem] rounded-lg xl:gap-3 gap-0 bg-blur3 flex">
           <img
               src="/chains/bsc.svg"
               class="sm:size-9 ml-6 mt-6 justify-start size-7"
