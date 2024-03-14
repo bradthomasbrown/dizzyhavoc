@@ -1,7 +1,7 @@
 export default function Animated() {
   return (
     <div>      
-        <div class="absolute h-screen border-transparent lg:border-[#595959] border-2 lg:border-t-transparent lg:border-e-transparent lg:border-s-transparent border-t-transparent border-e-transparent border-s-transparent w-full overflow-hidden -z-10 top-[5.5rem] sm:top-0">
+        <div class="absolute h-screen border-transparent lg:border-[#595959] border-2 lg:border-t-transparent lg:border-e-transparent lg:border-s-transparent border-t-transparent border-e-transparent border-s-transparent w-full overflow-hidden -z-10 top-[4.5rem] sm:top-0">
     <div class="opacity-[30%] sm:opacity-100" id="stars-container">
       <div id="stars"></div>
       <div id="stars2"></div>
