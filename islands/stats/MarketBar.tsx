@@ -188,7 +188,7 @@ export default function MarketBar() {
               <div class="flex-col flex sm:flex-row flex-col">
                 <section class="rounded flex flex-col w-full py-1 ml-0">
                   <h1 class="font-[Poppins] dark:text-[#d2d2d2] text-[#1a1a1a] text-[0.8rem] sm:text-[1rem] inline justify-center tracking-tight items-center">
-                  Price: <h1 class="font-[Poppins] text-[#000000] dark:text-[#ffffff] text-[1rem] sm:text-[1.2rem] inline">${formatNumber(token_eth.value)}</h1>
+                  Price: <h1 class="font-[Poppins] text-[#000000] font-medium dark:text-[#ccb286] text-[1rem] sm:text-[1.2rem] inline">${formatNumber(token_eth.value)}</h1>
                   </h1>
                 </section>
               </div>
@@ -209,7 +209,7 @@ export default function MarketBar() {
               </div>
             </div>
           </div>
-          <div style={{ order: arborder != null ? -arborder : 0 }} class="w-full shadow-lg h-[7rem] sm:h-[9rem] rounded-lg xl:gap-3 gap-0 bg-blur3 flex">
+          <div style={{ order: arborder != null ? -arborder : 0 }} class="w-full shadow-lg flex h-[7rem] sm:h-[9rem] rounded-lg xl:gap-3 gap-0 bg-blur3 flex">
           <img
               src="/chains/arb.svg"
               class="sm:size-9 ml-6 mt-6 justify-start size-7"
@@ -221,7 +221,7 @@ export default function MarketBar() {
               <div class="flex-col flex sm:flex-row flex-col">
                 <section class="rounded flex flex-col w-full py-1 ml-0">
                   <h1 class="font-[Poppins] dark:text-[#d2d2d2] text-[#1a1a1a] text-[0.8rem] sm:text-[1rem] inline justify-center tracking-tight items-center">
-                  Price: <h1 class="font-[Poppins] text-[#000000] dark:text-[#ffffff] text-[1rem] sm:text-[1.2rem] inline">${formatNumber(token_arb.value)}</h1>
+                  Price: <h1 class="font-[Poppins] text-[#000000] font-medium dark:text-[#ccb286] text-[1rem] sm:text-[1.2rem] inline">${formatNumber(token_arb.value)}</h1>
                   </h1>
                 </section>
               </div>
@@ -254,7 +254,7 @@ export default function MarketBar() {
               <div class="flex-col flex sm:flex-row flex-col">
                 <section class="rounded flex flex-col w-full py-1 ml-0">
                   <h1 class="font-[Poppins] dark:text-[#d2d2d2] text-[#1a1a1a] text-[0.8rem] sm:text-[1rem] inline justify-center tracking-tight items-center">
-                  Price: <h1 class="font-[Poppins] text-[#000000] dark:text-[#ffffff] text-[1rem] sm:text-[1.2rem] inline">${formatNumber(token_avax.value)}</h1>
+                  Price: <h1 class="font-[Poppins] text-[#000000] font-medium dark:text-[#ccb286] text-[1rem] sm:text-[1.2rem] inline">${formatNumber(token_avax.value)}</h1>
                   </h1>
                 </section>
               </div>
@@ -287,7 +287,7 @@ export default function MarketBar() {
               <div class="flex-col flex sm:flex-row flex-col">
                 <section class="rounded flex flex-col w-full py-1 ml-0">
                   <h1 class="font-[Poppins] dark:text-[#d2d2d2] text-[#1a1a1a] text-[0.8rem] sm:text-[1rem] inline justify-center tracking-tight items-center">
-                  Price: <h1 class="font-[Poppins] text-[#000000] dark:text-[#ffffff] text-[1rem] sm:text-[1.2rem] inline">${formatNumber(token_base.value)}</h1>
+                  Price: <h1 class="font-[Poppins] text-[#000000] font-medium dark:text-[#ccb286] text-[1rem] sm:text-[1.2rem] inline">${formatNumber(token_base.value)}</h1>
                   </h1>
                 </section>
               </div>
@@ -320,7 +320,7 @@ export default function MarketBar() {
               <div class="flex-col flex sm:flex-row flex-col">
                 <section class="rounded flex flex-col w-full py-1 ml-0">
                   <h1 class="font-[Poppins] dark:text-[#d2d2d2] text-[#1a1a1a] text-[0.8rem] sm:text-[1rem] inline justify-center tracking-tight items-center">
-                  Price: <h1 class="font-[Poppins] text-[#000000] dark:text-[#ffffff] text-[1rem] sm:text-[1.2rem] inline">${formatNumber(token_bsc.value)}</h1>
+                  Price: <h1 class="font-[Poppins] text-[#000000] font-medium dark:text-[#ccb286] text-[1rem] sm:text-[1.2rem] inline">${formatNumber(token_bsc.value)}</h1>
                   </h1>
                 </section>
               </div>
