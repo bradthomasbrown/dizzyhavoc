@@ -4,7 +4,6 @@ import ChartIsland from "./chartisland.tsx";
 import { IS_BROWSER } from "$fresh/runtime.ts";
 export default function MarketData() {
   if(!IS_BROWSER) return <></>;
-  // Function to toggle the visibility of the helpbox
   return (
     <div class="flex flex-col">
         <div class="flex sm:h-[5rem] h-full w-full order-2 sm:order-1 sm:mx-0 mx-auto shadow-lg rounded-xl bg-blur2">
