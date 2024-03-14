@@ -12,10 +12,8 @@ import * as $bridge_Web3Input from "./islands/bridge/Web3Input.tsx";
 import * as $common_Button from "./islands/common/Button.tsx";
 import * as $common_menuButton from "./islands/common/menuButton.tsx";
 import * as $common_navbar from "./islands/common/navbar.tsx";
+import * as $stats_Container from "./islands/stats/Container.tsx";
 import * as $stats_MarketBar from "./islands/stats/MarketBar.tsx";
-import * as $stats_chart from "./islands/stats/chart.tsx";
-import * as $stats_chartIsland from "./islands/stats/chartIsland.tsx";
-import * as $stats_dataDisplay from "./islands/stats/dataDisplay.tsx";
 import * as $stats_tokendata from "./islands/stats/tokendata.tsx";
 import { type Manifest } from "$fresh/server.ts";
 
@@ -33,10 +31,8 @@ const manifest = {
     "./islands/common/Button.tsx": $common_Button,
     "./islands/common/menuButton.tsx": $common_menuButton,
     "./islands/common/navbar.tsx": $common_navbar,
+    "./islands/stats/Container.tsx": $stats_Container,
     "./islands/stats/MarketBar.tsx": $stats_MarketBar,
-    "./islands/stats/chart.tsx": $stats_chart,
-    "./islands/stats/chartIsland.tsx": $stats_chartIsland,
-    "./islands/stats/dataDisplay.tsx": $stats_dataDisplay,
     "./islands/stats/tokendata.tsx": $stats_tokendata,
   },
   baseUrl: import.meta.url,

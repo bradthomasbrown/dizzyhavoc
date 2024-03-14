@@ -362,7 +362,7 @@ export default function TokenData() {
                   <a
                     target="_blank"
                     style={{ order: avaxorder != null ? -avaxorder : 0 }}
-                    href="https://dexscreener.com/avalanche/0x523a04633b6c0c4967824471dda0abbce7c5e643"
+                    href="dexscreener://https://dexscreener.com/avalanche/0x523a04633b6c0c4967824471dda0abbce7c5e643"
                   >
                     <h1
                       class={`text-[1.1rem] dark:text-[#d2d2d2] font-[Poppins] flex`}
@@ -379,7 +379,7 @@ export default function TokenData() {
                   <a
                     target="_blank"
                     style={{ order: ethorder != null ? -ethorder : 0 }}
-                    href="https://dexscreener.com/ethereum/0xb7a71c2e31920019962cb62aeea1dbf502905b81"
+                    href="dexscreener://https://dexscreener.com/ethereum/0xb7a71c2e31920019962cb62aeea1dbf502905b81"
                   >
                     <h1
                       class={`text-[1.1rem] dark:text-[#d2d2d2] font-[Poppins] flex`}
@@ -396,7 +396,7 @@ export default function TokenData() {
                   <a
                     target="_blank"
                     style={{ order: arborder != null ? -arborder : 0 }}
-                    href="https://dexscreener.com/arbitrum/0x05c5bdbc7b3c64109ddcce058ce99f4515fe1c83"
+                    href="dexscreener://https://dexscreener.com/arbitrum/0x05c5bdbc7b3c64109ddcce058ce99f4515fe1c83"
                   >
                     <h1
                       class={`text-[1.1rem] dark:text-[#d2d2d2] font-[Poppins] flex`}
@@ -413,7 +413,7 @@ export default function TokenData() {
                   <a
                     target="_blank"
                     style={{ order: bscorder != null ? -bscorder : 0 }}
-                    href="https://dexscreener.com/bsc/0x642089a5da2512db761d325a868882ece6e387f5"
+                    href="dexscreener://https://dexscreener.com/bsc/0x642089a5da2512db761d325a868882ece6e387f5"
                   >
                     <h1
                       class={`text-[1.1rem] dark:text-[#d2d2d2] font-[Poppins] flex`}
@@ -430,7 +430,7 @@ export default function TokenData() {
                   <a
                     target="_blank"
                     style={{ order: baseorder != null ? -baseorder : 0 }}
-                    href="https://dexscreener.com/base/0xb64dff20dd5c47e6dbb56ead80d23568006dec1e"
+                    href="dexscreener://https://dexscreener.com/base/0xb64dff20dd5c47e6dbb56ead80d23568006dec1e"
                   >
                     <h1
                       class={`text-[1.1rem] dark:text-[#d2d2d2] font-[Poppins] flex`}

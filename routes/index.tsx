@@ -8,7 +8,7 @@ export default function Home() {
           <Animated />
           <Info />
         </div>
-        <div class="absolute lg:top-4 top-[6.8rem] z-20 left-1 sm:left-4">
+        <div class="absolute lg:top-4 top-[5.8rem] z-20 left-1 sm:left-4">
           <a
             class="bottom-0"
             target="_blank"
@@ -20,8 +20,8 @@ export default function Home() {
           </a>
         </div>
         <img
-          className="absolute hidden top-0 z-[-10] right-0 w-[25%]"
-          src="/dzhv.png"
+          className="absolute hidden top-0 z-[-10] left-0 w-[25%]"
+          src="/misc/dzhv.png"
           alt="dizzyhavoc eye"
         ></img>
       </div>

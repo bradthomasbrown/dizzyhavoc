@@ -1,4 +1,4 @@
-import MarketData from "../islands/stats/dataDisplay.tsx";
+import MarketData from "../islands/stats/Container.tsx";
 
 export default function Stats() {
   return (
