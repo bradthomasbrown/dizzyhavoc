@@ -30,9 +30,7 @@
     "tailwindcss": "npm:tailwindcss@3.4.1",
     "tailwindcss/": "npm:/tailwindcss@3.4.1/",
     "tailwindcss/plugin": "npm:/tailwindcss@3.4.1/plugin.js",
-    "$std/": "https://deno.land/std@0.211.0/",
-    "Chart" : "npm:react-apexcharts",
-    "ApexCharts" : "npm:apexcharts@3.47.0"
+    "$std/": "https://deno.land/std@0.211.0/"
   },
   "compilerOptions": {
     "jsx": "react-jsx",
