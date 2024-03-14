@@ -10,7 +10,7 @@ export default function MarketData() {
           <TokenData />
         </div>
       </div>
-      <div class="flex sm:h-[48rem] h-full w-full sm:mx-0 mx-auto shadow-lg rounded-xl bg-blur2">
+      <div class="flex sm:h-[48rem] mt-0 sm:mt-[0.3rem] h-full w-full sm:mx-0 mx-auto shadow-lg rounded-xl bg-blur2">
         <div class="w-full p-2">
           <MarketBar />
         </div>
