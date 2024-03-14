@@ -40,15 +40,16 @@ export default function Info() {
   text-[#3d3d3d]
   mx-auto
   font-[Poppins]
-  shadow-lg
-  mt-[0.5rem]
+  mt-[2rem]
+  sm:mt-[0.5rem]
   py-3
-  bg-blur2
+  bg-transparent
   lg:max-w-[32rem]
   max-w-full
   rounded-xl
   px-6
-  mb-[3.5rem]"
+  sm:mb-[3.5rem]
+  mb-[1rem]"
       >
         What is DizzyHavoc?
       </p>

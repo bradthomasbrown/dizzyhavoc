@@ -70,17 +70,20 @@ export default function TokenData() {
       console.error(error);
     }
   };
- 
-  const fetchScreener = async () => { // main req to dexscreener for prices, failsafe with gecko
+
+  const fetchScreener = async () => {
+    // main req to dexscreener for prices, failsafe with gecko
     let arbprice = 0,
-    ethprice = 0,
-    bscprice = 0,
-    baseprice = 0,
-    avaxprice = 0
-    let poloprice = Number(poloniexprice.value) ? Number(poloniexprice.value) : 0;
+      ethprice = 0,
+      bscprice = 0,
+      baseprice = 0,
+      avaxprice = 0;
+    let poloprice = Number(poloniexprice.value)
+      ? Number(poloniexprice.value)
+      : 0;
     try {
       const response = await fetch(
-      "https://api.dexscreener.com/latest/dex/tokens/0x3419875B4D3Bca7F3FddA2dB7a476A79fD31B4fE"
+        "https://api.dexscreener.com/latest/dex/tokens/0x3419875B4D3Bca7F3FddA2dB7a476A79fD31B4fE"
       );
       const data = await response.json();
       let totalprice = 0;
@@ -112,19 +115,19 @@ export default function TokenData() {
         }
       }
       // Calculate average price
-      if(poloprice!==0){
-        const avrg =  ((Number(poloniexprice) + totalprice) / 6);
-        let fixedavrg = avrg.toFixed(5)
+      if (poloprice !== 0) {
+        const avrg = (Number(poloniexprice) + totalprice) / 6;
+        let fixedavrg = avrg.toFixed(5);
         avrgprice.value = fixedavrg;
-        }
-        if(poloprice===0){
-        const avrg = ( totalprice / 5 );
-        let fixedavrg = avrg.toFixed(5)
+      }
+      if (poloprice === 0) {
+        const avrg = totalprice / 5;
+        let fixedavrg = avrg.toFixed(5);
         avrgprice.value = fixedavrg;
-        }
+      }
       try {
         const response = await fetch(
-        "https://api.coingecko.com/api/v3/coins/dizzyhavoc"
+          "https://api.coingecko.com/api/v3/coins/dizzyhavoc"
         );
         const data = await response.json();
         // Set other market data
@@ -153,12 +156,13 @@ export default function TokenData() {
     initialloading.value = false;
   };
 
-  const fetchGecko = async () => {  // failsafe req for arb, eth, bsc, base price // isnt as reliable as dexscreener
+  const fetchGecko = async () => {
+    // failsafe req for arb, eth, bsc, base price // isnt as reliable as dexscreener
     let arbprice = 0,
-    ethprice = 0,
-    bscprice = 0,
-    baseprice = 0,
-    avaxprice = 0
+      ethprice = 0,
+      bscprice = 0,
+      baseprice = 0,
+      avaxprice = 0;
     const poloprice = poloniexprice.value;
     try {
       const response = await fetch(
@@ -181,17 +185,17 @@ export default function TokenData() {
           totalprice += ticker.converted_last.usd;
           // Set token prices based on market name
           if (ticker.market.name === "Uniswap V3 (Ethereum)") {
-            token_eth.value = (ticker.converted_last.usd).toFixed(5);
-            ethprice = (ticker.converted_last.usd).toFixed(5);
+            token_eth.value = ticker.converted_last.usd.toFixed(5);
+            ethprice = ticker.converted_last.usd.toFixed(5);
           } else if (ticker.market.name === "Pancakeswap V3 (BSC)") {
-            token_bsc.value = (ticker.converted_last.usd).toFixed(5);
-            bscprice = (ticker.converted_last.usd).toFixed(5);
+            token_bsc.value = ticker.converted_last.usd.toFixed(5);
+            bscprice = ticker.converted_last.usd.toFixed(5);
           } else if (ticker.market.name === "Uniswap V3 (Base)") {
-            token_base.value = (ticker.converted_last.usd).toFixed(5);
-            baseprice = (ticker.converted_last.usd).toFixed(5);
+            token_base.value = ticker.converted_last.usd.toFixed(5);
+            baseprice = ticker.converted_last.usd.toFixed(5);
           } else if (ticker.market.name === "Uniswap V3 (Arbitrum One)") {
-            token_arb.value = (ticker.converted_last.usd).toFixed(5);
-            arbprice = (ticker.converted_last.usd).toFixed(5);
+            token_arb.value = ticker.converted_last.usd.toFixed(5);
+            arbprice = ticker.converted_last.usd.toFixed(5);
           }
         }
       }
@@ -216,7 +220,8 @@ export default function TokenData() {
     initialloading.value = false;
   };
 
-  function formatNumber(num: number, precision = 2) { // format num in K, M, B
+  function formatNumber(num: number, precision = 2) {
+    // format num in K, M, B
     const map = [
       { suffix: "T", threshold: 1e12 },
       { suffix: "B", threshold: 1e9 },
@@ -233,7 +238,8 @@ export default function TokenData() {
     return num;
   }
 
-  const starttimer = () => { // auto refresh logic
+  const starttimer = () => {
+    // auto refresh logic
     let x = 30;
     const intervalId = setInterval(() => {
       if (x > 0) {
@@ -256,72 +262,110 @@ export default function TokenData() {
   return (
     <>
       {initialloading.value ? ( // no data : display loader
-        <div class="w-[360px] sm:w-[460px] shadow-lg px-0 relative  2xl:px-3 h-full justify-center  items-center rounded-lg gap-0 xl:gap-3 flex flex-col">
+        <div class="w-[332px] sm:w-[405px] shadow-lg px-0 relative  2xl:px-3 h-full justify-center  items-center rounded-lg gap-0 xl:gap-3 flex flex-col">
           <img src="./misc/loader.svg"></img>
         </div>
       ) : isloading.value ? ( // widget with blurred loader for desktop
-      <>
-      <div class="w-full shadow-lg px-0 2xl:px-3 h-full justify-center relative rounded-lg bg-blur3 flex flex-col">
-        <div class="flex flex-row ">
-        <div class="w-full shadow-lg px-0 absolute bottom-0 right-0 z-50 2xl:px-3 h-full justify-center items-center rounded-lg gap-0 xl:gap-3 dark:bg-[#212121B3] bg-[#e8e8e8B3] flex flex-col">
-            <img src="./misc/loader.svg"></img>
-          </div>
-          <section class="rounded flex flex-row w-full py-3 my-1 gap-3 ml-3">
-                <h1 class="font-[Poppins] dark:text-[#d2d2d2] text-[0.7rem] sm:text-[0.9rem] inline justify-center tracking-tight items-center">
-                  Avrg. Price : <h1 class="font-[Poppins] text-[#000000] dark:text-[#ffffff] text-[1rem] sm:text-[1.35rem] inline">${avrgprice.value}</h1>
-                </h1>
-                <h2 class="font-[Poppins] dark:text-[#d2d2d2] text-[0.7rem] sm:text-[0.9rem] inline justify-center tracking-tight items-center">
-                  Mk. Cap : <h1 class="font-[Poppins] text-[#000000] dark:text-[#ffffff] text-[1rem] sm:text-[1.35rem] inline">${formatNumber(avrgprice.value * totalsupply.value)}</h1>
-                </h2>
-              </section>
-              <section class="rounded flex flex-row mx-auto w-full py-3 my-1 gap-3 ml-3">
-                <h2 class="font-[Poppins] dark:text-[#d2d2d2] text-[0.7rem] sm:text-[0.9rem] inline justify-center tracking-tight items-center">
-                  Max Δ : <h1 class="font-[Poppins] text-[#000000] dark:text-[#ffffff] text-[1rem] sm:text-[1.35rem] inline">{delta}%</h1>
-                </h2>
-                <h1 class="font-[Poppins] dark:text-[#d2d2d2] text-[0.7rem] sm:text-[0.9rem] inline justify-center  tracking-tight items-center">
-                  ATH : <h1 class="font-[Poppins] text-[#000000] dark:text-[#ffffff] text-[1rem] sm:text-[1.35rem] inline">${ath.value.toFixed(5)}</h1>
-                </h1>
-              </section>
-          </div>
-          <div title="data from dexscreener, coingecko & poloniex." class="bottom-1 unselectable dark:text-[#d2d2d2] text-[#6e6e6e] absolute left-1 text-[11px]">
-            {count}
-          </div>
-        </div>
-        </>
-      ) : ( // loaded
         <>
-        <div class="w-full shadow-lg px-0 2xl:px-3 h-full justify-center relative  rounded-lg gap-0 xl:gap-1 bg-blur3 flex flex-col">
-          <div class="flex flex-row ">
-
-              <section class="rounded flex flex-row w-full py-3 my-1 gap-3 ml-3">
-                <h1 class="font-[Poppins] dark:text-[#d2d2d2] text-[0.7rem] sm:text-[0.9rem] inline justify-center tracking-tight items-center">
-                  Avrg. Price : <h1 class="font-[Poppins] text-[#000000] dark:text-[#ffffff] text-[1rem] sm:text-[1.35rem] inline">${avrgprice.value}</h1>
+          <div class="w-[332px] sm:w-[405px] shadow-lg px-3 h-full justify-center relative rounded-lg bg-blur3 flex flex-col">
+            <div class="flex flex-row gap-6">
+              <div class="w-full shadow-lg px-0 absolute bottom-0 right-0 z-50 2xl:px-3 h-full justify-center items-center rounded-lg gap-0 xl:gap-3 dark:bg-[#212121B3] bg-[#e8e8e8B3] flex flex-col">
+                <img src="./misc/loader.svg"></img>
+              </div>
+              <section class="rounded flex flex-col">
+                <h1 class="font-[Poppins] dark:text-[#d2d2d2] text-[0.7rem] sm:text-[0.75rem] font-medium flex flex-col justify-center tracking-tight items-center">
+                  Avrg. Price
                 </h1>
-                <h2 class="font-[Poppins] dark:text-[#d2d2d2] text-[0.7rem] sm:text-[0.9rem] inline justify-center tracking-tight items-center">
-                  Mk. Cap : <h1 class="font-[Poppins] text-[#000000] dark:text-[#ffffff] text-[1rem] sm:text-[1.35rem] inline">${formatNumber(avrgprice.value * totalsupply.value)}</h1>
-                </h2>
-              </section>
-              <section class="rounded flex flex-row mx-auto w-full py-3 my-1 gap-3 ml-3">
-                <h2 class="font-[Poppins] dark:text-[#d2d2d2] text-[0.7rem] sm:text-[0.9rem] inline justify-center tracking-tight items-center">
-                  Max Δ : <h1 class="font-[Poppins] text-[#000000] dark:text-[#ffffff] text-[1rem] sm:text-[1.35rem] inline">{delta}%</h1>
-                </h2>
-                <h1 class="font-[Poppins] dark:text-[#d2d2d2] text-[0.7rem] sm:text-[0.9rem] inline justify-center  tracking-tight items-center">
-                  ATH : <h1 class="font-[Poppins] text-[#000000] dark:text-[#ffffff] text-[1rem] sm:text-[1.35rem] inline">${ath.value.toFixed(5)}</h1>
+                <h1 class="font-[Poppins] text-[#000000] dark:text-[#ffffff] text-[1rem] sm:text-[1.35rem] inline">
+                  ${avrgprice.value}
                 </h1>
               </section>
+              <section class="rounded flex flex-col">
+                <h2 class="font-[Poppins] dark:text-[#d2d2d2] text-[0.7rem] sm:text-[0.75rem] flex flex-col justify-center tracking-tight items-center">
+                  Mk. Cap
+                  <h1 class="font-[Poppins] text-[#000000] dark:text-[#ffffff] text-[1rem] font-medium sm:text-[1.35rem] inline">
+                    ${formatNumber(avrgprice.value * totalsupply.value)}
+                  </h1>
+                </h2>
+              </section>
+              <section class="rounded flex flex-col">
+                <h1 class="font-[Poppins] dark:text-[#d2d2d2] text-[0.7rem] sm:text-[0.75rem] flex flex-col justify-center tracking-tight items-center">
+                  Max Δ
+                </h1>
+                <h1 class="font-[Poppins] text-[#000000] dark:text-[#ffffff] text-[1rem] font-medium sm:text-[1.35rem] inline">
+                  {delta}%
+                </h1>
+              </section>
+              <section class="rounded flex flex-col">
+                <h1 class="font-[Poppins] dark:text-[#d2d2d2] text-[0.7rem] sm:text-[0.75rem] flex flex-col justify-center tracking-tight items-center">
+                  ATH
+                </h1>
+                <h1 class="font-[Poppins] text-[#000000] dark:text-[#ffffff] text-[1rem] font-medium sm:text-[1.35rem] inline">
+                  ${ath.value.toFixed(5)}
+                </h1>
+              </section>
+            </div>
+            <div
+              title="data from dexscreener, coingecko & poloniex."
+              class="bottom-1 unselectable dark:text-[#d2d2d2] text-[#6e6e6e] absolute left-1 text-[11px]"
+            >
+              {count}
+            </div>
           </div>
-          <div title="data from dexscreener, coingecko & poloniex." class="bottom-1 unselectable dark:text-[#d2d2d2] text-[#6e6e6e] absolute left-1 text-[11px]">
-            {count}
+        </>
+      ) : (
+        // loaded
+        <>
+          <div class="shadow-lg px-3 h-full justify-center relative  rounded-lg gap-0 xl:gap-1 bg-blur3 flex flex-col">
+            <div class="flex flex-row mx-auto justify-center gap-6">
+              <section class="rounded flex flex-col">
+                <h1 class="font-[Poppins] dark:text-[#d2d2d2] text-[0.7rem] sm:text-[0.75rem] flex flex-col justify-center tracking-tight items-center">
+                  Avrg. Price
+                </h1>
+                <h1 class="font-[Poppins] text-[#000000] dark:text-[#ffffff] font-medium text-[1rem] sm:text-[1.35rem] inline">
+                  ${avrgprice.value}
+                </h1>
+              </section>
+              <section class="rounded flex flex-col">
+                <h2 class="font-[Poppins] dark:text-[#d2d2d2] text-[0.7rem] sm:text-[0.75rem] flex flex-col justify-center tracking-tight items-center">
+                  Mk. Cap
+                  <h1 class="font-[Poppins] text-[#000000] dark:text-[#ffffff] font-medium  text-[1rem] sm:text-[1.35rem] inline">
+                    ${formatNumber(avrgprice.value * totalsupply.value)}
+                  </h1>
+                </h2>
+              </section>
+              <section class="rounded flex flex-col">
+                <h1 class="font-[Poppins] dark:text-[#d2d2d2] text-[0.7rem] sm:text-[0.75rem] flex flex-col justify-center tracking-tight items-center">
+                  Max Δ
+                </h1>
+                <h1 class="font-[Poppins] text-[#000000] dark:text-[#ffffff] font-medium  text-[1rem] sm:text-[1.35rem] inline">
+                  {delta}%
+                </h1>
+              </section>
+              <section class="rounded flex flex-col">
+                <h1 class="font-[Poppins] dark:text-[#d2d2d2] text-[0.7rem] sm:text-[0.75rem] flex flex-col justify-center tracking-tight items-center">
+                  ATH
+                </h1>
+                <h1 class="font-[Poppins] text-[#000000] dark:text-[#ffffff] font-medium  text-[1rem] sm:text-[1.35rem] inline">
+                  ${ath.value.toFixed(5)}
+                </h1>
+              </section>
+            </div>
+            <div
+              title="data from dexscreener, coingecko & poloniex."
+              class="bottom-1 unselectable dark:text-[#d2d2d2] text-[#6e6e6e] absolute left-1 text-[11px]"
+            >
+              {count}
+            </div>
           </div>
-        </div>
-        
         </>
       )}
     </>
   );
 }
 
-{/* <div class="flex-row relative flex w-full">
+{
+  /* <div class="flex-row relative flex w-full">
 <section class="rounded ml-3 justify-center flex flex-wrap gap-3">
   <h1 style={{ order: poloorder != null ? -poloorder : 0 }}>
     <a
@@ -424,4 +468,5 @@ export default function TokenData() {
     </h1>
   </a>
 </section>
-</div> */}
+</div> */
+}

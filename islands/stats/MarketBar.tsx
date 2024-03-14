@@ -178,21 +178,21 @@ export default function MarketBar() {
         <div class="w-full flex flex-col gap-2">
           <div style={{ order: ethorder != null ? -ethorder : 0 }} class="w-full shadow-lg flex h-[7rem] sm:h-[9rem] rounded-lg xl:gap-3 gap-0 bg-blur3 flex">
           <img
-              src="/chains/eth.svg"
-              class="sm:size-9 ml-6 mt-6 justify-start size-7"
+              src="/chains/token_eth.png"
+              class="sm:size-11 ml-6 mt-6 justify-start size-7"
               title="eth"
               alt="eth"
             />
             <div class="flex items-start sm:items-center flex-row">
-              <div class="flex gap-3 sm:gap-0  mx-7 sm:flex-col flex-row">
-              <div class="flex-col flex sm:flex-row flex-col">
+              <div class="flex gap-3 sm:gap-0  mx-3 sm:flex-col flex-row">
+              <div class="flex sm:flex-row flex-col">
                 <section class="rounded flex flex-col w-full py-1 ml-0">
                   <h1 class="font-[Poppins] dark:text-[#d2d2d2] text-[#1a1a1a] text-[0.8rem] sm:text-[1rem] inline justify-center tracking-tight items-center">
                   Price: <h1 class="font-[Poppins] text-[#000000] font-medium dark:text-[#ccb286] text-[1rem] sm:text-[1.2rem] inline">${formatNumber(token_eth.value)}</h1>
                   </h1>
                 </section>
               </div>
-              <div class="flex-col flex sm:flex-row flex-col">
+              <div class="flex sm:flex-row flex-col">
                 <section class="rounded flex flex-col w-full py-1 ml-0">
                   <h1 class="font-[Poppins] dark:text-[#d2d2d2] text-[#1a1a1a] text-[0.8rem] sm:text-[1rem] inline justify-center tracking-tight items-center">
                   Liquidity: <h1 class="font-[Poppins] text-[#000000] dark:text-[#ffffff] text-[1rem] sm:text-[1.2rem] inline">${formatNumber(liq_eth.value)}</h1>
@@ -211,21 +211,21 @@ export default function MarketBar() {
           </div>
           <div style={{ order: arborder != null ? -arborder : 0 }} class="w-full shadow-lg flex h-[7rem] sm:h-[9rem] rounded-lg xl:gap-3 gap-0 bg-blur3 flex">
           <img
-              src="/chains/arb.svg"
-              class="sm:size-9 ml-6 mt-6 justify-start size-7"
+              src="/chains/token_arb.png"
+              class="sm:size-11 ml-6 mt-6 justify-start size-7"
               title="arb"
               alt="arb"
             />
             <div class="flex items-start sm:items-center flex-row">
-              <div class="flex gap-3 sm:gap-0  mx-7 sm:flex-col flex-row">
-              <div class="flex-col flex sm:flex-row flex-col">
+              <div class="flex gap-3 sm:gap-0  mx-3 sm:flex-col flex-row">
+              <div class="flex sm:flex-row flex-col">
                 <section class="rounded flex flex-col w-full py-1 ml-0">
                   <h1 class="font-[Poppins] dark:text-[#d2d2d2] text-[#1a1a1a] text-[0.8rem] sm:text-[1rem] inline justify-center tracking-tight items-center">
                   Price: <h1 class="font-[Poppins] text-[#000000] font-medium dark:text-[#ccb286] text-[1rem] sm:text-[1.2rem] inline">${formatNumber(token_arb.value)}</h1>
                   </h1>
                 </section>
               </div>
-              <div class="flex-col flex sm:flex-row flex-col">
+              <div class="flex sm:flex-row flex-col">
                 <section class="rounded flex flex-col w-full py-1 ml-0">
                   <h1 class="font-[Poppins] dark:text-[#d2d2d2] text-[#1a1a1a] text-[0.8rem] sm:text-[1rem] inline justify-center tracking-tight items-center">
                   Liquidity: <h1 class="font-[Poppins] text-[#000000] dark:text-[#ffffff] text-[1rem] sm:text-[1.2rem] inline">${formatNumber(liq_arb.value)}</h1>
@@ -244,21 +244,21 @@ export default function MarketBar() {
           </div>
           <div style={{ order: avaxorder != null ? -avaxorder : 0 }} class="w-full shadow-lg flex h-[7rem] sm:h-[9rem] rounded-lg xl:gap-3 gap-0 bg-blur3 flex">
           <img
-              src="/chains/avax.svg"
-              class="sm:size-9 ml-6 mt-6 justify-start size-7"
+              src="/chains/token_avax.png"
+              class="sm:size-11 ml-6 mt-6 justify-start size-7"
               title="avax"
               alt="avax"
             />
            <div class="flex items-start sm:items-center flex-row">
-              <div class="flex gap-3 sm:gap-0  mx-7 sm:flex-col flex-row">
-              <div class="flex-col flex sm:flex-row flex-col">
+              <div class="flex gap-3 sm:gap-0  mx-3 sm:flex-col flex-row">
+              <div class="flex sm:flex-row flex-col">
                 <section class="rounded flex flex-col w-full py-1 ml-0">
                   <h1 class="font-[Poppins] dark:text-[#d2d2d2] text-[#1a1a1a] text-[0.8rem] sm:text-[1rem] inline justify-center tracking-tight items-center">
                   Price: <h1 class="font-[Poppins] text-[#000000] font-medium dark:text-[#ccb286] text-[1rem] sm:text-[1.2rem] inline">${formatNumber(token_avax.value)}</h1>
                   </h1>
                 </section>
               </div>
-              <div class="flex-col flex sm:flex-row flex-col">
+              <div class="flex sm:flex-row flex-col">
                 <section class="rounded flex flex-col w-full py-1 ml-0">
                   <h1 class="font-[Poppins] dark:text-[#d2d2d2] text-[#1a1a1a] text-[0.8rem] sm:text-[1rem] inline justify-center tracking-tight items-center">
                   Liquidity: <h1 class="font-[Poppins] text-[#000000] dark:text-[#ffffff] text-[1rem] sm:text-[1.2rem] inline">${formatNumber(liq_avax.value)}</h1>
@@ -277,21 +277,21 @@ export default function MarketBar() {
           </div>
           <div style={{ order: baseorder != null ? -baseorder : 0 }} class="w-full shadow-lg flex h-[7rem] sm:h-[9rem] rounded-lg xl:gap-3 gap-0 bg-blur3 flex">
           <img
-              src="/chains/base.svg"
-              class="sm:size-9 ml-6 mt-6 justify-start size-7"
+              src="/chains/token_base.png"
+              class="sm:size-11 ml-6 mt-6 justify-start size-7"
               title="base"
               alt="base"
             />
             <div class="flex items-start sm:items-center flex-row">
-              <div class="flex gap-3 sm:gap-0  mx-7 sm:flex-col flex-row">
-              <div class="flex-col flex sm:flex-row flex-col">
+              <div class="flex gap-3 sm:gap-0  mx-3 sm:flex-col flex-row">
+              <div class="flex sm:flex-row flex-col">
                 <section class="rounded flex flex-col w-full py-1 ml-0">
                   <h1 class="font-[Poppins] dark:text-[#d2d2d2] text-[#1a1a1a] text-[0.8rem] sm:text-[1rem] inline justify-center tracking-tight items-center">
                   Price: <h1 class="font-[Poppins] text-[#000000] font-medium dark:text-[#ccb286] text-[1rem] sm:text-[1.2rem] inline">${formatNumber(token_base.value)}</h1>
                   </h1>
                 </section>
               </div>
-              <div class="flex-col flex sm:flex-row flex-col">
+              <div class="flex sm:flex-row flex-col">
                 <section class="rounded flex flex-col w-full py-1 ml-0">
                   <h1 class="font-[Poppins] dark:text-[#d2d2d2] text-[#1a1a1a] text-[0.8rem] sm:text-[1rem] inline justify-center tracking-tight items-center">
                   Liquidity: <h1 class="font-[Poppins] text-[#000000] dark:text-[#ffffff] text-[1rem] sm:text-[1.2rem] inline">${formatNumber(liq_base.value)}</h1>
@@ -310,21 +310,21 @@ export default function MarketBar() {
           </div>
           <div style={{ order: bscorder != null ? -bscorder : 0 }} class="w-full shadow-lg flex h-[7rem] sm:h-[9rem] rounded-lg xl:gap-3 gap-0 bg-blur3 flex">
           <img
-              src="/chains/bsc.svg"
-              class="sm:size-9 ml-6 mt-6 justify-start size-7"
+              src="/chains/token_bsc.png"
+              class="sm:size-11 ml-6 mt-6 justify-start size-7"
               title="bsc"
               alt="bsc"
             />
             <div class="flex items-start sm:items-center flex-row">
-              <div class="flex gap-3 sm:gap-0  mx-7 sm:flex-col flex-row">
-              <div class="flex-col flex sm:flex-row flex-col">
+              <div class="flex gap-3 sm:gap-0  mx-3 sm:flex-col flex-row">
+              <div class="flex sm:flex-row flex-col">
                 <section class="rounded flex flex-col w-full py-1 ml-0">
                   <h1 class="font-[Poppins] dark:text-[#d2d2d2] text-[#1a1a1a] text-[0.8rem] sm:text-[1rem] inline justify-center tracking-tight items-center">
                   Price: <h1 class="font-[Poppins] text-[#000000] font-medium dark:text-[#ccb286] text-[1rem] sm:text-[1.2rem] inline">${formatNumber(token_bsc.value)}</h1>
                   </h1>
                 </section>
               </div>
-              <div class="flex-col flex sm:flex-row flex-col">
+              <div class="flex sm:flex-row flex-col">
                 <section class="rounded flex flex-col w-full py-1 ml-0">
                   <h1 class="font-[Poppins] dark:text-[#d2d2d2] text-[#1a1a1a] text-[0.8rem] sm:text-[1rem] inline justify-center tracking-tight items-center">
                   Liquidity: <h1 class="font-[Poppins] text-[#000000] dark:text-[#ffffff] text-[1rem] sm:text-[1.2rem] inline">${formatNumber(liq_bsc.value)}</h1>
