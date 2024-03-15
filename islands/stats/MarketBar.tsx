@@ -192,12 +192,13 @@ export default function MarketBar() {
       ) : ( // loaded bar
         <div class="w-full flex flex-col gap-2">
           <div style={{ order: ethorder != null ? -ethorder : 0 }} class="w-full relative shadow-lg flex h-[7rem] sm:h-[9rem] rounded-lg xl:gap-3 gap-0 bg-blur3">
+            <a class="sm:size-11 ml-3 mt-3 sm:ml-6 sm:mt-6 justify-start size-7" title="open in dexscreener" target="_blank" href="https://dexscreener.com/ethereum/0xb7a71c2e31920019962cb62aeea1dbf502905b81">
           <img
               src="/chains/token_eth.png"
-              class="sm:size-11 ml-3 mt-3 sm:ml-6 sm:mt-6 justify-start size-7"
               title="eth"
               alt="eth"
             />
+            </a>
             <div class="flex items-start sm:items-center flex-row">
               <div class="flex gap-3 sm:gap-0  mx-3 sm:flex-col flex-row">
               <div class="flex sm:flex-row flex-col">
@@ -229,18 +230,19 @@ export default function MarketBar() {
                 </section>
               </div>
               </div>
-              <div class="flex absolute right-0 flex-row">
+              <div class="flex absolute right-auto left-0 sm:left-auto sm:right-0 flex-row">
                 <EthChart />
               </div>
             </div>
           </div>
           <div style={{ order: arborder != null ? -arborder : 0 }} class="w-full relative shadow-lg h-[7rem] sm:h-[9rem] rounded-lg xl:gap-3 gap-0 bg-blur3 flex">
+          <a class="sm:size-11 ml-3 mt-3 sm:ml-6 sm:mt-6 justify-start size-7" title="open in dexscreener" target="_blank" href="https://dexscreener.com/arbitrum/0x05c5bdbc7b3c64109ddcce058ce99f4515fe1c83">
           <img
               src="/chains/token_arb.png"
-              class="sm:size-11 ml-3 mt-3 sm:ml-6 sm:mt-6 justify-start size-7"
               title="arb"
               alt="arb"
             />
+            </a>
             <div class="flex items-start sm:items-center flex-row">
               <div class="flex gap-3 sm:gap-0  mx-3 sm:flex-col flex-row">
               <div class="flex sm:flex-row flex-col">
@@ -272,18 +274,19 @@ export default function MarketBar() {
                 </section>
               </div>
               </div>
-              <div class="flex absolute right-0 flex-row">
+              <div class="flex absolute right-auto left-0 sm:left-auto sm:right-0 flex-row">
                 <ArbChart />
               </div>
             </div>
           </div>
           <div style={{ order: avaxorder != null ? -avaxorder : 0 }} class="w-full relative shadow-lg h-[7rem] sm:h-[9rem] rounded-lg xl:gap-3 gap-0 bg-blur3 flex">
+          <a class="sm:size-11 ml-3 mt-3 sm:ml-6 sm:mt-6 justify-start size-7" title="open in dexscreener" target="_blank" href="https://dexscreener.com/avalanche/0x523a04633b6c0c4967824471dda0abbce7c5e643">
           <img
               src="/chains/token_avax.png"
-              class="sm:size-11 ml-3 mt-3 sm:ml-6 sm:mt-6 justify-start size-7"
               title="avax"
               alt="avax"
             />
+            </a>
             <div class="flex items-start sm:items-center flex-row">
               <div class="flex gap-3 sm:gap-0  mx-3 sm:flex-col flex-row">
               <div class="flex sm:flex-row flex-col">
@@ -315,18 +318,19 @@ export default function MarketBar() {
                 </section>
               </div>
               </div>
-              <div class="flex absolute right-0 flex-row">
+              <div class="flex absolute right-auto left-0 sm:left-auto sm:right-0 flex-row">
                 <AvaxChart />
               </div>
             </div>
           </div>
           <div style={{ order: baseorder != null ? -baseorder : 0 }} class="w-full relative shadow-lg h-[7rem] sm:h-[9rem] rounded-lg xl:gap-3 gap-0 bg-blur3 flex">
+          <a class="sm:size-11 ml-3 mt-3 sm:ml-6 sm:mt-6 justify-start size-7" title="open in dexscreener" target="_blank" href="https://dexscreener.com/base/0xb64dff20dd5c47e6dbb56ead80d23568006dec1e">
           <img
               src="/chains/token_base.png"
-              class="sm:size-11 ml-3 mt-3 sm:ml-6 sm:mt-6 justify-start size-7"
               title="base"
               alt="base"
             />
+            </a>
             <div class="flex items-start sm:items-center flex-row">
               <div class="flex gap-3 sm:gap-0  mx-3 sm:flex-col flex-row">
               <div class="flex sm:flex-row flex-col">
@@ -358,18 +362,19 @@ export default function MarketBar() {
                 </section>
               </div>
               </div>
-              <div class="flex absolute right-0 flex-row">
+              <div class="flex absolute right-auto left-0 sm:left-auto sm:right-0 flex-row">
                 <BaseChart />
               </div>
             </div>
           </div>
           <div style={{ order: bscorder != null ? -bscorder : 0 }} class="w-full relative shadow-lg h-[7rem] sm:h-[9rem] rounded-lg xl:gap-3 gap-0 bg-blur3 flex">
+          <a class="sm:size-11 ml-3 mt-3 sm:ml-6 sm:mt-6 justify-start size-7" title="open in dexscreener" target="_blank" href="https://dexscreener.com/bsc/0x642089a5da2512db761d325a868882ece6e387f5">
           <img
               src="/chains/token_bsc.png"
-              class="sm:size-11 ml-3 mt-3 sm:ml-6 sm:mt-6 justify-start size-7"
               title="bsc"
               alt="bsc"
             />
+            </a>
             <div class="flex items-start sm:items-center flex-row">
               <div class="flex gap-3 sm:gap-0  mx-3 sm:flex-col flex-row">
               <div class="flex sm:flex-row flex-col">
@@ -401,7 +406,7 @@ export default function MarketBar() {
                 </section>
               </div>
               </div>
-              <div class="flex absolute right-0 flex-row">
+              <div class="flex absolute right-auto left-0 sm:left-auto sm:right-0 flex-row">
                 <BscChart/>
               </div>
             </div>

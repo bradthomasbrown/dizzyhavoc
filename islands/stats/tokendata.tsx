@@ -353,8 +353,8 @@ export default function TokenData() {
               </section>
             </div>
             <div
-              title="data from dexscreener, coingecko & poloniex."
-              class="bottom-1 unselectable dark:text-[#d2d2d2] text-[#6e6e6e] absolute left-1 text-[11px]"
+              title="data from dzhv, dexscreener & coingecko apis."
+              class="bottom-1 unselectable dark:text-[#d2d2d2] text-[#6e6e6e] absolute left-1 text-[9px]"
             >
               {count}
             </div>

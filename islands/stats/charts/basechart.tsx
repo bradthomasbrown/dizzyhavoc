@@ -80,8 +80,8 @@ export default function BaseChart() {
       {
         data: fetchedData.value.map((item) => item.base_price),
         borderColor: "#b8b8b8", // set the color of the line
-        pointRadius: 0, // Set the radius of the points
-        borderWidth: 6, // Set the width of the line
+        pointRadius: 1, // Set the radius of the points
+        borderWidth: 4, // Set the width of the line
         tension: 0.5,
       },
     ],

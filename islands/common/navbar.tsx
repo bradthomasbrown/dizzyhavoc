@@ -9,7 +9,7 @@ export default function NavBar() {
           <a href="/">
           <img
             src="/misc/token.png"
-            className="lg:size-[50px] size-[35px] flex hover:scale-[105%]"
+            className="lg:max-w-[50px] max-w-[35px] flex hover:scale-[105%]"
           ></img></a>
           DizzyHavoc
         </div>
