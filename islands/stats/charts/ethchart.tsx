@@ -99,7 +99,7 @@ export default function EthChart() {
     return (
 
       <>
-         <div class="p-4 sm:mx-auto mx-4 mt-7 sm:mt-0 sm:h-[160px] sm:w-[400px] h-[100px] w-[300px]">
+         <div class="p-4 sm:mx-auto mx-4 mt-7 sm:mt-0 sm:h-[160px] sm:w-[400px] h-[100px] w-[330px]">
            {fetchedData.value && fetchedData.value.length > 0 && (
             <Chart
             id="myChart"
