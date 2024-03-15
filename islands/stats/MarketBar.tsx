@@ -194,7 +194,7 @@ export default function MarketBar() {
             <a class="sm:size-11 hover:scale-[105%] ml-3 mt-3 sm:ml-6 sm:mt-6 justify-start size-7" title="open in dexscreener" target="_blank" href="https://dexscreener.com/ethereum/0xb7a71c2e31920019962cb62aeea1dbf502905b81">
           <img
               src="/chains/token_eth.png"
-              title="eth"
+              title="open in dexscreener"
               alt="eth"
             />
             </a>
@@ -238,7 +238,7 @@ export default function MarketBar() {
           <a class="sm:size-11 hover:scale-[105%] ml-3 mt-3 sm:ml-6 sm:mt-6 justify-start size-7" title="open in dexscreener" target="_blank" href="https://dexscreener.com/arbitrum/0x05c5bdbc7b3c64109ddcce058ce99f4515fe1c83">
           <img
               src="/chains/token_arb.png"
-              title="arb"
+              title="open in dexscreener"
               alt="arb"
             />
             </a>
@@ -282,7 +282,7 @@ export default function MarketBar() {
           <a class="sm:size-11 hover:scale-[105%] ml-3 mt-3 sm:ml-6 sm:mt-6 justify-start size-7" title="open in dexscreener" target="_blank" href="https://dexscreener.com/avalanche/0x523a04633b6c0c4967824471dda0abbce7c5e643">
           <img
               src="/chains/token_avax.png"
-              title="avax"
+              title="open in dexscreener"
               alt="avax"
             />
             </a>
@@ -326,7 +326,7 @@ export default function MarketBar() {
           <a class="sm:size-11 hover:scale-[105%] ml-3 mt-3 sm:ml-6 sm:mt-6 justify-start size-7" title="open in dexscreener" target="_blank" href="https://dexscreener.com/base/0xb64dff20dd5c47e6dbb56ead80d23568006dec1e">
           <img
               src="/chains/token_base.png"
-              title="base"
+              title="open in dexscreener"
               alt="base"
             />
             </a>
@@ -370,7 +370,7 @@ export default function MarketBar() {
           <a class="sm:size-11 hover:scale-[105%] ml-3 mt-3 sm:ml-6 sm:mt-6 justify-start size-7" title="open in dexscreener" target="_blank" href="https://dexscreener.com/bsc/0x642089a5da2512db761d325a868882ece6e387f5">
           <img
               src="/chains/token_bsc.png"
-              title="bsc"
+              title="open in dexscreener"
               alt="bsc"
             />
             </a>
