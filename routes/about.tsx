@@ -1,8 +1,8 @@
 export default function About() {
   return (
     <>
-      <img class="absolute bottom-0 blur-sm w-[10rem] sm:w-[35rem]" src="/misc/dzhv.png"></img>
-      <div class="h-screen mt-[1rem] flex flex-col items-center">
+      <img class="absolute sm:opacity-100 opacity-50 -z-10 bottom-0 blur-sm w-[10rem] sm:w-[35rem]" src="/misc/dzhv.png"></img>
+      <div class="h-screen justify-center mt-[-4.5rem] flex flex-col items-center">
       <p
         class="
   unselectable
@@ -12,8 +12,6 @@ export default function About() {
   text-[#3d3d3d]
   mx-auto
   font-[monospace]
-  sm:mt-[0.5rem]
-  py-3
   bg-transparent
   rounded-xl
   px-6
