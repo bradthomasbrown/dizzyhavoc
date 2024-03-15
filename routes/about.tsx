@@ -25,7 +25,7 @@ export default function About() {
       <div class="flex mt-[2rem] flex-row">
         <img class="hover:scale-[101%] size-[90px] sm:size-[120px] rounded-full" src="/misc/spider.png"/>
         <div class="flex mx-5 flex-col">
-        <h1 class="text-[1.5rem] font-[Poppins] font-medium z-10 font-Poppins dark:text-[#d2d2d2] text-[#282828]">Brad Brown</h1>
+        <h1 class="text-[1.7rem] font-[Poppins] font-medium z-10 font-Poppins dark:text-[#d2d2d2] text-[#282828]">Brad Brown</h1>
         <h1 class="text-[1.1rem] font-[Poppins] z-10 font-Poppins dark:text-[#d2d2d2] text-[#282828]">Creator, Lead developper, Back End</h1>
         <div class="flex flex-row">
         <a target="_blank" href="https://github.com/bradbrown-llc" class="text-[1.2rem] ml-2 font-Poppins text-[#3b2d82] dark:text-[#ccb286]">github</a>
