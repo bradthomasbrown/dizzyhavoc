@@ -191,7 +191,7 @@ export default function MarketBar() {
       ) : ( // loaded bar
         <div class="w-full flex flex-col gap-2">
           <div style={{ order: ethorder != null ? -ethorder : 0 }} class="w-full relative shadow-lg flex h-[7rem] sm:h-[9rem] rounded-lg gap-3 bg-blur3">
-            <a class="sm:size-11 hover:scale-[105%] ml-3 mt-3 sm:ml-6 sm:mt-6 justify-start size-7" title="open in dexscreener" target="_blank" href="https://dexscreener.com/ethereum/0xb7a71c2e31920019962cb62aeea1dbf502905b81">
+            <a class="sm:size-11 hover:scale-[105%] ml-3 mt-3 sm:ml-6 sm:mt-6 justify-start size-9" title="open in dexscreener" target="_blank" href="https://dexscreener.com/ethereum/0xb7a71c2e31920019962cb62aeea1dbf502905b81">
           <img
               src="/chains/token_eth.png"
               title="open in dexscreener"
@@ -202,29 +202,27 @@ export default function MarketBar() {
               <div class="flex gap-3 sm:gap-0  mx-3 sm:flex-col flex-row">
               <div class="flex sm:flex-row flex-col">
                 <section class="rounded flex flex-col w-full py-[1px] ml-0">
-                  <h1 class="font-[Poppins] dark:text-[#d2d2d2] text-[#1a1a1a] text-[0.7rem] sm:text-[1rem] inline justify-center tracking-tight items-center">
-                  Price: <h1 class="font-[Poppins] text-[#000000] font-medium dark:text-[#ccb286] text-[1rem] sm:text-[1.2rem] inline">${formatNumber(token_eth.value)}</h1>
-                  </h1>
+                  <h1 class="font-[Poppins] text-[#000000] font-medium dark:text-[#ccb286] text-[1rem] sm:text-[1.2rem] inline">${formatNumber(token_eth.value)}</h1>
                 </section>
               </div>
               <div class="flex sm:flex-row flex-col">
                 <section class="rounded flex flex-col w-full py-[1px] ml-0">
                   <h1 class="font-[Poppins] dark:text-[#d2d2d2] text-[#1a1a1a] text-[0.7rem] sm:text-[0.8rem] inline justify-center tracking-tight items-center">
-                  Liquidity: <h1 class="font-[Poppins] text-[#000000] dark:text-[#ffffff] text-[1rem] sm:text-[1.2rem] inline">${formatNumber(liq_eth.value)}</h1>
+                  Liquidity: <h1 class="mx-1 font-[Poppins] text-[#000000] dark:text-[#ffffff] text-[1rem] inline">${formatNumber(liq_eth.value)}</h1>
                   </h1>
                 </section>
               </div>
               <div class="flex flex-row sm:flex-col">
                 <section class="rounded flex flex-col mx-auto w-full py-[1px] ml-0">
                   <h2 class="font-[Poppins] dark:text-[#d2d2d2] text-[#1a1a1a] text-[0.7rem] sm:text-[0.8rem] inline justify-center tracking-tight items-center">
-                  24h Vol: <h1 class="font-[Poppins] text-[#000000] dark:text-[#ffffff] text-[1rem] sm:text-[1.2rem] inline">${formatNumber(vol24_eth.value)}</h1>
+                  24h Vol: <h1 class="mx-1 font-[Poppins] text-[#000000] dark:text-[#ffffff] text-[1rem] inline">${formatNumber(vol24_eth.value)}</h1>
                   </h2>
                 </section>
               </div>
               <div class="flex flex-row sm:flex-col">
                 <section class="rounded flex flex-col mx-auto w-full py-[1px] ml-0">
                   <h2 class="font-[Poppins] dark:text-[#d2d2d2] text-[#1a1a1a] text-[0.7rem] sm:text-[0.8rem] inline justify-center tracking-tight items-center">
-                  24h Tx: <h1 class="font-[Poppins] text-[#000000] dark:text-[#ffffff] text-[1rem] sm:text-[1.0rem] inline">{tx_eth.value}</h1>
+                  24h Tx: <h1 class="mx-1 font-[Poppins] text-[#000000] dark:text-[#ffffff] text-[1rem] inline">{tx_eth.value}</h1>
                   </h2>
                 </section>
               </div>
@@ -235,7 +233,7 @@ export default function MarketBar() {
             </div>
           </div>
           <div style={{ order: arborder != null ? -arborder : 0 }} class="w-full relative shadow-lg h-[7rem] sm:h-[9rem] rounded-lg gap-3 bg-blur3 flex">
-          <a class="sm:size-11 hover:scale-[105%] ml-3 mt-3 sm:ml-6 sm:mt-6 justify-start size-7" title="open in dexscreener" target="_blank" href="https://dexscreener.com/arbitrum/0x05c5bdbc7b3c64109ddcce058ce99f4515fe1c83">
+          <a class="sm:size-11 hover:scale-[105%] ml-3 mt-3 sm:ml-6 sm:mt-6 justify-start size-9" title="open in dexscreener" target="_blank" href="https://dexscreener.com/arbitrum/0x05c5bdbc7b3c64109ddcce058ce99f4515fe1c83">
           <img
               src="/chains/token_arb.png"
               title="open in dexscreener"
@@ -246,29 +244,27 @@ export default function MarketBar() {
               <div class="flex gap-3 sm:gap-0  mx-3 sm:flex-col flex-row">
               <div class="flex sm:flex-row flex-col">
                 <section class="rounded flex flex-col w-full py-[1px] ml-0">
-                  <h1 class="font-[Poppins] dark:text-[#d2d2d2] text-[#1a1a1a] text-[0.7rem] sm:text-[1rem] inline justify-center tracking-tight items-center">
-                  Price: <h1 class="font-[Poppins] text-[#000000] font-medium dark:text-[#ccb286] text-[1rem] sm:text-[1.2rem] inline">${formatNumber(token_arb.value)}</h1>
-                  </h1>
+                  <h1 class="font-[Poppins] text-[#000000] font-medium dark:text-[#ccb286] text-[1rem] sm:text-[1.2rem] inline">${formatNumber(token_arb.value)}</h1>
                 </section>
               </div>
               <div class="flex sm:flex-row flex-col">
               <section class="rounded flex flex-col mx-auto w-full py-[1px] ml-0">
                   <h2 class="font-[Poppins] dark:text-[#d2d2d2] text-[#1a1a1a] text-[0.7rem] sm:text-[0.8rem] inline justify-center tracking-tight items-center">
-                  Liquidity: <h1 class="font-[Poppins] text-[#000000] dark:text-[#ffffff] text-[1rem] sm:text-[1.2rem] inline">${formatNumber(liq_arb.value)}</h1>
+                  Liquidity: <h1 class="mx-1 font-[Poppins] text-[#000000] dark:text-[#ffffff] text-[1rem] inline">${formatNumber(liq_arb.value)}</h1>
                   </h2>
                 </section>
               </div>
               <div class="flex flex-row sm:flex-col">
               <section class="rounded flex flex-col mx-auto w-full py-[1px] ml-0">
                   <h2 class="font-[Poppins] dark:text-[#d2d2d2] text-[#1a1a1a] text-[0.7rem] sm:text-[0.8rem] inline justify-center tracking-tight items-center">
-                  24h Vol: <h1 class="font-[Poppins] text-[#000000] dark:text-[#ffffff] text-[1rem] sm:text-[1.2rem] inline">${formatNumber(vol24_arb.value)}</h1>
+                  24h Vol: <h1 class="mx-1 font-[Poppins] text-[#000000] dark:text-[#ffffff] text-[1rem] inline">${formatNumber(vol24_arb.value)}</h1>
                   </h2>
                 </section>
               </div>
               <div class="flex flex-row sm:flex-col">
                 <section class="rounded flex flex-col mx-auto w-full py-[1px] ml-0">
                   <h2 class="font-[Poppins] dark:text-[#d2d2d2] text-[#1a1a1a] text-[0.7rem] sm:text-[0.8rem] inline justify-center tracking-tight items-center">
-                  24h Tx: <h1 class="font-[Poppins] text-[#000000] dark:text-[#ffffff] text-[1rem] sm:text-[1.0rem] inline">{tx_arb.value}</h1>
+                  24h Tx: <h1 class="mx-1 font-[Poppins] text-[#000000] dark:text-[#ffffff] text-[1rem] inline">{tx_arb.value}</h1>
                   </h2>
                 </section>
               </div>
@@ -279,7 +275,7 @@ export default function MarketBar() {
             </div>
           </div>
           <div style={{ order: avaxorder != null ? -avaxorder : 0 }} class="w-full relative shadow-lg h-[7rem] sm:h-[9rem] rounded-lg gap-3 bg-blur3 flex">
-          <a class="sm:size-11 hover:scale-[105%] ml-3 mt-3 sm:ml-6 sm:mt-6 justify-start size-7" title="open in dexscreener" target="_blank" href="https://dexscreener.com/avalanche/0x523a04633b6c0c4967824471dda0abbce7c5e643">
+          <a class="sm:size-11 hover:scale-[105%] ml-3 mt-3 sm:ml-6 sm:mt-6 justify-start size-9" title="open in dexscreener" target="_blank" href="https://dexscreener.com/avalanche/0x523a04633b6c0c4967824471dda0abbce7c5e643">
           <img
               src="/chains/token_avax.png"
               title="open in dexscreener"
@@ -290,29 +286,27 @@ export default function MarketBar() {
               <div class="flex gap-3 sm:gap-0  mx-3 sm:flex-col flex-row">
               <div class="flex sm:flex-row flex-col">
                 <section class="rounded flex flex-col w-full py-[1px] ml-0">
-                  <h1 class="font-[Poppins] dark:text-[#d2d2d2] text-[#1a1a1a] text-[0.7rem] sm:text-[1rem] inline justify-center tracking-tight items-center">
-                  Price: <h1 class="font-[Poppins] text-[#000000] font-medium dark:text-[#ccb286] text-[1rem] sm:text-[1.2rem] inline">${formatNumber(token_avax.value)}</h1>
-                  </h1>
+                  <h1 class="font-[Poppins] text-[#000000] font-medium dark:text-[#ccb286] text-[1rem] sm:text-[1.2rem] inline">${formatNumber(token_avax.value)}</h1>
                 </section>
               </div>
               <div class="flex sm:flex-row flex-col">
               <section class="rounded flex flex-col mx-auto w-full py-[1px] ml-0">
                   <h2 class="font-[Poppins] dark:text-[#d2d2d2] text-[#1a1a1a] text-[0.7rem] sm:text-[0.8rem] inline justify-center tracking-tight items-center">
-                  Liquidity: <h1 class="font-[Poppins] text-[#000000] dark:text-[#ffffff] text-[1rem] sm:text-[1.2rem] inline">${formatNumber(liq_avax.value)}</h1>
+                  Liquidity: <h1 class="mx-1 font-[Poppins] text-[#000000] dark:text-[#ffffff] text-[1rem] inline">${formatNumber(liq_avax.value)}</h1>
                   </h2>
                 </section>
               </div>
               <div class="flex flex-row sm:flex-col">
               <section class="rounded flex flex-col mx-auto w-full py-[1px] ml-0">
                   <h2 class="font-[Poppins] dark:text-[#d2d2d2] text-[#1a1a1a] text-[0.7rem] sm:text-[0.8rem] inline justify-center tracking-tight items-center">
-                  24h Vol: <h1 class="font-[Poppins] text-[#000000] dark:text-[#ffffff] text-[1rem] sm:text-[1.2rem] inline">${formatNumber(vol24_avax.value)}</h1>
+                  24h Vol: <h1 class="mx-1 font-[Poppins] text-[#000000] dark:text-[#ffffff] text-[1rem] inline">${formatNumber(vol24_avax.value)}</h1>
                   </h2>
                 </section>
               </div>
               <div class="flex flex-row sm:flex-col">
                 <section class="rounded flex flex-col mx-auto w-full py-[1px] ml-0">
                   <h2 class="font-[Poppins] dark:text-[#d2d2d2] text-[#1a1a1a] text-[0.7rem] sm:text-[0.8rem] inline justify-center tracking-tight items-center">
-                  24h Tx: <h1 class="font-[Poppins] text-[#000000] dark:text-[#ffffff] text-[1rem] sm:text-[1.0rem] inline">{tx_avax.value}</h1>
+                  24h Tx: <h1 class="mx-1 font-[Poppins] text-[#000000] dark:text-[#ffffff] text-[1rem] inline">{tx_avax.value}</h1>
                   </h2>
                 </section>
               </div>
@@ -323,7 +317,7 @@ export default function MarketBar() {
             </div>
           </div>
           <div style={{ order: baseorder != null ? -baseorder : 0 }} class="w-full relative shadow-lg h-[7rem] sm:h-[9rem] rounded-lg gap-3 bg-blur3 flex">
-          <a class="sm:size-11 hover:scale-[105%] ml-3 mt-3 sm:ml-6 sm:mt-6 justify-start size-7" title="open in dexscreener" target="_blank" href="https://dexscreener.com/base/0xb64dff20dd5c47e6dbb56ead80d23568006dec1e">
+          <a class="sm:size-11 hover:scale-[105%] ml-3 mt-3 sm:ml-6 sm:mt-6 justify-start size-9" title="open in dexscreener" target="_blank" href="https://dexscreener.com/base/0xb64dff20dd5c47e6dbb56ead80d23568006dec1e">
           <img
               src="/chains/token_base.png"
               title="open in dexscreener"
@@ -334,29 +328,27 @@ export default function MarketBar() {
               <div class="flex gap-3 sm:gap-0  mx-3 sm:flex-col flex-row">
               <div class="flex sm:flex-row flex-col">
                 <section class="rounded flex flex-col w-full py-[1px] ml-0">
-                  <h1 class="font-[Poppins] dark:text-[#d2d2d2] text-[#1a1a1a] text-[0.7rem] sm:text-[1rem] inline justify-center tracking-tight items-center">
-                  Price: <h1 class="font-[Poppins] text-[#000000] font-medium dark:text-[#ccb286] text-[1rem] sm:text-[1.2rem] inline">${formatNumber(token_base.value)}</h1>
-                  </h1>
+                  <h1 class="font-[Poppins] text-[#000000] font-medium dark:text-[#ccb286] text-[1rem] sm:text-[1.2rem] inline">${formatNumber(token_base.value)}</h1>
                 </section>
               </div>
               <div class="flex sm:flex-row flex-col">
               <section class="rounded flex flex-col mx-auto w-full py-[1px] ml-0">
                   <h2 class="font-[Poppins] dark:text-[#d2d2d2] text-[#1a1a1a] text-[0.7rem] sm:text-[0.8rem] inline justify-center tracking-tight items-center">
-                  Liquidity: <h1 class="font-[Poppins] text-[#000000] dark:text-[#ffffff] text-[1rem] sm:text-[1.2rem] inline">${formatNumber(liq_base.value)}</h1>
+                  Liquidity: <h1 class="mx-1 font-[Poppins] text-[#000000] dark:text-[#ffffff] text-[1rem] inline">${formatNumber(liq_base.value)}</h1>
                   </h2>
                 </section>
               </div>
               <div class="flex flex-row sm:flex-col">
               <section class="rounded flex flex-col mx-auto w-full py-[1px] ml-0">
                   <h2 class="font-[Poppins] dark:text-[#d2d2d2] text-[#1a1a1a] text-[0.7rem] sm:text-[0.8rem] inline justify-center tracking-tight items-center">
-                  24h Vol: <h1 class="font-[Poppins] text-[#000000] dark:text-[#ffffff] text-[1rem] sm:text-[1.2rem] inline">${formatNumber(vol24_base.value)}</h1>
+                  24h Vol: <h1 class="mx-1 font-[Poppins] text-[#000000] dark:text-[#ffffff] text-[1rem] inline">${formatNumber(vol24_base.value)}</h1>
                   </h2>
                 </section>
               </div>
               <div class="flex flex-row sm:flex-col">
                 <section class="rounded flex flex-col mx-auto w-full py-[1px] ml-0">
                   <h2 class="font-[Poppins] dark:text-[#d2d2d2] text-[#1a1a1a] text-[0.7rem] sm:text-[0.8rem] inline justify-center tracking-tight items-center">
-                  24h Tx: <h1 class="font-[Poppins] text-[#000000] dark:text-[#ffffff] text-[1rem] sm:text-[1.0rem] inline">{tx_base.value}</h1>
+                  24h Tx: <h1 class="mx-1 font-[Poppins] text-[#000000] dark:text-[#ffffff] text-[1rem] inline">{tx_base.value}</h1>
                   </h2>
                 </section>
               </div>
@@ -367,7 +359,7 @@ export default function MarketBar() {
             </div>
           </div>
           <div style={{ order: bscorder != null ? -bscorder : 0 }} class="w-full relative shadow-lg h-[7rem] sm:h-[9rem] rounded-lg gap-3 bg-blur3 flex">
-          <a class="sm:size-11 hover:scale-[105%] ml-3 mt-3 sm:ml-6 sm:mt-6 justify-start size-7" title="open in dexscreener" target="_blank" href="https://dexscreener.com/bsc/0x642089a5da2512db761d325a868882ece6e387f5">
+          <a class="sm:size-11 hover:scale-[105%] ml-3 mt-3 sm:ml-6 sm:mt-6 justify-start size-9" title="open in dexscreener" target="_blank" href="https://dexscreener.com/bsc/0x642089a5da2512db761d325a868882ece6e387f5">
           <img
               src="/chains/token_bsc.png"
               title="open in dexscreener"
@@ -378,29 +370,27 @@ export default function MarketBar() {
               <div class="flex gap-3 sm:gap-0  mx-3 sm:flex-col flex-row">
               <div class="flex sm:flex-row flex-col">
                 <section class="rounded flex flex-col w-full py-[1px] ml-0">
-                  <h1 class="font-[Poppins] dark:text-[#d2d2d2] text-[#1a1a1a] text-[0.7rem] sm:text-[1rem] inline justify-center tracking-tight items-center">
-                  Price: <h1 class="font-[Poppins] text-[#000000] font-medium dark:text-[#ccb286] text-[1rem] sm:text-[1.2rem] inline">${formatNumber(token_bsc.value)}</h1>
-                  </h1>
+                  <h1 class="font-[Poppins] text-[#000000] font-medium dark:text-[#ccb286] text-[1rem] sm:text-[1.2rem] inline">${formatNumber(token_bsc.value)}</h1>
                 </section>
               </div>
               <div class="flex sm:flex-row flex-col">
               <section class="rounded flex flex-col mx-auto w-full py-[1px] ml-0">
                   <h2 class="font-[Poppins] dark:text-[#d2d2d2] text-[#1a1a1a] text-[0.7rem] sm:text-[0.8rem] inline justify-center tracking-tight items-center">
-                  Liquidity: <h1 class="font-[Poppins] text-[#000000] dark:text-[#ffffff] text-[1rem] sm:text-[1.2rem] inline">${formatNumber(liq_bsc.value)}</h1>
+                  Liquidity: <h1 class="mx-1 font-[Poppins] text-[#000000] dark:text-[#ffffff] text-[1rem] inline">${formatNumber(liq_bsc.value)}</h1>
                   </h2>
                 </section>
               </div>
               <div class="flex flex-row sm:flex-col">
               <section class="rounded flex flex-col mx-auto w-full py-[1px] ml-0">
                   <h2 class="font-[Poppins] dark:text-[#d2d2d2] text-[#1a1a1a] text-[0.7rem] sm:text-[0.8rem] inline justify-center tracking-tight items-center">
-                  24h Vol: <h1 class="font-[Poppins] text-[#000000] dark:text-[#ffffff] text-[1rem] sm:text-[1.2rem] inline">${formatNumber(vol24_bsc.value)}</h1>
+                  24h Vol: <h1 class="mx-1 font-[Poppins] text-[#000000] dark:text-[#ffffff] text-[1rem] inline">${formatNumber(vol24_bsc.value)}</h1>
                   </h2>
                 </section>
               </div>
               <div class="flex flex-row sm:flex-col">
                 <section class="rounded flex flex-col mx-auto w-full py-[1px] ml-0">
                   <h2 class="font-[Poppins] dark:text-[#d2d2d2] text-[#1a1a1a] text-[0.7rem] sm:text-[0.8rem] inline justify-center tracking-tight items-center">
-                  24h Tx: <h1 class="font-[Poppins] text-[#000000] dark:text-[#ffffff] text-[1rem] sm:text-[1.0rem] inline">{tx_bsc.value}</h1>
+                  24h Tx: <h1 class="mx-1 font-[Poppins] text-[#000000] dark:text-[#ffffff] text-[1rem] inline">{tx_bsc.value}</h1>
                   </h2>
                 </section>
               </div>
