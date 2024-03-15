@@ -29,6 +29,12 @@ export default function MarketBar() {
   const token_bsc = useSignal<number>(0);
   const token_base = useSignal<number>(0);
   const token_avax = useSignal<number>(0);
+  // txn count
+  const tx_eth = useSignal<number>(0);
+  const tx_arb = useSignal<number>(0);
+  const tx_bsc = useSignal<number>(0);
+  const tx_base = useSignal<number>(0);
+  const tx_avax = useSignal<number>(0);
   // index in MarketBar column
   const arborder = useSignal<number>(0);
   const bscorder = useSignal<number>(0);
@@ -57,26 +63,31 @@ export default function MarketBar() {
             token_eth.value = ethprice = Number(fixedvalue);
             liq_eth.value = fixedliq;
             vol24_eth.value = data.pairs[i].volume.h24; 
+            tx_eth.value = data.pairs[i].txns.h24.buys + data.pairs[i].txns.h24.sells;
             break;
           case "https://dexscreener.com/arbitrum/0x05c5bdbc7b3c64109ddcce058ce99f4515fe1c83":
             token_arb.value = arbprice = Number(fixedvalue);
             liq_arb.value = fixedliq;
             vol24_arb.value = data.pairs[i].volume.h24;
+            tx_arb.value = data.pairs[i].txns.h24.buys + data.pairs[i].txns.h24.sells;
             break;
           case "https://dexscreener.com/bsc/0x642089a5da2512db761d325a868882ece6e387f5":
             token_bsc.value = bscprice = Number(fixedvalue);
             liq_bsc.value = fixedliq;
             vol24_bsc.value = data.pairs[i].volume.h24;
+            tx_bsc.value = data.pairs[i].txns.h24.buys + data.pairs[i].txns.h24.sells;
             break;
           case "https://dexscreener.com/base/0xb64dff20dd5c47e6dbb56ead80d23568006dec1e":
             token_base.value = baseprice = Number(fixedvalue);
             liq_base.value = fixedliq;
             vol24_base.value = data.pairs[i].volume.h24;
+            tx_base.value = data.pairs[i].txns.h24.buys + data.pairs[i].txns.h24.sells;
             break;
           case "https://dexscreener.com/avalanche/0x523a04633b6c0c4967824471dda0abbce7c5e643":
             token_avax.value = avaxprice = Number(fixedvalue);
             liq_avax.value = fixedliq;
             vol24_avax.value = data.pairs[i].volume.h24;
+            tx_avax.value = data.pairs[i].txns.h24.buys + data.pairs[i].txns.h24.sells;
             break;
           default:
             break;
@@ -180,33 +191,40 @@ export default function MarketBar() {
         </div>
       ) : ( // loaded bar
         <div class="w-full flex flex-col gap-2">
-          <div style={{ order: ethorder != null ? -ethorder : 0 }} class="w-full relative shadow-lg flex h-[7rem] sm:h-[9rem] rounded-lg xl:gap-3 gap-0 bg-blur3 flex">
+          <div style={{ order: ethorder != null ? -ethorder : 0 }} class="w-full relative shadow-lg flex h-[7rem] sm:h-[9rem] rounded-lg xl:gap-3 gap-0 bg-blur3">
           <img
               src="/chains/token_eth.png"
-              class="sm:size-11 ml-6 mt-6 justify-start size-7"
+              class="sm:size-11 ml-3 mt-3 sm:ml-6 sm:mt-6 justify-start size-7"
               title="eth"
               alt="eth"
             />
             <div class="flex items-start sm:items-center flex-row">
               <div class="flex gap-3 sm:gap-0  mx-3 sm:flex-col flex-row">
               <div class="flex sm:flex-row flex-col">
-                <section class="rounded flex flex-col w-full py-1 ml-0">
-                  <h1 class="font-[Poppins] dark:text-[#d2d2d2] text-[#1a1a1a] text-[0.8rem] sm:text-[1rem] inline justify-center tracking-tight items-center">
+                <section class="rounded flex flex-col w-full py-[1px] ml-0">
+                  <h1 class="font-[Poppins] dark:text-[#d2d2d2] text-[#1a1a1a] text-[0.7rem] sm:text-[1rem] inline justify-center tracking-tight items-center">
                   Price: <h1 class="font-[Poppins] text-[#000000] font-medium dark:text-[#ccb286] text-[1rem] sm:text-[1.2rem] inline">${formatNumber(token_eth.value)}</h1>
                   </h1>
                 </section>
               </div>
               <div class="flex sm:flex-row flex-col">
-                <section class="rounded flex flex-col w-full py-1 ml-0">
-                  <h1 class="font-[Poppins] dark:text-[#d2d2d2] text-[#1a1a1a] text-[0.8rem] sm:text-[1rem] inline justify-center tracking-tight items-center">
+                <section class="rounded flex flex-col w-full py-[1px] ml-0">
+                  <h1 class="font-[Poppins] dark:text-[#d2d2d2] text-[#1a1a1a] text-[0.7rem] sm:text-[0.8rem] inline justify-center tracking-tight items-center">
                   Liquidity: <h1 class="font-[Poppins] text-[#000000] dark:text-[#ffffff] text-[1rem] sm:text-[1.2rem] inline">${formatNumber(liq_eth.value)}</h1>
                   </h1>
                 </section>
               </div>
               <div class="flex flex-row sm:flex-col">
-                <section class="rounded flex flex-col mx-auto w-full py-1 ml-0">
-                  <h2 class="font-[Poppins] dark:text-[#d2d2d2] text-[#1a1a1a] text-[0.8rem] sm:text-[1rem] inline justify-center tracking-tight items-center">
+                <section class="rounded flex flex-col mx-auto w-full py-[1px] ml-0">
+                  <h2 class="font-[Poppins] dark:text-[#d2d2d2] text-[#1a1a1a] text-[0.7rem] sm:text-[0.8rem] inline justify-center tracking-tight items-center">
                   24h Vol: <h1 class="font-[Poppins] text-[#000000] dark:text-[#ffffff] text-[1rem] sm:text-[1.2rem] inline">${formatNumber(vol24_eth.value)}</h1>
+                  </h2>
+                </section>
+              </div>
+              <div class="flex flex-row sm:flex-col">
+                <section class="rounded flex flex-col mx-auto w-full py-[1px] ml-0">
+                  <h2 class="font-[Poppins] dark:text-[#d2d2d2] text-[#1a1a1a] text-[0.7rem] sm:text-[0.8rem] inline justify-center tracking-tight items-center">
+                  24h Tx: <h1 class="font-[Poppins] text-[#000000] dark:text-[#ffffff] text-[1rem] sm:text-[1.0rem] inline">{tx_eth.value}</h1>
                   </h2>
                 </section>
               </div>
@@ -216,33 +234,40 @@ export default function MarketBar() {
               </div>
             </div>
           </div>
-          <div style={{ order: arborder != null ? -arborder : 0 }} class="w-full relative shadow-lg flex h-[7rem] sm:h-[9rem] rounded-lg xl:gap-3 gap-0 bg-blur3 flex">
+          <div style={{ order: arborder != null ? -arborder : 0 }} class="w-full relative shadow-lg h-[7rem] sm:h-[9rem] rounded-lg xl:gap-3 gap-0 bg-blur3 flex">
           <img
               src="/chains/token_arb.png"
-              class="sm:size-11 ml-6 mt-6 justify-start size-7"
+              class="sm:size-11 ml-3 mt-3 sm:ml-6 sm:mt-6 justify-start size-7"
               title="arb"
               alt="arb"
             />
             <div class="flex items-start sm:items-center flex-row">
               <div class="flex gap-3 sm:gap-0  mx-3 sm:flex-col flex-row">
               <div class="flex sm:flex-row flex-col">
-                <section class="rounded flex flex-col w-full py-1 ml-0">
-                  <h1 class="font-[Poppins] dark:text-[#d2d2d2] text-[#1a1a1a] text-[0.8rem] sm:text-[1rem] inline justify-center tracking-tight items-center">
+                <section class="rounded flex flex-col w-full py-[1px] ml-0">
+                  <h1 class="font-[Poppins] dark:text-[#d2d2d2] text-[#1a1a1a] text-[0.7rem] sm:text-[1rem] inline justify-center tracking-tight items-center">
                   Price: <h1 class="font-[Poppins] text-[#000000] font-medium dark:text-[#ccb286] text-[1rem] sm:text-[1.2rem] inline">${formatNumber(token_arb.value)}</h1>
                   </h1>
                 </section>
               </div>
               <div class="flex sm:flex-row flex-col">
-                <section class="rounded flex flex-col w-full py-1 ml-0">
-                  <h1 class="font-[Poppins] dark:text-[#d2d2d2] text-[#1a1a1a] text-[0.8rem] sm:text-[1rem] inline justify-center tracking-tight items-center">
+              <section class="rounded flex flex-col mx-auto w-full py-[1px] ml-0">
+                  <h2 class="font-[Poppins] dark:text-[#d2d2d2] text-[#1a1a1a] text-[0.7rem] sm:text-[0.8rem] inline justify-center tracking-tight items-center">
                   Liquidity: <h1 class="font-[Poppins] text-[#000000] dark:text-[#ffffff] text-[1rem] sm:text-[1.2rem] inline">${formatNumber(liq_arb.value)}</h1>
-                  </h1>
+                  </h2>
                 </section>
               </div>
               <div class="flex flex-row sm:flex-col">
-                <section class="rounded flex flex-col mx-auto w-full py-1 ml-0">
-                  <h2 class="font-[Poppins] dark:text-[#d2d2d2] text-[#1a1a1a] text-[0.8rem] sm:text-[1rem] inline justify-center tracking-tight items-center">
+              <section class="rounded flex flex-col mx-auto w-full py-[1px] ml-0">
+                  <h2 class="font-[Poppins] dark:text-[#d2d2d2] text-[#1a1a1a] text-[0.7rem] sm:text-[0.8rem] inline justify-center tracking-tight items-center">
                   24h Vol: <h1 class="font-[Poppins] text-[#000000] dark:text-[#ffffff] text-[1rem] sm:text-[1.2rem] inline">${formatNumber(vol24_arb.value)}</h1>
+                  </h2>
+                </section>
+              </div>
+              <div class="flex flex-row sm:flex-col">
+                <section class="rounded flex flex-col mx-auto w-full py-[1px] ml-0">
+                  <h2 class="font-[Poppins] dark:text-[#d2d2d2] text-[#1a1a1a] text-[0.7rem] sm:text-[0.8rem] inline justify-center tracking-tight items-center">
+                  24h Tx: <h1 class="font-[Poppins] text-[#000000] dark:text-[#ffffff] text-[1rem] sm:text-[1.0rem] inline">{tx_arb.value}</h1>
                   </h2>
                 </section>
               </div>
@@ -252,33 +277,40 @@ export default function MarketBar() {
               </div>
             </div>
           </div>
-          <div style={{ order: avaxorder != null ? -avaxorder : 0 }} class="w-full relative shadow-lg flex h-[7rem] sm:h-[9rem] rounded-lg xl:gap-3 gap-0 bg-blur3 flex">
+          <div style={{ order: avaxorder != null ? -avaxorder : 0 }} class="w-full relative shadow-lg h-[7rem] sm:h-[9rem] rounded-lg xl:gap-3 gap-0 bg-blur3 flex">
           <img
               src="/chains/token_avax.png"
-              class="sm:size-11 ml-6 mt-6 justify-start size-7"
+              class="sm:size-11 ml-3 mt-3 sm:ml-6 sm:mt-6 justify-start size-7"
               title="avax"
               alt="avax"
             />
             <div class="flex items-start sm:items-center flex-row">
               <div class="flex gap-3 sm:gap-0  mx-3 sm:flex-col flex-row">
               <div class="flex sm:flex-row flex-col">
-                <section class="rounded flex flex-col w-full py-1 ml-0">
-                  <h1 class="font-[Poppins] dark:text-[#d2d2d2] text-[#1a1a1a] text-[0.8rem] sm:text-[1rem] inline justify-center tracking-tight items-center">
+                <section class="rounded flex flex-col w-full py-[1px] ml-0">
+                  <h1 class="font-[Poppins] dark:text-[#d2d2d2] text-[#1a1a1a] text-[0.7rem] sm:text-[1rem] inline justify-center tracking-tight items-center">
                   Price: <h1 class="font-[Poppins] text-[#000000] font-medium dark:text-[#ccb286] text-[1rem] sm:text-[1.2rem] inline">${formatNumber(token_avax.value)}</h1>
                   </h1>
                 </section>
               </div>
               <div class="flex sm:flex-row flex-col">
-                <section class="rounded flex flex-col w-full py-1 ml-0">
-                  <h1 class="font-[Poppins] dark:text-[#d2d2d2] text-[#1a1a1a] text-[0.8rem] sm:text-[1rem] inline justify-center tracking-tight items-center">
+              <section class="rounded flex flex-col mx-auto w-full py-[1px] ml-0">
+                  <h2 class="font-[Poppins] dark:text-[#d2d2d2] text-[#1a1a1a] text-[0.7rem] sm:text-[0.8rem] inline justify-center tracking-tight items-center">
                   Liquidity: <h1 class="font-[Poppins] text-[#000000] dark:text-[#ffffff] text-[1rem] sm:text-[1.2rem] inline">${formatNumber(liq_avax.value)}</h1>
-                  </h1>
+                  </h2>
                 </section>
               </div>
               <div class="flex flex-row sm:flex-col">
-                <section class="rounded flex flex-col mx-auto w-full py-1 ml-0">
-                  <h2 class="font-[Poppins] dark:text-[#d2d2d2] text-[#1a1a1a] text-[0.8rem] sm:text-[1rem] inline justify-center tracking-tight items-center">
+              <section class="rounded flex flex-col mx-auto w-full py-[1px] ml-0">
+                  <h2 class="font-[Poppins] dark:text-[#d2d2d2] text-[#1a1a1a] text-[0.7rem] sm:text-[0.8rem] inline justify-center tracking-tight items-center">
                   24h Vol: <h1 class="font-[Poppins] text-[#000000] dark:text-[#ffffff] text-[1rem] sm:text-[1.2rem] inline">${formatNumber(vol24_avax.value)}</h1>
+                  </h2>
+                </section>
+              </div>
+              <div class="flex flex-row sm:flex-col">
+                <section class="rounded flex flex-col mx-auto w-full py-[1px] ml-0">
+                  <h2 class="font-[Poppins] dark:text-[#d2d2d2] text-[#1a1a1a] text-[0.7rem] sm:text-[0.8rem] inline justify-center tracking-tight items-center">
+                  24h Tx: <h1 class="font-[Poppins] text-[#000000] dark:text-[#ffffff] text-[1rem] sm:text-[1.0rem] inline">{tx_avax.value}</h1>
                   </h2>
                 </section>
               </div>
@@ -288,33 +320,40 @@ export default function MarketBar() {
               </div>
             </div>
           </div>
-          <div style={{ order: baseorder != null ? -baseorder : 0 }} class="w-full relative shadow-lg flex h-[7rem] sm:h-[9rem] rounded-lg xl:gap-3 gap-0 bg-blur3 flex">
+          <div style={{ order: baseorder != null ? -baseorder : 0 }} class="w-full relative shadow-lg h-[7rem] sm:h-[9rem] rounded-lg xl:gap-3 gap-0 bg-blur3 flex">
           <img
               src="/chains/token_base.png"
-              class="sm:size-11 ml-6 mt-6 justify-start size-7"
+              class="sm:size-11 ml-3 mt-3 sm:ml-6 sm:mt-6 justify-start size-7"
               title="base"
               alt="base"
             />
             <div class="flex items-start sm:items-center flex-row">
               <div class="flex gap-3 sm:gap-0  mx-3 sm:flex-col flex-row">
               <div class="flex sm:flex-row flex-col">
-                <section class="rounded flex flex-col w-full py-1 ml-0">
-                  <h1 class="font-[Poppins] dark:text-[#d2d2d2] text-[#1a1a1a] text-[0.8rem] sm:text-[1rem] inline justify-center tracking-tight items-center">
+                <section class="rounded flex flex-col w-full py-[1px] ml-0">
+                  <h1 class="font-[Poppins] dark:text-[#d2d2d2] text-[#1a1a1a] text-[0.7rem] sm:text-[1rem] inline justify-center tracking-tight items-center">
                   Price: <h1 class="font-[Poppins] text-[#000000] font-medium dark:text-[#ccb286] text-[1rem] sm:text-[1.2rem] inline">${formatNumber(token_base.value)}</h1>
                   </h1>
                 </section>
               </div>
               <div class="flex sm:flex-row flex-col">
-                <section class="rounded flex flex-col w-full py-1 ml-0">
-                  <h1 class="font-[Poppins] dark:text-[#d2d2d2] text-[#1a1a1a] text-[0.8rem] sm:text-[1rem] inline justify-center tracking-tight items-center">
+              <section class="rounded flex flex-col mx-auto w-full py-[1px] ml-0">
+                  <h2 class="font-[Poppins] dark:text-[#d2d2d2] text-[#1a1a1a] text-[0.7rem] sm:text-[0.8rem] inline justify-center tracking-tight items-center">
                   Liquidity: <h1 class="font-[Poppins] text-[#000000] dark:text-[#ffffff] text-[1rem] sm:text-[1.2rem] inline">${formatNumber(liq_base.value)}</h1>
-                  </h1>
+                  </h2>
                 </section>
               </div>
               <div class="flex flex-row sm:flex-col">
-                <section class="rounded flex flex-col mx-auto w-full py-1 ml-0">
-                  <h2 class="font-[Poppins] dark:text-[#d2d2d2] text-[#1a1a1a] text-[0.8rem] sm:text-[1rem] inline justify-center tracking-tight items-center">
+              <section class="rounded flex flex-col mx-auto w-full py-[1px] ml-0">
+                  <h2 class="font-[Poppins] dark:text-[#d2d2d2] text-[#1a1a1a] text-[0.7rem] sm:text-[0.8rem] inline justify-center tracking-tight items-center">
                   24h Vol: <h1 class="font-[Poppins] text-[#000000] dark:text-[#ffffff] text-[1rem] sm:text-[1.2rem] inline">${formatNumber(vol24_base.value)}</h1>
+                  </h2>
+                </section>
+              </div>
+              <div class="flex flex-row sm:flex-col">
+                <section class="rounded flex flex-col mx-auto w-full py-[1px] ml-0">
+                  <h2 class="font-[Poppins] dark:text-[#d2d2d2] text-[#1a1a1a] text-[0.7rem] sm:text-[0.8rem] inline justify-center tracking-tight items-center">
+                  24h Tx: <h1 class="font-[Poppins] text-[#000000] dark:text-[#ffffff] text-[1rem] sm:text-[1.0rem] inline">{tx_base.value}</h1>
                   </h2>
                 </section>
               </div>
@@ -324,33 +363,40 @@ export default function MarketBar() {
               </div>
             </div>
           </div>
-          <div style={{ order: bscorder != null ? -bscorder : 0 }} class="w-full relative shadow-lg flex h-[7rem] sm:h-[9rem] rounded-lg xl:gap-3 gap-0 bg-blur3 flex">
+          <div style={{ order: bscorder != null ? -bscorder : 0 }} class="w-full relative shadow-lg h-[7rem] sm:h-[9rem] rounded-lg xl:gap-3 gap-0 bg-blur3 flex">
           <img
               src="/chains/token_bsc.png"
-              class="sm:size-11 ml-6 mt-6 justify-start size-7"
+              class="sm:size-11 ml-3 mt-3 sm:ml-6 sm:mt-6 justify-start size-7"
               title="bsc"
               alt="bsc"
             />
             <div class="flex items-start sm:items-center flex-row">
               <div class="flex gap-3 sm:gap-0  mx-3 sm:flex-col flex-row">
               <div class="flex sm:flex-row flex-col">
-                <section class="rounded flex flex-col w-full py-1 ml-0">
-                  <h1 class="font-[Poppins] dark:text-[#d2d2d2] text-[#1a1a1a] text-[0.8rem] sm:text-[1rem] inline justify-center tracking-tight items-center">
+                <section class="rounded flex flex-col w-full py-[1px] ml-0">
+                  <h1 class="font-[Poppins] dark:text-[#d2d2d2] text-[#1a1a1a] text-[0.7rem] sm:text-[1rem] inline justify-center tracking-tight items-center">
                   Price: <h1 class="font-[Poppins] text-[#000000] font-medium dark:text-[#ccb286] text-[1rem] sm:text-[1.2rem] inline">${formatNumber(token_bsc.value)}</h1>
                   </h1>
                 </section>
               </div>
               <div class="flex sm:flex-row flex-col">
-                <section class="rounded flex flex-col w-full py-1 ml-0">
-                  <h1 class="font-[Poppins] dark:text-[#d2d2d2] text-[#1a1a1a] text-[0.8rem] sm:text-[1rem] inline justify-center tracking-tight items-center">
+              <section class="rounded flex flex-col mx-auto w-full py-[1px] ml-0">
+                  <h2 class="font-[Poppins] dark:text-[#d2d2d2] text-[#1a1a1a] text-[0.7rem] sm:text-[0.8rem] inline justify-center tracking-tight items-center">
                   Liquidity: <h1 class="font-[Poppins] text-[#000000] dark:text-[#ffffff] text-[1rem] sm:text-[1.2rem] inline">${formatNumber(liq_bsc.value)}</h1>
-                  </h1>
+                  </h2>
                 </section>
               </div>
               <div class="flex flex-row sm:flex-col">
-                <section class="rounded flex flex-col mx-auto w-full py-1 ml-0">
-                  <h2 class="font-[Poppins] dark:text-[#d2d2d2] text-[#1a1a1a] text-[0.8rem] sm:text-[1rem] inline justify-center tracking-tight items-center">
+              <section class="rounded flex flex-col mx-auto w-full py-[1px] ml-0">
+                  <h2 class="font-[Poppins] dark:text-[#d2d2d2] text-[#1a1a1a] text-[0.7rem] sm:text-[0.8rem] inline justify-center tracking-tight items-center">
                   24h Vol: <h1 class="font-[Poppins] text-[#000000] dark:text-[#ffffff] text-[1rem] sm:text-[1.2rem] inline">${formatNumber(vol24_bsc.value)}</h1>
+                  </h2>
+                </section>
+              </div>
+              <div class="flex flex-row sm:flex-col">
+                <section class="rounded flex flex-col mx-auto w-full py-[1px] ml-0">
+                  <h2 class="font-[Poppins] dark:text-[#d2d2d2] text-[#1a1a1a] text-[0.7rem] sm:text-[0.8rem] inline justify-center tracking-tight items-center">
+                  24h Tx: <h1 class="font-[Poppins] text-[#000000] dark:text-[#ffffff] text-[1rem] sm:text-[1.0rem] inline">{tx_bsc.value}</h1>
                   </h2>
                 </section>
               </div>
