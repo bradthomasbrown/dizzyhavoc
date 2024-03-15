@@ -266,53 +266,54 @@ export default function TokenData() {
           <img src="./misc/loader.svg"></img>
         </div>
       ) : isloading.value ? ( // widget with blurred loader for desktop
-        <>
-          <div class="w-[332px] sm:w-[405px] shadow-lg px-3 h-full justify-center relative rounded-lg bg-blur3 flex flex-col">
-            <div class="flex flex-row gap-6">
-              <div class="w-full shadow-lg px-0 absolute bottom-0 right-0 z-50 2xl:px-3 h-full justify-center items-center rounded-lg gap-0 xl:gap-3 dark:bg-[#212121B3] bg-[#e8e8e8B3] flex flex-col">
+         <>
+         
+         <div class="shadow-lg px-3 h-full justify-center relative  rounded-lg gap-0 xl:gap-1 bg-blur3 flex flex-col">
+         <div class="w-full shadow-lg px-0 absolute bottom-0 right-0 z-50 2xl:px-3 h-full justify-center items-center rounded-lg gap-0 xl:gap-3 dark:bg-[#212121B3] bg-[#e8e8e8B3] flex flex-col">
                 <img src="./misc/loader.svg"></img>
               </div>
-              <section class="rounded flex flex-col">
-                <h1 class="font-[Poppins] dark:text-[#d2d2d2] text-[0.7rem] sm:text-[0.75rem] font-medium flex flex-col justify-center tracking-tight items-center">
-                  Avrg. Price
-                </h1>
-                <h1 class="font-[Poppins] text-[#000000] dark:text-[#ffffff] text-[1rem] sm:text-[1.35rem] inline">
-                  ${avrgprice.value}
-                </h1>
-              </section>
-              <section class="rounded flex flex-col">
-                <h2 class="font-[Poppins] dark:text-[#d2d2d2] text-[0.7rem] sm:text-[0.75rem] flex flex-col justify-center tracking-tight items-center">
-                  Mk. Cap
-                  <h1 class="font-[Poppins] text-[#000000] dark:text-[#ffffff] text-[1rem] font-medium sm:text-[1.35rem] inline">
-                    ${formatNumber(avrgprice.value * totalsupply.value)}
-                  </h1>
-                </h2>
-              </section>
-              <section class="rounded flex flex-col">
-                <h1 class="font-[Poppins] dark:text-[#d2d2d2] text-[0.7rem] sm:text-[0.75rem] flex flex-col justify-center tracking-tight items-center">
-                  Max Δ
-                </h1>
-                <h1 class="font-[Poppins] text-[#000000] dark:text-[#ffffff] text-[1rem] font-medium sm:text-[1.35rem] inline">
-                  {delta}%
-                </h1>
-              </section>
-              <section class="rounded flex flex-col">
-                <h1 class="font-[Poppins] dark:text-[#d2d2d2] text-[0.7rem] sm:text-[0.75rem] flex flex-col justify-center tracking-tight items-center">
-                  ATH
-                </h1>
-                <h1 class="font-[Poppins] text-[#000000] dark:text-[#ffffff] text-[1rem] font-medium sm:text-[1.35rem] inline">
-                  ${ath.value.toFixed(5)}
-                </h1>
-              </section>
-            </div>
-            <div
-              title="data from dexscreener, coingecko & poloniex."
-              class="bottom-1 unselectable dark:text-[#d2d2d2] text-[#6e6e6e] absolute left-1 text-[11px]"
-            >
-              {count}
-            </div>
-          </div>
-        </>
+           <div class="flex flex-row mx-auto justify-center gap-6">
+             <section class="rounded flex flex-col">
+               <h1 class="font-[Poppins] dark:text-[#d2d2d2] text-[0.7rem] sm:text-[0.75rem] flex flex-col justify-center tracking-tight items-center">
+                 Avrg. Price
+               </h1>
+               <h1 class="font-[Poppins] text-[#000000] dark:text-[#ffffff] font-medium text-[1rem] sm:text-[1.35rem] inline">
+                 ${avrgprice.value}
+               </h1>
+             </section>
+             <section class="rounded flex flex-col">
+               <h2 class="font-[Poppins] dark:text-[#d2d2d2] text-[0.7rem] sm:text-[0.75rem] flex flex-col justify-center tracking-tight items-center">
+                 Mk. Cap
+                 <h1 class="font-[Poppins] text-[#000000] dark:text-[#ffffff] font-medium  text-[1rem] sm:text-[1.35rem] inline">
+                   ${formatNumber(avrgprice.value * totalsupply.value)}
+                 </h1>
+               </h2>
+             </section>
+             <section class="rounded flex flex-col">
+               <h1 class="font-[Poppins] dark:text-[#d2d2d2] text-[0.7rem] sm:text-[0.75rem] flex flex-col justify-center tracking-tight items-center">
+                 Max Δ
+               </h1>
+               <h1 class="font-[Poppins] text-[#000000] dark:text-[#ffffff] font-medium  text-[1rem] sm:text-[1.35rem] inline">
+                 {delta}%
+               </h1>
+             </section>
+             <section class="rounded flex flex-col">
+               <h1 class="font-[Poppins] dark:text-[#d2d2d2] text-[0.7rem] sm:text-[0.75rem] flex flex-col justify-center tracking-tight items-center">
+                 ATH
+               </h1>
+               <h1 class="font-[Poppins] text-[#000000] dark:text-[#ffffff] font-medium  text-[1rem] sm:text-[1.35rem] inline">
+                 ${ath.value.toFixed(5)}
+               </h1>
+             </section>
+           </div>
+           <div
+             title="data from dexscreener, coingecko & poloniex."
+             class="bottom-1 unselectable dark:text-[#d2d2d2] text-[#6e6e6e] absolute left-1 text-[11px]"
+           >
+             {count}
+           </div>
+         </div>
+       </>
       ) : (
         // loaded
         <>

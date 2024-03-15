@@ -1,6 +1,7 @@
 {
   "dependencies": {
     "@alloc/quick-lru": "^5.2.0",
+    "@canvasjs/charts": "^3.7.43",
     "@material-tailwind/react": "^2.1.9",
     "apexcharts": "^3.47.0",
     "chart.js": "^4.4.2",

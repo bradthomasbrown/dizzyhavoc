@@ -14,6 +14,12 @@ import * as $common_menuButton from "./islands/common/menuButton.tsx";
 import * as $common_navbar from "./islands/common/navbar.tsx";
 import * as $stats_Container from "./islands/stats/Container.tsx";
 import * as $stats_MarketBar from "./islands/stats/MarketBar.tsx";
+import * as $stats_chart from "./islands/stats/chart.tsx";
+import * as $stats_charts_arbchart from "./islands/stats/charts/arbchart.tsx";
+import * as $stats_charts_avaxchart from "./islands/stats/charts/avaxchart.tsx";
+import * as $stats_charts_basechart from "./islands/stats/charts/basechart.tsx";
+import * as $stats_charts_bscchart from "./islands/stats/charts/bscchart.tsx";
+import * as $stats_charts_ethchart from "./islands/stats/charts/ethchart.tsx";
 import * as $stats_tokendata from "./islands/stats/tokendata.tsx";
 import { type Manifest } from "$fresh/server.ts";
 
@@ -33,6 +39,12 @@ const manifest = {
     "./islands/common/navbar.tsx": $common_navbar,
     "./islands/stats/Container.tsx": $stats_Container,
     "./islands/stats/MarketBar.tsx": $stats_MarketBar,
+    "./islands/stats/chart.tsx": $stats_chart,
+    "./islands/stats/charts/arbchart.tsx": $stats_charts_arbchart,
+    "./islands/stats/charts/avaxchart.tsx": $stats_charts_avaxchart,
+    "./islands/stats/charts/basechart.tsx": $stats_charts_basechart,
+    "./islands/stats/charts/bscchart.tsx": $stats_charts_bscchart,
+    "./islands/stats/charts/ethchart.tsx": $stats_charts_ethchart,
     "./islands/stats/tokendata.tsx": $stats_tokendata,
   },
   baseUrl: import.meta.url,

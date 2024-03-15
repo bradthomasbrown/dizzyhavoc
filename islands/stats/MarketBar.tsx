@@ -1,7 +1,11 @@
 import { IS_BROWSER } from "$fresh/runtime.ts";
 import { useState } from "preact/hooks";
 import { useSignal } from "@preact/signals";
-
+import EthChart from "../stats/charts/ethchart.tsx";
+import ArbChart from "../stats/charts/arbchart.tsx";
+import AvaxChart from "../stats/charts/avaxchart.tsx";
+import BaseChart from "../stats/charts/basechart.tsx";
+import BscChart from "../stats/charts/bscchart.tsx";
 export default function MarketBar() {
   if (!IS_BROWSER) return <></>;
   const initialloading = useSignal<boolean>(true);
@@ -31,7 +35,7 @@ export default function MarketBar() {
   const baseorder = useSignal<number>(0);
   const avaxorder = useSignal<number>(0);
   const ethorder = useSignal<number>(0);
-  const poloorder = useSignal<number>(0);
+
   const a = async () => { 
     isloading.value = true;
     let arbprice = 0,
@@ -176,7 +180,7 @@ export default function MarketBar() {
         </div>
       ) : ( // loaded bar
         <div class="w-full flex flex-col gap-2">
-          <div style={{ order: ethorder != null ? -ethorder : 0 }} class="w-full shadow-lg flex h-[7rem] sm:h-[9rem] rounded-lg xl:gap-3 gap-0 bg-blur3 flex">
+          <div style={{ order: ethorder != null ? -ethorder : 0 }} class="w-full relative shadow-lg flex h-[7rem] sm:h-[9rem] rounded-lg xl:gap-3 gap-0 bg-blur3 flex">
           <img
               src="/chains/token_eth.png"
               class="sm:size-11 ml-6 mt-6 justify-start size-7"
@@ -207,9 +211,12 @@ export default function MarketBar() {
                 </section>
               </div>
               </div>
+              <div class="flex absolute right-0 flex-row">
+                <EthChart />
+              </div>
             </div>
           </div>
-          <div style={{ order: arborder != null ? -arborder : 0 }} class="w-full shadow-lg flex h-[7rem] sm:h-[9rem] rounded-lg xl:gap-3 gap-0 bg-blur3 flex">
+          <div style={{ order: arborder != null ? -arborder : 0 }} class="w-full relative shadow-lg flex h-[7rem] sm:h-[9rem] rounded-lg xl:gap-3 gap-0 bg-blur3 flex">
           <img
               src="/chains/token_arb.png"
               class="sm:size-11 ml-6 mt-6 justify-start size-7"
@@ -240,16 +247,19 @@ export default function MarketBar() {
                 </section>
               </div>
               </div>
+              <div class="flex absolute right-0 flex-row">
+                <ArbChart />
+              </div>
             </div>
           </div>
-          <div style={{ order: avaxorder != null ? -avaxorder : 0 }} class="w-full shadow-lg flex h-[7rem] sm:h-[9rem] rounded-lg xl:gap-3 gap-0 bg-blur3 flex">
+          <div style={{ order: avaxorder != null ? -avaxorder : 0 }} class="w-full relative shadow-lg flex h-[7rem] sm:h-[9rem] rounded-lg xl:gap-3 gap-0 bg-blur3 flex">
           <img
               src="/chains/token_avax.png"
               class="sm:size-11 ml-6 mt-6 justify-start size-7"
               title="avax"
               alt="avax"
             />
-           <div class="flex items-start sm:items-center flex-row">
+            <div class="flex items-start sm:items-center flex-row">
               <div class="flex gap-3 sm:gap-0  mx-3 sm:flex-col flex-row">
               <div class="flex sm:flex-row flex-col">
                 <section class="rounded flex flex-col w-full py-1 ml-0">
@@ -273,9 +283,12 @@ export default function MarketBar() {
                 </section>
               </div>
               </div>
+              <div class="flex absolute right-0 flex-row">
+                <AvaxChart />
+              </div>
             </div>
           </div>
-          <div style={{ order: baseorder != null ? -baseorder : 0 }} class="w-full shadow-lg flex h-[7rem] sm:h-[9rem] rounded-lg xl:gap-3 gap-0 bg-blur3 flex">
+          <div style={{ order: baseorder != null ? -baseorder : 0 }} class="w-full relative shadow-lg flex h-[7rem] sm:h-[9rem] rounded-lg xl:gap-3 gap-0 bg-blur3 flex">
           <img
               src="/chains/token_base.png"
               class="sm:size-11 ml-6 mt-6 justify-start size-7"
@@ -306,9 +319,12 @@ export default function MarketBar() {
                 </section>
               </div>
               </div>
+              <div class="flex absolute right-0 flex-row">
+                <BaseChart />
+              </div>
             </div>
           </div>
-          <div style={{ order: bscorder != null ? -bscorder : 0 }} class="w-full shadow-lg flex h-[7rem] sm:h-[9rem] rounded-lg xl:gap-3 gap-0 bg-blur3 flex">
+          <div style={{ order: bscorder != null ? -bscorder : 0 }} class="w-full relative shadow-lg flex h-[7rem] sm:h-[9rem] rounded-lg xl:gap-3 gap-0 bg-blur3 flex">
           <img
               src="/chains/token_bsc.png"
               class="sm:size-11 ml-6 mt-6 justify-start size-7"
@@ -338,6 +354,9 @@ export default function MarketBar() {
                   </h2>
                 </section>
               </div>
+              </div>
+              <div class="flex absolute right-0 flex-row">
+                <BscChart/>
               </div>
             </div>
           </div>

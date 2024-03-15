@@ -30,7 +30,8 @@
     "tailwindcss": "npm:tailwindcss@3.4.1",
     "tailwindcss/": "npm:/tailwindcss@3.4.1/",
     "tailwindcss/plugin": "npm:/tailwindcss@3.4.1/plugin.js",
-    "$std/": "https://deno.land/std@0.211.0/"
+    "$std/": "https://deno.land/std@0.211.0/",
+    "@canvasjs/charts": "https://cdn.skypack.dev/@canvasjs/charts"
   },
   "compilerOptions": {
     "jsx": "react-jsx",
