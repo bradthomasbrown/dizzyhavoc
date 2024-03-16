@@ -18,15 +18,13 @@ export default function TokenData() {
   const token_bsc = useSignal<number>(0);
   const token_base = useSignal<number>(0);
   const token_avax = useSignal<number>(0);
-  const poloniexprice = useSignal<number>(0);
 
   function largestPriceDelta(
     token_eth: number,
     token_arb: number,
     token_bsc: number,
     token_base: number,
-    token_avax: number,
-    token_polo: number
+    token_avax: number
   ) {
     const tokens = {
       Eth: token_eth,
@@ -34,7 +32,6 @@ export default function TokenData() {
       Bsc: token_bsc,
       Base: token_base,
       Avax: token_avax,
-      Poloniex: token_polo,
     };
     const sortedTokens = Object.entries(tokens).sort((a, b) => a[1] - b[1]); // Sort the tokens by price
     const lowestTokenPrice = sortedTokens[0][1]; // Extract the lowest token price
@@ -46,31 +43,6 @@ export default function TokenData() {
     delta.value = Number(maxDeltaPercentage.toFixed(0));
   }
 
-  const fetchPoloniex = async () => {
-    isloading.value = true;
-    try {
-      const response = await fetch(
-        "https://corsproxy.io/?https%3A%2F%2Fapi.poloniex.com%2Fmarkets%2FDZHV_USDT%2Fprice"
-      ).then((response) => response.json());
-      poloniexprice.value = response.price;
-    } catch (error) {
-      console.error(error);
-      try {
-        const response = await fetch(
-          "https://api.allorigins.win/get?url=https://api.poloniex.com/markets/DZHV_USDT/price"
-        ).then((response) => response.json());
-        poloniexprice.value = JSON.parse(response.contents).price;
-      } catch (error) {
-        console.error(error);
-      }
-    }
-    try {
-      fetchScreener();
-    } catch (error) {
-      console.error(error);
-    }
-  };
-
   const fetchScreener = async () => {
     // main req to dexscreener for prices, failsafe with gecko
     let arbprice = 0,
@@ -78,9 +50,6 @@ export default function TokenData() {
       bscprice = 0,
       baseprice = 0,
       avaxprice = 0;
-    let poloprice = Number(poloniexprice.value)
-      ? Number(poloniexprice.value)
-      : 0;
     try {
       const response = await fetch(
         "https://api.dexscreener.com/latest/dex/tokens/0x3419875B4D3Bca7F3FddA2dB7a476A79fD31B4fE"
@@ -115,16 +84,9 @@ export default function TokenData() {
         }
       }
       // Calculate average price
-      if (poloprice !== 0) {
-        const avrg = (Number(poloniexprice) + totalprice) / 6;
-        let fixedavrg = avrg.toFixed(5);
-        avrgprice.value = fixedavrg;
-      }
-      if (poloprice === 0) {
         const avrg = totalprice / 5;
-        let fixedavrg = avrg.toFixed(5);
-        avrgprice.value = fixedavrg;
-      }
+        const fixedavrg = avrg.toFixed(5);
+        avrgprice.value = Number(fixedavrg);
       try {
         const response = await fetch(
           "https://api.coingecko.com/api/v3/coins/dizzyhavoc"
@@ -136,6 +98,7 @@ export default function TokenData() {
         // Calculate and update largest price delta
       } catch (error) {
         // gecko error for market data
+        totalsupply.value = 946778380; // hard coded total supply
         ath.value = 0.04093; // hard coded ath, last known
         console.log(error);
       }
@@ -149,8 +112,7 @@ export default function TokenData() {
       arbprice,
       bscprice,
       baseprice,
-      avaxprice,
-      poloprice
+      avaxprice
     );
     isloading.value = false;
     initialloading.value = false;
@@ -163,7 +125,6 @@ export default function TokenData() {
       bscprice = 0,
       baseprice = 0,
       avaxprice = 0;
-    const poloprice = poloniexprice.value;
     try {
       const response = await fetch(
         "https://api.coingecko.com/api/v3/coins/dizzyhavoc"
@@ -203,7 +164,7 @@ export default function TokenData() {
       ath.value = Number(data.market_data.ath.usd);
       totalsupply.value = 946778380; // hard coded total supply
       // Calculate average price
-      avrgprice.value = ((Number(poloniexprice) + totalprice) / 5).toFixed(5);
+      avrgprice.value = Number(((totalprice) / 5).toFixed(5));
     } catch (error) {
       console.error(error);
     }
@@ -214,7 +175,6 @@ export default function TokenData() {
       bscprice,
       baseprice,
       avaxprice,
-      poloprice
     );
     isloading.value = false;
     initialloading.value = false;
@@ -246,7 +206,7 @@ export default function TokenData() {
         x -= 1;
         count.value = x; // Update the progress value
       } else {
-        fetchPoloniex();
+        fetchScreener();
         clearInterval(intervalId); // Stop the interval when x reaches 100
         starttimer();
       }
@@ -255,7 +215,7 @@ export default function TokenData() {
 
   useState(() => {
     // on load fetch data and start timer
-    fetchPoloniex();
+    fetchScreener();
     starttimer();
   });
 
