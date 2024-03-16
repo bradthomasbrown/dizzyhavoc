@@ -88,7 +88,7 @@ export default function BaseChart() {
         borderColor: "#b8b8b8", // set the color of the line
         pointRadius: 1, // Set the radius of the points
         borderWidth: 4, // Set the width of the line
-        tension: 0.5,
+        tension: 0.1,
       },
     ],
   };
