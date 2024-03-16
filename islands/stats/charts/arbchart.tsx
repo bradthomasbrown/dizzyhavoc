@@ -9,12 +9,7 @@ export default function ArbChart() {
   const isLoading = useSignal(true);
   const PriceHistory = async () => {
     try {
-      const response = await fetch("https://empty-bison-39-ywvq84e34ftd.deno.dev/v1/liveprices", {
-        headers: {
-          'Content-Type': 'application/json',
-          // Add more headers as needed
-        }
-      });
+      const response = await fetch("https://quick-frog-59.deno.dev/v1/liveprices");
       const data = await response.json();
       fetchedData.value = data;
     } catch (error) {
@@ -24,9 +19,6 @@ export default function ArbChart() {
   };
   useState(() => {
     PriceHistory();
-    setInterval(() => {
-      PriceHistory();
-    }, 60000); // Update every 60 seconds
   });
 
   const timestamps = fetchedData.value.map((item) =>
