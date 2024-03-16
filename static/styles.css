@@ -18,9 +18,7 @@ user-select: none; /* Standard */
 }
 #chart {
   max-width: 650px;
-  margin: 35px auto;
 }
-
 @media (prefers-color-scheme: light) {
   ::-webkit-scrollbar-thumb {
     background-color: #313131; /* color of the scroll thumb */

@@ -320,7 +320,7 @@ export default function TokenData() {
           <div class="shadow-lg px-3 h-full justify-center relative  rounded-lg gap-0 xl:gap-1 bg-blur3 flex flex-col">
             <div class="flex flex-row mx-auto justify-center gap-6">
               <section class="rounded flex flex-col">
-                <h1 class="font-[Poppins] dark:text-[#d2d2d2] text-[0.7rem] sm:text-[0.75rem] flex flex-col justify-center tracking-tight items-center">
+                <h1 class="unselectable font-[Poppins] dark:text-[#d2d2d2] text-[0.7rem] sm:text-[0.75rem] flex flex-col justify-center tracking-tight items-center">
                   Avrg. Price
                 </h1>
                 <h1 class="font-[Poppins] text-[#000000] dark:text-[#ffffff] font-medium text-[1rem] sm:text-[1.35rem] inline">
@@ -328,15 +328,16 @@ export default function TokenData() {
                 </h1>
               </section>
               <section class="rounded flex flex-col">
-                <h2 class="font-[Poppins] dark:text-[#d2d2d2] text-[0.7rem] sm:text-[0.75rem] flex flex-col justify-center tracking-tight items-center">
+                <h2 class="unselectable font-[Poppins] dark:text-[#d2d2d2] text-[0.7rem] sm:text-[0.75rem] flex flex-col justify-center tracking-tight items-center">
                   Mk. Cap
-                  <h1 class="font-[Poppins] text-[#000000] dark:text-[#ffffff] font-medium  text-[1rem] sm:text-[1.35rem] inline">
+                
+                </h2>
+                <h1 class="font-[Poppins] text-[#000000] dark:text-[#ffffff] font-medium  text-[1rem] sm:text-[1.35rem] inline">
                     ${formatNumber(avrgprice.value * totalsupply.value)}
                   </h1>
-                </h2>
               </section>
               <section class="rounded flex flex-col">
-                <h1 class="font-[Poppins] dark:text-[#d2d2d2] text-[0.7rem] sm:text-[0.75rem] flex flex-col justify-center tracking-tight items-center">
+                <h1 class="unselectable font-[Poppins] dark:text-[#d2d2d2] text-[0.7rem] sm:text-[0.75rem] flex flex-col justify-center tracking-tight items-center">
                   Max Δ
                 </h1>
                 <h1 class="font-[Poppins] text-[#000000] dark:text-[#ffffff] font-medium  text-[1rem] sm:text-[1.35rem] inline">
@@ -344,7 +345,7 @@ export default function TokenData() {
                 </h1>
               </section>
               <section class="rounded flex flex-col">
-                <h1 class="font-[Poppins] dark:text-[#d2d2d2] text-[0.7rem] sm:text-[0.75rem] flex flex-col justify-center tracking-tight items-center">
+                <h1 class="unselectable font-[Poppins] dark:text-[#d2d2d2] text-[0.7rem] sm:text-[0.75rem] flex flex-col justify-center tracking-tight items-center">
                   ATH
                 </h1>
                 <h1 class="font-[Poppins] text-[#000000] dark:text-[#ffffff] font-medium  text-[1rem] sm:text-[1.35rem] inline">
@@ -354,7 +355,7 @@ export default function TokenData() {
             </div>
             <div
               title="data from dzhv, dexscreener & coingecko apis."
-              class="bottom-1 unselectable dark:text-[#d2d2d2] text-[#6e6e6e] absolute left-1 text-[9px]"
+              class="top-1 unselectable dark:text-[#d2d2d2] text-[#6e6e6e] absolute right-1 text-[9px]"
             >
               {count}
             </div>
@@ -363,111 +364,4 @@ export default function TokenData() {
       )}
     </>
   );
-}
-
-{
-  /* <div class="flex-row relative flex w-full">
-<section class="rounded ml-3 justify-center flex flex-wrap gap-3">
-  <h1 style={{ order: poloorder != null ? -poloorder : 0 }}>
-    <a
-      class={`text-[1.1rem] dark:text-[#d2d2d2] font-[Poppins] flex`}
-      target="_blank"
-      href="https://poloniex.com/trade/DZHV_USDT/?type=spot"
-    >
-      <img
-        src="/chains/token_polo.png"
-        class="size-6 flex flex-nowrap sm:size-8 hover:scale-[105%] mr-2"
-        title="$DZHV on Poloniex exchange"
-        alt="poloniex"
-      />{" "}
-      ${poloniexprice != null ? poloniexprice.value : ""}
-    </a>
-  </h1>
-  <a
-    target="_blank"
-    style={{ order: avaxorder != null ? -avaxorder : 0 }}
-    href="https://dexscreener.com/avalanche/0x523a04633b6c0c4967824471dda0abbce7c5e643"
-  >
-    <h1
-      class={`text-[1.1rem] dark:text-[#d2d2d2] font-[Poppins] flex`}
-    >
-      <img
-        src="/chains/token_avax.png"
-        class="size-6 sm:size-8 hover:scale-[105%] mr-2"
-        title="$DZHV on avax"
-        alt="avax"
-      />{" "}
-      ${token_avax != null ? token_avax : ""}
-    </h1>
-  </a>
-  <a
-    target="_blank"
-    style={{ order: ethorder != null ? -ethorder : 0 }}
-    href="https://dexscreener.com/ethereum/0xb7a71c2e31920019962cb62aeea1dbf502905b81"
-  >
-    <h1
-      class={`text-[1.1rem] dark:text-[#d2d2d2] font-[Poppins] flex`}
-    >
-      <img
-        src="/chains/token_eth.png"
-        class="size-6 sm:size-8 hover:scale-[105%] mr-2"
-        title="$DZHV on ethereum"
-        alt="ethereum"
-      />{" "}
-      ${token_eth != null ? token_eth : ""}
-    </h1>
-  </a>
-  <a
-    target="_blank"
-    style={{ order: arborder != null ? -arborder : 0 }}
-    href="https://dexscreener.com/arbitrum/0x05c5bdbc7b3c64109ddcce058ce99f4515fe1c83"
-  >
-    <h1
-      class={`text-[1.1rem] dark:text-[#d2d2d2] font-[Poppins] flex`}
-    >
-      <img
-        src="/chains/token_arb.png"
-        class="size-6 sm:size-8 hover:scale-[105%] mr-2"
-        title="$DZHV on arbitrum"
-        alt="arbitrum"
-      />{" "}
-      ${token_arb != null ? token_arb : ""}
-    </h1>
-  </a>
-  <a
-    target="_blank"
-    style={{ order: bscorder != null ? -bscorder : 0 }}
-    href="https://dexscreener.com/bsc/0x642089a5da2512db761d325a868882ece6e387f5"
-  >
-    <h1
-      class={`text-[1.1rem] dark:text-[#d2d2d2] font-[Poppins] flex`}
-    >
-      <img
-        src="/chains/token_bsc.png"
-        class="size-6 sm:size-8 hover:scale-[105%] mr-2"
-        title="$DZHV on binance chain"
-        alt="binance chain"
-      />{" "}
-      ${token_bsc != null ? token_bsc : ""}
-    </h1>
-  </a>
-  <a
-    target="_blank"
-    style={{ order: baseorder != null ? -baseorder : 0 }}
-    href="https://dexscreener.com/base/0xb64dff20dd5c47e6dbb56ead80d23568006dec1e"
-  >
-    <h1
-      class={`text-[1.1rem] dark:text-[#d2d2d2] font-[Poppins] flex`}
-    >
-      <img
-        src="/chains/token_base.png"
-        class="size-6 sm:size-8 hover:scale-[105%] mr-2"
-        title="$DZHV on base"
-        alt="base"
-      />{" "}
-      ${token_base != null ? token_base : ""}
-    </h1>
-  </a>
-</section>
-</div> */
 }

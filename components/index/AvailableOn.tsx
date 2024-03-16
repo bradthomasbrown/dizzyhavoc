@@ -5,14 +5,14 @@ export default function Available() {
         Available on:
         <br />
       </p>
-      <div class="flex flex-row mb-2 gap-5 justify-center">
+      <div class="flex flex-row mt-6 gap-8 justify-center">
         <a
           target="_blank"
           href="https://etherscan.io/address/0x3419875b4d3bca7f3fdda2db7a476a79fd31b4fe"
         >
           <img
             src="/chains/eth.svg"
-            class="size-11 pl-4 hover:scale-[105%]"
+            class="size-[60px] pl-4 hover:scale-[105%]"
             title="ethereum"
             alt="ethereum"
           />
@@ -23,7 +23,7 @@ export default function Available() {
         >
           <img
             src="/chains/avax.svg"
-            class="size-11 hover:scale-[105%]"
+            class="size-[60px] hover:scale-[105%]"
             title="avalanche"
             alt="avalanche"
           />
@@ -34,7 +34,7 @@ export default function Available() {
         >
           <img
             src="/chains/arb.svg"
-            class="size-11 hover:scale-[105%]"
+            class="size-[60px] hover:scale-[105%]"
             title="arbitrum"
             alt="arbitrum"
           />
@@ -45,7 +45,7 @@ export default function Available() {
         >
           <img
             src="/chains/bsc.svg"
-            class="size-11 hover:scale-[105%]"
+            class="size-[60px] hover:scale-[105%]"
             title="binance chain"
             alt="binance chain"
           />
@@ -56,7 +56,7 @@ export default function Available() {
         >
           <img
             src="/chains/base.svg"
-            class="size-11 hover:scale-[105%]"
+            class="size-[60px] hover:scale-[105%]"
             title="base"
             alt="base"
           />
