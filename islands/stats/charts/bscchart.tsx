@@ -25,56 +25,63 @@ export default function BscChart() {
   });
 
   const timestamps = fetchedData.value.map((item) =>
-    new Date(item.timestamp).toLocaleTimeString([], {
-      hour: "2-digit",
-      minute: "2-digit",
-      second: "2-digit",
-    })
-  );
-  const chartOptions = {
-    responsive: true,
-    maintainAspectRatio: false,
-    animation: false,
-    scales: {
-      x: {
-        grid: {
-          display: false,
-        },
-        ticks : {
-          display: false,
-        }
+  new Date(item.timestamp).toLocaleTimeString([], {
+    day: "2-digit",
+    month: "2-digit",
+    year: "numeric",
+    hour: "2-digit",
+    minute: "2-digit",
+    second: "2-digit",
+  })
+);
+const chartOptions = {
+  responsive: true,
+  maintainAspectRatio: false,
+  animation: false,
+  scales: {
+    x: {
+      grid: {
+        display: false,
       },
-      y: {
-        grid: {
-          display: false,
-        },
-        ticks:{
-          stepSize: 0.01
-        },
-
-        border: {
-          display: false,
-        },
-      },
+      ticks : {
+        display: false,
+      }
     },
-    plugins: {
-        tooltip: {
-            callbacks: {
-              label: function(context) {
-                var label = context.dataset.label || '';
-                if (label) {
-                  label += ': ';
-                }
-                label += context.parsed.y;
-                return label;
-              }
-            }
-          },
-      legend: {
+    y: {
+      grid: {
+        display: false,
+      },
+      ticks:{
+        stepSize: 0.01
+      },
+
+      border: {
         display: false,
       },
     },
-  };
+  },
+  plugins: {
+      tooltip: {
+          callbacks: {
+            label: function(context) {
+              var label = context.dataset.label || '';
+              if (label) {
+                label += ': ';
+              }
+              label += context.parsed.y;
+              return label;
+            }
+          },
+          displayColors: false
+        },
+        title: {
+          display: false,
+        },
+    legend: {
+      display: false,
+    },
+  },
+};
   
   const chartData = {
     labels: timestamps,

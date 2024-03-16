@@ -26,6 +26,9 @@ export default function AvaxChart() {
 
   const timestamps = fetchedData.value.map((item) =>
     new Date(item.timestamp).toLocaleTimeString([], {
+      day: "2-digit",
+      month: "2-digit",
+      year: "numeric",
       hour: "2-digit",
       minute: "2-digit",
       second: "2-digit",
@@ -68,7 +71,11 @@ export default function AvaxChart() {
                 label += context.parsed.y;
                 return label;
               }
-            }
+            },
+            displayColors: false
+          },
+          title: {
+            display: false,
           },
       legend: {
         display: false,
