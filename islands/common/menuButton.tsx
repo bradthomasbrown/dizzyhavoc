@@ -21,7 +21,6 @@ export default function MenuButton() {
                 <option  class="category" value="" selected disabled hidden>{"Menu"}</option>
                 <option >{"/Home"}</option>
                 <option >{"/Stats"}</option>
-                <option> {"/dApps"}</option>
                 <option>{"/About"}</option>
             </select>
         </div>
