@@ -191,7 +191,7 @@ export default function MarketBar() {
       ) : ( // loaded bar
         <div class="w-full flex flex-col gap-2">
           <div style={{ order: ethorder != null ? -ethorder : 0 }} class="w-full relative shadow-lg flex h-[7rem] sm:h-[9rem] rounded-lg gap-3 bg-blur3">
-            <a class="sm:size-11 hover:scale-[105%] ml-3 mt-3 sm:ml-6 sm:mt-6 justify-start size-9" title="open in dexscreener" target="_blank" href="https://dexscreener.com/ethereum/0xb7a71c2e31920019962cb62aeea1dbf502905b81">
+            <a class="z-20 sm:size-11 hover:scale-[105%] ml-3 mt-3 sm:ml-6 sm:mt-6 justify-start size-9" title="open in dexscreener" target="_blank" href="https://dexscreener.com/ethereum/0xb7a71c2e31920019962cb62aeea1dbf502905b81">
           <img
               src="/chains/token_eth.png"
               title="open in dexscreener"
@@ -233,7 +233,7 @@ export default function MarketBar() {
             </div>
           </div>
           <div style={{ order: arborder != null ? -arborder : 0 }} class="w-full relative shadow-lg h-[7rem] sm:h-[9rem] rounded-lg gap-3 bg-blur3 flex">
-          <a class="sm:size-11 hover:scale-[105%] ml-3 mt-3 sm:ml-6 sm:mt-6 justify-start size-9" title="open in dexscreener" target="_blank" href="https://dexscreener.com/arbitrum/0x05c5bdbc7b3c64109ddcce058ce99f4515fe1c83">
+          <a class="z-20 sm:size-11 hover:scale-[105%] ml-3 mt-3 sm:ml-6 sm:mt-6 justify-start size-9" title="open in dexscreener" target="_blank" href="https://dexscreener.com/arbitrum/0x05c5bdbc7b3c64109ddcce058ce99f4515fe1c83">
           <img
               src="/chains/token_arb.png"
               title="open in dexscreener"
@@ -275,7 +275,7 @@ export default function MarketBar() {
             </div>
           </div>
           <div style={{ order: avaxorder != null ? -avaxorder : 0 }} class="w-full relative shadow-lg h-[7rem] sm:h-[9rem] rounded-lg gap-3 bg-blur3 flex">
-          <a class="sm:size-11 hover:scale-[105%] ml-3 mt-3 sm:ml-6 sm:mt-6 justify-start size-9" title="open in dexscreener" target="_blank" href="https://dexscreener.com/avalanche/0x523a04633b6c0c4967824471dda0abbce7c5e643">
+          <a class="z-20 sm:size-11 hover:scale-[105%] ml-3 mt-3 sm:ml-6 sm:mt-6 justify-start size-9" title="open in dexscreener" target="_blank" href="https://dexscreener.com/avalanche/0x523a04633b6c0c4967824471dda0abbce7c5e643">
           <img
               src="/chains/token_avax.png"
               title="open in dexscreener"
@@ -317,7 +317,7 @@ export default function MarketBar() {
             </div>
           </div>
           <div style={{ order: baseorder != null ? -baseorder : 0 }} class="w-full relative shadow-lg h-[7rem] sm:h-[9rem] rounded-lg gap-3 bg-blur3 flex">
-          <a class="sm:size-11 hover:scale-[105%] ml-3 mt-3 sm:ml-6 sm:mt-6 justify-start size-9" title="open in dexscreener" target="_blank" href="https://dexscreener.com/base/0xb64dff20dd5c47e6dbb56ead80d23568006dec1e">
+          <a class="z-20 sm:size-11 hover:scale-[105%] ml-3 mt-3 sm:ml-6 sm:mt-6 justify-start size-9" title="open in dexscreener" target="_blank" href="https://dexscreener.com/base/0xb64dff20dd5c47e6dbb56ead80d23568006dec1e">
           <img
               src="/chains/token_base.png"
               title="open in dexscreener"
@@ -359,7 +359,7 @@ export default function MarketBar() {
             </div>
           </div>
           <div style={{ order: bscorder != null ? -bscorder : 0 }} class="w-full relative shadow-lg h-[7rem] sm:h-[9rem] rounded-lg gap-3 bg-blur3 flex">
-          <a class="sm:size-11 hover:scale-[105%] ml-3 mt-3 sm:ml-6 sm:mt-6 justify-start size-9" title="open in dexscreener" target="_blank" href="https://dexscreener.com/bsc/0x642089a5da2512db761d325a868882ece6e387f5">
+          <a class="z-20 sm:size-11 hover:scale-[105%] ml-3 mt-3 sm:ml-6 sm:mt-6 justify-start size-9" title="open in dexscreener" target="_blank" href="https://dexscreener.com/bsc/0x642089a5da2512db761d325a868882ece6e387f5">
           <img
               src="/chains/token_bsc.png"
               title="open in dexscreener"
