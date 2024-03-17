@@ -20,7 +20,7 @@ export default function MenuButton() {
         {if(isMobile){return (
             <><div>
             <select class="text-3xl font-bold text-[#3d3d3d] dark:text-[#ccb286] text-center w-[50px] sm:w-[150px] shadow-lg font-[Poppins] rounded-lg hover:scale-[102%] border border-[#e9e9e9] dark:border-[#ffffff1f] cursor-pointer dark:bg-[#191919] bg-[#f1f1f1]" name="category" value={category} onChange={event => handleCategoryChange(event.target.value)}>
-                <option class="category " value="" selected disabled hidden>{"≡"}</option>
+                <option class="category text-center" value="" selected disabled hidden>{"≡"}</option>
                 <option class="text-2xl font-normal" >{"/Home"}</option>
                 <option class="text-2xl font-normal" >{"/Stats"}</option>
                 <option class="text-2xl font-normal" >{"/dApps"}</option>
