@@ -215,7 +215,7 @@ export default function MarketBar() {
               <div class="flex sm:flex-row flex-col">
                 <section class="rounded flex  sm:flex-row flex-col w-full py-[1px] ml-0">
                   <h1 class="font-[Poppins] text-[#000000] font-medium dark:text-[#ccb286] text-[1rem] sm:text-[1.2rem] inline">${formatNumber(token_eth.value)}</h1>
-                  <h1 title="24h price change" class={`font-[Poppins] unselectable font-medium text-[0.7rem] ml-1 sm:text-[0.7rem] inline ${h24_eth.value < 0 ? 'text-[#f00]' : 'text-[#3d7937]'}`}> {h24_eth.value}%</h1>
+                  <h1 title="24h price change" class={`font-[Poppins] unselectable font-medium text-[0.7rem] ml-1 sm:text-[0.7rem] inline ${h24_eth.value < 0 ? 'text-[#a23535]' : 'text-[#4da235]'}`}> {h24_eth.value}%</h1>
                 </section>
               </div>
               <div class="flex sm:flex-row flex-col">
@@ -258,7 +258,7 @@ export default function MarketBar() {
               <div class="flex sm:flex-row flex-col">
                 <section class="rounded flex  sm:flex-row flex-col w-full py-[1px] ml-0">
                   <h1 class="font-[Poppins] text-[#000000] font-medium dark:text-[#ccb286] text-[1rem] sm:text-[1.2rem] inline">${formatNumber(token_arb.value)}</h1>
-                  <h1 title="24h price change" class={`font-[Poppins] unselectable font-medium text-[0.7rem] ml-1 sm:text-[0.7rem] inline ${h24_arb.value < 0 ? 'text-[#f00]' : 'text-[#3d7937]'}`}> {h24_arb.value}%</h1>
+                  <h1 title="24h price change" class={`font-[Poppins] unselectable font-medium text-[0.7rem] ml-1 sm:text-[0.7rem] inline ${h24_arb.value < 0 ? 'text-[#a23535]' : 'text-[#4da235]'}`}> {h24_arb.value}%</h1>
                 </section>
               </div>
               <div class="flex sm:flex-row flex-col">
@@ -301,7 +301,7 @@ export default function MarketBar() {
               <div class="flex sm:flex-row flex-col">
                 <section class="rounded flex  sm:flex-row flex-col w-full py-[1px] ml-0">
                   <h1 class="font-[Poppins] text-[#000000] font-medium dark:text-[#ccb286] text-[1rem] sm:text-[1.2rem] inline">${formatNumber(token_avax.value)}</h1>
-                  <h1 title="24h price change" class={`font-[Poppins] unselectable font-medium text-[0.7rem] ml-1 sm:text-[0.7rem] inline ${h24_avax.value < 0 ? 'text-[#f00]' : 'text-[#3d7937]'}`}> {h24_avax.value}%</h1>
+                  <h1 title="24h price change" class={`font-[Poppins] unselectable font-medium text-[0.7rem] ml-1 sm:text-[0.7rem] inline ${h24_avax.value < 0 ? 'text-[#a23535]' : 'text-[#4da235]'}`}> {h24_avax.value}%</h1>
                 </section>
               </div>
               <div class="flex sm:flex-row flex-col">
@@ -344,7 +344,7 @@ export default function MarketBar() {
               <div class="flex sm:flex-row flex-col">
                 <section class="rounded flex  sm:flex-row flex-col w-full py-[1px] ml-0">
                   <h1 class="font-[Poppins] text-[#000000] font-medium dark:text-[#ccb286] text-[1rem] sm:text-[1.2rem] inline">${formatNumber(token_base.value)}</h1>
-                  <h1 title="24h price change" class={`font-[Poppins] unselectable font-medium text-[0.7rem] ml-1 sm:text-[0.7rem] inline ${h24_base.value < 0 ? 'text-[#f00]' : 'text-[#3d7937]'}`}> {h24_base.value}%</h1>
+                  <h1 title="24h price change" class={`font-[Poppins] unselectable font-medium text-[0.7rem] ml-1 sm:text-[0.7rem] inline ${h24_base.value < 0 ? 'text-[#a23535]' : 'text-[#4da235]'}`}> {h24_base.value}%</h1>
                 </section>
               </div>
               <div class="flex sm:flex-row flex-col">
@@ -387,7 +387,7 @@ export default function MarketBar() {
               <div class="flex sm:flex-row flex-col">
                 <section class="rounded flex  sm:flex-row flex-col w-full py-[1px] ml-0">
                   <h1 class="font-[Poppins] text-[#000000] font-medium dark:text-[#ccb286] text-[1rem] sm:text-[1.2rem] inline">${formatNumber(token_bsc.value)}</h1>
-                  <h1 title="24h price change" class={`font-[Poppins] unselectable font-medium text-[0.7rem] ml-1 sm:text-[0.7rem] inline ${h24_bsc.value < 0 ? 'text-[#f00]' : 'text-[#3d7937]'}`}> {h24_bsc.value}%</h1>
+                  <h1 title="24h price change" class={`font-[Poppins] unselectable font-medium text-[0.7rem] ml-1 sm:text-[0.7rem] inline ${h24_bsc.value < 0 ? 'text-[#a23535]' : 'text-[#4da235]'}`}> {h24_bsc.value}%</h1>
                 </section>
               </div>
               <div class="flex sm:flex-row flex-col">
