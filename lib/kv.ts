@@ -1,0 +1,1 @@
+export const kv = await Deno.openKv(Deno.env.get('DZHV_KV_PATH'))
