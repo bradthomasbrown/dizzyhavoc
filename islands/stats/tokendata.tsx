@@ -11,13 +11,14 @@ export default function TokenData() {
   const delta = useSignal<number>(0);
   const totalsupply = useSignal<number>(0);
   const avrgprice = useSignal<number>(0);
-  const ath = useSignal<number>(0);
   // prices
   const token_eth = useSignal<number>(0);
   const token_arb = useSignal<number>(0);
   const token_bsc = useSignal<number>(0);
   const token_base = useSignal<number>(0);
   const token_avax = useSignal<number>(0);
+  // liq
+  const fullliq = useSignal<number>(0);
 
   function largestPriceDelta(
     token_eth: number,
@@ -83,25 +84,22 @@ export default function TokenData() {
             break;
         }
       }
+      try {
+        const response = await fetch(
+          "https://quick-frog-59.deno.dev/v1/fullliq"
+        );
+        const data = await response.json();
+        console.log(data[0]);
+        const liq = data[0].arb_liq+data[0].eth_liq+data[0].bsc_liq+data[0].base_liq+data[0].avax_liq;
+        fullliq.value = formatNumber(liq)
+      } catch (error) {
+        console.error(error);
+      }
       // Calculate average price
         const avrg = totalprice / 5;
         const fixedavrg = avrg.toFixed(5);
         avrgprice.value = Number(fixedavrg);
-      try {
-        const response = await fetch(
-          "https://api.coingecko.com/api/v3/coins/dizzyhavoc"
-        );
-        const data = await response.json();
-        // Set other market data
-        ath.value = data.market_data.ath.usd;
         totalsupply.value = 946778380; // hard coded total supply
-        // Calculate and update largest price delta
-      } catch (error) {
-        // gecko error for market data
-        totalsupply.value = 946778380; // hard coded total supply
-        ath.value = 0.04093; // hard coded ath, last known
-        console.log(error);
-      }
     } catch (error) {
       // dexscreener error for prices, failsafe gecko
       console.error(error);
@@ -161,7 +159,6 @@ export default function TokenData() {
         }
       }
       // Set other market data
-      ath.value = Number(data.market_data.ath.usd);
       totalsupply.value = 946778380; // hard coded total supply
       // Calculate average price
       avrgprice.value = Number(((totalprice) / 5).toFixed(5));
@@ -250,6 +247,14 @@ export default function TokenData() {
                </h2>
              </section>
              <section class="rounded flex flex-col">
+               <h1 class="unselectable font-[Poppins] dark:text-[#d2d2d2] text-[0.7rem] sm:text-[0.75rem] flex flex-col justify-center tracking-tight items-center">
+                 Liquidity
+               </h1>
+               <h1 class="font-[Poppins] text-[#000000] dark:text-[#ffffff] font-medium  text-[1rem] sm:text-[1.35rem] inline">
+                 ${fullliq.value}
+               </h1>
+             </section>
+             <section class="rounded flex flex-col">
                <h1 class="font-[Poppins] dark:text-[#d2d2d2] text-[0.7rem] sm:text-[0.75rem] flex flex-col justify-center tracking-tight items-center">
                  Max Δ
                </h1>
@@ -257,14 +262,7 @@ export default function TokenData() {
                  {delta}%
                </h1>
              </section>
-             <section class="rounded flex flex-col">
-               <h1 class="font-[Poppins] dark:text-[#d2d2d2] text-[0.7rem] sm:text-[0.75rem] flex flex-col justify-center tracking-tight items-center">
-                 ATH
-               </h1>
-               <h1 class="font-[Poppins] text-[#000000] dark:text-[#ffffff] font-medium  text-[1rem] sm:text-[1.35rem] inline">
-                 ${ath.value.toFixed(5)}
-               </h1>
-             </section>
+
            </div>
            <div
              title="data from dexscreener, coingecko & poloniex."
@@ -297,6 +295,14 @@ export default function TokenData() {
                   </h1>
               </section>
               <section class="rounded flex flex-col">
+               <h1 class="unselectable font-[Poppins] dark:text-[#d2d2d2] text-[0.7rem] sm:text-[0.75rem] flex flex-col justify-center tracking-tight items-center">
+                 Liquidity
+               </h1>
+               <h1 class="font-[Poppins] text-[#000000] dark:text-[#ffffff] font-medium  text-[1rem] sm:text-[1.35rem] inline">
+                 ${fullliq.value}
+               </h1>
+             </section>
+              <section class="rounded flex flex-col">
                 <h1 class="unselectable font-[Poppins] dark:text-[#d2d2d2] text-[0.7rem] sm:text-[0.75rem] flex flex-col justify-center tracking-tight items-center">
                   Max Δ
                 </h1>
@@ -304,18 +310,10 @@ export default function TokenData() {
                   {delta}%
                 </h1>
               </section>
-              <section class="rounded flex flex-col">
-                <h1 class="unselectable font-[Poppins] dark:text-[#d2d2d2] text-[0.7rem] sm:text-[0.75rem] flex flex-col justify-center tracking-tight items-center">
-                  ATH
-                </h1>
-                <h1 class="font-[Poppins] text-[#000000] dark:text-[#ffffff] font-medium  text-[1rem] sm:text-[1.35rem] inline">
-                  ${ath.value.toFixed(5)}
-                </h1>
-              </section>
             </div>
             <div
               title="data from dzhv, dexscreener & coingecko apis."
-              class="top-1 unselectable dark:text-[#d2d2d2] text-[#6e6e6e] absolute right-1 text-[9px]"
+              class="top-1 unselectable dark:text-[#d2d2d2] text-[#6e6e6e] absolute right-1 text-[8px]"
             >
               {count}
             </div>

@@ -27,7 +27,7 @@ export default function About() {
         </p>
         <div class="flex mt-[2rem] flex-row">
           <img
-            class="hover:scale-[101%] size-[90px] sm:size-[120px] rounded-full"
+            class="hover:scale-[101%] size-[70px] sm:size-[120px] rounded-full"
             src="/misc/spider.png"
           />
           <div class="flex mx-5 flex-col">
@@ -64,7 +64,7 @@ export default function About() {
         </div>
         <div class="flex mt-[2rem] flex-row">
           <img
-            class="hover:scale-[101%] size-[70px] sm:size-[100px] rounded-full"
+            class="hover:scale-[101%] size-[50px] sm:size-[100px] rounded-full"
             src="/misc/corv.jpg"
           />
           <div class="flex mx-5 flex-col">
