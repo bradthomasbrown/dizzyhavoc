@@ -20,15 +20,11 @@ user-select: none; /* Standard */
   max-width: 650px;
 }
 select {
-  /* for Firefox */
-  -moz-appearance: none;
-  /* for Chrome */
+  -o-appearance: none;
+  -ms-appearance: none;
   -webkit-appearance: none;
-}
-
-/* For IE10 */
-select::-ms-expand {
-  display: none;
+  -moz-appearance: none;
+  appearance: none;
 }
 @media (prefers-color-scheme: light) {
   ::-webkit-scrollbar-thumb {
