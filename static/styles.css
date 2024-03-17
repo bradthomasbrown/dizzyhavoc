@@ -22,8 +22,6 @@ user-select: none; /* Standard */
 select {
   -webkit-appearance: none;
   -moz-appearance: none;
-  text-indent: 1px;
-  text-overflow: '';
 }
 @media (prefers-color-scheme: light) {
   ::-webkit-scrollbar-thumb {
