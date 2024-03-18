@@ -89,8 +89,8 @@ export default function TokenData() {
           "https://quick-frog-59.deno.dev/v1/fullliq"
         );
         const data = await response.json();
-        console.log(data[0]);
-        const liq = data[0].arb_liq+data[0].eth_liq+data[0].bsc_liq+data[0].base_liq+data[0].avax_liq;
+        const lastliq = data[data.length - 1];
+        const liq = lastliq.arb_liq+lastliq.eth_liq+lastliq.bsc_liq+lastliq.base_liq+lastliq.avax_liq;
         fullliq.value = formatNumber(liq)
       } catch (error) {
         console.error(error);
