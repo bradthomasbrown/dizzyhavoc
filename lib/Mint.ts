@@ -25,13 +25,14 @@ export class Mint {
     err?:AIQ<Error>
     out?:AIQ<string>
 
-    constructor(chain:Chain, kvBurn:KvBurn, { nonce, hash, out, err }:{ nonce?:bigint, hash?:string, prevHash?:string, out?:AIQ<string>, err?:AIQ<Error> }={}) {
+    constructor(chain:Chain, kvBurn:KvBurn, { nonce, hash, prevHash, out, err }:{ nonce?:bigint, hash?:string, prevHash?:string, out?:AIQ<string>, err?:AIQ<Error> }={}) {
         this.chain = chain
         this.burn = kvBurn
         this.recipient = `0x${kvBurn.log.data.slice(2).slice(64 * 1 + 24, 64 * 2)}`
         this.value = BigInt(`0x${kvBurn.log.data.slice(2).slice(64 * 2, 64 * 3)}`)
         this.nonce = nonce
         this.hash = hash
+        this.prevHash = prevHash
         this.out = out
         this.err = err
     }
