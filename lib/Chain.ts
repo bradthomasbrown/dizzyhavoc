@@ -64,9 +64,18 @@ export class Chain {
     }
 
     async filter(address:string, topics:(string|string[])[], processId:string):Promise<Error|Filter> {
-        const entry = await this.kvv.get<KvFilter>(['filters', this.chainId, address, topics.sort((a, b) => a < b ? -1 : a == b ? 0 : 1).join(), processId])
-        if (entry instanceof Error) return entry
-        const filter:Filter = new Filter(entry, this, address, topics)
+        const response = await this.kvv.getMany<[KvFilter, KvFilter]>([
+            ['filters', this.chainId, address, topics.sort((a, b) => a < b ? -1 : a == b ? 0 : 1).join(), processId],
+            ['defaultFilters', this.chainId, address, topics.sort((a, b) => a < b ? -1 : a == b ? 0 : 1).join()]
+        ])
+        if (response instanceof Error) return response
+        const [filterEntry, defaultFilterEntry] = response
+        const filter = new Filter(
+            filterEntry.value?.fromBlock !== 0n
+                ? filterEntry
+                : defaultFilterEntry,
+            this, address, topics
+        )
         if (filter.width > 0n) return filter
         const height = await this.height()
         if (height instanceof Error) return height
