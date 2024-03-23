@@ -70,8 +70,9 @@ export class Chain {
         ])
         if (response instanceof Error) return response
         const [filterEntry, defaultFilterEntry] = response
+        const fromBlock = filterEntry.value?.fromBlock
         const filter = new Filter(
-            filterEntry.value?.fromBlock !== 0n
+            fromBlock !== undefined && fromBlock > 0n
                 ? filterEntry
                 : defaultFilterEntry,
             this, address, topics
