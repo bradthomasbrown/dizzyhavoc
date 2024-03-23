@@ -21,10 +21,11 @@ export class Mint {
     value:bigint
     nonce?:bigint
     hash?:string
+    prevHash?:string
     err?:AIQ<Error>
     out?:AIQ<string>
 
-    constructor(chain:Chain, kvBurn:KvBurn, { nonce, hash, out, err }:{ nonce?:bigint, hash?:string, out?:AIQ<string>, err?:AIQ<Error> }={}) {
+    constructor(chain:Chain, kvBurn:KvBurn, { nonce, hash, out, err }:{ nonce?:bigint, hash?:string, prevHash?:string, out?:AIQ<string>, err?:AIQ<Error> }={}) {
         this.chain = chain
         this.burn = kvBurn
         this.recipient = `0x${kvBurn.log.data.slice(2).slice(64 * 1 + 24, 64 * 2)}`
@@ -100,6 +101,7 @@ export class Mint {
             chainId: this.chain.chainId,
             burn: this.burn,
             hash: this.hash,
+            prevHash: this.prevHash,
             nonce: this.nonce
         }
     }
@@ -122,7 +124,16 @@ export class Mint {
                 }
                 chain = new Chain(fakeEntry, kvv, ejra)
             } else chain = new Chain(chainEntry, kvv, ejra)
-            return new Mint(chain, mintEntry.value.burn, { nonce: mintEntry.value.nonce, hash: mintEntry.value.hash, out, err })
+            return new Mint(
+                chain,
+                mintEntry.value.burn,
+                {
+                    nonce: mintEntry.value.nonce,
+                    hash: mintEntry.value.hash,
+                    prevHash: mintEntry.value.prevHash,
+                    out,
+                    err
+                })
         }
         return null
     }
@@ -142,7 +153,6 @@ export class Mint {
             await this.move('archive')
             return false
         }
-        console.log({ baseFee })
         const data = `0x40c10f19${
                 this.recipient.slice(2).padStart(64, '0')
             }${(this.value - baseFee).toString(16).padStart(64, '0')}`
@@ -157,6 +167,7 @@ export class Mint {
         if (nonce instanceof Error) return nonce
         const { signedTx, hash } = signRawTx({ signer, nonce, gasLimit, gasPrice, chainId, data, to })
         this.nonce = nonce
+        this.prevHash = this.hash
         this.hash = hash
         const moved = await this.move('finalizable')
         if (moved instanceof Error || moved === false) return moved
@@ -183,8 +194,9 @@ export class Mint {
     confirmations():Promise<Error|bigint> { return this.chain.confirmations() }
 
     async receipt():Promise<Error|Receipt> {
-        if (this.hash === undefined) return new Error(`Mint.receipt: cannot get receipt, undefined hash (burnhash: ${this.burn.hash})`)
-        return await this.chain.receipt(this.hash)
+        if (this.prevHash) return await this.chain.receipt(this.prevHash)
+        if (this.hash) return await this.chain.receipt(this.hash)
+        return new Error(`Mint.receipt: cannot get receipt, no hash nor prevHash (burnhash: ${this.burn.hash})`)
     }
 
     height():Promise<Error|bigint> { return this.chain.height() }
@@ -218,7 +230,7 @@ export class Mint {
                 }
                 chain = new Chain(fakeEntry, kvv, ejra)
             } else chain = new Chain(chainEntry, kvv, ejra)
-            return new Mint(chain, mintEntry.value.burn, { nonce: mintEntry.value.nonce, hash: mintEntry.value.hash, out, err })
+            return new Mint(chain, mintEntry.value.burn, { nonce: mintEntry.value.nonce, prevHash: mintEntry.value.prevHash, hash: mintEntry.value.hash, out, err })
         }
         return null
     }
