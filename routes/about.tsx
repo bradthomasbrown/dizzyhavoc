@@ -35,7 +35,7 @@ export default function About() {
               Brad Brown
             </h1>
             <h1 class="text-[1.1rem] font-[Poppins] z-10 font-Poppins dark:text-[#d2d2d2] text-[#282828]">
-              Creator, Lead developper, Back End
+              Creator, Lead Developer, Full-Stack
             </h1>
             <div class="flex flex-row">
               <a
