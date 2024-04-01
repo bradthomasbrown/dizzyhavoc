@@ -5,6 +5,7 @@ import { useState } from "preact/hooks";
 
 export default function BscChart() {
   if (!IS_BROWSER) return <></>;
+  const darkmode = globalThis.matchMedia('(prefers-color-scheme: dark)').matches
   const isLoading = useSignal(true);
   const fetchedData = useSignal([]);
   const PriceHistory = async () => {
@@ -61,7 +62,7 @@ const chartOptions = {
       tooltip: {
           callbacks: {
             label: function(context) {
-              var label = context.dataset.label || '';
+              let label = context.dataset.label || '';
               if (label) {
                 label += ': ';
               }
@@ -85,9 +86,9 @@ const chartOptions = {
     datasets: [
       {
         data: fetchedData.value.map((item) => item.bsc_price),
-        borderColor: "#b8b8b8", // set the color of the line
+        borderColor: "#b8b8b8" , // set the color of the line
         pointRadius: 1, // Set the radius of the points
-        borderWidth: 4, // Set the width of the line
+        borderWidth: 2, // Set the width of the line
         tension: 0.1,
       },
     ],
@@ -103,7 +104,7 @@ const chartOptions = {
     return (
 
       <>
-         <div class="p-4 sm:mx-auto mx-4 mt-7 sm:mt-0 sm:h-[160px] sm:w-[400px] h-[100px] w-[330px]">
+         <div class="p-4 sm:mx-auto mx-4 mt-7 sm:mt-0 sm:h-[160px] sm:w-[430px] h-[100px] w-[330px]">
            {fetchedData.value && fetchedData.value.length > 0 && (
             <Chart
             id="myChart"

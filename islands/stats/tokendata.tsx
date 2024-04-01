@@ -275,7 +275,7 @@ export default function TokenData() {
       ) : (
         // loaded
         <>
-          <div class="shadow-lg px-3 h-full justify-center relative  rounded-lg gap-0 xl:gap-1 bg-blur3 flex flex-col">
+          <div class="shadow-lg px-3 h-full justify-center relative w-full rounded-lg gap-0 xl:gap-1 bg-blur3 flex flex-col">
             <div class="flex flex-row mx-auto justify-center gap-6">
               <section class="rounded flex flex-col">
                 <h1 class="unselectable font-[Poppins] dark:text-[#d2d2d2] text-[0.7rem] sm:text-[0.75rem] flex flex-col justify-center tracking-tight items-center">

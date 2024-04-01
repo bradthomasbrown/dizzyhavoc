@@ -1,6 +1,7 @@
 import { IS_BROWSER } from "$fresh/runtime.ts";
 import { useState } from "preact/hooks";
 import { useSignal } from "@preact/signals";
+import { formatNumber } from "../../lib/common/formatNumber.tsx";
 import EthChart from "../stats/charts/ethchart.tsx";
 import ArbChart from "../stats/charts/arbchart.tsx";
 import AvaxChart from "../stats/charts/avaxchart.tsx";
@@ -48,7 +49,7 @@ export default function MarketBar() {
   const avaxorder = useSignal<number>(0);
   const ethorder = useSignal<number>(0);
 
-  const a = async () => { 
+  const getPrices = async () => { 
     isloading.value = true;
     let arbprice = 0,
     ethprice = 0,
@@ -107,7 +108,7 @@ export default function MarketBar() {
     } catch (error) {
       console.error(error);
       setTimeout(() => {
-        a();
+        getPrices();
       }, 500);
     }
     largestPriceDelta(
@@ -157,23 +158,6 @@ export default function MarketBar() {
     });
   }
 
-  function formatNumber(num: number, precision = 2) { // format num in K, M, B
-    const map = [
-      { suffix: "T", threshold: 1e12 },
-      { suffix: "B", threshold: 1e9 },
-      { suffix: "M", threshold: 1e6 },
-      { suffix: "K", threshold: 1e3 },
-      { suffix: "", threshold: 1 },
-    ];
-    const found = map.find((x) => Math.abs(num) >= x.threshold);
-    if (found) {
-      const formatted =
-        (num / found.threshold).toFixed(precision) + found.suffix;
-      return formatted;
-    }
-    return num;
-  }
-
   const starttimer = () => { // auto refresh logic
     let x = 30;
     const intervalId = setInterval(() => {
@@ -181,7 +165,7 @@ export default function MarketBar() {
         x -= 1;
         count.value = x; // Update the progress value
       } else {
-        a();
+        getPrices();
         clearInterval(intervalId); // Stop the interval when x reaches 100
         starttimer();
       }
@@ -190,7 +174,7 @@ export default function MarketBar() {
 
   useState(() => {
     // on load fetch data and start timer
-    a();
+    getPrices();
     starttimer();
   });
 

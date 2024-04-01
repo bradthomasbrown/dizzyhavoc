@@ -1,5 +1,6 @@
 import TokenData from "./tokendata.tsx";
 import MarketBar from "./MarketBar.tsx";
+import MenuBar from "./MenuBar.tsx";
 import { IS_BROWSER } from "$fresh/runtime.ts";
 export default function MarketData() {
   if (!IS_BROWSER) return <></>;
@@ -10,6 +11,11 @@ export default function MarketData() {
           <TokenData />
         </div>
       </div>
+      {/* <div class="flex mx-auto justify-center max-w-[480px] shadow-lg bg-blur2 rounded-xl">
+        <div class="w-full p-2">
+          <MenuBar />
+        </div>
+      </div> */}
       <div class="flex sm:h-[48rem] mt-[0.3rem] h-full w-full sm:mx-0 mx-auto shadow-lg rounded-xl bg-blur2">
         <div class="w-full p-2">
           <MarketBar />

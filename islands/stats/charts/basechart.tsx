@@ -61,7 +61,7 @@ export default function BaseChart() {
         tooltip: {
             callbacks: {
               label: function(context) {
-                var label = context.dataset.label || '';
+                let label = context.dataset.label || '';
                 if (label) {
                   label += ': ';
                 }
@@ -87,7 +87,7 @@ export default function BaseChart() {
         data: fetchedData.value.map((item) => item.base_price),
         borderColor: "#b8b8b8", // set the color of the line
         pointRadius: 1, // Set the radius of the points
-        borderWidth: 4, // Set the width of the line
+        borderWidth: 2, // Set the width of the line
         tension: 0.1,
       },
     ],
@@ -103,7 +103,7 @@ export default function BaseChart() {
       return (
 
         <>
-           <div class="p-4 sm:mx-auto mx-4 mt-7 sm:mt-0 sm:h-[160px] sm:w-[400px] h-[100px] w-[330px]">
+           <div class="p-4 sm:mx-auto mx-4 mt-7 sm:mt-0 sm:h-[160px] sm:w-[430px] h-[100px] w-[330px]">
              {fetchedData.value && fetchedData.value.length > 0 && (
               <Chart
               id="myChart"
