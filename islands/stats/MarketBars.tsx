@@ -3,12 +3,12 @@ import { useState } from "preact/hooks";
 import { useSignal } from "@preact/signals";
 import { formatNumber } from "../../lib/common/formatNumber.tsx";
 import { MarketData } from "../../lib/stats/marketData.tsx";
-import EthChart from "../stats/charts/ethchart.tsx";
-import ArbChart from "../stats/charts/arbchart.tsx";
-import AvaxChart from "../stats/charts/avaxchart.tsx";
-import BaseChart from "../stats/charts/basechart.tsx";
-import BscChart from "../stats/charts/bscchart.tsx";
-export default function MarketBar() {
+import EthChart from "./charts/ethchart.tsx";
+import ArbChart from "./charts/arbchart.tsx";
+import AvaxChart from "./charts/avaxchart.tsx";
+import BaseChart from "./charts/basechart.tsx";
+import BscChart from "./charts/bscchart.tsx";
+export default function MarketBars() {
   if (!IS_BROWSER) return <></>;
   const initialloading = useSignal<boolean>(true);
   const isloading = useSignal<boolean>(true);
@@ -79,7 +79,7 @@ export default function MarketBar() {
             break;
           case "https://dexscreener.com/bsc/0x642089a5da2512db761d325a868882ece6e387f5":
             token_bsc.value = bscprice = Number(fixedvalue);
-            liq_bsc.value = fixedliq;
+            liq_bsc.value =  fixedliq;
             vol24_bsc.value = data.pairs[i].volume.h24;
             tx_bsc.value = data.pairs[i].txns.h24.buys + data.pairs[i].txns.h24.sells;
             h24_bsc.value = data.pairs[i].priceChange.h24;
@@ -102,7 +102,6 @@ export default function MarketBar() {
             break;
         }
       }
-
     largestPriceDelta(
       ethprice,
       arbprice,

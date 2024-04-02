@@ -2,7 +2,7 @@ import { IS_BROWSER } from "$fresh/runtime.ts";
 import { useState } from "preact/hooks";
 import { useSignal } from "@preact/signals";
 
-export default function TokenData() {
+export default function TokenSummary() {
   if (!IS_BROWSER) return <></>;
   const initialloading = useSignal<boolean>(true);
   const isloading = useSignal<boolean>(true);
