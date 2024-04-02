@@ -1,7 +1,7 @@
 // Copyright 2018-2023 the Deno authors. All rights reserved. MIT license.
 
-import { chart, type ChartConfiguration } from "./core.ts";
-import { type ChartJs } from "./deps.ts";
+import { chart, type ChartConfiguration } from "../charts/core.ts";
+import { type ChartJs } from "../charts/deps.ts";
 
 /**
  * A JSX component which can be used to server side render a chart inline
