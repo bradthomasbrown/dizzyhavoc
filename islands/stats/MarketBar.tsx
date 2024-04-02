@@ -2,6 +2,7 @@ import { IS_BROWSER } from "$fresh/runtime.ts";
 import { useState } from "preact/hooks";
 import { useSignal } from "@preact/signals";
 import { formatNumber } from "../../lib/common/formatNumber.tsx";
+import { MarketData } from "../../lib/stats/marketData.tsx";
 import EthChart from "../stats/charts/ethchart.tsx";
 import ArbChart from "../stats/charts/arbchart.tsx";
 import AvaxChart from "../stats/charts/avaxchart.tsx";
@@ -56,11 +57,7 @@ export default function MarketBar() {
     bscprice = 0,
     baseprice = 0,
     avaxprice = 0
-    try {
-      const response = await fetch(
-      "https://api.dexscreener.com/latest/dex/tokens/0x3419875B4D3Bca7F3FddA2dB7a476A79fD31B4fE"
-      );
-      const data = await response.json();
+      const data = await MarketData();
       console.log(data);
       for (let i = 0; i < data.pairs.length; i++) {
         const fixedvalue = Number(data.pairs[i].priceUsd).toFixed(5);
@@ -105,12 +102,7 @@ export default function MarketBar() {
             break;
         }
       }
-    } catch (error) {
-      console.error(error);
-      setTimeout(() => {
-        getPrices();
-      }, 500);
-    }
+
     largestPriceDelta(
       ethprice,
       arbprice,
