@@ -58,7 +58,6 @@ export default function MarketBars() {
     baseprice = 0,
     avaxprice = 0
       const data = await MarketData();
-      console.log(data);
       for (let i = 0; i < data.pairs.length; i++) {
         const fixedvalue = Number(data.pairs[i].priceUsd).toFixed(5);
         const fixedliq = Number(data.pairs[i].liquidity.usd).toFixed(2);
