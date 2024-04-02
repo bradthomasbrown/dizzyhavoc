@@ -5,7 +5,6 @@ import { useState } from "preact/hooks";
 
 export default function BscChart() {
   if (!IS_BROWSER) return <></>;
-  const darkmode = globalThis.matchMedia('(prefers-color-scheme: dark)').matches
   const isLoading = useSignal(true);
   const fetchedData = useSignal([]);
   const PriceHistory = async () => {
