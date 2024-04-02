@@ -1,25 +1,24 @@
 import Chart from "../chart.tsx";
+import { ChartOptions } from "$fresh_charts/stats/chartOptions.tsx";
+import { PriceHistory } from "$fresh_charts/stats/priceHistory.tsx";
 import { IS_BROWSER } from "$fresh/runtime.ts";
 import { useSignal } from "@preact/signals";
 import { useState } from "preact/hooks";
 
 export default function BaseChart() {
   if (!IS_BROWSER) return <></>;
-  const isLoading = useSignal(true);
   const fetchedData = useSignal([]);
-  const PriceHistory = async () => {
-    try {
-      const response = await fetch("https://quick-frog-59.deno.dev/v1/liveprices");
-      const data = await response.json();
-      fetchedData.value = data;
-    } catch (error) {
-      console.error(error);
-    }
+  const isLoading = useSignal(true);
+
+  const getPrices = async () => {
+    fetchedData.value = await PriceHistory();
     isLoading.value = false;
   };
   useState(() => {
-    PriceHistory();
+    getPrices();
   });
+
+  const chartOptions = ChartOptions();
 
   const timestamps = fetchedData.value.map((item) =>
     new Date(item.timestamp).toLocaleTimeString([], {
@@ -31,55 +30,7 @@ export default function BaseChart() {
       second: "2-digit",
     })
   );
-  const chartOptions = {
-    responsive: true,
-    maintainAspectRatio: false,
-    animation: false,
-    scales: {
-      x: {
-        grid: {
-          display: false,
-        },
-        ticks : {
-          display: false,
-        }
-      },
-      y: {
-        grid: {
-          display: false,
-        },
-        ticks:{
-          stepSize: 0.01
-        },
 
-        border: {
-          display: false,
-        },
-      },
-    },
-    plugins: {
-        tooltip: {
-            callbacks: {
-              label: function(context) {
-                let label = context.dataset.label || '';
-                if (label) {
-                  label += ': ';
-                }
-                label += context.parsed.y;
-                return label;
-              }
-            },
-            displayColors: false
-          },
-          title: {
-            display: false,
-          },
-      legend: {
-        display: false,
-      },
-    },
-  };
-  
   const chartData = {
     labels: timestamps,
     datasets: [
@@ -92,30 +43,30 @@ export default function BaseChart() {
       },
     ],
   };
-  
-  if(isLoading.value === true && fetchedData.value.length === 0){
-      return (
 
-        <img class="w-full sm:scale-100 scale-50 mx-[8rem] mt-7 sm:mt-0 sm:mx-[11rem] h-full" src="./misc/loader.svg"></img>
-      );
-    }
-    if(isLoading.value === false){
-      return (
-
-        <>
-           <div class="p-4 sm:mx-auto mx-4 mt-7 sm:mt-0 sm:h-[160px] sm:w-[430px] h-[100px] w-[330px]">
-             {fetchedData.value && fetchedData.value.length > 0 && (
-              <Chart
+  if (isLoading.value === true && fetchedData.value.length === 0) {
+    return (
+      <img
+        class="w-full sm:scale-100 scale-50 mx-[8rem] mt-7 sm:mt-0 sm:mx-[11rem] h-full"
+        src="./misc/loader.svg"
+      >
+      </img>
+    );
+  }
+  if (isLoading.value === false) {
+    return (
+      <>
+        <div class="p-4 sm:mx-auto mx-4 mt-7 sm:mt-0 sm:h-[160px] sm:w-[430px] h-[100px] w-[330px]">
+          {fetchedData.value && fetchedData.value.length > 0 && (
+            <Chart
               id="myChart"
               type="line"
               options={chartOptions}
               data={chartData}
             />
-             )}
-           </div>
-         </>
-     
-       ); 
-    }
- 
+          )}
+        </div>
+      </>
+    );
+  }
 }
