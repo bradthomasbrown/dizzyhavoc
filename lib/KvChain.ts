@@ -1,3 +1,3 @@
 export type KvChain = {
-    lastUpdated:number
-}
+  lastUpdated: number;
+};

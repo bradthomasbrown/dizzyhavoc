@@ -1,1 +1,1 @@
-import { Signer } from './Signer.ts'
+import { Signer } from "./Signer.ts";

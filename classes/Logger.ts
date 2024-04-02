@@ -59,7 +59,7 @@
 
 //     /**
 //      * Logs an error if the logLevel is >= LogLevel.ERROR
-//      * @param message 
+//      * @param message
 //      */
 //     static async error({
 //         message, reason
@@ -76,7 +76,7 @@
 
 //     /**
 //      * Logs an error if the logLevel is >= LogLevel.INFO
-//      * @param message 
+//      * @param message
 //      */
 //     static async warn(message:string) {
 //         if (await Cache.get('level') >= LogLevel.WARN) {
@@ -90,7 +90,7 @@
 
 //     /**
 //      * Logs an error if the logLevel is >= LogLevel.INFO
-//      * @param message 
+//      * @param message
 //      */
 //     static async info(message:string) {
 //         if (await Cache.get('level') >= LogLevel.INFO) {
@@ -104,7 +104,7 @@
 
 //     /**
 //      * Logs an error if the logLevel is >= LogLevel.DEBUG
-//      * @param message 
+//      * @param message
 //      */
 //     static async debug(message:string) {
 //         if (await Cache.get('level') >= LogLevel.DEBUG) {
@@ -118,7 +118,7 @@
 
 //     /**
 //      * Logs an error if the logLevel is >= LogLevel.DETAIL
-//      * @param message 
+//      * @param message
 //      */
 //     static async detail(message:string) {
 //         if (await Cache.get('level') >= LogLevel.DETAIL) {
