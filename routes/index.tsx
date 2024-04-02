@@ -1,5 +1,5 @@
-import Info from "../components/index/Info.tsx";
 import Animated from "../components/index/Animated.tsx";
+import Info from "../components/index/Info.tsx";
 export default function Home() {
   return (
     <>

@@ -1,21 +1,13 @@
+import Stars from "./Animations/stars.tsx";
+import Waves from "./Animations/waves.tsx";
 export default function Animated() {
   return (
-    <div>      
-        <div class="absolute h-screen border-transparent lg:border-[#595959] border-2 lg:border-t-transparent lg:border-e-transparent lg:border-s-transparent border-t-transparent border-e-transparent border-s-transparent w-full overflow-hidden -z-10 top-[4.5rem] sm:top-0">
-    <div class="opacity-[30%] sm:opacity-100" id="stars-container">
-      <div id="stars"></div>
-      <div id="stars2"></div>
-      <div id="stars3"></div>
-    </div>
-    <section2>
-      <div class="air air1"></div>
-      <div class="air air2"></div>
-      <div class="air air3"></div>
-      <div class="air air4"></div>
-    </section2>
-  </div>
+    <div>
+      <div class="absolute h-screen border-transparent lg:border-[#595959] border-2 lg:border-t-transparent lg:border-e-transparent lg:border-s-transparent border-t-transparent border-e-transparent border-s-transparent w-full overflow-hidden -z-10 top-[4.5rem] sm:top-0">
+        <Stars />
+        <Waves />
+      </div>
       <div class="flex flex-col h-screen justify-start sm:justify-center items-center">
-
         <div class="w-full flex justify-center">
           <div class="flex flex-col mt-[13rem] sm:mt-0 items-center">
             <div class="absolute min-w-full">
@@ -28,7 +20,8 @@ export default function Animated() {
               <div
                 class="trapeze invisible lg:visible mt-4 sm:max-w-[73rem] max-w-[70%] mx-auto z-[-10] shadow-lg"
                 id="trapeze"
-              ></div>
+              >
+              </div>
             </div>
             <a
               class="font-medium font-[Poppins] z-10 tracking-tighter sm:mt-[7.5rem] mt-[7.5rem] text-[1.1rem] sm:text-[1.7rem] text-center dark:text-[#d2d2d2] text-[#3d3d3d]"
