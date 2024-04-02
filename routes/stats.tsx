@@ -1,4 +1,4 @@
-import MarketData from "../islands/stats/Container.tsx";
+import ActiveContainer from "../islands/stats/ActiveContainer.tsx";
 
 export default function Stats() {
   return (
@@ -23,7 +23,7 @@ export default function Stats() {
       >
         DZHV Ecosystem Analytics
       </p>
-        <MarketData />
+        <ActiveContainer />
         </div>
   );
 }

@@ -1,7 +1,7 @@
 import TokenSummary from "./tokenSummary.tsx";
 import MarketBars from "./MarketBars.tsx";
 import { IS_BROWSER } from "$fresh/runtime.ts";
-export default function MarketData() {
+export default function ActiveContainer() {
   if (!IS_BROWSER) return <></>;
   return (
     <div class="flex w-full sm:mt-0 mt-[1rem] mx-auto sm:w-[42rem] flex-col">
