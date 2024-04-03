@@ -1,10 +1,10 @@
 import { AIQ } from "https://cdn.jsdelivr.net/gh/bradbrown-llc/aiq@0.0.0/mod.ts";
-import { Ejra } from "https://cdn.jsdelivr.net/gh/bradbrown-llc/ejra@0.4.3-vertigo/mod.ts";
+import { Ejra } from "https://cdn.jsdelivr.net/gh/bradbrown-llc/ejra@0.4.5-vertigo/mod.ts";
 import {
   Log,
   Receipt,
   TxCallObject,
-} from "https://cdn.jsdelivr.net/gh/bradbrown-llc/ejra@0.4.3-vertigo/types/mod.ts";
+} from "https://cdn.jsdelivr.net/gh/bradbrown-llc/ejra@0.4.5-vertigo/types/mod.ts";
 import { KvVertigo } from "https://cdn.jsdelivr.net/gh/bradbrown-llc/kvvertigo@0.0.2/mod.ts";
 import { KvFilter } from "./KvFilter.ts";
 import { Filter } from "./Filter.ts";
