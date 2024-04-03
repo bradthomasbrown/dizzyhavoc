@@ -177,7 +177,7 @@ export class Mint {
   }
 
   async send(signer: Signer, tokenAddress: string) {
-    if (this.attempts > 10) {
+    if (this.attempts >= 10) {
       await this.move("archive")
       return
     }
