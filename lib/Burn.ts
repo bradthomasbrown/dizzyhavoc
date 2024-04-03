@@ -1,10 +1,10 @@
 import { z } from "https://deno.land/x/zod@v3.22.4/mod.ts";
 import { AIQ } from "https://cdn.jsdelivr.net/gh/bradbrown-llc/aiq@0.0.0/mod.ts";
-import { Ejra } from "https://cdn.jsdelivr.net/gh/bradbrown-llc/ejra@0.4.3-vertigo/mod.ts";
+import { Ejra } from "https://cdn.jsdelivr.net/gh/bradbrown-llc/ejra@0.4.5-vertigo/mod.ts";
 import {
   Log,
   Receipt,
-} from "https://cdn.jsdelivr.net/gh/bradbrown-llc/ejra@0.4.3-vertigo/types/mod.ts";
+} from "https://cdn.jsdelivr.net/gh/bradbrown-llc/ejra@0.4.5-vertigo/types/mod.ts";
 import { KvVertigo } from "https://cdn.jsdelivr.net/gh/bradbrown-llc/kvvertigo@0.0.2/mod.ts";
 import { KvBurn } from "./KvBurn.ts";
 import { Chain } from "./Chain.ts";
