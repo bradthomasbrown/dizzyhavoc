@@ -1,10 +1,10 @@
 import { AIQ } from "https://cdn.jsdelivr.net/gh/bradbrown-llc/aiq@0.0.0/mod.ts";
-import { Ejra } from "https://cdn.jsdelivr.net/gh/bradbrown-llc/ejra@0.4.2-vertigo/mod.ts";
+import { Ejra } from "https://cdn.jsdelivr.net/gh/bradbrown-llc/ejra@0.4.3-vertigo/mod.ts";
 import {
   Log,
   Receipt,
   TxCallObject,
-} from "https://cdn.jsdelivr.net/gh/bradbrown-llc/ejra@0.4.2-vertigo/types/mod.ts";
+} from "https://cdn.jsdelivr.net/gh/bradbrown-llc/ejra@0.4.3-vertigo/types/mod.ts";
 import { KvVertigo } from "https://cdn.jsdelivr.net/gh/bradbrown-llc/kvvertigo@0.0.2/mod.ts";
 import { KvFilter } from "./KvFilter.ts";
 import { Filter } from "./Filter.ts";
@@ -17,7 +17,7 @@ type EconomyConfiguration = {
 };
 
 export class Chain {
-  chainId: bigint;
+  chainId: number;
   entry: Deno.KvEntry<KvChain>;
   kvv: KvVertigo;
   ejra: Ejra;
@@ -30,7 +30,7 @@ export class Chain {
     ejra: Ejra,
     { err, out }: { err?: AIQ<Error>; out?: AIQ<string> } = {},
   ) {
-    this.chainId = entry.key[1] as bigint;
+    this.chainId = entry.key[1] as number;
     this.entry = entry;
     this.kvv = kvv;
     this.ejra = ejra;
@@ -128,7 +128,7 @@ export class Chain {
 
   static async active(
     kvv: KvVertigo,
-    chainId: bigint,
+    chainId: number,
   ): Promise<Error | boolean> {
     const entry = await kvv.get<KvChain>(["chains", chainId]);
     return entry instanceof Error ? entry : !!entry.versionstamp;

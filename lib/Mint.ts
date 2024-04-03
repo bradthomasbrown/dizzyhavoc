@@ -1,6 +1,6 @@
 import { AIQ } from "https://cdn.jsdelivr.net/gh/bradbrown-llc/aiq@0.0.0/mod.ts";
-import { Ejra } from "https://cdn.jsdelivr.net/gh/bradbrown-llc/ejra@0.4.2-vertigo/mod.ts";
-import { Receipt } from "https://cdn.jsdelivr.net/gh/bradbrown-llc/ejra@0.4.2-vertigo/types/mod.ts";
+import { Ejra } from "https://cdn.jsdelivr.net/gh/bradbrown-llc/ejra@0.4.3-vertigo/mod.ts";
+import { Receipt } from "https://cdn.jsdelivr.net/gh/bradbrown-llc/ejra@0.4.3-vertigo/types/mod.ts";
 import { KvVertigo } from "https://cdn.jsdelivr.net/gh/bradbrown-llc/kvvertigo@0.0.2/mod.ts";
 import { KvMint } from "./KvMint.ts";
 import { KvBurn } from "./KvBurn.ts";

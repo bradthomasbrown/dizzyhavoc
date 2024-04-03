@@ -9,7 +9,7 @@ const { bytesToHex } = etc;
 const { keccak256 } = jsSha3;
 
 type SignTxOpts = {
-  chainId: bigint;
+  chainId: number;
   nonce: bigint;
   gasPrice: bigint;
   gasLimit: bigint;

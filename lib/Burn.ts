@@ -1,10 +1,10 @@
 import { z } from "https://deno.land/x/zod@v3.22.4/mod.ts";
 import { AIQ } from "https://cdn.jsdelivr.net/gh/bradbrown-llc/aiq@0.0.0/mod.ts";
-import { Ejra } from "https://cdn.jsdelivr.net/gh/bradbrown-llc/ejra@0.4.2-vertigo/mod.ts";
+import { Ejra } from "https://cdn.jsdelivr.net/gh/bradbrown-llc/ejra@0.4.3-vertigo/mod.ts";
 import {
   Log,
   Receipt,
-} from "https://cdn.jsdelivr.net/gh/bradbrown-llc/ejra@0.4.2-vertigo/types/mod.ts";
+} from "https://cdn.jsdelivr.net/gh/bradbrown-llc/ejra@0.4.3-vertigo/types/mod.ts";
 import { KvVertigo } from "https://cdn.jsdelivr.net/gh/bradbrown-llc/kvvertigo@0.0.2/mod.ts";
 import { KvBurn } from "./KvBurn.ts";
 import { Chain } from "./Chain.ts";
@@ -19,7 +19,7 @@ export class Burn {
   chain: Chain;
   log: Log;
   hash: string;
-  destination: bigint;
+  destination: number;
   err?: AIQ<Error>;
   out?: AIQ<string>;
 
@@ -31,7 +31,7 @@ export class Burn {
     this.chain = chain;
     this.log = log;
     this.hash = log.transactionHash;
-    this.destination = z.string().transform(BigInt).parse(
+    this.destination = z.string().transform(a => Number(BigInt(a))).parse(
       `0x${log.data.slice(2, 2 + 64)}`,
     );
     this.err = err;

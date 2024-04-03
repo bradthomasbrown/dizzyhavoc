@@ -22,7 +22,7 @@ export function signRawTx({
   to?: string;
   value?: bigint;
   data?: string;
-  chainId: bigint;
+  chainId: number;
 }) {
   const rawTxArray = [
     nonce,
@@ -39,7 +39,7 @@ export function signRawTx({
   const rawTxHash = keccak256(rawTxEncoding);
   const { r, s, recovery } = signer.sign(rawTxHash);
   if (recovery === undefined) throw new Error("undefined recovery bit");
-  const v = chainId * 2n + 35n + BigInt(recovery);
+  const v = BigInt(chainId) * 2n + 35n + BigInt(recovery);
   const signedTxArray = [...rawTxArray.slice(0, 6), v, r, s];
   const signedTxBytes = encode(signedTxArray);
   const signedTx = `0x${bytesToHex(signedTxBytes)}`;

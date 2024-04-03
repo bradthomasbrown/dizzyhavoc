@@ -4,6 +4,6 @@ export type KvMint = {
   hash?: string;
   prevHash?: string;
   nonce?: bigint;
-  chainId: bigint;
+  chainId: number;
   burn: KvBurn;
 };
