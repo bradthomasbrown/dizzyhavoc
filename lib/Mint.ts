@@ -161,7 +161,7 @@ export class Mint {
         mintEntry.value.burn,
         {
           nonce: mintEntry.value.nonce,
-          attempts: mintEntry.value.attempts,
+          attempts: mintEntry.value.attempts ?? 0,
           hash: mintEntry.value.hash,
           prevHash: mintEntry.value.prevHash,
           out,
@@ -217,7 +217,7 @@ export class Mint {
     const oldPrevHash = this.prevHash
     this.prevHash = this.hash;
     this.hash = hash;
-    this.attempts = (this.attempts ?? 0) + 1
+    this.attempts++
     const moved = await this.move("finalizable");
     if (moved instanceof Error || moved === false) return moved;
     const result = await this.chain.send(signedTx);
@@ -301,7 +301,7 @@ export class Mint {
         nonce: mintEntry.value.nonce,
         prevHash: mintEntry.value.prevHash,
         hash: mintEntry.value.hash,
-        attempts: mintEntry.value.attempts,
+        attempts: mintEntry.value.attempts ?? 0,
         out,
         err,
       });
