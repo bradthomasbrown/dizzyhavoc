@@ -14,6 +14,7 @@ type MintState = "archive" | "sendable" | "finalizable" | "finalized" | null;
 type StageName = "scanner" | "finalizerB" | "minter" | "finalizerM";
 
 export class Mint {
+  attempts: number;
   chain: Chain;
   burn: KvBurn;
   recipient: string;
@@ -27,13 +28,14 @@ export class Mint {
   constructor(
     chain: Chain,
     kvBurn: KvBurn,
-    { nonce, hash, prevHash, out, err }: {
+    { nonce, hash, prevHash, attempts, out, err }: {
       nonce?: bigint;
+      attempts: number
       hash?: string;
       prevHash?: string;
       out?: AIQ<string>;
       err?: AIQ<Error>;
-    } = {},
+    } = { attempts: 0 },
   ) {
     this.chain = chain;
     this.burn = kvBurn;
@@ -44,6 +46,7 @@ export class Mint {
     this.prevHash = prevHash;
     this.out = out;
     this.err = err;
+    this.attempts = attempts
   }
 
   static async fromBurn(burn: Burn): Promise<Error | Mint> {
@@ -54,7 +57,7 @@ export class Mint {
       return new Error(`Mint.create: chain ${burn.destination} not active`);
     }
     const chain = new Chain(entry, kvv, ejra);
-    return new Mint(chain, burn.toJSON(), { err: burn.err, out: burn.out });
+    return new Mint(chain, burn.toJSON(), { attempts: 0, err: burn.err, out: burn.out });
   }
 
   async claim(processId: string): Promise<Error | boolean> {
@@ -123,6 +126,7 @@ export class Mint {
       hash: this.hash,
       prevHash: this.prevHash,
       nonce: this.nonce,
+      attempts: this.attempts
     };
   }
 
@@ -157,6 +161,7 @@ export class Mint {
         mintEntry.value.burn,
         {
           nonce: mintEntry.value.nonce,
+          attempts: mintEntry.value.attempts,
           hash: mintEntry.value.hash,
           prevHash: mintEntry.value.prevHash,
           out,
@@ -172,6 +177,10 @@ export class Mint {
   }
 
   async send(signer: Signer, tokenAddress: string) {
+    if (this.attempts > 10) {
+      await this.move("archive")
+      return
+    }
     const economyConfiguration = await this.chain.economyConfiguration();
     if (economyConfiguration instanceof Error) return economyConfiguration;
     const { gasLimitMultiplier, gasPriceMultiplier, baseFee } =
@@ -205,12 +214,20 @@ export class Mint {
       to,
     });
     this.nonce = nonce;
+    const oldPrevHash = this.prevHash
     this.prevHash = this.hash;
     this.hash = hash;
+    this.attempts = (this.attempts ?? 0) + 1
     const moved = await this.move("finalizable");
     if (moved instanceof Error || moved === false) return moved;
     const result = await this.chain.send(signedTx);
-    if (result instanceof Error) return result;
+    if (result instanceof Error) {
+      // try to set the hashes back if there's an error
+      this.hash = this.prevHash
+      this.prevHash = oldPrevHash
+      await this.move('finalizable')
+      return result
+    };
     return true;
   }
 
@@ -284,6 +301,7 @@ export class Mint {
         nonce: mintEntry.value.nonce,
         prevHash: mintEntry.value.prevHash,
         hash: mintEntry.value.hash,
+        attempts: mintEntry.value.attempts,
         out,
         err,
       });

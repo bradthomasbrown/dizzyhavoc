@@ -6,4 +6,5 @@ export type KvMint = {
   nonce?: bigint;
   chainId: number;
   burn: KvBurn;
+  attempts: number
 };
