@@ -177,7 +177,7 @@ export default function TokenSummary() {
                 </section>
               </div>
               <div
-                title="data from dexscreener, coingecko & poloniex."
+                title="data from dzhv & dexscreener apis"
                 class="bottom-1 unselectable dark:text-[#d2d2d2] text-[#6e6e6e] absolute left-1 text-[11px]"
               >
                 {count}
@@ -224,7 +224,7 @@ export default function TokenSummary() {
                 </section>
               </div>
               <div
-                title="data from dzhv, dexscreener & coingecko apis."
+                title="data from dzhv & dexscreener apis"
                 class="top-1 unselectable dark:text-[#d2d2d2] text-[#6e6e6e] absolute right-1 text-[8px]"
               >
                 {count}
