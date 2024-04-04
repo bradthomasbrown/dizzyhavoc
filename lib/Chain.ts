@@ -9,6 +9,7 @@ import { KvVertigo } from "https://cdn.jsdelivr.net/gh/bradbrown-llc/kvvertigo@0
 import { KvFilter } from "./KvFilter.ts";
 import { Filter } from "./Filter.ts";
 import { KvChain } from "./KvChain.ts";
+import { Mint } from "./Mint.ts";
 
 type EconomyConfiguration = {
   gasLimitMultiplier: [numerator: bigint, denominator: bigint];
@@ -165,17 +166,21 @@ export class Chain {
     return this.ejra.gasPrice(this.chainId);
   }
 
-  async nonce(): Promise<Error | bigint> {
+  async nonce(mint:Mint): Promise<Error | void> {
+    const kvMint = mint.toJSON()
     while (true) {
       const entry = await this.kvv.get<bigint>(["nonce", this.chainId]);
       if (entry instanceof Error) return entry;
       const nonce = entry.value ?? 0n;
+      kvMint.nonce = nonce
+      mint.nonce = nonce
       const result = await this.kvv.atomic()
         .check(entry)
         .set(["nonce", this.chainId], nonce + 1n)
+        .set(mint.entry!.key, kvMint)
         .commit();
       if (result instanceof Error) return result;
-      if (result.ok === true) return nonce;
+      if (result.ok === true) return;
     }
   }
 

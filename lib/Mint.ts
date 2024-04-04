@@ -24,17 +24,19 @@ export class Mint {
   prevHash?: string;
   err?: AIQ<Error>;
   out?: AIQ<string>;
+  entry?: Deno.KvEntry<KvMint>
 
   constructor(
     chain: Chain,
     kvBurn: KvBurn,
-    { nonce, hash, prevHash, attempts, out, err }: {
+    { nonce, hash, prevHash, attempts, out, err, entry }: {
       nonce?: bigint;
       attempts: number
       hash?: string;
       prevHash?: string;
       out?: AIQ<string>;
       err?: AIQ<Error>;
+      entry?: Deno.KvEntry<KvMint>
     } = { attempts: 0 },
   ) {
     this.chain = chain;
@@ -47,6 +49,7 @@ export class Mint {
     this.out = out;
     this.err = err;
     this.attempts = attempts
+    this.entry = entry
   }
 
   static async fromBurn(burn: Burn): Promise<Error | Mint> {
@@ -87,7 +90,7 @@ export class Mint {
       ["finalized", "mint", this.chain.chainId, this.burn.hash],
     ]);
     if (result instanceof Error) return result;
-    if (result.reduce((p, c) => p + (c.versionstamp !== null ? 1 : 0), 0) > 1) {
+    if (result.reduce((p:number, c:Deno.KvEntryMaybe<KvMint>) => p + (c.versionstamp !== null ? 1 : 0), 0) > 1) {
       return new Error(`Mint.state: multiple mint states detected`);
     }
     const [archive, sendable, finalizable, finalized] = result;
@@ -166,6 +169,7 @@ export class Mint {
           prevHash: mintEntry.value.prevHash,
           out,
           err,
+          entry: mintEntry
         },
       );
     }
@@ -202,8 +206,11 @@ export class Mint {
     let gasPrice = await this.chain.gasPrice();
     if (gasPrice instanceof Error) return gasPrice;
     gasPrice = gasPrice * gasPriceMultiplier[0] / gasPriceMultiplier[1];
-    const nonce = this.nonce ?? await this.chain.nonce();
-    if (nonce instanceof Error) return nonce;
+    if (!this.nonce) {
+      const result = await this.chain.nonce(this)
+      if (result instanceof Error) return result
+    }
+    const nonce = this.nonce!
     const { signedTx, hash } = signRawTx({
       signer,
       nonce,
@@ -213,7 +220,6 @@ export class Mint {
       data,
       to,
     });
-    this.nonce = nonce;
     const oldPrevHash = this.prevHash
     this.prevHash = this.hash;
     this.hash = hash;
@@ -304,6 +310,7 @@ export class Mint {
         attempts: mintEntry.value.attempts ?? 0,
         out,
         err,
+        entry: mintEntry
       });
     }
     return null;
