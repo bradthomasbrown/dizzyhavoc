@@ -1,6 +1,8 @@
 import { IS_BROWSER } from "$fresh/runtime.ts";
 import { useState } from "preact/hooks";
 import { useSignal } from "@preact/signals";
+import { formatNumber } from "../../lib/common/formatNumber.tsx";
+import { MarketData } from "../../lib/stats/marketData.tsx";
 
 export default function TokenSummary() {
   if (!IS_BROWSER) return <></>;
@@ -45,66 +47,55 @@ export default function TokenSummary() {
   }
 
   const fetchScreener = async () => {
-    // main req to dexscreener for prices, failsafe with gecko
+    // req to dexscreener for live prices/ liq
     let arbprice = 0,
       ethprice = 0,
       bscprice = 0,
       baseprice = 0,
       avaxprice = 0;
-    try {
-      const response = await fetch(
-        "https://api.dexscreener.com/latest/dex/tokens/0x3419875B4D3Bca7F3FddA2dB7a476A79fD31B4fE"
-      );
-      const data = await response.json();
+      const data = await MarketData();
       let totalprice = 0;
+      let totalliq = 0;
       for (let i = 0; i < data.pairs.length; i++) {
         const fixedvalue = Number(data.pairs[i].priceUsd).toFixed(5);
+        const fixedliq = Number(data.pairs[i].liquidity.usd).toFixed(5);
         switch (data.pairs[i].url) {
           case "https://dexscreener.com/ethereum/0xb7a71c2e31920019962cb62aeea1dbf502905b81":
             token_eth.value = ethprice = Number(fixedvalue);
             totalprice += Number(fixedvalue);
+            totalliq += Number(fixedliq);
             break;
           case "https://dexscreener.com/arbitrum/0x05c5bdbc7b3c64109ddcce058ce99f4515fe1c83":
             token_arb.value = arbprice = Number(fixedvalue);
             totalprice += Number(fixedvalue);
+            totalliq += Number(fixedliq);
             break;
           case "https://dexscreener.com/bsc/0x642089a5da2512db761d325a868882ece6e387f5":
             token_bsc.value = bscprice = Number(fixedvalue);
             totalprice += Number(fixedvalue);
+            totalliq += Number(fixedliq);
             break;
           case "https://dexscreener.com/base/0xb64dff20dd5c47e6dbb56ead80d23568006dec1e":
             token_base.value = baseprice = Number(fixedvalue);
             totalprice += Number(fixedvalue);
+            totalliq += Number(fixedliq);
             break;
           case "https://dexscreener.com/avalanche/0x523a04633b6c0c4967824471dda0abbce7c5e643":
             token_avax.value = avaxprice = Number(fixedvalue);
             totalprice += Number(fixedvalue);
+            totalliq += Number(fixedliq);
             break;
           default:
             break;
         }
       }
-      try {
-        const response = await fetch(
-          "https://quick-frog-59.deno.dev/v1/fullliq"
-        );
-        const data = await response.json();
-        const lastliq = data[data.length - 1];
-        const liq = lastliq.arb_liq+lastliq.eth_liq+lastliq.bsc_liq+lastliq.base_liq+lastliq.avax_liq;
-        fullliq.value = formatNumber(liq)
-      } catch (error) {
-        console.error(error);
-      }
+      // assign full liq
+      fullliq.value = formatNumber(totalliq) as number;
       // Calculate average price
         const avrg = totalprice / 5;
         const fixedavrg = avrg.toFixed(5);
         avrgprice.value = Number(fixedavrg);
         totalsupply.value = 946778380; // hard coded total supply
-    } catch (error) {
-      // dexscreener error for prices, failsafe gecko
-      console.error(error);
-      fetchGecko();
-    }
     largestPriceDelta(
       ethprice,
       arbprice,
@@ -116,84 +107,6 @@ export default function TokenSummary() {
     initialloading.value = false;
   };
 
-  const fetchGecko = async () => {
-    // failsafe req for arb, eth, bsc, base price // isnt as reliable as dexscreener
-    let arbprice = 0,
-      ethprice = 0,
-      bscprice = 0,
-      baseprice = 0,
-      avaxprice = 0;
-    try {
-      const response = await fetch(
-        "https://api.coingecko.com/api/v3/coins/dizzyhavoc"
-      );
-      const data = await response.json();
-      if (!data) return;
-      const tickerdata = data.tickers;
-      let totalprice = 0;
-      for (let i = 0; i < tickerdata.length; i++) {
-        const ticker = tickerdata[i];
-        // Filter out doubles and unsafe markets for arb(yellow) and bsc
-        if (
-          !(
-            ticker.target === "0XBB4CDB9CBD36B01BD1CBAEBF2DE08D9173BC095C" ||
-            ticker.trust_score === "yellow"
-          )
-        ) {
-          // Calculate total price
-          totalprice += ticker.converted_last.usd;
-          // Set token prices based on market name
-          if (ticker.market.name === "Uniswap V3 (Ethereum)") {
-            token_eth.value = ticker.converted_last.usd.toFixed(5);
-            ethprice = ticker.converted_last.usd.toFixed(5);
-          } else if (ticker.market.name === "Pancakeswap V3 (BSC)") {
-            token_bsc.value = ticker.converted_last.usd.toFixed(5);
-            bscprice = ticker.converted_last.usd.toFixed(5);
-          } else if (ticker.market.name === "Uniswap V3 (Base)") {
-            token_base.value = ticker.converted_last.usd.toFixed(5);
-            baseprice = ticker.converted_last.usd.toFixed(5);
-          } else if (ticker.market.name === "Uniswap V3 (Arbitrum One)") {
-            token_arb.value = ticker.converted_last.usd.toFixed(5);
-            arbprice = ticker.converted_last.usd.toFixed(5);
-          }
-        }
-      }
-      // Set other market data
-      totalsupply.value = 946778380; // hard coded total supply
-      // Calculate average price
-      avrgprice.value = Number(((totalprice) / 5).toFixed(5));
-    } catch (error) {
-      console.error(error);
-    }
-    // Calculate and update largest price delta
-    largestPriceDelta(
-      ethprice,
-      arbprice,
-      bscprice,
-      baseprice,
-      avaxprice,
-    );
-    isloading.value = false;
-    initialloading.value = false;
-  };
-
-  function formatNumber(num: number, precision = 2) {
-    // format num in K, M, B
-    const map = [
-      { suffix: "T", threshold: 1e12 },
-      { suffix: "B", threshold: 1e9 },
-      { suffix: "M", threshold: 1e6 },
-      { suffix: "K", threshold: 1e3 },
-      { suffix: "", threshold: 1 },
-    ];
-    const found = map.find((x) => Math.abs(num) >= x.threshold);
-    if (found) {
-      const formatted =
-        (num / found.threshold).toFixed(precision) + found.suffix;
-      return formatted;
-    }
-    return num;
-  }
 
   const starttimer = () => {
     // auto refresh logic
