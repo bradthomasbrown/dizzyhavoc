@@ -3,11 +3,7 @@ import { useState } from "preact/hooks";
 import { useSignal } from "@preact/signals";
 import { formatNumber } from "../../lib/common/formatNumber.tsx";
 import { MarketData } from "../../lib/stats/marketData.tsx";
-import EthChart from "./charts/ethchart.tsx";
-import ArbChart from "./charts/arbchart.tsx";
-import AvaxChart from "./charts/avaxchart.tsx";
-import BaseChart from "./charts/basechart.tsx";
-import BscChart from "./charts/bscchart.tsx";
+import { EthChart, ArbChart, AvaxChart, BaseChart, BscChart } from "./charts/mod.ts";
 export default function MarketBars() {
   if (!IS_BROWSER) return <></>;
   const initialloading = useSignal<boolean>(true);
@@ -155,14 +151,14 @@ export default function MarketBars() {
         count.value = x; // Update the progress value
       } else {
         getPrices();
-        clearInterval(intervalId); // Stop the interval when x reaches 100
+        clearInterval(intervalId); // Stop the interval when x reaches 30
         starttimer();
       }
     }, 1000);
   };
 
   useState(() => {
-    // on load fetch data and start timer
+    // on load, fetch data and start timer
     getPrices();
     starttimer();
   });

@@ -5,7 +5,7 @@ import { IS_BROWSER } from "$fresh/runtime.ts";
 import { useSignal } from "@preact/signals";
 import { useState } from "preact/hooks";
 
-export default function AvaxChart() {
+export function AvaxChart() {
   if (!IS_BROWSER) return <></>;
   const fetchedData = useSignal([]);
   const isLoading = useSignal(true);
