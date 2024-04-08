@@ -23,7 +23,8 @@ export default function Home() {
           className="absolute hidden top-0 z-[-10] left-0 w-[25%]"
           src="/misc/dzhv.png"
           alt="dizzyhavoc eye"
-        ></img>
+        >
+        </img>
       </div>
     </>
   );
