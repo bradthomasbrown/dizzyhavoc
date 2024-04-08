@@ -9,7 +9,7 @@ export default function Animated() {
       </div>
       <div class="flex flex-col h-screen justify-start sm:justify-center items-center">
         <div class="w-full flex justify-center">
-          <div class="flex flex-col mt-[13rem] sm:mt-0 items-center">
+          <div class="flex flex-col mt-[13rem] items-center">
             <div class="absolute min-w-full">
               <div class="w-full z-[10] shadow-xl">
                 <p class="font-medium font-[Poppins] unselectable z-10 w-full tracking-tighter italic absolute text-[1.5rem] sm:text-[2.3rem] text-center dark:text-[#d2d2d2] text-[#3d3d3d] px-2">

@@ -36,7 +36,7 @@ export default function EthChart() {
     datasets: [
       {
         data: fetchedData.value.map((item) => item.eth_price),
-        borderColor: "#b8b8b8", // set the color of the line
+        borderColor: "#999999", // set the color of the line
         pointRadius: 1, // Set the radius of the points
         borderWidth: 2, // Set the width of the line
         tension: 0.1,

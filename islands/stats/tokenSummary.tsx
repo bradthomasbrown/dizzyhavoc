@@ -132,8 +132,8 @@ export default function TokenSummary() {
     <>
       {initialloading.value
         ? ( // no data : display loader
-          <div class="sm:w-[400px] w-[320px] shadow-lg px-0 relative 2xl:px-3 h-full justify-center items-center rounded-lg gap-0 xl:gap-3 flex flex-col">
-            <img src="./misc/loader.svg"></img>
+          <div class="sm:w-[400px] w-[320px] bg-blur3 shadow-lg px-0 relative 2xl:px-3 h-full justify-center items-center rounded-lg gap-0 xl:gap-3 flex flex-col">
+            <img class="size-[50px]" src="./misc/loader.svg"></img>
           </div>
         )
         : isloading.value
@@ -141,7 +141,7 @@ export default function TokenSummary() {
           <>
             <div class="shadow-lg px-3 h-full sm:w-[400px] w-[320px] justify-center relative  rounded-lg gap-0 xl:gap-1 bg-blur3 flex flex-col">
               <div class="w-full shadow-lg px-0 absolute bottom-0 right-0 z-50 2xl:px-3 h-full justify-center items-center rounded-lg gap-0 xl:gap-3 dark:bg-[#212121B3] bg-[#e8e8e8B3] flex flex-col">
-                <img src="./misc/loader.svg"></img>
+                <img class="size-[50px]" src="./misc/loader.svg"></img>
               </div>
               <div class="flex flex-row mx-auto justify-center gap-6">
                 <section class="rounded flex flex-col">
