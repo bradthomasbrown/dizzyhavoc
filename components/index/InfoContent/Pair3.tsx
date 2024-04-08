@@ -42,22 +42,23 @@ return(
             {content5}
           </li>
           <h1 class="text-lg mt-7 dark:sm:font-normal sm:font-medium tracking-tight font-normal dark:font-light">
-            <a
-              href="/info/litepaper.pdf"
-              target="_blank"
-              class="text-[#3b2d82] dark:text-[#ccb286] bold"
-            >
-              Litepaper
-            </a>
-          </h1>
-          <h1 class="text-lg mt-2 dark:sm:font-normal sm:font-medium tracking-tight font-normal dark:font-light">
-          Further details, such as tokenomics and user guide, can be found{" "}
+          Further details, such as tokenomics and user guide, can be found on{" "}
             <a
               href="https://dizzyhavoc.gitbook.io/dizzyhavoc"
               target="_blank"
               class="text-[#3b2d82] dark:text-[#ccb286] bold"
             >
-              here
+              gitbook.
+            </a>
+          </h1>
+          <h1 class="text-lg mt-2 dark:sm:font-normal sm:font-medium tracking-tight font-normal dark:font-light">
+           The litepaper is available{" "}
+            <a
+              href="/info/litepaper.pdf"
+              target="_blank"
+              class="text-[#3b2d82] dark:text-[#ccb286] bold"
+            >
+            here.
             </a>
           </h1>
         </ul>
