@@ -2,7 +2,7 @@ export default function Footer() {
   return (
     <footer
       id="footer"
-      class="mt-8 sm:h-[230px] h-[100px] bg-[#ededed] dark:bg-[#191919] border dark:border-1 border-1 dark:border-t-[#ededed18] dark:border-b-transparent border-b-transparent dark:border-s-transparent border-s-transparent dark:border-e-transparent border-e-transparent border-t-[#19191918] w-full flex flex-row gap-4 justify-center"
+      class="mt-8 sm:h-[230px] h-[100px] bg-[#ededed] dark:bg-[#101010] border dark:border-1 border-1 dark:border-t-[#ededed18] dark:border-b-transparent border-b-transparent dark:border-s-transparent border-s-transparent dark:border-e-transparent border-e-transparent border-t-[#19191918] w-full flex flex-row gap-4 justify-center"
     >
       <div class="flex flex-col gap-4 justify-center">
         <div class="flex items-center gap-8">

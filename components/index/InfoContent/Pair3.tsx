@@ -11,7 +11,7 @@ export default function Pair3(){
 
 return(
     <div class="md:flex-row w-full gap-5 justify-center sm:mt-[5rem] mt-9 flex-col flex">
-    <div class="flex flex-row p-9 sm:size-[450px] size-full dark:text-[#d2d2d2] text-[#3d3d3d] h-[100%] rounded-xl shadow-lg dark:bg-blur4 bg-blur2">
+    <div class="flex flex-row p-9 sm:size-[450px] size-full dark:text-[#d2d2d2] text-[#3d3d3d] h-[100%] rounded-xl shadow-lg bg-blur2">
       <div class="flex flex-col">
         <h1 class="sm:text-3xl text-2xl font-[Poppins]">
           What would be its impact?
@@ -29,7 +29,7 @@ return(
         </ul>
       </div>
     </div>
-    <div class="flex flex-row sm:size-[450px] size-full sm:mt-0 gap-5 mt-8 p-9 dark:text-[#d2d2d2] text-[#3d3d3d] h-[100%] rounded-xl shadow-lg dark:bg-blur4 bg-blur2">
+    <div class="flex flex-row sm:size-[450px] size-full sm:mt-0 gap-5 mt-8 p-9 dark:text-[#d2d2d2] text-[#3d3d3d] h-[100%] rounded-xl shadow-lg bg-blur2">
       <div class="flex flex-col">
         <h1 class="sm:text-3xl text-2xl font-[Poppins]">
           What to expect next?

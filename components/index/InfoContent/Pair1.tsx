@@ -6,7 +6,7 @@ export default function Pair1(){
     return(
         <>
         <div class="md:flex-row w-full gap-5 justify-center items-center mx-auto sm:mx-0 flex-col flex">
-        <div class="flex flex-row p-9 sm:size-[450px] size-full dark:text-[#d2d2d2] text-[#3d3d3d] h-full rounded-xl shadow-lg dark:bg-blur4 bg-blur2 sm:flex-col">
+        <div class="flex flex-row p-9 sm:size-[450px] size-full dark:text-[#d2d2d2] text-[#3d3d3d] h-full rounded-xl shadow-lg bg-blur2 sm:flex-col">
           <div class="flex flex-col">
             <ul>
               <h1 class="sm:text-3xl text-2xl font-[Poppins]">
@@ -19,7 +19,7 @@ export default function Pair1(){
             </ul>
           </div>
         </div>
-        <div class="flex flex-row p-4 mt-7 sm:mt-0 sm:size-[450px] size-[320px] dark:text-[#d2d2d2] text-[#3d3d3d] rounded-xl shadow-lg dark:bg-blur4 bg-blur2">
+        <div class="flex flex-row p-4 mt-7 sm:mt-0 sm:size-[450px] size-[320px] dark:text-[#d2d2d2] text-[#3d3d3d] rounded-xl shadow-lg bg-blur2">
           <div class="w-full h-full">
             <div
               class="size-[100%] rounded-lg dark:bg-[url('/info/darksolvsbytecode.png')] bg-[url('/info/solvsbytecode.png')]"

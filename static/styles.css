@@ -72,8 +72,8 @@ user-select: none; /* Standard */
       background: #191919; /* Fallback color for browsers that don't support gradients */
       background: linear-gradient(
         to bottom,
-        #191919,
-        #1e1e1e
+        #101010,
+        #171717
       ); /* Gradient definition */
       transform: perspective(10px) rotateX(1deg);
     }
@@ -86,7 +86,7 @@ user-select: none; /* Standard */
 .bg-blur2{
   -webkit-backdrop-filter: blur(4px);
   backdrop-filter: blur(4px);
-  background: #34343432 no-repeat padding-box;
+  background: #19191932 no-repeat padding-box;
 }
 .bg-blur3 {
   -webkit-backdrop-filter: blur(4px);
