@@ -5,7 +5,7 @@ export default function Available() {
         Available on:
         <br />
       </p>
-      <div class="flex flex-row mt-6 gap-8 justify-center">
+      <div class="flex flex-row mt-6 gap-8 sm:scale-100 scale-75 justify-center">
         <a
           target="_blank"
           href="https://etherscan.io/address/0x3419875b4d3bca7f3fdda2db7a476a79fd31b4fe"
