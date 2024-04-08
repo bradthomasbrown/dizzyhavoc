@@ -41,7 +41,7 @@ return(
           <li class="text-xl mt-2 dark:sm:font-normal sm:font-normal font-normal dark:font-light">
             {content5}
           </li>
-          <h1 class="text-xl mt-7 dark:sm:font-normal sm:font-medium tracking-tight font-normal dark:font-light">
+          <h1 class="text-lg mt-7 dark:sm:font-normal sm:font-medium tracking-tight font-normal dark:font-light">
             <a
               href="/info/litepaper.pdf"
               target="_blank"
@@ -50,7 +50,7 @@ return(
               Litepaper
             </a>
           </h1>
-          <h1 class="text-xl mt-2 dark:sm:font-normal sm:font-medium tracking-tight font-normal dark:font-light">
+          <h1 class="text-lg mt-2 dark:sm:font-normal sm:font-medium tracking-tight font-normal dark:font-light">
           Further details, such as tokenomics and user guide, can be found{" "}
             <a
               href="https://dizzyhavoc.gitbook.io/dizzyhavoc"

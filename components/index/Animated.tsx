@@ -1,5 +1,3 @@
-import Stars from "./Animations/stars.tsx";
-import Waves from "./Animations/waves.tsx";
 export default function Animated() {
   return (
     <div>
