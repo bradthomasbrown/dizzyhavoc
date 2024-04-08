@@ -1,15 +1,12 @@
 export default function Animated() {
   return (
     <div>
-      <div class="absolute h-screen border-transparent lg:border-[#595959] border-2 lg:border-t-transparent lg:border-e-transparent lg:border-s-transparent border-t-transparent border-e-transparent border-s-transparent w-full overflow-hidden -z-10 top-[4.5rem] sm:top-0">
-
-      </div>
-      <div class="flex flex-col h-screen justify-start sm:justify-center items-center">
+      <div class="flex flex-col h-screen justify-start sm:justify-center items-center border-transparent lg:border-[#595959] border-2 lg:border-t-transparent lg:border-e-transparent lg:border-s-transparent border-t-transparent border-e-transparent border-s-transparent">
         <div class="w-full flex justify-center">
           <div class="flex flex-col mt-[25rem] items-center">
             <div class="absolute min-w-full">
               <div class="w-full z-[10] shadow-xl">
-                <p class="font-medium font-[Poppins] unselectable z-10 w-full tracking-tighter italic absolute text-[1.5rem] sm:text-[2.3rem] text-center dark:text-[#d2d2d2] text-[#3d3d3d] px-2">
+                <p class="font-medium font-[Poppins] unselectable z-10 w-full tracking-tighter italic absolute text-[1.5rem] sm:text-[2.3rem] text-center dark:text-[#d2d2d2] text-[#3d3d3d] px-2 ">
                   Upgradeable, machine-coded*, multi-chain, DeFi/GameFi
                   ecosystem.
                 </p>

@@ -18,7 +18,7 @@ export default function Info() {
   mx-auto
   font-[Poppins]
   mt-[2rem]
-  sm:mt-[0.5rem]
+  sm:mt-[2.5rem]
   py-3
   bg-transparent
   lg:max-w-[32rem]

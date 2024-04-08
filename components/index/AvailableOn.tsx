@@ -12,7 +12,7 @@ export default function Available() {
         >
           <img
             src="/chains/eth.svg"
-            class="size-[60px] pl-4 hover:scale-[105%]"
+            class="h-[60px] hover:scale-[105%]"
             title="ethereum"
             alt="ethereum"
           />
