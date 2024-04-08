@@ -4,8 +4,7 @@ export default function Animated() {
   return (
     <div>
       <div class="absolute h-screen border-transparent lg:border-[#595959] border-2 lg:border-t-transparent lg:border-e-transparent lg:border-s-transparent border-t-transparent border-e-transparent border-s-transparent w-full overflow-hidden -z-10 top-[4.5rem] sm:top-0">
-        <Stars />
-        <Waves />
+
       </div>
       <div class="flex flex-col h-screen justify-start sm:justify-center items-center">
         <div class="w-full flex justify-center">
