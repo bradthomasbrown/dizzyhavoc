@@ -73,7 +73,7 @@ user-select: none; /* Standard */
       background: linear-gradient(
         to bottom,
         #191919,
-        #262626
+        #1e1e1e
       ); /* Gradient definition */
       transform: perspective(10px) rotateX(1deg);
     }
