@@ -1,11 +1,11 @@
-import Animated from "../components/index/Animated.tsx";
+import Landing from "../components/index/Landing.tsx";
 import Info from "../components/index/Info.tsx";
 export default function Home() {
   return (
     <>
       <div class="w-full h-full flex justify-center sm:mb-[230px] mb-[100px]">
         <div class="w-full h-full">
-          <Animated />
+          <Landing />
           <Info />
         </div>
         <div class="absolute lg:top-4 top-[4.8rem] z-20 left-1 sm:left-4">
