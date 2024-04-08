@@ -28,7 +28,7 @@ user-select: none; /* Standard */
   }
   .trapeze {
     color: white;
-    height: 50px;
+    height: 35px;
     background: rgb(
       163,
       163,
@@ -68,7 +68,7 @@ user-select: none; /* Standard */
 
     .trapeze {
       color: #191919;
-      height: 50px;
+      height: 35px;
       background: #191919; /* Fallback color for browsers that don't support gradients */
       background: linear-gradient(
         to bottom,

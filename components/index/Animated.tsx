@@ -6,19 +6,19 @@ export default function Animated() {
           <div class="flex flex-col mt-[25rem] items-center">
             <div class="absolute min-w-full">
               <div class="w-full z-[10] shadow-xl">
-                <p class="font-medium font-[Poppins] unselectable z-10 w-full tracking-tighter italic absolute text-[1.5rem] sm:text-[2.3rem] text-center dark:text-[#d2d2d2] text-[#3d3d3d] px-2 ">
+                <p class="font-medium font-[Poppins] unselectable z-10 w-full tracking-tighter absolute text-[1.5rem] sm:text-[2rem] text-center dark:text-[#d2d2d2] text-[#3d3d3d] px-2 ">
                   Upgradeable, machine-coded*, multi-chain, DeFi/GameFi
                   ecosystem.
                 </p>
               </div>
               <div
-                class="trapeze invisible lg:visible mt-4 sm:max-w-[73rem] max-w-[70%] mx-auto z-[-10] shadow-lg"
+                class="trapeze invisible lg:visible mt-5 sm:max-w-[66rem] max-w-[70%] mx-auto z-[-10] shadow-lg"
                 id="trapeze"
               >
               </div>
             </div>
             <a
-              class="font-medium font-[Poppins] z-10 tracking-tighter sm:mt-[7.5rem] mt-[7.5rem] text-[1.1rem] sm:text-[1.7rem] text-center dark:text-[#d2d2d2] text-[#3d3d3d]"
+              class="font-medium font-[Poppins] z-10 tracking-tighter sm:mt-[4.5rem] mt-[7.5rem] text-[1.1rem] sm:text-[1.7rem] text-center dark:text-[#d2d2d2] text-[#3d3d3d]"
               href="#info"
             >
               <div class="cursor-pointer unselectable text-[#3b2d82] dark:text-[#ccb286] hover:scale-[105%]">
