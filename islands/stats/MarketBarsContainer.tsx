@@ -176,7 +176,7 @@ export default function MarketBarsContainer() {
             <img src="./misc/loader.svg"></img>
           </div>
         )
-        : ( // loaded bar
+        : ( // loaded bars
           <div class="w-full flex flex-col gap-2">
             <div
               style={{ order: ethorder != null ? -ethorder : 0 }}
