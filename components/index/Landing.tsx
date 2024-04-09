@@ -1,4 +1,4 @@
-import Screen from "./LandingElements/Screen.tsx";
+import Screen from "../../islands/index/Screen.tsx";
 import Tagline from "./LandingElements/Tagline.tsx"
 export default function Landing() {
   return (
