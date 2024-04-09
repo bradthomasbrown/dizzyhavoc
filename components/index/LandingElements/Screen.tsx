@@ -1,5 +1,5 @@
-import Stars from "./Stars.tsx";
-import Vertigo from "./Vertigo.tsx";
+import Stars from "./Animations/Stars.tsx";
+import Vertigo from "./ScreenItems/Vertigo.tsx";
 export default function Screen() {
   return (
     <div class="h-[65%] w-[99%] sm:mt-5 mt-0">
