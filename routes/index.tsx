@@ -8,7 +8,7 @@ export default function Home() {
           <Landing />
           <Info />
         </div>
-        <div class="absolute lg:top-4 top-[4.8rem] z-20 left-1 sm:left-4">
+        <div class="absolute lg:top-4 top-[4.7rem] z-20 left-1 sm:left-4">
           <a
             class="bottom-0"
             target="_blank"

@@ -56,6 +56,11 @@ user-select: none; /* Standard */
     backdrop-filter: blur(4px);
     background: #ededede0 no-repeat padding-box;
   }
+  .bg-blur4 {
+    -webkit-backdrop-filter: blur(4px);
+    backdrop-filter: blur(4px);
+    background: #a1a1a11f no-repeat padding-box;
+  }
 }
 
 
@@ -91,7 +96,12 @@ user-select: none; /* Standard */
 .bg-blur3 {
   -webkit-backdrop-filter: blur(4px);
   backdrop-filter: blur(4px);
-  background: #2c2c2c32 no-repeat padding-box;
+  background: #12121232 no-repeat padding-box;
+}
+.bg-blur4 {
+  -webkit-backdrop-filter: blur(4px);
+  backdrop-filter: blur(4px);
+  background: #0c0c0cb3 no-repeat padding-box;
 }
 stars-container {
   position: absolute;
