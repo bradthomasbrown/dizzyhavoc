@@ -96,7 +96,7 @@ user-select: none; /* Standard */
 .bg-blur3 {
   -webkit-backdrop-filter: blur(4px);
   backdrop-filter: blur(4px);
-  background: #12121232 no-repeat padding-box;
+  background: #2c2c2c32 no-repeat padding-box;
 }
 .bg-blur4 {
   -webkit-backdrop-filter: blur(4px);
