@@ -10,13 +10,13 @@ export default function Screen() {
   
   if (!IS_BROWSER) return null;
   const [currentItemIndex, setCurrentItemIndex] = useState(0);
-  const [timer, setTimer] = useState(9);
+  const [timer, setTimer] = useState(10);
   useEffect(() => {
     const interval = setInterval(() => {
       setTimer((prevTimer) => {
         if (prevTimer == 0) {
           setCurrentItemIndex((prevIndex) => (prevIndex + 1) % items.length);
-          return 9; // Reset to 10seconds when timer reaches 0
+          return 10; // Reset to 10seconds when timer reaches 0
         } else {
           return prevTimer - 1;
         }
