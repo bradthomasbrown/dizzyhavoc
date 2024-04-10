@@ -1,6 +1,6 @@
 export default function Tagline() {
   return (
-    <div class="flex w-full sm:mt-7 mt-[10svh] flex-col justify-center items-center">
+    <div class="flex w-full sm:mt-7 mt-[10dvh] flex-col justify-center items-center">
       <div class="absolute min-w-full">
         <div class="w-full z-[10] shadow-xl">
           <p class="font-medium font-[Poppins] sm:mt-7 mt-0 unselectable z-10 w-full tracking-tighter absolute text-[1.3rem] sm:text-[2rem] text-start sm:text-center dark:text-[#d2d2d2] text-[#3d3d3d] px-2 ">
