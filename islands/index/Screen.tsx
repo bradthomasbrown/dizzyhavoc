@@ -13,22 +13,17 @@ export default function Screen() {
   const [timer, setTimer] = useState(9);
   useEffect(() => {
     const interval = setInterval(() => {
-      setCurrentItemIndex((prevIndex) => (prevIndex + 1) % items.length);
-    }, 10000); // cycle every 10 seconds
-  
-    const interval2 = setInterval(() => {
       setTimer((prevTimer) => {
         if (prevTimer == 0) {
+          setCurrentItemIndex((prevIndex) => (prevIndex + 1) % items.length);
           return 9; // Reset to 10 when timer reaches 0
         } else {
-          return prevTimer - 1; // Countdown from current value
+          return prevTimer - 1;
         }
-      });
-    }, 1000);
-  
+      })
+    }, 1000); // cycle every 10 seconds
     return () => {
       clearInterval(interval);
-      clearInterval(interval2); // Clear the countdown interval
     };
   }, []);
 
