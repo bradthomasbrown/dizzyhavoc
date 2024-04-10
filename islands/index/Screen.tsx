@@ -23,7 +23,6 @@ export default function Screen() {
             setCurrentItemIndex((prevIndex) => (prevIndex + 1) % items.length);
             return 0;
           } else {
-            console.log(prevTimer + 0.1);
             return prevTimer + 0.1;
           }
         });
