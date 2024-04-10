@@ -42,7 +42,7 @@ export default function Screen() {
         onClick={handleScreenClick}
         className="sm:min-h-[45rem] sm:max-h-[45rem] min-h-[80svh] max-h-[80svh] relative sm:w-[75%] w-full sm:mt-2 mt-0 sm:p-5 p-0 justify-center mx-auto overflow-hidden rounded-lg shadow-inner shadow-[#d6d6d6] dark:shadow-[#141414] bg-blur4"
       >
-        <div class="bottom-[2px] px-[4px] absolute left-0 bg-blur3 items-center justify-center rounded-xl h-[1px] w-full">
+        <div class="bottom-1 px-[4px] absolute left-0 bg-blur3 items-center justify-center rounded-xl h-[1px] w-full">
           <div
             class="h-[1px] bg-[#3d3d3d] dark:bg-[#d0d0d0] rounded-xl"
             style={`width: ${timer}%`}
