@@ -5,11 +5,9 @@
 ::-webkit-scrollbar {
   width: 6px; /* width of the entire scrollbar */
 }
-
 ::-webkit-scrollbar-track {
   background: #17182c00; /* color of the tracking area */
 }
-
 .unselectable{
 -webkit-user-select: none; /* Safari */        
 -moz-user-select: none; /* Firefox */
@@ -18,6 +16,45 @@ user-select: none; /* Standard */
 }
 #chart {
   max-width: 650px;
+}
+.vignets {
+    
+  animation: fadein 1s;
+  -moz-animation: fadein 1s; /* Firefox */
+  -webkit-animation: fadein 1s; /* Safari & Chrome */
+  -o-animation: fadein 1s; /* Opera */
+}
+@keyframes fadein {
+  from {
+      opacity:0;
+  }
+  to {
+      opacity:1;
+  }
+}
+@-moz-keyframes fadein {
+  from {
+      opacity:0;
+  }
+  to {
+      opacity:1;
+  }
+}
+@-webkit-keyframes fadein {
+  from {
+      opacity:0;
+  }
+  to {
+      opacity:1;
+  }
+}
+@-o-keyframes fadein {
+  from {
+      opacity:0;
+  }
+  to {
+      opacity: 1;
+  }
 }
 
 @media (prefers-color-scheme: light) {
