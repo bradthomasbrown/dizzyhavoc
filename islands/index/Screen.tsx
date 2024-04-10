@@ -31,7 +31,7 @@ export default function Screen() {
 
   return (
     <div className="h-[65%] w-[99%] sm:mt-5 mt-0">
-      <div className="sm:h-[90%] h-[80dvh] relative sm:w-[75%] w-full sm:mt-2 mt-0 sm:p-5 p-0 justify-center mx-auto overflow-hidden rounded-lg shadow-inner shadow-[#d6d6d6] dark:shadow-[#141414] bg-blur4">
+      <div className="sm:h-[90%] h-[80svh] relative sm:w-[75%] w-full sm:mt-2 mt-0 sm:p-5 p-0 justify-center mx-auto overflow-hidden rounded-lg shadow-inner shadow-[#d6d6d6] dark:shadow-[#141414] bg-blur4">
         <div class="bottom-[2px] px-[4px] absolute left-0 bg-blur3 items-center justify-center rounded-xl h-[1px] w-full">
           <div
             class="h-[1px] bg-[#3d3d3d] dark:bg-[#d0d0d0] rounded-xl"
