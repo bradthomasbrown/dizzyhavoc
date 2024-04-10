@@ -16,12 +16,12 @@ export default function Screen() {
       setTimer((prevTimer) => {
         if (prevTimer == 0) {
           setCurrentItemIndex((prevIndex) => (prevIndex + 1) % items.length);
-          return 9; // Reset to 10 when timer reaches 0
+          return 9; // Reset to 10seconds when timer reaches 0
         } else {
           return prevTimer - 1;
         }
       })
-    }, 1000); // cycle every 10 seconds
+    }, 1000); // cycle every second
     return () => {
       clearInterval(interval);
     };
