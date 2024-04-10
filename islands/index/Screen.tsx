@@ -1,5 +1,6 @@
 import { useEffect, useState } from "preact/hooks";
 import { IS_BROWSER } from "$fresh/runtime.ts";
+import Tagline from "../../components/index/LandingElements/Tagline.tsx";
 import Stars from "../../components/index/LandingElements/Animations/Stars.tsx";
 import Vertigo from "../../components/index/LandingElements/ScreenItems/Vertigo.tsx";
 import Mayhem from "../../components/index/LandingElements/ScreenItems/Mayhem.tsx";
@@ -39,7 +40,7 @@ export default function Screen() {
     <div className="h-[65%] w-[99%] sm:mt-5 mt-0">
       <div
         onClick={handleScreenClick}
-        className="sm:h-[90%] h-[80svh] relative sm:w-[75%] w-full sm:mt-2 mt-0 sm:p-5 p-0 justify-center mx-auto overflow-hidden rounded-lg shadow-inner shadow-[#d6d6d6] dark:shadow-[#141414] bg-blur4"
+        className="sm:min-h-[45rem] sm:max-h-[45rem] min-h-[80svh] max-h-[80svh] relative sm:w-[75%] w-full sm:mt-2 mt-0 sm:p-5 p-0 justify-center mx-auto overflow-hidden rounded-lg shadow-inner shadow-[#d6d6d6] dark:shadow-[#141414] bg-blur4"
       >
         <div class="bottom-[2px] px-[4px] absolute left-0 bg-blur3 items-center justify-center rounded-xl h-[1px] w-full">
           <div
@@ -49,6 +50,7 @@ export default function Screen() {
           </div>
         </div>
         <CurrentItem />
+        <Tagline />
         <Stars />
       </div>
     </div>

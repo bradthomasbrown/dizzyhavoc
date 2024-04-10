@@ -1,4 +1,3 @@
-import Available from "./AvailableOn.tsx";
 import Pair1 from "../index/InfoContent/Pair1.tsx";
 import Pair2 from "../index/InfoContent/Pair2.tsx";
 import Pair3 from "../index/InfoContent/Pair3.tsx";
@@ -34,9 +33,6 @@ export default function Info() {
         <Pair1 />
         <Pair2 />
         <Pair3 />
-        <div class="flex scale-75 mx-auto justify-center sm:mt-0 bottom-5">
-          <Available />
-        </div>
       </div>
     </>
   );
