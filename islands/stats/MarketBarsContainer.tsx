@@ -178,8 +178,7 @@ export default function MarketBarsContainer() {
         )
         : ( // loaded bars
           <div class="w-full flex flex-col gap-2">
-            <div
-              style={{ order: ethorder != null ? -ethorder : 0 }}
+            <div style={{ order: ethorder != null ? -ethorder : 0 }}
               class="w-full relative shadow-lg flex h-[7rem] sm:h-[9rem] rounded-lg gap-3 bg-blur3"
             >
               {/* ETH MarketBar */}
@@ -203,8 +202,7 @@ export default function MarketBarsContainer() {
                 tx_eth={tx_eth}
               />
             </div>
-            <div
-              style={{ order: arborder != null ? -arborder : 0 }}
+            <div style={{ order: arborder != null ? -arborder : 0 }}
               class="w-full relative shadow-lg flex h-[7rem] sm:h-[9rem] rounded-lg gap-3 bg-blur3"
             >
               {/* Arb MarketBar */}
@@ -228,8 +226,7 @@ export default function MarketBarsContainer() {
                 tx_arb={tx_arb}
               />
             </div>
-            <div
-              style={{ order: avaxorder != null ? -avaxorder : 0 }}
+            <div style={{ order: avaxorder != null ? -avaxorder : 0 }}
               class="w-full relative shadow-lg flex h-[7rem] sm:h-[9rem] rounded-lg gap-3 bg-blur3"
             >
               {/* Avax MarketBar */}
@@ -253,8 +250,7 @@ export default function MarketBarsContainer() {
                 tx_avax={tx_avax}
               />
             </div>
-            <div
-              style={{ order: baseorder != null ? -baseorder : 0 }}
+            <div style={{ order: baseorder != null ? -baseorder : 0 }}
               class="w-full relative shadow-lg flex h-[7rem] sm:h-[9rem] rounded-lg gap-3 bg-blur3"
             >
               {/* Base MarketBar */}
@@ -278,8 +274,7 @@ export default function MarketBarsContainer() {
                 tx_base={tx_base}
               />
             </div>
-            <div
-              style={{ order: bscorder != null ? -bscorder : 0 }}
+            <div style={{ order: bscorder != null ? -bscorder : 0 }}
               class="w-full relative shadow-lg flex h-[7rem] sm:h-[9rem] rounded-lg gap-3 bg-blur3"
             >
               {/* BSC MarketBar */}
