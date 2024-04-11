@@ -1,5 +1,6 @@
 import Chart from "../chart.tsx";
 import { ChartOptions } from "$fresh_charts/stats/chartOptions.tsx";
+import { ChartOptions_M } from "$fresh_charts/stats/chartOptions-M.tsx";
 import { PriceHistory } from "$fresh_charts/stats/priceHistory.tsx";
 import { IS_BROWSER } from "$fresh/runtime.ts";
 import { useSignal } from "@preact/signals";
@@ -9,7 +10,7 @@ export function ArbChart() {
   if (!IS_BROWSER) return <></>;
   const fetchedData = useSignal([]);
   const isLoading = useSignal(true);
-
+  const isMobile = globalThis.window.matchMedia("(pointer: coarse)").matches
   const getPrices = async () => {
     fetchedData.value = await PriceHistory();
     isLoading.value = false;
@@ -19,7 +20,7 @@ export function ArbChart() {
   });
 
   const chartOptions = ChartOptions();
-
+  const chartOptions_M = ChartOptions_M();
   const timestamps = fetchedData.value.map((item) =>
     new Date(item.timestamp).toLocaleTimeString([], {
       day: "2-digit",
@@ -54,6 +55,7 @@ export function ArbChart() {
     );
   }
   if (isLoading.value === false) {
+    
     return (
       <>
         <div class="p-4 sm:mx-auto mx-4 mt-7 sm:mt-0 sm:h-[160px] sm:w-[430px] h-[100px] w-[330px]">
@@ -61,7 +63,7 @@ export function ArbChart() {
             <Chart
               id="myChart"
               type="line"
-              options={chartOptions}
+              options={isMobile ? chartOptions_M : chartOptions}
               data={chartData}
             />
           )}
