@@ -3,6 +3,12 @@ export function ChartOptions() {
     responsive: true,
     maintainAspectRatio: false,
     animation: false,
+    interaction: {
+      mode: 'nearest',
+      axis: 'x',
+      intersect: false
+    }
+  ,
     scales: {
       x: {
         grid: {
