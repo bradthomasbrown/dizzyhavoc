@@ -50,8 +50,8 @@ export default function Screen() {
         className="sm:min-h-[30rem] sm:max-h-[45rem] min-h-[60svh] max-h-[60svh] relative xl:w-[70%] w-full sm:mt-2 mt-0 sm:p-5 p-0 justify-center mx-auto overflow-hidden rounded-lg shadow-inner shadow-[#d6d6d6] dark:shadow-[#141414] bg-blur4"
       >
         {loadingbar}
-        <p class="font-medium font-[Poppins] italic absolute top-0 left-0 m-5 unselectable w-full tracking-tighter text-[1.1rem] sm:text-[2rem] text-start dark:text-[#d2d2d2] text-[#3d3d3d]">
-            Explore the DizzyHavoc ecosystem
+        <p class="font-medium font-[Poppins] italic absolute top-0 left-0 m-5 unselectable w-full tracking-tighter text-[0.8rem] sm:text-[1.7rem] text-start dark:text-[#d2d2d2] text-[#3d3d3d]">
+            Defi user or developer? We provide useful tools for everyone.
           </p>
         <CurrentItem />
         <Stars />
