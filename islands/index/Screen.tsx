@@ -1,6 +1,5 @@
 import { useEffect, useState } from "preact/hooks";
 import { IS_BROWSER } from "$fresh/runtime.ts";
-import Tagline from "../../components/index/LandingElements/Tagline.tsx";
 import Stars from "../../components/index/LandingElements/Animations/Stars.tsx";
 import Vertigo from "../../components/index/LandingElements/ScreenItems/Vertigo.tsx";
 import Mayhem from "../../components/index/LandingElements/ScreenItems/Mayhem.tsx";
@@ -35,22 +34,26 @@ export default function Screen() {
   }, [paused]);
 
   const CurrentItem = items[currentItemIndex];
-
+  const loadingbar = (
+    <div class="bottom-1 px-[4px] absolute left-0 bg-blur3 items-center justify-center rounded-xl h-[1px] w-full">
+      <div
+        class="h-[1px] bg-[#3d3d3d] dark:bg-[#d0d0d0] rounded-xl"
+        style={`width: ${timer}%`}
+      >
+      </div>
+    </div>
+  );
   return (
-    <div className="h-[65%] w-[99%] sm:mt-5 mt-0">
+    <div className="h-full sm:h-[30rem] w-full sm:mt-5 mt-0">
       <div
         onClick={handleScreenClick}
-        className="sm:min-h-[45rem] sm:max-h-[45rem] min-h-[80svh] max-h-[80svh] relative sm:w-[75%] w-full sm:mt-2 mt-0 sm:p-5 p-0 justify-center mx-auto overflow-hidden rounded-lg shadow-inner shadow-[#d6d6d6] dark:shadow-[#141414] bg-blur4"
+        className="sm:min-h-[30rem] sm:max-h-[45rem] min-h-[60svh] max-h-[60svh] relative xl:w-[70%] w-full sm:mt-2 mt-0 sm:p-5 p-0 justify-center mx-auto overflow-hidden rounded-lg shadow-inner shadow-[#d6d6d6] dark:shadow-[#141414] bg-blur4"
       >
-        <div class="bottom-1 px-[4px] absolute left-0 bg-blur3 items-center justify-center rounded-xl h-[1px] w-full">
-          <div
-            class="h-[1px] bg-[#3d3d3d] dark:bg-[#d0d0d0] rounded-xl"
-            style={`width: ${timer}%`}
-          >
-          </div>
-        </div>
+        {loadingbar}
+        <p class="font-medium font-[Poppins] italic absolute top-0 left-0 m-5 unselectable w-full tracking-tighter text-[1.1rem] sm:text-[2rem] text-start dark:text-[#d2d2d2] text-[#3d3d3d]">
+            Explore the DizzyHavoc ecosystem
+          </p>
         <CurrentItem />
-        <Tagline />
         <Stars />
       </div>
     </div>

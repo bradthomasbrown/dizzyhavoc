@@ -96,7 +96,7 @@ user-select: none; /* Standard */
   .bg-blur4 {
     -webkit-backdrop-filter: blur(4px);
     backdrop-filter: blur(4px);
-    background: #a1a1a11f no-repeat padding-box;
+    background: #a1a1a111 no-repeat padding-box;
   }
 }
 
