@@ -51,7 +51,7 @@ export default function Screen() {
       >
         {loadingbar}
         <p class="font-medium font-[Poppins] italic absolute top-0 left-0 m-5 unselectable w-full tracking-tighter text-[0.8rem] sm:text-[1.7rem] text-start dark:text-[#969696cc] text-[#636363cc]">
-            Defi user or developer? We provide useful tools for everyone.
+            DeFi user or developer? We provide useful tools for everyone.
           </p>
         <CurrentItem />
         <Stars />
