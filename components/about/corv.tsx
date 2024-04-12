@@ -2,6 +2,7 @@ export default function Corv(){
     return(
         <div class="flex mt-[2rem] flex-row">
         <img
+          draggable={false}
           class="hover:scale-[101%] size-[50px] sm:size-[100px] rounded-full"
           src="/misc/corv.jpg"
         />
@@ -14,6 +15,7 @@ export default function Corv(){
           </h1>
           <div class="flex flex-row">
             <a
+              draggable={false}
               target="_blank"
               href="https://github.com/corvardt"
               class="text-[1.2rem] ml-2 font-Poppins text-[#3b2d82] dark:text-[#ccb286]"
@@ -21,6 +23,7 @@ export default function Corv(){
               github
             </a>
             <a
+              draggable={false}
               target="_blank"
               href="https://twitter.com/covardt"
               class="text-[1.2rem] ml-2 font-Poppins text-[#3b2d82] dark:text-[#ccb286]"
@@ -28,6 +31,7 @@ export default function Corv(){
               twitter
             </a>
             <a
+              draggable={false}
               target="_blank"
               href="https://discordapp.com/users/209761949066461194"
               class="text-[1.2rem] ml-2 font-Poppins text-[#3b2d82] dark:text-[#ccb286]"

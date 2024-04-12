@@ -2,6 +2,7 @@ export default function Spider(){
     return(
         <div class="flex mt-[2rem] flex-row">
         <img
+          draggable={false}
           class="hover:scale-[101%] size-[70px] sm:size-[120px] rounded-full"
           src="/misc/spider.png"
         />
@@ -14,6 +15,7 @@ export default function Spider(){
           </h1>
           <div class="flex flex-row">
             <a
+              draggable={false}
               target="_blank"
               href="https://github.com/bradbrown-llc"
               class="text-[1.2rem] ml-2 font-Poppins text-[#3b2d82] dark:text-[#ccb286]"
@@ -21,6 +23,7 @@ export default function Spider(){
               github
             </a>
             <a
+              draggable={false}
               target="_blank"
               href="https://twitter.com/dizzyhavoc"
               class="text-[1.2rem] ml-2 font-Poppins text-[#3b2d82] dark:text-[#ccb286]"
@@ -28,6 +31,7 @@ export default function Spider(){
               twitter
             </a>
             <a
+              draggable={false}
               target="_blank"
               href="https://discordapp.com/users/1173062401621504063"
               class="text-[1.2rem] ml-2 font-Poppins text-[#3b2d82] dark:text-[#ccb286]"
