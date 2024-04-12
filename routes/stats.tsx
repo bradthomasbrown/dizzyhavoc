@@ -1,7 +1,7 @@
 import ActiveContainer from "../islands/stats/ActiveContainer.tsx";
 export default function Stats() {
   return (
-      <div class="h-full sm:h-screen translate-y-0 sm:translate-y-[7%]">
+      <div class="h-full">
               <p
         class="mb-[0.5rem]
   font-medium
@@ -13,7 +13,6 @@ export default function Stats() {
   dark:text-[#d0d0d0]
   text-[#3d3d3d]
   font-[Poppins]
-  sm:mt-[0.2rem]
   mt-[1rem]
   bg-transparent
   lg:max-w-[32rem]
