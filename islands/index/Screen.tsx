@@ -1,6 +1,7 @@
 import { useEffect, useState } from "preact/hooks";
 import { IS_BROWSER } from "$fresh/runtime.ts";
 import Stars from "../../components/index/LandingElements/Animations/Stars.tsx";
+import AvailableOn from "../../components/index/AvailableOn.tsx";
 import { Vertigo, Mayhem, Gamefi, Factory } from "../../components/index/LandingElements/ScreenItems/mod.ts";
 
 const items = [Vertigo, Mayhem, Gamefi, Factory]; // Add more screen items here
@@ -69,6 +70,9 @@ export default function Screen() {
           <img src="/misc/arrowright.svg" draggable={false} class="dark:invert invert-0 contrast-50 scale-[1.7]"/>
         </div>
       </div>
+      <div class="sm:scale-[50%] scale-[80%]">
+        <AvailableOn />
+        </div>
     </div>
   );
 }
