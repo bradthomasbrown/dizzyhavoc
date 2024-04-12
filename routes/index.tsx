@@ -8,7 +8,7 @@ export default function Home() {
           <Landing />
           <Info />
         </div>
-        <div class="absolute lg:top-4 top-[4.7rem] z-20 left-1 sm:left-4">
+        <div class="absolute lg:top-4 top-[4.7rem] sm:visible invisible z-20 left-1 sm:left-4">
           <a
             draggable={false}
             class="bottom-0"
