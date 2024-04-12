@@ -6,7 +6,6 @@ import { Arb, Avax, Base, Bsc, Eth } from "./marketbars/mod.ts";
 export default function MarketBarsContainer() {
   if (!IS_BROWSER) return <></>;
   const initialloading = useSignal<boolean>(true);
-  const isloading = useSignal<boolean>(true);
   const count = useSignal<number>(30);
   // liquidity
   const liq_eth = useSignal<number>(0);
@@ -46,7 +45,6 @@ export default function MarketBarsContainer() {
   const ethorder = useSignal<number>(0);
 
   const getPrices = async () => {
-    isloading.value = true;
     let arbprice = 0,
       ethprice = 0,
       bscprice = 0,
@@ -108,7 +106,6 @@ export default function MarketBarsContainer() {
       baseprice,
       avaxprice,
     );
-    isloading.value = false;
     initialloading.value = false;
   };
   function largestPriceDelta(
