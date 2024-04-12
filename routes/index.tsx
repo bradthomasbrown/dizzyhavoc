@@ -10,6 +10,7 @@ export default function Home() {
         </div>
         <div class="absolute lg:top-4 top-[4.7rem] z-20 left-1 sm:left-4">
           <a
+            draggable={false}
             class="bottom-0"
             target="_blank"
             href="https://linktr.ee/dizzyhavoc"

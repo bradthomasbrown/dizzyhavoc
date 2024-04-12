@@ -10,7 +10,6 @@ export default function Landing() {
         <div class="sm:scale-[50%] scale-[90%]">
         <AvailableOn />
         </div>
-     
       </div>
     </div>
   );

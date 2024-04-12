@@ -3,8 +3,10 @@ import { IS_BROWSER } from "$fresh/runtime.ts";
 import Stars from "../../components/index/LandingElements/Animations/Stars.tsx";
 import Vertigo from "../../components/index/LandingElements/ScreenItems/Vertigo.tsx";
 import Mayhem from "../../components/index/LandingElements/ScreenItems/Mayhem.tsx";
+import GameFi from "../../components/index/LandingElements/ScreenItems/GameFi.tsx";
+import Factory from "../../components/index/LandingElements/ScreenItems/Factory.tsx";
 
-const items = [Vertigo, Mayhem]; // Add more screen items here
+const items = [Vertigo, Mayhem, GameFi, Factory]; // Add more screen items here
 
 export default function Screen() {
   if (!IS_BROWSER) return null;
@@ -67,7 +69,7 @@ export default function Screen() {
           onClick={Skip}
           onClickCapture={handleScreenClick} // 🤔
         >
-          <img src="/misc/arrowright.svg" class="dark:invert invert-0 contrast-50 scale-[1.7]"/>
+          <img src="/misc/arrowright.svg" draggable={false} class="dark:invert invert-0 contrast-50 scale-[1.7]"/>
         </div>
       </div>
     </div>

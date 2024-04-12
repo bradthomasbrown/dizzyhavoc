@@ -183,12 +183,14 @@ export default function MarketBarsContainer() {
             >
               {/* ETH MarketBar */}
               <a
+                draggable={false}
                 class="z-20 sm:size-[50px] hover:scale-[105%] ml-3 mt-3 sm:mt-11 justify-start size-9"
                 title="open in dexscreener"
                 target="_blank"
                 href="https://dexscreener.com/ethereum/0xb7a71c2e31920019962cb62aeea1dbf502905b81"
               >
                 <img
+                  draggable={false}
                   src="/chains/token_eth.png"
                   title="open in dexscreener"
                   alt="eth"
@@ -207,12 +209,14 @@ export default function MarketBarsContainer() {
             >
               {/* Arb MarketBar */}
               <a
+                draggable={false}
                 class="z-20 sm:size-[50px] hover:scale-[105%] ml-3 mt-3 sm:mt-11 justify-start size-9"
                 title="open in dexscreener"
                 target="_blank"
                 href="https://dexscreener.com/arbitrum/0x05c5bdbc7b3c64109ddcce058ce99f4515fe1c83"
               >
                 <img
+                  draggable={false}
                   src="/chains/token_arb.png"
                   title="open in dexscreener"
                   alt="arb"
@@ -231,12 +235,14 @@ export default function MarketBarsContainer() {
             >
               {/* Avax MarketBar */}
               <a
+                draggable={false}
                 class="z-20 sm:size-[50px] hover:scale-[105%] ml-3 mt-3 sm:mt-11 justify-start size-9"
                 title="open in dexscreener"
                 target="_blank"
                 href="https://dexscreener.com/avalanche/0x523a04633b6c0c4967824471dda0abbce7c5e643"
               >
                 <img
+                  draggable={false}
                   src="/chains/token_avax.png"
                   title="open in dexscreener"
                   alt="avax"
@@ -255,12 +261,14 @@ export default function MarketBarsContainer() {
             >
               {/* Base MarketBar */}
               <a
+                draggable={false}
                 class="z-20 sm:size-[50px] hover:scale-[105%] ml-3 mt-3 sm:mt-11 justify-start size-9"
                 title="open in dexscreener"
                 target="_blank"
                 href="https://dexscreener.com/base/0xb64dff20dd5c47e6dbb56ead80d23568006dec1e"
               >
                 <img
+                  draggable={false}
                   src="/chains/token_base.png"
                   title="open in dexscreener"
                   alt="base"
@@ -279,12 +287,14 @@ export default function MarketBarsContainer() {
             >
               {/* BSC MarketBar */}
               <a
+                draggable={false}
                 class="z-20 sm:size-[50px] hover:scale-[105%] ml-3 mt-3 sm:mt-11 justify-start size-9"
                 title="open in dexscreener"
                 target="_blank"
                 href="https://dexscreener.com/bsc/0x642089a5da2512db761d325a868882ece6e387f5"
               >
                 <img
+                  draggable={false}
                   src="/chains/token_bsc.png"
                   title="open in dexscreener"
                   alt="bsc"
