@@ -3,8 +3,6 @@ import Pair2 from "../index/InfoContent/Pair2.tsx";
 import Pair3 from "../index/InfoContent/Pair3.tsx";
 import ScrollTop from "../../islands/index/scrollTop.tsx";
 export default function Info() {
-
-
   return (
     <>
       <p

@@ -9,7 +9,9 @@ export default function Footer() {
         <div class="flex items-center gap-8">
           <a
             draggable={false}
-            target="_blank" href="https://t.me/dizzyhavoc_portal">
+            target="_blank"
+            href="https://t.me/dizzyhavoc_portal"
+          >
             <img
               draggable={false}
               src="/socials/telegram.png"

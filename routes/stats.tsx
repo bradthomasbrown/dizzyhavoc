@@ -1,9 +1,8 @@
 import ActiveContainer from "../islands/stats/ActiveContainer.tsx";
 export default function Stats() {
   return (
-      <div class="h-full pb-[230px] sm:pb-[100px]">
-              <p
-        class="mb-[0.5rem]
+    <div class="h-full pb-[230px] sm:pb-[100px]">
+      <p class="mb-[0.5rem]
   font-medium
   sm:text-[1.5rem]
   text-[1rem]
@@ -17,11 +16,10 @@ export default function Stats() {
   bg-transparent
   lg:max-w-[32rem]
   max-w-full
-  rounded-xl"
-      >
+  rounded-xl">
         DZHV Ecosystem Analytics
       </p>
-        <ActiveContainer />
-        </div>
+      <ActiveContainer />
+    </div>
   );
 }
