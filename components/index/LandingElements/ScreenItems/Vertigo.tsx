@@ -1,4 +1,4 @@
-export default function Vertigo(){
+export function Vertigo(){
     return(
         <div class="z-30 w-full h-full vignets unselectable absolute items-start sm:items-center justify-center flex flex-col sm:flex-row">
         <div class="flex flex-col">
