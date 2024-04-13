@@ -5,7 +5,7 @@ export default function ActiveContainer() {
   if (!IS_BROWSER) return <></>;
   return (
     <div class="flex w-full mt-[1rem] mx-auto sm:w-[42rem] flex-col">
-      <div class="flex h-[6rem] sm:h-[5rem] mx-auto justify-center max-w-[480px] shadow-lg bg-blur2 rounded-xl">
+      <div class="flex h-[6rem] sm:h-[5rem] mx-auto justify-center sm:w-[480px] w-[366px] shadow-lg bg-blur2 rounded-xl">
         <div class="w-full p-2">
           <TokenSummary />
         </div>

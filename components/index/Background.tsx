@@ -1,6 +1,6 @@
 export default function Background() {
   return (
-    <div class="bg-[url('/misc/landing.png')] 
+    <div class="bg-[url('/misc/landing.png')]
         opacity-20 
         dark:opacity-5 
         dark:saturate-0 
