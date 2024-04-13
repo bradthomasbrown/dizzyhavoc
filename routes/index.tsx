@@ -9,7 +9,9 @@ export default function Home() {
           <Landing />
           <Info />
         </div>
+        <div class="absolute lg:top-4 top-[4.7rem] sm:visible invisible z-20 left-1 sm:left-4">
         <Socials />
+        </div>
       </div>
     </>
   );
