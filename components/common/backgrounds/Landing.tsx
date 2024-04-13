@@ -1,4 +1,4 @@
-export default function Background() {
+export default function LandingBG() {
   return (
     <div class="bg-[url('/misc/landing.png')]
         opacity-20 
@@ -14,6 +14,7 @@ export default function Background() {
         h-full 
         absolute 
         top-0 
-        left-0" />
+        left-0
+        z-[-1]" />
   );
 }
