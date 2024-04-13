@@ -132,7 +132,7 @@ export default function TokenSummary() {
     <>
       {initialloading.value
         ? ( // no data : display loader
-          <div class="sm:w-[400px] w-[320px] bg-blur3 shadow-lg px-0 relative 2xl:px-3 h-full justify-center items-center rounded-lg gap-0 xl:gap-3 flex flex-col">
+          <div class="sm:w-[465px] w-[350px] bg-blur3 shadow-lg px-0 relative 2xl:px-3 h-full justify-center items-center rounded-lg gap-0 xl:gap-3 flex flex-col">
             <img class="size-[50px]" src="./misc/loader.svg"></img>
           </div>
         )
