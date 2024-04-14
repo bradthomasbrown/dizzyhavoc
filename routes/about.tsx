@@ -10,7 +10,7 @@ export default function About() {
         src="/misc/dzhv.png"
       >
       </img>
-      <div class="h-full sm:h-screen justify-center mt-[0.5rem] flex flex-col items-center">
+      <div class="h-full sm:h-[90svh] justify-center mt-[0.5rem] flex flex-col items-center">
         <p class="
   unselectable
   mt-[3rem]
