@@ -112,7 +112,7 @@ export default function TokenSummary() {
     let x = 0;
     const intervalId = setInterval(() => {
       if (x < 100) {
-        x += 0.1;
+        x += 0.05;
         count.value = x; // Update the progress value
       } else {
         fetchScreener();
