@@ -7,7 +7,7 @@ export default function TokenSummary() {
   if (!IS_BROWSER) return <></>;
   const initialloading = useSignal<boolean>(true);
   const isloading = useSignal<boolean>(true);
-  const count = useSignal<number>(30);
+  const count = useSignal<number>(0);
   // global market data
   const delta = useSignal<number>(0);
   const totalsupply = useSignal<number>(0);
@@ -109,17 +109,17 @@ export default function TokenSummary() {
 
   const starttimer = () => {
     // auto refresh logic
-    let x = 30;
+    let x = 0;
     const intervalId = setInterval(() => {
-      if (x > 0) {
-        x -= 1;
+      if (x < 100) {
+        x += 0.1;
         count.value = x; // Update the progress value
       } else {
         fetchScreener();
         clearInterval(intervalId); // Stop the interval when x reaches 100
         starttimer();
       }
-    }, 1000);
+    }, 10);
   };
 
   useState(() => {
@@ -128,6 +128,15 @@ export default function TokenSummary() {
     starttimer();
   });
 
+  const loadingbar = (
+    <div class="bottom-[1px] px-[15px] absolute left-0 items-center justify-center rounded-xl h-[2px] w-full">
+      <div
+        class="h-[1px] bg-[#3d3d3d] dark:bg-[#d0d0d0] rounded-xl"
+        style={`width: ${count}%`}
+      >
+      </div>
+    </div>
+  );
   return (
     <>
       {initialloading.value
@@ -180,12 +189,7 @@ export default function TokenSummary() {
                   </h1>
                 </section>
               </div>
-              <div
-                title="data from dzhv & dexscreener apis"
-                class="top-1 unselectable dark:text-[#d2d2d2] text-[#6e6e6e] absolute right-1 text-[8px]"
-              >
-                {count}
-              </div>
+              {loadingbar}
             </div>
           </>
         )}
