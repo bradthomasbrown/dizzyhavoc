@@ -1,11 +1,11 @@
 export default function Available() {
   return (
     <div>
-      <p class="font-[Poppins] unselectable dark:text-[#d2d2d2] mb-2 text-[1.5rem] text-center">
+      <p class="font-[Poppins] unselectable dark:text-[#d2d2d2] mb-2 sm:mb-6 text-[1.1rem] sm:text-[2rem] text-center">
         Available on
         <br />
       </p>
-      <div class="flex flex-row mt-6 gap-8 sm:scale-100 scale-75 justify-center">
+      <div class="flex flex-row gap-8 sm:scale-100 scale-75 justify-center">
         <a
           draggable={false}
           target="_blank"
