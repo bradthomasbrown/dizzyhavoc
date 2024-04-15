@@ -22,7 +22,7 @@ export default function Spider(){
             </a>
             <a
               target="_blank"
-              href="https://twitter.com/dizzyhavoc"
+              href="https://twitter.com/dzhv_io"
               class="text-[1.2rem] ml-2 font-Poppins text-[#3b2d82] dark:text-[#ccb286]"
             >
               twitter

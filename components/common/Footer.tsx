@@ -9,7 +9,7 @@ export default function Footer() {
           <a target="_blank" class="pt-1" href="https://discord.gg/stcbzS4KNq">
             <img src="/socials/discord.png" class="sm:w-8 sm:h-6 w-6 h-4 hover:scale-[110%] dark:invert invert-0" title="discord" alt="discord"/>
           </a>
-          <a target="_blank" class="pt-[2px]" href="https://x.com/dizzyhavoc">
+          <a target="_blank" class="pt-[2px]" href="https://x.com/dzhv_io">
             <img src="/socials/x.png" class="sm:size-7 size-5 hover:scale-[110%] dark:invert invert-0" title="x" alt="x"/>
           </a>
           <a target="_blank" href="https://github.com/bradbrown-llc/dizzyhavoc">
