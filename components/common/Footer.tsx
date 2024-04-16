@@ -43,7 +43,7 @@ export default function Footer() {
             <img
               draggable={false}
               src="/socials/x.png"
-              class="select-none sm:size-7 size-5 hover:scale-[110%] dark:invert invert-0"
+              class="sm:size-7 size-5 hover:scale-[110%] dark:invert invert-0"
               title="x"
               alt="x"
             />
