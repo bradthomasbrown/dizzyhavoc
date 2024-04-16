@@ -50,10 +50,10 @@ export default function Screen() {
     </div>
   );
   return (
-    <div className="h-full sm:h-[70%] w-full sm:mt-5 mt-0">
+    <div className="h-full sm:h-[70%] w-full sm:mt-6 mt-0">
       <div
         onClick={() => handleScreenClick()}
-        className="sm:min-h-[70%] sm:max-h-[70%] min-h-[70svh] max-h-[70svh] relative sm:w-[70%] w-full sm:mt-2 mt-0 sm:p-5 p-0 justify-center mx-auto overflow-hidden rounded-lg shadow-inner shadow-[#d6d6d6] dark:shadow-[#141414] bg-blur4"
+        className="sm:min-h-[70%] sm:max-h-[70%] min-h-[70svh] max-h-[70svh] relative sm:w-[70%] w-full justify-center mx-auto overflow-hidden rounded-lg shadow-inner dark:shadow-none shadow-[#d6d6d6] dark:shadow-[#141414] bg-blur4"
       >
         {loadingbar}
         <p class="font-medium font-[Poppins] absolute top-3 left-3 unselectable w-full text-[0.95rem] sm:text-[1.7rem] text-start dark:text-[#969696cc] text-[#636363cc]">
