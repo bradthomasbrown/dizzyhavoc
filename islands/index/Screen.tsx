@@ -56,14 +56,13 @@ export default function Screen() {
         className="sm:min-h-[70%] sm:max-h-[100%] min-h-[70svh] max-h-[70svh] relative xl:w-[70%] w-full sm:mt-2 mt-0 sm:p-5 p-0 justify-center mx-auto overflow-hidden rounded-lg shadow-inner shadow-[#d6d6d6] dark:shadow-[#141414] bg-blur4"
       >
         {loadingbar}
-        <p class="font-medium font-[Poppins] italic absolute top-0 left-0 m-5 unselectable w-full tracking-tighter text-[0.8rem] sm:text-[1.7rem] text-start dark:text-[#969696cc] text-[#636363cc]">
-          DeFi user or developer? We're building for everyone.
-        </p>
+
+
         <CurrentItem />
         <Stars />
         <div
           id="skip"
-          class="font-medium z-50 font-[Poppins] m-5 active:scale-[98%] absolute cursor-pointer unselectable bottom-0 left-0 tracking-tighter text-[0.8rem] sm:text-[1.7rem] text-start dark:text-[#969696cc] text-[#636363cc]"
+          class="font-medium z-50 font-[Poppins] m-5 active:scale-[98%] absolute cursor-pointer unselectable bottom-0 sm:left-0 right-0 tracking-tighter text-[0.8rem] sm:text-[1.7rem] text-start dark:text-[#969696cc] text-[#636363cc]"
           onClick={Skip}
           onClickCapture={handleScreenClick} // 🤔
         >
