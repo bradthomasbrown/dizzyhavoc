@@ -18,11 +18,14 @@ user-select: none; /* Standard */
   max-width: 650px;
 }
 .vignets {
-    
   animation: fadein 1s;
   -moz-animation: fadein 1s; /* Firefox */
   -webkit-animation: fadein 1s; /* Safari & Chrome */
   -o-animation: fadein 1s; /* Opera */
+}
+@keyframes loading {
+  0%{background-position:175% 0%}
+  100%{background-position:-75% 0%}
 }
 @keyframes fadein {
   from {

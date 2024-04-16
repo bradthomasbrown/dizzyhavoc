@@ -147,14 +147,7 @@ export default function TokenSummary() {
         )
         : ( 
           <>
-            <div class="shadow-lg h-full w-[350px] sm:w-[465px] justify-center relative rounded-lg gap-0 xl:gap-1 bg-blur3 flex flex-col">
-              {isloading.value // widget with blurred loader when loading
-                ? (
-                  <div class="w-full shadow-lg px-0 absolute bottom-0 right-0 z-50 2xl:px-3 h-full justify-center items-center rounded-lg gap-0 xl:gap-3 dark:bg-[#212121B3] bg-[#e8e8e8B3] flex flex-col">
-                    <img class="size-[50px]" src="./misc/loader.svg" />
-                  </div>
-                )
-                : <></>}
+            <div class={`shadow-lg h-full w-[350px] sm:w-[465px] justify-center relative rounded-lg gap-0 xl:gap-1 flex flex-col ${isloading.value? "loading" : "bg-blur3"}`}>
               <div class="flex flex-row mx-auto justify-center gap-6">
                 <section class="rounded flex flex-col">
                   <h1 class="unselectable font-[Poppins] dark:text-[#d2d2d2] text-[0.7rem] sm:text-[0.75rem] flex flex-col justify-center tracking-tight items-center">
