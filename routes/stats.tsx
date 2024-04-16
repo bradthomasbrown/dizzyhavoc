@@ -3,7 +3,6 @@ export default function Stats() {
   return (
     <div class="h-full">
       <p class="mb-[0.5rem]
-  font-bold
   sm:text-[1.7rem]
   text-[1.4rem]
   unselectable

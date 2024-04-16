@@ -1,5 +1,4 @@
 import { type Config } from "tailwindcss";
-import plugin from "tailwindcss/plugin";
 
 export default {
   content: [
@@ -7,22 +6,12 @@ export default {
   ],
   theme: {
     extend: {
-      fontFamily: {
-        "mono": ["Roboto Mono", "monospace"],
+      backgroundImage: {
+        'dzhv-wallpaper-0': "url('/dzhv-wallpaper-0.jpg')"
       },
-    },
-  },
-  plugins: [
-    plugin(function ({ addUtilities }) {
-      addUtilities({
-        ".loading": {
-          border: "solid 1px #ffffff08",
-          background:
-            "linear-gradient(45deg, rgba(0,0,0,0) 30%, rgba(128,255,255,0.068) 50%, rgba(0,0,0,0) 70%) no-repeat",
-          backgroundSize: "200% 200%",
-          animation: "loading 2.5s ease infinite",
-        },
-      });
-    }),
-  ],
+      fontFamily: {
+        'mono': ['Roboto Mono', 'monospace']
+      }
+    }
+  }
 } satisfies Config;

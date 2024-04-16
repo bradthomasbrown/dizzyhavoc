@@ -23,10 +23,6 @@ user-select: none; /* Standard */
   -webkit-animation: fadein 1s; /* Safari & Chrome */
   -o-animation: fadein 1s; /* Opera */
 }
-@keyframes loading {
-  0%{background-position:175% 0%}
-  100%{background-position:-75% 0%}
-}
 @keyframes fadein {
   from {
       opacity:0;
