@@ -147,7 +147,7 @@ export default function TokenSummary() {
         )
         : ( 
           <>
-            <div class={`shadow-lg h-full w-[350px] sm:w-[465px] justify-center relative rounded-lg gap-0 xl:gap-1 flex flex-col ${isloading.value? "loading" : "bg-blur3"}`}>
+            <div class={`shadow-lg h-full w-[350px] sm:w-[465px] justify-center relative rounded-lg gap-0 xl:gap-1 flex flex-col ${isloading.value? "loading" : "bg-blur"}`}>
               <div class="flex flex-row mx-auto justify-center gap-6">
                 <section class="rounded flex flex-col">
                   <h1 class="unselectable font-[Poppins] dark:text-[#d2d2d2] text-[0.7rem] sm:text-[0.75rem] flex flex-col justify-center tracking-tight items-center">
