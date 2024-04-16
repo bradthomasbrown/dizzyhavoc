@@ -7,7 +7,7 @@ export default function ScrollTop() {
   }
   return (
     <div onClick={() => Scroll()}>
-      <div class="cursor-pointer active:scale-[98%] pt-[5rem]">
+      <div class="cursor-pointer active:scale-[98%]">
         <img
           draggable={false}
           src="/misc/arrowup.svg"

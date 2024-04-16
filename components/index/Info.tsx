@@ -1,6 +1,7 @@
 import Pair1 from "../index/InfoContent/Pair1.tsx";
 import Pair2 from "../index/InfoContent/Pair2.tsx";
 import Pair3 from "../index/InfoContent/Pair3.tsx";
+import AvailableOn from "../index/AvailableOn.tsx";
 import ScrollTop from "../../islands/index/scrollTop.tsx";
 export default function Info() {
   return (
@@ -34,7 +35,9 @@ export default function Info() {
         <Pair1 />
         <Pair2 />
         <Pair3 />
-      <ScrollTop/>
+        <div class="my-[3rem]">
+          <ScrollTop />
+        </div>
       </div>
     </>
   );

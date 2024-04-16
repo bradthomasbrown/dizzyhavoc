@@ -53,23 +53,24 @@ export default function Screen() {
     <div className="h-full sm:h-[70%] w-full sm:mt-5 mt-0">
       <div
         onClick={() => handleScreenClick()}
-        className="sm:min-h-[70%] sm:max-h-[100%] min-h-[70svh] max-h-[70svh] relative xl:w-[70%] w-full sm:mt-2 mt-0 sm:p-5 p-0 justify-center mx-auto overflow-hidden rounded-lg shadow-inner shadow-[#d6d6d6] dark:shadow-[#141414] bg-blur4"
+        className="sm:min-h-[70%] sm:max-h-[70%] min-h-[70svh] max-h-[70svh] relative sm:w-[70%] w-full sm:mt-2 mt-0 sm:p-5 p-0 justify-center mx-auto overflow-hidden rounded-lg shadow-inner shadow-[#d6d6d6] dark:shadow-[#141414] bg-blur4"
       >
         {loadingbar}
-
-
+        <p class="font-medium font-[Poppins] absolute top-3 left-3 unselectable w-full text-[0.95rem] sm:text-[1.7rem] text-start dark:text-[#969696cc] text-[#636363cc]">
+         DeFi user or developer? Explore our network.
+        </p>
         <CurrentItem />
         <Stars />
         <div
           id="skip"
-          class="font-medium z-50 font-[Poppins] m-5 active:scale-[98%] absolute cursor-pointer unselectable bottom-0 sm:left-0 right-0 tracking-tighter text-[0.8rem] sm:text-[1.7rem] text-start dark:text-[#969696cc] text-[#636363cc]"
+          class="font-medium z-50 font-[Poppins] mb-5 active:scale-[98%] absolute cursor-pointer unselectable bottom-0 left-5 tracking-tighter text-[0.8rem] sm:text-[1.7rem] text-start dark:text-[#969696cc] text-[#636363cc]"
           onClick={Skip}
           onClickCapture={handleScreenClick} // 🤔
         >
           <img src="/misc/arrowright.svg" draggable={false} class="dark:invert invert-0 contrast-50 scale-[1.7]"/>
         </div>
       </div>
-      <div class="sm:scale-[50%] scale-[80%]">
+      <div class="scale-[50%] sm:visible invisible">
         <AvailableOn />
         </div>
     </div>
