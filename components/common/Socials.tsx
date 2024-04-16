@@ -1,4 +1,4 @@
-export default function Social() {
+export default function Socials() {
   return (
     <div>
       <a
