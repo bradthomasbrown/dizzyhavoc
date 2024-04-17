@@ -70,7 +70,7 @@ export default function Screen() {
           <img src="/misc/arrowright.svg" draggable={false} class="dark:invert invert-0 contrast-50 scale-[1.7]"/>
         </div>
       </div>
-      <div class="scale-[50%] sm:visible invisible">
+      <div class="scale-[70%] sm:scale-50">
         <AvailableOn />
         </div>
     </div>
