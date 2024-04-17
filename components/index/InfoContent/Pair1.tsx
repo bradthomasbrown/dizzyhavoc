@@ -19,7 +19,7 @@ export default function Pair1(){
             </ul>
           </div>
         </div>
-        <div class="flex flex-row p-4 mt-7 sm:mt-0 sm:size-[450px] size-[320px] dark:text-[#d2d2d2] text-[#3d3d3d] rounded-xl shadow-lg bg-blur2">
+        <div class="flex flex-row p-4 sm:mt-0 sm:size-[450px] size-[320px] dark:text-[#d2d2d2] text-[#3d3d3d] rounded-xl shadow-lg bg-blur2">
           <div class="w-full h-full">
             <div
               class="size-[100%] rounded-lg dark:bg-[url('/info/darksolvsbytecode.png')] bg-[url('/info/solvsbytecode.png')]"

@@ -31,7 +31,7 @@ export default function Info() {
       >
         What is DizzyHavoc?
       </p>
-      <div class="w-full justify-center flex flex-col items-center">
+      <div class="w-full justify-center gap-y-5 sm:gap-y-11 flex flex-col items-center">
         <Pair1 />
         <Pair2 />
         <Pair3 />
