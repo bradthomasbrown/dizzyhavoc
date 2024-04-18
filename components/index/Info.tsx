@@ -1,6 +1,6 @@
-import { Container } from "./InfoModules/1/Container.tsx";
-import { Container2 } from "./InfoModules/2/Container.tsx";
-import { Container3 } from "./InfoModules/3/Container.tsx";
+import { Container } from "./Info/1/Container.tsx";
+import { Container2 } from "./Info/2/Container.tsx";
+import { Container3 } from "./Info/3/Container.tsx";
 import { ScrollTop } from "../../islands/index/scrollTop.tsx";
 export function Info() {
   return (

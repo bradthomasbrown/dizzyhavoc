@@ -1,5 +1,5 @@
 import Screen from "../../islands/index/Screen.tsx";
-import Tagline from "../index/LandingElements/Tagline.tsx";
+import Tagline from "./Landing/Tagline.tsx";
 import LandingBG from "../common/backgrounds/Landing.tsx";
 export function Landing() {
   return (

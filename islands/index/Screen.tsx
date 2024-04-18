@@ -1,8 +1,8 @@
 import { useEffect, useState } from "preact/hooks";
 import { IS_BROWSER } from "$fresh/runtime.ts";
-import Stars from "../../components/index/LandingElements/Animations/Stars.tsx";
+import Stars from "../../components/index/Landing/Animations/Stars.tsx";
 import AvailableOn from "../../components/index/AvailableOn.tsx";
-import { Vertigo, Mayhem, Gamefi, Factory } from "../../components/index/LandingElements/ScreenItems/mod.ts";
+import { Vertigo, Mayhem, Gamefi, Factory } from "../../components/index/Landing/ScreenItems/mod.ts";
 
 const items = [Vertigo, Mayhem, Gamefi, Factory]; // Add more screen items here
 
