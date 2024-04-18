@@ -30,11 +30,11 @@ export function Info() {
       >
         What is DizzyHavoc?
       </p>
-      <div class="w-full justify-center gap-y-5 sm:gap-y-[8rem] flex flex-col items-center">
+      <div class="w-full justify-center gap-y-5 sm:gap-y-[6rem] flex flex-col items-center">
         <Container />
         <Container2 />
         <Container3 />
-        <div class="my-[3rem]">
+        <div class="mb-[3rem]">
           <ScrollTop />
         </div>
       </div>
