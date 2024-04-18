@@ -5,7 +5,6 @@ export function Container2() {
     <>
       <div class="flex flex-col">
         <Pair />
-        <Bar />
       </div>
     </>
   );
