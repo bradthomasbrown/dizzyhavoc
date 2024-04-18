@@ -8,7 +8,7 @@ export function Bar1() {
   return (
     <div class="flex flex-row p-9 sm:w-[920px] size-full dark:text-[#d2d2d2] text-[#3d3d3d] h-full bg-blur4 shadow-lg rounded-xl sm:flex-col">
       <div class="flex flex-col">
-        <h1 class="sm:text-3xl text-2xl font-[Poppins]">
+        <h1 class="sm:text-3xl text-2xl font-[Poppins] text-center">
           What would be its impact?
         </h1>
         <ul class="mt-2 list-disc list-inside">
