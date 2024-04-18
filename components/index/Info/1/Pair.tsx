@@ -14,7 +14,7 @@ export function Pair() {
             <p class="mt-4 dark:sm:font-normal sm:font-normal font-normal dark:font-light text-xl">
               {content1}
             </p>
-            <p class="mt-2 bg-blur4 rounded-xl p-2 text-xl">{content2}</p>
+            <p class="mt-2 bg-blur4 rounded-md p-2 text-xl">{content2}</p>
           </ul>
         </div>
       </div>
