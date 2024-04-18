@@ -1,4 +1,4 @@
-export default function ScrollTop() {
+export function ScrollTop() {
   function Scroll() {
     const navbarElement = globalThis.document
       ? globalThis.document.getElementById("navbar")

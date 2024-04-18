@@ -1,6 +1,6 @@
-import Socials from "../components/common/Socials.tsx";
-import Landing from "../components/index/Landing.tsx";
-import Info from "../components/index/Info.tsx";
+import { Socials } from "../components/common/Socials.tsx";
+import { Landing } from "../components/index/Landing.tsx";
+import { Info } from "../components/index/Info.tsx";
 export default function Home() {
   return (
     <>

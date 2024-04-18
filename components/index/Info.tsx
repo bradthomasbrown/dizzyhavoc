@@ -1,9 +1,8 @@
-import Pair1 from "../index/InfoContent/Pair1.tsx";
-import Pair2 from "../index/InfoContent/Pair2.tsx";
-import Pair3 from "../index/InfoContent/Pair3.tsx";
-import AvailableOn from "../index/AvailableOn.tsx";
-import ScrollTop from "../../islands/index/scrollTop.tsx";
-export default function Info() {
+import { Container } from "./InfoModules/1/Container.tsx";
+import { Container2 } from "./InfoModules/2/Container.tsx";
+import { Container3 } from "./InfoModules/3/Container.tsx";
+import { ScrollTop } from "../../islands/index/scrollTop.tsx";
+export function Info() {
   return (
     <>
       <p
@@ -31,10 +30,10 @@ export default function Info() {
       >
         What is DizzyHavoc?
       </p>
-      <div class="w-full justify-center gap-y-5 sm:gap-y-11 flex flex-col items-center">
-        <Pair1 />
-        <Pair2 />
-        <Pair3 />
+      <div class="w-full justify-center gap-y-5 sm:gap-y-[8rem] flex flex-col items-center">
+        <Container />
+        <Container2 />
+        <Container3 />
         <div class="my-[3rem]">
           <ScrollTop />
         </div>
