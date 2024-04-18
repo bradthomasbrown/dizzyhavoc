@@ -5,7 +5,7 @@ export default function Pair2(){
       "Smarter Network Resource Usage: Optimization of network resource utilization, minimizing congestion, and maximizing overall performance for efficient blockchain interactions. ";
 return( 
   <div class="md:flex-row w-full gap-5 justify-center items-center mx-auto sm:mx-0 flex-col flex">
-  <div class="flex flex-row p-9 sm:size-[450px] size-full dark:text-[#d2d2d2] text-[#3d3d3d] h-full rounded-xl shadow-lg bg-blur2 sm:flex-col">
+  <div class="flex flex-row p-9 sm:size-[450px] size-full dark:text-[#d2d2d2] text-[#3d3d3d] h-full rounded-xl shadow-lg bg-blur4 bg-transparent sm:flex-col">
     <div class="flex flex-col">
     <h1 class="sm:text-3xl text-2xl font-[Poppins]">
       A new Cross-Chain Web3 Library.
@@ -23,7 +23,7 @@ return(
     </ul>
   </div>
 </div>
-<div class="flex flex-row sm:mx-0 mx-auto p-4 sm:mt-0 sm:size-[450px] size-[320px] dark:text-[#d2d2d2] text-[#3d3d3d] rounded-xl shadow-lg bg-blur2">
+<div class="flex flex-row sm:mx-0 mx-auto p-4 sm:mt-0 sm:size-[450px] size-[380px] dark:text-[#d2d2d2] text-[#3d3d3d] shadow-lg bg-blur4 rounded-xl">
   <div class="w-full h-full">
     <div
       class="size-[100%] rounded-lg dark:bg-[url('/info/darkNodes.png')] bg-[url('/info/whiteNodes.png')]"

@@ -10,8 +10,8 @@ export default function Pair3(){
   const content5 = "Then, expanding to as many mainnet chains as possible.";
 
 return(
-  <div class="md:flex-row w-full gap-5 justify-center items-center mx-auto sm:mx-0 flex-col flex">
-  <div class="flex flex-row p-9 sm:size-[450px] size-full dark:text-[#d2d2d2] text-[#3d3d3d] h-full rounded-xl shadow-lg bg-blur2 sm:flex-col">
+  <div class="w-full gap-8 justify-center items-center mx-auto sm:mx-0 flex-col flex">
+  <div class="flex flex-row p-9 sm:w-[750px] size-full dark:text-[#d2d2d2] text-[#3d3d3d] h-full bg-blur4 shadow-lg rounded-xl sm:flex-col">
     <div class="flex flex-col">
         <h1 class="sm:text-3xl text-2xl font-[Poppins]">
           What would be its impact?
@@ -29,16 +29,16 @@ return(
         </ul>
       </div>
     </div>
-    <div class="flex flex-row p-9 sm:size-[450px] size-full dark:text-[#d2d2d2] text-[#3d3d3d] h-full rounded-xl shadow-lg bg-blur2 sm:flex-col">
+    <div class="flex flex-row p-9 sm:w-[750px] size-full dark:text-[#d2d2d2] text-[#3d3d3d] h-full  bg-blur4 shadow-lg rounded-xl sm:flex-col">
     <div class="flex flex-col">
         <h1 class="sm:text-3xl text-2xl font-[Poppins]">
           What to expect next?
         </h1>
-        <ul class="mt-2 list-disc list-inside">
+        <ul class="mt-2">
           <li class="text-xl mt-2 dark:sm:font-normal sm:font-normal font-normal dark:font-light">
             {content4}
           </li>
-          <li class="text-xl mt-2 dark:sm:font-normal sm:font-normal font-normal dark:font-light">
+          <li class="text-xl dark:sm:font-normal sm:font-normal font-normal dark:font-light">
             {content5}
           </li>
           <h1 class="text-lg mt-7 dark:sm:font-normal sm:font-medium tracking-tight font-normal dark:font-light">
