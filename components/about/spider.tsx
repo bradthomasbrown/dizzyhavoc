@@ -25,7 +25,7 @@ export default function Spider(){
             <a
               draggable={false}
               target="_blank"
-              href="https://twitter.com/dzhv_io"
+              href="https://twitter.com/bradthomasbrown"
               class="text-[1.2rem] ml-2 font-Poppins text-[#3b2d82] dark:text-[#ccb286]"
             >
               twitter

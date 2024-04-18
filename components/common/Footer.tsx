@@ -38,7 +38,7 @@ export default function Footer() {
             draggable={false}
             target="_blank"
             class="pt-[2px]"
-            href="https://x.com/dzhv_io"
+            href="https://x.com/dizzyhavoc"
           >
             <img
               draggable={false}
