@@ -115,9 +115,11 @@ export default function TokenSummary() {
         x += 0.05;
         count.value = x; // Update the progress value
       } else {
-        fetchScreener();
+        setTimeout(() => {
+          fetchScreener();
+          starttimer();
+        },200)
         clearInterval(intervalId); // Stop the interval when x reaches 100
-        starttimer();
       }
     }, 10);
   };

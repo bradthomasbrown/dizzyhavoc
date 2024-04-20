@@ -153,9 +153,11 @@ export default function MarketBarsContainer() {
         x += 0.05;
         count.value = x; // Update the progress value
       } else {
-        getPrices();
+        setTimeout(() => {
+          getPrices();
+          starttimer();
+        },200)
         clearInterval(intervalId); // Stop the interval when x reaches 100
-        starttimer();
       }
     }, 10);
   };
