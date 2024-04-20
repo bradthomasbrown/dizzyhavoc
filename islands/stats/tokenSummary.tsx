@@ -52,7 +52,6 @@ export default function TokenSummary() {
       bscprice = 0,
       baseprice = 0,
       avaxprice = 0;
-    isloading.value = true;
     const data = await MarketData();
     let totalprice = 0;
     let totalliq = 0;
@@ -115,10 +114,11 @@ export default function TokenSummary() {
         x += 0.05;
         count.value = x; // Update the progress value
       } else {
+        isloading.value = true;
         setTimeout(() => {
           fetchScreener();
           starttimer();
-        },200)
+        }, 400);
         clearInterval(intervalId); // Stop the interval when x reaches 100
       }
     }, 10);
@@ -131,9 +131,9 @@ export default function TokenSummary() {
   });
 
   const loadingbar = (
-    <div class="bottom-[1px] px-[15px] absolute left-0 items-center justify-center rounded-xl h-[2px] w-full">
+    <div class="bottom-[2px] px-[15px] absolute left-0 items-center justify-center rounded-xl h-[2px] w-full">
       <div
-        class="h-[1px] bg-[#3d3d3d] dark:bg-[#d0d0d0] rounded-xl"
+        class="rounded-xl h-[3px] bg-gradient-to-r from-transparent via-[#9b9b9b4f] to-[#9b9b9b] dark:bg-gradient-to-r dark:from-transparent dark:to-[#565656]"
         style={`width: ${count}%`}
       >
       </div>
@@ -147,16 +147,9 @@ export default function TokenSummary() {
             <img class="size-[50px]" src="./misc/loader.svg"></img>
           </div>
         )
-        : ( 
+        : (
           <>
             <div class="shadow-lg h-full w-[350px] sm:w-[465px] justify-center relative rounded-lg gap-0 xl:gap-1 bg-blur3 flex flex-col">
-              {isloading.value // widget with blurred loader when loading
-                ? (
-                  <div class="w-full shadow-lg px-0 absolute bottom-0 right-0 z-50 2xl:px-3 h-full justify-center items-center rounded-lg gap-0 xl:gap-3 dark:bg-[#212121B3] bg-[#e8e8e8B3] flex flex-col">
-                    <img class="size-[50px]" src="./misc/loader.svg" />
-                  </div>
-                )
-                : <></>}
               <div class="flex flex-row mx-auto justify-center gap-6">
                 <section class="rounded flex flex-col">
                   <h1 class="unselectable font-[Poppins] dark:text-[#d2d2d2] text-[0.7rem] sm:text-[0.75rem] flex flex-col justify-center tracking-tight items-center">
