@@ -156,7 +156,7 @@ export default function MarketBarsContainer() {
         setTimeout(() => {
           getPrices();
           starttimer();
-        },400)
+        },250)
         clearInterval(intervalId); // Stop the interval when x reaches 100
       }
     }, 10);
