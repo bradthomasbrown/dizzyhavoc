@@ -145,20 +145,20 @@ export default function MarketBarsContainer() {
       }
     });
   }
-  const starttimer = () => { // auto refresh logic
-    let x = 30;
+  const starttimer = () => {
+    // auto refresh logic
+    let x = 0;
     const intervalId = setInterval(() => {
-      if (x > 0) {
-        x -= 1;
+      if (x < 100) {
+        x += 0.05;
         count.value = x; // Update the progress value
       } else {
         getPrices();
-        clearInterval(intervalId); // Stop the interval when x reaches 30
+        clearInterval(intervalId); // Stop the interval when x reaches 100
         starttimer();
       }
-    }, 1000);
+    }, 10);
   };
-
   useState(() => {
     // on load, fetch data and start timer
     getPrices();
