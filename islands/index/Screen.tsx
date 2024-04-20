@@ -41,9 +41,9 @@ export default function Screen() {
 
   const CurrentItem = items[currentItemIndex];
   const loadingbar = (
-    <div class="bottom-1 px-[4px] absolute left-0 bg-blur3 items-center justify-center rounded-xl h-[1px] w-full">
+    <div class="bottom-2 absolute px-4 items-center justify-center rounded-xl h-[1px] w-full">
       <div
-        class="h-[1px] bg-[#3d3d3d] dark:bg-[#d0d0d0] rounded-xl"
+        class="h-[3px] px-4 bg-gradient-to-r from-transparent via-[#9b9b9b4f] to-[#9b9b9b] dark:bg-gradient-to-r dark:from-transparent dark:to-[#565656] rounded-xl"
         style={`width: ${timer}%`}
       >
       </div>
