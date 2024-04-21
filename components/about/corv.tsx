@@ -3,7 +3,7 @@ export default function Corv(){
         <div class="flex mt-[2rem] flex-row">
         <img
           draggable={false}
-          class="hover:scale-[101%] size-[50px] sm:size-[100px] rounded-full"
+          class="hover:scale-[101%] active:scale-[100%] size-[65px] sm:size-[115px] rounded-full"
           src="/misc/corv.jpg"
         />
         <div class="flex mx-5 flex-col">

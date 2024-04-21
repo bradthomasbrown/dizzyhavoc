@@ -3,7 +3,7 @@ export default function Spider(){
         <div class="flex mt-[2rem] flex-row">
         <img
           draggable={false}
-          class="hover:scale-[101%] size-[70px] sm:size-[120px] rounded-full"
+          class="hover:scale-[101%] active:scale-[100%] size-[70px] sm:size-[120px] rounded-full"
           src="/misc/spider.png"
         />
         <div class="flex mx-5 flex-col">

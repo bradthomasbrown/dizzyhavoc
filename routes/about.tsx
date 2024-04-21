@@ -11,40 +11,37 @@ export default function About() {
       >
       </img>
       <div class="h-full sm:h-[90svh] justify-center mt-[0.5rem] flex flex-col items-center">
-        <p class="
+        <p class="mb-[0.5rem]
+  font-medium
+  text-[1.35rem]
+  sm:text-[1.7rem]
   unselectable
-  mt-[3rem]
-  sm:mt-0
-  text-[1.4rem]
+  mx-auto
   text-center
   dark:text-[#d0d0d0]
   text-[#3d3d3d]
-  mx-auto
-  font-[monospace]
-  bg-transparent
-  rounded-xl
-  px-6
-  mb-0
-  sm:mb-[1.5rem]">
+  font-[Poppins]
+  mt-[1rem]">
           An open-source project driven by,
         </p>
-
+        <div class="flex sm:p-11 p-3 flex-col items-start justify-start">
         <Spider />
         <Corv />
-        
-        <p class="
+        </div>
+        <p class="mb-[0.5rem]
+  font-medium
+  text-[1.35rem]
   unselectable
-  text-[1.4rem]
+  mx-auto
   text-center
   dark:text-[#d0d0d0]
   text-[#3d3d3d]
-  mx-auto
-  font-[monospace]
-  py-3
+  font-[Poppins]
+  mt-[2rem]
   bg-transparent
-  rounded-xl
-  px-6
-  mt-[1.5rem]">
+  lg:min-w-[32rem]
+  min-w-full
+  rounded-xl">
           And all the Discord, Github & Telegram contributors.
         </p>
         <p class="
@@ -55,12 +52,11 @@ export default function About() {
   text-[#3d3d3d]
   mx-auto
   font-[monospace]
-  py-3
   bg-transparent
   rounded-xl
   px-6
   mt-[0.1rem]">
-          Built with machine code, Deno Fresh/KV & Tailwind.
+          Built with machine code, TypeScript, Deno Fresh/KV & Tailwind.
         </p>
       </div>
     </>
