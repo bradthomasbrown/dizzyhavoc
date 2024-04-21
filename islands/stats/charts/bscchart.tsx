@@ -38,8 +38,8 @@ export function BscChart() {
       {
         data: fetchedData.value.map((item) => item.bsc_price),
         borderColor: "#999999", // set the color of the line
-        pointRadius: 1, // Set the radius of the points
-        borderWidth: 2, // Set the width of the line
+        pointRadius: 0, // Set the radius of the points
+        borderWidth: 3, // Set the width of the line
         tension: 0.1,
       },
     ],
