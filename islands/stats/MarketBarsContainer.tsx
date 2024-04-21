@@ -176,7 +176,7 @@ export default function MarketBarsContainer() {
           </div>
         )
         : ( // loaded bars
-          <div class="w-full flex flex-col gap-2">
+          <div class="w-full flex flex-col gap-1">
             <div style={{ order: ethorder != null ? -ethorder : 0 }}
               class="w-full relative shadow-lg flex h-[7rem] sm:h-[9rem] rounded-lg gap-3 bg-blur3"
             >
