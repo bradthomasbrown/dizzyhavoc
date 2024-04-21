@@ -34,7 +34,7 @@ export function ChartOptions_M() {
               label += ": ";
             }
             label += context.parsed.y;
-            return label;
+            return "$"+label;
           },
         },
         displayColors: false,

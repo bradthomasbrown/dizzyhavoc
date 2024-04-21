@@ -2,7 +2,7 @@ export function ChartOptions() {
   const Options = {
     responsive: true,
     maintainAspectRatio: false,
-    animation: false,
+    animation: true,
     interaction: {
       mode: 'nearest',
       axis: 'x',
@@ -40,7 +40,7 @@ export function ChartOptions() {
               label += ": ";
             }
             label += context.parsed.y;
-            return label;
+            return "$"+label;
           },
         },
         displayColors: false,
