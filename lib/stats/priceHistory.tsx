@@ -1,7 +1,7 @@
 export async function PriceHistory() {
   try {
     const response = await fetch(
-      "https://quick-frog-59.deno.dev/v1/liveprices",
+      "https://funky-fox.deno.dev/v1/tokens",
     );
     const data = await response.json();
     return data;
