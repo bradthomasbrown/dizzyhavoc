@@ -1,4 +1,4 @@
-export async function GetHolders(url: string) {
+export async function chainBaseREQ(url: string) {
     const options = {method: 'GET', headers: {accept: 'application/json', 'x-api-key': typeof Deno !== 'undefined' ? Deno.env.get("chainbase_api") : "demo"}};
     try {
       const response = await fetch(url, options)

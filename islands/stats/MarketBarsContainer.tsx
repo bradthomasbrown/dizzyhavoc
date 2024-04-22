@@ -3,8 +3,7 @@ import { useState } from "preact/hooks";
 import { useSignal } from "@preact/signals";
 import { MarketData } from "../../lib/stats/marketData.tsx";
 import { Arb, Avax, Base, Bsc, Eth } from "./marketbars/mod.ts";
-import { GetHolders } from "../../lib/stats/Holders.tsx";
-import { GetTransfers } from "../../lib/stats/Transfers.tsx";
+import { chainBaseREQ } from "../../lib/stats/chainBaseREQ.tsx";
 import { formatNumber } from "../../lib/common/formatNumber.tsx";
 export default function MarketBarsContainer() {
   if (!IS_BROWSER) return <></>;
@@ -178,11 +177,11 @@ export default function MarketBarsContainer() {
   async function HandleEthTooltip(){
     ethtooltip.value = !ethtooltip.value;
     if(!ethholders.value){
-      const data = await GetHolders(
+      const data = await chainBaseREQ(
         "https://api.chainbase.online/v1/token/holders?chain_id=1&contract_address=0x3419875b4d3bca7f3fdda2db7a476a79fd31b4fe&page=1&limit=20"
       );
       ethholders.value = data.count
-      const data2 = await GetTransfers(
+      const data2 = await chainBaseREQ(
         "https://api.chainbase.online/v1/token/transfers?chain_id=1&contract_address=0x3419875B4D3Bca7F3FddA2dB7a476A79fD31B4fE&from_block=19109603&to_block=latest&page=1&limit=20"
       );
       ethtransfers.value = data2.count
@@ -191,11 +190,11 @@ export default function MarketBarsContainer() {
   async function HandleArbTooltip(){
     arbtooltip.value = !arbtooltip.value;
     if(!arbholders.value){
-      const data = await GetHolders(
+      const data = await chainBaseREQ(
         "https://api.chainbase.online/v1/token/holders?chain_id=42161&contract_address=0x3419875b4d3bca7f3fdda2db7a476a79fd31b4fe&page=1&limit=20"
       );
       arbholders.value = data.count
-      const data2 = await GetTransfers(
+      const data2 = await chainBaseREQ(
         "https://api.chainbase.online/v1/token/transfers?chain_id=42161&contract_address=0x3419875B4D3Bca7F3FddA2dB7a476A79fD31B4fE&from_block=175239792&to_block=latest&page=1&limit=20"
       );
       arbtransfers.value = data2.count
@@ -204,11 +203,11 @@ export default function MarketBarsContainer() {
   async function HandleAvaxTooltip(){
     avaxtooltip.value = !avaxtooltip.value;
     if(!avaxholders.value){
-      const data = await GetHolders(
+      const data = await chainBaseREQ(
         "https://api.chainbase.online/v1/token/holders?chain_id=43114&contract_address=0x3419875b4d3bca7f3fdda2db7a476a79fd31b4fe&page=1&limit=20"
       );
       avaxholders.value = data.count
-      const data2 = await GetTransfers(
+      const data2 = await chainBaseREQ(
         "https://api.chainbase.online/v1/token/transfers?chain_id=43114&contract_address=0x3419875B4D3Bca7F3FddA2dB7a476A79fD31B4fE&from_block=40954902&to_block=latest&page=1&limit=20"
       );
       avaxtransfers.value = data2.count
@@ -217,11 +216,11 @@ export default function MarketBarsContainer() {
   async function HandleBscTooltip(){
     bsctooltip.value = !bsctooltip.value;
     if(!bscholders.value){
-      const data = await GetHolders(
+      const data = await chainBaseREQ(
         "https://api.chainbase.online/v1/token/holders?chain_id=56&contract_address=0x3419875b4d3bca7f3fdda2db7a476a79fd31b4fe&page=1&limit=20"
       );
       bscholders.value = data.count
-      const data2 = await GetTransfers(
+      const data2 = await chainBaseREQ(
         "https://api.chainbase.online/v1/token/transfers?chain_id=56&contract_address=0x3419875B4D3Bca7F3FddA2dB7a476A79fD31B4fE&from_block=35660669&to_block=latest&page=1&limit=20"
       );
       bsctransfers.value = data2.count
@@ -230,11 +229,11 @@ export default function MarketBarsContainer() {
   async function HandleBaseTooltip(){
     basetooltip.value = !basetooltip.value;
     if(!baseholders.value){
-      const data = await GetHolders(
+      const data = await chainBaseREQ(
         "https://api.chainbase.online/v1/token/holders?chain_id=8453&contract_address=0x3419875b4d3bca7f3fdda2db7a476a79fd31b4fe&page=1&limit=20"
       );
       baseholders.value = data.count
-      const data2 = await GetTransfers(
+      const data2 = await chainBaseREQ(
         "https://api.chainbase.online/v1/token/transfers?chain_id=8453&contract_address=0x3419875B4D3Bca7F3FddA2dB7a476A79fD31B4fE&from_block=9858128&to_block=latest&page=1&limit=20"
       );
       basetransfers.value = data2.count
