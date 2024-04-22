@@ -180,10 +180,11 @@ export default function MarketBarsContainer() {
           <div
             style={{ order: ethorder != null ? -ethorder : 0 }}
             class="w-full relative shadow-lg flex h-[7rem] sm:h-[9rem] rounded-lg gap-3 bg-blur3"
-            onClick={() => {
+          >
+                        <div onClick={() => {
               ethtooltip.value = !ethtooltip.value;
             }}
-          >
+            class="absolute bottom-1 cursor-pointer unselectable left-2 dark:text-[#d0d0d0] text-[#3d3d3d] sm:text-sm text-[11px] font-[Poppins]">{ethtooltip.value ? <img class="size-5 contrast-0 vignets" src="/misc/minus.svg"></img> : <img class="size-5 contrast-0 vignets" src="/misc/plus.svg"></img>}</div>
             {/* ETH MarketBar */}
             <a
               draggable={false}
@@ -212,18 +213,19 @@ export default function MarketBarsContainer() {
               style={{ order: ethorder != null ? -ethorder : 0 }}
               class="sm:h-[1.1rem] h-[0.9rem] rounded-md justify-evenly flex flex-row sm:text-sm text-[11px] px-2 font-[Poppins] w-full bg-blur3"
             >
-            <p class="flex">holders: {0}</p>
-            <p class="flex">transfers: {0}</p>
+            <p class="flex dark:text-[#d0d0d0] text-[#3d3d3d]">holders: {0}</p>
+            <p class="flex dark:text-[#d0d0d0] text-[#3d3d3d]">transfers: {0}</p>
             <a class="flex text-[#3b2d82] dark:text-[#ccb286]" target="_blank" href="https://etherscan.io/address/0x3419875b4d3bca7f3fdda2db7a476a79fd31b4fe">contract</a>
             </div>
           )}
           <div
             style={{ order: arborder != null ? -arborder : 0 }}
             class="w-full relative shadow-lg flex h-[7rem] sm:h-[9rem] rounded-lg gap-3 bg-blur3"
-            onClick={() => {
+          >
+                        <div onClick={() => {
               arbtooltip.value = !arbtooltip.value;
             }}
-          >
+            class="absolute bottom-1 cursor-pointer unselectable left-2 dark:text-[#d0d0d0] text-[#3d3d3d] sm:text-sm text-[11px] font-[Poppins]">{arbtooltip.value ? <img class="size-5 contrast-0 vignets" src="/misc/minus.svg"></img> : <img class="size-5 contrast-0 vignets" src="/misc/plus.svg"></img>}</div>
             {/* Arb MarketBar */}
             <a
               draggable={false}
@@ -252,18 +254,19 @@ export default function MarketBarsContainer() {
               style={{ order: arborder != null ? -arborder : 0 }}
               class="sm:h-[1.1rem] h-[0.9rem] rounded-md justify-evenly flex flex-row sm:text-sm text-[11px] px-2 font-[Poppins] w-full bg-blur3"
               >
-              <p class="flex">holders: {0}</p>
-              <p class="flex">transfers: {0}</p>
+              <p class="flex dark:text-[#d0d0d0] text-[#3d3d3d]">holders: {0}</p>
+              <p class="flex dark:text-[#d0d0d0] text-[#3d3d3d]">transfers: {0}</p>
               <a class="flex text-[#3b2d82] dark:text-[#ccb286]" target="_blank" href="https://arbiscan.io/address/0x3419875b4d3bca7f3fdda2db7a476a79fd31b4fe">contract</a>
               </div>
           )}
           <div
             style={{ order: avaxorder != null ? -avaxorder : 0 }}
             class="w-full relative shadow-lg flex h-[7rem] sm:h-[9rem] rounded-lg gap-3 bg-blur3"
-            onClick={() => {
+          >
+                        <div onClick={() => {
               avaxtooltip.value = !avaxtooltip.value;
             }}
-          >
+            class="absolute bottom-1 cursor-pointer unselectable left-2 dark:text-[#d0d0d0] text-[#3d3d3d] sm:text-sm text-[11px] font-[Poppins]">{avaxtooltip.value ? <img class="size-5 contrast-0 vignets" src="/misc/minus.svg"></img> : <img class="size-5 contrast-0 vignets" src="/misc/plus.svg"></img>}</div>
             {/* Avax MarketBar */}
             <a
               draggable={false}
@@ -292,8 +295,8 @@ export default function MarketBarsContainer() {
               style={{ order: avaxorder != null ? -avaxorder : 0 }}
               class="sm:h-[1.1rem] h-[0.9rem] rounded-md justify-evenly flex flex-row sm:text-sm text-[11px] px-2 font-[Poppins] w-full bg-blur3"
               >
-              <p class="flex">holders: {0}</p>
-              <p class="flex">transfers: {0}</p>
+              <p class="flex dark:text-[#d0d0d0] text-[#3d3d3d]">holders: {0}</p>
+              <p class="flex dark:text-[#d0d0d0] text-[#3d3d3d]">transfers: {0}</p>
               <a class="flex text-[#3b2d82] dark:text-[#ccb286]" target="_blank" href="https://subnets.avax.network/c-chain/address/0x3419875B4D3Bca7F3FddA2dB7a476A79fD31B4fE">contract</a>
               </div>
           )}
@@ -301,10 +304,11 @@ export default function MarketBarsContainer() {
           <div
             style={{ order: baseorder != null ? -baseorder : 0 }}
             class="w-full relative shadow-lg flex h-[7rem] sm:h-[9rem] rounded-lg gap-3 bg-blur3"
-            onClick={() => {
+          >
+                        <div onClick={() => {
               basetooltip.value = !basetooltip.value;
             }}
-          >
+            class="absolute bottom-1 cursor-pointer unselectable left-2 dark:text-[#d0d0d0] text-[#3d3d3d] sm:text-sm text-[11px] font-[Poppins]">{basetooltip.value ? <img class="size-5 contrast-0 vignets" src="/misc/minus.svg"></img> : <img class="size-5 contrast-0 vignets" src="/misc/plus.svg"></img>}</div>
             {/* Base MarketBar */}
             <a
               draggable={false}
@@ -333,8 +337,8 @@ export default function MarketBarsContainer() {
               style={{ order: baseorder != null ? -baseorder : 0 }}
               class="sm:h-[1.1rem] h-[0.9rem] rounded-md justify-evenly flex flex-row sm:text-sm text-[11px] px-2 font-[Poppins] w-full bg-blur3"
               >
-              <p class="flex">holders: {0}</p>
-              <p class="flex">transfers: {0}</p>
+              <p class="flex dark:text-[#d0d0d0] text-[#3d3d3d]">holders: {0}</p>
+              <p class="flex dark:text-[#d0d0d0] text-[#3d3d3d]">transfers: {0}</p>
               <a class="flex text-[#3b2d82] dark:text-[#ccb286]" target="_blank" href="https://basescan.org/address/0x3419875b4d3bca7f3fdda2db7a476a79fd31b4fe">contract</a>
               </div>
           )}
@@ -342,10 +346,12 @@ export default function MarketBarsContainer() {
           <div
             style={{ order: bscorder != null ? -bscorder : 0 }}
             class="w-full relative shadow-lg flex h-[7rem] sm:h-[9rem] rounded-lg gap-3 bg-blur3"
-            onClick={() => {
+          >
+            <div onClick={() => {
               bsctooltip.value = !bsctooltip.value;
             }}
-          >
+             class="absolute bottom-1 cursor-pointer unselectable left-2 dark:text-[#d0d0d0] text-[#3d3d3d] sm:text-sm text-[11px] font-[Poppins]">{bsctooltip.value ? <img class="size-5 contrast-0 vignets" src="/misc/minus.svg"></img> : <img class="size-5 contrast-0 vignets" src="/misc/plus.svg"></img>}</div>
+
             {/* BSC MarketBar */}
             <a
               draggable={false}
@@ -372,10 +378,10 @@ export default function MarketBarsContainer() {
           {bsctooltip.value && (
             <div
               style={{ order: bscorder != null ? -bscorder : 0 }}
-              class="sm:h-[1.1rem] h-[0.9rem] rounded-md justify-evenly flex flex-row sm:text-sm text-[11px] px-2 font-[Poppins] w-full bg-blur3"
+              class="sm:h-[1.1rem] h-[0.9rem] rounded-md justify-evenly flex flex-row sm:text-sm text-[11px] font-[Poppins] px-2  w-full bg-blur3"
               >
-              <p class="flex">holders: {0}</p>
-              <p class="flex">transfers: {0}</p>
+              <p class="flex dark:text-[#d0d0d0] text-[#3d3d3d]">holders: {0}</p>
+              <p class="flex dark:text-[#d0d0d0] text-[#3d3d3d]">transfers: {0}</p>
               <a class="flex text-[#3b2d82] dark:text-[#ccb286]" target="_blank" href="https://bscscan.com/address/0x3419875b4d3bca7f3fdda2db7a476a79fd31b4fe">contract</a>
               </div>
           )}
