@@ -65,10 +65,10 @@ export function AvaxChart() {
           )}
           {timestamps && (
             <>
-             <p class="sm:text-[9px] text-[8px] font-[Poppins] dark:text-[#d2d2d2] text-[#1a1a1a] absolute text-center left-[4.8rem] sm:left-[4.1rem] bottom-[14px] sm:bottom-2">
+             <p class="sm:text-[9px] text-[8px] font-[Poppins] dark:text-[#d2d2d27c] text-[#1a1a1ad6] absolute text-center left-[4.8rem] sm:left-[4.1rem] bottom-[14px] sm:bottom-2">
                 {timestamps[0]}{" "}
               </p>
-              <p class="sm:text-[9px] text-[8px] font-[Poppins] dark:text-[#d2d2d2] text-[#1a1a1a] absolute text-center right-[2rem] sm:right-4 bottom-[14px] sm:bottom-2">
+              <p class="sm:text-[9px] text-[8px] font-[Poppins] dark:text-[#d2d2d27c] text-[#1a1a1ad6] absolute text-center right-[2rem] sm:right-4 bottom-[14px] sm:bottom-2">
                 {timestamps[timestamps.length - 1]}{" "}
               </p>
             </>
