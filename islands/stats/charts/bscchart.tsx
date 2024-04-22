@@ -7,6 +7,7 @@ import { useSignal } from "@preact/signals";
 import { useState } from "preact/hooks";
 
 export function BscChart() {
+  if (!IS_BROWSER) return <></>;
   const fetchedData = useSignal([]);
   const isLoading = useSignal(true);
   const isMobile = globalThis.window.matchMedia("(pointer: coarse)").matches;
