@@ -216,6 +216,7 @@ export default function MarketBarsContainer() {
             <p class="flex dark:text-[#d0d0d0] text-[#3d3d3d]">holders: {0}</p>
             <p class="flex dark:text-[#d0d0d0] text-[#3d3d3d]">transfers: {0}</p>
             <a class="flex text-[#3b2d82] dark:text-[#ccb286]" target="_blank" href="https://etherscan.io/address/0x3419875b4d3bca7f3fdda2db7a476a79fd31b4fe">contract</a>
+            <a class="flex text-[#3b2d82] dark:text-[#ccb286]" target="_blank" href="https://app.uniswap.org/swap?outputCurrency=0x3419875B4D3Bca7F3FddA2dB7a476A79fD31B4fE&chain=ethereum">trade</a>
             </div>
           )}
           <div
@@ -257,6 +258,7 @@ export default function MarketBarsContainer() {
               <p class="flex dark:text-[#d0d0d0] text-[#3d3d3d]">holders: {0}</p>
               <p class="flex dark:text-[#d0d0d0] text-[#3d3d3d]">transfers: {0}</p>
               <a class="flex text-[#3b2d82] dark:text-[#ccb286]" target="_blank" href="https://arbiscan.io/address/0x3419875b4d3bca7f3fdda2db7a476a79fd31b4fe">contract</a>
+              <a class="flex text-[#3b2d82] dark:text-[#ccb286]" target="_blank" href="https://app.uniswap.org/swap?outputCurrency=0x3419875B4D3Bca7F3FddA2dB7a476A79fD31B4fE&chain=arbitrum">trade</a>
               </div>
           )}
           <div
@@ -298,6 +300,7 @@ export default function MarketBarsContainer() {
               <p class="flex dark:text-[#d0d0d0] text-[#3d3d3d]">holders: {0}</p>
               <p class="flex dark:text-[#d0d0d0] text-[#3d3d3d]">transfers: {0}</p>
               <a class="flex text-[#3b2d82] dark:text-[#ccb286]" target="_blank" href="https://subnets.avax.network/c-chain/address/0x3419875B4D3Bca7F3FddA2dB7a476A79fD31B4fE">contract</a>
+              <a class="flex text-[#3b2d82] dark:text-[#ccb286]" target="_blank" href="https://traderjoexyz.com/avalanche/trade?outputCurrency=0x3419875B4D3Bca7F3FddA2dB7a476A79fD31B4fE">trade</a>
               </div>
           )}
 
@@ -340,6 +343,7 @@ export default function MarketBarsContainer() {
               <p class="flex dark:text-[#d0d0d0] text-[#3d3d3d]">holders: {0}</p>
               <p class="flex dark:text-[#d0d0d0] text-[#3d3d3d]">transfers: {0}</p>
               <a class="flex text-[#3b2d82] dark:text-[#ccb286]" target="_blank" href="https://basescan.org/address/0x3419875b4d3bca7f3fdda2db7a476a79fd31b4fe">contract</a>
+              <a class="flex text-[#3b2d82] dark:text-[#ccb286]" target="_blank" href="https://app.uniswap.org/swap?outputCurrency=0x3419875B4D3Bca7F3FddA2dB7a476A79fD31B4fE&chain=base">trade</a>
               </div>
           )}
 
@@ -383,6 +387,7 @@ export default function MarketBarsContainer() {
               <p class="flex dark:text-[#d0d0d0] text-[#3d3d3d]">holders: {0}</p>
               <p class="flex dark:text-[#d0d0d0] text-[#3d3d3d]">transfers: {0}</p>
               <a class="flex text-[#3b2d82] dark:text-[#ccb286]" target="_blank" href="https://bscscan.com/address/0x3419875b4d3bca7f3fdda2db7a476a79fd31b4fe">contract</a>
+              <a class="flex text-[#3b2d82] dark:text-[#ccb286]" target="_blank" href="https://pancakeswap.finance/swap?outputCurrency=0x3419875B4D3Bca7F3FddA2dB7a476A79fD31B4fE&chainId=56">trade</a>
               </div>
           )}
         </div>
