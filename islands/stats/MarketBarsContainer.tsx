@@ -3,6 +3,9 @@ import { useState } from "preact/hooks";
 import { useSignal } from "@preact/signals";
 import { MarketData } from "../../lib/stats/marketData.tsx";
 import { Arb, Avax, Base, Bsc, Eth } from "./marketbars/mod.ts";
+import { GetHolders } from "../../lib/stats/Holders.tsx";
+import { GetTransfers } from "../../lib/stats/Transfers.tsx";
+import { formatNumber } from "../../lib/common/formatNumber.tsx";
 export default function MarketBarsContainer() {
   if (!IS_BROWSER) return <></>;
   const initialloading = useSignal<boolean>(true);
@@ -37,6 +40,18 @@ export default function MarketBarsContainer() {
   const h24_bsc = useSignal<number>(0);
   const h24_base = useSignal<number>(0);
   const h24_avax = useSignal<number>(0);
+  // holders for each chain
+  const arbholders = useSignal<number>(0);
+  const bscholders = useSignal<number>(0);
+  const baseholders = useSignal<number>(0);
+  const avaxholders = useSignal<number>(0);
+  const ethholders = useSignal<number>(0);
+  // transfers for each chain
+  const arbtransfers = useSignal<number>(0);
+  const bsctransfers = useSignal<number>(0);
+  const basetransfers = useSignal<number>(0);
+  const avaxtransfers = useSignal<number>(0);
+  const ethtransfers = useSignal<number>(0);
   // index in MarketBar column
   const arborder = useSignal<number>(0);
   const bscorder = useSignal<number>(0);
@@ -49,6 +64,7 @@ export default function MarketBarsContainer() {
   const basetooltip = useSignal<boolean>(false);
   const avaxtooltip = useSignal<boolean>(false);
   const ethtooltip = useSignal<boolean>(false);
+
 
   const getPrices = async () => {
     let arbprice = 0,
@@ -161,6 +177,71 @@ export default function MarketBarsContainer() {
       }
     }, 10);
   };
+  async function getEthHolders(){
+    ethtooltip.value = !ethtooltip.value;
+    if(!ethholders.value){
+      const data = await GetHolders(
+        "https://api.chainbase.online/v1/token/holders?chain_id=1&contract_address=0x3419875b4d3bca7f3fdda2db7a476a79fd31b4fe&page=1&limit=20"
+      );
+      ethholders.value = data.count
+      const data2 = await GetTransfers(
+        "https://api.chainbase.online/v1/token/transfers?chain_id=1&contract_address=0x3419875B4D3Bca7F3FddA2dB7a476A79fD31B4fE&from_block=19109603&to_block=latest&page=1&limit=20"
+      );
+      ethtransfers.value = data2.count
+    }
+  }
+  async function getArbHolders(){
+    arbtooltip.value = !arbtooltip.value;
+    if(!arbholders.value){
+      const data = await GetHolders(
+        "https://api.chainbase.online/v1/token/holders?chain_id=42161&contract_address=0x3419875b4d3bca7f3fdda2db7a476a79fd31b4fe&page=1&limit=20"
+      );
+      arbholders.value = data.count
+      const data2 = await GetTransfers(
+        "https://api.chainbase.online/v1/token/transfers?chain_id=42161&contract_address=0x3419875B4D3Bca7F3FddA2dB7a476A79fD31B4fE&from_block=175239792&to_block=latest&page=1&limit=20"
+      );
+      arbtransfers.value = data2.count
+    }
+  }
+  async function getAvaxHolders(){
+    avaxtooltip.value = !avaxtooltip.value;
+    if(!avaxholders.value){
+      const data = await GetHolders(
+        "https://api.chainbase.online/v1/token/holders?chain_id=43114&contract_address=0x3419875b4d3bca7f3fdda2db7a476a79fd31b4fe&page=1&limit=20"
+      );
+      avaxholders.value = data.count
+      const data2 = await GetTransfers(
+        "https://api.chainbase.online/v1/token/transfers?chain_id=43114&contract_address=0x3419875B4D3Bca7F3FddA2dB7a476A79fD31B4fE&from_block=40954902&to_block=latest&page=1&limit=20"
+      );
+      avaxtransfers.value = data2.count
+    }
+  }
+  async function getBscHolders(){
+    bsctooltip.value = !bsctooltip.value;
+    if(!bscholders.value){
+      const data = await GetHolders(
+        "https://api.chainbase.online/v1/token/holders?chain_id=56&contract_address=0x3419875b4d3bca7f3fdda2db7a476a79fd31b4fe&page=1&limit=20"
+      );
+      bscholders.value = data.count
+      const data2 = await GetTransfers(
+        "https://api.chainbase.online/v1/token/transfers?chain_id=56&contract_address=0x3419875B4D3Bca7F3FddA2dB7a476A79fD31B4fE&from_block=35660669&to_block=latest&page=1&limit=20"
+      );
+      bsctransfers.value = data2.count
+    }
+  }
+  async function getBaseHolders(){
+    basetooltip.value = !basetooltip.value;
+    if(!baseholders.value){
+      const data = await GetHolders(
+        "https://api.chainbase.online/v1/token/holders?chain_id=8453&contract_address=0x3419875b4d3bca7f3fdda2db7a476a79fd31b4fe&page=1&limit=20"
+      );
+      baseholders.value = data.count
+      const data2 = await GetTransfers(
+        "https://api.chainbase.online/v1/token/transfers?chain_id=8453&contract_address=0x3419875B4D3Bca7F3FddA2dB7a476A79fD31B4fE&from_block=9858128&to_block=latest&page=1&limit=20"
+      );
+      basetransfers.value = data2.count
+    }
+  }
   useState(() => {
     // on load, fetch data and start timer
     getPrices();
@@ -181,10 +262,25 @@ export default function MarketBarsContainer() {
             style={{ order: ethorder != null ? -ethorder : 0 }}
             class="w-full relative shadow-lg flex h-[7rem] sm:h-[9rem] rounded-lg gap-3 bg-blur3"
           >
-                        <div onClick={() => {
-              ethtooltip.value = !ethtooltip.value;
-            }}
-            class="z-[2] absolute bottom-1 cursor-pointer unselectable left-1 dark:text-[#d0d0d0] text-[#3d3d3d] sm:text-sm text-[11px] font-[Poppins]">{ethtooltip.value ? <img class="size-5 contrast-0 vignets" src="/misc/minus.svg"></img> : <img class="size-5 contrast-0 vignets" src="/misc/plus.svg"></img>}</div>
+            <div
+              onClick={() => {
+                getEthHolders();
+
+              }}
+              class="z-[2] absolute bottom-1 cursor-pointer unselectable left-1 dark:text-[#d0d0d0] text-[#3d3d3d] sm:text-sm text-[11px] font-[Poppins]"
+            >
+              {ethtooltip.value ? (
+                <img
+                  class="size-5 contrast-0 vignets"
+                  src="/misc/minus.svg"
+                ></img>
+              ) : (
+                <img
+                  class="size-5 contrast-0 vignets"
+                  src="/misc/plus.svg"
+                ></img>
+              )}
+            </div>
             {/* ETH MarketBar */}
             <a
               draggable={false}
@@ -213,20 +309,50 @@ export default function MarketBarsContainer() {
               style={{ order: ethorder != null ? -ethorder : 0 }}
               class="sm:h-[1.1rem] h-[0.9rem] rounded-md justify-evenly flex flex-row sm:text-sm text-[11px] px-2 font-[Poppins] w-full bg-blur3"
             >
-            <p class="flex dark:text-[#d0d0d0] text-[#3d3d3d]">holders: {0}</p>
-            <p class="flex dark:text-[#d0d0d0] text-[#3d3d3d]">transfers: {0}</p>
-            <a class="flex text-[#3b2d82] dark:text-[#ccb286]" target="_blank" href="https://etherscan.io/address/0x3419875b4d3bca7f3fdda2db7a476a79fd31b4fe">contract</a>
-            <a class="flex text-[#3b2d82] dark:text-[#ccb286]" target="_blank" href="https://app.uniswap.org/swap?outputCurrency=0x3419875B4D3Bca7F3FddA2dB7a476A79fD31B4fE&chain=ethereum">trade</a>
+              <p class="flex dark:text-[#d0d0d0] text-[#3d3d3d]">
+                holders: {ethtransfers.value&&ethholders.value ? formatNumber(ethholders.value) : "..."}
+              </p>
+              <p class="flex dark:text-[#d0d0d0] text-[#3d3d3d]">
+                transfers: {ethtransfers.value&&ethholders.value ? formatNumber(ethtransfers.value) : "..."}
+              </p>
+              <a
+                class="flex text-[#3b2d82] dark:text-[#ccb286]"
+                target="_blank"
+                href="https://etherscan.io/address/0x3419875b4d3bca7f3fdda2db7a476a79fd31b4fe"
+              >
+                contract
+              </a>
+              <a
+                class="flex text-[#3b2d82] dark:text-[#ccb286]"
+                target="_blank"
+                href="https://app.uniswap.org/swap?outputCurrency=0x3419875B4D3Bca7F3FddA2dB7a476A79fD31B4fE&chain=ethereum"
+              >
+                trade
+              </a>
             </div>
           )}
           <div
             style={{ order: arborder != null ? -arborder : 0 }}
             class="w-full relative shadow-lg flex h-[7rem] sm:h-[9rem] rounded-lg gap-3 bg-blur3"
           >
-                        <div onClick={() => {
-              arbtooltip.value = !arbtooltip.value;
-            }}
-            class="z-[2] absolute bottom-1 cursor-pointer unselectable left-1 dark:text-[#d0d0d0] text-[#3d3d3d] sm:text-sm text-[11px] font-[Poppins]">{arbtooltip.value ? <img class="size-5 contrast-0 vignets" src="/misc/minus.svg"></img> : <img class="size-5 contrast-0 vignets" src="/misc/plus.svg"></img>}</div>
+            <div
+              onClick={() => {
+                getArbHolders();
+              }}
+              class="z-[2] absolute bottom-1 cursor-pointer unselectable left-1 dark:text-[#d0d0d0] text-[#3d3d3d] sm:text-sm text-[11px] font-[Poppins]"
+            >
+              {arbtooltip.value ? (
+                <img
+                  class="size-5 contrast-0 vignets"
+                  src="/misc/minus.svg"
+                ></img>
+              ) : (
+                <img
+                  class="size-5 contrast-0 vignets"
+                  src="/misc/plus.svg"
+                ></img>
+              )}
+            </div>
             {/* Arb MarketBar */}
             <a
               draggable={false}
@@ -254,21 +380,51 @@ export default function MarketBarsContainer() {
             <div
               style={{ order: arborder != null ? -arborder : 0 }}
               class="sm:h-[1.1rem] h-[0.9rem] rounded-md justify-evenly flex flex-row sm:text-sm text-[11px] px-2 font-[Poppins] w-full bg-blur3"
+            >
+              <p class="flex dark:text-[#d0d0d0] text-[#3d3d3d]">
+                holders: {arbtransfers.value&&arbholders.value ? formatNumber(arbholders.value) : "..."}
+              </p>
+              <p class="flex dark:text-[#d0d0d0] text-[#3d3d3d]">
+                transfers: {arbtransfers.value&&arbholders.value ? formatNumber(arbtransfers.value) : "..."}
+              </p>
+              <a
+                class="flex text-[#3b2d82] dark:text-[#ccb286]"
+                target="_blank"
+                href="https://arbiscan.io/address/0x3419875b4d3bca7f3fdda2db7a476a79fd31b4fe"
               >
-              <p class="flex dark:text-[#d0d0d0] text-[#3d3d3d]">holders: {0}</p>
-              <p class="flex dark:text-[#d0d0d0] text-[#3d3d3d]">transfers: {0}</p>
-              <a class="flex text-[#3b2d82] dark:text-[#ccb286]" target="_blank" href="https://arbiscan.io/address/0x3419875b4d3bca7f3fdda2db7a476a79fd31b4fe">contract</a>
-              <a class="flex text-[#3b2d82] dark:text-[#ccb286]" target="_blank" href="https://app.uniswap.org/swap?outputCurrency=0x3419875B4D3Bca7F3FddA2dB7a476A79fD31B4fE&chain=arbitrum">trade</a>
-              </div>
+                contract
+              </a>
+              <a
+                class="flex text-[#3b2d82] dark:text-[#ccb286]"
+                target="_blank"
+                href="https://app.uniswap.org/swap?outputCurrency=0x3419875B4D3Bca7F3FddA2dB7a476A79fD31B4fE&chain=arbitrum"
+              >
+                trade
+              </a>
+            </div>
           )}
           <div
             style={{ order: avaxorder != null ? -avaxorder : 0 }}
             class="w-full relative shadow-lg flex h-[7rem] sm:h-[9rem] rounded-lg gap-3 bg-blur3"
           >
-                        <div onClick={() => {
-              avaxtooltip.value = !avaxtooltip.value;
-            }}
-            class="z-[2] absolute bottom-1 cursor-pointer unselectable left-1 dark:text-[#d0d0d0] text-[#3d3d3d] sm:text-sm text-[11px] font-[Poppins]">{avaxtooltip.value ? <img class="size-5 contrast-0 vignets" src="/misc/minus.svg"></img> : <img class="size-5 contrast-0 vignets" src="/misc/plus.svg"></img>}</div>
+            <div
+              onClick={() => {
+                getAvaxHolders();
+              }}
+              class="z-[2] absolute bottom-1 cursor-pointer unselectable left-1 dark:text-[#d0d0d0] text-[#3d3d3d] sm:text-sm text-[11px] font-[Poppins]"
+            >
+              {avaxtooltip.value ? (
+                <img
+                  class="size-5 contrast-0 vignets"
+                  src="/misc/minus.svg"
+                ></img>
+              ) : (
+                <img
+                  class="size-5 contrast-0 vignets"
+                  src="/misc/plus.svg"
+                ></img>
+              )}
+            </div>
             {/* Avax MarketBar */}
             <a
               draggable={false}
@@ -296,22 +452,52 @@ export default function MarketBarsContainer() {
             <div
               style={{ order: avaxorder != null ? -avaxorder : 0 }}
               class="sm:h-[1.1rem] h-[0.9rem] rounded-md justify-evenly flex flex-row sm:text-sm text-[11px] px-2 font-[Poppins] w-full bg-blur3"
+            >
+              <p class="flex dark:text-[#d0d0d0] text-[#3d3d3d]">
+                holders: {avaxtransfers.value&&avaxholders.value ? formatNumber(avaxholders.value) : "..."}
+              </p>
+              <p class="flex dark:text-[#d0d0d0] text-[#3d3d3d]">
+                transfers: {avaxtransfers.value&&avaxholders.value ? formatNumber(avaxtransfers.value) : "..."}
+              </p>
+              <a
+                class="flex text-[#3b2d82] dark:text-[#ccb286]"
+                target="_blank"
+                href="https://subnets.avax.network/c-chain/address/0x3419875B4D3Bca7F3FddA2dB7a476A79fD31B4fE"
               >
-              <p class="flex dark:text-[#d0d0d0] text-[#3d3d3d]">holders: {0}</p>
-              <p class="flex dark:text-[#d0d0d0] text-[#3d3d3d]">transfers: {0}</p>
-              <a class="flex text-[#3b2d82] dark:text-[#ccb286]" target="_blank" href="https://subnets.avax.network/c-chain/address/0x3419875B4D3Bca7F3FddA2dB7a476A79fD31B4fE">contract</a>
-              <a class="flex text-[#3b2d82] dark:text-[#ccb286]" target="_blank" href="https://traderjoexyz.com/avalanche/trade?outputCurrency=0x3419875B4D3Bca7F3FddA2dB7a476A79fD31B4fE">trade</a>
-              </div>
+                contract
+              </a>
+              <a
+                class="flex text-[#3b2d82] dark:text-[#ccb286]"
+                target="_blank"
+                href="https://traderjoexyz.com/avalanche/trade?outputCurrency=0x3419875B4D3Bca7F3FddA2dB7a476A79fD31B4fE"
+              >
+                trade
+              </a>
+            </div>
           )}
 
           <div
             style={{ order: baseorder != null ? -baseorder : 0 }}
             class="w-full relative shadow-lg flex h-[7rem] sm:h-[9rem] rounded-lg gap-3 bg-blur3"
           >
-                        <div onClick={() => {
-              basetooltip.value = !basetooltip.value;
-            }}
-            class="z-[2] absolute bottom-1 cursor-pointer unselectable left-1 dark:text-[#d0d0d0] text-[#3d3d3d] sm:text-sm text-[11px] font-[Poppins]">{basetooltip.value ? <img class="size-5 contrast-0 vignets" src="/misc/minus.svg"></img> : <img class="size-5 contrast-0 vignets" src="/misc/plus.svg"></img>}</div>
+            <div
+              onClick={() => {
+                getBaseHolders();
+              }}
+              class="z-[2] absolute bottom-1 cursor-pointer unselectable left-1 dark:text-[#d0d0d0] text-[#3d3d3d] sm:text-sm text-[11px] font-[Poppins]"
+            >
+              {basetooltip.value ? (
+                <img
+                  class="size-5 contrast-0 vignets"
+                  src="/misc/minus.svg"
+                ></img>
+              ) : (
+                <img
+                  class="size-5 contrast-0 vignets"
+                  src="/misc/plus.svg"
+                ></img>
+              )}
+            </div>
             {/* Base MarketBar */}
             <a
               draggable={false}
@@ -339,22 +525,52 @@ export default function MarketBarsContainer() {
             <div
               style={{ order: baseorder != null ? -baseorder : 0 }}
               class="sm:h-[1.1rem] h-[0.9rem] rounded-md justify-evenly flex flex-row sm:text-sm text-[11px] px-2 font-[Poppins] w-full bg-blur3"
+            >
+              <p class="flex dark:text-[#d0d0d0] text-[#3d3d3d]">
+                holders: {baseholders.value&&basetransfers.value ? formatNumber(baseholders.value) : "..."}
+              </p>
+              <p class="flex dark:text-[#d0d0d0] text-[#3d3d3d]">
+                transfers: {baseholders.value&&basetransfers.value ? formatNumber(basetransfers.value) : "..."}
+              </p>
+              <a
+                class="flex text-[#3b2d82] dark:text-[#ccb286]"
+                target="_blank"
+                href="https://basescan.org/address/0x3419875b4d3bca7f3fdda2db7a476a79fd31b4fe"
               >
-              <p class="flex dark:text-[#d0d0d0] text-[#3d3d3d]">holders: {0}</p>
-              <p class="flex dark:text-[#d0d0d0] text-[#3d3d3d]">transfers: {0}</p>
-              <a class="flex text-[#3b2d82] dark:text-[#ccb286]" target="_blank" href="https://basescan.org/address/0x3419875b4d3bca7f3fdda2db7a476a79fd31b4fe">contract</a>
-              <a class="flex text-[#3b2d82] dark:text-[#ccb286]" target="_blank" href="https://app.uniswap.org/swap?outputCurrency=0x3419875B4D3Bca7F3FddA2dB7a476A79fD31B4fE&chain=base">trade</a>
-              </div>
+                contract
+              </a>
+              <a
+                class="flex text-[#3b2d82] dark:text-[#ccb286]"
+                target="_blank"
+                href="https://app.uniswap.org/swap?outputCurrency=0x3419875B4D3Bca7F3FddA2dB7a476A79fD31B4fE&chain=base"
+              >
+                trade
+              </a>
+            </div>
           )}
 
           <div
             style={{ order: bscorder != null ? -bscorder : 0 }}
             class="w-full relative shadow-lg flex h-[7rem] sm:h-[9rem] rounded-lg gap-3 bg-blur3"
           >
-            <div onClick={() => {
-              bsctooltip.value = !bsctooltip.value;
-            }}
-             class="z-[2] absolute bottom-1 cursor-pointer unselectable left-1 dark:text-[#d0d0d0] text-[#3d3d3d] sm:text-sm text-[11px] font-[Poppins]">{bsctooltip.value ? <img class="size-5 contrast-0 vignets" src="/misc/minus.svg"></img> : <img class="size-5 contrast-0 vignets" src="/misc/plus.svg"></img>}</div>
+            <div
+              onClick={() => {
+                getBscHolders();
+              }}
+              class="z-[2] absolute bottom-1 cursor-pointer unselectable left-1 dark:text-[#d0d0d0] text-[#3d3d3d] sm:text-sm text-[11px] font-[Poppins]"
+            >
+              {bsctooltip.value ? (
+                <img
+                  class="size-5 contrast-0 vignets"
+                  src="/misc/minus.svg"
+                ></img>
+              ) : (
+                <img
+                  class="size-5 contrast-0 vignets"
+                  src="/misc/plus.svg"
+                ></img>
+              )}
+            </div>
 
             {/* BSC MarketBar */}
             <a
@@ -383,12 +599,28 @@ export default function MarketBarsContainer() {
             <div
               style={{ order: bscorder != null ? -bscorder : 0 }}
               class="sm:h-[1.1rem] h-[0.9rem] rounded-md justify-evenly flex flex-row sm:text-sm text-[11px] font-[Poppins] px-2  w-full bg-blur3"
+            >
+              <p class="flex dark:text-[#d0d0d0] text-[#3d3d3d]">
+                holders: {bscholders.value&&bsctransfers.value ? formatNumber(bscholders.value) : "..."}
+              </p>
+              <p class="flex dark:text-[#d0d0d0] text-[#3d3d3d]">
+                transfers: {bscholders.value&&bsctransfers.value ? formatNumber(bsctransfers.value) : "..."}
+              </p>
+              <a
+                class="flex text-[#3b2d82] dark:text-[#ccb286]"
+                target="_blank"
+                href="https://bscscan.com/address/0x3419875b4d3bca7f3fdda2db7a476a79fd31b4fe"
               >
-              <p class="flex dark:text-[#d0d0d0] text-[#3d3d3d]">holders: {0}</p>
-              <p class="flex dark:text-[#d0d0d0] text-[#3d3d3d]">transfers: {0}</p>
-              <a class="flex text-[#3b2d82] dark:text-[#ccb286]" target="_blank" href="https://bscscan.com/address/0x3419875b4d3bca7f3fdda2db7a476a79fd31b4fe">contract</a>
-              <a class="flex text-[#3b2d82] dark:text-[#ccb286]" target="_blank" href="https://pancakeswap.finance/swap?outputCurrency=0x3419875B4D3Bca7F3FddA2dB7a476A79fD31B4fE&chainId=56">trade</a>
-              </div>
+                contract
+              </a>
+              <a
+                class="flex text-[#3b2d82] dark:text-[#ccb286]"
+                target="_blank"
+                href="https://pancakeswap.finance/swap?outputCurrency=0x3419875B4D3Bca7F3FddA2dB7a476A79fD31B4fE&chainId=56"
+              >
+                trade
+              </a>
+            </div>
           )}
         </div>
       )}
