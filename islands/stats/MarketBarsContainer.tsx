@@ -64,8 +64,6 @@ export default function MarketBarsContainer() {
   const basetooltip = useSignal<boolean>(false);
   const avaxtooltip = useSignal<boolean>(false);
   const ethtooltip = useSignal<boolean>(false);
-
-
   const getPrices = async () => {
     let arbprice = 0,
       ethprice = 0,
@@ -177,7 +175,7 @@ export default function MarketBarsContainer() {
       }
     }, 10);
   };
-  async function getEthHolders(){
+  async function HandleEthTooltip(){
     ethtooltip.value = !ethtooltip.value;
     if(!ethholders.value){
       const data = await GetHolders(
@@ -190,7 +188,7 @@ export default function MarketBarsContainer() {
       ethtransfers.value = data2.count
     }
   }
-  async function getArbHolders(){
+  async function HandleArbTooltip(){
     arbtooltip.value = !arbtooltip.value;
     if(!arbholders.value){
       const data = await GetHolders(
@@ -203,7 +201,7 @@ export default function MarketBarsContainer() {
       arbtransfers.value = data2.count
     }
   }
-  async function getAvaxHolders(){
+  async function HandleAvaxTooltip(){
     avaxtooltip.value = !avaxtooltip.value;
     if(!avaxholders.value){
       const data = await GetHolders(
@@ -216,7 +214,7 @@ export default function MarketBarsContainer() {
       avaxtransfers.value = data2.count
     }
   }
-  async function getBscHolders(){
+  async function HandleBscTooltip(){
     bsctooltip.value = !bsctooltip.value;
     if(!bscholders.value){
       const data = await GetHolders(
@@ -229,7 +227,7 @@ export default function MarketBarsContainer() {
       bsctransfers.value = data2.count
     }
   }
-  async function getBaseHolders(){
+  async function HandleBaseTooltip(){
     basetooltip.value = !basetooltip.value;
     if(!baseholders.value){
       const data = await GetHolders(
@@ -264,7 +262,7 @@ export default function MarketBarsContainer() {
           >
             <div
               onClick={() => {
-                getEthHolders();
+                HandleEthTooltip();
 
               }}
               class="z-[2] absolute bottom-1 cursor-pointer unselectable left-1 dark:text-[#d0d0d0] text-[#3d3d3d] sm:text-sm text-[11px] font-[Poppins]"
@@ -337,7 +335,7 @@ export default function MarketBarsContainer() {
           >
             <div
               onClick={() => {
-                getArbHolders();
+                HandleArbTooltip();
               }}
               class="z-[2] absolute bottom-1 cursor-pointer unselectable left-1 dark:text-[#d0d0d0] text-[#3d3d3d] sm:text-sm text-[11px] font-[Poppins]"
             >
@@ -409,7 +407,7 @@ export default function MarketBarsContainer() {
           >
             <div
               onClick={() => {
-                getAvaxHolders();
+                HandleAvaxTooltip();
               }}
               class="z-[2] absolute bottom-1 cursor-pointer unselectable left-1 dark:text-[#d0d0d0] text-[#3d3d3d] sm:text-sm text-[11px] font-[Poppins]"
             >
@@ -482,7 +480,7 @@ export default function MarketBarsContainer() {
           >
             <div
               onClick={() => {
-                getBaseHolders();
+                HandleBaseTooltip();
               }}
               class="z-[2] absolute bottom-1 cursor-pointer unselectable left-1 dark:text-[#d0d0d0] text-[#3d3d3d] sm:text-sm text-[11px] font-[Poppins]"
             >
@@ -555,7 +553,7 @@ export default function MarketBarsContainer() {
           >
             <div
               onClick={() => {
-                getBscHolders();
+                HandleBscTooltip();
               }}
               class="z-[2] absolute bottom-1 cursor-pointer unselectable left-1 dark:text-[#d0d0d0] text-[#3d3d3d] sm:text-sm text-[11px] font-[Poppins]"
             >
