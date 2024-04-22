@@ -171,7 +171,7 @@ export default function MarketBarsContainer() {
     <>
       {initialloading.value
         ? ( // display loader
-          <div class="w-full h-full flex justify-center items-center">
+          <div class="w-full h-full flex justify-center bg-blur3 items-center">
             <img src="./misc/loader.svg"></img>
           </div>
         )
