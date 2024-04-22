@@ -269,12 +269,12 @@ export default function MarketBarsContainer() {
             >
               {ethtooltip.value ? (
                 <img
-                  class="size-5 contrast-0 vignets"
+                  class="sm:size-5 size-6 contrast-0 vignets"
                   src="/misc/minus.svg"
                 ></img>
               ) : (
                 <img
-                  class="size-5 contrast-0 vignets"
+                  class="sm:size-5 size-6 contrast-0 vignets"
                   src="/misc/plus.svg"
                 ></img>
               )}
@@ -341,12 +341,12 @@ export default function MarketBarsContainer() {
             >
               {arbtooltip.value ? (
                 <img
-                  class="size-5 contrast-0 vignets"
+                  class="sm:size-5 size-6 contrast-0 vignets"
                   src="/misc/minus.svg"
                 ></img>
               ) : (
                 <img
-                  class="size-5 contrast-0 vignets"
+                  class="sm:size-5 size-6 contrast-0 vignets"
                   src="/misc/plus.svg"
                 ></img>
               )}
@@ -413,12 +413,12 @@ export default function MarketBarsContainer() {
             >
               {avaxtooltip.value ? (
                 <img
-                  class="size-5 contrast-0 vignets"
+                  class="sm:size-5 size-6 contrast-0 vignets"
                   src="/misc/minus.svg"
                 ></img>
               ) : (
                 <img
-                  class="size-5 contrast-0 vignets"
+                  class="sm:size-5 size-6 contrast-0 vignets"
                   src="/misc/plus.svg"
                 ></img>
               )}
@@ -486,12 +486,12 @@ export default function MarketBarsContainer() {
             >
               {basetooltip.value ? (
                 <img
-                  class="size-5 contrast-0 vignets"
+                  class="sm:size-5 size-6 contrast-0 vignets"
                   src="/misc/minus.svg"
                 ></img>
               ) : (
                 <img
-                  class="size-5 contrast-0 vignets"
+                  class="sm:size-5 size-6 contrast-0 vignets"
                   src="/misc/plus.svg"
                 ></img>
               )}
@@ -559,12 +559,12 @@ export default function MarketBarsContainer() {
             >
               {bsctooltip.value ? (
                 <img
-                  class="size-5 contrast-0 vignets"
+                  class="sm:size-5 size-6 contrast-0 vignets"
                   src="/misc/minus.svg"
                 ></img>
               ) : (
                 <img
-                  class="size-5 contrast-0 vignets"
+                  class="sm:size-5 size-6 contrast-0 vignets"
                   src="/misc/plus.svg"
                 ></img>
               )}
