@@ -2,7 +2,10 @@ export function ChartOptions() {
   const Options = {
     responsive: true,
     maintainAspectRatio: false,
-    animation: true,
+    animation: {
+      duration: 0,
+      easing: 'easeInOutQuart',
+    },
     interaction: {
       mode: 'nearest',
       axis: 'x',
