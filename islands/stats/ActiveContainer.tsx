@@ -1,5 +1,6 @@
 import TokenSummary from "./tokenSummary.tsx";
 import MarketBarsContainer from "./MarketBarsContainer.tsx";
+import { Liquidity } from "./charts/weeklyLiquidity.tsx";
 import { IS_BROWSER } from "$fresh/runtime.ts";
 export default function ActiveContainer() {
   if (!IS_BROWSER) return <></>;
@@ -10,6 +11,7 @@ export default function ActiveContainer() {
           <TokenSummary />
         </div>
       </div>
+      <Liquidity/>
       <div class="flex sm:h-[46.5rem] mt-[0.3rem] h-full w-full sm:mx-0 mx-auto shadow-[0_0_15px_0_rgba(0,0,0,0.07)] rounded-xl bg-blur2">
         <div class="w-full p-1">
           <MarketBarsContainer />

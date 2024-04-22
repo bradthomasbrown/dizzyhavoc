@@ -1,6 +1,6 @@
 import Chart from "../chart.tsx";
-import { ChartOptions } from "$fresh_charts/stats/chartOptions.tsx";
-import { ChartOptions_M } from "$fresh_charts/stats/chartOptions-M.tsx";
+import { ChartOptions } from "$fresh_charts/stats/MarketBar/chartOptions.tsx";
+import { ChartOptions_M } from "$fresh_charts/stats/MarketBar/chartOptions-M.tsx";
 import { PriceHistory } from "$fresh_charts/stats/priceHistory.tsx";
 import { IS_BROWSER } from "$fresh/runtime.ts";
 import { useSignal } from "@preact/signals";
@@ -10,7 +10,7 @@ export function BaseChart() {
   if (!IS_BROWSER) return <></>;
   const fetchedData = useSignal([]);
   const isLoading = useSignal(true);
-  const isMobile = globalThis.window.matchMedia("(pointer: coarse)").matches
+  const isMobile = globalThis.window.matchMedia("(pointer: coarse)").matches;
   const getPrices = async () => {
     fetchedData.value = await PriceHistory();
     isLoading.value = false;
@@ -48,8 +48,7 @@ export function BaseChart() {
       <img
         class="w-full sm:scale-100 scale-50 mx-[8rem] mt-7 sm:mt-0 sm:mx-[11rem] h-full"
         src="./misc/loader.svg"
-      >
-      </img>
+      ></img>
     );
   }
   if (isLoading.value === false) {
@@ -63,6 +62,16 @@ export function BaseChart() {
               options={isMobile ? chartOptions_M : chartOptions}
               data={chartData}
             />
+          )}
+          {timestamps && (
+            <>
+             <p class="sm:text-[9px] text-[8px] font-[Poppins] dark:text-[#d2d2d2] text-[#1a1a1a] absolute text-center left-[4.8rem] sm:left-[4.1rem] bottom-[14px] sm:bottom-2">
+                {timestamps[0]}{" "}
+              </p>
+              <p class="sm:text-[9px] text-[8px] font-[Poppins] dark:text-[#d2d2d2] text-[#1a1a1a] absolute text-center right-[2rem] sm:right-4 bottom-[14px] sm:bottom-2">
+                {timestamps[timestamps.length - 1]}{" "}
+              </p>
+            </>
           )}
         </div>
       </>
