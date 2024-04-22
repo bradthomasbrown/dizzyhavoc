@@ -1,7 +1,7 @@
 import Chart from "../chart.tsx";
 import { ChartOptions } from "$fresh_charts/stats/Liquidity/chartOptions.tsx";
 import { ChartOptions_M } from "$fresh_charts/stats/Liquidity/chartOptions-M.tsx";
-import { Liquidity_Weekly } from "$fresh_charts/stats/liquidity.tsx";
+import { Liquidity_Weekly } from "$fresh_charts/stats/Liquidity.tsx";
 import { IS_BROWSER } from "$fresh/runtime.ts";
 import { useSignal } from "@preact/signals";
 import { useState } from "preact/hooks";
