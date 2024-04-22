@@ -23,7 +23,7 @@ export default function MenuButton() {
     <>
       <div>
         <select
-          class="text-2xl unselectable text-[#3d3d3d] dark:text-[#ccb286] text-center w-[120px] sm:w-[130px] shadow-lg font-[Poppins] rounded-lg active:scale-[95%] border border-[#e9e9e9] dark:border-[#ffffff1f] cursor-pointer dark:bg-[#101010] bg-[#f1f1f1]"
+          class="text-2xl unselectable text-[#3d3d3d] dark:text-[#ccb286] outline-none text-center w-[120px] sm:w-[130px] shadow-lg font-[Poppins] rounded-lg border border-[#e9e9e9] dark:border-[#ffffff1f] cursor-pointer dark:bg-[#101010] bg-[#f1f1f1]"
           name="category"
           value={category ? category : ""}
           onChange={(event) => handleCategoryChange(event.currentTarget.value)}
@@ -31,9 +31,9 @@ export default function MenuButton() {
           <option class="category" value="" selected disabled hidden>
             {"Menu"}
           </option>
-          <option>{"/Home"}</option>
-          <option>{"/Stats"}</option>
-          <option>{"/About"}</option>
+          <option class="text-[20px]">{"Home"}</option>
+          <option class="text-[20px]">{"Stats"}</option>
+          <option class="text-[20px]">{"About"}</option>
         </select>
       </div>
     </>
