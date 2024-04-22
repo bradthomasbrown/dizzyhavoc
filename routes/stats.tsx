@@ -1,7 +1,7 @@
 import ActiveContainer from "../islands/stats/ActiveContainer.tsx";
 export default function Stats() {
   return (
-    <div class="h-full">
+    <div class="h-screen">
       <p class="mb-[0.5rem]
   font-medium
   sm:text-[1.7rem]

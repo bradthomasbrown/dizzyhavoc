@@ -3,7 +3,7 @@ import MarketBarsContainer from "./MarketBarsContainer.tsx";
 // import { Liquidity } from "./charts/weeklyLiquidity.tsx";
 export default function ActiveContainer() {
   return (
-    <div class="flex w-full mt-[1rem] mx-auto sm:w-[42rem] flex-col">
+    <div class="flex w-full mt-[1rem] mx-auto sm:w-[42rem] vignets flex-col">
       <div class="flex h-[4.5rem] sm:h-[5rem] mx-auto justify-center sm:w-[473px] w-[358px] bg-blur2 rounded-xl">
         <div class="w-full p-1">
           <TokenSummary />
