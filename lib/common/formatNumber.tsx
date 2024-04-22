@@ -9,8 +9,13 @@ export function formatNumber(num: number, precision = 2) {
   const found = map.find((x) => Math.abs(num) >= x.threshold);
   if (found) {
     let formatted = (num / found.threshold).toFixed(precision) + found.suffix;
-    if (formatted.endsWith(".00")) {
-      formatted = formatted.slice(0, -3);
+    if (formatted.endsWith(".00"+found.suffix)) {
+      if(found.suffix===""){
+        formatted = formatted.slice(0, -3);
+      }
+      else{
+        formatted = formatted.slice(0, -4)+found.suffix;
+      }
     }
     return formatted;
   }
