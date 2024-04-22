@@ -184,7 +184,7 @@ export default function MarketBarsContainer() {
                         <div onClick={() => {
               ethtooltip.value = !ethtooltip.value;
             }}
-            class="absolute bottom-1 cursor-pointer unselectable left-2 dark:text-[#d0d0d0] text-[#3d3d3d] sm:text-sm text-[11px] font-[Poppins]">{ethtooltip.value ? <img class="size-5 contrast-0 vignets" src="/misc/minus.svg"></img> : <img class="size-5 contrast-0 vignets" src="/misc/plus.svg"></img>}</div>
+            class="z-[2] absolute bottom-1 cursor-pointer unselectable left-2 dark:text-[#d0d0d0] text-[#3d3d3d] sm:text-sm text-[11px] font-[Poppins]">{ethtooltip.value ? <img class="size-5 contrast-0 vignets" src="/misc/minus.svg"></img> : <img class="size-5 contrast-0 vignets" src="/misc/plus.svg"></img>}</div>
             {/* ETH MarketBar */}
             <a
               draggable={false}
@@ -225,7 +225,7 @@ export default function MarketBarsContainer() {
                         <div onClick={() => {
               arbtooltip.value = !arbtooltip.value;
             }}
-            class="absolute bottom-1 cursor-pointer unselectable left-2 dark:text-[#d0d0d0] text-[#3d3d3d] sm:text-sm text-[11px] font-[Poppins]">{arbtooltip.value ? <img class="size-5 contrast-0 vignets" src="/misc/minus.svg"></img> : <img class="size-5 contrast-0 vignets" src="/misc/plus.svg"></img>}</div>
+            class="z-[2] absolute bottom-1 cursor-pointer unselectable left-2 dark:text-[#d0d0d0] text-[#3d3d3d] sm:text-sm text-[11px] font-[Poppins]">{arbtooltip.value ? <img class="size-5 contrast-0 vignets" src="/misc/minus.svg"></img> : <img class="size-5 contrast-0 vignets" src="/misc/plus.svg"></img>}</div>
             {/* Arb MarketBar */}
             <a
               draggable={false}
@@ -266,7 +266,7 @@ export default function MarketBarsContainer() {
                         <div onClick={() => {
               avaxtooltip.value = !avaxtooltip.value;
             }}
-            class="absolute bottom-1 cursor-pointer unselectable left-2 dark:text-[#d0d0d0] text-[#3d3d3d] sm:text-sm text-[11px] font-[Poppins]">{avaxtooltip.value ? <img class="size-5 contrast-0 vignets" src="/misc/minus.svg"></img> : <img class="size-5 contrast-0 vignets" src="/misc/plus.svg"></img>}</div>
+            class="z-[2] absolute bottom-1 cursor-pointer unselectable left-2 dark:text-[#d0d0d0] text-[#3d3d3d] sm:text-sm text-[11px] font-[Poppins]">{avaxtooltip.value ? <img class="size-5 contrast-0 vignets" src="/misc/minus.svg"></img> : <img class="size-5 contrast-0 vignets" src="/misc/plus.svg"></img>}</div>
             {/* Avax MarketBar */}
             <a
               draggable={false}
@@ -308,7 +308,7 @@ export default function MarketBarsContainer() {
                         <div onClick={() => {
               basetooltip.value = !basetooltip.value;
             }}
-            class="absolute bottom-1 cursor-pointer unselectable left-2 dark:text-[#d0d0d0] text-[#3d3d3d] sm:text-sm text-[11px] font-[Poppins]">{basetooltip.value ? <img class="size-5 contrast-0 vignets" src="/misc/minus.svg"></img> : <img class="size-5 contrast-0 vignets" src="/misc/plus.svg"></img>}</div>
+            class="z-[2] absolute bottom-1 cursor-pointer unselectable left-2 dark:text-[#d0d0d0] text-[#3d3d3d] sm:text-sm text-[11px] font-[Poppins]">{basetooltip.value ? <img class="size-5 contrast-0 vignets" src="/misc/minus.svg"></img> : <img class="size-5 contrast-0 vignets" src="/misc/plus.svg"></img>}</div>
             {/* Base MarketBar */}
             <a
               draggable={false}
@@ -350,7 +350,7 @@ export default function MarketBarsContainer() {
             <div onClick={() => {
               bsctooltip.value = !bsctooltip.value;
             }}
-             class="absolute bottom-1 cursor-pointer unselectable left-2 dark:text-[#d0d0d0] text-[#3d3d3d] sm:text-sm text-[11px] font-[Poppins]">{bsctooltip.value ? <img class="size-5 contrast-0 vignets" src="/misc/minus.svg"></img> : <img class="size-5 contrast-0 vignets" src="/misc/plus.svg"></img>}</div>
+             class="z-[2] absolute bottom-1 cursor-pointer unselectable left-2 dark:text-[#d0d0d0] text-[#3d3d3d] sm:text-sm text-[11px] font-[Poppins]">{bsctooltip.value ? <img class="size-5 contrast-0 vignets" src="/misc/minus.svg"></img> : <img class="size-5 contrast-0 vignets" src="/misc/plus.svg"></img>}</div>
 
             {/* BSC MarketBar */}
             <a
