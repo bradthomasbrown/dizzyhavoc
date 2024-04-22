@@ -305,7 +305,7 @@ export default function MarketBarsContainer() {
           {ethtooltip.value && (
             <div
               style={{ order: ethorder != null ? -ethorder : 0 }}
-              class="sm:h-[1.1rem] h-[0.9rem] rounded-md justify-evenly flex flex-row sm:text-sm text-[11px] px-2 font-[Poppins] w-full bg-blur3"
+              class="sm:h-[1.1rem] h-[0.9rem] rounded-md justify-evenly flex flex-row sm:text-sm text-[11px] -mt-1 px-2 font-[Poppins] w-full bg-blur3"
             >
               <p class="flex dark:text-[#d0d0d0] text-[#3d3d3d] unselectable">
                 holders: {ethtransfers.value&&ethholders.value ? formatNumber(ethholders.value) : "..."}
@@ -377,7 +377,7 @@ export default function MarketBarsContainer() {
           {arbtooltip.value && (
             <div
               style={{ order: arborder != null ? -arborder : 0 }}
-              class="sm:h-[1.1rem] h-[0.9rem] rounded-md justify-evenly flex flex-row sm:text-sm text-[11px] px-2 font-[Poppins] w-full bg-blur3"
+              class="sm:h-[1.1rem] h-[0.9rem] rounded-md justify-evenly flex flex-row sm:text-sm text-[11px] -mt-1 px-2 font-[Poppins] w-full bg-blur3"
             >
               <p class="flex dark:text-[#d0d0d0] text-[#3d3d3d] unselectable">
                 holders: {arbtransfers.value&&arbholders.value ? formatNumber(arbholders.value) : "..."}
@@ -449,7 +449,7 @@ export default function MarketBarsContainer() {
           {avaxtooltip.value && (
             <div
               style={{ order: avaxorder != null ? -avaxorder : 0 }}
-              class="sm:h-[1.1rem] h-[0.9rem] rounded-md justify-evenly flex flex-row sm:text-sm text-[11px] px-2 font-[Poppins] w-full bg-blur3"
+              class="sm:h-[1.1rem] h-[0.9rem] rounded-md justify-evenly flex flex-row sm:text-sm text-[11px] -mt-1 px-2 font-[Poppins] w-full bg-blur3"
             >
               <p class="flex dark:text-[#d0d0d0] text-[#3d3d3d] unselectable">
                 holders: {avaxtransfers.value&&avaxholders.value ? formatNumber(avaxholders.value) : "..."}
@@ -522,7 +522,7 @@ export default function MarketBarsContainer() {
           {basetooltip.value && (
             <div
               style={{ order: baseorder != null ? -baseorder : 0 }}
-              class="sm:h-[1.1rem] h-[0.9rem] rounded-md justify-evenly flex flex-row sm:text-sm text-[11px] px-2 font-[Poppins] w-full bg-blur3"
+              class="sm:h-[1.1rem] h-[0.9rem] rounded-md justify-evenly flex flex-row sm:text-sm text-[11px] -mt-1 px-2 font-[Poppins] w-full bg-blur3"
             >
               <p class="flex dark:text-[#d0d0d0] text-[#3d3d3d] unselectable">
                 holders: {baseholders.value&&basetransfers.value ? formatNumber(baseholders.value) : "..."}
@@ -596,7 +596,7 @@ export default function MarketBarsContainer() {
           {bsctooltip.value && (
             <div
               style={{ order: bscorder != null ? -bscorder : 0 }}
-              class="sm:h-[1.1rem] h-[0.9rem] rounded-md justify-evenly flex flex-row sm:text-sm text-[11px] font-[Poppins] px-2  w-full bg-blur3"
+              class="sm:h-[1.1rem] h-[0.9rem] rounded-md justify-evenly flex flex-row sm:text-sm text-[11px] -mt-1 px-2 font-[Poppins] w-full bg-blur3"
             >
               <p class="flex dark:text-[#d0d0d0] text-[#3d3d3d] unselectable">
                 holders: {bscholders.value&&bsctransfers.value ? formatNumber(bscholders.value) : "..."}
