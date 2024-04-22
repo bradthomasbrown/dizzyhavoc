@@ -11,7 +11,7 @@ export default function MenuButton() {
         window.location.search,
     );
     let newCategory = category;
-    if (category === "/Home") {
+    if (category === "Home") {
       newCategory = "/";
     }
     category = newCategory;
