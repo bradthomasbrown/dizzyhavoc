@@ -273,10 +273,10 @@ export default function MarketBarsContainer() {
               class="sm:h-[1.1rem] h-[0.9rem] rounded-md justify-evenly flex flex-row sm:text-sm text-[11px] -mt-1 px-2 font-[Poppins] w-full bg-blur3"
             >
               <p class="flex dark:text-[#d0d0d0] text-[#3d3d3d] unselectable">
-                holders: {ethtransfers.value&&ethholders.value ? formatNumber(ethholders.value) : "..."}
+                holders: {ethholders.value ? formatNumber(ethholders.value) : "..."}
               </p>
               <p class="flex dark:text-[#d0d0d0] text-[#3d3d3d] unselectable">
-                transfers: {ethtransfers.value&&ethholders.value ? formatNumber(ethtransfers.value) : "..."}
+                transfers: {ethtransfers.value ? formatNumber(ethtransfers.value) : "..."}
               </p>
               <a
                 class="flex text-[#3b2d82] dark:text-[#ccb286]"
@@ -348,10 +348,10 @@ export default function MarketBarsContainer() {
               class="sm:h-[1.1rem] h-[0.9rem] rounded-md justify-evenly flex flex-row sm:text-sm text-[11px] -mt-1 px-2 font-[Poppins] w-full bg-blur3"
             >
               <p class="flex dark:text-[#d0d0d0] text-[#3d3d3d] unselectable">
-                holders: {arbtransfers.value&&arbholders.value ? formatNumber(arbholders.value) : "..."}
+                holders: {arbholders.value ? formatNumber(arbholders.value) : "..."}
               </p>
               <p class="flex dark:text-[#d0d0d0] text-[#3d3d3d] unselectable">
-                transfers: {arbtransfers.value&&arbholders.value ? formatNumber(arbtransfers.value) : "..."}
+                transfers: {arbtransfers.value ? formatNumber(arbtransfers.value) : "..."}
               </p>
               <a
                 class="flex text-[#3b2d82] dark:text-[#ccb286]"
@@ -423,10 +423,10 @@ export default function MarketBarsContainer() {
               class="sm:h-[1.1rem] h-[0.9rem] rounded-md justify-evenly flex flex-row sm:text-sm text-[11px] -mt-1 px-2 font-[Poppins] w-full bg-blur3"
             >
               <p class="flex dark:text-[#d0d0d0] text-[#3d3d3d] unselectable">
-                holders: {avaxtransfers.value&&avaxholders.value ? formatNumber(avaxholders.value) : "..."}
+                holders: {avaxholders.value ? formatNumber(avaxholders.value) : "..."}
               </p>
               <p class="flex dark:text-[#d0d0d0] text-[#3d3d3d] unselectable">
-                transfers: {avaxtransfers.value&&avaxholders.value ? formatNumber(avaxtransfers.value) : "..."}
+                transfers: {avaxtransfers.value ? formatNumber(avaxtransfers.value) : "..."}
               </p>
               <a
                 class="flex text-[#3b2d82] dark:text-[#ccb286]"
@@ -498,10 +498,10 @@ export default function MarketBarsContainer() {
               class="sm:h-[1.1rem] h-[0.9rem] rounded-md justify-evenly flex flex-row sm:text-sm text-[11px] -mt-1 px-2 font-[Poppins] w-full bg-blur3"
             >
               <p class="flex dark:text-[#d0d0d0] text-[#3d3d3d] unselectable">
-                holders: {baseholders.value&&basetransfers.value ? formatNumber(baseholders.value) : "..."}
+                holders: {baseholders.value ? formatNumber(baseholders.value) : "..."}
               </p>
               <p class="flex dark:text-[#d0d0d0] text-[#3d3d3d] unselectable">
-                transfers: {baseholders.value&&basetransfers.value ? formatNumber(basetransfers.value) : "..."}
+                transfers: {basetransfers.value ? formatNumber(basetransfers.value) : "..."}
               </p>
               <a
                 class="flex text-[#3b2d82] dark:text-[#ccb286]"
@@ -573,10 +573,10 @@ export default function MarketBarsContainer() {
               class="sm:h-[1.1rem] h-[0.9rem] rounded-md justify-evenly flex flex-row sm:text-sm text-[11px] -mt-1 px-2 font-[Poppins] w-full bg-blur3"
             >
               <p class="flex dark:text-[#d0d0d0] text-[#3d3d3d] unselectable">
-                holders: {bscholders.value&&bsctransfers.value ? formatNumber(bscholders.value) : "..."}
+                holders: {bscholders.value ? formatNumber(bscholders.value) : "..."}
               </p>
               <p class="flex dark:text-[#d0d0d0] text-[#3d3d3d] unselectable">
-                transfers: {bscholders.value&&bsctransfers.value ? formatNumber(bsctransfers.value) : "..."}
+                transfers: {bsctransfers.value ? formatNumber(bsctransfers.value) : "..."}
               </p>
               <a
                 class="flex text-[#3b2d82] dark:text-[#ccb286]"
