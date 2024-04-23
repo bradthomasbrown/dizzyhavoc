@@ -186,11 +186,11 @@ export default function MarketBarsContainer() {
         baseholders.value = chiffres.holders.base
         avaxholders.value = chiffres.holders.avax
         // transfers
-        ethtransfers.value = chiffres.transfer.eth
-        arbtransfers.value = chiffres.transfer.arb
-        bsctransfers.value = chiffres.transfer.bsc
-        basetransfers.value = chiffres.transfer.base
-        avaxtransfers.value = chiffres.transfer.avax
+        ethtransfers.value = chiffres.transfers.eth
+        arbtransfers.value = chiffres.transfers.arb
+        bsctransfers.value = chiffres.transfers.bsc
+        basetransfers.value = chiffres.transfers.base
+        avaxtransfers.value = chiffres.transfers.avax
       }
     }
     switch(chain){
