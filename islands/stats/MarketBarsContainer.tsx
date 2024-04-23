@@ -175,7 +175,15 @@ export default function MarketBarsContainer() {
     }, 10);
   };
 
-  async function HandleAllTooltips(chain: string) {
+  async function HandleTooltips(chain: string) {
+    switch(chain){
+      case "eth": ethtooltip.value = !ethtooltip.value; break;
+      case "arb": arbtooltip.value = !arbtooltip.value; break;
+      case "bsc": bsctooltip.value = !bsctooltip.value; break;
+      case "base": basetooltip.value = !basetooltip.value; break;
+      case "avax": avaxtooltip.value = !avaxtooltip.value; break;
+      default: break;
+    }
     if(!ethholders.value){
       const chiffres = await ChiffresREQ();
       if(chiffres){
@@ -192,14 +200,6 @@ export default function MarketBarsContainer() {
         basetransfers.value = chiffres.transfers.base
         avaxtransfers.value = chiffres.transfers.avax
       }
-    }
-    switch(chain){
-      case "eth": ethtooltip.value = !ethtooltip.value; break;
-      case "arb": arbtooltip.value = !arbtooltip.value; break;
-      case "bsc": bsctooltip.value = !bsctooltip.value; break;
-      case "base": basetooltip.value = !basetooltip.value; break;
-      case "avax": avaxtooltip.value = !avaxtooltip.value; break;
-      default: break;
     }
   }
   useState(() => {
@@ -226,7 +226,7 @@ export default function MarketBarsContainer() {
           >
             <div
               onClick={() => {
-                HandleAllTooltips("eth");
+                HandleTooltips("eth");
 
               }}
               class="z-[2] absolute bottom-1 cursor-pointer unselectable left-1 dark:text-[#d0d0d0] text-[#3d3d3d] sm:text-sm text-[11px] font-[Poppins]"
@@ -273,10 +273,10 @@ export default function MarketBarsContainer() {
               class="sm:h-[1.1rem] h-[0.9rem] rounded-md justify-evenly flex flex-row sm:text-sm text-[11px] -mt-1 px-2 font-[Poppins] w-full bg-blur3"
             >
               <p class="flex dark:text-[#d0d0d0] text-[#3d3d3d] unselectable">
-                holders: {ethholders.value ? formatNumber(ethholders.value) : "..."}
+                holders: {ethholders.value ? formatNumber(ethholders.value) : "0.0K"}
               </p>
               <p class="flex dark:text-[#d0d0d0] text-[#3d3d3d] unselectable">
-                transfers: {ethtransfers.value ? formatNumber(ethtransfers.value) : "..."}
+                transfers: {ethtransfers.value ? formatNumber(ethtransfers.value) : "0.0K"}
               </p>
               <a
                 class="flex text-[#3b2d82] dark:text-[#ccb286]"
@@ -302,7 +302,7 @@ export default function MarketBarsContainer() {
           >
             <div
               onClick={() => {
-                HandleAllTooltips("arb");
+                HandleTooltips("arb");
               }}
               class="z-[2] absolute bottom-1 cursor-pointer unselectable left-1 dark:text-[#d0d0d0] text-[#3d3d3d] sm:text-sm text-[11px] font-[Poppins]"
             >
@@ -348,10 +348,10 @@ export default function MarketBarsContainer() {
               class="sm:h-[1.1rem] h-[0.9rem] rounded-md justify-evenly flex flex-row sm:text-sm text-[11px] -mt-1 px-2 font-[Poppins] w-full bg-blur3"
             >
               <p class="flex dark:text-[#d0d0d0] text-[#3d3d3d] unselectable">
-                holders: {arbholders.value ? formatNumber(arbholders.value) : "..."}
+                holders: {arbholders.value ? formatNumber(arbholders.value) : "0.0K"}
               </p>
               <p class="flex dark:text-[#d0d0d0] text-[#3d3d3d] unselectable">
-                transfers: {arbtransfers.value ? formatNumber(arbtransfers.value) : "..."}
+                transfers: {arbtransfers.value ? formatNumber(arbtransfers.value) : "0.0K"}
               </p>
               <a
                 class="flex text-[#3b2d82] dark:text-[#ccb286]"
@@ -377,7 +377,7 @@ export default function MarketBarsContainer() {
           >
             <div
               onClick={() => {
-                HandleAllTooltips("avax");
+                HandleTooltips("avax");
               }}
               class="z-[2] absolute bottom-1 cursor-pointer unselectable left-1 dark:text-[#d0d0d0] text-[#3d3d3d] sm:text-sm text-[11px] font-[Poppins]"
             >
@@ -423,10 +423,10 @@ export default function MarketBarsContainer() {
               class="sm:h-[1.1rem] h-[0.9rem] rounded-md justify-evenly flex flex-row sm:text-sm text-[11px] -mt-1 px-2 font-[Poppins] w-full bg-blur3"
             >
               <p class="flex dark:text-[#d0d0d0] text-[#3d3d3d] unselectable">
-                holders: {avaxholders.value ? formatNumber(avaxholders.value) : "..."}
+                holders: {avaxholders.value ? formatNumber(avaxholders.value) : "0.0K"}
               </p>
               <p class="flex dark:text-[#d0d0d0] text-[#3d3d3d] unselectable">
-                transfers: {avaxtransfers.value ? formatNumber(avaxtransfers.value) : "..."}
+                transfers: {avaxtransfers.value ? formatNumber(avaxtransfers.value) : "0.0K"}
               </p>
               <a
                 class="flex text-[#3b2d82] dark:text-[#ccb286]"
@@ -452,7 +452,7 @@ export default function MarketBarsContainer() {
           >
             <div
               onClick={() => {
-                HandleAllTooltips("base");
+                HandleTooltips("base");
               }}
               class="z-[2] absolute bottom-1 cursor-pointer unselectable left-1 dark:text-[#d0d0d0] text-[#3d3d3d] sm:text-sm text-[11px] font-[Poppins]"
             >
@@ -498,10 +498,10 @@ export default function MarketBarsContainer() {
               class="sm:h-[1.1rem] h-[0.9rem] rounded-md justify-evenly flex flex-row sm:text-sm text-[11px] -mt-1 px-2 font-[Poppins] w-full bg-blur3"
             >
               <p class="flex dark:text-[#d0d0d0] text-[#3d3d3d] unselectable">
-                holders: {baseholders.value ? formatNumber(baseholders.value) : "..."}
+                holders: {baseholders.value ? formatNumber(baseholders.value) : "0.0K"}
               </p>
               <p class="flex dark:text-[#d0d0d0] text-[#3d3d3d] unselectable">
-                transfers: {basetransfers.value ? formatNumber(basetransfers.value) : "..."}
+                transfers: {basetransfers.value ? formatNumber(basetransfers.value) : "0.0K"}
               </p>
               <a
                 class="flex text-[#3b2d82] dark:text-[#ccb286]"
@@ -527,7 +527,7 @@ export default function MarketBarsContainer() {
           >
             <div
               onClick={() => {
-                HandleAllTooltips("bsc");
+                HandleTooltips("bsc");
               }}
               class="z-[2] absolute bottom-1 cursor-pointer unselectable left-1 dark:text-[#d0d0d0] text-[#3d3d3d] sm:text-sm text-[11px] font-[Poppins]"
             >
@@ -573,10 +573,10 @@ export default function MarketBarsContainer() {
               class="sm:h-[1.1rem] h-[0.9rem] rounded-md justify-evenly flex flex-row sm:text-sm text-[11px] -mt-1 px-2 font-[Poppins] w-full bg-blur3"
             >
               <p class="flex dark:text-[#d0d0d0] text-[#3d3d3d] unselectable">
-                holders: {bscholders.value ? formatNumber(bscholders.value) : "..."}
+                holders: {bscholders.value ? formatNumber(bscholders.value) : "0.0K"}
               </p>
               <p class="flex dark:text-[#d0d0d0] text-[#3d3d3d] unselectable">
-                transfers: {bsctransfers.value ? formatNumber(bsctransfers.value) : "..."}
+                transfers: {bsctransfers.value ? formatNumber(bsctransfers.value) : "0.0K"}
               </p>
               <a
                 class="flex text-[#3b2d82] dark:text-[#ccb286]"
