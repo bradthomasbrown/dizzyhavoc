@@ -28,17 +28,11 @@ export default function MarketBarsContainer() {
   const token_base = useSignal<number>(0);
   const token_avax = useSignal<number>(0);
   // txn count
-  const tx_eth_buy = useSignal<number>(0);
-  const tx_arb_buy = useSignal<number>(0);
-  const tx_bsc_buy = useSignal<number>(0);
-  const tx_base_buy = useSignal<number>(0);
-  const tx_avax_buy = useSignal<number>(0);
-    // txn count
-  const tx_eth_sell = useSignal<number>(0);
-  const tx_arb_sell = useSignal<number>(0);
-  const tx_bsc_sell = useSignal<number>(0);
-  const tx_base_sell = useSignal<number>(0);
-  const tx_avax_sell = useSignal<number>(0);
+  const tx_eth = useSignal<number>(0);
+  const tx_arb = useSignal<number>(0);
+  const tx_bsc = useSignal<number>(0);
+  const tx_base = useSignal<number>(0);
+  const tx_avax = useSignal<number>(0);
   // h24 price change
   const h24_eth = useSignal<number>(0);
   const h24_arb = useSignal<number>(0);
@@ -85,50 +79,40 @@ export default function MarketBarsContainer() {
           token_eth.value = ethprice = Number(fixedvalue);
           liq_eth.value = fixedliq;
           vol24_eth.value = data.pairs[i].volume.h24;
-          tx_eth_buy.value =
-            data.pairs[i].txns.h24.buys
-          tx_eth_sell.value = 
-            data.pairs[i].txns.h24.sells;
+          tx_eth.value =
+            data.pairs[i].txns.h24.buys + data.pairs[i].txns.h24.sells;
           h24_eth.value = data.pairs[i].priceChange.h24;
           break;
         case "https://dexscreener.com/arbitrum/0x05c5bdbc7b3c64109ddcce058ce99f4515fe1c83":
           token_arb.value = arbprice = Number(fixedvalue);
           liq_arb.value = fixedliq;
           vol24_arb.value = data.pairs[i].volume.h24;
-          tx_arb_buy.value =
-            data.pairs[i].txns.h24.buys
-          tx_arb_sell.value = 
-            data.pairs[i].txns.h24.sells;
+          tx_arb.value =
+            data.pairs[i].txns.h24.buys + data.pairs[i].txns.h24.sells;
           h24_arb.value = data.pairs[i].priceChange.h24;
           break;
         case "https://dexscreener.com/bsc/0x642089a5da2512db761d325a868882ece6e387f5":
           token_bsc.value = bscprice = Number(fixedvalue);
           liq_bsc.value = fixedliq;
           vol24_bsc.value = data.pairs[i].volume.h24;
-          tx_bsc_buy.value =
-            data.pairs[i].txns.h24.buys
-          tx_bsc_sell.value = 
-            data.pairs[i].txns.h24.sells;
+          tx_bsc.value =
+            data.pairs[i].txns.h24.buys + data.pairs[i].txns.h24.sells;
           h24_bsc.value = data.pairs[i].priceChange.h24;
           break;
         case "https://dexscreener.com/base/0xb64dff20dd5c47e6dbb56ead80d23568006dec1e":
           token_base.value = baseprice = Number(fixedvalue);
           liq_base.value = fixedliq;
           vol24_base.value = data.pairs[i].volume.h24;
-          tx_base_buy.value =
-            data.pairs[i].txns.h24.buys
-          tx_base_sell.value = 
-            data.pairs[i].txns.h24.sells;
+          tx_base.value =
+            data.pairs[i].txns.h24.buys + data.pairs[i].txns.h24.sells;
           h24_base.value = data.pairs[i].priceChange.h24;
           break;
         case "https://dexscreener.com/avalanche/0x523a04633b6c0c4967824471dda0abbce7c5e643":
           token_avax.value = avaxprice = Number(fixedvalue);
           liq_avax.value = fixedliq;
           vol24_avax.value = data.pairs[i].volume.h24;
-          tx_avax_buy.value =
-            data.pairs[i].txns.h24.buys
-          tx_avax_sell.value = 
-            data.pairs[i].txns.h24.sells;
+          tx_avax.value =
+            data.pairs[i].txns.h24.buys + data.pairs[i].txns.h24.sells;
           h24_avax.value = data.pairs[i].priceChange.h24;
           break;
         default:
@@ -277,8 +261,7 @@ export default function MarketBarsContainer() {
               h24_eth={h24_eth}
               liq_eth={liq_eth}
               vol24_eth={vol24_eth}
-              tx_eth_buy={tx_eth_buy}
-              tx_eth_sell={tx_eth_sell}
+              tx_eth={tx_eth}
             />
           </div>
 
@@ -353,8 +336,7 @@ export default function MarketBarsContainer() {
               h24_arb={h24_arb}
               liq_arb={liq_arb}
               vol24_arb={vol24_arb}
-              tx_arb_buy={tx_arb_buy}
-              tx_arb_sell={tx_arb_sell}
+              tx_arb={tx_arb}
             />
           </div>
 
@@ -429,8 +411,7 @@ export default function MarketBarsContainer() {
               h24_avax={h24_avax}
               liq_avax={liq_avax}
               vol24_avax={vol24_avax}
-              tx_avax_buy={tx_avax_buy}
-              tx_avax_sell={tx_avax_sell}
+              tx_avax={tx_avax}
             />
           </div>
 
@@ -505,8 +486,7 @@ export default function MarketBarsContainer() {
               h24_base={h24_base}
               liq_base={liq_base}
               vol24_base={vol24_base}
-              tx_base_buy={tx_base_buy}
-              tx_base_sell={tx_base_sell}
+              tx_base={tx_base}
             />
           </div>
 
@@ -581,8 +561,7 @@ export default function MarketBarsContainer() {
               h24_bsc={h24_bsc}
               liq_bsc={liq_bsc}
               vol24_bsc={vol24_bsc}
-              tx_bsc_buy={tx_bsc_buy}
-              tx_bsc_sell={tx_bsc_sell}
+              tx_bsc={tx_bsc}
             />
           </div>
 

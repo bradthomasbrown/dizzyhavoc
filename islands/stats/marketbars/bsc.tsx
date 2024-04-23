@@ -6,10 +6,9 @@ export function Bsc(props: {
   h24_bsc: Signal<number>;
   liq_bsc: Signal<number>;
   vol24_bsc: Signal<number>;
-  tx_bsc_buy: Signal<number>;
-  tx_bsc_sell: Signal<number>;
+  tx_bsc: Signal<number>;
 }) {
-  const { token_bsc, h24_bsc, liq_bsc, vol24_bsc, tx_bsc_buy, tx_bsc_sell } = props;
+  const { token_bsc, h24_bsc, liq_bsc, vol24_bsc, tx_bsc } = props;
   return (
     <div class="flex items-start sm:items-center flex-row">
       <div class="flex gap-3 sm:gap-0 mx-3 sm:flex-col flex-row">
@@ -54,19 +53,13 @@ export function Bsc(props: {
         </div>
         <div class="bg-blur3 sm:shadow-none shadow-md mt-1 sm:mt-0 rounded-md sm:bg-transparent">
         <div class="flex flex-row sm:flex-col">
-          <section class="rounded  p-2 sm:p-0 flex flex-col sm:flex-row mx-auto w-full py-[1px] ml-0">
+          <section class="rounded flex flex-col mx-auto w-full py-[1px] ml-0">
             <h2 class="font-[Poppins] dark:text-[#d2d2d2] text-[#1a1a1a] sm:text-start text-center text-[0.5rem] sm:text-[0.8rem] inline justify-center tracking-tight items-center">
-              Txn:{" "}
+              24h Tx:{" "}
+              <h1 class="mx-1 font-[Poppins] text-[#000000] dark:text-[#ffffff] text-[0.95rem] inline">
+                {Number(formatNumber(tx_bsc.value)).toFixed(0)}
+              </h1>
             </h2>
-            <div class="sm:mx-2 ml-0 flex flex-row">
-              <h1 class="font-[Poppins] text-[#4da235] text-[0.95rem] inline">
-                {Number(formatNumber(tx_bsc_buy.value)).toFixed(0)}
-              </h1>
-              <h1 class="font-[Poppins] dark:text-[#d2d2d2] text-[#1a1a1a] text-[0.95rem] inline">/</h1>
-              <h1 class="sm:ml-1 ml-0 font-[Poppins] text-[#a23535] text-[0.95rem] inline">
-                {Number(formatNumber(tx_bsc_sell.value)).toFixed(0)}
-              </h1>
-              </div>
           </section>
         </div>
         </div>
