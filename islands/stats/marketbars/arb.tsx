@@ -29,7 +29,7 @@ export function Arb(props: {
         </div>
         <div class="flex sm:flex-row flex-col">
           <section class="rounded flex flex-col mx-auto w-full py-[1px] ml-0">
-            <h2 class="font-[Poppins] dark:text-[#d2d2d2] text-[#1a1a1a] text-center text-[0.5rem] sm:text-[0.8rem] inline justify-center tracking-tight items-center">
+            <h2 class="font-[Poppins] dark:text-[#d2d2d2] text-[#1a1a1a] sm:text-start text-center text-[0.5rem] sm:text-[0.8rem] inline justify-center tracking-tight items-center">
               Liquidity:{" "}
               <h1 class="mx-1 font-[Poppins] text-[#000000] dark:text-[#ffffff] text-[0.95rem] sm:text-[1rem] inline">
                 ${formatNumber(liq_arb.value)}
@@ -39,7 +39,7 @@ export function Arb(props: {
         </div>
         <div class="flex flex-row sm:flex-col">
           <section class="rounded flex flex-col mx-auto w-full py-[1px] ml-0">
-            <h2 class="font-[Poppins] dark:text-[#d2d2d2] text-[#1a1a1a] text-center text-[0.5rem] sm:text-[0.8rem] inline justify-center tracking-tight items-center">
+            <h2 class="font-[Poppins] dark:text-[#d2d2d2] text-[#1a1a1a] sm:text-start text-center text-[0.5rem] sm:text-[0.8rem] inline justify-center tracking-tight items-center">
               24h Vol:{" "}
               <h1 class="mx-1 font-[Poppins] text-[#000000] dark:text-[#ffffff] text-[0.95rem] sm:text-[1rem] inline">
                 ${formatNumber(vol24_arb.value)}
@@ -49,7 +49,7 @@ export function Arb(props: {
         </div>
         <div class="flex flex-row sm:flex-col">
           <section class="rounded flex flex-col mx-auto w-full py-[1px] ml-0">
-            <h2 class="font-[Poppins] dark:text-[#d2d2d2] text-[#1a1a1a] text-center text-[0.5rem] sm:text-[0.8rem] inline justify-center tracking-tight items-center">
+            <h2 class="font-[Poppins] dark:text-[#d2d2d2] text-[#1a1a1a] sm:text-start text-center text-[0.5rem] sm:text-[0.8rem] inline justify-center tracking-tight items-center">
               24h Tx:{" "}
               <h1 class="mx-1 font-[Poppins] text-[#000000] dark:text-[#ffffff] text-[0.95rem] sm:text-[1rem] inline">
                 {Number(formatNumber(tx_arb.value)).toFixed(0)}
