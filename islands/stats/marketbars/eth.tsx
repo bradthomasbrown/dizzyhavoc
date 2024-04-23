@@ -27,7 +27,7 @@ export function Eth(props: {
             </h1>
           </section>
         </div>
-        <div class="bg-blur3 sm:shadow-none shadow-md mt-1 sm:mt-0 rounded-md sm:bg-transparent">
+        <div class="bg-blur3 sm:shadow-none shadow-md mt-1 sm:mt-0 rounded-full sm:bg-transparent">
         <div class="flex sm:flex-row flex-col">
           <section class="rounded flex flex-col w-full py-[1px] ml-0">
             <h1 class="font-[Poppins] dark:text-[#d2d2d2] text-[#1a1a1a] sm:text-start text-center text-[0.5rem] sm:text-[0.8rem] inline justify-center tracking-tight items-center">
@@ -39,7 +39,7 @@ export function Eth(props: {
           </section>
         </div>
         </div>
-        <div class="bg-blur3 sm:shadow-none shadow-md mt-1 sm:mt-0 rounded-md sm:bg-transparent">
+        <div class="bg-blur3 sm:shadow-none shadow-md mt-1 sm:mt-0 rounded-full sm:bg-transparent">
         <div class="flex flex-row sm:flex-col">
           <section class="rounded flex flex-col mx-auto w-full py-[1px] ml-0">
             <h2 class="font-[Poppins] dark:text-[#d2d2d2] text-[#1a1a1a] sm:text-start text-center text-[0.5rem] sm:text-[0.8rem] inline justify-center tracking-tight items-center">
@@ -51,7 +51,7 @@ export function Eth(props: {
           </section>
         </div>
         </div>
-        <div class="bg-blur3 sm:shadow-none shadow-md mt-1 sm:mt-0 rounded-md sm:bg-transparent">
+        <div class="bg-blur3 sm:shadow-none shadow-md mt-1 sm:mt-0 rounded-full sm:bg-transparent">
         <div class="flex flex-row sm:flex-col">
           <section class="rounded flex flex-col mx-auto w-full py-[1px] ml-0">
             <h2 class="font-[Poppins] dark:text-[#d2d2d2] text-[#1a1a1a] sm:text-start text-center text-[0.5rem] sm:text-[0.8rem] inline justify-center tracking-tight items-center">
