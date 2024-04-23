@@ -29,9 +29,9 @@ export function Bsc(props: {
         </div>
         <div class="flex sm:flex-row flex-col">
           <section class="rounded flex flex-col mx-auto w-full py-[1px] ml-0">
-            <h2 class="font-[Poppins] dark:text-[#d2d2d2] text-[#1a1a1a] text-[0.7rem] sm:text-[0.8rem] inline justify-center tracking-tight items-center">
+            <h2 class="font-[Poppins] dark:text-[#d2d2d2] text-[#1a1a1a] text-center text-[0.5rem] sm:text-[0.8rem] inline justify-center tracking-tight items-center">
               Liquidity:{" "}
-              <h1 class="mx-1 font-[Poppins] text-[#000000] dark:text-[#ffffff] text-[1rem] inline">
+              <h1 class="mx-1 font-[Poppins] text-[#000000] dark:text-[#ffffff] text-[0.95rem] inline">
                 ${formatNumber(liq_bsc.value)}
               </h1>
             </h2>
@@ -39,9 +39,9 @@ export function Bsc(props: {
         </div>
         <div class="flex flex-row sm:flex-col">
           <section class="rounded flex flex-col mx-auto w-full py-[1px] ml-0">
-            <h2 class="font-[Poppins] dark:text-[#d2d2d2] text-[#1a1a1a] text-[0.7rem] sm:text-[0.8rem] inline justify-center tracking-tight items-center">
+            <h2 class="font-[Poppins] dark:text-[#d2d2d2] text-[#1a1a1a] text-center text-[0.5rem] sm:text-[0.8rem] inline justify-center tracking-tight items-center">
               24h Vol:{" "}
-              <h1 class="mx-1 font-[Poppins] text-[#000000] dark:text-[#ffffff] text-[1rem] inline">
+              <h1 class="mx-1 font-[Poppins] text-[#000000] dark:text-[#ffffff] text-[0.95rem] inline">
                 ${formatNumber(vol24_bsc.value)}
               </h1>
             </h2>
@@ -49,9 +49,9 @@ export function Bsc(props: {
         </div>
         <div class="flex flex-row sm:flex-col">
           <section class="rounded flex flex-col mx-auto w-full py-[1px] ml-0">
-            <h2 class="font-[Poppins] dark:text-[#d2d2d2] text-[#1a1a1a] text-[0.7rem] sm:text-[0.8rem] inline justify-center tracking-tight items-center">
+            <h2 class="font-[Poppins] dark:text-[#d2d2d2] text-[#1a1a1a] text-center text-[0.5rem] sm:text-[0.8rem] inline justify-center tracking-tight items-center">
               24h Tx:{" "}
-              <h1 class="mx-1 font-[Poppins] text-[#000000] dark:text-[#ffffff] text-[1rem] inline">
+              <h1 class="mx-1 font-[Poppins] text-[#000000] dark:text-[#ffffff] text-[0.95rem] inline">
                 {Number(formatNumber(tx_bsc.value)).toFixed(0)}
               </h1>
             </h2>

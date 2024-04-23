@@ -63,6 +63,7 @@ export default function MarketBarsContainer() {
   const basetooltip = useSignal<boolean>(false);
   const avaxtooltip = useSignal<boolean>(false);
   const ethtooltip = useSignal<boolean>(false);
+  
   const getPrices = async () => {
     let arbprice = 0,
       ethprice = 0,
@@ -174,7 +175,6 @@ export default function MarketBarsContainer() {
       }
     }, 10);
   };
-
   async function HandleTooltips(chain: string) {
     switch(chain){
       case "eth": ethtooltip.value = !ethtooltip.value; break;
@@ -227,7 +227,6 @@ export default function MarketBarsContainer() {
             <div
               onClick={() => {
                 HandleTooltips("eth");
-
               }}
               class="z-[2] absolute bottom-1 cursor-pointer unselectable left-1 dark:text-[#d0d0d0] text-[#3d3d3d] sm:text-sm text-[11px] font-[Poppins]"
             >
