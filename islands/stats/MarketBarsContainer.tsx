@@ -255,6 +255,8 @@ export default function MarketBarsContainer() {
       ) : (
         // loaded bars
         <div class="w-full flex flex-col gap-1">
+
+          {/* ETH MarketBar */}
           <div
             style={{ order: ethorder != null ? -ethorder : 0 }}
             class="w-full relative shadow-lg flex h-[7rem] sm:h-[9rem] rounded-lg gap-3 bg-blur3"
@@ -278,7 +280,6 @@ export default function MarketBarsContainer() {
                 ></img>
               )}
             </div>
-            {/* ETH MarketBar */}
             <a
               draggable={false}
               class="z-20 sm:size-[50px] hover:scale-[105%] ml-3 mt-3 sm:mt-11 justify-start size-9"
@@ -301,6 +302,8 @@ export default function MarketBarsContainer() {
               tx_eth={tx_eth}
             />
           </div>
+
+          {/* ETH Tooltip */}
           {ethtooltip.value && (
             <div
               style={{ order: ethorder != null ? -ethorder : 0 }}
@@ -328,6 +331,8 @@ export default function MarketBarsContainer() {
               </a>
             </div>
           )}
+
+          {/* Arb MarketBar */}
           <div
             style={{ order: arborder != null ? -arborder : 0 }}
             class="w-full relative shadow-lg flex h-[7rem] sm:h-[9rem] rounded-lg gap-3 bg-blur3"
@@ -350,7 +355,6 @@ export default function MarketBarsContainer() {
                 ></img>
               )}
             </div>
-            {/* Arb MarketBar */}
             <a
               draggable={false}
               class="z-20 sm:size-[50px] hover:scale-[105%] ml-3 mt-3 sm:mt-11 justify-start size-9"
@@ -373,6 +377,8 @@ export default function MarketBarsContainer() {
               tx_arb={tx_arb}
             />
           </div>
+
+          {/* Arb Tooltip */}
           {arbtooltip.value && (
             <div
               style={{ order: arborder != null ? -arborder : 0 }}
@@ -400,6 +406,8 @@ export default function MarketBarsContainer() {
               </a>
             </div>
           )}
+
+          {/* Avax MarketBar */}
           <div
             style={{ order: avaxorder != null ? -avaxorder : 0 }}
             class="w-full relative shadow-lg flex h-[7rem] sm:h-[9rem] rounded-lg gap-3 bg-blur3"
@@ -422,7 +430,6 @@ export default function MarketBarsContainer() {
                 ></img>
               )}
             </div>
-            {/* Avax MarketBar */}
             <a
               draggable={false}
               class="z-20 sm:size-[50px] hover:scale-[105%] ml-3 mt-3 sm:mt-11 justify-start size-9"
@@ -445,6 +452,8 @@ export default function MarketBarsContainer() {
               tx_avax={tx_avax}
             />
           </div>
+
+          {/* Avax Tooltip */}
           {avaxtooltip.value && (
             <div
               style={{ order: avaxorder != null ? -avaxorder : 0 }}
@@ -473,6 +482,7 @@ export default function MarketBarsContainer() {
             </div>
           )}
 
+          {/* Base MarketBar */}
           <div
             style={{ order: baseorder != null ? -baseorder : 0 }}
             class="w-full relative shadow-lg flex h-[7rem] sm:h-[9rem] rounded-lg gap-3 bg-blur3"
@@ -495,7 +505,6 @@ export default function MarketBarsContainer() {
                 ></img>
               )}
             </div>
-            {/* Base MarketBar */}
             <a
               draggable={false}
               class="z-20 sm:size-[50px] hover:scale-[105%] ml-3 mt-3 sm:mt-11 justify-start size-9"
@@ -518,6 +527,8 @@ export default function MarketBarsContainer() {
               tx_base={tx_base}
             />
           </div>
+
+          {/* Base Tooltip */}
           {basetooltip.value && (
             <div
               style={{ order: baseorder != null ? -baseorder : 0 }}
@@ -546,6 +557,7 @@ export default function MarketBarsContainer() {
             </div>
           )}
 
+          {/* BSC MarketBar */}
           <div
             style={{ order: bscorder != null ? -bscorder : 0 }}
             class="w-full relative shadow-lg flex h-[7rem] sm:h-[9rem] rounded-lg gap-3 bg-blur3"
@@ -568,8 +580,6 @@ export default function MarketBarsContainer() {
                 ></img>
               )}
             </div>
-
-            {/* BSC MarketBar */}
             <a
               draggable={false}
               class="z-20 sm:size-[50px] hover:scale-[105%] ml-3 mt-3 sm:mt-11 justify-start size-9"
@@ -592,6 +602,8 @@ export default function MarketBarsContainer() {
               tx_bsc={tx_bsc}
             />
           </div>
+
+          {/* BSC Tooltip */}
           {bsctooltip.value && (
             <div
               style={{ order: bscorder != null ? -bscorder : 0 }}
