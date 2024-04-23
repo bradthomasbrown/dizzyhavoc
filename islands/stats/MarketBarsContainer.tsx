@@ -3,7 +3,7 @@ import { useState } from "preact/hooks";
 import { useSignal } from "@preact/signals";
 import { MarketData } from "../../lib/stats/marketData.tsx";
 import { Arb, Avax, Base, Bsc, Eth } from "./marketbars/mod.ts";
-import { chainBaseREQ } from "../../lib/stats/chainBaseREQ.tsx";
+import { ChiffresREQ } from "../../lib/stats/ChiffresREQ.tsx";
 import { formatNumber } from "../../lib/common/formatNumber.tsx";
 export default function MarketBarsContainer() {
   if (!IS_BROWSER) return <></>;
@@ -174,69 +174,32 @@ export default function MarketBarsContainer() {
       }
     }, 10);
   };
-  async function HandleEthTooltip(){
-    ethtooltip.value = !ethtooltip.value;
+
+  async function HandleAllTooltips(chain: string) {
     if(!ethholders.value){
-      const data = await chainBaseREQ(
-        "https://api.chainbase.online/v1/token/holders?chain_id=1&contract_address=0x3419875b4d3bca7f3fdda2db7a476a79fd31b4fe&page=1&limit=20"
-      );
-      ethholders.value = data.count
-      const data2 = await chainBaseREQ(
-        "https://api.chainbase.online/v1/token/transfers?chain_id=1&contract_address=0x3419875B4D3Bca7F3FddA2dB7a476A79fD31B4fE&from_block=19109603&to_block=latest&page=1&limit=20"
-      );
-      ethtransfers.value = data2.count
+      const chiffres = await ChiffresREQ();
+      if(chiffres){
+        // holders
+        ethholders.value = chiffres.holders.eth
+        arbholders.value = chiffres.holders.arb
+        bscholders.value = chiffres.holders.bsc
+        baseholders.value = chiffres.holders.base
+        avaxholders.value = chiffres.holders.avax
+        // transfers
+        ethtransfers.value = chiffres.transfer.eth
+        arbtransfers.value = chiffres.transfer.arb
+        bsctransfers.value = chiffres.transfer.bsc
+        basetransfers.value = chiffres.transfer.base
+        avaxtransfers.value = chiffres.transfer.avax
+      }
     }
-  }
-  async function HandleArbTooltip(){
-    arbtooltip.value = !arbtooltip.value;
-    if(!arbholders.value){
-      const data = await chainBaseREQ(
-        "https://api.chainbase.online/v1/token/holders?chain_id=42161&contract_address=0x3419875b4d3bca7f3fdda2db7a476a79fd31b4fe&page=1&limit=20"
-      );
-      arbholders.value = data.count
-      const data2 = await chainBaseREQ(
-        "https://api.chainbase.online/v1/token/transfers?chain_id=42161&contract_address=0x3419875B4D3Bca7F3FddA2dB7a476A79fD31B4fE&from_block=175239792&to_block=latest&page=1&limit=20"
-      );
-      arbtransfers.value = data2.count
-    }
-  }
-  async function HandleAvaxTooltip(){
-    avaxtooltip.value = !avaxtooltip.value;
-    if(!avaxholders.value){
-      const data = await chainBaseREQ(
-        "https://api.chainbase.online/v1/token/holders?chain_id=43114&contract_address=0x3419875b4d3bca7f3fdda2db7a476a79fd31b4fe&page=1&limit=20"
-      );
-      avaxholders.value = data.count
-      const data2 = await chainBaseREQ(
-        "https://api.chainbase.online/v1/token/transfers?chain_id=43114&contract_address=0x3419875B4D3Bca7F3FddA2dB7a476A79fD31B4fE&from_block=40954902&to_block=latest&page=1&limit=20"
-      );
-      avaxtransfers.value = data2.count
-    }
-  }
-  async function HandleBscTooltip(){
-    bsctooltip.value = !bsctooltip.value;
-    if(!bscholders.value){
-      const data = await chainBaseREQ(
-        "https://api.chainbase.online/v1/token/holders?chain_id=56&contract_address=0x3419875b4d3bca7f3fdda2db7a476a79fd31b4fe&page=1&limit=20"
-      );
-      bscholders.value = data.count
-      const data2 = await chainBaseREQ(
-        "https://api.chainbase.online/v1/token/transfers?chain_id=56&contract_address=0x3419875B4D3Bca7F3FddA2dB7a476A79fD31B4fE&from_block=35660669&to_block=latest&page=1&limit=20"
-      );
-      bsctransfers.value = data2.count
-    }
-  }
-  async function HandleBaseTooltip(){
-    basetooltip.value = !basetooltip.value;
-    if(!baseholders.value){
-      const data = await chainBaseREQ(
-        "https://api.chainbase.online/v1/token/holders?chain_id=8453&contract_address=0x3419875b4d3bca7f3fdda2db7a476a79fd31b4fe&page=1&limit=20"
-      );
-      baseholders.value = data.count
-      const data2 = await chainBaseREQ(
-        "https://api.chainbase.online/v1/token/transfers?chain_id=8453&contract_address=0x3419875B4D3Bca7F3FddA2dB7a476A79fD31B4fE&from_block=9858128&to_block=latest&page=1&limit=20"
-      );
-      basetransfers.value = data2.count
+    switch(chain){
+      case "eth": ethtooltip.value = !ethtooltip.value; break;
+      case "arb": arbtooltip.value = !arbtooltip.value; break;
+      case "bsc": bsctooltip.value = !bsctooltip.value; break;
+      case "base": basetooltip.value = !basetooltip.value; break;
+      case "avax": avaxtooltip.value = !avaxtooltip.value; break;
+      default: break;
     }
   }
   useState(() => {
@@ -263,7 +226,7 @@ export default function MarketBarsContainer() {
           >
             <div
               onClick={() => {
-                HandleEthTooltip();
+                HandleAllTooltips("eth");
 
               }}
               class="z-[2] absolute bottom-1 cursor-pointer unselectable left-1 dark:text-[#d0d0d0] text-[#3d3d3d] sm:text-sm text-[11px] font-[Poppins]"
@@ -339,7 +302,7 @@ export default function MarketBarsContainer() {
           >
             <div
               onClick={() => {
-                HandleArbTooltip();
+                HandleAllTooltips("arb");
               }}
               class="z-[2] absolute bottom-1 cursor-pointer unselectable left-1 dark:text-[#d0d0d0] text-[#3d3d3d] sm:text-sm text-[11px] font-[Poppins]"
             >
@@ -414,7 +377,7 @@ export default function MarketBarsContainer() {
           >
             <div
               onClick={() => {
-                HandleAvaxTooltip();
+                HandleAllTooltips("avax");
               }}
               class="z-[2] absolute bottom-1 cursor-pointer unselectable left-1 dark:text-[#d0d0d0] text-[#3d3d3d] sm:text-sm text-[11px] font-[Poppins]"
             >
@@ -489,7 +452,7 @@ export default function MarketBarsContainer() {
           >
             <div
               onClick={() => {
-                HandleBaseTooltip();
+                HandleAllTooltips("base");
               }}
               class="z-[2] absolute bottom-1 cursor-pointer unselectable left-1 dark:text-[#d0d0d0] text-[#3d3d3d] sm:text-sm text-[11px] font-[Poppins]"
             >
@@ -564,7 +527,7 @@ export default function MarketBarsContainer() {
           >
             <div
               onClick={() => {
-                HandleBscTooltip();
+                HandleAllTooltips("bsc");
               }}
               class="z-[2] absolute bottom-1 cursor-pointer unselectable left-1 dark:text-[#d0d0d0] text-[#3d3d3d] sm:text-sm text-[11px] font-[Poppins]"
             >
