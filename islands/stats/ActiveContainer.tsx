@@ -6,7 +6,7 @@ import { Average } from "./charts/weeklyAverage.tsx";
 import MarketBarsContainer from "./MarketBarsContainer.tsx";
 export default function ActiveContainer() {
   const [currentItemIndex, setCurrentItemIndex] = useState(0);
-  const items = [Summary, Liquidity, MarketCap, Average];
+  const items = [Summary, Average, MarketCap, Liquidity];
   function Skip() {
     setCurrentItemIndex((prevIndex) => (prevIndex + 1) % items.length);
   }
