@@ -11,7 +11,7 @@ export function Avax(props: {
   const { token_avax, h24_avax, liq_avax, vol24_avax, tx_avax } = props;
   return (
     <div class="flex items-start sm:items-center flex-row">
-      <div class="flex gap-3 sm:gap-0 mx-3 sm:flex-col flex-row">
+      <div class="z-[1] flex gap-3 sm:gap-0 mx-3 sm:flex-col flex-row">
         <div class="flex sm:flex-row flex-col">
           <section class="rounded flex sm:flex-row flex-col w-full py-[1px] ml-0">
             <h1 class="font-[Poppins] text-[#000000] font-medium dark:text-[#ccb286] text-[1rem] sm:text-[1.2rem] inline">

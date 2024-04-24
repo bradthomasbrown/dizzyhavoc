@@ -11,7 +11,7 @@ export function Arb(props: {
   const { token_arb, h24_arb, liq_arb, vol24_arb, tx_arb } = props;
   return (
     <div class="flex items-start sm:items-center flex-row">
-      <div class="flex gap-3 sm:gap-0 mx-3 sm:flex-col flex-row">
+      <div class="z-[1] flex gap-3 sm:gap-0 mx-3 sm:flex-col flex-row">
         <div class="flex sm:flex-row flex-col">
           <section class="rounded flex sm:flex-row flex-col w-full py-[1px] ml-0">
             <h1 class="font-[Poppins] text-[#000000] font-medium dark:text-[#ccb286] text-[1rem] sm:text-[1.2rem] inline">
