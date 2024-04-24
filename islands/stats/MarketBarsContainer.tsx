@@ -1,7 +1,7 @@
 import { IS_BROWSER } from "$fresh/runtime.ts";
 import { useState } from "preact/hooks";
 import { useSignal } from "@preact/signals";
-import { MarketData } from "../../lib/stats/Requests/marketData.tsx";
+import { DexREQ } from "../../lib/stats/Requests/DexREQ.tsx";
 import { Arb, Avax, Base, Bsc, Eth } from "./marketbars/mod.ts";
 import { ChiffresREQ } from "../../lib/stats/Requests/ChiffresREQ.tsx";
 import { formatNumber } from "../../lib/common/formatNumber.tsx";
@@ -70,7 +70,7 @@ export default function MarketBarsContainer() {
       bscprice = 0,
       baseprice = 0,
       avaxprice = 0;
-    const data = await MarketData();
+    const data = await DexREQ();
     for (let i = 0; i < data.pairs.length; i++) {
       const fixedvalue = Number(data.pairs[i].priceUsd).toFixed(5);
       const fixedliq = Number(data.pairs[i].liquidity.usd).toFixed(2);

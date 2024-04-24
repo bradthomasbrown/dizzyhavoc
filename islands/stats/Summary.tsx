@@ -2,7 +2,7 @@ import { IS_BROWSER } from "$fresh/runtime.ts";
 import { useState } from "preact/hooks";
 import { useSignal } from "@preact/signals";
 import { formatNumber } from "../../lib/common/formatNumber.tsx";
-import { MarketData } from "../../lib/stats/Requests/marketData.tsx";
+import { DexREQ } from "../../lib/stats/Requests/DexREQ.tsx";
 export default function Summary() {
   if (!IS_BROWSER) return <></>;
   const initialloading = useSignal<boolean>(true);
@@ -52,7 +52,7 @@ export default function Summary() {
       bscprice = 0,
       baseprice = 0,
       avaxprice = 0;
-    const data = await MarketData();
+    const data = await DexREQ();
     let totalprice = 0;
     let totalliq = 0;
     for (let i = 0; i < data.pairs.length; i++) {
