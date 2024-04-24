@@ -14,7 +14,7 @@ export default function ActiveContainer() {
   return (
     <div class="flex w-full mt-[1rem] mx-auto sm:w-[42rem] vignets flex-col">
       <div class="flex h-[4.5rem] sm:h-[5rem] mx-auto justify-center sm:w-[473px] w-[358px] bg-blur2 rounded-xl">
-        <div onclick={() => Skip()} class="absolute cursor-pointer active:scale-[98%] z-[2] right-[3px] top-7 sm:top-8">
+        <div onclick={() => Skip()} class="absolute cursor-pointer active:scale-[98%] z-[2] sm:right-[3px] right-1 top-1 sm:top-8">
           <img
             class="w-[1.1rem] h-[1.1rem] contrast-0"
             src="/misc/arrowright.svg"
