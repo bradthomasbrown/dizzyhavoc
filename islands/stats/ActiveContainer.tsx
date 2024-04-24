@@ -19,17 +19,17 @@ export default function ActiveContainer() {
         <div class="w-full relative p-1">
           <Summary />
           <div
-            class="absolute active:scale-[85%] cursor-pointer bottom-1 left-[50%] translate-x-[-50%] z-[3]"
+            class="absolute bottom-1 left-[50%] translate-x-[-50%] z-[3]"
             onClick={() => (toggle.value = !toggle.value)}
           >
             {toggle.value ? (
               <img
-                class="size-[1.2rem] vignets contrast-0"
+                class="size-[1.2rem] active:scale-[85%] cursor-pointer vignets contrast-0"
                 src="/misc/caretup.svg"
               ></img>
             ) : (
               <img
-                class="size-[1.2rem] vignets contrast-0"
+                class="size-[1.2rem] active:scale-[85%] cursor-pointer vignets contrast-0"
                 src="/misc/caretdown.svg"
               ></img>
             )}
@@ -40,10 +40,10 @@ export default function ActiveContainer() {
         <div class="flex vignets h-[4.5rem] sm:h-[5rem] mx-auto justify-center sm:w-[473px] w-[358px] bg-blur2 rounded-xl">
           <div
             onclick={() => Skip()}
-            class="absolute cursor-pointer active:scale-[95%] z-[2] sm:right-[3px] right-1 top-1 sm:top-8"
+            class="absolute z-[2] sm:right-[3px] right-1 top-1 sm:top-8"
           >
             <img
-              class="w-[1.1rem] h-[1.1rem] contrast-0"
+              class="size-[1.1rem] cursor-pointer active:scale-[95%] contrast-0"
               src="/misc/arrowright.svg"
             ></img>
           </div>
