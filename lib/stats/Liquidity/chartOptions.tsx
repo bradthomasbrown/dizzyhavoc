@@ -25,9 +25,6 @@ export function ChartOptions() {
       grid: {
         display: false,
       },
-      ticks: {
-        display: false,
-      },
     },
   },
     plugins: {

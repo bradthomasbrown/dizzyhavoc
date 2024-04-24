@@ -16,9 +16,6 @@ export function ChartOptions_M() {
         grid: {
           display: false,
         },
-        ticks: {
-          display: false,
-        },
       },
     },
     plugins: {

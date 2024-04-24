@@ -43,11 +43,11 @@ export function Liquidity() {
     ],
   };
 
-  if (isLoading.value === false) {
+
     return (
       <>
-       <p class="font-[Poppins] text-[10px] absolute">Weekly Liquidity</p>
-        <div class="unselectable absolute bottom-0 sm:h-[70px] sm:w-[455px] h-[60px] w-[345px]">
+       <p class="font-[Poppins] text-[10px] text-center pl-1 absolute">Weekly Liquidity</p>
+        <div class="unselectable vignets absolute bottom-0 sm:h-[65px] sm:w-[455px] h-[60px] w-[345px]">
           {fetchedData.value && fetchedData.value.length > 0 && (
             <Chart
               type="bar"
@@ -58,5 +58,5 @@ export function Liquidity() {
         </div>
       </>
     );
-  }
+  
 }
