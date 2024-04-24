@@ -17,10 +17,6 @@ export function ChartOptions_M() {
           display: false,
         },
         ticks: {
-          stepSize: 0.01,
-        },
-
-        border: {
           display: false,
         },
       },
@@ -34,7 +30,7 @@ export function ChartOptions_M() {
               label += ": ";
             }
             label += context.parsed.y;
-            return "$"+label;
+            return "$" + label;
           },
         },
         displayColors: false,
@@ -43,6 +39,9 @@ export function ChartOptions_M() {
         display: false,
       },
       legend: {
+        display: false,
+      },
+      labels: {
         display: false,
       },
     },

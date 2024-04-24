@@ -12,24 +12,24 @@ export function ChartOptions() {
       intersect: false
     }
   ,
-    scales: {
-      x: {
-        grid: {
-          display: false,
-        },
-        ticks: {
-          display: false,
-        },
+  scales: {
+    x: {
+      grid: {
+        display: false,
       },
-      y: {
-        grid: {
-          display: false,
-        },
-        border: {
-          display: false,
-        },
+      ticks: {
+        display: false,
       },
     },
+    y: {
+      grid: {
+        display: false,
+      },
+      ticks: {
+        display: false,
+      },
+    },
+  },
     plugins: {
       tooltip: {
         callbacks: {

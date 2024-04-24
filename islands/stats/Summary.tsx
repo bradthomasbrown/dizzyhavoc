@@ -3,7 +3,8 @@ import { useState } from "preact/hooks";
 import { useSignal } from "@preact/signals";
 import { formatNumber } from "../../lib/common/formatNumber.tsx";
 import { MarketData } from "../../lib/stats/marketData.tsx";
-export default function TokenSummary() {
+import { Liquidity } from "./charts/weeklyLiquidity.tsx";
+export default function Summary() {
   if (!IS_BROWSER) return <></>;
   const initialloading = useSignal<boolean>(true);
   const isloading = useSignal<boolean>(true);

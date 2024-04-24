@@ -39,7 +39,6 @@ export function Liquidity() {
         backgroundColor: "#707070", // set the color of the line
         barThickness: 2,
         maxBarThickness: 2,
-        
       },
     ],
   };
