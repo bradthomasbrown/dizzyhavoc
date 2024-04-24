@@ -7,12 +7,6 @@ export function ChartOptions() {
       duration: 0,
       easing: 'easeInOutQuart',
     },
-    interaction: {
-      mode: 'nearest',
-      axis: 'x',
-      intersect: false
-    }
-  ,
   scales: {
     x: {
       grid: {
