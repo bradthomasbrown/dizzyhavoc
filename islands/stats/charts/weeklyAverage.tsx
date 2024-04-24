@@ -1,7 +1,7 @@
 import Chart from "../chart.tsx";
-import { ChartOptions } from "$fresh_charts/stats/MarketBar/chartOptions.tsx";
-import { ChartOptions_M } from "$fresh_charts/stats/MarketBar/chartOptions-M.tsx";
-import { Average_Weekly } from "$fresh_charts/stats/Average.tsx";
+import { ChartOptions } from "$fresh_charts/stats/ChartOption/MarketBar-Average/chartOptions.tsx";
+import { ChartOptions_M } from "$fresh_charts/stats/ChartOption/MarketBar-Average/chartOptions-M.tsx";
+import { Average_Weekly } from "$fresh_charts/stats/Requests/Average.tsx";
 import { IS_BROWSER } from "$fresh/runtime.ts";
 import { useSignal } from "@preact/signals";
 import { useState } from "preact/hooks";

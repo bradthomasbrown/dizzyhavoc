@@ -2,7 +2,7 @@ import { IS_BROWSER } from "$fresh/runtime.ts";
 import { useState } from "preact/hooks";
 import { useSignal } from "@preact/signals";
 import { formatNumber } from "../../lib/common/formatNumber.tsx";
-import { MarketData } from "../../lib/stats/marketData.tsx";
+import { MarketData } from "../../lib/stats/Requests/marketData.tsx";
 export default function Summary() {
   if (!IS_BROWSER) return <></>;
   const initialloading = useSignal<boolean>(true);

@@ -1,9 +1,9 @@
 import { IS_BROWSER } from "$fresh/runtime.ts";
 import { useState } from "preact/hooks";
 import { useSignal } from "@preact/signals";
-import { MarketData } from "../../lib/stats/marketData.tsx";
+import { MarketData } from "../../lib/stats/Requests/marketData.tsx";
 import { Arb, Avax, Base, Bsc, Eth } from "./marketbars/mod.ts";
-import { ChiffresREQ } from "../../lib/stats/ChiffresREQ.tsx";
+import { ChiffresREQ } from "../../lib/stats/Requests/ChiffresREQ.tsx";
 import { formatNumber } from "../../lib/common/formatNumber.tsx";
 export default function MarketBarsContainer() {
   if (!IS_BROWSER) return <></>;
