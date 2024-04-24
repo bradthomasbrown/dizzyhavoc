@@ -47,7 +47,7 @@ export function Average() {
 
     return (
       <>
-       <p class="font-[Poppins] text-[10px] unselectable text-center pl-1 absolute">Weekly Average Price</p>
+       <p class="font-[Poppins] text-[10px] dark:text-[#d0d0d0] text-[#3d3d3d] unselectable text-center pl-1 absolute">Weekly Average Price</p>
         <div class="unselectable vignets absolute bottom-0 sm:h-[65px] sm:w-[455px] h-[60px] w-[345px]">
           {fetchedData.value && fetchedData.value.length > 0 && (
             <Chart

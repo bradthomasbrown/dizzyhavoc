@@ -1,3 +1,4 @@
+import { formatNumber } from "../../../common/formatNumber.tsx";
 export function ChartOptions_M() {
   const Options = {
     responsive: true,
@@ -27,7 +28,7 @@ export function ChartOptions_M() {
               label += ": ";
             }
             label += context.parsed.y;
-            return "$" + label;
+            return "$"+formatNumber(label);
           },
         },
         displayColors: false,
