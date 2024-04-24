@@ -28,40 +28,40 @@ export function Avax(props: {
           </section>
         </div>
         <div class="sm:shadow-none shadow-md mt-1 sm:mt-0 rounded-md">
-        <div class="flex sm:flex-row flex-col">
-          <section class="rounded flex flex-col mx-auto w-full py-[1px] ml-0">
-            <h2 class="font-[Poppins] dark:text-[#d2d2d2] text-[#1a1a1a] sm:text-start text-center text-[0.5rem] sm:text-[0.8rem] inline justify-center tracking-tight items-center">
-              Liquidity:{" "}
+          <div class="flex sm:flex-row flex-col">
+            <section class="rounded flex sm:flex-row flex-col mx-auto w-full items-center">
+              <h2 class="unselectable font-[Poppins] dark:text-[#d2d2d2] text-[#1a1a1a] sm:text-start text-center text-[0.5rem] sm:text-[0.8rem] inline justify-center tracking-tight items-center">
+                Liquidity:{" "}
+              </h2>
               <h1 class="mx-1 font-[Poppins] text-[#000000] dark:text-[#ffffff] text-[0.95rem] inline">
                 ${formatNumber(liq_avax.value)}
               </h1>
-            </h2>
-          </section>
-        </div>
+            </section>
+          </div>
         </div>
         <div class="sm:shadow-none shadow-md mt-1 sm:mt-0 rounded-md">
-        <div class="flex flex-row sm:flex-col">
-          <section class="rounded flex flex-col mx-auto w-full py-[1px] ml-0">
-            <h2 class="font-[Poppins] dark:text-[#d2d2d2] text-[#1a1a1a] sm:text-start text-center text-[0.5rem] sm:text-[0.8rem] inline justify-center tracking-tight items-center">
-              24h Vol:{" "}
+          <div class="flex flex-row sm:flex-col">
+            <section class="rounded flex sm:flex-row flex-col mx-auto w-full items-center">
+              <h2 class="unselectable font-[Poppins] dark:text-[#d2d2d2] text-[#1a1a1a] sm:text-start text-center text-[0.5rem] sm:text-[0.8rem] inline justify-center tracking-tight items-center">
+                24h Vol:{" "}
+              </h2>
               <h1 class="mx-1 font-[Poppins] text-[#000000] dark:text-[#ffffff] text-[0.95rem] inline">
                 ${formatNumber(vol24_avax.value)}
               </h1>
-            </h2>
-          </section>
-        </div>
+            </section>
+          </div>
         </div>
         <div class="sm:shadow-none shadow-md mt-1 sm:mt-0 rounded-md">
-        <div class="flex flex-row sm:flex-col">
-          <section class="rounded flex flex-col mx-auto w-full py-[1px] ml-0">
-            <h2 class="font-[Poppins] dark:text-[#d2d2d2] text-[#1a1a1a] sm:text-start text-center text-[0.5rem] sm:text-[0.8rem] inline justify-center tracking-tight items-center">
-              24h Tx:{" "}
+          <div class="flex flex-row sm:flex-col">
+            <section class="rounded flex sm:flex-row flex-col mx-auto w-full items-center">
+              <h2 class="unselectable font-[Poppins] dark:text-[#d2d2d2] text-[#1a1a1a] sm:text-start text-center text-[0.5rem] sm:text-[0.8rem] inline justify-center tracking-tight items-center">
+                24h Tx:{" "}
+              </h2>
               <h1 class="mx-1 font-[Poppins] text-[#000000] dark:text-[#ffffff] text-[0.95rem] inline">
                 {Number(formatNumber(tx_avax.value)).toFixed(0)}
               </h1>
-            </h2>
-          </section>
-        </div>
+            </section>
+          </div>
         </div>
       </div>
       <div class="flex absolute right-auto left-0 sm:left-auto sm:right-0 flex-row">
