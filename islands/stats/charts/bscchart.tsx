@@ -1,6 +1,6 @@
 import Chart from "../chart.tsx";
-import { ChartOptions } from "$fresh_charts/stats/ChartOption/MarketBar-Average/chartOptions.tsx";
-import { ChartOptions_M } from "$fresh_charts/stats/ChartOption/MarketBar-Average/chartOptions-M.tsx";
+import { ChartOptions } from "$fresh_charts/stats/ChartOption/MarketBar/chartOptions.tsx";
+import { ChartOptions_M } from "$fresh_charts/stats/ChartOption/MarketBar/chartOptions-M.tsx";
 import { PriceHistory } from "$fresh_charts/stats/Requests/priceHistory.tsx";
 import { IS_BROWSER } from "$fresh/runtime.ts";
 import { useSignal } from "@preact/signals";
