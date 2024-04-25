@@ -12,7 +12,7 @@ export function ScrollTop() {
           draggable={false}
           src="/misc/arrowup.svg"
           alt=""
-          class="h-[40px] w-[40px] contrast-[0.3] invert-0 dark:invert"
+          class="sm:size-[40px] size-[28px] [contrast-[0.3] invert-0 dark:invert"
         />
       </div>
     </div>
