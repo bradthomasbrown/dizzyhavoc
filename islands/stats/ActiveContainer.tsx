@@ -43,8 +43,8 @@ export default function ActiveContainer() {
             class="absolute z-[2] sm:right-[3px] right-1 top-1 sm:top-8"
           >
             <img
-              class="size-[1.1rem] cursor-pointer active:scale-[95%] contrast-0"
-              src="/misc/arrowright.svg"
+              class="size-[1rem] active:scale-[85%] cursor-pointer vignets contrast-0"
+              src="/misc/caretright.svg"
             ></img>
           </div>
           <div class="shadow-lg h-full w-[358px] sm:w-[473px] vignets rounded-lg gap-0 xl:gap-1 bg-blur3 flex flex-col">
