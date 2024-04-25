@@ -37,7 +37,7 @@ export default function ActiveContainer() {
         </div>
       </div>
       {toggle.value ? (
-        <div class="flex vignets h-[4.5rem] sm:h-[5rem] mx-auto justify-center sm:w-[473px] w-[358px] bg-blur2 rounded-xl">
+        <div class="flex vignets h-[4.5rem] sm:h-[5rem] p-1 mx-auto justify-center sm:w-[473px] w-[358px] bg-blur2 rounded-xl">
           <div
             onclick={() => Skip()}
             class="absolute z-[2] sm:right-[3px] right-1 top-1 sm:top-8"
@@ -47,7 +47,7 @@ export default function ActiveContainer() {
               src="/misc/arrowright.svg"
             ></img>
           </div>
-          <div class="w-full p-1">
+          <div class="shadow-lg h-full w-[358px] sm:w-[473px] vignets rounded-lg gap-0 xl:gap-1 bg-blur3 flex flex-col">
             <CurrentItem />
           </div>
         </div>
