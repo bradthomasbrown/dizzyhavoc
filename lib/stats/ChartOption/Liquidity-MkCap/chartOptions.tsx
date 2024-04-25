@@ -37,7 +37,7 @@ export function ChartOptions() {
               label += ": ";
             }
             label += context.parsed.y;
-            return "$"+formatNumber(label);
+            return label==0 ? "no data" : "$"+formatNumber(label);
           },
         },
         displayColors: false,
