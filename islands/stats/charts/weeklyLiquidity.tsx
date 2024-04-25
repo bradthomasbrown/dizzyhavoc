@@ -12,7 +12,16 @@ export function Liquidity() {
   const isLoading = useSignal(true);
   const isMobile = globalThis.window.matchMedia("(pointer: coarse)").matches
   const getPrices = async () => {
-    fetchedData.value = await Liquidity_Weekly();
+    const data = await Liquidity_Weekly();
+    const weeklyData = Array.from({ length: 52 }, (_, i) => {
+      if (i < data.length) {
+        const { timestamp, liq } = data[i];
+        return { timestamp, liq };
+      } else {
+        return { timestamp: 0, liq: 0 };
+      }
+    });
+    fetchedData.value = weeklyData;
     isLoading.value = false;
   };
   useState(() => {

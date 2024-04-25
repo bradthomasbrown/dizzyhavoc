@@ -12,7 +12,16 @@ export function MarketCap() {
   const isLoading = useSignal(true);
   const isMobile = globalThis.window.matchMedia("(pointer: coarse)").matches
   const getPrices = async () => {
-    fetchedData.value = await MkCap_Weekly();
+    const data = await MkCap_Weekly();
+    const weeklyData = Array.from({ length: 52 }, (_, i) => {
+      if (i < data.length) {
+        const { timestamp, marketcap } = data[i];
+        return { timestamp, marketcap };
+      } else {
+        return { timestamp: 0, marketcap: 0 };
+      }
+    });
+    fetchedData.value = weeklyData;
     isLoading.value = false;
   };
   useState(() => {
