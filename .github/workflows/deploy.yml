@@ -1,7 +1,7 @@
 name: Deploy
 on:
   push:
-    branches: 0.0.0
+    branches: [0.0.0,0.0.0-preview]
   pull_request:
     branches: 0.0.0
 
@@ -29,6 +29,6 @@ jobs:
       - name: Upload to Deno Deploy
         uses: denoland/deployctl@v1
         with:
-          project: "dizzyhavoc-web-corv"
-          entrypoint: "main.ts"
-          root: "."
+          project: "dizzyhavoc-web"
+          entrypoint: "./main.ts"
+          root: ""
