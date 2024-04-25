@@ -1,10 +1,10 @@
-import { useEffect, useState } from "preact/hooks";
+import { useState } from "preact/hooks";
 import { useSignal } from "@preact/signals";
-import Summary from "./Summary.tsx";
-import { Liquidity } from "./charts/weeklyLiquidity.tsx";
-import { MarketCap } from "./charts/weeklyMkCap.tsx";
+import { Summary } from "./Summary.tsx";
 import { Average } from "./charts/weeklyAverage.tsx";
-import MarketBarsContainer from "./MarketBarsContainer.tsx";
+import { MarketCap } from "./charts/weeklyMkCap.tsx";
+import { Liquidity } from "./charts/weeklyLiquidity.tsx";
+import { MarketBarsContainer } from "./MarketBarsContainer.tsx";
 export default function ActiveContainer() {
   const [currentItemIndex, setCurrentItemIndex] = useState(0);
   const toggle = useSignal(false);

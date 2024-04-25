@@ -5,7 +5,7 @@ import { DexREQ } from "../../lib/stats/Requests/DexREQ.tsx";
 import { Arb, Avax, Base, Bsc, Eth } from "./marketbars/mod.ts";
 import { ChiffresREQ } from "../../lib/stats/Requests/ChiffresREQ.tsx";
 import { formatNumber } from "../../lib/common/formatNumber.tsx";
-export default function MarketBarsContainer() {
+export function MarketBarsContainer() {
   if (!IS_BROWSER) return <></>;
   const initialloading = useSignal<boolean>(true);
   const count = useSignal<number>(30);
