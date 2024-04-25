@@ -18,7 +18,7 @@ export function Liquidity() {
         const { timestamp, liq } = data[i];
         return { timestamp, liq };
       } else {
-        return { timestamp: 0, liq: 0 };
+        return { timestamp: data[0].timestamp + (i * 604800000), liq: 0 };
       }
     });
     fetchedData.value = weeklyData;

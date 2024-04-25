@@ -18,7 +18,7 @@ export function MarketCap() {
         const { timestamp, marketcap } = data[i];
         return { timestamp, marketcap };
       } else {
-        return { timestamp: 0, marketcap: 0 };
+        return { timestamp: data[0].timestamp + (i * 604800000), marketcap: 0 };
       }
     });
     fetchedData.value = weeklyData;
