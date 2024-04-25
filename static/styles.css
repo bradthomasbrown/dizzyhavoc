@@ -30,6 +30,12 @@ user-select: none; /* Standard */
   background-repeat: no-repeat;
   animation: shimmer 1.3s infinite;
 }
+.shimmer2 {
+  -webkit-mask: linear-gradient(-60deg, #000 30%, #0005, #000 50%) right/300% 70%;
+  mask: linear-gradient(-60deg, #000 30%, #0005, #000 50%) right/300% 70%;
+  background-repeat: no-repeat;
+  animation: shimmer 1.1s 1;
+}
 @keyframes shimmer {
   100% {-webkit-mask-position:left}
 }
