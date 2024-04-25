@@ -1,6 +1,6 @@
 import Chart from "../chart.tsx";
-import { ChartOptions } from "$fresh_charts/stats/ChartOption/MarketBar-Average/chartOptions.tsx";
-import { ChartOptions_M } from "$fresh_charts/stats/ChartOption/MarketBar-Average/chartOptions-M.tsx";
+import { ChartOptions } from "$fresh_charts/stats/ChartOption/Liquidity-MkCap/chartOptions.tsx";
+import { ChartOptions_M } from "$fresh_charts/stats/ChartOption/Liquidity-MkCap/chartOptions-M.tsx";
 import { Average_Weekly } from "$fresh_charts/stats/Requests/Average.tsx";
 import { IS_BROWSER } from "$fresh/runtime.ts";
 import { useSignal } from "@preact/signals";
@@ -12,7 +12,16 @@ export function Average() {
   const isLoading = useSignal(true);
   const isMobile = globalThis.window.matchMedia("(pointer: coarse)").matches
   const getPrices = async () => {
-    fetchedData.value = await Average_Weekly();
+    const data = await Average_Weekly();
+    const weeklyData = Array.from({ length: 52 }, (_, i) => {
+      if (i < data.length) {
+        const { timestamp, averageprice } = data[i];
+        return { timestamp, averageprice };
+      } else {
+        return { timestamp: data[0].timestamp + (i * 604800000), averageprice: 0 };
+      }
+    });
+    fetchedData.value = weeklyData;
     isLoading.value = false;
   };
   useState(() => {
@@ -37,9 +46,8 @@ export function Average() {
       {
         data: fetchedData.value.map((item) => item.averageprice),
         backgroundColor: "#707070", // set the color of the line
-        pointRadius: 0, // Set the radius of the points
-        borderWidth: 3, // Set the width of the line
-        tension: 0.1,
+        barThickness: 2,
+        maxBarThickness: 2,
       },
     ],
   };
@@ -51,7 +59,7 @@ export function Average() {
         <div class="unselectable vignets absolute -bottom-1 sm:h-[65px] sm:w-[455px] h-[60px] w-[345px]">
           {fetchedData.value && fetchedData.value.length > 0 && (
             <Chart
-              type="line"
+              type="bar"
               options={isMobile ? chartOptions_M : chartOptions}
               data={chartData}
             />
