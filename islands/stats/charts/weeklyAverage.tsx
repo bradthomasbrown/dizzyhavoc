@@ -18,7 +18,7 @@ export function Average() {
         const { timestamp, averageprice } = data[i];
         return { timestamp, averageprice };
       } else {
-        return { timestamp: data[0].timestamp + (i * 604800000), averageprice: 0 };
+        return { timestamp: data[data.length-1].timestamp + (i * 604800000), averageprice: 0 };
       }
     });
     fetchedData.value = weeklyData;
