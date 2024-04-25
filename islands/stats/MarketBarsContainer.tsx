@@ -217,7 +217,7 @@ export function MarketBarsContainer() {
         </div>
       ) : (
         // loaded bars
-        <div class="w-full flex flex-col gap-1">
+        <div class="w-full flex flex-col gap-[8px] sm:gap-1">
 
           {/* ETH MarketBar */}
           <div
@@ -269,7 +269,7 @@ export function MarketBarsContainer() {
           {ethtooltip.value && (
             <div
               style={{ order: ethorder != null ? -ethorder : 0 }}
-              class="sm:h-[1.1rem] h-[0.9rem] rounded-md justify-evenly flex flex-row sm:text-sm text-[11px] -mt-1 px-2 font-[Poppins] w-full bg-blur3"
+              class="sm:h-[1.1rem] h-[0.9rem] rounded-md justify-evenly flex flex-row sm:text-sm text-[11px] -mt-2 sm:-mt-1 px-2 font-[Poppins] w-full bg-blur3"
             >
               <p class="flex dark:text-[#d0d0d0] text-[#3d3d3d] unselectable">
                 holders: {ethholders.value ? formatNumber(ethholders.value) : "0.0K"}
@@ -344,7 +344,7 @@ export function MarketBarsContainer() {
           {arbtooltip.value && (
             <div
               style={{ order: arborder != null ? -arborder : 0 }}
-              class="sm:h-[1.1rem] h-[0.9rem] rounded-md justify-evenly flex flex-row sm:text-sm text-[11px] -mt-1 px-2 font-[Poppins] w-full bg-blur3"
+              class="sm:h-[1.1rem] h-[0.9rem] rounded-md justify-evenly flex flex-row sm:text-sm text-[11px] -mt-2 sm:-mt-1 px-2 font-[Poppins] w-full bg-blur3"
             >
               <p class="flex dark:text-[#d0d0d0] text-[#3d3d3d] unselectable">
                 holders: {arbholders.value ? formatNumber(arbholders.value) : "0.0K"}
@@ -419,7 +419,7 @@ export function MarketBarsContainer() {
           {avaxtooltip.value && (
             <div
               style={{ order: avaxorder != null ? -avaxorder : 0 }}
-              class="sm:h-[1.1rem] h-[0.9rem] rounded-md justify-evenly flex flex-row sm:text-sm text-[11px] -mt-1 px-2 font-[Poppins] w-full bg-blur3"
+              class="sm:h-[1.1rem] h-[0.9rem] rounded-md justify-evenly flex flex-row sm:text-sm text-[11px] -mt-2 sm:-mt-1 px-2 font-[Poppins] w-full bg-blur3"
             >
               <p class="flex dark:text-[#d0d0d0] text-[#3d3d3d] unselectable">
                 holders: {avaxholders.value ? formatNumber(avaxholders.value) : "0.0K"}
@@ -494,7 +494,7 @@ export function MarketBarsContainer() {
           {basetooltip.value && (
             <div
               style={{ order: baseorder != null ? -baseorder : 0 }}
-              class="sm:h-[1.1rem] h-[0.9rem] rounded-md justify-evenly flex flex-row sm:text-sm text-[11px] -mt-1 px-2 font-[Poppins] w-full bg-blur3"
+              class="sm:h-[1.1rem] h-[0.9rem] rounded-md justify-evenly flex flex-row sm:text-sm text-[11px] -mt-2 sm:-mt-1 px-2 font-[Poppins] w-full bg-blur3"
             >
               <p class="flex dark:text-[#d0d0d0] text-[#3d3d3d] unselectable">
                 holders: {baseholders.value ? formatNumber(baseholders.value) : "0.0K"}
@@ -569,7 +569,7 @@ export function MarketBarsContainer() {
           {bsctooltip.value && (
             <div
               style={{ order: bscorder != null ? -bscorder : 0 }}
-              class="sm:h-[1.1rem] h-[0.9rem] rounded-md justify-evenly flex flex-row sm:text-sm text-[11px] -mt-1 px-2 font-[Poppins] w-full bg-blur3"
+              class="sm:h-[1.1rem] h-[0.9rem] rounded-md justify-evenly flex flex-row sm:text-sm text-[11px] -mt-2 sm:-mt-1 px-2 font-[Poppins] w-full bg-blur3"
             >
               <p class="flex dark:text-[#d0d0d0] text-[#3d3d3d] unselectable">
                 holders: {bscholders.value ? formatNumber(bscholders.value) : "0.0K"}
