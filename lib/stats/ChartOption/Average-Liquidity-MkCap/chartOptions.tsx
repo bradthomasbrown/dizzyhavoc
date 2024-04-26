@@ -28,7 +28,7 @@ export function ChartOptions() {
       },
       ticks:{
         callback: function (value) {
-          return formatNumber(value);
+          return "$"+formatNumber(value);
         },
       }
     },
