@@ -1,5 +1,4 @@
 @tailwind base;
-@tailwind base;
 @tailwind components;
 @tailwind utilities;
 
@@ -7,7 +6,7 @@
   width: 6px; /* width of the entire scrollbar */
 }
 ::-webkit-scrollbar-track {
-  background: #17182c00; /* color of the tracking area */
+  background: transparent; /* color of the tracking area */
 }
 .unselectable{
 -webkit-user-select: none; /* Safari */        
@@ -78,21 +77,6 @@ user-select: none; /* Standard */
     border-radius: 12px; /* roundness of the scroll thumb */
     border: 1px solid #e0e0e0; /* creates padding around scroll thumb */
   }
-  .trapeze {
-    color: white;
-    height: 35px;
-    background: rgb(
-      163,
-      163,
-      163
-    ); /* Fallback color for browsers that don't support gradients */
-    background: linear-gradient(
-      to bottom,
-      rgb(237, 237, 237),
-      rgb(230, 230, 230)
-    ); /* Gradient definition */
-    transform: perspective(10px) rotateX(1deg);
-  }
   .bg-blur {
     -webkit-backdrop-filter: blur(4px);
     backdrop-filter: blur(4px);
@@ -115,25 +99,12 @@ user-select: none; /* Standard */
   }
 }
 
-
   @media (prefers-color-scheme: dark) {
-    ::-webkit-scrollbar-thumb {
-      background-color: #e0e0e0; /* color of the scroll thumb */
-      border-radius: 12px; /* roundness of the scroll thumb */
-      border: 1px solid #313131; /* creates padding around scroll thumb */
-    }
-
-    .trapeze {
-      color: #191919;
-      height: 35px;
-      background: #191919; /* Fallback color for browsers that don't support gradients */
-      background: linear-gradient(
-        to bottom,
-        #101010,
-        #171717
-      ); /* Gradient definition */
-      transform: perspective(10px) rotateX(1deg);
-    }
+  ::-webkit-scrollbar-thumb {
+    background-color: #e0e0e0; /* color of the scroll thumb */
+    border-radius: 12px; /* roundness of the scroll thumb */
+    border: 1px solid #313131; /* creates padding around scroll thumb */
+  }
     
 .bg-blur {
   -webkit-backdrop-filter: blur(4px);
