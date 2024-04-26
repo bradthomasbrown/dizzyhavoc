@@ -17,6 +17,11 @@ export function ChartOptions_M() {
         grid: {
           display: false,
         },
+        ticks:{
+          callback: function (value) {
+            return formatNumber(value);
+          },
+        }
       },
     },
     plugins: {
