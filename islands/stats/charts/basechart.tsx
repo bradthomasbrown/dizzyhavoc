@@ -54,7 +54,7 @@ export function BaseChart() {
   if (isLoading.value === false) {
     return (
       <>
-        <div class="unselectable vignets p-4 sm:mx-auto mx-4 mt-7 sm:mt-0 sm:h-[160px] sm:w-[430px] h-[100px] w-[330px]">
+        <div class="unselectable vignets p-4 sm:mx-auto mx-4 mt-7 sm:mt-0 sm:h-[160px] sm:w-[430px] h-[100px] w-[360px]">
           {fetchedData.value && fetchedData.value.length > 0 && (
             <Chart
               id="myChart"
