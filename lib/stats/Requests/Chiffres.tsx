@@ -1,4 +1,4 @@
-export async function ChiffresREQ() {
+export async function Chiffres() {
     const options = {method: 'GET', headers: {accept: 'application/json'}};
     try {
       const response = await fetch("https://cursed-bear.deno.dev/v1/chiffres", options)

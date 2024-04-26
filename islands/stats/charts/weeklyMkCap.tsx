@@ -1,11 +1,10 @@
 import Chart from "../chart.tsx";
 import { ChartOptions } from "$fresh_charts/stats/ChartOption/Average-Liquidity-MkCap/chartOptions.tsx";
 import { ChartOptions_M } from "$fresh_charts/stats/ChartOption/Average-Liquidity-MkCap/chartOptions-M.tsx";
-import { MkCap_Weekly } from "$fresh_charts/stats/Requests/MkCap.tsx";
+import { Weekly } from "$fresh_charts/stats/Requests/Weekly.tsx";
 import { IS_BROWSER } from "$fresh/runtime.ts";
 import { useSignal } from "@preact/signals";
 import { useState } from "preact/hooks";
-
 export function MarketCap() {
   if (!IS_BROWSER) return <></>;
   const fetchedData = useSignal([]);
@@ -14,7 +13,7 @@ export function MarketCap() {
   const firstdate = useSignal<string>("00/00/0000");
   const lastdate = useSignal<string>("00/00/0000");
   const getPrices = async () => {
-    const data = await MkCap_Weekly();
+    const data = await Weekly("marketcap");
     const weeklyData = Array.from({ length: 52 }, (_, i) => {
       if (i < data.length) {
         const { timestamp, marketcap } = data[i];
