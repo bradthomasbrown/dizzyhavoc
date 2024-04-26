@@ -16,7 +16,7 @@ export default function ActiveContainer() {
   return (
     <div class="flex w-full mt-[1rem] mx-auto sm:w-[42rem] gap-y-1 vignets flex-col">
       <div class="flex h-[4.5rem] sm:h-[5rem] mx-auto justify-center sm:w-[473px] w-[358px] bg-blur2 rounded-xl">
-        <div class="w-full relative p-1">
+        <div class="w-full z-[5] relative p-1">
           <Summary />
           <div
             class="absolute bottom-1 left-[50%] translate-x-[-50%] z-[3]"
@@ -47,7 +47,7 @@ export default function ActiveContainer() {
               src="/misc/caretright.svg"
             ></img>
           </div>
-          <div class="shadow-lg h-full w-[358px] sm:w-[473px] vignets rounded-lg gap-0 xl:gap-1 bg-blur3 flex flex-col">
+          <div class="h-full z-[5] w-[358px] sm:w-[473px] vignets rounded-lg gap-0 xl:gap-1 bg-blur3 flex flex-col">
             <CurrentItem />
           </div>
         </div>
