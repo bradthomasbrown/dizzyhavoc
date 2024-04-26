@@ -67,7 +67,7 @@ export default function Screen() {
           onClick={Skip}
           onClickCapture={handleScreenClick} // 🤔
         >
-          <img src="/misc/arrowright.svg" draggable={false} class="dark:invert invert-0 contrast-50 scale-[1.7]"/>
+          <img src="/misc/arrowright.svg" draggable={false} class="sm:size-[30px] size-[28px] contrast-[0.3] invert-0 dark:invert"/>
         </div>
       </div>
       <div class="scale-[70%] sm:scale-50">
