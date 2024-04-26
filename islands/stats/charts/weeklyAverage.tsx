@@ -10,8 +10,8 @@ export function Average() {
   const fetchedData = useSignal([]);
   const isLoading = useSignal(true);
   const isMobile = globalThis.window.matchMedia("(pointer: coarse)").matches
-  const firstdate = useSignal<string>("00/00/0000");
-  const lastdate = useSignal<string>("00/00/0000");
+  const firstdate = useSignal<string>("");
+  const lastdate = useSignal<string>("");
   const getPrices = async () => {
     const data = await Weekly("price");
     const weeklyData = Array.from({ length: 52 }, (_, i) => {
