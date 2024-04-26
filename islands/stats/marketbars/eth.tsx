@@ -27,7 +27,7 @@ export function Eth(props: {
             </h1>
           </section>
         </div>
-        <div class="sm:shadow-none shadow-md mt-1 sm:mt-0 rounded-md">
+        <div class="mt-1 sm:mt-0 rounded-md">
           <div class="flex sm:flex-row flex-col">
             <section class="rounded flex sm:flex-row flex-col mx-auto w-full items-center">
               <h1 class="unselectable font-[Poppins] dark:text-[#d2d2d2] text-[#1a1a1a] sm:text-start text-center text-[0.5rem] sm:text-[0.8rem] inline justify-center tracking-tight items-center">
@@ -39,7 +39,7 @@ export function Eth(props: {
             </section>
           </div>
         </div>
-        <div class="sm:shadow-none shadow-md mt-1 sm:mt-0 rounded-md">
+        <div class="mt-1 sm:mt-0 rounded-md">
           <div class="flex flex-row sm:flex-col">
             <section class="rounded flex sm:flex-row flex-col mx-auto w-full items-center">
               <h2 class="unselectable font-[Poppins] dark:text-[#d2d2d2] text-[#1a1a1a] sm:text-start text-center text-[0.5rem] sm:text-[0.8rem] inline justify-center tracking-tight items-center">
@@ -51,7 +51,7 @@ export function Eth(props: {
             </section>
           </div>
         </div>
-        <div class="sm:shadow-none shadow-md px-[2px] sm:px-0 mt-1 sm:mt-0 rounded-md">
+        <div class="px-[2px] sm:px-0 mt-1 sm:mt-0 rounded-md">
           <div class="flex flex-row sm:flex-col">
             <section class="rounded flex sm:flex-row flex-col mx-auto w-full items-center">
               <h2 class="unselectable font-[Poppins] dark:text-[#d2d2d2] text-[#1a1a1a] sm:text-start text-center text-[0.5rem] sm:text-[0.8rem] inline justify-center tracking-tight items-center">
