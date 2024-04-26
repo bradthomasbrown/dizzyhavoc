@@ -61,9 +61,9 @@ export function MarketCap() {
 
     return (
       <>
-       <p class="font-[Poppins] text-[10px] dark:text-[#d0d0d0] text-[#3d3d3d] unselectable text-center italic pl-1 absolute">Weekly Marketcap</p>
+       <p class="font-[Poppins] text-[12px] dark:text-[#d0d0d0] text-[#3d3d3d] unselectable text-center italic pl-1 absolute">Weekly Marketcap</p>
        <p class="font-[Poppins] text-[8px] dark:text-[#d0d0d0] text-[#3d3d3d] vignets unselectable text-center absolute top-[2px] right-1">{firstdate +" > "+ lastdate}</p>
-        <div class="unselectable vignets absolute -bottom-1 sm:h-[65px] sm:w-[455px] h-[60px] w-[345px]">
+       <div class="unselectable vignets absolute -bottom-1 sm:h-[110px] sm:w-[455px] h-[85px] w-[345px]">
           {fetchedData.value && fetchedData.value.length > 0 && (
             <Chart
               type="bar"

@@ -37,10 +37,10 @@ export default function ActiveContainer() {
         </div>
       </div>
       {toggle.value ? (
-        <div class="flex vignets h-[4.5rem] sm:h-[5rem] p-1 mx-auto justify-center sm:w-[473px] w-[358px] bg-blur2 rounded-xl">
+        <div class="flex vignets h-[6.5rem] sm:h-[8rem] p-1 mx-auto justify-center sm:w-[473px] w-[358px] bg-blur2 rounded-xl">
           <div
             onclick={() => Skip()}
-            class="absolute z-[2] sm:right-[3px] right-1 top-1 sm:top-8"
+            class="absolute z-[2] sm:right-[3px] right-1 top-[50%] translate-y-[-50%]"
           >
             <img
               class="size-[1rem] active:scale-[85%] cursor-pointer vignets contrast-0"

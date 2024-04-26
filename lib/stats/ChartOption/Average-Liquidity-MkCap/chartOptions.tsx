@@ -26,6 +26,11 @@ export function ChartOptions() {
       grid: {
         display: false,
       },
+      ticks:{
+        callback: function (value) {
+          return formatNumber(value);
+        },
+      }
     },
   },
     plugins: {
