@@ -11,6 +11,8 @@ export function Liquidity() {
   const fetchedData = useSignal([]);
   const isLoading = useSignal(true);
   const isMobile = globalThis.window.matchMedia("(pointer: coarse)").matches
+  const firstdate = useSignal<string>("00/00/0000");
+  const lastdate = useSignal<string>("00/00/0000");
   const getPrices = async () => {
     const data = await Liquidity_Weekly();
     const weeklyData = Array.from({ length: 52 }, (_, i) => {
@@ -22,6 +24,10 @@ export function Liquidity() {
       }
     });
     fetchedData.value = weeklyData;
+    const timedate = new Date(fetchedData.value[0].timestamp).toLocaleDateString()
+    const timedate2 = new Date(fetchedData.value[fetchedData.value.length-1].timestamp).toLocaleDateString()
+    firstdate.value = timedate
+    lastdate.value = timedate2
     isLoading.value = false;
   };
   useState(() => {
@@ -56,6 +62,7 @@ export function Liquidity() {
     return (
       <>
        <p class="font-[Poppins] text-[10px] dark:text-[#d0d0d0] text-[#3d3d3d] unselectable text-center italic pl-1 absolute">Weekly Liquidity</p>
+       <p class="font-[Poppins] text-[8px] dark:text-[#d0d0d0] text-[#3d3d3d] vignets unselectable text-center absolute top-[2px] right-1">{firstdate +" > "+ lastdate}</p>
         <div class="unselectable vignets absolute -bottom-1 sm:h-[65px] sm:w-[455px] h-[60px] w-[345px]">
           {fetchedData.value && fetchedData.value.length > 0 && (
             <Chart
