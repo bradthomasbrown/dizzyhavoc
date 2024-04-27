@@ -1,73 +1,127 @@
-import { OmniChart } from "../charts/mod.ts";
 import { Signal } from "@preact/signals";
+import { Values } from "./values.tsx";
 import { formatNumber } from "../../../lib/common/formatNumber.tsx";
-export function Omni(props: {
+export function Omnibar(props: {
   chain: Signal<string>;
-  token: Signal<number>;
-  h24: Signal<number>;
-  liq: Signal<number>;
-  vol24: Signal<number>;
-  tx: Signal<number>;
+  link: string;
+  ico: string;
+  initialloading: Signal<boolean>;
+  order: Signal<number> | null;
+  tooltip: Signal<number> | null;
+  token: Signal<number> | null;
+  h24: Signal<number> | null;
+  liq: Signal<number> | null;
+  vol24: Signal<number> | null;
+  tx: Signal<number> | null;
+  holders: Signal<number> | null;
+  transfers: Signal<number> | null;
+  contract: string;
+  trade: string;
 }) {
-  const { chain, token, h24, liq, vol24, tx } = props;
+  const {
+    chain,
+    link,
+    ico,
+    initialloading,
+    order,
+    tooltip,
+    token,
+    h24,
+    liq,
+    vol24,
+    tx,
+    holders,
+    transfers,
+    contract,
+    trade,
+  } = props;
+  async function HandleTooltips() {
+        tooltip.value = !tooltip.value;
+  }
   return (
-    <div class="flex sm:justify-start justify-evenly w-full items-start sm:items-center flex-row">
-      <div class="z-[1] flex gap-3 sm:gap-0 mx-3 sm:flex-col flex-row">
-        <div class="flex sm:flex-row flex-col">
-          <section class="rounded flex sm:flex-row flex-col w-full ml-0">
-            <h1 class="font-[Poppins] text-[#000000] font-medium dark:text-[#ccb286] text-[1rem] sm:text-[1.2rem] inline">
-              ${formatNumber(token.value)}
-            </h1>
-            <h1
-              title="24h price change"
-              class={`font-[Poppins] unselectable font-medium text-[0.7rem] ml-1 sm:text-[0.7rem] inline ${
-                h24.value < 0 ? "text-[#a23535]" : "text-[#4da235]"
-              }`}
+    <>
+      <div
+        style={{ order: order != null ? -order : 0 }}
+        class={`w-full relative shadow-lg flex h-[7rem] sm:h-[9rem] rounded-lg gap-3 bg-blur3 ${
+          initialloading.value ? "shimmer" : ""
+        }`}
+      >
+        {initialloading.value ? (
+          <></>
+        ) : (
+          <>
+            <div
+              onClick={() => {
+                  HandleTooltips();
+              }}
+              class="z-[2] absolute bottom-1 cursor-pointer unselectable left-1 dark:text-[#d0d0d0] text-[#3d3d3d] sm:text-sm text-[11px] font-[Poppins]"
             >
-              {h24.value}%
-            </h1>
-          </section>
-        </div>
-        <div class="mt-1 sm:mt-0 rounded-md">
-          <div class="flex sm:flex-row flex-col">
-            <section class="rounded flex sm:flex-row flex-col mx-auto w-full items-center">
-              <h2 class="unselectable font-[Poppins] dark:text-[#d2d2d2] text-[#1a1a1a] sm:text-start text-center text-[0.5rem] sm:text-[0.8rem] inline justify-center tracking-tight items-center">
-                Liquidity:{" "}
-              </h2>
-              <h1 class="mx-1 font-[Poppins] text-[#000000] dark:text-[#ffffff] text-[0.95rem] sm:text-[1rem] inline">
-                ${formatNumber(liq.value)}
-              </h1>
-            </section>
-          </div>
-        </div>
-        <div class="mt-1 sm:mt-0 rounded-md">
-          <div class="flex flex-row sm:flex-col">
-            <section class="rounded flex sm:flex-row flex-col mx-auto w-full items-center">
-              <h2 class="unselectable font-[Poppins] dark:text-[#d2d2d2] text-[#1a1a1a] sm:text-start text-center text-[0.5rem] sm:text-[0.8rem] inline justify-center tracking-tight items-center">
-                24h Vol:{" "}
-              </h2>
-              <h1 class="mx-1 font-[Poppins] text-[#000000] dark:text-[#ffffff] text-[0.95rem] sm:text-[1rem] inline">
-                ${formatNumber(vol24.value)}
-              </h1>
-            </section>
-          </div>
-        </div>
-        <div class="px-[2px] sm:px-0 mt-1 sm:mt-0 rounded-md">
-          <div class="flex flex-row sm:flex-col">
-            <section class="rounded flex sm:flex-row flex-col mx-auto w-full items-center">
-              <h2 class="unselectable font-[Poppins] dark:text-[#d2d2d2] text-[#1a1a1a] sm:text-start text-center text-[0.5rem] sm:text-[0.8rem] inline justify-center tracking-tight items-center">
-                24h Tx:{" "}
-              </h2>
-              <h1 class="mx-1 font-[Poppins] text-[#000000] dark:text-[#ffffff] text-[0.95rem] sm:text-[1rem] inline">
-                {Number(formatNumber(tx.value)).toFixed(0)}
-              </h1>
-            </section>
-          </div>
-        </div>
+              {tooltip.value ? (
+                <img
+                  class="size-4 active:scale-[85%] contrast-0 vignets"
+                  src="/misc/minus.svg"
+                ></img>
+              ) : (
+                <img
+                  class="size-4 active:scale-[85%] contrast-0 vignets"
+                  src="/misc/plus.svg"
+                ></img>
+              )}
+            </div>
+            <a
+              draggable={false}
+              class="z-20 sm:size-[50px] hover:scale-[105%] ml-3 mt-3 sm:mt-11 justify-start size-9"
+              title="open in dexscreener"
+              target="_blank"
+              href={link}
+            >
+              <img
+                draggable={false}
+                src={ico}
+                title="open in dexscreener"
+                alt={chain}
+              />
+            </a>
+            <Values
+              chain={chain}
+              token={token}
+              h24={h24}
+              liq={liq}
+              vol24={vol24}
+              tx={tx}
+            />
+          </>
+        )}
       </div>
-      <div class="flex absolute right-auto left-0 sm:left-auto sm:right-0 flex-row">
-      <OmniChart chain={chain} />
-      </div>
-    </div>
+      {/* Tooltip */}
+      {tooltip.value && (
+        <div
+          style={{ order: order != null ? -order : 0 }}
+          class="sm:h-[1.1rem] h-[0.9rem] rounded-md justify-evenly flex flex-row sm:text-sm text-[11px] -mt-[6px] sm:-mt-1 px-2 font-[Poppins] w-full bg-blur3"
+        >
+          <p class="flex dark:text-[#d0d0d0] text-[#3d3d3d] unselectable">
+            holders: {holders.value ? formatNumber(holders.value) : "0.0K"}
+          </p>
+          <p class="flex dark:text-[#d0d0d0] text-[#3d3d3d] unselectable">
+            transfers:{" "}
+            {transfers.value ? formatNumber(transfers.value) : "0.0K"}
+          </p>
+          <a
+            class="flex text-[#3b2d82] dark:text-[#ccb286]"
+            target="_blank"
+            href={contract}
+          >
+            contract
+          </a>
+          <a
+            class="flex text-[#3b2d82] dark:text-[#ccb286]"
+            target="_blank"
+            href={trade}
+          >
+            trade
+          </a>
+        </div>
+      )}
+    </>
   );
 }

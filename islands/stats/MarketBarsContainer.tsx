@@ -2,7 +2,7 @@ import { IS_BROWSER } from "$fresh/runtime.ts";
 import { useState } from "preact/hooks";
 import { useSignal } from "@preact/signals";
 import { Dex } from "../../lib/stats/Requests/Dex.tsx";
-import { Omni } from "./marketbars/omnibar.tsx";
+import { Omnibar } from "./marketbars/omnibar.tsx";
 import { Chiffres } from "../../lib/stats/Requests/Chiffres.tsx";
 import { formatNumber } from "../../lib/common/formatNumber.tsx";
 export function MarketBarsContainer() {
@@ -122,6 +122,25 @@ export function MarketBarsContainer() {
     largestPriceDelta(ethprice, arbprice, bscprice, baseprice, avaxprice);
     initialloading.value = false;
   };
+  const getChiffres = async() => {
+    if (!ethholders.value) {
+      const chiffres = await Chiffres();
+      if (chiffres) {
+        // holders
+        ethholders.value = chiffres.holders.eth;
+        arbholders.value = chiffres.holders.arb;
+        bscholders.value = chiffres.holders.bsc;
+        baseholders.value = chiffres.holders.base;
+        avaxholders.value = chiffres.holders.avax;
+        // transfers
+        ethtransfers.value = chiffres.transfers.eth;
+        arbtransfers.value = chiffres.transfers.arb;
+        bsctransfers.value = chiffres.transfers.bsc;
+        basetransfers.value = chiffres.transfers.base;
+        avaxtransfers.value = chiffres.transfers.avax;
+      }
+    }
+  }
   function largestPriceDelta(
     token_eth: number,
     token_arb: number,
@@ -175,47 +194,10 @@ export function MarketBarsContainer() {
       }
     }, 10);
   };
-  async function HandleTooltips(chain: string) {
-    switch (chain) {
-      case "eth":
-        ethtooltip.value = !ethtooltip.value;
-        break;
-      case "arb":
-        arbtooltip.value = !arbtooltip.value;
-        break;
-      case "bsc":
-        bsctooltip.value = !bsctooltip.value;
-        break;
-      case "base":
-        basetooltip.value = !basetooltip.value;
-        break;
-      case "avax":
-        avaxtooltip.value = !avaxtooltip.value;
-        break;
-      default:
-        break;
-    }
-    if (!ethholders.value) {
-      const chiffres = await Chiffres();
-      if (chiffres) {
-        // holders
-        ethholders.value = chiffres.holders.eth;
-        arbholders.value = chiffres.holders.arb;
-        bscholders.value = chiffres.holders.bsc;
-        baseholders.value = chiffres.holders.base;
-        avaxholders.value = chiffres.holders.avax;
-        // transfers
-        ethtransfers.value = chiffres.transfers.eth;
-        arbtransfers.value = chiffres.transfers.arb;
-        bsctransfers.value = chiffres.transfers.bsc;
-        basetransfers.value = chiffres.transfers.base;
-        avaxtransfers.value = chiffres.transfers.avax;
-      }
-    }
-  }
   useState(() => {
     // on load, fetch data and start timer
     getPrices();
+    getChiffres();
     starttimer();
   });
 
@@ -223,434 +205,95 @@ export function MarketBarsContainer() {
     <>
       <div class="w-full flex flex-col gap-[5px] sm:gap-1">
         {/* ETH MarketBar */}
-        <div
-          style={{ order: ethorder != null ? -ethorder : 0 }}
-          class={`w-full relative shadow-lg flex h-[7rem] sm:h-[9rem] rounded-lg gap-3 bg-blur3 ${
-            initialloading.value ? "shimmer" : ""
-          }`}
-        >
-          {initialloading.value ? (
-            <></>
-          ) : (
-            <>
-              <div
-                onClick={() => {
-                  HandleTooltips("eth");
-                }}
-                class="z-[2] absolute bottom-1 cursor-pointer unselectable left-1 dark:text-[#d0d0d0] text-[#3d3d3d] sm:text-sm text-[11px] font-[Poppins]"
-              >
-                {ethtooltip.value ? (
-                  <img
-                    class="size-4 active:scale-[85%] contrast-0 vignets"
-                    src="/misc/minus.svg"
-                  ></img>
-                ) : (
-                  <img
-                    class="size-4 active:scale-[85%] contrast-0 vignets"
-                    src="/misc/plus.svg"
-                  ></img>
-                )}
-              </div>
-              <a
-                draggable={false}
-                class="z-20 sm:size-[50px] hover:scale-[105%] ml-3 mt-3 sm:mt-11 justify-start size-9"
-                title="open in dexscreener"
-                target="_blank"
-                href="https://dexscreener.com/ethereum/0xb7a71c2e31920019962cb62aeea1dbf502905b81"
-              >
-                <img
-                  draggable={false}
-                  src="/chains/token_eth.png"
-                  title="open in dexscreener"
-                  alt="eth"
-                />
-              </a>
-              <Omni
-                chain="eth"
-                token={token_eth}
-                h24={h24_eth}
-                liq={liq_eth}
-                vol24={vol24_eth}
-                tx={tx_eth}
-              />
-            </>
-          )}
-        </div>
-
-        {/* ETH Tooltip */}
-        {ethtooltip.value && (
-          <div
-            style={{ order: ethorder != null ? -ethorder : 0 }}
-            class="sm:h-[1.1rem] h-[0.9rem] rounded-md justify-evenly flex flex-row sm:text-sm text-[11px] -mt-[6px] sm:-mt-1 px-2 font-[Poppins] w-full bg-blur3"
-          >
-            <p class="flex dark:text-[#d0d0d0] text-[#3d3d3d] unselectable">
-              holders:{" "}
-              {ethholders.value ? formatNumber(ethholders.value) : "0.0K"}
-            </p>
-            <p class="flex dark:text-[#d0d0d0] text-[#3d3d3d] unselectable">
-              transfers:{" "}
-              {ethtransfers.value ? formatNumber(ethtransfers.value) : "0.0K"}
-            </p>
-            <a
-              class="flex text-[#3b2d82] dark:text-[#ccb286]"
-              target="_blank"
-              href="https://etherscan.io/address/0x3419875b4d3bca7f3fdda2db7a476a79fd31b4fe"
-            >
-              contract
-            </a>
-            <a
-              class="flex text-[#3b2d82] dark:text-[#ccb286]"
-              target="_blank"
-              href="https://app.uniswap.org/swap?outputCurrency=0x3419875B4D3Bca7F3FddA2dB7a476A79fD31B4fE&chain=ethereum"
-            >
-              trade
-            </a>
-          </div>
-        )}
-
+        <Omnibar
+          chain="eth" 
+          link="https://dexscreener.com/ethereum/0xb7a71c2e31920019962cb62aeea1dbf502905b81"
+          ico="/chains/token_eth.png"
+          initialloading={initialloading}
+          order={ethorder}
+          tooltip={ethtooltip}
+          token={token_eth}
+          h24={h24_eth}
+          liq={liq_eth}
+          vol24={vol24_eth}
+          tx={tx_eth}
+          holders={ethholders}
+          transfers={ethtransfers}
+          contract="https://etherscan.io/address/0x3419875b4d3bca7f3fdda2db7a476a79fd31b4fe"
+          trade="https://app.uniswap.org/swap?outputCurrency=0x3419875B4D3Bca7F3FddA2dB7a476A79fD31B4fE&chain=ethereum"
+        />
         {/* Arb MarketBar */}
-        <div
-          style={{ order: arborder != null ? -arborder : 0 }}
-          class={`w-full relative shadow-lg flex h-[7rem] sm:h-[9rem] rounded-lg gap-3 bg-blur3 ${
-            initialloading.value ? "shimmer" : ""
-          }`}
-        >
-          {initialloading.value ? (
-            <></>
-          ) : (
-            <>
-              <div
-                onClick={() => {
-                  HandleTooltips("arb");
-                }}
-                class="z-[2] absolute bottom-1 cursor-pointer unselectable left-1 dark:text-[#d0d0d0] text-[#3d3d3d] sm:text-sm text-[11px] font-[Poppins]"
-              >
-                {arbtooltip.value ? (
-                  <img
-                    class="size-4 active:scale-[85%] contrast-0 vignets"
-                    src="/misc/minus.svg"
-                  ></img>
-                ) : (
-                  <img
-                    class="size-4 active:scale-[85%] contrast-0 vignets"
-                    src="/misc/plus.svg"
-                  ></img>
-                )}
-              </div>
-              <a
-                draggable={false}
-                class="z-20 sm:size-[50px] hover:scale-[105%] ml-3 mt-3 sm:mt-11 justify-start size-9"
-                title="open in dexscreener"
-                target="_blank"
-                href="https://dexscreener.com/arbitrum/0x05c5bdbc7b3c64109ddcce058ce99f4515fe1c83"
-              >
-                <img
-                  draggable={false}
-                  src="/chains/token_arb.png"
-                  title="open in dexscreener"
-                  alt="arb"
-                />
-              </a>
-              <Omni
-                chain="arb"
-                token={token_arb}
-                h24={h24_arb}
-                liq={liq_arb}
-                vol24={vol24_arb}
-                tx={tx_arb}
-              />
-            </>
-          )}
-        </div>
-
-        {/* Arb Tooltip */}
-        {arbtooltip.value && (
-          <div
-            style={{ order: arborder != null ? -arborder : 0 }}
-            class="sm:h-[1.1rem] h-[0.9rem] rounded-md justify-evenly flex flex-row sm:text-sm text-[11px] -mt-[6px] sm:-mt-1 px-2 font-[Poppins] w-full bg-blur3"
-          >
-            <p class="flex dark:text-[#d0d0d0] text-[#3d3d3d] unselectable">
-              holders:{" "}
-              {arbholders.value ? formatNumber(arbholders.value) : "0.0K"}
-            </p>
-            <p class="flex dark:text-[#d0d0d0] text-[#3d3d3d] unselectable">
-              transfers:{" "}
-              {arbtransfers.value ? formatNumber(arbtransfers.value) : "0.0K"}
-            </p>
-            <a
-              class="flex text-[#3b2d82] dark:text-[#ccb286]"
-              target="_blank"
-              href="https://arbiscan.io/address/0x3419875b4d3bca7f3fdda2db7a476a79fd31b4fe"
-            >
-              contract
-            </a>
-            <a
-              class="flex text-[#3b2d82] dark:text-[#ccb286]"
-              target="_blank"
-              href="https://app.uniswap.org/swap?outputCurrency=0x3419875B4D3Bca7F3FddA2dB7a476A79fD31B4fE&chain=arbitrum"
-            >
-              trade
-            </a>
-          </div>
-        )}
-
+        <Omnibar
+          chain="arb"
+          link="https://dexscreener.com/arbitrum/0x05c5bdbc7b3c64109ddcce058ce99f4515fe1c83"
+          ico="/chains/token_arb.png"
+          initialloading={initialloading}
+          order={arborder}
+          tooltip={arbtooltip}
+          token={token_arb}
+          h24={h24_arb}
+          liq={liq_arb}
+          vol24={vol24_arb}
+          tx={tx_arb}
+          holders={arbholders}
+          transfers={arbtransfers}
+          contract="https://arbiscan.io/address/0x3419875b4d3bca7f3fdda2db7a476a79fd31b4fe"
+          trade="https://app.uniswap.org/swap?outputCurrency=0x3419875B4D3Bca7F3FddA2dB7a476A79fD31B4fE&chain=arbitrum"
+        />
         {/* Avax MarketBar */}
-        <div
-          style={{ order: avaxorder != null ? -avaxorder : 0 }}
-          class={`w-full relative shadow-lg flex h-[7rem] sm:h-[9rem] rounded-lg gap-3 bg-blur3 ${
-            initialloading.value ? "shimmer" : ""
-          }`}
-        >
-          {initialloading.value ? (
-            <></>
-          ) : (
-            <>
-              <div
-                onClick={() => {
-                  HandleTooltips("avax");
-                }}
-                class="z-[2] absolute bottom-1 cursor-pointer unselectable left-1 dark:text-[#d0d0d0] text-[#3d3d3d] sm:text-sm text-[11px] font-[Poppins]"
-              >
-                {avaxtooltip.value ? (
-                  <img
-                    class="size-4 active:scale-[85%] contrast-0 vignets"
-                    src="/misc/minus.svg"
-                  ></img>
-                ) : (
-                  <img
-                    class="size-4 active:scale-[85%] contrast-0 vignets"
-                    src="/misc/plus.svg"
-                  ></img>
-                )}
-              </div>
-              <a
-                draggable={false}
-                class="z-20 sm:size-[50px] hover:scale-[105%] ml-3 mt-3 sm:mt-11 justify-start size-9"
-                title="open in dexscreener"
-                target="_blank"
-                href="https://dexscreener.com/avalanche/0x523a04633b6c0c4967824471dda0abbce7c5e643"
-              >
-                <img
-                  draggable={false}
-                  src="/chains/token_avax.png"
-                  title="open in dexscreener"
-                  alt="avax"
-                />
-              </a>
-              <Omni
-                chain="avax"
-                token={token_avax}
-                h24={h24_avax}
-                liq={liq_avax}
-                vol24={vol24_avax}
-                tx={tx_avax}
-              />
-            </>
-          )}
-        </div>
-
-        {/* Avax Tooltip */}
-        {avaxtooltip.value && (
-          <div
-            style={{ order: avaxorder != null ? -avaxorder : 0 }}
-            class="sm:h-[1.1rem] h-[0.9rem] rounded-md justify-evenly flex flex-row sm:text-sm text-[11px] -mt-[6px] sm:-mt-1 px-2 font-[Poppins] w-full bg-blur3"
-          >
-            <p class="flex dark:text-[#d0d0d0] text-[#3d3d3d] unselectable">
-              holders:{" "}
-              {avaxholders.value ? formatNumber(avaxholders.value) : "0.0K"}
-            </p>
-            <p class="flex dark:text-[#d0d0d0] text-[#3d3d3d] unselectable">
-              transfers:{" "}
-              {avaxtransfers.value ? formatNumber(avaxtransfers.value) : "0.0K"}
-            </p>
-            <a
-              class="flex text-[#3b2d82] dark:text-[#ccb286]"
-              target="_blank"
-              href="https://subnets.avax.network/c-chain/address/0x3419875B4D3Bca7F3FddA2dB7a476A79fD31B4fE"
-            >
-              contract
-            </a>
-            <a
-              class="flex text-[#3b2d82] dark:text-[#ccb286]"
-              target="_blank"
-              href="https://traderjoexyz.com/avalanche/trade?outputCurrency=0x3419875B4D3Bca7F3FddA2dB7a476A79fD31B4fE"
-            >
-              trade
-            </a>
-          </div>
-        )}
-
+        <Omnibar
+          chain="avax"
+          link="https://dexscreener.com/avalanche/0x523a04633b6c0c4967824471dda0abbce7c5e643"
+          ico="/chains/token_avax.png"
+          initialloading={initialloading}
+          order={avaxorder}
+          tooltip={avaxtooltip}
+          token={token_avax}
+          h24={h24_avax}
+          liq={liq_avax}
+          vol24={vol24_avax}
+          tx={tx_avax}
+          holders={avaxholders}
+          transfers={avaxtransfers}
+          contract="https://subnets.avax.network/c-chain/address/0x3419875B4D3Bca7F3FddA2dB7a476A79fD31B4fE"
+          trade="https://traderjoexyz.com/avalanche/trade?outputCurrency=0x3419875B4D3Bca7F3FddA2dB7a476A79fD31B4fE"
+        />
         {/* Base MarketBar */}
-        <div
-          style={{ order: baseorder != null ? -baseorder : 0 }}
-          class={`w-full relative shadow-lg flex h-[7rem] sm:h-[9rem] rounded-lg gap-3 bg-blur3 ${
-            initialloading.value ? "shimmer" : ""
-          }`}
-        >
-          {initialloading.value ? (
-            <></>
-          ) : (
-            <>
-              <div
-                onClick={() => {
-                  HandleTooltips("base");
-                }}
-                class="z-[2] absolute bottom-1 cursor-pointer unselectable left-1 dark:text-[#d0d0d0] text-[#3d3d3d] sm:text-sm text-[11px] font-[Poppins]"
-              >
-                {basetooltip.value ? (
-                  <img
-                    class="size-4 active:scale-[85%] contrast-0 vignets"
-                    src="/misc/minus.svg"
-                  ></img>
-                ) : (
-                  <img
-                    class="size-4 active:scale-[85%] contrast-0 vignets"
-                    src="/misc/plus.svg"
-                  ></img>
-                )}
-              </div>
-              <a
-                draggable={false}
-                class="z-20 sm:size-[50px] hover:scale-[105%] ml-3 mt-3 sm:mt-11 justify-start size-9"
-                title="open in dexscreener"
-                target="_blank"
-                href="https://dexscreener.com/base/0xb64dff20dd5c47e6dbb56ead80d23568006dec1e"
-              >
-                <img
-                  draggable={false}
-                  src="/chains/token_base.png"
-                  title="open in dexscreener"
-                  alt="base"
-                />
-              </a>
-              <Omni
-                chain="base"
-                token={token_base}
-                h24={h24_base}
-                liq={liq_base}
-                vol24={vol24_base}
-                tx={tx_base}
-              />
-            </>
-          )}
-        </div>
-
-        {/* Base Tooltip */}
-        {basetooltip.value && (
-          <div
-            style={{ order: baseorder != null ? -baseorder : 0 }}
-            class="sm:h-[1.1rem] h-[0.9rem] rounded-md justify-evenly flex flex-row sm:text-sm text-[11px] -mt-[6px] sm:-mt-1 px-2 font-[Poppins] w-full bg-blur3"
-          >
-            <p class="flex dark:text-[#d0d0d0] text-[#3d3d3d] unselectable">
-              holders:{" "}
-              {baseholders.value ? formatNumber(baseholders.value) : "0.0K"}
-            </p>
-            <p class="flex dark:text-[#d0d0d0] text-[#3d3d3d] unselectable">
-              transfers:{" "}
-              {basetransfers.value ? formatNumber(basetransfers.value) : "0.0K"}
-            </p>
-            <a
-              class="flex text-[#3b2d82] dark:text-[#ccb286]"
-              target="_blank"
-              href="https://basescan.org/address/0x3419875b4d3bca7f3fdda2db7a476a79fd31b4fe"
-            >
-              contract
-            </a>
-            <a
-              class="flex text-[#3b2d82] dark:text-[#ccb286]"
-              target="_blank"
-              href="https://app.uniswap.org/swap?outputCurrency=0x3419875B4D3Bca7F3FddA2dB7a476A79fD31B4fE&chain=base"
-            >
-              trade
-            </a>
-          </div>
-        )}
-
+        <Omnibar
+          chain="base"
+          link="https://dexscreener.com/base/0xb64dff20dd5c47e6dbb56ead80d23568006dec1e"
+          ico="/chains/token_base.png"
+          initialloading={initialloading}
+          order={baseorder}
+          tooltip={basetooltip}
+          token={token_base}
+          h24={h24_base}
+          liq={liq_base}
+          vol24={vol24_base}
+          tx={tx_base}
+          holders={baseholders}
+          transfers={basetransfers}
+          contract="https://basescan.org/address/0x3419875b4d3bca7f3fdda2db7a476a79fd31b4fe"
+          trade="https://app.uniswap.org/swap?outputCurrency=0x3419875B4D3Bca7F3FddA2dB7a476A79fD31B4fE&chain=base"
+        />
         {/* BSC MarketBar */}
-        <div
-          style={{ order: bscorder != null ? -bscorder : 0 }}
-          class={`w-full relative shadow-lg flex h-[7rem] sm:h-[9rem] rounded-lg gap-3 bg-blur3 ${
-            initialloading.value ? "shimmer" : ""
-          }`}
-        >
-          {initialloading.value ? (
-            <></>
-          ) : (
-            <>
-              <div
-                onClick={() => {
-                  HandleTooltips("bsc");
-                }}
-                class="z-[2] absolute bottom-1 cursor-pointer unselectable left-1 dark:text-[#d0d0d0] text-[#3d3d3d] sm:text-sm text-[11px] font-[Poppins]"
-              >
-                {bsctooltip.value ? (
-                  <img
-                    class="size-4 active:scale-[85%] contrast-0 vignets"
-                    src="/misc/minus.svg"
-                  ></img>
-                ) : (
-                  <img
-                    class="size-4 active:scale-[85%] contrast-0 vignets"
-                    src="/misc/plus.svg"
-                  ></img>
-                )}
-              </div>
-              <a
-                draggable={false}
-                class="z-20 sm:size-[50px] hover:scale-[105%] ml-3 mt-3 sm:mt-11 justify-start size-9"
-                title="open in dexscreener"
-                target="_blank"
-                href="https://dexscreener.com/bsc/0x642089a5da2512db761d325a868882ece6e387f5"
-              >
-                <img
-                  draggable={false}
-                  src="/chains/token_bsc.png"
-                  title="open in dexscreener"
-                  alt="bsc"
-                />
-              </a>
-              <Omni
-                chain="bsc"
-                token={token_bsc}
-                h24={h24_bsc}
-                liq={liq_bsc}
-                vol24={vol24_bsc}
-                tx={tx_bsc}
-              />
-            </>
-          )}
-        </div>
-
-        {/* BSC Tooltip */}
-        {bsctooltip.value && (
-          <div
-            style={{ order: bscorder != null ? -bscorder : 0 }}
-            class="sm:h-[1.1rem] h-[0.9rem] rounded-md justify-evenly flex flex-row sm:text-sm text-[11px] -mt-[6px] sm:-mt-1 px-2 font-[Poppins] w-full bg-blur3"
-          >
-            <p class="flex dark:text-[#d0d0d0] text-[#3d3d3d] unselectable">
-              holders:{" "}
-              {bscholders.value ? formatNumber(bscholders.value) : "0.0K"}
-            </p>
-            <p class="flex dark:text-[#d0d0d0] text-[#3d3d3d] unselectable">
-              transfers:{" "}
-              {bsctransfers.value ? formatNumber(bsctransfers.value) : "0.0K"}
-            </p>
-            <a
-              class="flex text-[#3b2d82] dark:text-[#ccb286]"
-              target="_blank"
-              href="https://bscscan.com/address/0x3419875b4d3bca7f3fdda2db7a476a79fd31b4fe"
-            >
-              contract
-            </a>
-            <a
-              class="flex text-[#3b2d82] dark:text-[#ccb286]"
-              target="_blank"
-              href="https://pancakeswap.finance/swap?outputCurrency=0x3419875B4D3Bca7F3FddA2dB7a476A79fD31B4fE&chainId=56"
-            >
-              trade
-            </a>
-          </div>
-        )}
+        <Omnibar
+          chain="bsc"
+          link="https://dexscreener.com/bsc/0x642089a5da2512db761d325a868882ece6e387f5"
+          ico="/chains/token_bsc.png"
+          initialloading={initialloading}
+          order={bscorder}
+          tooltip={bsctooltip}
+          token={token_bsc}
+          h24={h24_bsc}
+          liq={liq_bsc}
+          vol24={vol24_bsc}
+          tx={tx_bsc}
+          holders={bscholders}
+          transfers={bsctransfers}
+          contract="https://bscscan.com/address/0x3419875b4d3bca7f3fdda2db7a476a79fd31b4fe"
+          trade="https://pancakeswap.finance/swap?outputCurrency=0x3419875B4D3Bca7F3FddA2dB7a476A79fD31B4fE&chainId=56"
+        />
       </div>
     </>
   );
