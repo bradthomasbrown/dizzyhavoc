@@ -6,7 +6,7 @@ import { IS_BROWSER } from "$fresh/runtime.ts";
 import { useSignal } from "@preact/signals";
 import { useState } from "preact/hooks";
 
-export function AvaxChart() {
+export function OmniChart(chain: any) {
   if (!IS_BROWSER) return <></>;
   const fetchedData = useSignal([]);
   const isLoading = useSignal(true);
@@ -15,33 +15,40 @@ export function AvaxChart() {
     fetchedData.value = await PriceHistory();
     isLoading.value = false;
   };
-  useState(() => {
-    getPrices();
+  useState(async () => {
+    await getPrices();
   });
 
   const chartOptions = ChartOptions();
   const chartOptions_M = ChartOptions_M();
-  const timestamps = fetchedData.value.map((item) =>
-    new Date(item.timestamp).toLocaleTimeString([], {
-      day: "2-digit",
-      month: "2-digit",
-      hour: "2-digit",
-      minute: "2-digit",
-    })
-  );
+  const timestamps = fetchedData.value
+    ? fetchedData.value.map((item) =>
+        new Date(item.timestamp).toLocaleTimeString([], {
+          day: "2-digit",
+          month: "2-digit",
+          hour: "2-digit",
+          minute: "2-digit",
+        })
+      )
+    : undefined;
 
-  const chartData = {
-    labels: timestamps,
-    datasets: [
-      {
-        data: fetchedData.value.map((item) => item.avax_price),
-        borderColor: "#999999", // set the color of the line
-        pointRadius: 0, // Set the radius of the points
-        borderWidth: 3, // Set the width of the line
-        tension: 0.1,
-      },
-    ],
-  };
+  const chartData = fetchedData.value
+    ? {
+        labels: timestamps,
+        datasets: [
+          {
+            data: fetchedData.value.map((item) => {
+              const prop = `${chain.chain}_price`;
+              return item[prop];
+            }),
+            borderColor: "#999999", // set the color of the line
+            pointRadius: 0, // Set the radius of the points
+            borderWidth: 3, // Set the width of the line
+            tension: 0.1,
+          },
+        ],
+      }
+    : undefined;
 
   if (isLoading.value === true && fetchedData.value.length === 0) {
     return (
@@ -65,7 +72,7 @@ export function AvaxChart() {
           )}
           {timestamps && (
             <>
-             <p class="sm:text-[9px] text-[8px] font-[Poppins] dark:text-[#d2d2d27c] text-[#1a1a1ad6] absolute text-center left-[4.8rem] sm:left-[3.8rem] bottom-[14px] sm:bottom-2">
+              <p class="sm:text-[9px] text-[8px] font-[Poppins] dark:text-[#d2d2d27c] text-[#1a1a1ad6] absolute text-center left-[4.8rem] sm:left-[3.8rem] bottom-[14px] sm:bottom-2">
                 {timestamps[0]}{" "}
               </p>
               <p class="sm:text-[9px] text-[8px] font-[Poppins] dark:text-[#d2d2d27c] text-[#1a1a1ad6] absolute text-center right-[2rem] sm:right-4 bottom-[14px] sm:bottom-2">

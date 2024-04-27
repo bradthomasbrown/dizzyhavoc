@@ -1,7 +1,5 @@
 import { useState } from "preact/hooks";
-import { Average } from "./charts/weeklyAverage.tsx";
-import { MarketCap } from "./charts/weeklyMkCap.tsx";
-import { Liquidity } from "./charts/weeklyLiquidity.tsx";
+import { Average, MarketCap, Liquidity } from "./charts/mod.ts";
 export function Weeklies_Container() {
   const [currentItemIndex, setCurrentItemIndex] = useState(0);
   const items = [Average, MarketCap, Liquidity];
