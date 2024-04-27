@@ -2,13 +2,11 @@ import { IS_BROWSER } from "$fresh/runtime.ts";
 import { useState } from "preact/hooks";
 import { useSignal } from "@preact/signals";
 import { Dex } from "../../lib/stats/Requests/Dex.tsx";
-import { Omnibar } from "./marketbars/omnibar.tsx";
 import { Chiffres } from "../../lib/stats/Requests/Chiffres.tsx";
-import { formatNumber } from "../../lib/common/formatNumber.tsx";
+import { Omnibar } from "./marketbars/omnibar.tsx";
 export function MarketBarsContainer() {
   if (!IS_BROWSER) return <></>;
   const initialloading = useSignal<boolean>(true);
-  const count = useSignal<number>(30);
   // liquidity
   const liq_eth = useSignal<number>(0);
   const liq_arb = useSignal<number>(0);
@@ -184,7 +182,6 @@ export function MarketBarsContainer() {
     const intervalId = setInterval(() => {
       if (x < 100) {
         x += 0.05;
-        count.value = x; // Update the progress value
       } else {
         setTimeout(() => {
           getPrices();
