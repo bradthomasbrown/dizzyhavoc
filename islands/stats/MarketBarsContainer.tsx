@@ -2,7 +2,7 @@ import { IS_BROWSER } from "$fresh/runtime.ts";
 import { useState } from "preact/hooks";
 import { useSignal } from "@preact/signals";
 import { Dex } from "../../lib/stats/Requests/Dex.tsx";
-import { Arb, Avax, Base, Bsc, Eth } from "./marketbars/mod.ts";
+import { Omni } from "./marketbars/omnibar.tsx";
 import { Chiffres } from "../../lib/stats/Requests/Chiffres.tsx";
 import { formatNumber } from "../../lib/common/formatNumber.tsx";
 export function MarketBarsContainer() {
@@ -265,12 +265,13 @@ export function MarketBarsContainer() {
                   alt="eth"
                 />
               </a>
-              <Eth
-                token_eth={token_eth}
-                h24_eth={h24_eth}
-                liq_eth={liq_eth}
-                vol24_eth={vol24_eth}
-                tx_eth={tx_eth}
+              <Omni
+                chain="eth"
+                token={token_eth}
+                h24={h24_eth}
+                liq={liq_eth}
+                vol24={vol24_eth}
+                tx={tx_eth}
               />
             </>
           )}
@@ -350,12 +351,13 @@ export function MarketBarsContainer() {
                   alt="arb"
                 />
               </a>
-              <Arb
-                token_arb={token_arb}
-                h24_arb={h24_arb}
-                liq_arb={liq_arb}
-                vol24_arb={vol24_arb}
-                tx_arb={tx_arb}
+              <Omni
+                chain="arb"
+                token={token_arb}
+                h24={h24_arb}
+                liq={liq_arb}
+                vol24={vol24_arb}
+                tx={tx_arb}
               />
             </>
           )}
@@ -435,12 +437,13 @@ export function MarketBarsContainer() {
                   alt="avax"
                 />
               </a>
-              <Avax
-                token_avax={token_avax}
-                h24_avax={h24_avax}
-                liq_avax={liq_avax}
-                vol24_avax={vol24_avax}
-                tx_avax={tx_avax}
+              <Omni
+                chain="avax"
+                token={token_avax}
+                h24={h24_avax}
+                liq={liq_avax}
+                vol24={vol24_avax}
+                tx={tx_avax}
               />
             </>
           )}
@@ -520,12 +523,13 @@ export function MarketBarsContainer() {
                   alt="base"
                 />
               </a>
-              <Base
-                token_base={token_base}
-                h24_base={h24_base}
-                liq_base={liq_base}
-                vol24_base={vol24_base}
-                tx_base={tx_base}
+              <Omni
+                chain="base"
+                token={token_base}
+                h24={h24_base}
+                liq={liq_base}
+                vol24={vol24_base}
+                tx={tx_base}
               />
             </>
           )}
@@ -605,12 +609,13 @@ export function MarketBarsContainer() {
                   alt="bsc"
                 />
               </a>
-              <Bsc
-                token_bsc={token_bsc}
-                h24_bsc={h24_bsc}
-                liq_bsc={liq_bsc}
-                vol24_bsc={vol24_bsc}
-                tx_bsc={tx_bsc}
+              <Omni
+                chain="bsc"
+                token={token_bsc}
+                h24={h24_bsc}
+                liq={liq_bsc}
+                vol24={vol24_bsc}
+                tx={tx_bsc}
               />
             </>
           )}
