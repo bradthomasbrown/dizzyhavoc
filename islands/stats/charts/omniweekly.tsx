@@ -36,7 +36,6 @@ export function Omniweekly(props: { name: Signal<any>; type: Signal<any> }) {
           };
         }
       });
-  
       fetchedData.value = weeklyData;
       cache(type, weeklyData); // Pass the type as an argument to the updateCachedData function
       const timedate = new Date(
