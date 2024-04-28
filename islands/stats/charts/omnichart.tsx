@@ -3,11 +3,12 @@ import { ChartOptions } from "$fresh_charts/stats/ChartOption/MarketBar/chartOpt
 import { ChartOptions_M } from "$fresh_charts/stats/ChartOption/MarketBar/chartOptions-M.tsx";
 import { PriceHistory } from "$fresh_charts/stats/Requests/priceHistory.tsx";
 import { IS_BROWSER } from "$fresh/runtime.ts";
-import { useSignal } from "@preact/signals";
+import { Signal, useSignal } from "@preact/signals";
 import { useState } from "preact/hooks";
 
-export function Omnichart(chain: any) {
+export function Omnichart(props: { chain: Signal<string>; }) {
   if (!IS_BROWSER) return <></>;
+  const { chain } = props;
   const fetchedData = useSignal([]);
   const isLoading = useSignal(true);
   const isMobile = globalThis.window.matchMedia("(pointer: coarse)").matches;
@@ -40,7 +41,7 @@ export function Omnichart(chain: any) {
         datasets: [
           {
             data: fetchedData.value.map((item) => {
-              const prop = `${chain.chain}_price`;
+              const prop = `${chain}_price`;
               return item[prop];
             }),
             borderColor: "#999999", // set the color of the line

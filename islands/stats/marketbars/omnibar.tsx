@@ -8,7 +8,7 @@ export function Omnibar(props: {
   ico: string;
   initialloading: Signal<boolean>;
   order: Signal<number> | null;
-  tooltip: Signal<number> | null;
+  tooltip: Signal<boolean> | null;
   token: Signal<number> | null;
   h24: Signal<number> | null;
   liq: Signal<number> | null;
