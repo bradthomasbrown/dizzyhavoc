@@ -5,6 +5,7 @@ import { Weekly } from "$fresh_charts/stats/Requests/Weekly.tsx";
 import { IS_BROWSER } from "$fresh/runtime.ts";
 import { useSignal, Signal } from "@preact/signals";
 import { useState } from "preact/hooks";
+
 export function Omniweekly(props: { name: Signal<any>; type: Signal<any> }) {
   if (!IS_BROWSER) return <></>;
   const { name, type } = props;
@@ -13,6 +14,7 @@ export function Omniweekly(props: { name: Signal<any>; type: Signal<any> }) {
   const isMobile = globalThis.window.matchMedia("(pointer: coarse)").matches;
   const firstdate = useSignal<string>("");
   const lastdate = useSignal<string>("");
+
   const getPrices = async () => {
     const data = await Weekly(type);
     const weeklyData = Array.from({ length: 52 }, (_, i) => {
@@ -38,6 +40,7 @@ export function Omniweekly(props: { name: Signal<any>; type: Signal<any> }) {
     lastdate.value = timedate2;
     isLoading.value = false;
   };
+
   useState(() => {
     getPrices();
   });

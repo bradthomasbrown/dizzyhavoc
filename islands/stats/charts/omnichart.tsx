@@ -15,12 +15,14 @@ export function Omnichart(chain: any) {
     fetchedData.value = await PriceHistory();
     isLoading.value = false;
   };
+
   useState(async () => {
     await getPrices();
   });
 
   const chartOptions = ChartOptions();
   const chartOptions_M = ChartOptions_M();
+
   const timestamps = fetchedData.value
     ? fetchedData.value.map((item) =>
         new Date(item.timestamp).toLocaleTimeString([], {

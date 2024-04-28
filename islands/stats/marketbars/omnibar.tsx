@@ -1,6 +1,7 @@
 import { Signal } from "@preact/signals";
 import { Values } from "./values.tsx";
 import { formatNumber } from "../../../lib/common/formatNumber.tsx";
+
 export function Omnibar(props: {
   chain: Signal<string>;
   link: string;
@@ -36,7 +37,7 @@ export function Omnibar(props: {
     trade,
   } = props;
   async function HandleTooltips() {
-        tooltip.value = !tooltip.value;
+    tooltip.value = !tooltip.value;
   }
   return (
     <>
@@ -52,7 +53,7 @@ export function Omnibar(props: {
           <>
             <div
               onClick={() => {
-                  HandleTooltips();
+                HandleTooltips();
               }}
               class="z-[2] absolute bottom-1 cursor-pointer unselectable left-1 dark:text-[#d0d0d0] text-[#3d3d3d] sm:text-sm text-[11px] font-[Poppins]"
             >
