@@ -1,5 +1,5 @@
 import { useState } from "preact/hooks";
-import { OmnWeekly } from "./charts/mod.ts"
+import { Omniweekly } from "./charts/mod.ts"
 export function Weeklies_Container() {
   const [index, setindex] = useState(0);
   const items = ["averageprice", "marketcap", "liq"];
@@ -19,7 +19,7 @@ export function Weeklies_Container() {
         ></img>
       </div>
       <div class="h-full w-[358px] sm:w-[473px] rounded-lg gap-0 xl:gap-1 bg-blur3 flex flex-col">
-        <OmnWeekly key={items[index]} name={names[index]} type={items[index]}  />
+        <Omniweekly key={items[index]} name={names[index]} type={items[index]}  />
       </div>
     </div>
   );

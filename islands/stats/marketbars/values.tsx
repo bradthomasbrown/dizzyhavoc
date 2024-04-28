@@ -1,4 +1,4 @@
-import { OmniChart } from "../charts/mod.ts";
+import { Omnichart } from "../charts/mod.ts";
 import { Signal } from "@preact/signals";
 import { formatNumber } from "../../../lib/common/formatNumber.tsx";
 export function Values(props: {
@@ -66,7 +66,7 @@ export function Values(props: {
         </div>
       </div>
       <div class="flex absolute right-auto left-0 sm:left-auto sm:right-0 flex-row">
-      <OmniChart chain={chain} />
+      <Omnichart chain={chain} />
       </div>
     </div>
   );

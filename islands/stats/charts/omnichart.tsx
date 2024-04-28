@@ -6,7 +6,7 @@ import { IS_BROWSER } from "$fresh/runtime.ts";
 import { useSignal } from "@preact/signals";
 import { useState } from "preact/hooks";
 
-export function OmniChart(chain: any) {
+export function Omnichart(chain: any) {
   if (!IS_BROWSER) return <></>;
   const fetchedData = useSignal([]);
   const isLoading = useSignal(true);

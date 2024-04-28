@@ -5,7 +5,7 @@ import { Weekly } from "$fresh_charts/stats/Requests/Weekly.tsx";
 import { IS_BROWSER } from "$fresh/runtime.ts";
 import { useSignal, Signal } from "@preact/signals";
 import { useState } from "preact/hooks";
-export function OmnWeekly(props: { name: Signal<any>; type: Signal<any> }) {
+export function Omniweekly(props: { name: Signal<any>; type: Signal<any> }) {
   if (!IS_BROWSER) return <></>;
   const { name, type } = props;
   const fetchedData = useSignal([]);
