@@ -3,27 +3,27 @@ import { ChartOptions } from "$fresh_charts/stats/ChartOption/Average-Liquidity-
 import { ChartOptions_M } from "$fresh_charts/stats/ChartOption/Average-Liquidity-MkCap/chartOptions-M.tsx";
 import { Weekly } from "$fresh_charts/stats/Requests/Weekly.tsx";
 import { IS_BROWSER } from "$fresh/runtime.ts";
-import { useSignal } from "@preact/signals";
+import { useSignal, Signal } from "@preact/signals";
 import { useState } from "preact/hooks";
-export function OmnWeekly(type: any) {
+export function OmnWeekly(props: { name: Signal<any>; type: Signal<any> }) {
   if (!IS_BROWSER) return <></>;
+  const { name, type } = props;
   const fetchedData = useSignal([]);
   const isLoading = useSignal(true);
   const isMobile = globalThis.window.matchMedia("(pointer: coarse)").matches;
   const firstdate = useSignal<string>("");
   const lastdate = useSignal<string>("");
   const getPrices = async () => {
-    const _type = type.type;
-    const data = await Weekly(_type);
+    const data = await Weekly(type);
     const weeklyData = Array.from({ length: 52 }, (_, i) => {
       if (i < data.length) {
         const { timestamp } = data[i];
-        const value = data[i][_type];
-        return { timestamp: timestamp, [_type]: value };
+        const value = data[i][type];
+        return { timestamp: timestamp, [type]: value };
       } else {
         return {
           timestamp: data[data.length - 1].timestamp + i * 604800000,
-          [_type]: 0,
+          [type]: 0,
         };
       }
     });
@@ -59,7 +59,7 @@ export function OmnWeekly(type: any) {
     datasets: [
       {
         data: fetchedData.value.map((item) => {
-          const prop = `${type.type}`;
+          const prop = `${type}`;
           return item[prop];
         }),
         backgroundColor: "#707070", // set the color of the line
@@ -72,7 +72,7 @@ export function OmnWeekly(type: any) {
   return (
     <>
       <p class="font-[Poppins] text-[12px] dark:text-[#d0d0d0] text-[#3d3d3d] unselectable text-center italic pl-1 absolute">
-        Weekly {type.type}
+        Weekly {name}
       </p>
       <p class="font-[Poppins] text-[8px] dark:text-[#d0d0d0] text-[#3d3d3d] vignets unselectable text-center absolute top-[2px] right-1">
         {firstdate + " > " + lastdate}
