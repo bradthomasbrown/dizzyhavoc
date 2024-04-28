@@ -2,8 +2,8 @@ import { useState } from "preact/hooks";
 import { Omniweekly } from "./charts/mod.ts"
 export function Weeklies_Container() {
   const [index, setindex] = useState(0);
-  const items = ["averageprice", "marketcap", "liq"];
-  const names = ["Average Price", "Market Cap", "Liquidity"];
+  const items = ["averageprice", "marketcap", "liq", "volume"];
+  const names = ["Average Price", "Market Cap", "Liquidity", "Volume"];
   function Skip() {
     setindex((prevIndex) => (prevIndex + 1) % items.length);
   }

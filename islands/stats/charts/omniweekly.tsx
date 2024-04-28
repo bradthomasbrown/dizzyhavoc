@@ -5,6 +5,7 @@ import { Weekly } from "$fresh_charts/stats/Requests/Weekly.tsx";
 import { IS_BROWSER } from "$fresh/runtime.ts";
 import { useSignal, Signal } from "@preact/signals";
 import { useState } from "preact/hooks";
+import { cachedData, cache } from './cache.tsx';
 
 export function Omniweekly(props: { name: Signal<any>; type: Signal<any> }) {
   if (!IS_BROWSER) return <></>;
@@ -16,31 +17,40 @@ export function Omniweekly(props: { name: Signal<any>; type: Signal<any> }) {
   const lastdate = useSignal<string>("");
 
   const getPrices = async () => {
-    const data = await Weekly(type);
-    const weeklyData = Array.from({ length: 52 }, (_, i) => {
-      if (i < data.length) {
-        const { timestamp } = data[i];
-        const value = data[i][type];
-        return { timestamp: timestamp, [type]: value };
-      } else {
-        return {
-          timestamp: data[data.length - 1].timestamp + i * 604800000,
-          [type]: 0,
-        };
-      }
-    });
-    fetchedData.value = weeklyData;
-    const timedate = new Date(
-      fetchedData.value[0].timestamp
-    ).toLocaleDateString();
-    const timedate2 = new Date(
-      fetchedData.value[fetchedData.value.length - 1].timestamp
-    ).toLocaleDateString();
-    firstdate.value = timedate;
-    lastdate.value = timedate2;
-    isLoading.value = false;
+    if (cachedData[type]) {
+        fetchedData.value = cachedData[type];
+        firstdate.value = new Date(cachedData[type][0].timestamp).toLocaleDateString();
+        lastdate.value = new Date(cachedData[type][51].timestamp).toLocaleDateString();
+        isLoading.value = false;
+    } else {
+      const data = await Weekly(type);
+      const weeklyData = Array.from({ length: 52 }, (_, i) => {
+        if (i < data.length) {
+          const { timestamp } = data[i];
+          const value = data[i][type];
+          return { timestamp: timestamp, [type]: value };
+        } else {
+          return {
+            timestamp: data[data.length - 1].timestamp + i * 604800000,
+            [type]: 0,
+          };
+        }
+      });
+  
+      fetchedData.value = weeklyData;
+      cache(type, weeklyData); // Pass the type as an argument to the updateCachedData function
+      const timedate = new Date(
+        fetchedData.value[0].timestamp
+      ).toLocaleDateString();
+      const timedate2 = new Date(
+        fetchedData.value[fetchedData.value.length - 1].timestamp
+      ).toLocaleDateString();
+      firstdate.value = timedate;
+      lastdate.value = timedate2;
+      isLoading.value = false;
+    }
   };
-
+  
   useState(() => {
     getPrices();
   });
