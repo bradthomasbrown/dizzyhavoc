@@ -18,6 +18,7 @@ export class Mint {
   burn: KvBurn;
   recipient: string;
   value: bigint;
+  threshold: bigint;
   nonce?: bigint;
   hash?: string;
   prevHash?: string;
@@ -42,6 +43,12 @@ export class Mint {
     this.burn = kvBurn;
     this.recipient = `0x${kvBurn.log.data.slice(2).slice(64 * 1 + 24, 64 * 2)}`;
     this.value = BigInt(`0x${kvBurn.log.data.slice(2).slice(64 * 2, 64 * 3)}`);
+    const slippage = BigInt(`0x${kvBurn.log.data.slice(2).slice(64 * 3, 64 * 4)}`)
+    const fraction = 1 - Number(slippage) / (2 ** 64 - 1)
+    let threshold = BigInt(Math.floor(fraction * Number(this.value)))
+    if (threshold > this.value) threshold = this.value
+    if (threshold < 0n) threshold = 0n
+    this.threshold = threshold
     this.nonce = nonce;
     this.hash = hash;
     this.prevHash = prevHash;
@@ -191,7 +198,7 @@ export class Mint {
     const { chainId } = this.chain;
     const from = signer.address;
     const to = tokenAddress;
-    if (this.value - baseFee <= 0n) {
+    if (this.value - baseFee < this.threshold) {
       await this.move("archive");
       return false;
     }
