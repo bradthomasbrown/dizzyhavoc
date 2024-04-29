@@ -1,12 +1,10 @@
 import { IS_BROWSER } from "$fresh/runtime.ts";
 import { useState } from "preact/hooks";
 import { useSignal } from "@preact/signals";
-import { Dex } from "../../lib/stats/Requests/Dex.tsx";
 import { formatNumber } from "../../lib/common/formatNumber.tsx";
-import { tokenCache } from "../../lib/stats/Requests/tokencache.tsx";
+import { Dex } from "../../lib/stats/Requests/Dex.tsx";
 export function Summary() {
   if (!IS_BROWSER) return <></>;
-  let data = tokenCache ? tokenCache : {};
   const initialloading = useSignal<boolean>(true);
   const isloading = useSignal<boolean>(true);
   const count = useSignal<number>(0);
@@ -14,6 +12,12 @@ export function Summary() {
   const delta = useSignal<number>(0);
   const totalsupply = useSignal<number>(0);
   const avrgprice = useSignal<number>(0);
+  // prices
+  const token_eth = useSignal<number>(0);
+  const token_arb = useSignal<number>(0);
+  const token_bsc = useSignal<number>(0);
+  const token_base = useSignal<number>(0);
+  const token_avax = useSignal<number>(0);
   // liq
   const fullliq = useSignal<number>(0);
 
@@ -41,13 +45,50 @@ export function Summary() {
     delta.value = Number(maxDeltaPercentage.toFixed(0));
   }
 
-  const processData = async () => {
-    await Dex();
+  const fetchScreener = async () => {
     isloading.value = true;
-    data = tokenCache;
     // req to dexscreener for live prices/ liq
-    const totalliq = data.eth.liq+data.arb.liq+data.bsc.liq+data.base.liq+data.avax.liq;
-    const totalprice = data.eth.price+data.arb.price+data.bsc.price+data.base.price+data.avax.price;
+    let arbprice = 0,
+      ethprice = 0,
+      bscprice = 0,
+      baseprice = 0,
+      avaxprice = 0;
+    const data = await Dex();
+    let totalprice = 0;
+    let totalliq = 0;
+    for (let i = 0; i < data.pairs.length; i++) {
+      const fixedvalue = Number(data.pairs[i].priceUsd).toFixed(5);
+      const fixedliq = Number(data.pairs[i].liquidity.usd).toFixed(5);
+      switch (data.pairs[i].url) {
+        case "https://dexscreener.com/ethereum/0xb7a71c2e31920019962cb62aeea1dbf502905b81":
+          token_eth.value = ethprice = Number(fixedvalue);
+          totalprice += Number(fixedvalue);
+          totalliq += Number(fixedliq);
+          break;
+        case "https://dexscreener.com/arbitrum/0x05c5bdbc7b3c64109ddcce058ce99f4515fe1c83":
+          token_arb.value = arbprice = Number(fixedvalue);
+          totalprice += Number(fixedvalue);
+          totalliq += Number(fixedliq);
+          break;
+        case "https://dexscreener.com/bsc/0x642089a5da2512db761d325a868882ece6e387f5":
+          token_bsc.value = bscprice = Number(fixedvalue);
+          totalprice += Number(fixedvalue);
+          totalliq += Number(fixedliq);
+          break;
+        case "https://dexscreener.com/base/0xb64dff20dd5c47e6dbb56ead80d23568006dec1e":
+          token_base.value = baseprice = Number(fixedvalue);
+          totalprice += Number(fixedvalue);
+          totalliq += Number(fixedliq);
+          break;
+        case "https://dexscreener.com/avalanche/0x523a04633b6c0c4967824471dda0abbce7c5e643":
+          token_avax.value = avaxprice = Number(fixedvalue);
+          totalprice += Number(fixedvalue);
+          totalliq += Number(fixedliq);
+          break;
+        default:
+          break;
+      }
+    }
     // assign full liq
     fullliq.value = formatNumber(totalliq) as number;
     // Calculate average price
@@ -56,11 +97,11 @@ export function Summary() {
     avrgprice.value = Number(fixedavrg);
     totalsupply.value = 946778380; // hard coded total supply
     largestPriceDelta(
-      data.eth.price,
-      data.arb.price,
-      data.bsc.price,
-      data.base.price,
-      data.avax.price,
+      ethprice,
+      arbprice,
+      bscprice,
+      baseprice,
+      avaxprice,
     );
     isloading.value = false;
     initialloading.value = false;
@@ -76,17 +117,17 @@ export function Summary() {
       } else {
         isloading.value = true;
         setTimeout(() => {
-          processData();
+          fetchScreener();
           starttimer();
         },250);
         clearInterval(intervalId); // Stop the interval when x reaches 100
       }
-    }, 1);
+    }, 10);
   };
 
   useState(() => {
     // on load fetch data and start timer
-    processData();
+    fetchScreener();
     starttimer();
   });
 

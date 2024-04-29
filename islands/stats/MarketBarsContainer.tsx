@@ -1,15 +1,44 @@
 import { IS_BROWSER } from "$fresh/runtime.ts";
 import { useState } from "preact/hooks";
 import { useSignal } from "@preact/signals";
+import { Dex } from "../../lib/stats/Requests/Dex.tsx";
 import { PriceHistory } from "../../lib/stats/Requests/priceHistory.tsx";
 import { Chiffres } from "../../lib/stats/Requests/Chiffres.tsx";
 import { Omnibar } from "./marketbars/omnibar.tsx";
-import { tokenCache } from "../../lib/stats/Requests/tokencache.tsx";
 
 export function MarketBarsContainer() {
   if (!IS_BROWSER) return <></>;
-  let data = tokenCache ? tokenCache : {};
   const initialloading = useSignal<boolean>(true);
+  // liquidity
+  const liq_eth = useSignal<number>(0);
+  const liq_arb = useSignal<number>(0);
+  const liq_bsc = useSignal<number>(0);
+  const liq_base = useSignal<number>(0);
+  const liq_avax = useSignal<number>(0);
+  // daily volume
+  const vol24_eth = useSignal<number>(0);
+  const vol24_arb = useSignal<number>(0);
+  const vol24_bsc = useSignal<number>(0);
+  const vol24_base = useSignal<number>(0);
+  const vol24_avax = useSignal<number>(0);
+  // prices
+  const token_eth = useSignal<number>(0);
+  const token_arb = useSignal<number>(0);
+  const token_bsc = useSignal<number>(0);
+  const token_base = useSignal<number>(0);
+  const token_avax = useSignal<number>(0);
+  // txn count
+  const tx_eth = useSignal<number>(0);
+  const tx_arb = useSignal<number>(0);
+  const tx_bsc = useSignal<number>(0);
+  const tx_base = useSignal<number>(0);
+  const tx_avax = useSignal<number>(0);
+  // h24 price change
+  const h24_eth = useSignal<number>(0);
+  const h24_arb = useSignal<number>(0);
+  const h24_bsc = useSignal<number>(0);
+  const h24_base = useSignal<number>(0);
+  const h24_avax = useSignal<number>(0);
   // holders for each chain
   const arbholders = useSignal<number>(0);
   const bscholders = useSignal<number>(0);
@@ -36,11 +65,62 @@ export function MarketBarsContainer() {
   const ethtooltip = useSignal<boolean>(false);
 
   const getPrices = async () => {
-      data = tokenCache
-      await PriceHistory();
-      if(data.base){
-        largestPriceDelta(data.eth.price, data.arb.price, data.bsc.price, data.base.price, data.avax.price);
+    let arbprice = 0,
+      ethprice = 0,
+      bscprice = 0,
+      baseprice = 0,
+      avaxprice = 0;
+    const data = await Dex();
+    for (let i = 0; i < data.pairs.length; i++) {
+      const fixedvalue = Number(data.pairs[i].priceUsd).toFixed(5);
+      const fixedliq = Number(data.pairs[i].liquidity.usd).toFixed(2);
+      switch (data.pairs[i].url) {
+        case "https://dexscreener.com/ethereum/0xb7a71c2e31920019962cb62aeea1dbf502905b81":
+          token_eth.value = ethprice = Number(fixedvalue);
+          liq_eth.value = fixedliq;
+          vol24_eth.value = data.pairs[i].volume.h24;
+          tx_eth.value =
+            data.pairs[i].txns.h24.buys + data.pairs[i].txns.h24.sells;
+          h24_eth.value = data.pairs[i].priceChange.h24;
+          break;
+        case "https://dexscreener.com/arbitrum/0x05c5bdbc7b3c64109ddcce058ce99f4515fe1c83":
+          token_arb.value = arbprice = Number(fixedvalue);
+          liq_arb.value = fixedliq;
+          vol24_arb.value = data.pairs[i].volume.h24;
+          tx_arb.value =
+            data.pairs[i].txns.h24.buys + data.pairs[i].txns.h24.sells;
+          h24_arb.value = data.pairs[i].priceChange.h24;
+          break;
+        case "https://dexscreener.com/bsc/0x642089a5da2512db761d325a868882ece6e387f5":
+          token_bsc.value = bscprice = Number(fixedvalue);
+          liq_bsc.value = fixedliq;
+          vol24_bsc.value = data.pairs[i].volume.h24;
+          tx_bsc.value =
+            data.pairs[i].txns.h24.buys + data.pairs[i].txns.h24.sells;
+          h24_bsc.value = data.pairs[i].priceChange.h24;
+          break;
+        case "https://dexscreener.com/base/0xb64dff20dd5c47e6dbb56ead80d23568006dec1e":
+          token_base.value = baseprice = Number(fixedvalue);
+          liq_base.value = fixedliq;
+          vol24_base.value = data.pairs[i].volume.h24;
+          tx_base.value =
+            data.pairs[i].txns.h24.buys + data.pairs[i].txns.h24.sells;
+          h24_base.value = data.pairs[i].priceChange.h24;
+          break;
+        case "https://dexscreener.com/avalanche/0x523a04633b6c0c4967824471dda0abbce7c5e643":
+          token_avax.value = avaxprice = Number(fixedvalue);
+          liq_avax.value = fixedliq;
+          vol24_avax.value = data.pairs[i].volume.h24;
+          tx_avax.value =
+            data.pairs[i].txns.h24.buys + data.pairs[i].txns.h24.sells;
+          h24_avax.value = data.pairs[i].priceChange.h24;
+          break;
+        default:
+          break;
       }
+      await PriceHistory();
+    }
+    largestPriceDelta(ethprice, arbprice, bscprice, baseprice, avaxprice);
     initialloading.value = false;
   };
   const getChiffres = async() => {
@@ -112,7 +192,7 @@ export function MarketBarsContainer() {
         }, 250);
         clearInterval(intervalId); // Stop the interval when x reaches 100
       }
-    }, 1);
+    }, 10);
   };
   useState(() => {
     // on load, fetch data and start timer
@@ -121,7 +201,7 @@ export function MarketBarsContainer() {
     starttimer();
   });
 
-  if(data){return (
+  return (
     <>
       <div class="w-full flex flex-col gap-[5px] sm:gap-1">
         {/* ETH MarketBar */}
@@ -132,11 +212,11 @@ export function MarketBarsContainer() {
           initialloading={initialloading}
           order={ethorder}
           tooltip={ethtooltip}
-          token={data.eth ? data.eth.price : 0}
-          h24={data.eth ? data.eth.h24 : 0}
-          liq={data.eth ? data.eth.liq : 0}
-          vol24={data.eth ? data.eth.vol24 : 0}
-          tx={data.eth ? data.eth.tx : 0}
+          token={token_eth}
+          h24={h24_eth}
+          liq={liq_eth}
+          vol24={vol24_eth}
+          tx={tx_eth}
           holders={ethholders}
           transfers={ethtransfers}
           contract="https://etherscan.io/address/0x3419875b4d3bca7f3fdda2db7a476a79fd31b4fe"
@@ -150,11 +230,11 @@ export function MarketBarsContainer() {
           initialloading={initialloading}
           order={arborder}
           tooltip={arbtooltip}
-          token={data.arb ? data.arb.price : 0}
-          h24={data.arb ? data.arb.h24 : 0}
-          liq={data.arb ? data.arb.liq : 0}
-          vol24={data.arb ? data.arb.vol24 : 0}
-          tx={data.arb ? data.arb.tx : 0}
+          token={token_arb}
+          h24={h24_arb}
+          liq={liq_arb}
+          vol24={vol24_arb}
+          tx={tx_arb}
           holders={arbholders}
           transfers={arbtransfers}
           contract="https://arbiscan.io/address/0x3419875b4d3bca7f3fdda2db7a476a79fd31b4fe"
@@ -168,11 +248,11 @@ export function MarketBarsContainer() {
           initialloading={initialloading}
           order={avaxorder}
           tooltip={avaxtooltip}
-          token={data.avax ? data.avax.price : 0}
-          h24={data.avax ? data.avax.h24 : 0}
-          liq={data.avax ? data.avax.liq : 0}
-          vol24={data.avax ? data.avax.vol24 : 0}
-          tx={data.avax ? data.avax.tx : 0}
+          token={token_avax}
+          h24={h24_avax}
+          liq={liq_avax}
+          vol24={vol24_avax}
+          tx={tx_avax}
           holders={avaxholders}
           transfers={avaxtransfers}
           contract="https://subnets.avax.network/c-chain/address/0x3419875B4D3Bca7F3FddA2dB7a476A79fD31B4fE"
@@ -186,11 +266,11 @@ export function MarketBarsContainer() {
           initialloading={initialloading}
           order={baseorder}
           tooltip={basetooltip}
-          token={data.base ? data.base.price : 0}
-          h24={data.base ? data.base.h24 : 0}
-          liq={data.base ? data.base.liq : 0}
-          vol24={data.base? data.base.vol24 : 0}
-          tx={data.base ? data.base.tx : 0}
+          token={token_base}
+          h24={h24_base}
+          liq={liq_base}
+          vol24={vol24_base}
+          tx={tx_base}
           holders={baseholders}
           transfers={basetransfers}
           contract="https://basescan.org/address/0x3419875b4d3bca7f3fdda2db7a476a79fd31b4fe"
@@ -204,11 +284,11 @@ export function MarketBarsContainer() {
           initialloading={initialloading}
           order={bscorder}
           tooltip={bsctooltip}
-          token={data.bsc ? data.bsc.price : 0}
-          h24={data.bsc ? data.bsc.h24 : 0}
-          liq={data.bsc ? data.bsc.liq : 0}
-          vol24={data.bsc ? data.bsc.vol24 : 0}
-          tx={data.bsc ? data.bsc.tx : 0}
+          token={token_bsc}
+          h24={h24_bsc}
+          liq={liq_bsc}
+          vol24={vol24_bsc}
+          tx={tx_bsc}
           holders={bscholders}
           transfers={bsctransfers}
           contract="https://bscscan.com/address/0x3419875b4d3bca7f3fdda2db7a476a79fd31b4fe"
@@ -216,5 +296,5 @@ export function MarketBarsContainer() {
         />
       </div>
     </>
-  );}
+  );
 }
