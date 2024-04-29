@@ -1,24 +1,24 @@
 import Chart from "../chart.tsx";
 import { ChartOptions } from "$fresh_charts/stats/ChartOption/MarketBar/chartOptions.tsx";
 import { ChartOptions_M } from "$fresh_charts/stats/ChartOption/MarketBar/chartOptions-M.tsx";
-import { PriceHistory } from "$fresh_charts/stats/Requests/priceHistory.tsx";
 import { IS_BROWSER } from "$fresh/runtime.ts";
 import { Signal, useSignal } from "@preact/signals";
 import { useState } from "preact/hooks";
-
+import { cachedData } from "$fresh_charts/stats/Requests/cache.tsx";
 export function Omnichart(props: { chain: Signal<string>; }) {
   if (!IS_BROWSER) return <></>;
   const { chain } = props;
+  const data = cachedData;
   const fetchedData = useSignal([]);
   const isLoading = useSignal(true);
   const isMobile = globalThis.window.matchMedia("(pointer: coarse)").matches;
-  const getPrices = async () => {
-    fetchedData.value = await PriceHistory();
+  const getCache = async () => {
+      fetchedData.value = data;
     isLoading.value = false;
   };
 
-  useState(async () => {
-    await getPrices();
+  useState(() => {
+    getCache();
   });
 
   const chartOptions = ChartOptions();

@@ -4,6 +4,7 @@ import { useSignal } from "@preact/signals";
 import { Dex } from "../../lib/stats/Requests/Dex.tsx";
 import { Chiffres } from "../../lib/stats/Requests/Chiffres.tsx";
 import { Omnibar } from "./marketbars/omnibar.tsx";
+import { PriceHistory } from "../../lib/stats/Requests/priceHistory.tsx";
 export function MarketBarsContainer() {
   if (!IS_BROWSER) return <></>;
   const initialloading = useSignal<boolean>(true);
@@ -116,6 +117,7 @@ export function MarketBarsContainer() {
         default:
           break;
       }
+      await PriceHistory();
     }
     largestPriceDelta(ethprice, arbprice, bscprice, baseprice, avaxprice);
     initialloading.value = false;
