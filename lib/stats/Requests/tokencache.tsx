@@ -1,5 +1,4 @@
-import { Signal } from "@preact/signals";
-export let tokenCache: { [key: string]: Signal } = {};
+export let tokenCache: { [key: string]: any } = {};
 export function cache(data: any[]) {
   for (let i = 0; i < data.pairs.length; i++) {
     const fixedvalue = Number(data.pairs[i].priceUsd).toFixed(5);
