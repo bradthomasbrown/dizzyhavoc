@@ -11,7 +11,6 @@ import { Signer } from "./Signer.ts";
 import { signRawTx } from "./signRawTx.ts";
 
 type MintState = "archive" | "sendable" | "finalizable" | "finalized" | null;
-type StageName = "scanner" | "finalizerB" | "minter" | "finalizerM";
 
 export class Mint {
   attempts: number;
