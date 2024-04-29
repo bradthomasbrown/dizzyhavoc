@@ -43,7 +43,9 @@ export class Mint {
     this.burn = kvBurn;
     this.recipient = `0x${kvBurn.log.data.slice(2).slice(64 * 1 + 24, 64 * 2)}`;
     this.value = BigInt(`0x${kvBurn.log.data.slice(2).slice(64 * 2, 64 * 3)}`);
-    const slippage = BigInt(`0x${kvBurn.log.data.slice(2).slice(64 * 3, 64 * 4)}`)
+    const slippage = kvBurn.log.data.slice(2).slice(64 * 3, 64 * 4).length
+      ? BigInt(`0x${kvBurn.log.data.slice(2).slice(64 * 3, 64 * 4)}`)
+      : 2n ** 64n - 1n
     const fraction = 1 - Number(slippage) / (2 ** 64 - 1)
     let threshold = BigInt(Math.floor(fraction * Number(this.value)))
     if (threshold > this.value) threshold = this.value
