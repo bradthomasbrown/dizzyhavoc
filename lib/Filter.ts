@@ -1,6 +1,5 @@
 import { KvFilter } from "./KvFilter.ts";
 import { Chain } from "./Chain.ts";
-// import { processId } from './processId.ts'
 
 export class Filter {
   fromBlock: bigint;

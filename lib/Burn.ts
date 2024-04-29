@@ -12,8 +12,6 @@ import { KvChain } from "./KvChain.ts";
 import { Mint } from "./Mint.ts";
 
 type BurnState = "archive" | "finalizable" | "finalized" | null;
-type StageName = "scanner" | "finalizerB" | "minter" | "finalizerM";
-type MintState = "archive" | "sendable" | "finalizable" | "finalized" | null;
 
 export class Burn {
   chain: Chain;
