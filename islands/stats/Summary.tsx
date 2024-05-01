@@ -44,9 +44,14 @@ export function Summary() {
     // Extract the name of the lowest and highest tokens
     delta.value = Number(maxDeltaPercentage.toFixed(0));
   }
-
+  function delay(ms: number) {
+    return new Promise( resolve => setTimeout(resolve, ms) );
+  }
   const fetchScreener = async () => {
     isloading.value = true;
+    if(!initialloading.value){
+      await delay(1000)
+    }
     // req to dexscreener for live prices/ liq
     let arbprice = 0,
       ethprice = 0,
@@ -105,8 +110,8 @@ export function Summary() {
     );
     isloading.value = false;
     initialloading.value = false;
+    starttimer();
   };
-
   const starttimer = () => {
     // auto refresh logic
     let x = 0;
@@ -115,12 +120,8 @@ export function Summary() {
         x += 0.05;
         count.value = x; // Update the progress value
       } else {
-        isloading.value = true;
-        setTimeout(() => {
-          fetchScreener();
-          starttimer();
-        },250);
         clearInterval(intervalId); // Stop the interval when x reaches 100
+        fetchScreener();
       }
     }, 10);
   };
@@ -128,7 +129,6 @@ export function Summary() {
   useState(() => {
     // on load fetch data and start timer
     fetchScreener();
-    starttimer();
   });
 
   const loadingbar = (
