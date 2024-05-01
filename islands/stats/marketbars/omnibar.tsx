@@ -55,18 +55,18 @@ export function Omnibar(props: {
               onClick={() => {
                 HandleTooltips();
               }}
-              class="z-[2] absolute bottom-1 cursor-pointer unselectable left-1 dark:text-[#d0d0d0] text-[#3d3d3d] sm:text-sm text-[11px] font-[Poppins]"
+              class="z-[2] absolute bottom-[2px] cursor-pointer unselectable sm:left-[0.5%] left-[93.5%] dark:text-[#d0d0d0] text-[#3d3d3d] sm:text-sm text-[11px] font-[Poppins]"
             >
               {tooltip.value ? (
-                <img
-                  class="size-4 active:scale-[85%] contrast-0 vignets"
-                  src="/misc/minus.svg"
-                ></img>
-              ) : (
-                <img
-                  class="size-4 active:scale-[85%] contrast-0 vignets"
-                  src="/misc/plus.svg"
-                ></img>
+                             <img
+                class="size-[1.2rem] active:scale-[85%] cursor-pointer vignets contrast-0"
+                src="/misc/caretup.svg"
+              ></img>
+            ) : (
+              <img
+                class="size-[1.2rem] active:scale-[85%] cursor-pointer vignets contrast-0"
+                src="/misc/caretdown.svg"
+              ></img>
               )}
             </div>
             <a
