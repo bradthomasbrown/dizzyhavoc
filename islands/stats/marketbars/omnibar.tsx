@@ -40,7 +40,7 @@ export function Omnibar(props: {
     tooltip.value = !tooltip.value;
   }
   function toggleHide() {
-    hide.value = !hide.value
+    hide.value = !hide.value;
   }
   const hide = useSignal<boolean>(false);
   return (
@@ -49,8 +49,7 @@ export function Omnibar(props: {
         style={{ order: order != null ? -order : 0 }}
         class={`w-full relative flex sm:h-[9rem] gap-3 bg-blur3 
         ${hide.value ? "h-[2.8rem]" : "h-[7rem]"}
-        ${initialloading.value ? "shimmer" : ""
-        }
+        ${initialloading.value ? "shimmer" : ""}
         ${!tooltip.value ? "rounded-lg" : "rounded-t-lg"}
         `}
       >
@@ -62,36 +61,36 @@ export function Omnibar(props: {
               onClick={() => {
                 HandleTooltips();
               }}
-              class="z-[2] absolute bottom-[2px] cursor-pointer unselectable sm:left-[0.5%] left-[93.5%] dark:text-[#d0d0d0] text-[#3d3d3d] sm:text-sm text-[11px] font-[Poppins]"
+              class="z-[2] absolute bottom-[2px] cursor-pointer unselectable sm:left-[0.5%] left-[94.1%] dark:text-[#d0d0d0] text-[#3d3d3d] sm:text-sm text-[11px] font-[Poppins]"
             >
               {tooltip.value ? (
-                             <img
-                class="size-[1.2rem] active:scale-[85%] cursor-pointer vignets contrast-0"
-                src="/misc/caretup.svg"
-              ></img>
-            ) : (
-              <img
-                class="size-[1.2rem] active:scale-[85%] cursor-pointer vignets contrast-0"
-                src="/misc/caretdown.svg"
-              ></img>
+                <img
+                  class="size-[1.2rem] active:scale-[85%] cursor-pointer vignets contrast-0"
+                  src="/misc/caretup.svg"
+                ></img>
+              ) : (
+                <img
+                  class="size-[1.2rem] active:scale-[85%] cursor-pointer vignets contrast-0"
+                  src="/misc/caretdown.svg"
+                ></img>
               )}
             </div>
             <div
               onClick={() => {
                 toggleHide();
               }}
-              class="z-[2] absolute top-[2px] cursor-pointer unselectable visible sm:invisible left-[93.5%] dark:text-[#d0d0d0] text-[#3d3d3d] sm:text-sm text-[11px] font-[Poppins]"
+              class="z-[2] absolute top-[2px] cursor-pointer unselectable visible sm:invisible left-[94.5%] dark:text-[#d0d0d0] text-[#3d3d3d] sm:text-sm text-[11px] font-[Poppins]"
             >
               {hide.value ? (
-                             <img
-                class="size-[1rem] active:scale-[85%] cursor-pointer vignets contrast-0"
-                src="/misc/plus.svg"
-              ></img>
-            ) : (
-              <img
-                class="size-[1rem] active:scale-[85%] cursor-pointer vignets contrast-0"
-                src="/misc/minus.svg"
-              ></img>
+                <img
+                  class="size-[1rem] active:scale-[85%] cursor-pointer vignets contrast-0"
+                  src="/misc/plus.svg"
+                ></img>
+              ) : (
+                <img
+                  class="size-[1rem] active:scale-[85%] cursor-pointer vignets contrast-0"
+                  src="/misc/minus.svg"
+                ></img>
               )}
             </div>
             <a
