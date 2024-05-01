@@ -125,22 +125,22 @@ export function Omnibar(props: {
           style={{ order: order != null ? -order : 0 }}
           class="sm:h-[1.1rem] h-[0.9rem] rounded-b-md justify-evenly flex flex-row sm:text-sm text-[11px] -mt-[6px] sm:-mt-1 px-2 font-[Poppins] w-full bg-blur3"
         >
-          <p class="flex dark:text-[#d0d0d0] text-[#3d3d3d] unselectable">
+          <p class="dark:text-[#d0d0d0] text-[#3d3d3d] unselectable">
             holders: {holders.value ? formatNumber(holders.value) : "0.0K"}
           </p>
-          <p class="flex dark:text-[#d0d0d0] text-[#3d3d3d] unselectable">
+          <p class="dark:text-[#d0d0d0] text-[#3d3d3d] unselectable">
             transfers:{" "}
             {transfers.value ? formatNumber(transfers.value) : "0.0K"}
           </p>
           <a
-            class="flex text-[#3b2d82] dark:text-[#ccb286]"
+            class="text-[#3b2d82] dark:text-[#ccb286]"
             target="_blank"
             href={contract}
           >
             contract
           </a>
           <a
-            class="flex text-[#3b2d82] dark:text-[#ccb286]"
+            class="text-[#3b2d82] dark:text-[#ccb286]"
             target="_blank"
             href={trade}
           >
