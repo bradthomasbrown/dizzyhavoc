@@ -29,37 +29,37 @@ export function Values(props: {
             </h1>
           </section>
         </div>
-        <div class="mt-1 sm:mt-0 rounded-md">
+        <div class="mt-2 sm:mt-0 rounded-md">
           <div class="flex sm:flex-row flex-col">
             <section class="rounded flex sm:flex-row flex-col mx-auto w-full items-center">
               <h2 class="unselectable font-[Poppins] dark:text-[#d2d2d2] text-[#1a1a1a] sm:text-start text-[0.5rem] sm:text-[0.8rem] inline justify-center tracking-tight items-center">
                 Liquidity:{" "}
               </h2>
-              <h1 class="mx-1 font-[Poppins] text-[#000000] dark:text-[#ffffff] text-[0.95rem] sm:text-[1rem] inline">
+              <h1 class="mx-1 font-[Poppins] text-[#000000] dark:text-[#ffffff] text-[0.80rem] sm:text-[1rem] inline">
                 ${formatNumber(liq.value)}
               </h1>
             </section>
           </div>
         </div>
-        <div class="mt-1 sm:mt-0 rounded-md">
+        <div class="mt-2 sm:mt-0 rounded-md">
           <div class="flex flex-row sm:flex-col">
             <section class="rounded flex sm:flex-row flex-col mx-auto w-full items-center">
               <h2 class="unselectable font-[Poppins] dark:text-[#d2d2d2] text-[#1a1a1a] sm:text-start text-[0.5rem] sm:text-[0.8rem] inline justify-center tracking-tight items-center">
                 24h Vol:{" "}
               </h2>
-              <h1 class="mx-1 font-[Poppins] text-[#000000] dark:text-[#ffffff] text-[0.95rem] sm:text-[1rem] inline">
+              <h1 class="mx-1 font-[Poppins] text-[#000000] dark:text-[#ffffff] text-[0.80rem] sm:text-[1rem] inline">
                 ${formatNumber(vol24.value)}
               </h1>
             </section>
           </div>
         </div>
-        <div class="px-[2px] sm:px-0 mt-1 sm:mt-0 rounded-md">
+        <div class="px-[2px] sm:px-0 mt-2 sm:mt-0 rounded-md">
           <div class="flex flex-row sm:flex-col">
             <section class="rounded flex sm:flex-row flex-col mx-auto w-full items-center">
               <h2 class="unselectable font-[Poppins] dark:text-[#d2d2d2] text-[#1a1a1a] sm:text-start text-[0.5rem] sm:text-[0.8rem] inline justify-center tracking-tight items-center">
                 24h Tx:{" "}
               </h2>
-              <h1 class="mx-1 font-[Poppins] text-[#000000] dark:text-[#ffffff] text-[0.95rem] sm:text-[1rem] inline">
+              <h1 class="mx-1 font-[Poppins] text-[#000000] dark:text-[#ffffff] text-[0.80rem] sm:text-[1rem] inline">
                 {Number(formatNumber(tx.value)).toFixed(0)}
               </h1>
             </section>
