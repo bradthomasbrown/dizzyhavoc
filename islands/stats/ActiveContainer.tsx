@@ -28,8 +28,8 @@ export default function ActiveContainer() {
         </div>
       </div>
       {toggle.value ? <Weeklies_Container /> : null}
-      <div class="flex h-full shadow-none sm:shadow-[0_0_15px_0_rgba(0,0,0,0.07)]  p-1 rounded-xl bg-blur2">
-        <div class="w-full mx-auto justify-center">
+      <div class="flex h-full shadow-none sm:shadow-[0_0_15px_0_rgba(0,0,0,0.07)] rounded-xl bg-blur2">
+        <div class="w-full">
           <MarketBarsContainer />
         </div>
       </div>
