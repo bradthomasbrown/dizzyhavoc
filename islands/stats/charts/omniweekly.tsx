@@ -31,13 +31,13 @@ export function Omniweekly(props: { name: Signal<any>; type: Signal<any> }) {
           return { timestamp: timestamp, [type]: value };
         } else {
           return {
-            timestamp: data[data.length - 1].timestamp + i * 604800000,
+            timestamp: data[0].timestamp + i * 604800000,
             [type]: 0,
           };
         }
       });
       fetchedData.value = weeklyData;
-      cache(type, weeklyData); // Pass the type as an argument to the updateCachedData function
+      cache(type, weeklyData); 
       const timedate = new Date(
         fetchedData.value[0].timestamp
       ).toLocaleDateString();
