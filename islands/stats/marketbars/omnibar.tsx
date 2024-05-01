@@ -1,4 +1,4 @@
-import { Signal } from "@preact/signals";
+import { Signal, useSignal } from "@preact/signals";
 import { Values } from "./values.tsx";
 import { formatNumber } from "../../../lib/common/formatNumber.tsx";
 
@@ -39,11 +39,16 @@ export function Omnibar(props: {
   async function HandleTooltips() {
     tooltip.value = !tooltip.value;
   }
+  function toggleHide() {
+    hide.value = !hide.value
+  }
+  const hide = useSignal<boolean>(false);
   return (
     <>
       <div
         style={{ order: order != null ? -order : 0 }}
-        class={`w-full relative flex h-[7rem] sm:h-[9rem] gap-3 bg-blur3 
+        class={`w-full relative flex sm:h-[9rem] gap-3 bg-blur3 
+        ${hide.value ? "h-[3rem]" : "h-[7rem]"}
         ${initialloading.value ? "shimmer" : ""
         }
         ${!tooltip.value ? "rounded-lg" : "rounded-t-lg"}
@@ -71,6 +76,24 @@ export function Omnibar(props: {
               ></img>
               )}
             </div>
+            <div
+              onClick={() => {
+                toggleHide();
+              }}
+              class="z-[2] absolute top-[2px] cursor-pointer unselectable visible sm:invisible left-[93.5%] dark:text-[#d0d0d0] text-[#3d3d3d] sm:text-sm text-[11px] font-[Poppins]"
+            >
+              {hide.value ? (
+                             <img
+                class="size-[1rem] active:scale-[85%] cursor-pointer vignets contrast-0"
+                src="/misc/plus.svg"
+              ></img>
+            ) : (
+              <img
+                class="size-[1rem] active:scale-[85%] cursor-pointer vignets contrast-0"
+                src="/misc/minus.svg"
+              ></img>
+              )}
+            </div>
             <a
               draggable={false}
               class="z-20 sm:size-[50px] hover:scale-[105%] ml-3 mt-3 sm:mt-11 justify-start size-9"
@@ -92,6 +115,7 @@ export function Omnibar(props: {
               liq={liq}
               vol24={vol24}
               tx={tx}
+              chart={hide}
             />
           </>
         )}

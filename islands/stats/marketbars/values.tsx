@@ -8,8 +8,9 @@ export function Values(props: {
   liq: Signal<number>;
   vol24: Signal<number>;
   tx: Signal<number>;
+  chart: Signal<boolean>;
 }) {
-  const { chain, token, h24, liq, vol24, tx } = props;
+  const { chain, token, h24, liq, vol24, tx, chart } = props;
   return (
     <div class="flex sm:justify-start justify-evenly w-full items-start sm:items-center flex-row">
       <div class="z-[1] flex gap-3 sm:gap-0 mx-3 sm:flex-col flex-row">
@@ -65,9 +66,10 @@ export function Values(props: {
           </div>
         </div>
       </div>
+      {!chart.value ? ( 
       <div class="flex absolute sm:left-[35%] -left-[5%] flex-row">
       <Omnichart chain={chain} />
-      </div>
+      </div>) : <></>}
     </div>
   );
 }
