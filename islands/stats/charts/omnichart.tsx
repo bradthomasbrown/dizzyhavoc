@@ -4,7 +4,7 @@ import { ChartOptions_M } from "$fresh_charts/stats/ChartOption/MarketBar/chartO
 import { IS_BROWSER } from "$fresh/runtime.ts";
 import { Signal, useSignal } from "@preact/signals";
 import { useState } from "preact/hooks";
-import { cachedData } from "$fresh_charts/stats/Requests/cache.tsx";
+import { cachedData } from "$fresh_charts/stats/Requests/chartCache.tsx";
 export function Omnichart(props: { chain: Signal<string>; }) {
   if (!IS_BROWSER) return <></>;
   const { chain } = props;
