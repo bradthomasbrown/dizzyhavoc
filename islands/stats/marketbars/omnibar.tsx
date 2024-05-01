@@ -43,7 +43,7 @@ export function Omnibar(props: {
     <>
       <div
         style={{ order: order != null ? -order : 0 }}
-        class={`w-full relative shadow-lg flex h-[7rem] sm:h-[9rem] gap-3 bg-blur3 
+        class={`w-full relative flex h-[7rem] sm:h-[9rem] gap-3 bg-blur3 
         ${initialloading.value ? "shimmer" : ""
         }
         ${!tooltip.value ? "rounded-lg" : "rounded-t-lg"}
