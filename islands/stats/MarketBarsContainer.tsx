@@ -203,7 +203,7 @@ export function MarketBarsContainer() {
 
   return (
     <>
-      <div class="w-full p-1 flex flex-col gap-[5px] sm:gap-1">
+      <div class="w-full p-1 flex flex-col gap-1">
         {/* ETH MarketBar */}
         <Omnibar
           chain="eth" 
