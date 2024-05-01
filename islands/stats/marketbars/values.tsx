@@ -65,7 +65,7 @@ export function Values(props: {
           </div>
         </div>
       </div>
-      <div class="flex absolute right-auto left-0 sm:left-auto sm:right-0 flex-row">
+      <div class="flex absolute sm:left-[35%] -left-[5%] flex-row">
       <Omnichart chain={chain} />
       </div>
     </div>

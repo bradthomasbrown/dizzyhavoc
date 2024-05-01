@@ -14,9 +14,6 @@
 -ms-user-select: none; /* IE10+/Edge */
 user-select: none; /* Standard */
 }
-#chart {
-  max-width: 650px;
-}
 .vignets {
   animation: fadein 1s;
   -moz-animation: fadein 1s; /* Firefox */
