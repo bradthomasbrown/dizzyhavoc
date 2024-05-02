@@ -232,11 +232,11 @@ export function MarketBarsContainer() {
   return (
     <div class="relative">
       {timestamp.value != 0 ? (
-        <p class="dark:text-[#9ca3af] text-[#313131] font-[Poppins] font-light unselectable sm:text-[10px] text-[7px] absolute sm:-top-[9px] -top-[9px] sm:left-4 left-6 z-[5]">
+        <p class="dark:text-[#9ca3af] text-[#313131] font-[Poppins] font-light unselectable sm:text-[10px] text-[7px] absolute -top-[9px] sm:-top-[14px] sm:left-2 left-6 z-[5]">
           updated {timediff(now.value, timestamp.value)}
         </p>
       ) : null}
-      <div class="w-full p-1 flex flex-col sm:gap-3 gap-[5px]">
+      <div class="w-full flex flex-col sm:gap-[6px] gap-[8px]">
         {/* ETH MarketBar */}
         <Omnibar
           chain="eth"

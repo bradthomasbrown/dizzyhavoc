@@ -71,7 +71,7 @@ export function Values(props: {
           <Omnichart chain={chain} />
         </div>
       ) : (
-        <p>chart hidden</p>
+        <></>
       )}
     </div>
   );

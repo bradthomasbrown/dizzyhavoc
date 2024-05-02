@@ -138,13 +138,13 @@ export function Summary() {
     <>
       {initialloading.value ? (
         // no data : display loader
-        <div class="sm:w-[465px] w-[350px] bg-blur3 shadow-lg px-0 vignets relative 2xl:px-3 h-full justify-center items-center rounded-lg gap-0 xl:gap-3 flex flex-col">
+        <div class="sm:w-[465px] w-[350px] bg-blur3 border-[2px] border-[#bababa5c] dark:border-[#3636365e] vignets relative h-full justify-center items-center rounded-lg flex flex-col">
           <img class="size-[50px]" src="./misc/loader.svg"></img>
         </div>
       ) : (
         <>
           <div
-            class={`h-full w-[350px] sm:w-[465px] justify-center relative rounded-lg gap-0 xl:gap-1 flex flex-col bg-blur3 ${
+            class={`h-full w-[358px] sm:w-[473px] justify-center border-[2px] border-[#bababa5c] dark:border-[#3636365e] relative rounded-lg flex flex-col bg-blur3 ${
               isloading.value ? "shimmer" : ""
             }`}
           >
