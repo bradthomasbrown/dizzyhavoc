@@ -61,7 +61,7 @@ export function Omnibar(props: {
               onClick={() => {
                 HandleTooltips();
               }}
-              class="z-[2] absolute bottom-[2px] cursor-pointer unselectable sm:left-[0.5%] left-[94.1%] dark:text-[#d0d0d0] text-[#3d3d3d] sm:text-sm text-[11px] font-[Poppins]"
+              class="z-[2] absolute bottom-[0px] cursor-pointer unselectable sm:left-[0.5%] left-[94.3%] dark:text-[#d0d0d0] text-[#3d3d3d] sm:text-sm text-[11px] font-[Poppins]"
             >
               {tooltip.value ? (
                 <img
@@ -95,7 +95,7 @@ export function Omnibar(props: {
             </div>
             <a
               draggable={false}
-              class="z-20 vignets2 sm:size-[50px] hover:scale-[105%] sm:ml-3 ml-1 mt-[7px] sm:mt-11 justify-start size-9"
+              class="z-20 vignets2 sm:size-[50px] hover:scale-[105%] sm:ml-3 ml-1 mt-[5px] sm:mt-11 justify-start size-9"
               title="open in dexscreener"
               target="_blank"
               href={link}

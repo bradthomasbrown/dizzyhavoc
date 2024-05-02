@@ -23,7 +23,7 @@ export default function ActiveContainer() {
   </div>
   )
   return (
-    <div class="flex w-full mt-[1rem] mx-auto sm:w-[42rem] sm:gap-[6px] gap-[8px] vignets flex-col">
+    <div class="flex w-full mt-[1rem] mx-auto sm:w-[42rem] sm:gap-[6px] gap-[10px] vignets flex-col">
       <div class="flex h-[4.5rem] sm:h-[5rem] mx-auto justify-center sm:w-[473px] w-[358px]">
         <div class="w-full z-[5] relative">
           <Summary />

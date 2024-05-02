@@ -15,7 +15,7 @@ export function Values(props: {
     <div class="flex w-full items-start sm:items-center flex-row">
       <div class="z-[1] vignets2 justify-around w-[305px] flex sm:mx-3 mx-0 sm:flex-col flex-row">
         <div class="flex sm:flex-row flex-col">
-          <section class="mt-[2px] sm:mt-0 flex sm:flex-row flex-col w-full ml-0">
+          <section class="mt-[0px] sm:mt-0 flex sm:flex-row flex-col w-full ml-0">
             <h1 class="font-[Poppins] text-[#000000] font-medium dark:text-[#ccb286] text-[1rem] sm:text-[1.2rem] inline">
               ${formatNumber(token.value)}
             </h1>
@@ -29,7 +29,7 @@ export function Values(props: {
             </h1>
           </section>
         </div>
-        <div class="mt-2 sm:mt-0 rounded-md">
+        <div class="mt-[5px] sm:mt-0 rounded-md">
           <div class="flex sm:flex-row flex-col">
             <section class="flex sm:flex-row flex-col mx-auto w-full items-center">
               <h2 class="unselectable font-[Poppins] dark:text-[#d2d2d2] text-[#1a1a1a] sm:text-start text-[0.5rem] sm:text-[0.8rem] inline justify-center tracking-tight items-center">
@@ -41,7 +41,7 @@ export function Values(props: {
             </section>
           </div>
         </div>
-        <div class="mt-2 sm:mt-0 rounded-md">
+        <div class="mt-[5px] sm:mt-0 rounded-md">
           <div class="flex flex-row sm:flex-col">
             <section class="flex sm:flex-row flex-col mx-auto w-full items-center">
               <h2 class="unselectable font-[Poppins] dark:text-[#d2d2d2] text-[#1a1a1a] sm:text-start text-[0.5rem] sm:text-[0.8rem] inline justify-center tracking-tight items-center">
@@ -53,7 +53,7 @@ export function Values(props: {
             </section>
           </div>
         </div>
-        <div class="px-[2px] sm:px-0 mt-2 sm:mt-0 rounded-md">
+        <div class="px-[2px] sm:px-0 mt-[5px] sm:mt-0 rounded-md">
           <div class="flex flex-row sm:flex-col">
             <section class="flex sm:flex-row flex-col mx-auto w-full items-center">
               <h2 class="unselectable font-[Poppins] dark:text-[#d2d2d2] text-[#1a1a1a] sm:text-start text-[0.5rem] sm:text-[0.8rem] inline justify-center tracking-tight items-center">
