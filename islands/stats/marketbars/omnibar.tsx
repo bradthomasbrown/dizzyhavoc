@@ -50,6 +50,7 @@ export function Omnibar(props: {
         class={`w-full relative flex sm:h-[9rem] bg-blur3
         border-[2px] border-b-[#bababa5c] border-t-[#bababa5c] border-s-[#bababa5c] border-e-[#bababa5c]
         dark:border-b-[#3636365e] dark:border-s-[#3636365e] dark:border-e-[#3636365e] dark:border-t-[#3636365e]
+        ${initialloading.value ? "shimmer2" : ""}
         ${hide.value ? "h-[2.8rem]" : "h-[7.3rem]"}
         ${!tooltip.value ? "rounded-lg dark:border-b-[#3636365e] border-b-[#bababa5c]" : "rounded-t-lg dark:border-b-[#00000000] border-b-[#00000000]"}
         `}
