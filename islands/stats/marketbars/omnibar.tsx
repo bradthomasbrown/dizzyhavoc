@@ -62,7 +62,7 @@ export function Omnibar(props: {
               onClick={() => {
                 HandleTooltips();
               }}
-              class="z-[2] absolute bottom-[0px] cursor-pointer unselectable sm:left-[0.5%] left-[94.3%] dark:text-[#d0d0d0] text-[#3d3d3d] sm:text-sm text-[11px] font-[Poppins]"
+              class="z-[2] absolute bottom-[0px] cursor-pointer unselectable sm:left-[0.5%] left-[94.1%] dark:text-[#d0d0d0] text-[#3d3d3d] sm:text-sm text-[11px] font-[Poppins]"
             >
               {tooltip.value ? (
                 <img
