@@ -50,9 +50,6 @@ export function Summary() {
   const fetchScreener = async () => {
     const data = feca();
     isloading.value = true;
-    if(!initialloading.value){
-      await delay(1000)
-    }
     // req to dexscreener for live prices/ liq
     let arbprice = 0,
       ethprice = 0,
@@ -109,8 +106,9 @@ export function Summary() {
       baseprice,
       avaxprice,
     );
-    isloading.value = false;
     initialloading.value = false;
+    await delay(1000)
+    isloading.value = false;
     starttimer();
   };
   const starttimer = () => {
