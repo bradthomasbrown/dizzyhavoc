@@ -4,7 +4,7 @@ import { useSignal } from "@preact/signals";
 import { PriceHistory } from "../../lib/stats/Requests/priceHistory.tsx";
 import { Chiffres } from "../../lib/stats/Requests/Chiffres.tsx";
 import { Omnibar } from "./marketbars/omnibar.tsx";
-import { cachedData, state } from "../../lib/stats/Requests/dexCache.tsx";
+import { cachedData } from "../../lib/stats/Requests/caches/dexCache.tsx";
 
 export function MarketBarsContainer() {
   if (!IS_BROWSER) return <></>;

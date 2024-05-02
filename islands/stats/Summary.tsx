@@ -2,7 +2,7 @@ import { IS_BROWSER } from "$fresh/runtime.ts";
 import { useState } from "preact/hooks";
 import { useSignal } from "@preact/signals";
 import { formatNumber } from "../../lib/common/formatNumber.tsx";
-import { feca, cachedData } from "../../lib/stats/Requests/dexCache.tsx";
+import { feca } from "../../lib/stats/Requests/caches/dexCache.tsx";
 export function Summary() {
   if (!IS_BROWSER) return <></>;
   const initialloading = useSignal<boolean>(true);
@@ -48,7 +48,7 @@ export function Summary() {
     return new Promise( resolve => setTimeout(resolve, ms) );
   }
   const fetchScreener = async () => {
-    const data = feca("summary");
+    const data = feca();
     isloading.value = true;
     if(!initialloading.value){
       await delay(1000)
