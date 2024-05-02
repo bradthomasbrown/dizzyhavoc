@@ -6,7 +6,7 @@ export default function ActiveContainer() {
   const toggle = useSignal(false);
   return (
     <div class="flex w-full mt-[1rem] mx-auto sm:w-[42rem] sm:gap-y-1 gap-y-2 vignets flex-col">
-      <div class="flex h-[4.5rem] sm:h-[5rem] mx-auto justify-center sm:w-[473px] w-[358px] bg-blur2 rounded-xl">
+      <div class="flex h-[4.5rem] sm:h-[5rem] mx-auto justify-center sm:w-[473px] w-[358px]">
         <div class="w-full z-[5] relative p-1">
           <Summary />
           <div
@@ -28,7 +28,7 @@ export default function ActiveContainer() {
         </div>
       </div>
       {toggle.value ? <Weeklies_Container /> : null}
-      <div class="flex h-full shadow-none sm:shadow-[0_0_15px_0_rgba(0,0,0,0.07)] rounded-xl bg-blur2">
+      <div class="flex h-full">
         <div class="w-screen justify-center items-center">
           <MarketBarsContainer />
         </div>

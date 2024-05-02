@@ -230,13 +230,13 @@ export function MarketBarsContainer() {
     getChiffres();
   });
   return (
-    <>
+    <div class="relative">
       {timestamp.value != 0 ? (
-        <p class="dark:text-[#9ca3af] text-[#313131] font-[Poppins] font-light unselectable sm:text-[10px] text-[7px] absolute sm:top-1 -top-[9px] sm:left-4 left-6 z-[5]">
+        <p class="dark:text-[#9ca3af] text-[#313131] font-[Poppins] font-light unselectable sm:text-[10px] text-[7px] absolute sm:-top-[9px] -top-[9px] sm:left-4 left-6 z-[5]">
           updated {timediff(now.value, timestamp.value)}
         </p>
       ) : null}
-      <div class="w-full p-1 flex flex-col sm:gap-1 gap-[5px]">
+      <div class="w-full p-1 flex flex-col sm:gap-3 gap-[5px]">
         {/* ETH MarketBar */}
         <Omnibar
           chain="eth"
@@ -328,6 +328,6 @@ export function MarketBarsContainer() {
           trade="https://pancakeswap.finance/swap?outputCurrency=0x3419875B4D3Bca7F3FddA2dB7a476A79fD31B4fE&chainId=56"
         />
       </div>
-    </>
+    </div>
   );
 }
