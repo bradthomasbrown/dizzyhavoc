@@ -232,8 +232,8 @@ export function MarketBarsContainer() {
   return (
     <div class="relative">
       {timestamp.value != 0 ? (
-        <p class="dark:text-[#9ca3af] text-[#313131] font-[Poppins] font-light unselectable sm:text-[10px] text-[7px] absolute -top-[9px] sm:-top-[14px] left-2 z-[5]">
-          updated {timediff(now.value, timestamp.value)}
+        <p class="dark:text-[#9ca3af] text-[#313131] font-[Poppins] font-light unselectable sm:text-[10px] text-[7px] absolute -top-[9px] sm:-top-[18px] left-[1.5%] sm:left-[87%] z-[5]">
+        {timediff(now.value, timestamp.value)}
         </p>
       ) : null}
       <div class="w-full flex flex-col sm:gap-[6px] gap-[10px]">
