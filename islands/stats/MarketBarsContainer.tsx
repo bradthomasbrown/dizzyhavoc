@@ -65,6 +65,7 @@ export function MarketBarsContainer() {
   const ethtooltip = useSignal<boolean>(false);
 
   const getPrices = async () => {
+    await PriceHistory();
     let arbprice = 0,
       ethprice = 0,
       bscprice = 0,
@@ -118,7 +119,6 @@ export function MarketBarsContainer() {
         default:
           break;
       }
-      await PriceHistory();
     }
     largestPriceDelta(ethprice, arbprice, bscprice, baseprice, avaxprice);
     initialloading.value = false;

@@ -49,7 +49,6 @@ export function Omnibar(props: {
         style={{ order: order != null ? -order : 0 }}
         class={`w-full relative flex sm:h-[9rem] gap-3 bg-blur3 
         ${hide.value ? "h-[2.8rem]" : "h-[7rem]"}
-        ${initialloading.value ? "shimmer" : ""}
         ${!tooltip.value ? "rounded-lg" : "rounded-t-lg"}
         `}
       >
@@ -95,7 +94,7 @@ export function Omnibar(props: {
             </div>
             <a
               draggable={false}
-              class="z-20 sm:size-[50px] hover:scale-[105%] sm:ml-3 ml-1 mt-[7px] sm:mt-11 justify-start size-9"
+              class="z-20 vignets2 sm:size-[50px] hover:scale-[105%] sm:ml-3 ml-1 mt-[7px] sm:mt-11 justify-start size-9"
               title="open in dexscreener"
               target="_blank"
               href={link}

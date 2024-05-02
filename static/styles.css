@@ -20,6 +20,12 @@ user-select: none; /* Standard */
   -webkit-animation: fadein 1s; /* Safari & Chrome */
   -o-animation: fadein 1s; /* Opera */
 }
+.vignets2 {
+  animation: fadein 0.5s;
+  -moz-animation: fadein 0.5s; /* Firefox */
+  -webkit-animation: fadein 0.5s; /* Safari & Chrome */
+  -o-animation: fadein 0.5s; /* Opera */
+}
 .shimmer {
   -webkit-mask: linear-gradient(45deg, #000 30%, #0005, #000 50%) right/300% 70%;
   mask: linear-gradient(45deg, #000 30%, #0005, #000 50%) right/300% 70%;

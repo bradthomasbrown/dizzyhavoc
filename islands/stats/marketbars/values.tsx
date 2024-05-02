@@ -13,7 +13,7 @@ export function Values(props: {
   const { chain, token, h24, liq, vol24, tx, chart } = props;
   return (
     <div class="flex w-full items-start sm:items-center flex-row">
-      <div class="z-[1] justify-around w-[305px] flex sm:mx-3 mx-0 sm:flex-col flex-row">
+      <div class="z-[1] vignets2 justify-around w-[305px] flex sm:mx-3 mx-0 sm:flex-col flex-row">
         <div class="flex sm:flex-row flex-col">
           <section class="mt-[2px] sm:mt-0 flex sm:flex-row flex-col w-full ml-0">
             <h1 class="font-[Poppins] text-[#000000] font-medium dark:text-[#ccb286] text-[1rem] sm:text-[1.2rem] inline">
@@ -67,7 +67,7 @@ export function Values(props: {
         </div>
       </div>
       {!chart.value ? (
-        <div class="flex sm:z-[2] z-0 absolute sm:left-[35%] -left-[5%] flex-row">
+        <div class="flex vignets2 sm:z-[2] z-0 absolute sm:left-[35%] -left-[5%] flex-row">
           <Omnichart chain={chain} />
         </div>
       ) : (
