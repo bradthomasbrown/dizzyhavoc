@@ -123,7 +123,7 @@ export function Omnibar(props: {
       {tooltip.value && (
         <div
           style={{ order: order != null ? -order : 0 }}
-          class="sm:h-[1.3rem] h-[0.9rem] border-[2px] border-b-[#bababa5c] border-t-transparent border-s-[#bababa5c] border-e-[#bababa5c] dark:border-b-[#3636365e] dark:border-t-transparent dark:border-s-[#3636365e] dark:border-e-[#3636365e] rounded-b-md justify-evenly flex flex-row sm:text-sm text-[11px] -mt-[6px] sm:-mt-[8px] px-2 font-[Poppins] w-full bg-blur3"
+          class="sm:h-[1.3rem] h-[1.1rem] border-[2px] border-b-[#bababa5c] border-t-transparent border-s-[#bababa5c] border-e-[#bababa5c] dark:border-b-[#3636365e] dark:border-t-transparent dark:border-s-[#3636365e] dark:border-e-[#3636365e] rounded-b-md justify-evenly flex flex-row sm:text-sm text-[11px] -mt-[10px] sm:-mt-[8px] px-2 font-[Poppins] w-full bg-blur3"
         >
           <p class="dark:text-[#d0d0d0] text-[#3d3d3d] unselectable">
             holders: {holders.value ? formatNumber(holders.value) : "0.0K"}
