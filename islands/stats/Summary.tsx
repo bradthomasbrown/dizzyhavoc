@@ -96,7 +96,7 @@ export function Summary() {
       }
     }
     // assign full liq
-    fullliq.value = formatNumber(totalliq) as number;
+    fullliq.value = formatNumber(totalliq);
     // Calculate average price
     const avrg = totalprice / 5;
     const fixedavrg = avrg.toFixed(5);

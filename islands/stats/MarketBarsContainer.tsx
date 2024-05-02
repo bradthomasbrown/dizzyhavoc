@@ -189,11 +189,8 @@ export function MarketBarsContainer() {
       if (x < 100) {
         x += 0.05;
       } else {
-        setTimeout(() => {
-          getPrices();
-          starttimer();
-        }, 250);
         clearInterval(intervalId); // Stop the interval when x reaches 100
+        getPrices();
       }
     }, 10);
   };
