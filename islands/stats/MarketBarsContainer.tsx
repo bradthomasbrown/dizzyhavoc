@@ -207,7 +207,7 @@ export function MarketBarsContainer() {
 
   return (
     <>
-    {timestamp.value != 0 ? <p class="dark:text-[#9ca3af] text-[#313131] text-[10px] absolute top-1 left-2 z-[5]">last updated: {Number(((now.value - timestamp.value)/1000).toFixed(0)) > 0 ? ((now.value - timestamp.value)/1000).toFixed(0) : 0}s</p> : null}
+    {timestamp.value != 0 ? <p class="dark:text-[#9ca3af] text-[#313131] sm:text-[10px] text-[8px] absolute sm:top-1 -top-2 left-2 z-[5]">last updated: {Number(((now.value - timestamp.value)/1000).toFixed(0)) > 0 ? ((now.value - timestamp.value)/1000).toFixed(0) : 0}s</p> : null}
       <div class="w-full p-1 flex flex-col sm:gap-1 gap-[5px]">
         {/* ETH MarketBar */}
         <Omnibar
