@@ -101,7 +101,7 @@ export function Summary() {
     totalsupply.value = 946778380; // hard coded total supply
     largestPriceDelta(ethprice, arbprice, bscprice, baseprice, avaxprice);
     initialloading.value = false;
-    delay(1000);
+    await delay(1000);
     isloading.value = false;
     starttimer();
   };
