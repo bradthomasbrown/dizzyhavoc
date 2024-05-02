@@ -201,12 +201,24 @@ export function MarketBarsContainer() {
   function timediff(now: number, timestamp: number): string {
     const timeDiff = (now - timestamp) / 1000;
     if (timeDiff >= 1) {
+      if(timeDiff >= 7200) {
+        const hours = Math.floor(timeDiff / 3600);
+        return `${hours}hrs ago`;
+      }
+      if(timeDiff >= 3600) {
+        const hours = Math.floor(timeDiff / 3600);
+        return `${hours}hr ago`;
+      }
+      if (timeDiff >= 120) {
+        const minutes = Math.floor(timeDiff / 60);
+        return `${minutes}mins ago`;
+      }
       if (timeDiff >= 60) {
         const minutes = Math.floor(timeDiff / 60);
-        return `${minutes} min ago`;
+        return `${minutes}min ago`;
       } else {
         const seconds = Math.floor(timeDiff);
-        return `${seconds} sec ago`;
+        return `${seconds}s ago`;
       }
     } else {
       return "just now";
@@ -220,7 +232,7 @@ export function MarketBarsContainer() {
   return (
     <>
       {timestamp.value != 0 ? (
-        <p class="dark:text-[#9ca3af] text-[#313131] font-[Poppins] font-light unselectable sm:text-[10px] text-[8px] absolute sm:top-1 -top-2 left-2 z-[5]">
+        <p class="dark:text-[#9ca3af] text-[#313131] font-[Poppins] font-light unselectable sm:text-[10px] text-[8px] absolute sm:top-1 -top-[5.5rem] left-4 z-[5]">
           updated {timediff(now.value, timestamp.value)}
         </p>
       ) : null}
