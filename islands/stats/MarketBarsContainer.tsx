@@ -10,6 +10,8 @@ export function MarketBarsContainer() {
   if (!IS_BROWSER) return <></>;
   // console.log(data,'logging after while loop');
   const initialloading = useSignal<boolean>(true);
+  const timestamp = useSignal<number>(null);
+  const now = useSignal<number>(0);
   // liquidity
   const liq_eth = useSignal<number>(0);
   const liq_arb = useSignal<number>(0);
@@ -65,72 +67,75 @@ export function MarketBarsContainer() {
   const avaxtooltip = useSignal<boolean>(false);
   const ethtooltip = useSignal<boolean>(false);
 
-  const timestamp = useSignal<number>(null);
-  const now = useSignal<number>(null)
   const getPrices = async () => {
     const data = cachedData;
     const result = await data;
-      // console.log(data,'logging from function getPrices');
-      await PriceHistory();
-      timestamp.value = result[1]
-      let arbprice = 0,
-        ethprice = 0,
-        bscprice = 0,
-        baseprice = 0,
-        avaxprice = 0;
-      for (let i = 0; i < result[0].pairs.length; i++) {
-        const fixedvalue = Number(result[0].pairs[i].priceUsd).toFixed(5);
-        const fixedliq = Number(result[0].pairs[i].liquidity.usd).toFixed(2);
-        switch (result[0].pairs[i].url) {
-          case "https://dexscreener.com/ethereum/0xb7a71c2e31920019962cb62aeea1dbf502905b81":
-            token_eth.value = ethprice = Number(fixedvalue);
-            liq_eth.value = fixedliq;
-            vol24_eth.value = result[0].pairs[i].volume.h24;
-            tx_eth.value =
-            result[0].pairs[i].txns.h24.buys + result[0].pairs[i].txns.h24.sells;
-            h24_eth.value = result[0].pairs[i].priceChange.h24;
-            break;
-          case "https://dexscreener.com/arbitrum/0x05c5bdbc7b3c64109ddcce058ce99f4515fe1c83":
-            token_arb.value = arbprice = Number(fixedvalue);
-            liq_arb.value = fixedliq;
-            vol24_arb.value = result[0].pairs[i].volume.h24;
-            tx_arb.value =
-              result[0].pairs[i].txns.h24.buys + result[0].pairs[i].txns.h24.sells;
-            h24_arb.value = result[0].pairs[i].priceChange.h24;
-            break;
-          case "https://dexscreener.com/bsc/0x642089a5da2512db761d325a868882ece6e387f5":
-            token_bsc.value = bscprice = Number(fixedvalue);
-            liq_bsc.value = fixedliq;
-            vol24_bsc.value = result[0].pairs[i].volume.h24;
-            tx_bsc.value =
-              result[0].pairs[i].txns.h24.buys + result[0].pairs[i].txns.h24.sells;
-            h24_bsc.value = result[0].pairs[i].priceChange.h24;
-            break;
-          case "https://dexscreener.com/base/0xb64dff20dd5c47e6dbb56ead80d23568006dec1e":
-            token_base.value = baseprice = Number(fixedvalue);
-            liq_base.value = fixedliq;
-            vol24_base.value = result[0].pairs[i].volume.h24;
-            tx_base.value =
-              result[0].pairs[i].txns.h24.buys + result[0].pairs[i].txns.h24.sells;
-            h24_base.value = result[0].pairs[i].priceChange.h24;
-            break;
-          case "https://dexscreener.com/avalanche/0x523a04633b6c0c4967824471dda0abbce7c5e643":
-            token_avax.value = avaxprice = Number(fixedvalue);
-            liq_avax.value = fixedliq;
-            vol24_avax.value = result[0].pairs[i].volume.h24;
-            tx_avax.value =
-              result[0].pairs[i].txns.h24.buys + result[0].pairs[i].txns.h24.sells;
-            h24_avax.value = result[0].pairs[i].priceChange.h24;
-            break;
-          default:
-            break;
-        }
+    timestamp.value = result[1];
+    // console.log(data,'logging from function getPrices');
+    await PriceHistory();
+    let arbprice = 0,
+      ethprice = 0,
+      bscprice = 0,
+      baseprice = 0,
+      avaxprice = 0;
+
+    for (let i = 0; i < result[0].pairs.length; i++) {
+      const fixedvalue = Number(result[0].pairs[i].priceUsd).toFixed(5);
+      const fixedliq = Number(result[0].pairs[i].liquidity.usd).toFixed(2);
+      switch (result[0].pairs[i].url) {
+        case "https://dexscreener.com/ethereum/0xb7a71c2e31920019962cb62aeea1dbf502905b81":
+          token_eth.value = ethprice = Number(fixedvalue);
+          liq_eth.value = fixedliq;
+          vol24_eth.value = result[0].pairs[i].volume.h24;
+          tx_eth.value =
+            result[0].pairs[i].txns.h24.buys +
+            result[0].pairs[i].txns.h24.sells;
+          h24_eth.value = result[0].pairs[i].priceChange.h24;
+          break;
+        case "https://dexscreener.com/arbitrum/0x05c5bdbc7b3c64109ddcce058ce99f4515fe1c83":
+          token_arb.value = arbprice = Number(fixedvalue);
+          liq_arb.value = fixedliq;
+          vol24_arb.value = result[0].pairs[i].volume.h24;
+          tx_arb.value =
+            result[0].pairs[i].txns.h24.buys +
+            result[0].pairs[i].txns.h24.sells;
+          h24_arb.value = result[0].pairs[i].priceChange.h24;
+          break;
+        case "https://dexscreener.com/bsc/0x642089a5da2512db761d325a868882ece6e387f5":
+          token_bsc.value = bscprice = Number(fixedvalue);
+          liq_bsc.value = fixedliq;
+          vol24_bsc.value = result[0].pairs[i].volume.h24;
+          tx_bsc.value =
+            result[0].pairs[i].txns.h24.buys +
+            result[0].pairs[i].txns.h24.sells;
+          h24_bsc.value = result[0].pairs[i].priceChange.h24;
+          break;
+        case "https://dexscreener.com/base/0xb64dff20dd5c47e6dbb56ead80d23568006dec1e":
+          token_base.value = baseprice = Number(fixedvalue);
+          liq_base.value = fixedliq;
+          vol24_base.value = result[0].pairs[i].volume.h24;
+          tx_base.value =
+            result[0].pairs[i].txns.h24.buys +
+            result[0].pairs[i].txns.h24.sells;
+          h24_base.value = result[0].pairs[i].priceChange.h24;
+          break;
+        case "https://dexscreener.com/avalanche/0x523a04633b6c0c4967824471dda0abbce7c5e643":
+          token_avax.value = avaxprice = Number(fixedvalue);
+          liq_avax.value = fixedliq;
+          vol24_avax.value = result[0].pairs[i].volume.h24;
+          tx_avax.value =
+            result[0].pairs[i].txns.h24.buys +
+            result[0].pairs[i].txns.h24.sells;
+          h24_avax.value = result[0].pairs[i].priceChange.h24;
+          break;
+        default:
+          break;
       }
-      largestPriceDelta(ethprice, arbprice, bscprice, baseprice, avaxprice);
-      initialloading.value = false;
-      starttimer();
+    }
+    largestPriceDelta(ethprice, arbprice, bscprice, baseprice, avaxprice);
+    initialloading.value = false;
   };
-  const getChiffres = async() => {
+  const getChiffres = async () => {
     if (!ethholders.value) {
       const chiffres = await Chiffres();
       if (chiffres) {
@@ -148,7 +153,7 @@ export function MarketBarsContainer() {
         avaxtransfers.value = chiffres.transfers.avax;
       }
     }
-  }
+  };
   function largestPriceDelta(
     token_eth: number,
     token_arb: number,
@@ -188,30 +193,41 @@ export function MarketBarsContainer() {
   }
   const starttimer = () => {
     // auto refresh logic
-    let x = 0;
-    const intervalId = setInterval(() => {
-      if (x < 100) {
-        now.value = new Date();
-        x += 0.05;
-      } else {
-        clearInterval(intervalId); // Stop the interval when x reaches 100
-        getPrices();
-      }
-    }, 10);
+    setInterval(() => {
+      getPrices();
+      now.value = new Date();
+    }, 500);
   };
+  function timediff(now: number, timestamp: number): string {
+    const timeDiff = (now - timestamp) / 1000;
+    if (timeDiff >= 1) {
+      if (timeDiff >= 60) {
+        const minutes = Math.floor(timeDiff / 60);
+        return `${minutes} min ago`;
+      } else {
+        const seconds = Math.floor(timeDiff);
+        return `${seconds} sec ago`;
+      }
+    } else {
+      return "just now";
+    }
+  }
   useState(() => {
-    // on load, fetch data and start timer
-    getPrices();
+    // on load, start cache loop and get holder & transfer counts
+    starttimer();
     getChiffres();
   });
-
   return (
     <>
-    {timestamp.value != 0 ? <p class="dark:text-[#9ca3af] text-[#313131] sm:text-[10px] text-[8px] absolute sm:top-1 -top-2 left-2 z-[5]">last updated: {Number(((now.value - timestamp.value)/1000).toFixed(0)) > 0 ? ((now.value - timestamp.value)/1000).toFixed(0) : 0}s</p> : null}
+      {timestamp.value != 0 ? (
+        <p class="dark:text-[#9ca3af] text-[#313131] font-[monospace] font-light unselectable text-[8px] absolute sm:top-1 -top-2 left-2 z-[5]">
+          updated {timediff(now.value, timestamp.value)}
+        </p>
+      ) : null}
       <div class="w-full p-1 flex flex-col sm:gap-1 gap-[5px]">
         {/* ETH MarketBar */}
         <Omnibar
-          chain="eth" 
+          chain="eth"
           link="https://dexscreener.com/ethereum/0xb7a71c2e31920019962cb62aeea1dbf502905b81"
           ico="/chains/token_eth.png"
           initialloading={initialloading}
