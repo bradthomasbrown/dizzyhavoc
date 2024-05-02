@@ -47,10 +47,11 @@ export function Omnibar(props: {
     <>
       <div
         style={{ order: order != null ? -order : 0 }}
-        class={`w-full relative flex sm:h-[9rem] gap-3 bg-blur3 
-        border-[2px] border-[#bababa5c] dark:border-[#3636365e]
+        class={`w-full relative flex sm:h-[9rem] bg-blur3
+        border-[2px] border-b-[#bababa5c] border-t-[#bababa5c] border-s-[#bababa5c] border-e-[#bababa5c]
+        dark:border-b-[#3636365e] dark:border-s-[#3636365e] dark:border-e-[#3636365e] dark:border-t-[#3636365e]
         ${hide.value ? "h-[2.8rem]" : "h-[7.3rem]"}
-        ${!tooltip.value ? "rounded-lg" : "rounded-t-lg"}
+        ${!tooltip.value ? "rounded-lg dark:border-b-[#3636365e] border-b-[#bababa5c]" : "rounded-t-lg dark:border-b-[#00000000] border-b-[#00000000]"}
         `}
       >
         {initialloading.value ? (
@@ -123,7 +124,7 @@ export function Omnibar(props: {
       {tooltip.value && (
         <div
           style={{ order: order != null ? -order : 0 }}
-          class="sm:h-[1.3rem] h-[1.1rem] border-[2px] border-b-[#bababa5c] border-t-transparent border-s-[#bababa5c] border-e-[#bababa5c] dark:border-b-[#3636365e] dark:border-t-transparent dark:border-s-[#3636365e] dark:border-e-[#3636365e] rounded-b-md justify-evenly flex flex-row sm:text-sm text-[11px] -mt-[10px] sm:-mt-[8px] px-2 font-[Poppins] w-full bg-blur3"
+          class="sm:h-[1.1rem] h-[1.1rem] -mt-[12px] sm:-mt-2 border-[2px] border-b-[#bababa5c] border-t-[#00000000] border-s-[#bababa5c] border-e-[#bababa5c] dark:border-b-[#3636365e] dark:border-t-[#00000000] dark:border-s-[#3636365e] dark:border-e-[#3636365e] rounded-b-md justify-evenly flex items-center flex-row sm:text-sm text-[11px] px-2 font-[Poppins] w-full bg-blur3"
         >
           <p class="dark:text-[#d0d0d0] text-[#3d3d3d] unselectable">
             holders: {holders.value ? formatNumber(holders.value) : "0.0K"}
