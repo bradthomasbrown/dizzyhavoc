@@ -2,7 +2,7 @@ import { IS_BROWSER } from "$fresh/runtime.ts";
 import { useState } from "preact/hooks";
 import { useSignal } from "@preact/signals";
 import { formatNumber } from "../../lib/common/formatNumber.tsx";
-import { Dex } from "../../lib/stats/Requests/Dex.tsx";
+import { feca, cachedData } from "../../lib/stats/Requests/dexCache.tsx";
 export function Summary() {
   if (!IS_BROWSER) return <></>;
   const initialloading = useSignal<boolean>(true);
@@ -48,6 +48,7 @@ export function Summary() {
     return new Promise( resolve => setTimeout(resolve, ms) );
   }
   const fetchScreener = async () => {
+    const data = feca("summary");
     isloading.value = true;
     if(!initialloading.value){
       await delay(1000)
@@ -58,13 +59,13 @@ export function Summary() {
       bscprice = 0,
       baseprice = 0,
       avaxprice = 0;
-    const data = await Dex();
+      const result = await data;
     let totalprice = 0;
     let totalliq = 0;
-    for (let i = 0; i < data.pairs.length; i++) {
-      const fixedvalue = Number(data.pairs[i].priceUsd).toFixed(5);
-      const fixedliq = Number(data.pairs[i].liquidity.usd).toFixed(5);
-      switch (data.pairs[i].url) {
+    for (let i = 0; i < result.pairs.length; i++) {
+      const fixedvalue = Number(result.pairs[i].priceUsd).toFixed(5);
+      const fixedliq = Number(result.pairs[i].liquidity.usd).toFixed(5);
+      switch (result.pairs[i].url) {
         case "https://dexscreener.com/ethereum/0xb7a71c2e31920019962cb62aeea1dbf502905b81":
           token_eth.value = ethprice = Number(fixedvalue);
           totalprice += Number(fixedvalue);
