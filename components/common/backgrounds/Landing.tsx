@@ -1,6 +1,7 @@
 export default function LandingBG() {
   return (
     <div class="bg-[url('/misc/landing.png')]
+    mt-[4.5rem] sm:mt-[4rem]
         opacity-20 
         dark:opacity-5 
         dark:saturate-0 
@@ -11,7 +12,7 @@ export default function LandingBG() {
         bg-center 
         bg-no-repeat 
         w-full 
-        h-full 
+        h-full
         absolute 
         top-0 
         left-0
