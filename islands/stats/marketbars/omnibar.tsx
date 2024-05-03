@@ -97,7 +97,7 @@ export function Omnibar(props: {
             </div>
             <a
               draggable={false}
-              class="z-20 vignets2 sm:size-[50px] hover:scale-[105%] sm:ml-3 ml-1 mt-[4px] sm:mt-11 justify-start size-9"
+              class="z-[2] vignets2 sm:size-[50px] hover:scale-[105%] sm:ml-3 ml-1 mt-[4px] sm:mt-11 justify-start size-9"
               title="open in dexscreener"
               target="_blank"
               href={link}
