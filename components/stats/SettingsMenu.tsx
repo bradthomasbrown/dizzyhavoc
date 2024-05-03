@@ -1,6 +1,6 @@
 import { Signal } from "@preact/signals";
 export const hidden = new Signal(true);
-export const fetchmode = new Signal("normal");
+export const fetchmode = new Signal("default");
 export const sortby = new Signal("price");
 export function SettingsMenu() {
   return (
@@ -27,10 +27,10 @@ export function SettingsMenu() {
           class="text-sm unselectable dark:text-[#d0d0d0] text-[#3d3d3d] outline-none text-center w-[100px] font-[Poppins] rounded-md border border-[#d0d0d0] dark:border-[#3d3d3d] cursor-pointer dark:bg-[#101010] bg-[#f1f1f1]"
 
           name="mode"
-          value={fetchmode.value ? fetchmode.value : "normal"}
+          value={fetchmode.value ? fetchmode.value : "default"}
           onChange={(event) => fetchmode.value = event.currentTarget.value}
         >
-          <option class="text-sm">{"normal"}</option>
+          <option class="text-sm">{"default"}</option>
           <option class="text-sm">{"fast"}</option>
           <option class="text-sm">{"realtime"}</option>
         </select>

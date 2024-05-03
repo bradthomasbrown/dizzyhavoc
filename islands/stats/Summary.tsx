@@ -4,10 +4,9 @@ import { useSignal } from "@preact/signals";
 import { formatNumber } from "../../lib/common/formatNumber.tsx";
 import { feca } from "../../lib/stats/Requests/caches/dexCache.tsx";
 import { SettingsCog } from "../../components/common/SettingsCog.tsx";
-import { sortby, fetchmode } from "../../components/stats/SettingsMenu.tsx";
+import { fetchmode } from "../../components/stats/SettingsMenu.tsx";
 export function Summary() {
   if (!IS_BROWSER) return <></>;
-  const _sortby = sortby.value;
   const initialloading = useSignal<boolean>(true);
   const isloading = useSignal<boolean>(true);
   const count = useSignal<number>(0);
@@ -121,7 +120,7 @@ export function Summary() {
           x += 10;
         } else if (mode === "fast") {
           x += 0.2;
-        } else if (mode === "normal") {
+        } else if (mode === "default") {
           x += 0.1;
         }
         count.value = x; 
@@ -164,7 +163,7 @@ export function Summary() {
                 <SettingsCog />
       </div>
             <div class={`flex flex-row mx-auto justify-center gap-6 ${
-              isloading.value ? "shimmer z-0" : ""
+              isloading.value && fetchmode !="realtime" ? "shimmer z-0" : ""
             }`}>
               <section class="rounded flex flex-col">
                 <h1 class="unselectable font-[Poppins] dark:text-[#d2d2d2] text-[0.7rem] sm:text-[0.75rem] flex flex-col justify-center tracking-tight items-center">
