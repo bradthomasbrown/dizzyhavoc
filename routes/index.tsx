@@ -5,12 +5,13 @@ export default function Home() {
   return (
     <>
       <div class="w-full h-full flex">
-      <div class="absolute lg:top-4 top-[4.7rem] z-20 left-1 sm:left-4">
-        <Socials />
-        </div>
+
         <div class="w-full h-full">
           <Landing />
-          <Info />
+          {/* <Info /> */}
+        </div>
+        <div class="absolute lg:top-4 top-[4.7rem] z-20 left-1 sm:left-4">
+        <Socials />
         </div>
       </div>
     </>

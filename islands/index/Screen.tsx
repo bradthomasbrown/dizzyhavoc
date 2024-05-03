@@ -50,29 +50,23 @@ export default function Screen() {
     </div>
   );
   return (
-    <div className="h-full sm:h-[70%] w-full sm:mt-6 mt-0">
+    <div className="h-full w-full">
       <div
         onClick={() => handleScreenClick()}
-        className="sm:min-h-[70%] sm:max-h-[70%] min-h-[70svh] max-h-[70svh] relative sm:w-[70%] w-full justify-center mx-auto overflow-hidden rounded-lg shadow-inner dark:shadow-none shadow-[#d6d6d6] dark:shadow-[#141414] bg-blur4"
+        className="relative size-full justify-center mx-auto overflow-hidden rounded-lg"
       >
         {loadingbar}
-        <p class="font-medium font-[Poppins] absolute top-3 left-3 unselectable w-full text-[0.95rem] sm:text-[1.7rem] text-start dark:text-[#969696cc] text-[#636363cc]">
-         DeFi user or developer? Explore our network.
-        </p>
         <CurrentItem />
-        <Stars />
+        {/* <Stars /> */}
         <div
           id="skip"
-          class="font-medium z-50 font-[Poppins] mb-5 active:scale-[98%] absolute cursor-pointer unselectable bottom-0 left-5 tracking-tighter text-[0.8rem] sm:text-[1.7rem] text-start dark:text-[#969696cc] text-[#636363cc]"
+          class="font-medium z-50 font-[Poppins] active:scale-[98%] absolute cursor-pointer unselectable bottom-2 left-2 tracking-tighter text-[0.8rem] sm:text-[1.7rem] text-start dark:text-[#969696cc] text-[#636363cc]"
           onClick={Skip}
           onClickCapture={handleScreenClick} // 🤔
         >
-          <img src="/misc/arrowright.svg" draggable={false} class="sm:size-[30px] size-[28px] contrast-[0.3] invert-0 dark:invert"/>
+          <img src="/misc/caretright.svg" draggable={false} class="sm:size-[25px] size-[20px] contrast-[0.3] invert-0 dark:invert"/>
         </div>
       </div>
-      <div class="scale-[70%] sm:scale-50">
-        <AvailableOn />
-        </div>
     </div>
   );
 }
