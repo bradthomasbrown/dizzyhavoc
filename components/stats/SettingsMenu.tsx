@@ -18,7 +18,7 @@ export function SettingsMenu() {
         bg-[#ededed] dark:bg-[#191919]
         shadow-xl rounded-xl
         p-2
-        w-[7.2rem]
+        w-[7.345rem]
       `}
     >
         <div class="">
