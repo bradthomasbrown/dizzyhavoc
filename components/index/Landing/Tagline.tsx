@@ -1,7 +1,12 @@
 export function Tagline() {
   return (
-      <p class="font-medium text-start font-[Poppins] unselectable w-[65%] tracking-tighter text-[1.3rem] sm:text-[2.3rem] dark:text-[#d2d2d2] text-[#3d3d3d]">
-        Upgradeable, machine-coded*, multi-chain, DeFi/GameFi ecosystem.
+    <>
+      <p class="font-medium text-start font-[Poppins] unselectable tracking-tighter text-[1.3rem] sm:text-[2.3rem] dark:text-[#d2d2d2] text-[#3d3d3d]">
+        Multi-chain, DeFi/GameFi ecosystem.
       </p>
+      <p class="italic font-extralight text-start font-[Poppins] unselectable tracking-tighter text-[0.7rem] sm:text-[1.7rem] dark:text-[#d2d2d2] text-[#3d3d3d]">
+        Building and optimizing a new standard for Web3.
+      </p>
+      </>
   );
 }
