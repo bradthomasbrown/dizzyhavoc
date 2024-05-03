@@ -133,16 +133,40 @@ export function MarketBarsContainer() {
           break;
       }
     }
-    if(sortby.value === "price"){
+    if (sortby.value === "price") {
       largestPriceDelta(ethprice, arbprice, bscprice, baseprice, avaxprice);
-    }else if(sortby.value === "liquidity"){
-      largestPriceDelta( liq_eth.value,  liq_arb.value,  liq_bsc.value,  liq_base.value,  liq_avax.value);
-    }else if(sortby.value === "volume"){
-      largestPriceDelta(vol24_eth.value, vol24_arb.value, vol24_bsc.value, vol24_base.value, vol24_avax.value);
-    }else if(sortby.value === "txn"){
-      largestPriceDelta(tx_eth.value, tx_arb.value, tx_bsc.value, tx_base.value, tx_avax.value);
-    }else if(sortby.value === "24h"){
-      largestPriceDelta(h24_eth.value, h24_arb.value, h24_bsc.value, h24_base.value, h24_avax.value);
+    } else if (sortby.value === "liquidity") {
+      largestPriceDelta(
+        liq_eth.value,
+        liq_arb.value,
+        liq_bsc.value,
+        liq_base.value,
+        liq_avax.value
+      );
+    } else if (sortby.value === "volume") {
+      largestPriceDelta(
+        vol24_eth.value,
+        vol24_arb.value,
+        vol24_bsc.value,
+        vol24_base.value,
+        vol24_avax.value
+      );
+    } else if (sortby.value === "txn") {
+      largestPriceDelta(
+        tx_eth.value,
+        tx_arb.value,
+        tx_bsc.value,
+        tx_base.value,
+        tx_avax.value
+      );
+    } else if (sortby.value === "24h") {
+      largestPriceDelta(
+        h24_eth.value,
+        h24_arb.value,
+        h24_bsc.value,
+        h24_base.value,
+        h24_avax.value
+      );
     }
     initialloading.value = false;
   };
@@ -212,11 +236,11 @@ export function MarketBarsContainer() {
   function timediff(now: number, timestamp: number): string {
     const timeDiff = (now - timestamp) / 1000;
     if (timeDiff >= 1) {
-      if(timeDiff >= 7200) {
+      if (timeDiff >= 7200) {
         const hours = Math.floor(timeDiff / 3600);
         return `${hours}hrs ago`;
       }
-      if(timeDiff >= 3600) {
+      if (timeDiff >= 3600) {
         const hours = Math.floor(timeDiff / 3600);
         return `${hours}hr ago`;
       }
@@ -244,7 +268,7 @@ export function MarketBarsContainer() {
     <div class="relative">
       {timestamp.value != 0 ? (
         <p class="dark:text-[#9ca3af] text-[#313131] font-[Poppins] font-light unselectable sm:text-[10px] text-[7px] absolute -top-[9px] sm:-top-[18px] left-[1.5%] sm:left-[87%] z-[5]">
-        {timediff(now.value, timestamp.value)}
+          {timediff(now.value, timestamp.value)}
         </p>
       ) : null}
       <div class="w-full flex flex-col sm:gap-[6px] gap-[10px]">

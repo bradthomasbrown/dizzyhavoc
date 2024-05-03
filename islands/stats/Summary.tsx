@@ -109,9 +109,9 @@ export function Summary() {
   };
   const starttimer = () => {
     let x = 0;
-    const mode = fetchmode.value
+    const mode = fetchmode.value;
     const intervalId = setInterval(() => {
-      if(mode!=fetchmode.value){
+      if (mode != fetchmode.value) {
         clearInterval(intervalId);
         fetchScreener();
       }
@@ -123,14 +123,13 @@ export function Summary() {
         } else if (mode === "default") {
           x += 0.1;
         }
-        count.value = x; 
+        count.value = x;
       } else {
         clearInterval(intervalId);
         fetchScreener();
       }
     }, 10);
   };
-
 
   useState(() => {
     // on load fetch data and start timer
@@ -159,12 +158,14 @@ export function Summary() {
           <div
             class={`h-full w-[358px] sm:w-[473px] justify-center border-[2px] border-[#bababa5c] dark:border-[#3636365e] relative rounded-lg flex flex-col bg-blur3`}
           >
-                          <div class="absolute z-[10] top-[2px] right-[2px]">
-                <SettingsCog />
-      </div>
-            <div class={`flex flex-row mx-auto justify-center gap-6 ${
-              isloading.value && fetchmode !="realtime" ? "shimmer z-0" : ""
-            }`}>
+            <div class="absolute z-[10] top-[2px] right-[2px]">
+              <SettingsCog />
+            </div>
+            <div
+              class={`flex flex-row mx-auto justify-center gap-6 ${
+                isloading.value && fetchmode != "realtime" ? "shimmer z-0" : ""
+              }`}
+            >
               <section class="rounded flex flex-col">
                 <h1 class="unselectable font-[Poppins] dark:text-[#d2d2d2] text-[0.7rem] sm:text-[0.75rem] flex flex-col justify-center tracking-tight items-center">
                   Avrg. Price

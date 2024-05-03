@@ -6,7 +6,7 @@ function onClick() {
 
 export function SettingsCog() {
   return (
-    <div class="relative z-10 flex flex-row-reverse items-center h-6 w-full gap-1">
+    <div class="relative z-10 flex flex-row-reverse items-center w-full">
       <svg
         onClick={onClick}
         class="hover:scale-[105%] active:scale-[95%] cursor-pointer w-4 h-4 invert-0 dark:invert contrast-0"
@@ -28,8 +28,7 @@ export function SettingsCog() {
           text-xs font-mono
           contrast-75 brightness-75
         `}
-      >
-      </div>
+      ></div>
       <SettingsMenu />
     </div>
   );
