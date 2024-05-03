@@ -109,20 +109,24 @@ export function Summary() {
     starttimer();
   };
   const starttimer = () => {
-    // auto refresh logic
     let x = 0;
+    const mode = fetchmode.value
     const intervalId = setInterval(() => {
+      if(mode!=fetchmode.value){
+        clearInterval(intervalId);
+        fetchScreener();
+      }
       if (x < 100) {
-        if (fetchmode.value === "realtime") {
+        if (mode === "realtime") {
           x += 10;
-        } else if (fetchmode.value === "fast") {
+        } else if (mode === "fast") {
           x += 0.2;
-        } else if (fetchmode.value === "normal") {
+        } else if (mode === "normal") {
           x += 0.1;
         }
-        count.value = x; // Update the progress value
+        count.value = x; 
       } else {
-        clearInterval(intervalId); // Stop the interval when x reaches 100
+        clearInterval(intervalId);
         fetchScreener();
       }
     }, 10);
