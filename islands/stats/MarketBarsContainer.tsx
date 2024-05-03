@@ -139,8 +139,11 @@ export function MarketBarsContainer() {
       largestPriceDelta( liq_eth.value,  liq_arb.value,  liq_bsc.value,  liq_base.value,  liq_avax.value);
     }else if(sortby.value === "volume"){
       largestPriceDelta(vol24_eth.value, vol24_arb.value, vol24_bsc.value, vol24_base.value, vol24_avax.value);
+    }else if(sortby.value === "txn"){
+      largestPriceDelta(tx_eth.value, tx_arb.value, tx_bsc.value, tx_base.value, tx_avax.value);
+    }else if(sortby.value === "24h"){
+      largestPriceDelta(h24_eth.value, h24_arb.value, h24_bsc.value, h24_base.value, h24_avax.value);
     }
-
     initialloading.value = false;
   };
   const getChiffres = async () => {

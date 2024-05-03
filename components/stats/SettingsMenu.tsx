@@ -46,6 +46,8 @@ export function SettingsMenu() {
           <option class="text-sm">{"price"}</option>
           <option class="text-sm">{"liquidity"}</option>
           <option class="text-sm">{"volume"}</option>
+          <option class="text-sm">{"txn"}</option>
+          <option class="text-sm">{"24h"}</option>
         </select>
         </div>
 
