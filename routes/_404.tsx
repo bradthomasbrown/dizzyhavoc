@@ -1,9 +1,9 @@
 export default function Error404() {
   return (
     <>
-      <div class="h-screen sm:mb-[230px] mb-[100px] flex flex-col justify-center items-center">
+      <div class="h-full flex flex-col justify-center items-center">
         <img
-          class="invert-0 dark:invert"
+          class="invert-0 dark:invert mt-[10%]"
           src="/misc/1.gif"
           alt="404 image"
           width="450"
@@ -14,9 +14,24 @@ export default function Error404() {
         <p class="my-4 dark:text-[#d2d2d2] text-[#282828]">
           The page you were looking for doesn't exist.
         </p>
-        <a href="/" class="underline dark:text-[#d2d2d2] text-[#282828]">
-          Go back home
+        <div class="flex flew-row gap-x-6">
+        <a href="/" class="underline dark:text-[#d2d2d2] text-[#282828] mb-[10%]">
+          home
         </a>
+        <a href="/stats" class="underline dark:text-[#d2d2d2] text-[#282828] mb-[10%]">
+          stats
+        </a>
+        <a href="/about" class="underline dark:text-[#d2d2d2] text-[#282828] mb-[10%]">
+          about
+        </a>
+        <p class="dark:text-[#d2d2d2] text-[#282828]">|</p>
+        <a href="/explore" class="underline dark:text-[#d2d2d2] text-[#282828] mb-[10%]">
+          explore
+        </a>
+        <a href="/roadmap" class="underline dark:text-[#d2d2d2] text-[#282828] mb-[10%]">
+          roadmap
+        </a>
+        </div>
       </div>
     </>
   );
