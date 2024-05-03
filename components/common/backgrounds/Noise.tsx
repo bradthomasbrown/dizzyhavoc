@@ -4,8 +4,8 @@ export function Noise() {
     dark:bg-[url('/misc/noise.png')]
     bg-[url('/misc/whitenoise.png')]
     mt-[4.5rem] sm:mt-[4rem]
-        opacity-100
-        dark:opacity-35
+        opacity-35
+        dark:opacity-20
         bg-center 
         bg-repeat 
         w-full 
