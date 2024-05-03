@@ -114,7 +114,7 @@ export function Summary() {
     const intervalId = setInterval(() => {
       if (x < 100) {
         if (fetchmode.value === "realtime") {
-          x += 0.8;
+          x += 10;
         } else if (fetchmode.value === "fast") {
           x += 0.2;
         } else if (fetchmode.value === "normal") {

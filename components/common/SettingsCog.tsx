@@ -9,7 +9,7 @@ export function SettingsCog() {
     <div class="relative z-10 flex flex-row-reverse items-center h-6 w-full gap-1">
       <svg
         onClick={onClick}
-        class="hover:scale-[105%] active:scale-[95%] cursor-pointer w-4 h-4"
+        class="hover:scale-[105%] active:scale-[95%] cursor-pointer w-4 h-4 invert-0 dark:invert contrast-0"
         aria-hidden="true"
         xmlns="http://www.w3.org/2000/svg"
         width="24"
