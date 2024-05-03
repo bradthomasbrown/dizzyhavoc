@@ -49,7 +49,7 @@ export default function Screen() {
         <CurrentItem />
         <div
           id="skip"
-          class="font-medium z-50 font-[Poppins] active:scale-[98%] absolute cursor-pointer unselectable bottom-2 left-2 tracking-tighter text-[0.8rem] sm:text-[1.7rem] text-start dark:text-[#969696cc] text-[#636363cc]"
+          class="font-medium z-[2] font-[Poppins] active:scale-[98%] absolute cursor-pointer unselectable bottom-2 left-2 tracking-tighter text-[0.8rem] sm:text-[1.7rem] text-start dark:text-[#969696cc] text-[#636363cc]"
           onClick={Skip}
         >
           <img src="/misc/caretright.svg" draggable={false} class="sm:size-[25px] size-[20px] contrast-[0.3] invert-0 dark:invert"/>

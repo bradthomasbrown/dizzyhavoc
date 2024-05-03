@@ -38,6 +38,10 @@ user-select: none; /* Standard */
   background-repeat: no-repeat;
   animation: shimmer 1s 1 ease;
 }
+.bgs{
+  -webkit-mask: 0 0 200px rgba(0,0,0,0.9) inset;
+  mask: 0 0 200px rgba(0,0,0,0.9) inset;
+}
 @keyframes shimmer {
   100% {-webkit-mask-position:left}
 }
