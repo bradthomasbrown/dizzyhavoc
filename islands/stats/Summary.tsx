@@ -110,7 +110,7 @@ export function Summary() {
     let x = 0;
     const intervalId = setInterval(() => {
       if (x < 100) {
-        x += 0.05;
+        x += 0.2;
         count.value = x; // Update the progress value
       } else {
         clearInterval(intervalId); // Stop the interval when x reaches 100

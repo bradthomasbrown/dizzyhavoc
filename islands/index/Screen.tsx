@@ -1,8 +1,8 @@
 import { useEffect, useState } from "preact/hooks";
 import { IS_BROWSER } from "$fresh/runtime.ts";
-import { Vertigo, Mayhem, Gamefi } from "../../components/index/Landing/ScreenItems/mod.ts";
+import { Vertigo, Mayhem, Gamefi, Factory } from "../../components/index/Landing/ScreenItems/mod.ts";
 
-const items = [Vertigo, Mayhem, Gamefi]; // Add more screen items here
+const items = [Vertigo, Mayhem, Gamefi, Factory]; // Add more screen items here
 
 export default function Screen() {
   if (!IS_BROWSER) return null;
