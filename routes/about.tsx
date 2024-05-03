@@ -1,10 +1,10 @@
 import Spider from "../components/about/spider.tsx";
 import Corv from "../components/about/corv.tsx";
-import AboutBG from "../components/common/backgrounds/About.tsx";
+import { Noise } from "../components/common/backgrounds/Noise.tsx";
 export default function About() {
   return (
     <>
-    <AboutBG />
+    <Noise />
       <img
         class="absolute sm:opacity-100 opacity-0 -z-10 bottom-0 blur-sm w-[10rem] sm:w-[35rem]"
         src="/misc/dzhv.png"

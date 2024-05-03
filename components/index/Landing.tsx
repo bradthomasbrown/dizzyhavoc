@@ -1,12 +1,12 @@
 import Screen from "../../islands/index/Screen.tsx";
 import { Tagline } from "./Landing/Tagline.tsx";
 import { Explore } from "./Landing/Explore.tsx";
-import LandingBG from "../common/backgrounds/Landing.tsx";
+import { Noise } from "../common/backgrounds/Noise.tsx";
 export function Landing() {
   return (
     <div>
       <div class="flex flex-row h-screen w-full justify-center items-center">
-        <LandingBG />
+        <Noise />
         <div class="flex flex-row relative">
           <div>
               <Tagline />
