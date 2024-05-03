@@ -5,6 +5,7 @@ import { PriceHistory } from "../../lib/stats/Requests/priceHistory.tsx";
 import { Chiffres } from "../../lib/stats/Requests/Chiffres.tsx";
 import { Omnibar } from "./marketbars/omnibar.tsx";
 import { cachedData } from "../../lib/stats/Requests/caches/dexCache.tsx";
+import { sortby } from "../../components/stats/SettingsMenu.tsx";
 
 export function MarketBarsContainer() {
   if (!IS_BROWSER) return <></>;
@@ -132,7 +133,14 @@ export function MarketBarsContainer() {
           break;
       }
     }
-    largestPriceDelta(ethprice, arbprice, bscprice, baseprice, avaxprice);
+    if(sortby.value === "price"){
+      largestPriceDelta(ethprice, arbprice, bscprice, baseprice, avaxprice);
+    }else if(sortby.value === "liquidity"){
+      largestPriceDelta( liq_eth.value,  liq_arb.value,  liq_bsc.value,  liq_base.value,  liq_avax.value);
+    }else if(sortby.value === "volume"){
+      largestPriceDelta(vol24_eth.value, vol24_arb.value, vol24_bsc.value, vol24_base.value, vol24_avax.value);
+    }
+
     initialloading.value = false;
   };
   const getChiffres = async () => {
