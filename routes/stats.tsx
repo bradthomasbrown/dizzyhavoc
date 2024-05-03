@@ -3,7 +3,7 @@ import { Noise } from "../components/common/backgrounds/Noise.tsx";
 export default function Stats() {
   return (
     <div class="h-full">
-      <Noise />
+      {/* <Noise /> */}
       <p class="my-[1rem]
   font-medium
   sm:text-[1.7rem]

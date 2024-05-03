@@ -2,7 +2,7 @@ import { Noise } from "../components/common/backgrounds/Noise.tsx";
 export default function Error404() {
   return (
     <>
-    <div class="h-[20%]">      <Noise /></div>
+    {/* <div class="h-[20%]">      <Noise /></div> */}
 
       <div class="h-full flex flex-col justify-center items-center">
         <img
