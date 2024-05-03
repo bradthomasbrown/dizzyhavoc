@@ -31,7 +31,7 @@ export function SettingsMenu() {
           onChange={(event) => fetchmode.value = event.currentTarget.value}
         >
           <option class="text-sm">{"default"}</option>
-          <option class="text-sm">{"fast"}</option>
+          <option class="text-sm">{"faster"}</option>
           <option class="text-sm">{"realtime"}</option>
         </select>
         </div>

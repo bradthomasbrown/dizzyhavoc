@@ -118,7 +118,7 @@ export function Summary() {
       if (x < 100) {
         if (mode === "realtime") {
           x += 10;
-        } else if (mode === "fast") {
+        } else if (mode === "faster") {
           x += 0.2;
         } else if (mode === "default") {
           x += 0.1;
