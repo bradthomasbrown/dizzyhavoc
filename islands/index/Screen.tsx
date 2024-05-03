@@ -16,7 +16,7 @@ export default function Screen() {
             setindex((index) => (index + 1) % items.length);
             return 0;
           } else {
-            return time + 0.1;
+            return time + 0.3;
           }
         });
     }, 10);
