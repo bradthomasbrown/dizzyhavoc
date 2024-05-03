@@ -22,9 +22,10 @@ export function SettingsMenu() {
       `}
     >
         <div class="">
-        <div class="text-[14px] dark:text-[#d0d0d0] text-[#3d3d3d] bold font-[Poppins]">fetch mode</div>
+        <div class="text-[14px] unselectable dark:text-[#d0d0d0] text-[#3d3d3d] bold font-[Poppins]">fetch mode</div>
         <select
-          class="text-sm unselectable dark:text-[#d0d0d0] text-[#3d3d3d] outline-none text-center w-[100px] shadow-lg font-[Poppins] rounded-lg border border-[#e9e9e9] dark:border-[#ffffff1f] cursor-pointer dark:bg-[#101010] bg-[#f1f1f1]"
+          class="text-sm unselectable dark:text-[#d0d0d0] text-[#3d3d3d] outline-none text-center w-[100px] font-[Poppins] rounded-md border border-[#d0d0d0] dark:border-[#3d3d3d] cursor-pointer dark:bg-[#101010] bg-[#f1f1f1]"
+
           name="mode"
           value={fetchmode.value ? fetchmode.value : "normal"}
           onChange={(event) => fetchmode.value = event.currentTarget.value}
@@ -35,9 +36,9 @@ export function SettingsMenu() {
         </select>
         </div>
         <div class="">
-        <div class="text-[14px] dark:text-[#d0d0d0] text-[#3d3d3d] bold font-[Poppins]">sort by</div>
+        <div class="text-[14px] unselectable dark:text-[#d0d0d0] text-[#3d3d3d] bold font-[Poppins]">sort by</div>
         <select
-          class="text-sm unselectable dark:text-[#d0d0d0] text-[#3d3d3d] outline-none text-center w-[100px] shadow-lg font-[Poppins] rounded-lg border border-[#e9e9e9] dark:border-[#ffffff1f] cursor-pointer dark:bg-[#101010] bg-[#f1f1f1]"
+          class="text-sm unselectable dark:text-[#d0d0d0] text-[#3d3d3d] outline-none text-center w-[100px] font-[Poppins] rounded-md border border-[#d0d0d0] dark:border-[#3d3d3d] cursor-pointer dark:bg-[#101010] bg-[#f1f1f1]"
           name="sort"
           value={sortby.value ? sortby.value : "price"}
           onChange={(event) => sortby.value = event.currentTarget.value}
