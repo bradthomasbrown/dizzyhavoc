@@ -12,7 +12,7 @@ export function Landing() {
               <Tagline />
               <Explore />
           </div>
-          <div class="sm:size-[130px] size-[110px] bg-red-500">
+          <div class="sm:size-[130px] size-[110px]">
             <Screen />
           </div>
         </div>
