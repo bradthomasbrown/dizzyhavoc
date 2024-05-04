@@ -2,7 +2,7 @@ import ActiveContainer from "../islands/stats/ActiveContainer.tsx";
 import { Noise } from "../components/common/backgrounds/Noise.tsx";
 export default function Stats() {
   return (
-    <div class="h-full">
+    <div class="h-full mb-[2rem]">
       <Noise />
       <p class="my-[1rem]
   font-medium
@@ -17,10 +17,13 @@ export default function Stats() {
   bg-transparent
   lg:max-w-[32rem]
   max-w-full
-  rounded-xl">
+  rounded-xl
+  xl-mt">
       Ecosystem Analytics
       </p>
+      <div class="">
       <ActiveContainer />
+      </div>
     </div>
   );
 }

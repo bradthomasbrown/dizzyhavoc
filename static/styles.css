@@ -46,6 +46,18 @@ user-select: none; /* Standard */
   animation-duration: 5.7s;
   animation-name: slidein;
 }
+@media (min-width: 2001px) {
+  .xl-scale{
+    scale: 1.15;
+  }
+  .xl-mt
+  {
+    margin-top: 7rem;
+  }
+  .xl-invis {
+    display: none;
+  }
+}
 @keyframes slidein {
   0% {
     opacity: 0;
