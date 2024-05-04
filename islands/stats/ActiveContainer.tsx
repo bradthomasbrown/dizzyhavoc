@@ -32,7 +32,7 @@ export default function ActiveContainer() {
       </div>
       {toggle.value ? <Weeklies_Container /> : null}
       <div class="flex h-full">
-        <div class="w-screen justify-center items-center">
+        <div class="w-full justify-center items-center">
           <MarketBarsContainer />
         </div>
       </div>

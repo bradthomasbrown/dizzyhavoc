@@ -5,7 +5,7 @@ export function Tagline() {
         Multi-chain, DeFi/GameFi ecosystem.
       </p>
       <p class="italic font-extralight text-start font-[Poppins] unselectable tracking-tighter text-[0.7rem] sm:text-[1.7rem] dark:text-[#d2d2d2] text-[#3d3d3d]">
-        Building and optimizing a new standard for Web3.
+        Building a new optimized standard for Web3.
       </p>
       </>
   );
