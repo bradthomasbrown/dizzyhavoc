@@ -6,7 +6,7 @@ export default function About() {
     <>
     <Noise />
       <img
-        class="absolute sm:opacity-100 opacity-0 -z-10 bottom-0 blur-sm w-[10rem] sm:w-[35rem]"
+        class="absolute vignets sm:opacity-100 opacity-0 -z-10 bottom-0 blur-sm w-[10rem] sm:w-[35rem]"
         src="/misc/dzhv.png"
       >
       </img>

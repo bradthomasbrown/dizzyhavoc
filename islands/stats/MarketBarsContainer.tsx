@@ -271,7 +271,7 @@ export function MarketBarsContainer() {
           {timediff(now.value, timestamp.value)}
         </p>
       ) : null}
-      <div class="w-full flex flex-col sm:gap-[6px] gap-[10px]">
+      <div class="w-full flex flex-col gap-[6px]">
         {/* ETH MarketBar */}
         <Omnibar
           chain="eth"
