@@ -4,7 +4,6 @@ export default function MenuButton() {
   if (!IS_BROWSER) return <></>;
   const [category, setCategory] = useState<string | null>("");
   const handleCategoryChange = (category: string) => {
-    on = category
     history.pushState(
       "",
       document.title,
