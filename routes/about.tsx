@@ -4,13 +4,13 @@ import { Noise } from "../components/common/backgrounds/Noise.tsx";
 export default function About() {
   return (
     <>
-    <Noise />
+        <div class="h-full top-0"><Noise /></div>
       <img
         class="absolute vignets sm:opacity-100 opacity-0 -z-10 bottom-0 blur-sm w-[10rem] sm:w-[35rem]"
         src="/misc/dzhv.png"
       >
       </img>
-      <div class="h-full sm:h-[90svh] justify-center mt-[0.5rem] flex flex-col items-center">
+      <div class="h-screen sm:h-[90svh] justify-center mt-[0.5rem] flex flex-col items-center">
         <p class="mb-[0.5rem]
   font-medium
   text-[1.35rem]
