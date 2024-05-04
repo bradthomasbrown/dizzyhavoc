@@ -2,7 +2,7 @@ export function Vertigo(){
     return(
       <div class="z-[2] w-full h-full slidefadeout unselectable absolute">
         <div class="flex flex-col">
-        <img class="sm:size-[120px] vignets ml-[1rem] size-[90px] contrast-75" draggable={false} src="/carousel/dzhv-art-chevron-m.jpg" alt="dzhv chevron" />
+        <img class="sm:size-[120px] vignets ml-[1rem] size-[90px] contrast-75" draggable={false} src="/carousel/Vertigo.jpg" alt="dzhv chevron" />
         </div>
         {/* <div class="flex flex-col ml-[1rem]">
         <p class="sm:text-4xl text-2xl dark:text-[#d2d2d2] text-[#3d3d3d] font-medium unselectable font-[Poppins]">Vertigo, a cutting-edge bridge for $DZHV.</p>
