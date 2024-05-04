@@ -12,15 +12,19 @@ import * as $bridge_Web3Input from "./islands/bridge/Web3Input.tsx";
 import * as $common_Button from "./islands/common/Button.tsx";
 import * as $common_menuButton from "./islands/common/menuButton.tsx";
 import * as $common_navbar from "./islands/common/navbar.tsx";
+import * as $index_Screen from "./islands/index/Screen.tsx";
+import * as $index_scrollTop from "./islands/index/scrollTop.tsx";
 import * as $stats_ActiveContainer from "./islands/stats/ActiveContainer.tsx";
-import * as $stats_MarketBars from "./islands/stats/MarketBars.tsx";
+import * as $stats_MarketBarsContainer from "./islands/stats/MarketBarsContainer.tsx";
+import * as $stats_Summary from "./islands/stats/Summary.tsx";
+import * as $stats_WeekliesContainer from "./islands/stats/WeekliesContainer.tsx";
 import * as $stats_chart from "./islands/stats/chart.tsx";
-import * as $stats_charts_arbchart from "./islands/stats/charts/arbchart.tsx";
-import * as $stats_charts_avaxchart from "./islands/stats/charts/avaxchart.tsx";
-import * as $stats_charts_basechart from "./islands/stats/charts/basechart.tsx";
-import * as $stats_charts_bscchart from "./islands/stats/charts/bscchart.tsx";
-import * as $stats_charts_ethchart from "./islands/stats/charts/ethchart.tsx";
-import * as $stats_tokenSummary from "./islands/stats/tokenSummary.tsx";
+import * as $stats_charts_cache from "./islands/stats/charts/cache.tsx";
+import * as $stats_charts_mod from "./islands/stats/charts/mod.ts";
+import * as $stats_charts_omnichart from "./islands/stats/charts/omnichart.tsx";
+import * as $stats_charts_omniweekly from "./islands/stats/charts/omniweekly.tsx";
+import * as $stats_marketbars_omnibar from "./islands/stats/marketbars/omnibar.tsx";
+import * as $stats_marketbars_values from "./islands/stats/marketbars/values.tsx";
 import { type Manifest } from "$fresh/server.ts";
 
 const manifest = {
@@ -37,15 +41,19 @@ const manifest = {
     "./islands/common/Button.tsx": $common_Button,
     "./islands/common/menuButton.tsx": $common_menuButton,
     "./islands/common/navbar.tsx": $common_navbar,
+    "./islands/index/Screen.tsx": $index_Screen,
+    "./islands/index/scrollTop.tsx": $index_scrollTop,
     "./islands/stats/ActiveContainer.tsx": $stats_ActiveContainer,
-    "./islands/stats/MarketBars.tsx": $stats_MarketBars,
+    "./islands/stats/MarketBarsContainer.tsx": $stats_MarketBarsContainer,
+    "./islands/stats/Summary.tsx": $stats_Summary,
+    "./islands/stats/WeekliesContainer.tsx": $stats_WeekliesContainer,
     "./islands/stats/chart.tsx": $stats_chart,
-    "./islands/stats/charts/arbchart.tsx": $stats_charts_arbchart,
-    "./islands/stats/charts/avaxchart.tsx": $stats_charts_avaxchart,
-    "./islands/stats/charts/basechart.tsx": $stats_charts_basechart,
-    "./islands/stats/charts/bscchart.tsx": $stats_charts_bscchart,
-    "./islands/stats/charts/ethchart.tsx": $stats_charts_ethchart,
-    "./islands/stats/tokenSummary.tsx": $stats_tokenSummary,
+    "./islands/stats/charts/cache.tsx": $stats_charts_cache,
+    "./islands/stats/charts/mod.ts": $stats_charts_mod,
+    "./islands/stats/charts/omnichart.tsx": $stats_charts_omnichart,
+    "./islands/stats/charts/omniweekly.tsx": $stats_charts_omniweekly,
+    "./islands/stats/marketbars/omnibar.tsx": $stats_marketbars_omnibar,
+    "./islands/stats/marketbars/values.tsx": $stats_marketbars_values,
   },
   baseUrl: import.meta.url,
 } satisfies Manifest;
