@@ -4,7 +4,7 @@ import { Vertigo, Mayhem, Gamefi, Factory } from "../../components/index/Landing
 
 const items = [Vertigo, Mayhem, Gamefi, Factory]; // Add more screen items here
 
-export default function Screen() {
+export function Carousel() {
   if (!IS_BROWSER) return null;
   const [index, setIndex] = useState(0);
 

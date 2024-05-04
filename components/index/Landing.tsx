@@ -1,7 +1,7 @@
-import Screen from "../../islands/index/Screen.tsx";
+import { Noise } from "../common/backgrounds/Noise.tsx";
 import { Tagline } from "./Landing/Tagline.tsx";
 import { Explore } from "./Landing/Explore.tsx";
-import { Noise } from "../common/backgrounds/Noise.tsx";
+import { Carousel } from "../../islands/index/Carousel.tsx";
 export function Landing() {
   return (
     <div>
@@ -13,7 +13,7 @@ export function Landing() {
             <Explore />
           </div>
           <div class="sm:size-[130px] size-[110px]">
-            <Screen />
+            <Carousel />
           </div>
         </div>
       </div>
