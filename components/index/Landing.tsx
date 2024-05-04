@@ -7,16 +7,15 @@ export function Landing() {
     <div>
       <div class="flex flex-row h-screen w-full justify-center items-center">
         <Noise />
-        <div class="flex flex-row">
+        <div class="flex flex-row gap-x-[2rem]">
           <div class="sm:left-0 left-3 ">
-              <Tagline />
-              <Explore />
+            <Tagline />
+            <Explore />
           </div>
           <div class="sm:size-[130px] size-[110px]">
             <Screen />
           </div>
         </div>
-        {/* <Screen /> */}
       </div>
     </div>
   );

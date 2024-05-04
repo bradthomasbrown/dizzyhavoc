@@ -1,4 +1,4 @@
-import { hidden, SettingsMenu } from "../stats/SettingsMenu.tsx";
+import { hidden, SettingsMenu } from "./SettingsMenu.tsx";
 
 function onClick() {
   hidden.value = !hidden.value;

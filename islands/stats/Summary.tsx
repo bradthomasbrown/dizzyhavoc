@@ -3,7 +3,7 @@ import { useState } from "preact/hooks";
 import { useSignal } from "@preact/signals";
 import { formatNumber } from "../../lib/common/formatNumber.tsx";
 import { feca } from "../../lib/stats/Requests/caches/dexCache.tsx";
-import { SettingsCog } from "../../components/common/SettingsCog.tsx";
+import { SettingsCog } from "../../components/stats/SettingsCog.tsx";
 import { fetchmode } from "../../components/stats/SettingsMenu.tsx";
 export function Summary() {
   if (!IS_BROWSER) return <></>;
