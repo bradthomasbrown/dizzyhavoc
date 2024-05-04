@@ -68,12 +68,12 @@ export function Omnibar(props: {
               {tooltip.value ? (
                 <img
                   class="size-[1.2rem] active:scale-[85%] cursor-pointer vignets contrast-0"
-                  src="/misc/caretup.svg"
+                  src="/svgs/caretup.svg"
                 ></img>
               ) : (
                 <img
                   class="size-[1.2rem] active:scale-[85%] cursor-pointer vignets contrast-0"
-                  src="/misc/caretdown.svg"
+                  src="/svgs/caretdown.svg"
                 ></img>
               )}
             </div>
@@ -86,12 +86,12 @@ export function Omnibar(props: {
               {hide.value ? (
                 <img
                   class="size-[1rem] active:scale-[85%] cursor-pointer vignets contrast-0"
-                  src="/misc/plus.svg"
+                  src="/svgs/plus.svg"
                 ></img>
               ) : (
                 <img
                   class="size-[1rem] active:scale-[85%] cursor-pointer vignets contrast-0"
-                  src="/misc/minus.svg"
+                  src="/svgs/minus.svg"
                 ></img>
               )}
             </div>

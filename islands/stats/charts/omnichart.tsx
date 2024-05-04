@@ -53,11 +53,11 @@ export function Omnichart(props: { chain: Signal<string>; }) {
       }
     : undefined;
 
-  if (isLoading.value === true && fetchedData.value.length === 0) {
+  if (isLoading.value == true) {
     return (
       <img
         class="w-full sm:scale-100 scale-50 mx-[8rem] mt-7 sm:mt-0 sm:mx-[11rem] h-full"
-        src="./misc/loader.svg"
+        src="./svgs/loader.svg"
       ></img>
     );
   }

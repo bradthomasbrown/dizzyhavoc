@@ -15,7 +15,7 @@ export function Weeklies_Container() {
       >
         <img
           class="size-[1rem] active:scale-[85%] cursor-pointer vignets contrast-0"
-          src="/misc/caretright.svg"
+          src="/svgs/caretright.svg"
         ></img>
       </div>
       <div class="h-full border-[2px] border-[#bababa5c] dark:border-[#3636365e] w-[358px] sm:w-[473px] rounded-lg bg-blur3 flex flex-col">

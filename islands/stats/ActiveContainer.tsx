@@ -12,12 +12,12 @@ export default function ActiveContainer() {
     {toggle.value ? (
       <img
         class="size-[1.2rem] active:scale-[85%] cursor-pointer vignets contrast-0"
-        src="/misc/caretup.svg"
+        src="/svgs/caretup.svg"
       ></img>
     ) : (
       <img
         class="size-[1.2rem] active:scale-[85%] cursor-pointer vignets contrast-0"
-        src="/misc/caretdown.svg"
+        src="/svgs/caretdown.svg"
       ></img>
     )}
   </div>

@@ -151,7 +151,7 @@ export function Summary() {
       {initialloading.value ? (
         // no data : display loader
         <div class="sm:w-[465px] w-[350px] bg-blur3 border-[2px] border-[#bababa5c] dark:border-[#3636365e] vignets relative h-full justify-center items-center rounded-lg flex flex-col">
-          <img class="size-[50px]" src="./misc/loader.svg"></img>
+          <img class="size-[50px]" src="./svgs/loader.svg"></img>
         </div>
       ) : (
         <>
