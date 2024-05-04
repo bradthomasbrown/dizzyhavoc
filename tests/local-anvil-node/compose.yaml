@@ -1,7 +1,0 @@
-include:
-  - chain-8000.yaml
-services:
-  test:
-    build: .
-    entrypoint: [ "deno" ]
-    command: [ "test", "--allow-net", "test.ts" ]

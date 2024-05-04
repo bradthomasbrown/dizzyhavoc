@@ -1,8 +1,0 @@
-services:
-  chain-8000:
-    image: ghcr.io/foundry-rs/foundry:nightly-f21760b9a9a0d6623ce69a1c93c99d8eb6a66be8
-    entrypoint: anvil
-    command: >
-      --host 0.0.0.0
-      --port 80
-      --chain-id 8000
