@@ -4,6 +4,7 @@ export default function MenuButton() {
   if (!IS_BROWSER) return <></>;
   const [category, setCategory] = useState<string | null>("");
   const handleCategoryChange = (category: string) => {
+    on = category
     history.pushState(
       "",
       document.title,
@@ -31,9 +32,9 @@ export default function MenuButton() {
           <option class="category" value="" selected disabled hidden>
             {"Menu"}
           </option>
-          <option class="text-[20px]">{"Home"}</option>
-          <option class="text-[20px]">{"Stats"}</option>
-          <option class="text-[20px]">{"About"}</option>
+          <option class={`text-[20px] ${window.location.pathname == "/" ? "font-medium" : "font-light"}`}>{"Home"}</option>
+          <option class={`text-[20px] ${window.location.pathname == "/stats" ? "font-medium" : "font-light"}`}>{"Stats"}</option>
+          <option class={`text-[20px] ${window.location.pathname == "/about" ? "font-medium" : "font-light"}`}>{"About"}</option>
         </select>
       </div>
     </>
