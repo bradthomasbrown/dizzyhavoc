@@ -42,6 +42,24 @@ user-select: none; /* Standard */
   -webkit-mask: 0 0 200px rgba(0,0,0,0.9) inset;
   mask: 0 0 200px rgba(0,0,0,0.9) inset;
 }
+.slidefadeout {
+  animation-duration: 6s;
+  animation-name: slidein;
+}
+@keyframes slidein {
+  0% {
+    opacity: 100;
+    margin-left: 100%;
+    width: 300%;
+  }
+  20% {
+    margin-left: 0%;
+    width: 100%;
+  }
+  100%{
+    opacity: 0;
+  }
+}
 @keyframes shimmer {
   100% {-webkit-mask-position:left}
 }

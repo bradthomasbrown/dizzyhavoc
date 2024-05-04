@@ -1,6 +1,6 @@
 export function Mayhem(){
     return(
-        <div class="z-[2] w-full h-full vignets unselectable absolute items-start sm:items-center justify-center flex flex-col sm:flex-row">
+        <div class="z-[2] w-full h-full slidefadeout unselectable absolute items-start sm:items-center justify-center flex flex-col sm:flex-row">
         <div class="flex flex-col">
         <img class="sm:size-[110px] vignets invert-0 dark:invert ml-[1rem] sm:ml-0 mb-2 size-[90px] contrast-75" draggable={false} src="/misc/Lib.png" alt="Mayhem" />
         </div>
