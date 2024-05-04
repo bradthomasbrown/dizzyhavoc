@@ -43,7 +43,7 @@ user-select: none; /* Standard */
   mask: 0 0 200px rgba(0,0,0,0.9) inset;
 }
 .slidefadeout {
-  animation-duration: 6s;
+  animation-duration: 5.7s;
   animation-name: slidein;
 }
 @keyframes slidein {
