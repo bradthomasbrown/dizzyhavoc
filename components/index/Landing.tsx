@@ -7,8 +7,8 @@ export function Landing() {
     <div>
       <div class="flex flex-row h-screen w-full justify-center items-center">
         <Noise />
-        <div class="flex flex-row gap-x-[2rem]">
-          <div class="sm:left-0 left-3 ">
+        <div class="flex flex-row gap-x-[0rem] sm:gap-x-[2rem]">
+          <div class="sm:left-0 left-3 sm:w-[80%] w-[65%] text-clip sm:text-nowrap text-start">
             <Tagline />
             <Explore />
           </div>
