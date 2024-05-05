@@ -8,7 +8,7 @@ export default function Stats() {
 
       <p class="
   mt-[1rem]
-  sm:mt-[5rem]
+  sm:mt-[3rem]
   mb-[1rem]
   font-medium
   sm:text-[1.7rem]

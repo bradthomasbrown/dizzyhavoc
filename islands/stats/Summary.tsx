@@ -167,7 +167,7 @@ export function Summary() {
               }`}
             >
               <section class="rounded flex flex-col">
-                <h1 class="unselectable font-[Poppins] dark:text-[#d2d2d2] text-[0.7rem] sm:text-[0.75rem] flex flex-col justify-center tracking-tight items-center">
+                <h1 class="unselectable font-[Poppins] dark:text-[#b2b2b2] text-[#414141] text-[0.7rem] sm:text-[0.75rem] flex flex-col justify-center tracking-tight items-center">
                   Avrg. Price
                 </h1>
                 <h1 class="font-[Poppins] text-[#000000] dark:text-[#ffffff] font-medium text-[1rem] sm:text-[1.35rem] inline">
@@ -175,7 +175,7 @@ export function Summary() {
                 </h1>
               </section>
               <section class="rounded flex flex-col">
-                <h2 class="unselectable font-[Poppins] dark:text-[#d2d2d2] text-[0.7rem] sm:text-[0.75rem] flex flex-col justify-center tracking-tight items-center">
+                <h2 class="unselectable font-[Poppins] dark:text-[#b2b2b2] text-[#414141] text-[0.7rem] sm:text-[0.75rem] flex flex-col justify-center tracking-tight items-center">
                   Mk. Cap
                 </h2>
                 <h1 class="font-[Poppins] text-[#000000] dark:text-[#ffffff] font-medium text-[1rem] sm:text-[1.35rem] inline">
@@ -183,7 +183,7 @@ export function Summary() {
                 </h1>
               </section>
               <section class="rounded flex flex-col">
-                <h1 class="unselectable font-[Poppins] dark:text-[#d2d2d2] text-[0.7rem] sm:text-[0.75rem] flex flex-col justify-center tracking-tight items-center">
+                <h1 class="unselectable font-[Poppins] dark:text-[#b2b2b2] text-[#414141] text-[0.7rem] sm:text-[0.75rem] flex flex-col justify-center tracking-tight items-center">
                   Liquidity
                 </h1>
                 <h1 class="font-[Poppins] text-[#000000] dark:text-[#ffffff] font-medium text-[1rem] sm:text-[1.35rem] inline">
@@ -191,7 +191,7 @@ export function Summary() {
                 </h1>
               </section>
               <section class="rounded flex flex-col">
-                <h1 class="unselectable font-[Poppins] dark:text-[#d2d2d2] text-[0.7rem] sm:text-[0.75rem] flex flex-col justify-center tracking-tight items-center">
+                <h1 class="unselectable font-[Poppins] dark:text-[#b2b2b2] text-[#414141] text-[0.7rem] sm:text-[0.75rem] flex flex-col justify-center tracking-tight items-center">
                   Max Δ
                 </h1>
                 <h1 class="font-[Poppins] text-[#000000] dark:text-[#ffffff] font-medium text-[1rem] sm:text-[1.35rem] inline">

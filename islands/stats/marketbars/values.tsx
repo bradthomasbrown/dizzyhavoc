@@ -32,7 +32,7 @@ export function Values(props: {
         <div class="mt-[5px] sm:mt-0 rounded-md">
           <div class="flex sm:flex-row flex-col">
             <section class="flex sm:flex-row flex-col mx-auto w-full items-center">
-              <h2 class="unselectable font-[Poppins] dark:text-[#d2d2d2] text-[#1a1a1a] sm:text-start text-[0.5rem] sm:text-[0.8rem] inline justify-center tracking-tight items-center">
+              <h2 class="unselectable font-[Poppins] dark:text-[#b2b2b2] text-[#414141] sm:text-start text-[0.5rem] sm:text-[0.8rem] inline justify-center tracking-tight items-center">
                 Liquidity:{" "}
               </h2>
               <h1 class="mx-1 font-[Poppins] text-[#000000] dark:text-[#ffffff] text-[0.80rem] sm:text-[1rem] inline">
@@ -44,7 +44,7 @@ export function Values(props: {
         <div class="mt-[5px] sm:mt-0 rounded-md">
           <div class="flex flex-row sm:flex-col">
             <section class="flex sm:flex-row flex-col mx-auto w-full items-center">
-              <h2 class="unselectable font-[Poppins] dark:text-[#d2d2d2] text-[#1a1a1a] sm:text-start text-[0.5rem] sm:text-[0.8rem] inline justify-center tracking-tight items-center">
+              <h2 class="unselectable font-[Poppins] dark:text-[#b2b2b2] text-[#414141] sm:text-start text-[0.5rem] sm:text-[0.8rem] inline justify-center tracking-tight items-center">
                 24h Vol:{" "}
               </h2>
               <h1 class="mx-1 font-[Poppins] text-[#000000] dark:text-[#ffffff] text-[0.80rem] sm:text-[1rem] inline">
@@ -56,7 +56,7 @@ export function Values(props: {
         <div class="px-[2px] sm:px-0 mt-[5px] sm:mt-0 rounded-md">
           <div class="flex flex-row sm:flex-col">
             <section class="flex sm:flex-row flex-col mx-auto w-full items-center">
-              <h2 class="unselectable font-[Poppins] dark:text-[#d2d2d2] text-[#1a1a1a] sm:text-start text-[0.5rem] sm:text-[0.8rem] inline justify-center tracking-tight items-center">
+              <h2 class="unselectable font-[Poppins] dark:text-[#b2b2b2] text-[#414141] sm:text-start text-[0.5rem] sm:text-[0.8rem] inline justify-center tracking-tight items-center">
                 24h Tx:{" "}
               </h2>
               <h1 class="mx-1 font-[Poppins] text-[#000000] dark:text-[#ffffff] text-[0.80rem] sm:text-[1rem] inline">
