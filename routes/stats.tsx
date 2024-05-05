@@ -3,7 +3,7 @@ import { Noise } from "../components/common/backgrounds/Noise.tsx";
 export default function Stats() {
   return (
     <>
-        <div class="h-full top-0"><Noise /></div>
+        <div class="h-full top-0 opacity-50"><Noise /></div>
     <div class="h-full mb-[2rem]">
 
       <p class="
