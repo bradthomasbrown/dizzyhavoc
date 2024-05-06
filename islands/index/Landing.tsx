@@ -4,7 +4,6 @@ import { Tagline } from "../../components/index/Landing/Tagline.tsx";
 import { Explore } from "./Explore.tsx";
 import { Carousel } from "./Carousel.tsx";
 import { Screen } from "./Screen.tsx";
-import AvailableOn from "../../components/index/AvailableOn.tsx";
 import { FAQ } from "./FAQ.tsx";
 
 export function Landing() {
@@ -34,7 +33,7 @@ export function Landing() {
                 <Carousel />
               </div>
             </div>
-            <div class="absolute bottom-0">
+            <div class="absolute sm:bottom-6 -bottom-6 sm:pb-0 pb-6">
               <FAQ />
             </div>
           </div>
@@ -53,10 +52,6 @@ export function Landing() {
             </div>
           </div>
         )}
-        <div class="absolute right-5 translate-y-[-50%] top-[50%]">
-        <AvailableOn />
-        </div>
-
       </div>
     </div>
   );
