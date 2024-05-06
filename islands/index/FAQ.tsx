@@ -44,28 +44,30 @@ export function FAQ() {
         <div
           onClick={() => sethidden(!hidden)}
           className="
-          text-xl 
+          text-xl
+          sm:text-3xl 
           mb-2 
-          shadow-lg 
           font-medium 
           font-[Poppins] 
           text-center 
           unselectable 
-          rounded-lg 
-          bg-blur3 
-          w-[110px] 
+          w-full 
           cursor-pointer 
           hover:scale-[100.5%] 
           active:scale-[99.5%] 
-          border
-          border-[#e9e9e981]
-          dark:border-[#ffffff13]
-        dark:bg-[#191919]
-        bg-[#f1f1f1] 
-        dark:text-[#d2d2d2] 
+          border-[1px]
+          border-e-transparent 
+          border-s-transparent 
+          border-t-[#5e5e5e4d] 
+          border-b-[#5e5e5e4d] 
+          dark:border-e-transparent 
+          dark:border-s-transparent 
+          dark:border-t-[#dbdbdb3b]
+          dark:border-b-[#dbdbdb3b]
+        dark:text-[#cccccc] 
         text-[#3d3d3d]"
         >
-          FAQ
+          Frequently Asked Questions
         </div>
         <div class="w-[410px] h-[150px] overflow-y-scroll overflow-x-hidden">
           {hidden &&
