@@ -50,6 +50,9 @@ user-select: none; /* Standard */
   animation-duration: 0.6s;
   animation-name: slidein;
 }
+.noscroll::-webkit-scrollbar {
+  display: none;
+}
 @media (min-width: 2001px) {
   .xl-scale{
     scale: 1.15;

@@ -36,33 +36,7 @@ export function FAQ() {
       question: "How does it work?",
       answer: "DizzyHavoc works by...",
     },
-    {
-        question: "What is DizzyHavoc?",
-        answer:
-          "DizzyHavoc is a new deployment method for smart contracts, specifically designed to reduce costs and enhance flexibility.",
-      },
-      {
-        question: "How does it work?",
-        answer: "DizzyHavoc works by...",
-      },
-      {
-        question: "What is DizzyHavoc?",
-        answer:
-          "DizzyHavoc is a new deployment method for smart contracts, specifically designed to reduce costs and enhance flexibility.",
-      },
-      {
-        question: "How does it work?",
-        answer: "DizzyHavoc works by...",
-      },
-      {
-        question: "What is DizzyHavoc?",
-        answer:
-          "DizzyHavoc is a new deployment method for smart contracts, specifically designed to reduce costs and enhance flexibility.",
-      },
-      {
-        question: "How does it work?",
-        answer: "DizzyHavoc works by...",
-      },
+    
   ];
     return (
       <div class="flex w-full items-end flex-col sm:flex-row gap-x-4">
@@ -96,7 +70,7 @@ export function FAQ() {
         >
           Frequently Asked Questions
         </div>
-        <div class="sm:w-[610px] sm:h-[250px] w-screen h-[200px] overflow-y-scroll overflow-x-hidden">
+        <div class="sm:w-[610px] sm:h-[250px] w-screen h-[200px] flex flex-col justify-start sm:justify-end items-start overflow-y-scroll overflow-x-hidden noscroll">
           {hidden &&
             faqItems.map((item) => (
               <FAQItem question={item.question} answer={item.answer} />
