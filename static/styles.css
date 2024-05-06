@@ -44,6 +44,10 @@ user-select: none; /* Standard */
 }
 .slidefadeout {
   animation-duration: 4s;
+  animation-name: slideinfadeout;
+}
+.slidein{
+  animation-duration: 0.6s;
   animation-name: slidein;
 }
 @media (min-width: 2001px) {
@@ -58,7 +62,7 @@ user-select: none; /* Standard */
     display: none;
   }
 }
-@keyframes slidein {
+@keyframes slideinfadeout {
   0% {
     opacity: 0;
     transform: translateY(-100%);
@@ -74,6 +78,20 @@ user-select: none; /* Standard */
   100% {
     opacity: 0;
     transform: translateY(100%);
+  }
+}
+@keyframes slidein {
+  0% {
+    opacity: 0;
+    transform: translateY(-100%);
+  }
+  50%{
+    opacity: 0.7;
+    transform: translateY(0%);
+  }
+  100% {
+    opacity: 1;
+    transform: translateY(0%);
   }
 }
 @keyframes shimmer {
