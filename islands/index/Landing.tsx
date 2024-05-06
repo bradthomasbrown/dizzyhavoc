@@ -39,14 +39,16 @@ export function Landing() {
           </div>
         ) : (
           <div className="flex flex-col gap-y-3 relative">
-            <div class="sm:w-[calc(100vw-150px)] sm:h-[30vw] w-screen h-screen">
+            <div class="sm:w-[calc(100vw-150px)] sm:h-[30vw] w-screen h-full">
               <Screen />
             </div>
             <div
-              className="w-[150px] h-[30px] rounded-lg absolute sm:bottom-0 bottom-[11%] left-[50%] translate-x-[-50%]"
+              className="w-[90px] sm:w-[120px] h-[30px] rounded-lg absolute sm:bottom-0 bottom-[11%] left-[50%] translate-x-[-50%]"
               onClick={toggler}
             >
+              <div class="translate-x-[-150%] sm:translate-x-[0%]">
               <Explore text="Exit" />
+              </div>
             </div>
           </div>
         )}

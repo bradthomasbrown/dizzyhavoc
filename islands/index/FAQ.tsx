@@ -6,13 +6,13 @@ function FAQItem({ question, answer }) {
   return (
     <div className="flex flex-col vignets">
       <div
-        class="text-xl font-[Poppins] unselectable dark:text-[#d2d2d2] text-[#3d3d3d] px-3 my-1 rounded-lg bg-blur3 w-[400px] cursor-pointer hover:scale-[100.5%] active:scale-[99.5%]"
+        class="text-xl font-[Poppins] unselectable dark:text-[#d2d2d2] text-[#3d3d3d] px-3 my-1 text-center rounded-lg bg-blur3 sm:w-[240px] w-screen cursor-pointer hover:scale-[100.5%] active:scale-[99.5%]"
         onClick={() => setexp(!exp)}
       >
         {question}
       </div>
       {exp && (
-        <p class="text-md font-[Poppins] unselectable dark:text-[#d2d2d2] text-[#3d3d3d]">
+        <p class="text-md font-[Poppins] sm:w-[400px] w-screen unselectable dark:text-[#d2d2d2] text-[#3d3d3d]">
           {answer}
         </p>
       )}
@@ -35,7 +35,7 @@ export function FAQ() {
 
   return (
     <>
-      <div class="sm:w-[650px] w-screen h-[150px] overflow-y-scroll overflow-x-hidden">
+      <div class="sm:w-[410px] w-screen h-[150px] overflow-y-scroll overflow-x-hidden">
         <div
           onClick={() => sethidden(!hidden)}
           className="

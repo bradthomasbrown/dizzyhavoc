@@ -5,7 +5,9 @@ export function Explore(props : {text:string}) {
         text-2xl
         text-[#3f3f3f]
         dark:text-[#bebebe]
-        text-center w-[150px]
+        w-[90px]
+        sm:w-[120px]
+        text-center
         shadow-lg font-[Poppins]
         rounded-md
         hover:scale-[102%]

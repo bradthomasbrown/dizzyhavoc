@@ -1,7 +1,3 @@
-export const Title = "Trading game & Dusting."
-export const Description = "Using $DZHV, with rewards."
-export const P = "Coming soon."
-export const Link = ""
 export function Gamefi(){
     return(
       <div class="z-[2] w-full h-full slidefadeout unselectable absolute">

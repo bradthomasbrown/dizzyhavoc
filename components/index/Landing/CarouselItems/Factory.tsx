@@ -1,7 +1,3 @@
-export const Title = "ERC token Factory"
-export const Description = "EVM Compatible, With drastically reduced fees/costs."
-export const P = ""
-export const Link = ""
 export function Factory(){
     return(
         <div class="z-[2] w-full h-full slidefadeout unselectable absolute">

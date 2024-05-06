@@ -1,7 +1,3 @@
-export const Title = "Vertigo, a cutting-edge bridge for $DZHV."
-export const Description = "Fast and secure, with reduced fees and deep optimizations."
-export const P = "Live on testnet, try it now"
-export const Link = "https://beta.dzhv.io/bridge"
 export function Vertigo(){
     return(
       <div class="z-[2] w-full h-full slidefadeout unselectable absolute">
