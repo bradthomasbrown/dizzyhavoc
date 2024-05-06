@@ -56,7 +56,7 @@ export function Screen() {
     <div className="w-full h-full sm:mt-6 mt-0">
       <div
         onClick={() => handleScreenClick()}
-        className="sm:min-h-[70%] sm:max-h-[70%] min-h-[70svh] max-h-[70svh] relative sm:w-[70%] w-full justify-center mx-auto overflow-hidden rounded-lg shadow-inner dark:shadow-none shadow-[#d6d6d6] dark:shadow-[#141414] bg-blur4"
+        className="sm:min-h-[70%] sm:max-h-[70%] vignets min-h-[70svh] max-h-[70svh] relative sm:w-[70%] w-full justify-center mx-auto overflow-hidden rounded-lg shadow-inner dark:shadow-none shadow-[#d6d6d6] dark:shadow-[#141414] bg-blur4"
       >
         {loadingbar}
         <CurrentItem />
