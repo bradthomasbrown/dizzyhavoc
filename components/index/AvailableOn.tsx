@@ -1,11 +1,7 @@
 export default function Available() {
   return (
     <div>
-      <p class="font-[Poppins] unselectable dark:text-[#d2d2d2] mb-2 sm:mb-6 text-[1.1rem] sm:text-[2rem] text-center">
-        Available on
-        <br />
-      </p>
-      <div class="flex flex-row gap-8 sm:scale-100 scale-75 justify-center">
+      <div class="flex flex-col gap-7 justify-center items-center">
         <a
           draggable={false}
           target="_blank"
@@ -14,7 +10,7 @@ export default function Available() {
           <img
             draggable={false}
             src="/chains/eth.svg"
-            class="h-[60px] hover:scale-[105%]"
+            class="h-[40px] hover:scale-[105%]"
             title="ethereum"
             alt="ethereum"
           />
@@ -27,7 +23,7 @@ export default function Available() {
           <img
             draggable={false}
             src="/chains/avax.svg"
-            class="size-[60px] hover:scale-[105%]"
+            class="size-[40px] hover:scale-[105%]"
             title="avalanche"
             alt="avalanche"
           />
@@ -40,7 +36,7 @@ export default function Available() {
           <img
             draggable={false}
             src="/chains/arb.svg"
-            class="size-[60px] hover:scale-[105%]"
+            class="size-[40px] hover:scale-[105%]"
             title="arbitrum"
             alt="arbitrum"
           />
@@ -53,7 +49,7 @@ export default function Available() {
           <img
             draggable={false}
             src="/chains/bsc.svg"
-            class="size-[60px] hover:scale-[105%]"
+            class="size-[40px] hover:scale-[105%]"
             title="binance chain"
             alt="binance chain"
           />
@@ -66,7 +62,7 @@ export default function Available() {
           <img
             draggable={false}
             src="/chains/base.svg"
-            class="size-[60px] hover:scale-[105%]"
+            class="size-[40px] hover:scale-[105%]"
             title="base"
             alt="base"
           />

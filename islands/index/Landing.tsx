@@ -4,18 +4,19 @@ import { Tagline } from "../../components/index/Landing/Tagline.tsx";
 import { Explore } from "./Explore.tsx";
 import { Carousel } from "./Carousel.tsx";
 import { Screen } from "./Screen.tsx";
+import AvailableOn from "../../components/index/AvailableOn.tsx";
 import { FAQ } from "./FAQ.tsx";
 
 export function Landing() {
   const [toggle, setToggle] = useState(false);
 
-  const toggler = () => {
-    setToggle(!toggle);
-  };
-
   return (
     <div>
-      <div className={`flex flex-row h-screen w-full justify-center ${toggle ? "items-start sm:items-center":"items-center"}`}>
+      <div
+        className={`flex flex-row sm:h-screen h-[calc(100vh-4.5rem)] w-full justify-center ${
+          toggle ? "items-start sm:items-center" : "items-center"
+        }`}
+      >
         <Noise />
         {!toggle ? (
           <div class="flex flex-col">
@@ -24,7 +25,7 @@ export function Landing() {
                 <Tagline />
                 <div
                   className="mt-[1rem] w-[150px] h-[30px] rounded-lg"
-                  onClick={toggler}
+                  onClick={() => setToggle(!toggle)}
                 >
                   <Explore text="Explore" />
                 </div>
@@ -40,18 +41,22 @@ export function Landing() {
         ) : (
           <div className="flex flex-col gap-y-3 relative">
             <div class="sm:w-[calc(100vw-150px)] sm:h-[30vw] w-screen h-full">
-              <Screen />
+              <Screen /> 
             </div>
             <div
-              className="w-[90px] sm:w-[120px] h-[30px] rounded-lg absolute sm:bottom-0 bottom-[11%] left-[50%] translate-x-[-50%]"
-              onClick={toggler}
+              className="w-[110px] sm:w-[160px] h-[35px] sm:h-[40px] rounded-lg absolute sm:bottom-0 bottom-[11%] left-[50%] translate-x-[-50%]"
+              onClick={() => setToggle(!toggle)}
             >
               <div class="translate-x-[-150%] sm:translate-x-[0%]">
-              <Explore text="Exit" />
+                <Explore text="X" />
               </div>
             </div>
           </div>
         )}
+        <div class="absolute right-5 translate-y-[-50%] top-[50%]">
+        <AvailableOn />
+        </div>
+
       </div>
     </div>
   );

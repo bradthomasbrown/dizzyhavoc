@@ -1,6 +1,5 @@
 import { useEffect, useState } from "preact/hooks";
 import { IS_BROWSER } from "$fresh/runtime.ts";
-import AvailableOn from "../../components/index/AvailableOn.tsx";
 import {
   Vertigo,
   Mayhem,
@@ -53,7 +52,7 @@ export function Screen() {
     </div>
   );
   return (
-    <div className="w-full h-full sm:mt-6 mt-0">
+    <div className="w-full h-full flex flex-row sm:mt-6 mt-0">
       <div
         onClick={() => handleScreenClick()}
         className="sm:min-h-[70%] sm:max-h-[70%] vignets min-h-[70svh] max-h-[70svh] relative sm:w-[70%] w-full justify-center mx-auto overflow-hidden rounded-lg shadow-inner dark:shadow-none shadow-[#d6d6d6] dark:shadow-[#141414] bg-blur4"
@@ -72,9 +71,6 @@ export function Screen() {
             class="sm:size-[30px] size-[28px] contrast-[0.3] invert-0 dark:invert"
           />
         </div>
-      </div>
-      <div class="scale-[70%] sm:scale-50">
-        <AvailableOn />
       </div>
     </div>
   );
