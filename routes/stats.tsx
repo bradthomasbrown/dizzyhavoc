@@ -17,7 +17,7 @@ export default function Stats() {
   mx-auto
   text-center
   dark:text-[#d0d0d0]
-  text-[#3d3d3d]
+  text-[#202020]
   font-[Poppins]
   lg:max-w-[32rem]
   max-w-full
