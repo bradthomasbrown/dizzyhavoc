@@ -65,7 +65,7 @@ export function FAQ() {
       },
   ];
     return (
-      <div class="flex w-full sm:items-end items-center flex-col sm:flex-row gap-x-4">
+      <div class="flex w-full items-end flex-col sm:flex-row gap-x-4">
         <div
           onClick={() => sethidden(!hidden)}
           className="
