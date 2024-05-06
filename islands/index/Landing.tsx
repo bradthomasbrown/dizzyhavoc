@@ -47,8 +47,8 @@ export function Landing() {
               className="w-[110px] sm:w-[160px] h-[35px] sm:h-[40px] rounded-lg absolute sm:bottom-0 bottom-[11%] left-[50%] translate-x-[-50%]"
               onClick={() => setToggle(!toggle)}
             >
-              <div class="left-[50%] mt-[18svh]">
-                <Explore text="X" />
+              <div class="sm:mt-0 mt-[18svh]">
+                <Explore text="Close" />
               </div>
             </div>
           </div>
