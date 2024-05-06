@@ -1,7 +1,7 @@
 export default function Available() {
   return (
     <div>
-      <div class="flex flex-col gap-7 justify-center items-center">
+      <div class="flex sm:flex-col flex-row gap-7 invisible sm:visible justify-center items-center">
         <a
           draggable={false}
           target="_blank"
