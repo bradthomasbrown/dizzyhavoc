@@ -25,7 +25,7 @@ export function FAQ() {
   const faqItems = [
     {
       question: "What is DizzyHavoc?",
-      answer: "DizzyHavoc is a decentralized ecosystem that allows you to...",
+      answer: "DizzyHavoc is a new deployment method for smart contracts, specifically designed to reduce costs and enhance flexibility.",
     },
     {
       question: "How does it work?",
@@ -35,7 +35,7 @@ export function FAQ() {
 
   return (
     <>
-      <div class="w-[650px] h-[150px] overflow-y-scroll overflow-x-hidden">
+      <div class="sm:w-[650px] w-screen h-[150px] overflow-y-scroll overflow-x-hidden">
         <div
           onClick={() => sethidden(!hidden)}
           className="

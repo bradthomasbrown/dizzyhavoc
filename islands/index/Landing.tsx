@@ -39,7 +39,7 @@ export function Landing() {
           </div>
         ) : (
           <div className="flex flex-col gap-y-3 relative">
-            <div class="sm:w-[calc(100vw-150px)] sm:h-[35vw] w-screen h-screen">
+            <div class="sm:w-[calc(100vw-150px)] sm:h-[30vw] w-screen h-screen">
               <Screen />
             </div>
             <div
