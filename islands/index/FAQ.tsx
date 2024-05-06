@@ -14,7 +14,7 @@ function FAQItem({ question, answer }) {
           {question}
         </div>
         {exp && (
-          <p class="text-md font-[Poppins] sm:w-[400px] w-screen unselectable dark:text-[#d2d2d2] text-[#3d3d3d]">
+          <p class="text-md font-[Poppins] sm:w-full w-screen unselectable dark:text-[#d2d2d2] text-[#3d3d3d]">
             {answer}
           </p>
         )}
@@ -36,11 +36,36 @@ export function FAQ() {
       question: "How does it work?",
       answer: "DizzyHavoc works by...",
     },
+    {
+        question: "What is DizzyHavoc?",
+        answer:
+          "DizzyHavoc is a new deployment method for smart contracts, specifically designed to reduce costs and enhance flexibility.",
+      },
+      {
+        question: "How does it work?",
+        answer: "DizzyHavoc works by...",
+      },
+      {
+        question: "What is DizzyHavoc?",
+        answer:
+          "DizzyHavoc is a new deployment method for smart contracts, specifically designed to reduce costs and enhance flexibility.",
+      },
+      {
+        question: "How does it work?",
+        answer: "DizzyHavoc works by...",
+      },
+      {
+        question: "What is DizzyHavoc?",
+        answer:
+          "DizzyHavoc is a new deployment method for smart contracts, specifically designed to reduce costs and enhance flexibility.",
+      },
+      {
+        question: "How does it work?",
+        answer: "DizzyHavoc works by...",
+      },
   ];
-  const isMobile = globalThis.window?.matchMedia("(pointer: coarse)").matches;
-  if (!isMobile) {
     return (
-      <>
+      <div class="flex w-screen sm:items-end items-center flex-col sm:flex-row gap-x-4">
         <div
           onClick={() => sethidden(!hidden)}
           className="
@@ -52,6 +77,8 @@ export function FAQ() {
           text-center 
           unselectable 
           w-full 
+          sm:h-[38px]
+          h-[30px]
           cursor-pointer 
           hover:scale-[100.5%] 
           active:scale-[99.5%] 
@@ -69,50 +96,13 @@ export function FAQ() {
         >
           Frequently Asked Questions
         </div>
-        <div class="w-[410px] h-[150px] overflow-y-scroll overflow-x-hidden">
+        <div class="sm:w-[610px] sm:h-[250px] w-screen h-[200px] overflow-y-scroll overflow-x-hidden">
           {hidden &&
             faqItems.map((item) => (
               <FAQItem question={item.question} answer={item.answer} />
             ))}
         </div>
-      </>
+      </div>
     );
-  } else if (isMobile) {
-    return (
-      <>
-        <div class="w-screen h-[150px] overflow-y-scroll overflow-x-hidden">
-          <div
-            onClick={() => sethidden(!hidden)}
-            className="
-            text-xl 
-            mb-2 
-            shadow-lg 
-            font-medium 
-            font-[Poppins] 
-            text-center 
-            unselectable 
-            rounded-lg 
-            bg-blur3 
-            w-[110px] 
-            cursor-pointer 
-            hover:scale-[100.5%] 
-            active:scale-[99.5%] 
-            border
-            border-[#e9e9e981]
-          dark:border-[#ffffff13]
-          dark:bg-[#191919]
-          bg-[#f1f1f1] 
-          dark:text-[#d2d2d2] 
-          text-[#3d3d3d]"
-          >
-            FAQ
-          </div>
-          {!hidden &&
-            faqItems.map((item) => (
-              <FAQItem question={item.question} answer={item.answer} />
-            ))}
-        </div>
-      </>
-    );
-  }
+
 }
