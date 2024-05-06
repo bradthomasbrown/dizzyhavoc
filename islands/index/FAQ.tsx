@@ -26,6 +26,7 @@ function FAQItem({ question, answer }) {
 export function FAQ() {
   if (!IS_BROWSER) return null;
   const [hidden, sethidden] = useState(false);
+  const [read, setread] = useState(false);
   const faqItems = [
     {
       question: "What is DizzyHavoc?",
@@ -36,13 +37,17 @@ export function FAQ() {
       question: "How does it work?",
       answer: "DizzyHavoc works by...",
     },
-    
   ];
-    return (
-      <div class="flex w-full items-end flex-col sm:flex-row gap-x-4">
-        <div
-          onClick={() => sethidden(!hidden)}
-          className="
+  const handleClick = () => {
+    sethidden(!hidden);
+    setread(true);
+  };
+  return (
+    <div class="flex w-full items-end flex-col sm:flex-row gap-x-4">
+      <div
+        onClick={() => handleClick()}
+        className={`
+          ${hidden || read ? "" : "shimmer3"}
           text-xl
           sm:text-3xl 
           mb-2 
@@ -66,17 +71,16 @@ export function FAQ() {
           dark:border-t-[#dbdbdb3b]
           dark:border-b-[#dbdbdb3b]
         dark:text-[#cccccc] 
-        text-[#3d3d3d]"
-        >
-          Frequently Asked Questions
-        </div>
-        <div class="sm:w-[610px] sm:h-[250px] w-screen h-[200px] flex flex-col justify-start sm:justify-end items-start overflow-y-scroll overflow-x-hidden noscroll">
-          {hidden &&
-            faqItems.map((item) => (
-              <FAQItem question={item.question} answer={item.answer} />
-            ))}
-        </div>
+        text-[#3d3d3d]`}
+      >
+        Frequently Asked Questions
       </div>
-    );
-
+      <div class="sm:w-[610px] sm:h-[250px] w-screen h-[200px] flex flex-col justify-start sm:justify-end items-start overflow-y-scroll overflow-x-hidden noscroll">
+        {hidden &&
+          faqItems.map((item) => (
+            <FAQItem question={item.question} answer={item.answer} />
+          ))}
+      </div>
+    </div>
+  );
 }
