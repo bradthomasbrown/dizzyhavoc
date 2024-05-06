@@ -1,7 +1,12 @@
 import { useEffect, useState } from "preact/hooks";
 import { IS_BROWSER } from "$fresh/runtime.ts";
 import AvailableOn from "../../components/index/AvailableOn.tsx";
-import { Vertigo, Mayhem, Gamefi, Factory } from "../../components/index/Landing/ScreenItems/mod.ts";
+import {
+  Vertigo,
+  Mayhem,
+  Gamefi,
+  Factory,
+} from "../../islands/index/Landing/ScreenItems/mod.ts";
 
 const items = [Vertigo, Mayhem, Gamefi, Factory]; // Add more screen items here
 
@@ -44,8 +49,7 @@ export function Screen() {
       <div
         class="h-[3px] bg-gradient-to-r from-transparent via-[#9b9b9b4f] to-[#9b9b9b] dark:bg-gradient-to-r dark:from-transparent dark:to-[#565656] rounded-xl"
         style={`width: ${timer}%`}
-      >
-      </div>
+      ></div>
     </div>
   );
   return (
@@ -62,12 +66,16 @@ export function Screen() {
           onClick={Skip}
           onClickCapture={handleScreenClick} // 🤔
         >
-          <img src="/svgs/caretright.svg" draggable={false} class="sm:size-[30px] size-[28px] contrast-[0.3] invert-0 dark:invert"/>
+          <img
+            src="/svgs/caretright.svg"
+            draggable={false}
+            class="sm:size-[30px] size-[28px] contrast-[0.3] invert-0 dark:invert"
+          />
         </div>
       </div>
       <div class="scale-[70%] sm:scale-50">
         <AvailableOn />
-        </div>
+      </div>
     </div>
   );
 }
