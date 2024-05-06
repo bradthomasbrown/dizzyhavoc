@@ -6,7 +6,7 @@ import {
   Mayhem,
   Gamefi,
   Factory,
-} from "../../islands/index/Landing/ScreenItems/mod.ts";
+} from "../../components/index/Landing/ScreenItems/mod.ts";
 
 const items = [Vertigo, Mayhem, Gamefi, Factory]; // Add more screen items here
 
