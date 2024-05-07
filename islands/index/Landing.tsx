@@ -39,6 +39,9 @@ export function Landing() {
           </div>
         ) : ( // Screen view
           <div className="flex flex-col gap-y-3 relative">
+                 <p class="font-[Poppins] font-medium absolute top-[10%] sm:-top-6 left-[20%] translate-x-[-50%] z-[5] unselectable tracking-tighter text-[1.7rem] sm:text-[2rem] dark:text-[#d2d2d2] text-[#3d3d3d]">
+        Featured.
+      </p>
             <div class="sm:w-[calc(100vw-150px)] sm:h-[30vw] w-screen h-full">
               <Screen /> 
             </div>
