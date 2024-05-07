@@ -77,12 +77,12 @@ export function FAQ() {
     {
       question: "Which chains are supported?",
       answer:
-        "Ethereum, Arbitrum, Avalanche, BSC & Base. More EVM based chains are coming soon.",
+        "Ethereum, Arbitrum, Avalanche, BSC & Base. More EVM chains are coming soon.",
     },
     {
       question: "Prices are different on each chain?",
       answer:
-        "Differents liquidity pools for each chain leads to different prices. It will eventually even out, or not.",
+        "Different liquidity pools for each chain lead to different prices. It will eventually even out, or not.",
     },
     {
       question: "Can I contribute?",
@@ -93,8 +93,8 @@ export function FAQ() {
             to access the base code.
           </li>
           <li>
-            You can also contribute by creating DizzyHavoc related art or
-            documentation, you creations might end up on the website!
+          You can also contribute by creating DizzyHavoc related art or documentation;
+           your creations might end up on the website!
           </li>
         </ul>
       ),
