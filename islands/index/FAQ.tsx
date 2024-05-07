@@ -97,7 +97,7 @@ export function FAQ() {
         onClick={() => handleClick()}
         className={`
           ${hidden || read ? "" : "shimmer3"}
-          text-xl
+          text-md
           sm:text-3xl 
           mb-2 
           font-medium 
@@ -106,7 +106,7 @@ export function FAQ() {
           unselectable 
           w-[80%]
           sm:h-[38px]
-          h-[30px]
+          h-[25px]
           cursor-pointer 
           hover:scale-[100.5%] 
           active:scale-[99.5%] 

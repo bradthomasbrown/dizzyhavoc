@@ -12,7 +12,7 @@ export function Landing() {
   return (
     <div>
       <div
-        className={`flex relative flex-row sm:h-screen h-[85svh] w-full justify-center ${
+        className={`flex relative flex-row sm:h-screen h-[95svh] w-full justify-center ${
           toggle ? "items-start sm:items-center" : "items-center"
         }`}
       >
@@ -33,7 +33,7 @@ export function Landing() {
                 <Carousel />
               </div>
             </div>
-            <div class="absolute sm:bottom-6 bottom-0">
+            <div class="absolute sm:bottom-[10%] bottom-0">
               <FAQ />
             </div>
           </div>
