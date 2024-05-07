@@ -1,8 +1,8 @@
 import { useEffect, useState } from "preact/hooks";
 import { IS_BROWSER } from "$fresh/runtime.ts";
-import { Vertigo, Mayhem, Gamefi, Factory } from "../../components/index/Landing/CarouselItems/mod.ts";
+import { Vertigo_img, Mayhem_img, Gamefi_img, Factory_img } from "../../components/index/Landing/CarouselItems/mod.ts";
 
-const items = [Vertigo, Mayhem, Gamefi, Factory]; // Add more screen items here
+const items = [Vertigo_img, Mayhem_img, Gamefi_img, Factory_img]; // Add more screen items here
 
 export function Carousel() {
   if (!IS_BROWSER) return null;
@@ -21,7 +21,7 @@ export function Carousel() {
   const CurrentItem = items[index];
   return (
     <div className="relative size-full overflow-hidden">
-      <CurrentItem />
+      <CurrentItem addclass="slidefadeout absolute" />
     </div>
   );
 }

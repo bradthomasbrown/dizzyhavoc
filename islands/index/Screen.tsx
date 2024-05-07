@@ -6,6 +6,12 @@ import {
   Gamefi,
   Factory,
 } from "../../components/index/Landing/ScreenItems/mod.ts";
+import {
+  Vertigo_img,
+  Mayhem_img,
+  Gamefi_img,
+  Factory_img,
+} from "../../components/index/Landing/CarouselItems/mod.ts";
 
 const items = [Vertigo, Mayhem, Gamefi, Factory]; // Add more screen items here
 
@@ -37,11 +43,18 @@ export function Screen() {
     };
   }, [paused]);
 
-  function Skip() {
-    setCurrentItemIndex((prevIndex) => (prevIndex + 1) % items.length);
+  function Skip(index: number) {
+    setCurrentItemIndex(() => index);
     setTimer(0);
   }
-
+  const selectbar = (
+    <div class="flex flex-row translate-y-[3.5rem] justify-center">
+      <div title="Vertigo, the bridge for $DZHV" class="size-[90px] sm:size-[120px] scale-50 hover:scale-[52%] active:scale-[48%]" onClick={() => Skip(0)}><Vertigo_img addclass="cursor-pointer"/></div>
+      <div title="Mayhem, the new optimized and opensource Web3 library." class="size-[90px] sm:size-[120px] scale-50 hover:scale-[52%] active:scale-[48%]" onClick={() => Skip(1)}><Mayhem_img addclass="cursor-pointer"/></div>
+      <div title="Gamefi features, coming soon." class="size-[90px] sm:size-[120px] scale-50 hover:scale-[52%] active:scale-[48%]" onClick={() => Skip(2)}><Gamefi_img addclass="cursor-pointer"/></div>
+      <div title="The Factory, an idea that will soon be developed." class="size-[90px] sm:size-[120px] scale-50 hover:scale-[52%] active:scale-[48%]" onClick={() => Skip(3)}><Factory_img addclass="cursor-pointer"/></div>
+    </div>
+  )
   const CurrentItem = items[currentItemIndex];
   const loadingbar = (
     <div class="bottom-2 absolute px-4 items-center justify-center rounded-xl h-[1px] w-full">
@@ -52,26 +65,26 @@ export function Screen() {
     </div>
   );
   return (
-    <div className="w-full h-full flex flex-row sm:mt-6 mt-0">
+    <div className="w-full h-full flex flex-row sm:mt-6 mt-0 relative">
       <div
         onClick={() => handleScreenClick()}
         className="sm:min-h-[70%] sm:max-h-[70%] slidein min-h-[85svh] max-h-[85svh] relative sm:w-[70%] w-full justify-center mx-auto overflow-hidden rounded-lg shadow-inner dark:shadow-none shadow-[#d6d6d6] dark:shadow-[#141414] bg-blur4"
       >
         {loadingbar}
         <CurrentItem />
-        <div
-          id="skip"
-          class="font-medium z-50 font-[Poppins] mb-5 active:scale-[98%] absolute cursor-pointer unselectable bottom-0 left-5 tracking-tighter text-[0.8rem] sm:text-[1.7rem] text-start dark:text-[#969696cc] text-[#636363cc]"
-          onClick={Skip}
-          onClickCapture={handleScreenClick} // 🤔
-        >
-          <img
-            src="/svgs/caretright.svg"
-            draggable={false}
-            class="sm:size-[30px] size-[28px] contrast-[0.3] invert-0 dark:invert"
-          />
+        <div class="absolute bottom-2 right-2">
+          {paused?  <img class="size-[30px] contrast-0 invert-0 dark:invert" src="./svgs/pause.svg"></img> :  <img class="size-[30px] contrast-0 invert-0 dark:invert" src="./svgs/play.svg"></img>}
         </div>
       </div>
+      <div class="absolute z-10 bottom-[18%] left-[50%] translate-x-[-50%]">
+      {selectbar}
+
+      </div>
+      <div class="absolute z-[5] bottom-[10%] left-[50%] translate-x-[-50%]">
+      <div className="trapeze w-[calc(100vw-4rem)] sm:w-[35vw] h-[50px] shadow-lg"></div>
+
+      </div>
+
     </div>
   );
 }

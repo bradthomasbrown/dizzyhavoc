@@ -140,6 +140,21 @@ user-select: none; /* Standard */
 }
 
 @media (prefers-color-scheme: light) {
+  .trapeze {
+    color: white;
+    height: 50px;
+    background: rgb(
+      163,
+      163,
+      163
+    ); /* Fallback color for browsers that don't support gradients */
+    background: linear-gradient(
+      to bottom,
+      rgb(237, 237, 237),
+      rgb(230, 230, 230)
+    ); /* Gradient definition */
+    transform: perspective(10px) rotateX(1deg);
+  }
   ::-webkit-scrollbar-thumb {
     background-color: #858585; /* color of the scroll thumb */
     border-radius: 6px; /* roundness of the scroll thumb */
@@ -168,6 +183,17 @@ user-select: none; /* Standard */
 }
 
   @media (prefers-color-scheme: dark) {
+    .trapeze {
+      color: #191919;
+      height: 50px;
+      background: #191919; /* Fallback color for browsers that don't support gradients */
+      background: linear-gradient(
+        to bottom,
+        #191919,
+        #262626
+      ); /* Gradient definition */
+      transform: perspective(10px) rotateX(1deg);
+    }
   ::-webkit-scrollbar-thumb {
     background-color: #777777; /* color of the scroll thumb */
     border-radius: 12px; /* roundness of the scroll thumb */
