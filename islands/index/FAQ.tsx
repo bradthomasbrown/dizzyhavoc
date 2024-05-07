@@ -34,15 +34,15 @@ export function FAQ() {
   const faqItems = [
     {
       question: "What is DizzyHavoc?",
-      answer:
-      <ul>
-      <li>
-        DizzyHavoc is a new deployment method for smart contracts, specifically designed to reduce costs and enhance flexibility.
-      </li>
-      <li>
-        It's also a movement of optimization in the realm of Web3.
-      </li>
-    </ul>
+      answer: (
+        <ul>
+          <li>
+            DizzyHavoc is a new deployment method for smart contracts,
+            specifically designed to reduce costs and enhance flexibility.
+          </li>
+          <li>It's also a movement of optimization in the realm of Web3.</li>
+        </ul>
+      ),
     },
     {
       question: "What makes DizzyHavoc unique?",
@@ -85,13 +85,23 @@ export function FAQ() {
         "Differents liquidity pools for each chain leads to different prices. It will eventually even out, or not.",
     },
     {
-      question: "When marketing?",
-      answer: ".",
+      question: "Can I contribute?",
+      answer: (
+        <ul>
+          <li>
+            Yes, contributions are greatly appreciated. You can check the github
+            to access the base code.
+          </li>
+          <li>
+            You can also contribute by creating DizzyHavoc related art or
+            documentation, you creations might end up on the website!
+          </li>
+        </ul>
+      ),
     },
     {
-      question: "Can I contribute?",
-      answer:
-        "Yes, contributions are greatly appreciated. You can check the github to access the base code. You can also contribute by creating DizzyHavoc related art or documentation, you creations might end up on the website!",
+      question: "When marketing?",
+      answer: ".",
     },
   ];
   const handleClick = () => {
