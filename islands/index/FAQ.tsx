@@ -3,15 +3,15 @@ import { IS_BROWSER } from "$fresh/runtime.ts";
 
 function FAQItem({ question, answer }) {
   const [exp, setexp] = useState(false);
-
   return (
     <>
       <div className="flex flex-col vignets">
         <div
-          class="text-xl font-[Poppins] unselectable dark:text-[#d2d2d2] text-[#3d3d3d] px-3 my-1 text-center rounded-lg bg-blur3 sm:w-[240px] w-screen cursor-pointer hover:scale-[100.5%] active:scale-[99.5%]"
+          class="sm:text-2xl text-xl tfont-[Poppins] relative unselectable dark:text-[#d2d2d2] text-[#3d3d3d] px-3 my-1 text-center rounded-md bg-blur3 sm:w-full w-screen cursor-pointer hover:scale-[100.5%] active:scale-[99.5%]"
           onClick={() => setexp(!exp)}
         >
-          {question}
+        {question}
+        {exp ? <a class="text-lg ml-1 font-[Poppins] absolute right-1">-</a> : <a class="text-lg ml-1 font-[Poppins] absolute right-1">+</a>}
         </div>
         {exp && (
           <p class="text-md font-[Poppins] sm:w-full w-screen unselectable dark:text-[#d2d2d2] text-[#3d3d3d]">
@@ -34,9 +34,25 @@ export function FAQ() {
         "DizzyHavoc is a new deployment method for smart contracts, specifically designed to reduce costs and enhance flexibility.",
     },
     {
-      question: "How does it work?",
-      answer: "DizzyHavoc works by...",
+      question: "What makes DizzyHavoc unique?",
+      answer: "The utilization of the EVM bytecode language instead of Solidity. This implies a more low-level and hardware-specific form of programming, closely tied to the architecture of CPUs.",
     },
+    {
+        question: "What makes DizzyHavoc unique?",
+        answer: "The utilization of the EVM bytecode language instead of Solidity. This implies a more low-level and hardware-specific form of programming, closely tied to the architecture of CPUs.",
+      },
+      {
+        question: "What makes DizzyHavoc unique?",
+        answer: "The utilization of the EVM bytecode language instead of Solidity. This implies a more low-level and hardware-specific form of programming, closely tied to the architecture of CPUs.",
+      },
+      {
+        question: "What makes DizzyHavoc unique?",
+        answer: "The utilization of the EVM bytecode language instead of Solidity. This implies a more low-level and hardware-specific form of programming, closely tied to the architecture of CPUs.",
+      },
+      {
+        question: "What makes DizzyHavoc unique?",
+        answer: "The utilization of the EVM bytecode language instead of Solidity. This implies a more low-level and hardware-specific form of programming, closely tied to the architecture of CPUs.",
+      },
   ];
   const handleClick = () => {
     sethidden(!hidden);
@@ -75,7 +91,7 @@ export function FAQ() {
       >
         Frequently Asked Questions
       </div>
-      <div class="sm:w-[610px] sm:h-[250px] w-screen h-[200px] flex flex-col justify-start sm:justify-end items-start overflow-y-scroll overflow-x-hidden noscroll">
+      <div class="w-screen sm:w-[710px] h-[200px] sm:h-[220px] grid items-end overflow-y-scroll overflow-x-hidden noscroll">
         {hidden &&
           faqItems.map((item) => (
             <FAQItem question={item.question} answer={item.answer} />

@@ -36,7 +36,7 @@ user-select: none; /* Standard */
   -webkit-mask: linear-gradient(45deg, #000 30%, #0005, #000 50%) right/300% 70%;
   mask: linear-gradient(45deg, #000 30%, #0005, #000 50%) right/300% 70%;
   background-repeat: no-repeat;
-  animation: shimmer 3.5s infinite;
+  animation: shimmer 5s infinite;
 }
 .shimmer2 {
   -webkit-mask: linear-gradient(45deg, #000 30%, #0005, #000 50%) right/300% 70%;
