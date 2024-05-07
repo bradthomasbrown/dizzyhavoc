@@ -12,13 +12,13 @@ export function Landing() {
   return (
     <div>
       <div
-        className={`flex flex-row sm:h-screen h-[calc(100vh-4.5rem)] w-full justify-center ${
+        className={`flex relative flex-row sm:h-screen h-[85svh] w-full justify-center ${
           toggle ? "items-start sm:items-center" : "items-center"
         }`}
       >
         <Noise />
         {!toggle ? (
-          <div class="flex flex-col">
+          <div class="flex flex-col ">
             <div className="flex flex-row gap-x-[0rem] sm:gap-x-[4rem] -translate-y-1/3">
               <div className="ml-3 sm:ml-0 sm:w-[80%] w-[65%] text-clip sm:text-nowrap text-start">
                 <Tagline />
@@ -33,7 +33,7 @@ export function Landing() {
                 <Carousel />
               </div>
             </div>
-            <div class="absolute sm:bottom-6 bottom-0 translate-y-[80px] sm:translate-y-[0px]">
+            <div class="absolute sm:bottom-6 bottom-0">
               <FAQ />
             </div>
           </div>

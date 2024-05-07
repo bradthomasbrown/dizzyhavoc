@@ -92,7 +92,7 @@ export function FAQ() {
     setread(true);
   };
   return (
-    <div class="flex w-full items-end flex-col sm:flex-row gap-x-4">
+    <div class="flex w-full sm:items-end items-center flex-col sm:flex-row gap-x-4">
       <div
         onClick={() => handleClick()}
         className={`
@@ -104,7 +104,7 @@ export function FAQ() {
           font-[Poppins] 
           text-center 
           unselectable 
-          w-full 
+          w-[80%]
           sm:h-[38px]
           h-[30px]
           cursor-pointer 
