@@ -40,7 +40,7 @@ export function FAQ() {
             DizzyHavoc is a new deployment method for smart contracts,
             specifically designed to reduce costs and enhance flexibility.
           </li>
-          <li>It's also a movement of optimization in the realm of Web3.</li>
+          <li>It's also a movement of global optimization in the realm of Web3.</li>
         </ul>
       ),
     },
