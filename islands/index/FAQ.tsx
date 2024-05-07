@@ -7,11 +7,15 @@ function FAQItem({ question, answer }) {
     <>
       <div className="flex flex-col vignets">
         <div
-          class="sm:text-2xl text-xl font-[Poppins] relative unselectable dark:text-[#d2d2d2] text-[#3d3d3d] px-3 my-1 text-center rounded-md bg-blur3 sm:w-full w-screen cursor-pointer hover:scale-[100.5%] active:scale-[99.5%]"
+          class="sm:text-2xl text-xl font-[Poppins] relative unselectable dark:text-[#d2d2d2] text-[#3d3d3d] px-3 my-1 text-start rounded-md bg-blur3 sm:w-full w-screen cursor-pointer hover:scale-[100.5%] active:scale-[99.5%]"
           onClick={() => setexp(!exp)}
         >
-        {question}
-        {exp ? <a class="text-lg ml-1 font-[Poppins] absolute right-1">-</a> : <a class="text-lg ml-1 font-[Poppins] absolute right-1">+</a>}
+          {question}
+          {exp ? (
+            <a class="text-lg ml-1 font-[Poppins] absolute right-1">-</a>
+          ) : (
+            <a class="text-lg ml-1 font-[Poppins] absolute right-1">+</a>
+          )}
         </div>
         {exp && (
           <p class="text-md font-[Poppins] sm:w-full w-screen unselectable dark:text-[#d2d2d2] text-[#3d3d3d]">
@@ -35,24 +39,53 @@ export function FAQ() {
     },
     {
       question: "What makes DizzyHavoc unique?",
-      answer: "The utilization of the EVM bytecode language instead of Solidity. This implies a more low-level and hardware-specific form of programming, closely tied to the architecture of CPUs.",
+      answer:
+        "The utilization of the EVM bytecode language instead of Solidity. This implies a more low-level and hardware-specific form of programming, closely tied to the architecture of CPUs.",
     },
     {
-        question: "What makes DizzyHavoc unique?",
-        answer: "The utilization of the EVM bytecode language instead of Solidity. This implies a more low-level and hardware-specific form of programming, closely tied to the architecture of CPUs.",
-      },
-      {
-        question: "What makes DizzyHavoc unique?",
-        answer: "The utilization of the EVM bytecode language instead of Solidity. This implies a more low-level and hardware-specific form of programming, closely tied to the architecture of CPUs.",
-      },
-      {
-        question: "What makes DizzyHavoc unique?",
-        answer: "The utilization of the EVM bytecode language instead of Solidity. This implies a more low-level and hardware-specific form of programming, closely tied to the architecture of CPUs.",
-      },
-      {
-        question: "What makes DizzyHavoc unique?",
-        answer: "The utilization of the EVM bytecode language instead of Solidity. This implies a more low-level and hardware-specific form of programming, closely tied to the architecture of CPUs.",
-      },
+      question: "What would be its impact?",
+      answer: (
+        <ul>
+          <li>
+            ● Reduction in deployment costs by reusing implementation code
+            instead of redeploying it.
+          </li>
+          <li>
+            ● Flexibility in configuring the resolver to point to different
+            implementations, promoting code reusability.
+          </li>
+          <li>
+            ● Ability to evolve and optimize smart contracts over time, with all
+            deployments benefiting from updates to the underlying
+            implementation.
+          </li>
+        </ul>
+      ),
+    },
+    {
+      question: "What to expect next?",
+      answer:
+        "The primary focus at the moment is on constructing the cross chain bridge. Then, expanding to as many mainnet chains as possible.",
+    },
+    {
+      question: "Which chains are supported?",
+      answer:
+        "Ethereum, Arbitrum, Avalanche, BSC & Base. More EVM based chains are coming soon.",
+    },
+    {
+      question: "Why are prices different on each chain?",
+      answer:
+        "Differents liquidity pools for each chain leads to different prices. It will eventually even out, or not.",
+    },
+    {
+      question: "When marketing?",
+      answer: ".",
+    },
+    {
+      question: "Can I contribute?",
+      answer:
+        "Yes, contributions are greatly appreciated. You can check the github to access the base code.",
+    },
   ];
   const handleClick = () => {
     sethidden(!hidden);
