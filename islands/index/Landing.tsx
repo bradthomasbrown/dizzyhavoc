@@ -17,7 +17,7 @@ export function Landing() {
         }`}
       >
         <Noise />
-        {!toggle ? (
+        {!toggle ? ( // Title view
           <div class="flex flex-col ">
             <div className="flex flex-row gap-x-[0rem] sm:gap-x-[4rem] -translate-y-1/3">
               <div className="ml-3 sm:ml-0 sm:w-[80%] w-[65%] text-clip sm:text-nowrap text-start">
@@ -37,7 +37,7 @@ export function Landing() {
               <FAQ />
             </div>
           </div>
-        ) : (
+        ) : ( // Screen view
           <div className="flex flex-col gap-y-3 relative">
             <div class="sm:w-[calc(100vw-150px)] sm:h-[30vw] w-screen h-full">
               <Screen /> 

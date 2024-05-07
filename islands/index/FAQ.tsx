@@ -141,7 +141,7 @@ export function FAQ() {
       >
         Frequently Asked Questions
       </div>
-      <div class="w-[99vw] sm:w-[710px] h-[200px] sm:h-[220px] grid items-end overflow-y-scroll overflow-x-hidden noscroll">
+      <div class="w-[99vw] sm:w-[710px] h-[200px] sm:h-[220px] grid items-end overflow-y-scroll overflow-x-hidden">
         {hidden &&
           faqItems.map((item) => (
             <FAQItem question={item.question} answer={item.answer} />

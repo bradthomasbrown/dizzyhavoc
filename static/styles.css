@@ -3,7 +3,7 @@
 @tailwind utilities;
 
 ::-webkit-scrollbar {
-  width: 6px; /* width of the entire scrollbar */
+  width: 4px; /* width of the entire scrollbar */
 }
 ::-webkit-scrollbar-track {
   background: transparent; /* color of the tracking area */
@@ -142,7 +142,7 @@ user-select: none; /* Standard */
 @media (prefers-color-scheme: light) {
   ::-webkit-scrollbar-thumb {
     background-color: #858585; /* color of the scroll thumb */
-    border-radius: 12px; /* roundness of the scroll thumb */
+    border-radius: 6px; /* roundness of the scroll thumb */
     border: 1px solid #e0e0e0; /* creates padding around scroll thumb */
   }
   .bg-blur {
