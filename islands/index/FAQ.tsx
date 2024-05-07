@@ -35,7 +35,14 @@ export function FAQ() {
     {
       question: "What is DizzyHavoc?",
       answer:
-        "DizzyHavoc is a new deployment method for smart contracts, specifically designed to reduce costs and enhance flexibility.",
+      <ul>
+      <li>
+        DizzyHavoc is a new deployment method for smart contracts, specifically designed to reduce costs and enhance flexibility.
+      </li>
+      <li>
+        It's also a movement of optimization in the realm of Web3.
+      </li>
+    </ul>
     },
     {
       question: "What makes DizzyHavoc unique?",
@@ -73,7 +80,7 @@ export function FAQ() {
         "Ethereum, Arbitrum, Avalanche, BSC & Base. More EVM based chains are coming soon.",
     },
     {
-      question: "Why are prices different on each chain?",
+      question: "Prices are different on each chain?",
       answer:
         "Differents liquidity pools for each chain leads to different prices. It will eventually even out, or not.",
     },
@@ -84,7 +91,7 @@ export function FAQ() {
     {
       question: "Can I contribute?",
       answer:
-        "Yes, contributions are greatly appreciated. You can check the github to access the base code.",
+        "Yes, contributions are greatly appreciated. You can check the github to access the base code. You can also contribute by creating DizzyHavoc related art or documentation, you creations might end up on the website!",
     },
   ];
   const handleClick = () => {
