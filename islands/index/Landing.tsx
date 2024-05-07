@@ -33,7 +33,7 @@ export function Landing() {
                 <Carousel />
               </div>
             </div>
-            <div class="absolute sm:bottom-6 -bottom-6 sm:pb-0 pb-6">
+            <div class="absolute sm:bottom-6 bottom-0 translate-y-[1%] sm:translate-y-[0%]">
               <FAQ />
             </div>
           </div>

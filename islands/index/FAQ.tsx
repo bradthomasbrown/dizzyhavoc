@@ -7,7 +7,7 @@ function FAQItem({ question, answer }) {
     <>
       <div className="flex flex-col vignets">
         <div
-          class="sm:text-2xl text-xl tfont-[Poppins] relative unselectable dark:text-[#d2d2d2] text-[#3d3d3d] px-3 my-1 text-center rounded-md bg-blur3 sm:w-full w-screen cursor-pointer hover:scale-[100.5%] active:scale-[99.5%]"
+          class="sm:text-2xl text-xl font-[Poppins] relative unselectable dark:text-[#d2d2d2] text-[#3d3d3d] px-3 my-1 text-center rounded-md bg-blur3 sm:w-full w-screen cursor-pointer hover:scale-[100.5%] active:scale-[99.5%]"
           onClick={() => setexp(!exp)}
         >
         {question}
@@ -91,7 +91,7 @@ export function FAQ() {
       >
         Frequently Asked Questions
       </div>
-      <div class="w-screen sm:w-[710px] h-[200px] sm:h-[220px] grid items-end overflow-y-scroll overflow-x-hidden noscroll">
+      <div class="w-[99vw] sm:w-[710px] h-[200px] sm:h-[220px] grid items-end overflow-y-scroll overflow-x-hidden noscroll">
         {hidden &&
           faqItems.map((item) => (
             <FAQItem question={item.question} answer={item.answer} />
