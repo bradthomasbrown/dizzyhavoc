@@ -15,12 +15,11 @@ export function Explore(props : {text:string }) {
         rounded-md
         hover:scale-[102%]
         active:scale-[98%]
-        border
+        border-[2px]
         border-[#e9e9e9] 
         dark:border-[#ffffff1f]
         cursor-pointer
-        dark:bg-[#191919]
-        bg-[#f1f1f1]
+        bg-blur
         unselectable">
         {text}
         </div>
