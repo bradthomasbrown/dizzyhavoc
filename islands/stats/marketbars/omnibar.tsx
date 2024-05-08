@@ -62,19 +62,12 @@ export function Omnibar(props: {
       >
         {initialloading.value ? (
           <>
-            <a
-              draggable={false}
-              class="z-[2] vignets2 sm:size-[50px] hover:scale-[105%] sm:ml-3 ml-1 mt-[4px] sm:mt-11 justify-start size-9"
-              title="open in dexscreener"
-              target="_blank"
-              href={link}
-            >
-              <img
+
+              <div
                 draggable={false}
-                class="scale-125 invisible"
-                src="/misc/token.png"
+                class="size-[35px] sm:size-[63px] bg-transparent"
               />
-            </a>
+
             <DummyValues />
           </>
         ) : (
