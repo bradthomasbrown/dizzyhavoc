@@ -72,7 +72,15 @@ export function FAQ() {
     {
       question: "What to expect next?",
       answer:
-        "The primary focus at the moment is on constructing the cross chain bridge. Then, expanding to as many mainnet chains as possible.",
+      <ul>
+      <li>
+      The primary focus at the moment is on constructing the cross chain bridge. Then, expanding to as many mainnet chains as possible.
+      </li>
+      <li>
+      You can follow the progress on the <a target="_blank" class="text-[#3b2d82] dark:text-[#ccb286] bold" href="/roadmap">Roadmap</a> page.
+      </li>
+  
+      </ul>
     },
     {
       question: "Which chains are supported?",
