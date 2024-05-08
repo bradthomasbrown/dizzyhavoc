@@ -86,9 +86,10 @@ export function Omniweekly(props: { name: Signal<any>; type: Signal<any> }) {
       <p class="font-[Poppins] text-[12px] dark:text-[#d0d0d0] text-[#3d3d3d] unselectable text-center italic pl-1 absolute">
         Weekly {name}
       </p>
+      {!isLoading.value ? (
       <p class="font-[Poppins] text-[8px] dark:text-[#d0d0d0] text-[#3d3d3d] vignets unselectable text-center absolute top-[2px] right-1">
         {firstdate + " > " + lastdate}
-      </p>
+      </p> ) : null}
       <div class="unselectable vignets absolute -bottom-1 left-0 sm:h-[110px] sm:w-[455px] h-[85px] w-[345px]">
         {!isLoading.value ? (
           <Chart
