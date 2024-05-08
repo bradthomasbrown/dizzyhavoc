@@ -78,13 +78,10 @@ export function Screen() {
       </div>
       <div class="absolute bg-red-500 flex items-center justify-center h-[0px] z-[10] bottom-[28%] left-[50%] translate-x-[-50%]">
       {selectbar}
-
       </div>
-      <div class="absolute z-[5] bottom-[10%] left-[50%] translate-x-[-50%]">
+      <div class="absolute z-[5] bottom-[10%] 2xl:bottom-[15%] left-[50%] translate-x-[-50%]">
       <div className="trapeze w-[calc(100vw-4rem)] sm:w-[25vw] h-[50px] shadow-lg"></div>
-
       </div>
-
     </div>
   );
 }

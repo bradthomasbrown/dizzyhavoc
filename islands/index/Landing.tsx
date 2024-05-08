@@ -46,7 +46,7 @@ export function Landing() {
               <Screen /> 
             </div>
             <div
-              className="w-[110px] sm:w-[160px] h-[35px] sm:h-[40px] rounded-lg absolute translate-y-[6vw] sm:translate-y-[29vw] left-[50%] translate-x-[-50%]"
+              className="w-[110px] sm:w-[160px] h-[35px] sm:h-[40px] rounded-lg absolute translate-y-[6vw] sm:translate-y-[29vw] left-[65%] translate-x-0 sm:left-[50%] sm:translate-x-[-50%]"
               onClick={() => setToggle(!toggle)}
             >
                 <Explore text="Close" />
