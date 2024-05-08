@@ -71,7 +71,7 @@ export function Omnibar(props: {
             >
               <img
                 draggable={false}
-                class="scale-1 opacity-15"
+                class="scale-125 opacity-15"
                 src="/misc/token.png"
               />
             </a>
