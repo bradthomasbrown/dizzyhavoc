@@ -141,8 +141,8 @@ export function FAQ() {
           bg-gradient-to-r
           from-transparent
           dark:from-transparent
-          dark:via-[#323232d3] 
-          via-[#ffffffd3]
+          dark:via-[#323232a7] 
+          via-[#ffffffa7]
           to-transparent
           dark:to-transparent
           border-t-[#5e5e5e4d] 

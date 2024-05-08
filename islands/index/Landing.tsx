@@ -39,14 +39,14 @@ export function Landing() {
           </div>
         ) : ( // Screen view
           <div className="flex flex-col gap-y-3 relative">
-                 <p class="font-[Poppins] font-medium absolute top-[10%] sm:-top-6 left-[20%] translate-x-[-50%] z-[5] unselectable tracking-tighter text-[1.7rem] sm:text-[2rem] dark:text-[#d2d2d2] text-[#3d3d3d]">
+                 <p class="font-[Poppins] font-medium absolute top-[10%] sm:-top-[5%] left-[20%] translate-x-[-50%] z-[5] unselectable tracking-tighter text-[1.7rem] sm:text-[2rem] dark:text-[#d2d2d2] text-[#3d3d3d]">
         Featured.
       </p>
-            <div class="sm:w-[calc(100vw-150px)] sm:h-[30vw] w-screen h-full">
+            <div class="sm:w-[calc(100vw-120px)] sm:h-[30vw] w-screen h-full">
               <Screen /> 
             </div>
             <div
-              className="w-[110px] sm:w-[160px] h-[35px] sm:h-[40px] rounded-lg absolute translate-y-[6vw] sm:translate-y-[29vw] left-[65%] translate-x-0 sm:left-[50%] sm:translate-x-[-50%]"
+              className="w-[110px] sm:w-[160px] h-[35px] sm:h-[40px] rounded-lg absolute translate-y-[6vw] sm:translate-y-[32vw] left-[65%] translate-x-0 sm:left-[50%] sm:translate-x-[-50%]"
               onClick={() => setToggle(!toggle)}
             >
                 <Explore text="Close" />
