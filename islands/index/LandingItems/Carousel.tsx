@@ -1,6 +1,6 @@
 import { useEffect, useState } from "preact/hooks";
 import { IS_BROWSER } from "$fresh/runtime.ts";
-import { Vertigo_img, Mayhem_img, Gamefi_img, Factory_img } from "../../components/index/Landing/CarouselItems/mod.ts";
+import { Vertigo_img, Mayhem_img, Gamefi_img, Factory_img } from "../../../components/index/Landing/CarouselItems/mod.ts";
 
 const items = [Vertigo_img, Mayhem_img, Gamefi_img, Factory_img]; // Add more screen items here
 

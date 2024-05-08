@@ -1,10 +1,10 @@
 import { useState } from "preact/hooks";
 import { Noise } from "../../components/common/backgrounds/Noise.tsx";
 import { Tagline } from "../../components/index/Landing/Tagline.tsx";
-import { Explore } from "./Explore.tsx";
-import { Carousel } from "./Carousel.tsx";
-import { Screen } from "./Screen.tsx";
-import { FAQ } from "./FAQ.tsx";
+import { Explore } from "./LandingItems/Explore.tsx";
+import { Carousel } from "./LandingItems/Carousel.tsx";
+import { Screen } from "./LandingItems/Screen.tsx";
+import { FAQ } from "./LandingItems/FAQ.tsx";
 
 export function Landing() {
   const [toggle, setToggle] = useState(false);

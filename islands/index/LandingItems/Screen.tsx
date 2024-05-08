@@ -5,13 +5,13 @@ import {
   Mayhem,
   Gamefi,
   // Factory,
-} from "../../components/index/Landing/ScreenItems/mod.ts";
+} from "../../../components/index/Landing/ScreenItems/mod.ts";
 import {
   Vertigo_img,
   Mayhem_img,
   Gamefi_img,
   // Factory_img,
-} from "../../components/index/Landing/CarouselItems/mod.ts";
+} from "../../../components/index/Landing/CarouselItems/mod.ts";
 
 const items = [Vertigo, Mayhem, Gamefi]; // Add more screen items here
 
@@ -76,7 +76,7 @@ export function Screen() {
           {paused?  <img class="size-[30px] contrast-0 invert-0 dark:invert" src="./svgs/pause.svg"></img> :  <img class="size-[30px] contrast-0 invert-0 dark:invert" src="./svgs/play.svg"></img>}
         </div>
       </div>
-      <div class="absolute z-10 bottom-[18%] left-[50%] translate-x-[-50%]">
+      <div class="absolute bg-red-500 flex items-center justify-center h-[0px] z-[10] bottom-[28%] left-[50%] translate-x-[-50%]">
       {selectbar}
 
       </div>

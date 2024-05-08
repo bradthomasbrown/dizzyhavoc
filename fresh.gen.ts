@@ -12,11 +12,11 @@ import * as $bridge_Web3Input from "./islands/bridge/Web3Input.tsx";
 import * as $common_Button from "./islands/common/Button.tsx";
 import * as $common_menuButton from "./islands/common/menuButton.tsx";
 import * as $common_navbar from "./islands/common/navbar.tsx";
-import * as $index_Carousel from "./islands/index/Carousel.tsx";
-import * as $index_Explore from "./islands/index/Explore.tsx";
-import * as $index_FAQ from "./islands/index/FAQ.tsx";
 import * as $index_Landing from "./islands/index/Landing.tsx";
-import * as $index_Screen from "./islands/index/Screen.tsx";
+import * as $index_LandingItems_Carousel from "./islands/index/LandingItems/Carousel.tsx";
+import * as $index_LandingItems_Explore from "./islands/index/LandingItems/Explore.tsx";
+import * as $index_LandingItems_FAQ from "./islands/index/LandingItems/FAQ.tsx";
+import * as $index_LandingItems_Screen from "./islands/index/LandingItems/Screen.tsx";
 import * as $index_scrollTop from "./islands/index/scrollTop.tsx";
 import * as $stats_ActiveContainer from "./islands/stats/ActiveContainer.tsx";
 import * as $stats_MarketBarsContainer from "./islands/stats/MarketBarsContainer.tsx";
@@ -44,11 +44,11 @@ const manifest = {
     "./islands/common/Button.tsx": $common_Button,
     "./islands/common/menuButton.tsx": $common_menuButton,
     "./islands/common/navbar.tsx": $common_navbar,
-    "./islands/index/Carousel.tsx": $index_Carousel,
-    "./islands/index/Explore.tsx": $index_Explore,
-    "./islands/index/FAQ.tsx": $index_FAQ,
     "./islands/index/Landing.tsx": $index_Landing,
-    "./islands/index/Screen.tsx": $index_Screen,
+    "./islands/index/LandingItems/Carousel.tsx": $index_LandingItems_Carousel,
+    "./islands/index/LandingItems/Explore.tsx": $index_LandingItems_Explore,
+    "./islands/index/LandingItems/FAQ.tsx": $index_LandingItems_FAQ,
+    "./islands/index/LandingItems/Screen.tsx": $index_LandingItems_Screen,
     "./islands/index/scrollTop.tsx": $index_scrollTop,
     "./islands/stats/ActiveContainer.tsx": $stats_ActiveContainer,
     "./islands/stats/MarketBarsContainer.tsx": $stats_MarketBarsContainer,
