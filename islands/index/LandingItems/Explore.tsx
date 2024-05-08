@@ -18,8 +18,13 @@ export function Explore(props : {text:string }) {
         border-[2px]
         border-[#e9e9e9] 
         dark:border-[#ffffff1f]
-        dark:bg-[#191919] 
-        bg-[#f1f1f1]
+        bg-gradient-to-r
+        from-[#f1f1f180]
+        dark:from-[#19191980] 
+        dark:via-[#191919] 
+        via-[#f1f1f1]
+        to-[#f1f1f180]
+        dark:to-[#19191980] 
         cursor-pointer
         unselectable">
         {text}

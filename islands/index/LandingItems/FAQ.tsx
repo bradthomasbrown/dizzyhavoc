@@ -138,14 +138,21 @@ export function FAQ() {
           border-[1px]
           border-e-transparent 
           border-s-transparent 
+          bg-gradient-to-r
+          from-transparent
+          dark:from-transparent
+          dark:via-[#323232d3] 
+          via-[#ffffffd3]
+          to-transparent
+          dark:to-transparent
           border-t-[#5e5e5e4d] 
           border-b-[#5e5e5e4d] 
           dark:border-e-transparent 
           dark:border-s-transparent 
           dark:border-t-[#dbdbdb3b]
           dark:border-b-[#dbdbdb3b]
-        dark:text-[#cccccc] 
-        text-[#3d3d3d]`}
+          dark:text-[#cccccc] 
+          text-[#3d3d3d]`}
       >
         Frequently Asked Questions
       </div>
