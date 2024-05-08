@@ -4,16 +4,16 @@ import {
   Vertigo,
   Mayhem,
   Gamefi,
-  Factory,
+  // Factory,
 } from "../../components/index/Landing/ScreenItems/mod.ts";
 import {
   Vertigo_img,
   Mayhem_img,
   Gamefi_img,
-  Factory_img,
+  // Factory_img,
 } from "../../components/index/Landing/CarouselItems/mod.ts";
 
-const items = [Vertigo, Mayhem, Gamefi, Factory]; // Add more screen items here
+const items = [Vertigo, Mayhem, Gamefi]; // Add more screen items here
 
 export function Screen() {
   if (!IS_BROWSER) return null;
@@ -52,7 +52,7 @@ export function Screen() {
       <div title="Vertigo, the bridge for $DZHV" class="size-[90px] sm:size-[120px] scale-50 hover:scale-[52%] active:scale-[48%]" onClick={() => Skip(0)}><Vertigo_img addclass={`cursor-pointer ${currentItemIndex === 0 ? "scale-[1.3]" : ""}`}/></div>
       <div title="Mayhem, the new optimized and opensource Web3 library." class="size-[90px] sm:size-[120px] scale-50 hover:scale-[52%] active:scale-[48%]" onClick={() => Skip(1)}><Mayhem_img addclass={`cursor-pointer ${currentItemIndex === 1 ? "scale-[1.3]" : ""}`}/></div>
       <div title="Gamefi features, coming soon." class="size-[90px] sm:size-[120px] scale-50 hover:scale-[52%] active:scale-[48%]" onClick={() => Skip(2)}><Gamefi_img addclass={`cursor-pointer ${currentItemIndex === 2 ? "scale-[1.3]" : ""}`}/></div>
-      <div title="The Factory, an idea that will soon be developed." class="size-[90px] sm:size-[120px] scale-50 hover:scale-[52%] active:scale-[48%]" onClick={() => Skip(3)}><Factory_img addclass={`cursor-pointer ${currentItemIndex === 3 ? "scale-[1.3]" : ""}`}/></div>
+      {/* <div title="The Factory, an idea that will soon be developed." class="size-[90px] sm:size-[120px] scale-50 hover:scale-[52%] active:scale-[48%]" onClick={() => Skip(3)}><Factory_img addclass={`cursor-pointer ${currentItemIndex === 3 ? "scale-[1.3]" : ""}`}/></div> */}
     </div>
   )
   const CurrentItem = items[currentItemIndex];
@@ -81,7 +81,7 @@ export function Screen() {
 
       </div>
       <div class="absolute z-[5] bottom-[10%] left-[50%] translate-x-[-50%]">
-      <div className="trapeze w-[calc(100vw-4rem)] sm:w-[35vw] h-[50px] shadow-lg"></div>
+      <div className="trapeze w-[calc(100vw-4rem)] sm:w-[25vw] h-[50px] shadow-lg"></div>
 
       </div>
 

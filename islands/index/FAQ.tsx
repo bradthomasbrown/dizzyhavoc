@@ -115,14 +115,14 @@ export function FAQ() {
         className={`
           ${hidden || read ? "" : "shimmer3"}
           text-md
-          sm:text-3xl 
+          sm:text-xl 
           mb-2 
           font-medium 
           font-[Poppins] 
           text-center 
           unselectable 
           w-[80%]
-          sm:h-[38px]
+          sm:h-[30px]
           h-[25px]
           cursor-pointer 
           hover:scale-[100.5%] 

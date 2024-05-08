@@ -18,8 +18,9 @@ export function Explore(props : {text:string }) {
         border-[2px]
         border-[#e9e9e9] 
         dark:border-[#ffffff1f]
+        dark:bg-[#191919] 
+        bg-[#f1f1f1]
         cursor-pointer
-        bg-blur
         unselectable">
         {text}
         </div>
