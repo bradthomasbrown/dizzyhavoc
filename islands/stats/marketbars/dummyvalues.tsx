@@ -6,7 +6,7 @@ export function DummyValues() {
         <div class="flex sm:flex-row flex-col">
           <section class="mt-[0px] sm:mt-0 flex sm:flex-row flex-col w-full ml-0">
             <h1 class="font-[Poppins] text-[#000000] font-medium dark:text-[#ccb286] text-[1rem] sm:text-[1.2rem] inline">
-              $0
+              $0.0000
             </h1>
             <h1
               title="24h price change"
