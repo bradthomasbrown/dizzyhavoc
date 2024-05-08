@@ -1,5 +1,6 @@
 import { Signal, useSignal } from "@preact/signals";
 import { Values } from "./values.tsx";
+import { DummyValues } from "./dummyvalues.tsx";
 import { formatNumber } from "../../../lib/common/formatNumber.tsx";
 
 export function Omnibar(props: {
@@ -52,11 +53,30 @@ export function Omnibar(props: {
         dark:border-b-[#3636365e] dark:border-s-[#3636365e] dark:border-e-[#3636365e] dark:border-t-[#3636365e]
         ${initialloading.value ? "shimmer2" : ""}
         ${hide.value ? "h-[2.8rem]" : "h-[7.3rem]"}
-        ${!tooltip.value ? "rounded-lg dark:border-b-[#3636365e] border-b-[#bababa5c]" : "rounded-t-lg dark:border-b-[#00000000] border-b-[#00000000]"}
+        ${
+          !tooltip.value
+            ? "rounded-lg dark:border-b-[#3636365e] border-b-[#bababa5c]"
+            : "rounded-t-lg dark:border-b-[#00000000] border-b-[#00000000]"
+        }
         `}
       >
         {initialloading.value ? (
-          <></>
+          <>
+            <a
+              draggable={false}
+              class="z-[2] vignets2 sm:size-[50px] hover:scale-[105%] sm:ml-3 ml-1 mt-[4px] sm:mt-11 justify-start size-9"
+              title="open in dexscreener"
+              target="_blank"
+              href={link}
+            >
+              <img
+                draggable={false}
+                class="scale-1 opacity-15"
+                src="/misc/token.png"
+              />
+            </a>
+            <DummyValues />
+          </>
         ) : (
           <>
             <div

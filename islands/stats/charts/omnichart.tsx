@@ -5,7 +5,7 @@ import { IS_BROWSER } from "$fresh/runtime.ts";
 import { Signal, useSignal } from "@preact/signals";
 import { useState } from "preact/hooks";
 import { cachedData } from "$fresh_charts/stats/Requests/caches/chartCache.tsx";
-export function Omnichart(props: { chain: Signal<string>; }) {
+export function Omnichart(props: { chain: Signal<string> }) {
   if (!IS_BROWSER) return <></>;
   const { chain } = props;
   const data = cachedData;
@@ -13,7 +13,7 @@ export function Omnichart(props: { chain: Signal<string>; }) {
   const isLoading = useSignal(true);
   const isMobile = globalThis.window.matchMedia("(pointer: coarse)").matches;
   const getCache = async () => {
-      fetchedData.value = data;
+    fetchedData.value = data;
     isLoading.value = false;
   };
 

@@ -26,6 +26,8 @@ import * as $stats_chart from "./islands/stats/chart.tsx";
 import * as $stats_charts_mod from "./islands/stats/charts/mod.ts";
 import * as $stats_charts_omnichart from "./islands/stats/charts/omnichart.tsx";
 import * as $stats_charts_omniweekly from "./islands/stats/charts/omniweekly.tsx";
+import * as $stats_charts_placeholder from "./islands/stats/charts/placeholder.tsx";
+import * as $stats_marketbars_dummyvalues from "./islands/stats/marketbars/dummyvalues.tsx";
 import * as $stats_marketbars_omnibar from "./islands/stats/marketbars/omnibar.tsx";
 import * as $stats_marketbars_values from "./islands/stats/marketbars/values.tsx";
 import { type Manifest } from "$fresh/server.ts";
@@ -58,6 +60,8 @@ const manifest = {
     "./islands/stats/charts/mod.ts": $stats_charts_mod,
     "./islands/stats/charts/omnichart.tsx": $stats_charts_omnichart,
     "./islands/stats/charts/omniweekly.tsx": $stats_charts_omniweekly,
+    "./islands/stats/charts/placeholder.tsx": $stats_charts_placeholder,
+    "./islands/stats/marketbars/dummyvalues.tsx": $stats_marketbars_dummyvalues,
     "./islands/stats/marketbars/omnibar.tsx": $stats_marketbars_omnibar,
     "./islands/stats/marketbars/values.tsx": $stats_marketbars_values,
   },

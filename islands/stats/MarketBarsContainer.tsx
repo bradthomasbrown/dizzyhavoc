@@ -133,6 +133,7 @@ export function MarketBarsContainer() {
           break;
       }
     }
+    initialloading.value = false;
     if (sortby.value === "price") {
       largestPriceDelta(ethprice, arbprice, bscprice, baseprice, avaxprice);
     } else if (sortby.value === "liquidity") {
@@ -168,7 +169,6 @@ export function MarketBarsContainer() {
         h24_avax.value
       );
     }
-    initialloading.value = false;
   };
   const getChiffres = async () => {
     if (!ethholders.value) {
