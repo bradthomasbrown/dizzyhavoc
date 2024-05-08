@@ -96,7 +96,7 @@ export function Omniweekly(props: { name: Signal<any>; type: Signal<any> }) {
             options={isMobile ? chartOptions_M : chartOptions}
             data={chartData}
           />
-        ) : <div class="h-full w-full"><img class="absolute left-[51%] translate-x-[-50%] translate-y-[-50%] top-[50%] size-[30px] contrast-0 invert-0 dark:invert" src="./svgs/tail-spin.svg"></img></div>}
+        ) : <div class="h-full w-full"><img class="absolute left-[51.5%] translate-x-[-50%] translate-y-[-50%] top-[50%] size-[30px] contrast-0 invert-0 dark:invert" src="./svgs/tail-spin.svg"></img></div>}
       </div>
     </>
   );

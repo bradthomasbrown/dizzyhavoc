@@ -53,7 +53,7 @@ export function DummyValues() {
           </div>
         </div>
       </div>
-      <div class="flex vignets2 sm:z-[2] z-0 absolute sm:left-[35%] -left-[5%] flex-row">
+      <div class="flex vignets2 sm:z-[2] z-0 absolute sm:left-[37.5%] -left-[5%] flex-row">
         <Placeholder />
       </div>
     </div>
