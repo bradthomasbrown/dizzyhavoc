@@ -48,11 +48,12 @@ export function Screen() {
     setTimer(0);
   }
   const selectbar = (
-    <div class="flex flex-row translate-y-[3.5rem] justify-center">
-      <div title="Vertigo, the bridge for $DZHV" class="size-[90px] sm:size-[120px] scale-50 hover:scale-[52%] active:scale-[48%]" onClick={() => Skip(0)}><Vertigo_img addclass={`cursor-pointer ${currentItemIndex === 0 ? "scale-[1.3]" : ""}`}/></div>
-      <div title="Mayhem, the new optimized and opensource Web3 library." class="size-[90px] sm:size-[120px] scale-50 hover:scale-[52%] active:scale-[48%]" onClick={() => Skip(1)}><Mayhem_img addclass={`cursor-pointer ${currentItemIndex === 1 ? "scale-[1.3]" : ""}`}/></div>
-      <div title="Gamefi features, coming soon." class="size-[90px] sm:size-[120px] scale-50 hover:scale-[52%] active:scale-[48%]" onClick={() => Skip(2)}><Gamefi_img addclass={`cursor-pointer ${currentItemIndex === 2 ? "scale-[1.3]" : ""}`}/></div>
+    <div class="flex flex-row translate-y-[3.5rem] relative justify-center">
+      <div title="Vertigo, the bridge for $DZHV" class="size-[90px] sm:size-[120px] scale-50 hover:scale-[52%] active:scale-[48%] z-[5]" onClick={() => Skip(0)}><Vertigo_img addclass={`cursor-pointer ${currentItemIndex === 0 ? "scale-[1.3]" : ""}`}/></div>
+      <div title="Mayhem, the new optimized and opensource Web3 library." class="size-[90px] sm:size-[120px] scale-50 hover:scale-[52%] active:scale-[48%] z-[5]" onClick={() => Skip(1)}><Mayhem_img addclass={`cursor-pointer ${currentItemIndex === 1 ? "scale-[1.3]" : ""}`}/></div>
+      <div title="Gamefi features, coming soon." class="size-[90px] sm:size-[120px] scale-50 hover:scale-[52%] active:scale-[48%] z-[5]" onClick={() => Skip(2)}><Gamefi_img addclass={`cursor-pointer ${currentItemIndex === 2 ? "scale-[1.3]" : ""}`}/></div>
       {/* <div title="The Factory, an idea that will soon be developed." class="size-[90px] sm:size-[120px] scale-50 hover:scale-[52%] active:scale-[48%]" onClick={() => Skip(3)}><Factory_img addclass={`cursor-pointer ${currentItemIndex === 3 ? "scale-[1.3]" : ""}`}/></div> */}
+      <div className="trapeze w-[calc(100vw-4rem)] absolute bottom-3 sm:w-[25vw] z-[-1] h-[50px] shadow-lg"></div>
     </div>
   )
   const CurrentItem = items[currentItemIndex];
@@ -78,9 +79,6 @@ export function Screen() {
       </div>
       <div class="absolute bg-red-500 flex items-center justify-center h-[0px] z-[10] bottom-[28%] left-[50%] translate-x-[-50%]">
       {selectbar}
-      </div>
-      <div class="absolute z-[5] bottom-[10%] 2xl:bottom-[15%] left-[50%] translate-x-[-50%]">
-      <div className="trapeze w-[calc(100vw-4rem)] sm:w-[25vw] h-[50px] shadow-lg"></div>
       </div>
     </div>
   );
