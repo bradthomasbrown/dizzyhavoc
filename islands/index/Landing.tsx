@@ -45,7 +45,7 @@ export function Landing() {
             <div class="absolute left-[50%] translate-x-[-50%] top-[50%] translate-y-[-50%]">
             {hidden ? <FAQ /> : null}
             </div>
-            <div class="absolute sm:left-[3%] left-[0%] sm:bottom-[10%] bottom-[5%]">
+            <div class="absolute sm:left-[3%] left-[50%] translate-x-[-50%] sm:translate-x-0 sm:bottom-[10%] bottom-[5%]">
               <div
                 onClick={() => handleClick()}
                 className={`
@@ -57,7 +57,7 @@ export function Landing() {
           font-[Poppins] 
           text-center 
           unselectable 
-          w-screen
+          w-[250px]
           sm:w-[25vw]
           sm:h-[30px]
           h-[25px]
@@ -83,7 +83,7 @@ export function Landing() {
           dark:text-[#cccccc] 
           text-[#3d3d3d]`}
               >
-                Frequently Asked Questions
+                {!hidden ? "Frequently Asked Questions" : "Close FAQ"}
               </div>
             </div>
           </div>

@@ -17,7 +17,7 @@ function FAQItem({ question, answer }) {
           )}
         </div>
         {exp && (
-          <p class="sm:text-xl text-lg tracking-tight font-[Poppins] mb-4 sm:w-full w-screen unselectable dark:text-[#d2d2d2] text-[#3d3d3d]">
+          <p class="sm:text-xl text-md tracking-tight font-[Poppins] mb-4 sm:w-full w-screen unselectable dark:text-[#d2d2d2] text-[#3d3d3d]">
             {answer}
           </p>
         )}
@@ -28,7 +28,7 @@ function FAQItem({ question, answer }) {
 export let state = false;
 export function FAQ() {
   if (!IS_BROWSER) return null;
-
+  const isMobile = globalThis.window.matchMedia("(pointer: coarse)").matches;
   const faqItems = [
     {
       question: "What is DizzyHavoc?",
@@ -113,7 +113,31 @@ export function FAQ() {
 
   return (
     <div class="flex w-full sm:items-end items-center flex-col sm:flex-row gap-x-4">
-      <div class="w-[99vw] sm:w-[810px] h-[450px] grid items-end overflow-y-scroll overflow-x-hidden">
+      {isMobile && (
+          <div
+          className={`
+    text-2xl 
+    mb-6 
+    font-medium 
+    font-[Poppins] 
+    text-center 
+    unselectable 
+    w-screen
+    h-[35px] 
+    bg-gradient-to-r
+    from-transparent
+    dark:from-transparent
+    dark:via-[#323232a7] 
+    via-[#ffffffa7]
+    to-transparent
+    dark:to-transparent
+    dark:text-[#cccccc] 
+    text-[#3d3d3d]`}
+        >
+          Frequently Asked Questions
+        </div>
+      )}
+      <div class="w-[99vw] sm:w-[810px] h-[60svh] grid items-end overflow-y-scroll overflow-x-hidden">
         {
           faqItems.map((item) => (
             <FAQItem question={item.question} answer={item.answer} />
