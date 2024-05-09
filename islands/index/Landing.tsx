@@ -43,7 +43,7 @@ export function Landing() {
               </div>
             </div>
             <div class="absolute left-[50%] translate-x-[-50%] top-[50%] translate-y-[-50%]">
-            {hidden ? <FAQ /> : null}
+            {hidden ? <FAQ /> : null} {/* FAQ view */}
             </div>
             <div class="absolute sm:left-[3%] left-[50%] translate-x-[-50%] sm:translate-x-0 sm:bottom-[10%] bottom-[5%]">
               <div
@@ -83,14 +83,14 @@ export function Landing() {
           dark:text-[#cccccc] 
           text-[#3d3d3d]`}
               >
-                {!hidden ? "Frequently Asked Questions" : "Close FAQ"}
+                {!hidden ? "Frequently Asked Questions" : "Close FAQ"} {/* FAQ button */}
               </div>
             </div>
           </div>
         ) : (
           // Screen view
           <div className="flex flex-col gap-y-3 relative">
-            <p class="font-[Poppins] font-medium absolute top-[10%] sm:-top-[5%] left-[20%] translate-x-[-50%] z-[5] unselectable tracking-tighter text-[1.7rem] sm:text-[2rem] dark:text-[#d2d2d2] text-[#3d3d3d]">
+            <p class="font-[Poppins] font-medium absolute top-[10%] sm:-top-[5%] left-[20%] translate-x-[-50%] z-[5] unselectable tracking-tighter text-[1.7rem] sm:text-[2.4rem] dark:text-[#d2d2d2] text-[#3d3d3d]">
               Featured.
             </p>
             <div class="sm:w-[calc(100vw-120px)] sm:h-[30vw] w-screen h-full">
