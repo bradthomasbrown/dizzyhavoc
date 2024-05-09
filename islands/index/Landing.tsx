@@ -45,9 +45,7 @@ export function Landing() {
             <div class="absolute left-[50%] translate-x-[-50%] top-[50%] translate-y-[-50%]">
             {hidden ? <FAQ /> : null}
             </div>
-            
             <div class="absolute sm:left-[3%] left-[0%] sm:bottom-[10%] bottom-[5%]">
-            
               <div
                 onClick={() => handleClick()}
                 className={`
