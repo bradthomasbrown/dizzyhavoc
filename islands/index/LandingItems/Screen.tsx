@@ -13,7 +13,7 @@ import {
   // Factory_img,
 } from "../../../components/index/Landing/CarouselItems/mod.ts";
 
-const items = [Vertigo, Mayhem, Gamefi]; // Add more screen items here
+const items = [Vertigo, Mayhem, Gamefi];
 
 export function Screen() {
   if (!IS_BROWSER) return null;
