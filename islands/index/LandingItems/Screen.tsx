@@ -53,7 +53,7 @@ export function Screen() {
       <div title="Mayhem, the new optimized and opensource Web3 library." class="size-[90px] sm:size-[120px] scale-50 hover:scale-[52%] active:scale-[48%] z-[5]" onClick={() => Skip(1)}><Mayhem_img addclass={`cursor-pointer ${currentItemIndex === 1 ? "scale-[1.3]" : ""}`}/></div>
       <div title="Gamefi features, coming soon." class="size-[90px] sm:size-[120px] scale-50 hover:scale-[52%] active:scale-[48%] z-[5]" onClick={() => Skip(2)}><Gamefi_img addclass={`cursor-pointer ${currentItemIndex === 2 ? "scale-[1.3]" : ""}`}/></div>
       {/* <div title="The Factory, an idea that will soon be developed." class="size-[90px] sm:size-[120px] scale-50 hover:scale-[52%] active:scale-[48%]" onClick={() => Skip(3)}><Factory_img addclass={`cursor-pointer ${currentItemIndex === 3 ? "scale-[1.3]" : ""}`}/></div> */}
-      <div className="trapeze w-[calc(100vw-4rem)] absolute bottom-3 sm:w-[25vw] z-[-1] h-[50px] shadow-lg"></div>
+      <div className="trapeze w-[calc(100vw-4rem)] absolute sm:bottom-3 bottom-0 sm:w-[25vw] z-[-1] h-[50px] shadow-lg"></div>
     </div>
   )
   const CurrentItem = items[currentItemIndex];
