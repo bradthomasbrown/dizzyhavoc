@@ -2,6 +2,7 @@ import { useState } from "preact/hooks";
 import { IS_BROWSER } from "$fresh/runtime.ts";
 function FAQItem({ question, answer }) {
   const [exp, setexp] = useState(false);
+
   return (
     <>
       <div className="flex flex-col vignets">
@@ -10,13 +11,13 @@ function FAQItem({ question, answer }) {
           onClick={() => setexp(!exp)}
         >
           {question}
-          {exp ? (
+          {exp ?(
             <a class="text-lg ml-1 font-[Poppins] absolute right-1">-</a>
           ) : (
             <a class="text-lg ml-1 font-[Poppins] absolute right-1">+</a>
           )}
         </div>
-        {exp && (
+        {exp &&(
           <p class="sm:text-xl text-md tracking-tight font-[Poppins] mb-4 sm:w-full w-screen unselectable dark:text-[#d2d2d2] text-[#3d3d3d]">
             {answer}
           </p>
@@ -28,7 +29,7 @@ function FAQItem({ question, answer }) {
 export let state = false;
 export function FAQ() {
   if (!IS_BROWSER) return null;
-  const isMobile = globalThis.window.matchMedia("(pointer: coarse)").matches;
+  const isMobile = globalThis.window.matchMedia("(max-width: 400px)").matches;
   const faqItems = [
     {
       question: "What is DizzyHavoc?",
@@ -117,7 +118,6 @@ export function FAQ() {
           <div
           className={`
     text-2xl 
-    mb-6 
     font-medium 
     font-[Poppins] 
     text-center 
