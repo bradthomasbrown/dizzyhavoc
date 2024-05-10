@@ -74,7 +74,7 @@ export function Screen() {
         {loadingbar}
         <CurrentItem />
         <div class="absolute bottom-2 right-2">
-          {paused?  <img class="size-[25px] sm:size-[35px] contrast-0 invert-0 dark:invert" src="./svgs/pause.svg"></img> :  <img class="size-[25px] sm:size-[35px] contrast-0 invert-0 dark:invert" src="./svgs/play.svg"></img>}
+          {paused?  <img class="size-[25px] sm:size-[35px] contrast-0 invert-0 dark:invert" src="./svgs/pause.svg"></img> : null}
         </div>
       </div>
       <div class="absolute bg-red-500 flex items-center justify-center h-[0px] z-[10] bottom-[28%] left-[50%] translate-x-[-50%]">
