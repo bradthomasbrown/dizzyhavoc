@@ -22,6 +22,9 @@ import * as $stats_ActiveContainer from "./islands/stats/ActiveContainer.tsx";
 import * as $stats_MarketBarsContainer from "./islands/stats/MarketBarsContainer.tsx";
 import * as $stats_Summary from "./islands/stats/Summary.tsx";
 import * as $stats_WeekliesContainer from "./islands/stats/WeekliesContainer.tsx";
+import * as $stats_MarketBarsContainer from "./islands/stats/MarketBarsContainer.tsx";
+import * as $stats_Summary from "./islands/stats/Summary.tsx";
+import * as $stats_WeekliesContainer from "./islands/stats/WeekliesContainer.tsx";
 import * as $stats_chart from "./islands/stats/chart.tsx";
 import * as $stats_charts_mod from "./islands/stats/charts/mod.ts";
 import * as $stats_charts_omnichart from "./islands/stats/charts/omnichart.tsx";
@@ -53,6 +56,9 @@ const manifest = {
     "./islands/index/LandingItems/Screen.tsx": $index_LandingItems_Screen,
     "./islands/index/scrollTop.tsx": $index_scrollTop,
     "./islands/stats/ActiveContainer.tsx": $stats_ActiveContainer,
+    "./islands/stats/MarketBarsContainer.tsx": $stats_MarketBarsContainer,
+    "./islands/stats/Summary.tsx": $stats_Summary,
+    "./islands/stats/WeekliesContainer.tsx": $stats_WeekliesContainer,
     "./islands/stats/MarketBarsContainer.tsx": $stats_MarketBarsContainer,
     "./islands/stats/Summary.tsx": $stats_Summary,
     "./islands/stats/WeekliesContainer.tsx": $stats_WeekliesContainer,
