@@ -4,8 +4,8 @@ export default function RoadMap() {
   return (
     <>
        <div class="h-full top-0"><Noise /></div>
-      <div class="h-screen sm:h-[90svh]">
-        <div class="mt-[0.5rem]"></div>
+      <div class="h-full">
+        <div class="sm:mt-[0.5rem] mt-0"></div>
       <Roadmap />
       </div>
       </>
