@@ -15,9 +15,9 @@ export function Explore(props : {text:string }) {
         rounded-md
         hover:scale-[102%]
         active:scale-[98%]
-        border-[2px]
-        border-[#e9e9e9] 
-        dark:border-[#ffffff1f]
+        border-2
+        border-[#eeeeee] 
+        dark:border-[#b5b5b51f]
         bg-gradient-to-r
         from-[#f1f1f180]
         dark:from-[#19191980] 
