@@ -3,11 +3,12 @@ import { Noise } from "../components/common/backgrounds/Noise.tsx";
 export default function Stats() {
   return (
     <>
+      <div class="h-full top-0 opacity-50">
+        <Noise />
+      </div>
       <p
         class="
-  mt-[1rem]
-  sm:mt-[3rem]
-  mb-[1rem]
+  my-[1rem]
   font-medium
   sm:text-[1.7rem]
   text-[1.4rem]
@@ -24,9 +25,6 @@ export default function Stats() {
       >
         Ecosystem Analytics
       </p>
-      <div class="h-full top-0 opacity-50">
-        <Noise />
-      </div>
       <div class="h-full">
         <div class="">
           <ActiveContainer />
