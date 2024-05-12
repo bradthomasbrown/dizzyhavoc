@@ -2,7 +2,7 @@ import { IS_BROWSER } from "$fresh/runtime.ts";
 import { useState } from "preact/hooks";
 import { useSignal } from "@preact/signals";
 import { formatNumber } from "../../lib/common/formatNumber.tsx";
-import { feca } from "../../lib/stats/Requests/caches/dexCache.tsx";
+import { cafe } from "../../lib/stats/Requests/caches/dexCache.tsx";
 import { SettingsCog } from "../../components/stats/SettingsCog.tsx";
 import { fetchmode } from "../../components/stats/SettingsMenu.tsx";
 export function Summary() {
@@ -51,7 +51,7 @@ export function Summary() {
   }
   const fetchScreener = async () => {
     isloading.value = true;
-    const data = feca();
+    const data = cafe();
     // req to dexscreener for live prices/ liq
     let arbprice = 0,
       ethprice = 0,
