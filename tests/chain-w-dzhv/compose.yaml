@@ -1,0 +1,13 @@
+include:
+  - kanta/compose.yaml
+  - node/compose.yaml
+services:
+  test:
+    build:
+      context: ../..
+      dockerfile: tests/chain-w-dzhv/Dockerfile
+    depends_on:
+      - kanta
+      - node
+    entrypoint: [ "deno" ]
+    command: [ "test", "--allow-read", "--allow-net", "test.ts" ]

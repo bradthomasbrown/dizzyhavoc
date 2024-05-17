@@ -1,0 +1,16 @@
+services:
+  kanta:
+    build:
+      context: ../../..
+      dockerfile: tests/resolver/kanta/Dockerfile
+    entrypoint: deno
+    ports:
+      - 80:80
+    command: [
+      "run",
+      "--allow-read",
+      "--allow-net",
+      "--allow-run",
+      "--allow-write",
+      "serve.ts"
+    ]
