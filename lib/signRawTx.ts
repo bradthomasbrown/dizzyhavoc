@@ -8,14 +8,14 @@ import Signer from './Signer.ts'
 export default function ({
     signer, nonce, gasPrice, gasLimit, to, value, data, chainId
 }:{
-    signer:Signer, nonce:bigint, gasPrice:bigint, gasLimit:bigint, to?:string, value?:bigint, data?:string, chainId:bigint
+    signer:Signer, nonce:bigint, gasPrice:bigint, gasLimit:bigint, to?:string, value?:bigint, data?:string, chainId:number
 }) {
     const rawTxArray = [nonce, gasPrice, gasLimit, to, value, data, chainId, 0, 0]
     const rawTxEncoding = encode(rawTxArray)
     const rawTxHash = keccak256(rawTxEncoding)
     const { r, s, recovery } = signer.sign(rawTxHash)
     if (recovery === undefined) throw new Error('undefined recovery bit')
-    const v = chainId * 2n + 35n + BigInt(recovery)
+    const v = BigInt(chainId) * 2n + 35n + BigInt(recovery)
     const signedTxArray = [...rawTxArray.slice(0, 6), v, r, s]
     const signedTxBytes = encode(signedTxArray)
     const signedTx = `0x${bytesToHex(signedTxBytes)}`
