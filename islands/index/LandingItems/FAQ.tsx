@@ -7,7 +7,7 @@ function FAQItem({ question, answer }) {
     <>
       <div className="flex flex-col vignets">
         <div
-          class="sm:text-3xl text-xl font-[Poppins] relative unselectable dark:text-[#a9a9a9] text-[#3d3d3d] px-3 my-1 text-start rounded-md bg-gradient-to-r from-[#f1f1f180] dark:from-[#28282880] dark:via-[#1e1e1e] via-[#f1f1f1] to-[#f1f1f180] dark:to-[#19191980] sm:w-full w-screen cursor-pointer hover:scale-[100.5%] active:scale-[99.5%]"
+          class="sm:text-3xl text-xl font-[Poppins] relative unselectable dark:text-[#d3d3d3] text-[#3d3d3d] px-3 my-1 text-start rounded-md bg-gradient-to-r from-[#d9d9d980] dark:from-[#28282880] dark:via-[#1e1e1e] via-[#e7e7e7] to-[#f1f1f180] dark:to-[#19191980] sm:w-full w-screen cursor-pointer hover:scale-[100.5%] active:scale-[99.5%]"
           onClick={() => setexp(!exp)}
         >
           {question}
@@ -18,7 +18,7 @@ function FAQItem({ question, answer }) {
           )}
         </div>
         {exp &&(
-          <p class="sm:text-xl text-md tracking-tight font-[Poppins] mb-4 sm:w-full w-screen unselectable dark:text-[#d2d2d2] text-[#3d3d3d]">
+          <p class="sm:text-lg text-md tracking-tight font-[Poppins] mb-4 sm:w-full w-screen unselectable dark:text-[#b5b5b5] text-[#3d3d3d]">
             {answer}
           </p>
         )}
@@ -29,7 +29,6 @@ function FAQItem({ question, answer }) {
 export let state = false;
 export function FAQ() {
   if (!IS_BROWSER) return null;
-  const isMobile = globalThis.window.matchMedia("(max-width: 400px)").matches;
   const faqItems = [
     {
       question: "What is DizzyHavoc?",
@@ -113,22 +112,23 @@ export function FAQ() {
   ];
 
   return (
-    <div class="flex w-full sm:items-end items-center flex-col sm:flex-row gap-x-4">
-      {isMobile && (
+    <div class="flex w-full items-center flex-col gap-y-0 sm:gap-y-4 gap-x-4">
+      {(
           <div
           className={`
     text-2xl 
     font-medium 
     font-[Poppins] 
     text-center 
-    unselectable 
+    unselectable
+    sm:w-full 
     w-screen
     h-[35px] 
     bg-gradient-to-r
     from-transparent
     dark:from-transparent
     dark:via-[#323232a7] 
-    via-[#ffffffa7]
+    via-[#e7e7e7]
     to-transparent
     dark:to-transparent
     dark:text-[#cccccc] 
@@ -137,7 +137,7 @@ export function FAQ() {
           Frequently Asked Questions
         </div>
       )}
-      <div class="w-[99vw] sm:w-[810px] h-[60svh] grid items-end overflow-y-scroll overflow-x-hidden">
+      <div class="w-[99vw] sm:w-[910px] h-[60svh] sm:h-[450px] grid items-start overflow-y-scroll overflow-x-hidden border rounded-lg border-[#d2d2d2] dark:border-[#3d3d3d] p-0 sm:p-4">
         {
           faqItems.map((item) => (
             <FAQItem question={item.question} answer={item.answer} />

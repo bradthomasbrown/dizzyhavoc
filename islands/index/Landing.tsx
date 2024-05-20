@@ -45,7 +45,7 @@ export function Landing() {
             <div class="absolute left-[50%] translate-x-[-50%] top-[50%] translate-y-[-50%]">
             {hidden ? <FAQ /> : null} {/* FAQ view */}
             </div>
-            <div class="absolute sm:left-[3%] left-[50%] translate-x-[-50%] sm:translate-x-0 sm:bottom-[10%] bottom-[5%]">
+            <div class="absolute left-[50%] translate-x-[-50%] sm:bottom-[10%] bottom-[5%]">
               <div
                 onClick={() => handleClick()}
                 className={`
@@ -71,7 +71,7 @@ export function Landing() {
           from-transparent
           dark:from-transparent
           ${!hidden ? "dark:via-[#323232a7] via-[#ffffffa7]" 
-          : "dark:via-[#000000] via-[#ffffff]"}
+          : "dark:via-[#181818] via-[#eeeeee]"}
           to-transparent
           dark:to-transparent
           border-t-[#5e5e5e4d] 
