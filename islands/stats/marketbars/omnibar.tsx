@@ -62,7 +62,6 @@ export function Omnibar(props: {
       >
         {initialloading.value ? (
           <>
-
               <div
                 draggable={false}
                 class="size-[35px] sm:size-[63px] bg-transparent"

@@ -26,7 +26,7 @@ export default function Stats() {
         Ecosystem Analytics
       </p>
       <div class="h-full">
-        <div class="">
+        <div>
           <MainContainer />
         </div>
       </div>
