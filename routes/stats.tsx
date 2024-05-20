@@ -1,4 +1,4 @@
-import ActiveContainer from "../islands/stats/ActiveContainer.tsx";
+import { MainContainer } from "../islands/stats/MainContainer.tsx";
 import { Noise } from "../components/common/backgrounds/Noise.tsx";
 export default function Stats() {
   return (
@@ -27,7 +27,7 @@ export default function Stats() {
       </p>
       <div class="h-full">
         <div class="">
-          <ActiveContainer />
+          <MainContainer />
         </div>
       </div>
     </>

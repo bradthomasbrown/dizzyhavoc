@@ -2,7 +2,7 @@ import { useSignal } from "@preact/signals";
 import { Summary } from "./Summary.tsx";
 import { Weeklies_Container } from "./WeekliesContainer.tsx";
 import { MarketBarsContainer } from "./MarketBarsContainer.tsx";
-export default function ActiveContainer() {
+export function MainContainer() {
   const toggle = useSignal(false);
   const toggler = (
     <div
