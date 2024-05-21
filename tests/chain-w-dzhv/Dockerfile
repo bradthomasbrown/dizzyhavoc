@@ -1,4 +1,7 @@
 FROM denoland/deno:alpine-1.43.1
-WORKDIR /jra
+WORKDIR /dzhv
 COPY . .
-WORKDIR /jra/tests/serve-liveliness
+WORKDIR /dzhv/tests/chain-w-dzhv
+RUN \
+    deno cache setup.ts \
+    && deno cache test.ts

@@ -1,4 +1,4 @@
 .PHONY: test
 
 test:
-	docker compose up --remove-orphans --build --exit-code-from test
+	docker compose up --build --force-recreate --exit-code-from test

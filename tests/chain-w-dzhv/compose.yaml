@@ -1,13 +1,18 @@
 include:
-  - kanta/compose.yaml
+  # - kanta/compose.yaml
   - node/compose.yaml
 services:
   test:
     build:
       context: ../..
       dockerfile: tests/chain-w-dzhv/Dockerfile
+    environment:
+      - DEPLOYER_SECRET
+      - IMPLEMENTER_SECRET
+      - DESTROYER_SECRET
+      - WALLET_SECRET
     depends_on:
-      - kanta
+      # - kanta
       - node
-    entrypoint: [ "deno" ]
-    command: [ "test", "--allow-read", "--allow-net", "test.ts" ]
+    command: >
+      deno run -A setup.ts
