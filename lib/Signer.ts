@@ -9,7 +9,7 @@ const { bytesToHex } = etc
 const { keccak256 } = jsSha3
 
 type SignTxOpts = {
-    chainId:bigint
+    chainId:number
     nonce:bigint,
     gasPrice:bigint,
     gasLimit:bigint,
@@ -59,13 +59,14 @@ class Signer {
         // const rawTxHash = keccak256(rawTxEncoding)
         // const { r, s, recovery } = this.sign(rawTxHash)
         // if (recovery === undefined) throw new Error('undefined recovery bit')
-        // const v = chainId * 2n + 35n + BigInt(recovery)
+        // const v = BigInt(chainId) * 2n + 35n + BigInt(recovery)
         // const signedTxArray = [...rawTxArray.slice(0, 6), v, r, s]
         // const signedTx = `0x${bytesToHex(encode(signedTxArray))}`
         // return signedTx
         
         // eip-2930 tx (accessList)
         const rawTxArray = [chainId, nonce, gasPrice, gasLimit, to, value, data, accessList]
+        console.log({ rawTxArray })
         const rawTxHash = keccak256(Uint8Array.from([0x01, ...encode(rawTxArray)]))
         const { r, s, recovery } = this.sign(rawTxHash)
         if (recovery === undefined) throw new Error('undefined recovery bit')
