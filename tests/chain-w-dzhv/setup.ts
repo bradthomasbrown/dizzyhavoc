@@ -43,5 +43,5 @@ const dzhv = await steps.dzhv({ session, nonce: 3n, salt: 2n, create2 }) // depl
 const link = await steps.link({ session, resolver, erc20, nonce: 0n }) // implement erc20
 await wait(node, link.hash)
 
-const mint = await steps.mint({ session, dzhv, nonce: 0n }) // wallet mint
+const mint = await steps.mint({ session, dzhv, nonce: 0n, address: wallet.address, value: 10n ** (9n * 18n) }) // wallet mint
 await wait(node, mint.hash)
