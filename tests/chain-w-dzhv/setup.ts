@@ -31,12 +31,17 @@ const gasPrice = await node.gasPrice()
 await fund(node, deployer, 10n ** 18n)
 const session = { url, chainId, gasPrice, signers }
 
-// // create2
-const create2 = await steps.create2({ session, nonce: 0n, execute: true }) // deploy create2
+// deployments
+const create2 = await steps.create2({ session, nonce: 0n }) // deploy create2
 await wait(node, create2.hash)
-// const resolver = await steps.resolver({ session, create2, salt: 0n, nonce: 1n, execute: true }) // deploy resolver
-// const erc20 = await steps.erc20({ session, create2, salt: 1n, nonce: 2n, execute: true }) // deploy erc20
-// await steps.erc20_link({ session, resolver, erc20, nonce: 0n, execute: true }) // link erc20
-// const dzhv = await steps.dzhv({ session, create2, salt: 2n, resolver, nonce: 3n, execute: true }) // deploy dzhv
-// await steps.mint({ session, dzhv, dies, nonce: 0n, execute: true }) // initial mint
+const resolver = await steps.resolver({ session, nonce: 1n, salt: 0n, create2 }) // deploy resolver
+await wait(node, resolver.hash)
+const erc20 = await steps.erc20({ session, nonce: 2n, salt: 1n, create2 }) // deploy erc20
+await wait(node, erc20.hash)
+const dzhv = await steps.dzhv({ session, nonce: 3n, salt: 2n, create2 }) // deploy dzhv
 
+const link = steps.link({ session, resolver, erc20, nonce: 0n }) // implement erc20
+await wait(node, link.hash)
+
+const mint = steps.mint({ session, dzhv, nonce: 0n }) // wallet mint
+await wait(node, mint.hash)

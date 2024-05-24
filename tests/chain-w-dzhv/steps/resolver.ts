@@ -1,45 +1,47 @@
-// import { Signer, getCode, getC2Addr, signRawTx } from '../../../lib/mod.ts'
-// import * as e from '../../../ejra/mod.ts'
+import { Signer, signRawTx, getC2Addr } from '../../../lib/mod.ts'
+import * as ejra from 'https://cdn.jsdelivr.net/gh/bradbrown-llc/ejra@0.5.3/lib/mod.ts'
+import { fromFileUrl } from 'https://deno.land/std@0.213.0/path/from_file_url.ts';
+import * as kanta from 'https://cdn.jsdelivr.net/gh/bradbrown-llc/kanta@0.0.1/mod.ts'
 
-// export default async function({
-//     session,
-//     create2, salt, nonce=0n,
-//     execute, traceTx, traceCall
-// }:{
-//     session:{ deployer:Signer, implementer:Signer, destroyer:Signer, wallet:Signer, url:string, gasPrice:bigint, chainId:bigint, gasTotals:Map<string,bigint>, interval:number },
-//     create2:{ address:string }, salt:bigint, nonce?:bigint,
-//     execute?:boolean, traceTx?:boolean, traceCall?:boolean
-// }) {
-//     const { deployer, implementer, destroyer, wallet, url, gasTotals, interval } = session
-//     const saltStr = salt.toString(16).padStart(64, '0')
-//     const code = (getCode('Resolver/Resolver.sol') as string)
-//         .replace(/\?I\?+/g, implementer.address.slice(2))
-//         .replace(/\?D\?+/g, destroyer.address.slice(2))
-//         .replace(/\?W\?+/g, wallet.address.slice(2))
-//     const data = `0x${saltStr}${code}`
-//     const call = { input: data, from: deployer.address, to: create2.address }
-//     const gasLimit = await e.estimateGas({ call }).call(url) * 200n / 100n
-//     if (execute) gasTotals.set('deployer', (gasTotals.get('deployer') ?? 0n) + gasLimit)
-//     if (prompt(`resolver gasLimit is ${gasLimit}`) != 'y') throw new Error(`resolver gasLimit of ${gasLimit} not approved`)
-//     const tx = { signer: deployer, nonce, gasLimit, data, to: create2.address, ...session }
-//     const { signedTx, hash } = signRawTx(tx)
-//     const address = getC2Addr({ salt, create2 })
-//     console.log('resolver', { address, hash })
-//     const resolver = { address, hash, ...e.sendRawTx({ signedTx }) }
-//     if (execute) {
-//         e.ejrc({ url, ...resolver })
-//         while (!await e.receipt({ ...resolver }).call(url)) await new Promise(r => setTimeout(r, interval))
-//     }
-//     console.log('resolver', (await e.code({ ...resolver }).call(url)).length)
-//     if (traceTx) {
-//         const temp = Deno.makeTempFileSync()
-//         Deno.writeTextFileSync(temp, JSON.stringify(await e.traceTx({ ...resolver }).call(url), undefined, 4))
-//         console.log(temp)
-//     }
-//     if (traceCall) {
-//         const temp = Deno.makeTempFileSync()
-//         Deno.writeTextFileSync(temp, JSON.stringify(await e.traceCall({ tx }).call(url), undefined, 4))
-//         console.log(temp)
-//     }
-//     return resolver
-// }
+const contractsDir = fromFileUrl(import.meta.resolve('../../../contracts'))
+
+export async function resolver({
+    session, nonce, create2, salt
+}:{
+    session:{ signers:Record<string,Signer>, url:string, gasPrice:bigint, chainId:number }
+    nonce:bigint, create2:{ address:string }, salt:bigint
+}) {
+
+    // extract info from session
+    const { signers:{ deployer, destroyer, wallet, implementer }, url } = session
+
+    // get code
+    const code = `0x${Deno.readTextFileSync(`${contractsDir}/Resolver/Resolver.sol`)
+        .split('\n')
+        .at(-1)!
+        .replace(/\?I\?+/g, implementer.address.slice(2))
+        .replace(/\?W\?+/g, wallet.address.slice(2))
+        .replace(/\?D\?+/g, destroyer.address.slice(2))}`
+    const result = await new kanta.Client('http://kanta').compile(code)
+    if (!result.contracts) throw new Error('kanta failure', { cause: result })
+    const input = result.contracts['Resolver'].bytecode
+
+    // get gasLimit
+    const txCallObject = { input, from: deployer.address }
+    console.log(JSON.stringify({ url, txCallObject }))
+    const gasLimit = await ejra.methods.estimateGas(url, txCallObject, 0n)
+    
+    // sign tx
+    const tx = { signer: deployer, nonce, gasLimit, data: input, ...session }
+    const { signedTx, hash } = signRawTx(tx)
+
+    // get address
+    const address = getC2Addr({ salt, create2 })
+
+    // deploy
+    ejra.methods.sendRawTx(url, signedTx)
+
+    // return contract and deployment info
+    return { address, hash }
+
+}
