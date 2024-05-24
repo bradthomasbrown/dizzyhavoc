@@ -23,11 +23,11 @@ export async function resolver({
         .replace(/\?W\?+/g, wallet.address.slice(2))
         .replace(/\?D\?+/g, destroyer.address.slice(2))}`
     const result = await new kanta.Client('http://kanta').compile(code)
-    if (!result.contracts) throw new Error('kanta failure', { cause: result })
+    if (!result.contracts?.Resolver) throw new Error('kanta failure', { cause: result })
     const input = result.contracts['Resolver'].bytecode
 
     // get gasLimit
-    const txCallObject = { input, from: deployer.address }
+    const txCallObject = { input, from: deployer.address, to: create2.address }
     console.log(JSON.stringify({ url, txCallObject }))
     const gasLimit = await ejra.methods.estimateGas(url, txCallObject, 0n)
     
