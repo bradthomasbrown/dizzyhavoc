@@ -32,7 +32,7 @@ export async function erc20({
     const gasLimit = await ejra.methods.estimateGas(url, txCallObject, 0n)
     
     // sign tx
-    const tx = { signer: deployer, nonce, gasLimit, data: input, ...session }
+    const tx = { signer: deployer, nonce, gasLimit, data: input, ...session, to: create2.address }
     const { signedTx, hash } = signRawTx(tx)
 
     // get address

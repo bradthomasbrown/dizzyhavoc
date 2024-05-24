@@ -39,7 +39,7 @@ export async function link({
     const gasLimit = await ejra.methods.estimateGas(url, txCallObject, 0n)
     
     // sign tx
-    const tx = { signer: implementer, nonce, gasLimit, data: input, ...session }
+    const tx = { signer: implementer, nonce, gasLimit, data: input, ...session, to: resolver.address }
     const { signedTx, hash } = signRawTx(tx)
 
     // deploy
