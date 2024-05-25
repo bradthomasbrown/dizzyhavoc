@@ -1,7 +1,7 @@
 import { Signer, signRawTx, getC2Addr } from '../../../lib/mod.ts'
 import * as ejra from 'https://cdn.jsdelivr.net/gh/bradbrown-llc/ejra@0.5.3/lib/mod.ts'
 import { fromFileUrl } from 'https://deno.land/std@0.213.0/path/from_file_url.ts';
-import * as kanta from 'https://cdn.jsdelivr.net/gh/bradbrown-llc/kanta@0.0.1/mod.ts'
+import * as kanta from 'https://cdn.jsdelivr.net/gh/bradbrown-llc/kanta@0.0.3/mod.ts'
 
 const contractsDir = fromFileUrl(import.meta.resolve('../../../contracts'))
 
@@ -16,15 +16,13 @@ export async function erc20({
     const { signers:{ deployer, destroyer, wallet, bridge }, url } = session
 
     // get code
-    const code = `0x${Deno.readTextFileSync(`${contractsDir}/ERC20/ERC20_20240228_slipbridge.sol`)
-        .split('\n')
-        .at(-1)!
+    const code = Deno.readTextFileSync(`${contractsDir}/ERC20/ERC20_20240228_slipbridge.sol`)
         .replace(/\?W\?+/g, wallet.address.slice(2))
         .replace(/\?B\?+/g, bridge.address.slice(2))
-        .replace(/\?D\?+/g, destroyer.address.slice(2))}`
+        .replace(/\?D\?+/g, destroyer.address.slice(2))
     const result = await new kanta.Client('http://kanta').compile(code)
     if (!result.contracts?.ERC20) throw new Error('kanta failure', { cause: result })
-    const input = result.contracts['ERC20'].bytecode
+    const input = `0x${result.contracts['ERC20'].bytecode}`
 
     // get gasLimit
     const txCallObject = { input, from: deployer.address, to: create2.address }
