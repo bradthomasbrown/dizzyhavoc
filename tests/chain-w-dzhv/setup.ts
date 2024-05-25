@@ -15,11 +15,12 @@ async function fund(node:Node, signer:Signer, value:bigint) {
 }
 
 // signer set up
+const bridge = new Signer({ secret: Deno.env.get('BRIDGE_SECRET') as string })
 const deployer = new Signer({ secret: Deno.env.get('DEPLOYER_SECRET') as string })
 const implementer = new Signer({ secret: Deno.env.get('IMPLEMENTER_SECRET') as string })
 const destroyer = new Signer({ secret: Deno.env.get('DESTROYER_SECRET') as string })
 const wallet = new Signer({ secret: Deno.env.get('WALLET_SECRET') as string })
-const signers = { deployer, implementer, destroyer, wallet }
+const signers = { deployer, implementer, destroyer, wallet, bridge }
 
 // acquire node url and node
 const url = 'http://node'
@@ -29,6 +30,8 @@ const node = new Node(url)
 const chainId = await node.chainId()
 const gasPrice = await node.gasPrice()
 await fund(node, deployer, 10n ** 18n)
+await fund(node, implementer, 10n ** 18n)
+await fund(node, wallet, 10n ** 18n)
 const session = { url, chainId, gasPrice, signers }
 
 // deployments
@@ -38,7 +41,7 @@ const resolver = await steps.resolver({ session, nonce: 1n, salt: 0n, create2 })
 await wait(node, resolver.hash)
 const erc20 = await steps.erc20({ session, nonce: 2n, salt: 1n, create2 }) // deploy erc20
 await wait(node, erc20.hash)
-const dzhv = await steps.dzhv({ session, nonce: 3n, salt: 2n, create2 }) // deploy dzhv
+const dzhv = await steps.dzhv({ session, nonce: 3n, salt: 2n, create2, resolver }) // deploy dzhv
 
 const link = await steps.link({ session, resolver, erc20, nonce: 0n }) // implement erc20
 await wait(node, link.hash)
