@@ -14,7 +14,7 @@ export async function mint({
     // get code
     const input = `${'0x3608adf5'}${
         address.padStart(64, '0')
-     }${`0x${value.toString(16).padStart(64, '0')}`}`
+     }${value.toString(16).padStart(64, '0')}`
 
     // get gasLimit
     const txCallObject = { input, from: wallet.address, to: dzhv.address }
