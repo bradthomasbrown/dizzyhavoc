@@ -5,14 +5,14 @@ import { fromFileUrl } from 'https://deno.land/std@0.213.0/path/from_file_url.ts
 const contractsDir = fromFileUrl(import.meta.resolve('../../../contracts'))
 
 export async function dzhv({
-    session, nonce, create2, salt
+    session, nonce, create2, resolver, salt, 
 }:{
     session:{ signers:Record<string,Signer>, url:string, gasPrice:bigint, chainId:number }
-    nonce:bigint, create2:{ address:string }, salt:bigint
+    nonce:bigint, create2:{ address:string }, resolver:{ address:string }, salt:bigint
 }) {
 
     // extract info from session
-    const { signers:{ deployer, destroyer, resolver }, url } = session
+    const { signers:{ deployer, destroyer }, url } = session
 
     // get code
     const input = `0x${Deno.readTextFileSync(`${contractsDir}/dzhv/dzhv_20240119`)
