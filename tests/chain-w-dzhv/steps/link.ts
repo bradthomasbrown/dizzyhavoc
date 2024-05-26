@@ -1,8 +1,6 @@
-import { Signer, signRawTx, getC2Addr } from '../../../lib/mod.ts'
+import { selector } from 'https://cdn.jsdelivr.net/gh/bradbrown-llc/w4@0.0.1/lib/selector.ts';
+import { Signer, signRawTx } from '../../../lib/mod.ts'
 import * as ejra from 'https://cdn.jsdelivr.net/gh/bradbrown-llc/ejra@0.5.3/lib/mod.ts'
-import { fromFileUrl } from 'https://deno.land/std@0.213.0/path/from_file_url.ts';
-
-const contractsDir = fromFileUrl(import.meta.resolve('../../../contracts'))
 
 export async function link({
     session, nonce, resolver, erc20
@@ -12,10 +10,10 @@ export async function link({
 }) {
 
     // extract info from session
-    const { signers:{ deployer, implementer }, url } = session
+    const { signers:{ implementer }, url } = session
 
     // get code
-    const input = `${'0x3608adf5'}${                                             // Resolver.setImplementations(Config[] calldata configs)
+    const input = `${selector('setImplementations((address,uint32[])[])')}${                                             // Resolver.setImplementations(Config[] calldata configs)
         '0000000000000000000000000000000000000000000000000000000000000020'   // configs offset
      }${'0000000000000000000000000000000000000000000000000000000000000001'   // configs length
      }${'0000000000000000000000000000000000000000000000000000000000000020'   // config0 offset
