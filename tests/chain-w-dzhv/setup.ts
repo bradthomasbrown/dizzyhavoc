@@ -1,4 +1,4 @@
-import { Signer, signRawTx } from '../../lib/mod.ts'
+import { Signer, signRawTx } from 'https://cdn.jsdelivr.net/gh/bradbrown-llc/w4@0.0.1/lib/mod.ts'
 import * as steps from './steps/mod.ts'
 import { Node } from 'https://cdn.jsdelivr.net/gh/bradbrown-llc/ejra@0.5.7/lib/Node.ts';
 
@@ -9,8 +9,8 @@ async function wait(node:Node, hash:string) {
 let rootNonce = 0n
 async function fund(node:Node, signer:Signer, value:bigint) {
     const root = new Signer({ secret: ''.padEnd(64, 'A') })
-    const { signedTx, hash } = signRawTx({ signer: root, nonce: rootNonce++, gasPrice, gasLimit: 21000n, chainId, value, to: signer.address })
-    await node.sendRawTx(signedTx)
+    const signedTx = signRawTx({ signer: root, nonce: rootNonce++, gasPrice, gasLimit: 21000n, chainId, value, to: signer.address, eip: 'eip-155' })!
+    const hash = await node.sendRawTx(signedTx)
     await wait(node, hash)
 }
 

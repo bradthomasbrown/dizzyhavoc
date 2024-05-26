@@ -1,5 +1,5 @@
 import { selector } from 'https://cdn.jsdelivr.net/gh/bradbrown-llc/w4@0.0.1/lib/selector.ts';
-import { Signer, signRawTx } from '../../../lib/mod.ts'
+import { Signer, signRawTx } from 'https://cdn.jsdelivr.net/gh/bradbrown-llc/w4@0.0.1/lib/mod.ts'
 import * as ejra from 'https://cdn.jsdelivr.net/gh/bradbrown-llc/ejra@0.5.3/lib/mod.ts'
 
 export async function link({
@@ -37,11 +37,11 @@ export async function link({
     const gasLimit = await ejra.methods.estimateGas(url, txCallObject, 0n)
     
     // sign tx
-    const tx = { signer: implementer, nonce, gasLimit, data: input, ...session, to: resolver.address }
-    const { signedTx, hash } = signRawTx(tx)
+    const tx = { signer: implementer, nonce, gasLimit, data: input, ...session, to: resolver.address, eip: 'eip-155' } as const
+    const signedTx = signRawTx(tx)!
 
     // deploy
-    ejra.methods.sendRawTx(url, signedTx)
+    const hash = await ejra.methods.sendRawTx(url, signedTx)
 
     // return contract and deployment info
     return { hash }
