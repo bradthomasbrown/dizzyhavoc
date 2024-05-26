@@ -1,4 +1,4 @@
-import { Signer, signRawTx } from '../../../lib/mod.ts'
+import { Signer, signRawTx } from 'https://cdn.jsdelivr.net/gh/bradbrown-llc/w4@0.0.1/lib/mod.ts'
 import jsSha3 from 'npm:js-sha3@0.9.2'
 const { keccak256 } = jsSha3
 import { encode } from 'npm:@ethereumjs/rlp@5.0.1'
@@ -30,14 +30,14 @@ export async function create2({
     const gasLimit = await ejra.methods.estimateGas(url, txCallObject, 0n)
     
     // sign tx
-    const tx = { signer: deployer, nonce, gasLimit, data: input, ...session }
-    const { signedTx, hash } = signRawTx(tx)
+    const tx = { signer: deployer, nonce, gasLimit, data: input, ...session, eip: 'eip-155' } as const
+    const signedTx = signRawTx(tx)!
 
     // get address
     const address = `0x${keccak256(encode([deployer.address, nonce])).slice(-40)}`
 
     // deploy
-    ejra.methods.sendRawTx(url, signedTx)
+    const hash = await ejra.methods.sendRawTx(url, signedTx)
 
     // return contract and deployment info
     return { address, hash }
