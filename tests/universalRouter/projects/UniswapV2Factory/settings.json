@@ -1,0 +1,23 @@
+{
+  "language": "Solidity",
+  "sources": {
+    "UniswapV2Factory.sol": {
+      "urls": [
+        "./UniswapV2Factory.sol"
+      ]
+    }
+  },
+  "settings": {
+    "outputSelection": {
+      "UniswapV2Factory.sol": {
+        "UniswapV2Pair": [
+          "evm.bytecode.object"
+        ],
+        "UniswapV2Factory": [
+          "evm.bytecode.object"
+        ]
+      }
+    },
+    "evmVersion": "istanbul"
+  }
+}
