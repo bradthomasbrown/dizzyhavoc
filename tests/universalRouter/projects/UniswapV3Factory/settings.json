@@ -1,0 +1,57 @@
+{
+  "language": "Solidity",
+  "sources": {
+    "IUniswapV3FlashCallback.sol": { "urls": ["./interfaces/callback/IUniswapV3FlashCallback.sol"] },
+    "IUniswapV3MintCallback.sol": { "urls": ["./interfaces/callback/IUniswapV3MintCallback.sol"] },
+    "IUniswapV3SwapCallback.sol": { "urls": ["./interfaces/callback/IUniswapV3SwapCallback.sol"] },
+    "pool/IUniswapV3PoolActions.sol": { "urls": ["./interfaces/pool/IUniswapV3PoolActions.sol"] },
+    "pool/IUniswapV3PoolDerivedState.sol": { "urls": ["./interfaces/pool/IUniswapV3PoolDerivedState.sol"] },
+    "pool/IUniswapV3PoolEvents.sol": { "urls": ["./interfaces/pool/IUniswapV3PoolEvents.sol"] },
+    "pool/IUniswapV3PoolImmutables.sol": { "urls": ["./interfaces/pool/IUniswapV3PoolImmutables.sol"] },
+    "pool/IUniswapV3PoolOwnerActions.sol": { "urls": ["./interfaces/pool/IUniswapV3PoolOwnerActions.sol"] },
+    "pool/IUniswapV3PoolState.sol": { "urls": ["./interfaces/pool/IUniswapV3PoolState.sol"] },
+    "IERC20Minimal.sol": { "urls": ["./interfaces/IERC20Minimal.sol"] },
+    "IUniswapV3Factory.sol": { "urls": ["./interfaces/IUniswapV3Factory.sol"] },
+    "IUniswapV3Pool.sol": { "urls": ["./interfaces/IUniswapV3Pool.sol"] },
+    "IUniswapV3PoolDeployer.sol": { "urls": ["./interfaces/IUniswapV3PoolDeployer.sol"] },
+    "BitMath.sol": { "urls": ["./libraries/BitMath.sol"] },
+    "FixedPoint96.sol": { "urls": ["./libraries/FixedPoint96.sol"] },
+    "FixedPoint128.sol": { "urls": ["./libraries/FixedPoint128.sol"] },
+    "FullMath.sol": { "urls": ["./libraries/FullMath.sol"] },
+    "LiquidityMath.sol": { "urls": ["./libraries/LiquidityMath.sol"] },
+    "LowGasSafeMath.sol": { "urls": ["./libraries/LowGasSafeMath.sol"] },
+    "Oracle.sol": { "urls": ["./libraries/Oracle.sol"] },
+    "Position.sol": { "urls": ["./libraries/Position.sol"] },
+    "SafeCast.sol": { "urls": ["./libraries/SafeCast.sol"] },
+    "SqrtPriceMath.sol": { "urls": ["./libraries/SqrtPriceMath.sol"] },
+    "SwapMath.sol": { "urls": ["./libraries/SwapMath.sol"] },
+    "Tick.sol": { "urls": ["./libraries/Tick.sol"] },
+    "TickBitmap.sol": { "urls": ["./libraries/TickBitmap.sol"] },
+    "TickMath.sol": { "urls": ["./libraries/TickMath.sol"] },
+    "TransferHelper.sol": { "urls": ["./libraries/TransferHelper.sol"] },
+    "UnsafeMath.sol": { "urls": ["./libraries/UnsafeMath.sol"] },
+    "NoDelegateCall.sol": { "urls": ["./NoDelegateCall.sol"] },
+    "UniswapV3Factory.sol": { "urls": ["./UniswapV3Factory.sol"] },
+    "UniswapV3Pool.sol": { "urls": ["./UniswapV3Pool.sol"] },
+    "UniswapV3PoolDeployer.sol": { "urls": ["./UniswapV3PoolDeployer.sol"] }
+  },
+  "settings": {
+    "optimizer": {
+      "enabled": true,
+      "runs": 200
+    },
+    "outputSelection": {
+      "UniswapV3Factory.sol": {
+        "UniswapV3Factory": [
+          "evm.bytecode.object"
+        ]
+      },
+      "UniswapV3Pool.sol": {
+        "UniswapV3Pool": [
+          "evm.bytecode.object"
+        ]
+      }
+    },
+    "evmVersion": "istanbul"
+  }
+}
