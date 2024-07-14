@@ -52,3 +52,16 @@ Deno.test('uniswapV3PoolInitCodeHash acquired', () => {
     console.log({ uniswapV3PoolInitCodeHash })
     assert(uniswapV3PoolInitCodeHash.length == 64)
 })
+
+const universalRouter = await steps.UniversalRouter({
+    session, nonce: 3n,
+    weth, uniswapV2Factory, uniswapV3Factory,
+    uniswapV2PairInitCodeHash, uniswapV3PoolInitCodeHash
+})
+await node.wait(universalRouter.hash, waitFn)
+
+Deno.test('universalRouter bytecode deployed', async () => {
+    const code = await node.code(universalRouter.address, 'latest')
+    console.log({ code }, code.length)
+    assert(code.length > 2)
+})
