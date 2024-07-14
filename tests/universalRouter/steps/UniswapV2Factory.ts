@@ -20,11 +20,17 @@ export async function UniswapV2Factory({
     const uniswapV2PairInitCode = results?.contracts?.['UniswapV2Factory.sol']?.['UniswapV2Pair']?.evm?.bytecode?.object
     if (!bytecode) throw new Error('!bytecode')
     if (!uniswapV2PairInitCode) throw new Error('!uniswapV2PairInitCode')
-    const uniswapV2PairInitCodeHash = keccak256(Uint8Array.from(            // turn into a uint8array then hash:
-        Array.from(uniswapV2PairInitCode).reduce<string[]>((p, c, i) =>     // a reduction of the array form of the init code produced by:
-            (i % 2 ? p[p.length - 1] += c : p.push(c), p), []               // turning the hex string into a list of byte sized hex nibbles
-        ).map(b => Number(`0x${b}`))                                        // mapped into numbers
-    ))
+    // meme man, sane and readable
+    const foo = []
+    for (let i = 0; i < uniswapV2PairInitCode.length; i += 2)
+        foo.push(parseInt(uniswapV2PairInitCode.slice(i, i + 2), 16))
+    const uniswapV2PairInitCodeHash = keccak256(Uint8Array.from(foo))
+    // me, not
+    // const uniswapV2PairInitCodeHash = keccak256(Uint8Array.from(            // turn into a uint8array then hash:
+    //     Array.from(uniswapV2PairInitCode).reduce<string[]>((p, c, i) =>     // a reduction of the array form of the init code produced by:
+    //         (i % 2 ? p[p.length - 1] += c : p.push(c), p), []               // turning the hex string into a list of byte sized hex nibbles
+    //     ).map(b => Number(`0x${b}`))                                        // mapped into numbers
+    // ))
     const input = `0x${bytecode}${''.padEnd(64, '0')}`
 
     // get gasLimit
