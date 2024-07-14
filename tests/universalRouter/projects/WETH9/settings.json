@@ -1,0 +1,21 @@
+{
+  "language": "Solidity",
+  "sources": {
+    "WETH9.sol": {
+      "urls": [
+        "./WETH9.sol"
+      ]
+    }
+  },
+  "settings": {
+    "outputSelection": {
+      "WETH9.sol": {
+        "WETH9": [
+          "evm.bytecode.object",
+          "abi"
+        ]
+      }
+    },
+    "evmVersion": "byzantium"
+  }
+}
