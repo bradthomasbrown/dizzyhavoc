@@ -1,0 +1,25 @@
+{
+  "language": "Solidity",
+  "sources": {
+    "UniversalRouter.sol": {
+      "urls": [
+        "./UniversalRouter.sol"
+      ]
+    }
+  },
+  "settings": {
+    "optimizer": {
+      "enabled": true,
+      "runs": 1000000
+    },
+    "outputSelection": {
+      "UniversalRouter.sol": {
+        "UniversalRouter": [
+          "evm.bytecode.object"
+        ]
+      }
+    },
+    "evmVersion": "london",
+    "viaIR": true
+  }
+}
