@@ -8,15 +8,15 @@ export default function Stats() {
       </div>
       <p
         class="
-  my-[1rem]
-  font-medium
+  mt-[2.5rem]
   sm:text-[1.7rem]
   text-[1.4rem]
   unselectable
   mx-auto
   text-center
-  dark:text-[#d0d0d0]
-  text-[#3d3d3d]
+  tracking-tight
+  dark:text-[#ededed]
+  text-[#1c1c1c]
   font-[Poppins]
   lg:max-w-[32rem]
   max-w-full

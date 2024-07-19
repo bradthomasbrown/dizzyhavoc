@@ -69,57 +69,57 @@ export function MarketBarsContainer() {
   const ethtooltip = useSignal<boolean>(false);
 
   const getPrices = async () => {
-    const data = cachedData;
+    const data = cachedData; // get data from summary's cached values
     const result = await data;
-    timestamp.value = result[1];
-    // console.log(data,'logging from function getPrices');
-    await PriceHistory();
+    timestamp.value = result.timestamp; // timestamp for last update
+    await PriceHistory(); // get chart data
     let arbprice = 0,
       ethprice = 0,
       bscprice = 0,
       baseprice = 0,
       avaxprice = 0;
 
-    for (let i = 0; i < result[0].pairs.length; i++) {
-      const fixedvalue = result[0].pairs[i].priceUsd ? Number(result[0].pairs[i].priceUsd).toFixed(5) : 0;
-      const fixedliq = result[0].pairs[i].liquidity.usd ? Number(result[0].pairs[i].liquidity.usd).toFixed(5) : 0;
-      const fixedvol =  result[0].pairs[i].volume.h24 ? result[0].pairs[i].volume.h24 : 0;
-      const fixedtx = result[0].pairs[i].txns.h24.buys && result[0].pairs[i].txns.h24.sells ? result[0].pairs[i].txns.h24.buys + result[0].pairs[i].txns.h24.sells : 0;
-      const fixedh24 = result[0].pairs[i].priceChange.h24 ? result[0].pairs[i].priceChange.h24 : 0;
-      switch (result[0].pairs[i].url) {
+    for (let i = 0; i < result.pairs.length; i++) { // for each item in sanatized list, assign values
+      const fixedvalue = result.pairs[i].priceUsd ? Number(result.pairs[i].priceUsd).toFixed(5) : 0;
+      const fixedliq = result.pairs[i].liquidity.usd ? Number(result.pairs[i].liquidity.usd).toFixed(5) : 0;
+      const fixedvol =  result.pairs[i].volume.h24 ? result.pairs[i].volume.h24 : 0;
+      const fixedbuys = result.pairs[i].txns.h24.buys ? result.pairs[i].txns.h24.buys : 0;
+      const fixedsells = result.pairs[i].txns.h24.sells ? result.pairs[i].txns.h24.sells : 0;
+      const fixedh24 = result.pairs[i].priceChange.h24 ? result.pairs[i].priceChange.h24 : 0;
+      switch (result.pairs[i].url) {
         case "https://dexscreener.com/ethereum/0xb7a71c2e31920019962cb62aeea1dbf502905b81":
           token_eth.value = ethprice = Number(fixedvalue);
           liq_eth.value = fixedliq
           vol24_eth.value = fixedvol
-          tx_eth.value = fixedtx
+          tx_eth.value = fixedbuys + fixedsells
           h24_eth.value = fixedh24
           break;
         case "https://dexscreener.com/arbitrum/0x05c5bdbc7b3c64109ddcce058ce99f4515fe1c83":
           token_arb.value = arbprice = Number(fixedvalue);
           liq_arb.value = fixedliq
           vol24_arb.value = fixedvol
-          tx_arb.value = fixedtx
+          tx_arb.value = fixedbuys + fixedsells
           h24_arb.value = fixedh24
           break;
         case "https://dexscreener.com/bsc/0x642089a5da2512db761d325a868882ece6e387f5":
           token_bsc.value = bscprice = Number(fixedvalue);
           liq_bsc.value = fixedliq
           vol24_bsc.value = fixedvol
-          tx_bsc.value = fixedtx
+          tx_bsc.value = fixedbuys + fixedsells
           h24_bsc.value = fixedh24
           break;
         case "https://dexscreener.com/base/0xb64dff20dd5c47e6dbb56ead80d23568006dec1e":
           token_base.value = baseprice = Number(fixedvalue);
           liq_base.value = fixedliq
           vol24_base.value = fixedvol
-          tx_base.value = fixedtx
+          tx_base.value = fixedbuys + fixedsells
           h24_base.value = fixedh24
           break;
         case "https://dexscreener.com/avalanche/0x523a04633b6c0c4967824471dda0abbce7c5e643":
           token_avax.value = avaxprice = Number(fixedvalue);
           liq_avax.value = fixedliq
           vol24_avax.value = fixedvol
-          tx_avax.value = fixedtx
+          tx_avax.value = fixedbuys + fixedsells
           h24_avax.value = fixedh24
           break;
         default:
@@ -127,34 +127,34 @@ export function MarketBarsContainer() {
       }
     }
     initialloading.value = false;
-    if (sortby.value === "price") {
-      largestPriceDelta(ethprice, arbprice, bscprice, baseprice, avaxprice);
-    } else if (sortby.value === "liquidity") {
-      largestPriceDelta(
+    if (sortby.value === "price") { // when sorting by price, default 
+      sortPairs(ethprice, arbprice, bscprice, baseprice, avaxprice);
+    } else if (sortby.value === "liquidity") { // by liquidity
+      sortPairs(
         liq_eth.value,
         liq_arb.value,
         liq_bsc.value,
         liq_base.value,
         liq_avax.value
       );
-    } else if (sortby.value === "volume") {
-      largestPriceDelta(
+    } else if (sortby.value === "volume") {  // by volume
+      sortPairs(
         vol24_eth.value,
         vol24_arb.value,
         vol24_bsc.value,
         vol24_base.value,
         vol24_avax.value
       );
-    } else if (sortby.value === "txn") {
-      largestPriceDelta(
+    } else if (sortby.value === "txn") { // by txn
+      sortPairs(
         tx_eth.value,
         tx_arb.value,
         tx_bsc.value,
         tx_base.value,
         tx_avax.value
       );
-    } else if (sortby.value === "24h") {
-      largestPriceDelta(
+    } else if (sortby.value === "24h") { // by 24h change
+      sortPairs(
         h24_eth.value,
         h24_arb.value,
         h24_bsc.value,
@@ -182,7 +182,7 @@ export function MarketBarsContainer() {
       }
     }
   };
-  function largestPriceDelta(
+  function sortPairs(
     token_eth: number,
     token_arb: number,
     token_bsc: number,

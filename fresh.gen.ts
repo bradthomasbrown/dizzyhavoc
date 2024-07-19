@@ -8,8 +8,6 @@ import * as $about from "./routes/about.tsx";
 import * as $index from "./routes/index.tsx";
 import * as $roadmap from "./routes/roadmap.tsx";
 import * as $stats from "./routes/stats.tsx";
-import * as $bridge_Web3Input from "./islands/bridge/Web3Input.tsx";
-import * as $common_Button from "./islands/common/Button.tsx";
 import * as $common_menuButton from "./islands/common/menuButton.tsx";
 import * as $common_navbar from "./islands/common/navbar.tsx";
 import * as $index_Landing from "./islands/index/Landing.tsx";
@@ -17,11 +15,7 @@ import * as $index_LandingItems_Carousel from "./islands/index/LandingItems/Caro
 import * as $index_LandingItems_Explore from "./islands/index/LandingItems/Explore.tsx";
 import * as $index_LandingItems_FAQ from "./islands/index/LandingItems/FAQ.tsx";
 import * as $index_LandingItems_Screen from "./islands/index/LandingItems/Screen.tsx";
-import * as $index_scrollTop from "./islands/index/scrollTop.tsx";
-import * as $stats_ActiveContainer from "./islands/stats/ActiveContainer.tsx";
-import * as $stats_MarketBarsContainer from "./islands/stats/MarketBarsContainer.tsx";
-import * as $stats_Summary from "./islands/stats/Summary.tsx";
-import * as $stats_WeekliesContainer from "./islands/stats/WeekliesContainer.tsx";
+import * as $stats_MainContainer from "./islands/stats/MainContainer.tsx";
 import * as $stats_MarketBarsContainer from "./islands/stats/MarketBarsContainer.tsx";
 import * as $stats_Summary from "./islands/stats/Summary.tsx";
 import * as $stats_WeekliesContainer from "./islands/stats/WeekliesContainer.tsx";
@@ -45,8 +39,6 @@ const manifest = {
     "./routes/stats.tsx": $stats,
   },
   islands: {
-    "./islands/bridge/Web3Input.tsx": $bridge_Web3Input,
-    "./islands/common/Button.tsx": $common_Button,
     "./islands/common/menuButton.tsx": $common_menuButton,
     "./islands/common/navbar.tsx": $common_navbar,
     "./islands/index/Landing.tsx": $index_Landing,
@@ -54,11 +46,7 @@ const manifest = {
     "./islands/index/LandingItems/Explore.tsx": $index_LandingItems_Explore,
     "./islands/index/LandingItems/FAQ.tsx": $index_LandingItems_FAQ,
     "./islands/index/LandingItems/Screen.tsx": $index_LandingItems_Screen,
-    "./islands/index/scrollTop.tsx": $index_scrollTop,
-    "./islands/stats/ActiveContainer.tsx": $stats_ActiveContainer,
-    "./islands/stats/MarketBarsContainer.tsx": $stats_MarketBarsContainer,
-    "./islands/stats/Summary.tsx": $stats_Summary,
-    "./islands/stats/WeekliesContainer.tsx": $stats_WeekliesContainer,
+    "./islands/stats/MainContainer.tsx": $stats_MainContainer,
     "./islands/stats/MarketBarsContainer.tsx": $stats_MarketBarsContainer,
     "./islands/stats/Summary.tsx": $stats_Summary,
     "./islands/stats/WeekliesContainer.tsx": $stats_WeekliesContainer,

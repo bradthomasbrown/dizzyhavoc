@@ -61,10 +61,10 @@ export function Summary() {
     const result = await data;
     let totalprice = 0;
     let totalliq = 0;
-    for (let i = 0; i < result[0].pairs.length; i++) {
-      const fixedvalue = result[0].pairs[i].priceUsd ? Number(result[0].pairs[i].priceUsd).toFixed(5) : 0;
-      const fixedliq = result[0].pairs[i].liquidity.usd ? Number(result[0].pairs[i].liquidity.usd).toFixed(5) : 0;
-      switch (result[0].pairs[i].url) {
+    for (let i = 0; i < result.pairs.length; i++) {
+      const fixedvalue = result.pairs[i].priceUsd ? Number(result.pairs[i].priceUsd).toFixed(5) : 0;
+      const fixedliq = result.pairs[i].liquidity.usd ? Number(result.pairs[i].liquidity.usd).toFixed(5) : 0;
+      switch (result.pairs[i].url) {
         case "https://dexscreener.com/ethereum/0xb7a71c2e31920019962cb62aeea1dbf502905b81":
           token_eth.value = ethprice = Number(fixedvalue);
           totalprice += Number(fixedvalue);
@@ -103,7 +103,9 @@ export function Summary() {
     totalsupply.value = 946778380; // hard coded total supply
     largestPriceDelta(ethprice, arbprice, bscprice, baseprice, avaxprice);
     initialloading.value = false;
-    await delay(1000);
+    if(fetchmode.value !== "realtime") {
+      await delay(1000);
+    }
     isloading.value = false;
     starttimer();
   };
