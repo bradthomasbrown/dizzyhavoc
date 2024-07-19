@@ -8,15 +8,15 @@ export function Omnibar(props: {
   link: string;
   ico: string;
   initialloading: Signal<boolean>;
-  order: Signal<number> | null;
-  tooltip: Signal<boolean> | null;
-  token: Signal<number> | null;
-  h24: Signal<number> | null;
-  liq: Signal<number> | null;
-  vol24: Signal<number> | null;
-  tx: Signal<number> | null;
-  holders: Signal<number> | null;
-  transfers: Signal<number> | null;
+  order: Signal<number>;
+  tooltip: Signal<boolean>;
+  token: Signal<number>;
+  h24: Signal<number>;
+  liq: Signal<number>;
+  vol24: Signal<number>;
+  tx: Signal<number>;
+  holders: Signal<number>;
+  transfers: Signal<number>;
   contract: string;
   trade: string;
 }) {
@@ -37,7 +37,7 @@ export function Omnibar(props: {
     contract,
     trade,
   } = props;
-  async function HandleTooltips() {
+   function HandleTooltips() {
     tooltip.value = !tooltip.value;
   }
   function toggleHide() {
@@ -139,10 +139,10 @@ export function Omnibar(props: {
           style={{ order: order != null ? -order : 0 }}
           class="sm:h-[1.1rem] h-[1.1rem] -mt-[8px] sm:-mt-2 border-[2px] border-b-[#bababa5c] border-t-[#00000000] border-s-[#bababa5c] border-e-[#bababa5c] dark:border-b-[#3636365e] dark:border-t-[#00000000] dark:border-s-[#3636365e] dark:border-e-[#3636365e] rounded-b-md justify-evenly flex items-center flex-row sm:text-sm text-[11px] px-2 font-[Poppins] w-full bg-blur3"
         >
-          <p class="dark:text-[#d0d0d0] text-[#3d3d3d] unselectable">
+          <p title={holders.value as unknown as string} class="dark:text-[#d0d0d0] text-[#3d3d3d] unselectable text-[12px]">
             holders: {holders.value ? formatNumber(holders.value) : "0.0K"}
           </p>
-          <p class="dark:text-[#d0d0d0] text-[#3d3d3d] unselectable">
+          <p title={transfers.value as unknown as string} class="dark:text-[#d0d0d0] text-[#3d3d3d] unselectable text-[12px]">
             transfers:{" "}
             {transfers.value ? formatNumber(transfers.value) : "0.0K"}
           </p>
