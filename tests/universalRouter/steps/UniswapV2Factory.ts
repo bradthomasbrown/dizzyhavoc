@@ -2,7 +2,7 @@ import { fromFileUrl } from 'https://deno.land/std@0.213.0/path/from_file_url.ts
 import jsSha3 from 'npm:js-sha3@0.9.2'
 const { keccak256 } = jsSha3
 import { encode } from 'npm:@ethereumjs/rlp@5.0.1'
-import { Solc } from 'https://cdn.jsdelivr.net/gh/bradbrown-llc/solc@0.0.2/mod.ts'
+import { Solc } from 'https://cdn.jsdelivr.net/gh/bradbrown-llc/solc@0.0.6/mod.ts'
 import { Signer, Node } from 'https://cdn.jsdelivr.net/gh/bradbrown-llc/w4@0.0.5/lib/mod.ts'
 
 export async function UniswapV2Factory({
