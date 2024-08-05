@@ -1,5 +1,5 @@
 // SPDX-License-Identifier: 0BSD
-pragma solidity 0.8.23;
+pragma solidity 0.8.26;
 
 library Implementer {}
 
