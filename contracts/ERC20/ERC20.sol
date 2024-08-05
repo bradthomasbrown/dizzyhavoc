@@ -1,6 +1,9 @@
 // SPDX-License-Identifier: 0BSD
 pragma solidity 0.8.26;
 
+library Wallet {}
+library Bridge {}
+
 contract ERC20 {
 
     function name() external pure returns (string memory) { return "DizzyHavoc"; }
