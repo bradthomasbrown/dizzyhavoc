@@ -3,8 +3,6 @@ pragma solidity 0.8.26;
 
 contract ERC20 {
 
-    address owner;
-
     function name() external pure returns (string memory) { return "DizzyHavoc"; }
     function symbol() external pure returns (string memory) { return "DZHV"; }
     function decimals() external pure returns (uint8) { return 18; }
@@ -14,12 +12,28 @@ contract ERC20 {
 
     event Transfer(address indexed from, address indexed to, uint value);
     event Approval(address indexed owner, address indexed spender, uint value);
+    event Burn(uint dest, address addr, uint val, uint64 slippage);
 
-    function initErc20() external {
-        require(balanceOf[msg.sender] == 0 && msg.sender == owner);
-        uint amount = this.totalSupply();
-        balanceOf[msg.sender] = amount;
-        emit Transfer(address(0), msg.sender, amount);
+    function totalSupply() external view returns (uint totalSupply) {
+        assembly { totalSupply.slot := 0x100000000 }
+    }
+
+    function burn(uint dest, address addr, uint val, uint64 slippage) external {
+        uint totalSupply;
+        assmebly { totalSupply.slot := 0x100000000 }
+        totalSupply -= val;
+        balanceOf[msg.sender] -= val;
+        emit Transfer(msg.sender, address(0), val);
+        emit Burn(dest, addr, val, slippage);
+    }
+
+    function mint(address addr, uint val) external {
+        require(msg.sender == address(Wallet) || msg.sender == address(Bridge));
+        uint totalSupply;
+        assembly { totalSupply.slot := 0x100000000 }
+        totalSupply += val;
+        balanceOf[addr] += val;
+        emit Transfer(address(0), addr, val);
     }
 
     function transfer(address to, uint amount) external {
