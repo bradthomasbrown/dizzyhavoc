@@ -19,7 +19,7 @@ contract Resolver {
             address server = config.server;
             uint32[] calldata selectors = config.selectors;
             for (uint j = 0; j < selectors.length; j++) {
-                uint32 selector = selectors[j]; // selector is equal to slot
+                uint32 selector = selectors[j];
                 assembly { sstore(selector, server) } 
             }
         }
