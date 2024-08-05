@@ -4,12 +4,15 @@ pragma solidity 0.8.26;
 library Wallet {}
 library Bridge {}
 
+struct S {
+    uint totalSupply;
+}
+
 contract ERC20 {
 
     function name() external pure returns (string memory) { return "DizzyHavoc"; }
     function symbol() external pure returns (string memory) { return "DZHV"; }
     function decimals() external pure returns (uint8) { return 18; }
-    function totalSupply() external pure returns (uint) { return 1e18 * 1e8; }
     mapping(address => uint256) public balanceOf;
     mapping(address => mapping(address => uint)) public allowance;
 
@@ -17,14 +20,16 @@ contract ERC20 {
     event Approval(address indexed owner, address indexed spender, uint value);
     event Burn(uint dest, address addr, uint val, uint64 slippage);
 
-    function totalSupply() external view returns (uint totalSupply) {
-        assembly { totalSupply.slot := 0x100000000 }
+    function totalSupply() external view returns (uint) {
+        S storage s;
+        assembly { s.slot := 0x100000000 }
+        return s.totalSupply;
     }
 
     function burn(uint dest, address addr, uint val, uint64 slippage) external {
-        uint totalSupply;
-        assmebly { totalSupply.slot := 0x100000000 }
-        totalSupply -= val;
+        S storage s;
+        assembly { s.slot := 0x100000000 }
+        s.totalSupply -= val;
         balanceOf[msg.sender] -= val;
         emit Transfer(msg.sender, address(0), val);
         emit Burn(dest, addr, val, slippage);
@@ -32,9 +37,9 @@ contract ERC20 {
 
     function mint(address addr, uint val) external {
         require(msg.sender == address(Wallet) || msg.sender == address(Bridge));
-        uint totalSupply;
-        assembly { totalSupply.slot := 0x100000000 }
-        totalSupply += val;
+        S storage s;
+        assembly { s.slot := 0x100000000 }
+        s.totalSupply += val;
         balanceOf[addr] += val;
         emit Transfer(address(0), addr, val);
     }
