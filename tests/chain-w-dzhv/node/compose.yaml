@@ -1,5 +1,0 @@
-services:
-  node:
-    image: w4-node
-    entrypoint: deno
-    command: run -A serve.ts
