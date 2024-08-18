@@ -1,3 +1,9 @@
+// this is like our current cache / fixtures stuff but quite a bit more powerful
+// this appears to orchestrate handling multiple "wanters" of a resource that may
+// be asynchronously generated.
+// we recall thinking that a version of this that has capabilities of a remote lock
+// would be interesting and possibly useful
+
 type ArtifactOpts<A> = {
     lock:string
     trigger:() => (Promise<boolean>|boolean),

@@ -1,3 +1,6 @@
+// might be able to replace what i've made
+// https://github.com/denoland/std/blob/main/async/mux_async_iterator.ts
+
 export default class AIQ<T> implements AsyncIterator<T>{
 
     push!: (x: T|symbol) => void
