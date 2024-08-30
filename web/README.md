@@ -7,7 +7,7 @@
 ## Developer Environment Setup
 This project uses Deno Fresh. To setup:
 - [install Deno]('https://docs.deno.com/runtime/manual/getting_started/installation')
-- clone the repo with `git clone https://github.com/bradbrown-llc/dizzyhavoc-web.git`
+- clone the repo with `git clone https://github.com/bradthomasbrown/dizzyhavoc.git`
 - use `deno task start` (see deno.json for task details) inside the project to run a development server
 - get familiar with [Fresh](https://fresh.deno.dev/docs/getting-started/create-a-project), Deno's preferred web framework
 

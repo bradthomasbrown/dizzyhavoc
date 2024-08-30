@@ -17,7 +17,7 @@ export default function Spider(){
             <a
               draggable={false}
               target="_blank"
-              href="https://github.com/bradbrown-llc"
+              href="https://github.com/bradthomasbrown"
               class="text-[1.2rem] ml-2 font-Poppins text-[#3b2d82] dark:text-[#ccb286]"
             >
               github
