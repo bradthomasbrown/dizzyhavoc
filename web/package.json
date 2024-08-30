@@ -1,0 +1,8 @@
+{
+  "dependencies": {
+    "@alloc/quick-lru": "^5.2.0",
+    "@canvasjs/charts": "^3.7.43",
+    "@material-tailwind/react": "^2.1.9",
+    "preact-media-hook": "^1.0.3"
+  }
+}

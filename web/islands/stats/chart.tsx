@@ -1,0 +1,1 @@
+export { Chart as default } from "$fresh_charts/charts/island.tsx";
