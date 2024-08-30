@@ -71,49 +71,48 @@ export function MarketBarsContainer() {
       baseprice = 0,
       avaxprice = 0;
     const data = await Dex();
-    for (let i = 0; i < data.pairs.length; i++) {
-      const fixedvalue = Number(data.pairs[i].priceUsd).toFixed(5);
-      const fixedliq = Number(data.pairs[i].liquidity.usd).toFixed(2);
-      switch (data.pairs[i].url) {
+    const result = await data
+    for (let i = 0; i < result.pairs.length; i++) {
+      const fixedvalue = result.pairs[i].priceUsd ? Number(result.pairs[i].priceUsd).toFixed(5) : 0;
+      const fixedliq = result.pairs[i].liquidity.usd ? Number(result.pairs[i].liquidity.usd).toFixed(5) : 0;
+      const fixedvol =  result.pairs[i].volume.h24 ? result.pairs[i].volume.h24 : 0;
+      const fixedtx = result.pairs[i].txns.h24.buys && result.pairs[i].txns.h24.sells ? result.pairs[i].txns.h24.buys + result.pairs[i].txns.h24.sells : 0;
+      const fixedh24 = result.pairs[i].priceChange.h24 ? result.pairs[i].priceChange.h24 : 0;
+      switch (result.pairs[i].url) {
         case "https://dexscreener.com/ethereum/0xb7a71c2e31920019962cb62aeea1dbf502905b81":
           token_eth.value = ethprice = Number(fixedvalue);
-          liq_eth.value = fixedliq;
-          vol24_eth.value = data.pairs[i].volume.h24;
-          tx_eth.value =
-            data.pairs[i].txns.h24.buys + data.pairs[i].txns.h24.sells;
-          h24_eth.value = data.pairs[i].priceChange.h24;
+          liq_eth.value = Number(fixedliq)
+          vol24_eth.value = fixedvol
+          tx_eth.value = fixedtx
+          h24_eth.value = fixedh24
           break;
         case "https://dexscreener.com/arbitrum/0x05c5bdbc7b3c64109ddcce058ce99f4515fe1c83":
           token_arb.value = arbprice = Number(fixedvalue);
-          liq_arb.value = fixedliq;
-          vol24_arb.value = data.pairs[i].volume.h24;
-          tx_arb.value =
-            data.pairs[i].txns.h24.buys + data.pairs[i].txns.h24.sells;
-          h24_arb.value = data.pairs[i].priceChange.h24;
+          liq_arb.value = Number(fixedliq)
+          vol24_arb.value = fixedvol
+          tx_arb.value = fixedtx
+          h24_arb.value = fixedh24
           break;
         case "https://dexscreener.com/bsc/0x642089a5da2512db761d325a868882ece6e387f5":
           token_bsc.value = bscprice = Number(fixedvalue);
-          liq_bsc.value = fixedliq;
-          vol24_bsc.value = data.pairs[i].volume.h24;
-          tx_bsc.value =
-            data.pairs[i].txns.h24.buys + data.pairs[i].txns.h24.sells;
-          h24_bsc.value = data.pairs[i].priceChange.h24;
+          liq_bsc.value = Number(fixedliq)
+          vol24_bsc.value = fixedvol
+          tx_bsc.value = fixedtx
+          h24_bsc.value = fixedh24
           break;
         case "https://dexscreener.com/base/0xb64dff20dd5c47e6dbb56ead80d23568006dec1e":
           token_base.value = baseprice = Number(fixedvalue);
-          liq_base.value = fixedliq;
-          vol24_base.value = data.pairs[i].volume.h24;
-          tx_base.value =
-            data.pairs[i].txns.h24.buys + data.pairs[i].txns.h24.sells;
-          h24_base.value = data.pairs[i].priceChange.h24;
+          liq_base.value = Number(fixedliq)
+          vol24_base.value = fixedvol
+          tx_base.value = fixedtx
+          h24_base.value = fixedh24
           break;
         case "https://dexscreener.com/avalanche/0x523a04633b6c0c4967824471dda0abbce7c5e643":
           token_avax.value = avaxprice = Number(fixedvalue);
-          liq_avax.value = fixedliq;
-          vol24_avax.value = data.pairs[i].volume.h24;
-          tx_avax.value =
-            data.pairs[i].txns.h24.buys + data.pairs[i].txns.h24.sells;
-          h24_avax.value = data.pairs[i].priceChange.h24;
+          liq_avax.value = Number(fixedliq)
+          vol24_avax.value = fixedvol
+          tx_avax.value = fixedtx
+          h24_avax.value = fixedh24
           break;
         default:
           break;
