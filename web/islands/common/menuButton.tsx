@@ -42,7 +42,7 @@ export default function MenuButton() {
   return (
     <div ref={menuRef} class="relative">
       <button
-        class="flex items-center justify-center gap-1.5 text-2xl unselectable text-[#3d3d3d] dark:text-[#ccb286] outline-none text-center w-[120px] sm:w-[130px] shadow-md font-[Poppins] rounded-lg border border-[#e9e9e9] dark:border-[#ffffff1f] cursor-pointer dark:bg-[#101010] bg-[#f1f1f1] hover:brightness-110"
+        class={`flex items-center justify-center gap-1.5 text-2xl unselectable text-[#3d3d3d] dark:text-[#ccb286] outline-none text-center w-[120px] sm:w-[130px] shadow-md font-[Poppins] rounded-lg border border-[#e9e9e9] dark:border-[#ffffff1f] cursor-pointer dark:bg-[#101010] bg-[#f1f1f1] hover:brightness-110 ${isOpen ? "brightness-110" : ""}`}
         onClick={() => setIsOpen(!isOpen)}
       >
         Menu <img class="dark:invert invert-0 pt-0.5" src="/svgs/caretdown.svg" width="24" height="24" />
@@ -54,7 +54,7 @@ export default function MenuButton() {
         }`}
       >
         <li
-          class="rounded-t-[7px] cursor-pointer text-center py-2 hover:bg-[#f1f1f1] dark:hover:bg-[#333] text-[#3d3d3d] dark:text-[#ccb286] transition-colors"
+          class="rounded-t-[7px] cursor-pointer text-center py-2 hover:bg-[#f1f1f1] dark:hover:bg-[#333] text-[#3d3d3d] dark:text-[#ccb286] transition-colors duration-300"
           onClick={() => handleCategoryChange("Home")}
         >
           Home
