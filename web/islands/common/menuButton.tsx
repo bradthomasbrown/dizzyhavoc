@@ -54,7 +54,7 @@ export default function MenuButton() {
         }`}
       >
         <li
-          class="rounded-t-[7px] cursor-pointer text-center py-2 hover:bg-[#f1f1f1] dark:hover:bg-[#333] text-[#3d3d3d] dark:text-[#ccb286] transition-colors duration-300"
+          class="rounded-t-[7px] cursor-pointer text-center py-2 hover:bg-[#f1f1f1] dark:hover:bg-[#333] text-[#3d3d3d] dark:text-[#ccb286] transition-colors"
           onClick={() => handleCategoryChange("Home")}
         >
           Home
