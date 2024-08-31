@@ -11,6 +11,9 @@ export default {
       },
       fontFamily: {
         'mono': ['Roboto Mono', 'monospace']
+      },
+      screens: {
+        '2xl': '2001px', // => @media (min-width: 1440px) { ... }
       }
     }
   }

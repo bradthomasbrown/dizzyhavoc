@@ -1,12 +1,12 @@
 export default function Footer() {
   return (
-    <footer
-      draggable={false}
-      id="footer"
-      class="mt-8 sm:max-h-[200px] select-none sm:min-h-[200px] min-h-[100px] max-h-[100px] bg-[#ededed] dark:bg-[#101010] border dark:border-1 border-1 dark:border-t-[#ededed18] dark:border-b-transparent border-b-transparent dark:border-s-transparent border-s-transparent dark:border-e-transparent border-e-transparent border-t-[#19191918] w-full flex flex-row gap-4 justify-center"
-    >
+<footer
+  draggable={false}
+  id="footer"
+  class="mt-[1rem] sm:mt-[3rem] select-none sm:h-[200px] h-[100px] bg-[#f2f2f2] dark:bg-[#101010] border dark:border-1 border-1 dark:border-t-[#ededed18] dark:border-b-transparent border-b-transparent dark:border-s-transparent border-s-transparent dark:border-e-transparent border-e-transparent border-t-[#19191918] w-full flex flex-row justify-center"
+>
       <div class="flex flex-col gap-4 justify-center">
-        <div class="flex items-center gap-8">
+        <div class="flex items-center gap-x-8">
           <a
             draggable={false}
             target="_blank"

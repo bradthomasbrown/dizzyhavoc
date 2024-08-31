@@ -4,8 +4,8 @@ import { ChartOptions_M } from "$fresh_charts/stats/ChartOption/MarketBar/chartO
 import { IS_BROWSER } from "$fresh/runtime.ts";
 import { Signal, useSignal } from "@preact/signals";
 import { useState } from "preact/hooks";
-import { cachedData } from "$fresh_charts/stats/Requests/cache.tsx";
-export function Omnichart(props: { chain: Signal<string>; }) {
+import { cachedData } from "$fresh_charts/stats/Requests/caches/chartCache.tsx";
+export function Omnichart(props: { chain: Signal<string> }) {
   if (!IS_BROWSER) return <></>;
   const { chain } = props;
   const data = cachedData;
@@ -13,7 +13,7 @@ export function Omnichart(props: { chain: Signal<string>; }) {
   const isLoading = useSignal(true);
   const isMobile = globalThis.window.matchMedia("(pointer: coarse)").matches;
   const getCache = async () => {
-      fetchedData.value = data;
+    fetchedData.value = data;
     isLoading.value = false;
   };
 
@@ -53,18 +53,10 @@ export function Omnichart(props: { chain: Signal<string>; }) {
       }
     : undefined;
 
-  if (isLoading.value === true && fetchedData.value.length === 0) {
-    return (
-      <img
-        class="w-full sm:scale-100 scale-50 mx-[8rem] mt-7 sm:mt-0 sm:mx-[11rem] h-full"
-        src="./misc/loader.svg"
-      ></img>
-    );
-  }
   if (isLoading.value === false) {
     return (
       <>
-        <div class="unselectable vignets p-4 sm:mx-auto mx-4 mt-7 sm:mt-0 sm:h-[160px] sm:w-[430px] h-[100px] w-[360px]">
+        <div class="unselectable p-4 sm:mx-auto mx-4 mt-7 sm:mt-0 sm:h-[160px] sm:w-[430px] h-[100px] w-[calc(100vw-1.5rem)]">
           {fetchedData.value && fetchedData.value.length > 0 && (
             <Chart
               id="myChart"

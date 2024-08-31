@@ -1,14 +1,18 @@
 import { IS_BROWSER } from "$fresh/runtime.ts";
 import { useState } from "preact/hooks";
 import { useSignal } from "@preact/signals";
-import { Dex } from "../../lib/stats/Requests/Dex.tsx";
 import { PriceHistory } from "../../lib/stats/Requests/priceHistory.tsx";
 import { Chiffres } from "../../lib/stats/Requests/Chiffres.tsx";
 import { Omnibar } from "./marketbars/omnibar.tsx";
+import { cachedData } from "../../lib/stats/Requests/caches/dexCache.tsx";
+import { sortby } from "../../components/stats/SettingsMenu.tsx";
 
 export function MarketBarsContainer() {
   if (!IS_BROWSER) return <></>;
+  // console.log(data,'logging after while loop');
   const initialloading = useSignal<boolean>(true);
+  const timestamp = useSignal<number>(null);
+  const now = useSignal<number>(0);
   // liquidity
   const liq_eth = useSignal<number>(0);
   const liq_arb = useSignal<number>(0);
@@ -65,64 +69,101 @@ export function MarketBarsContainer() {
   const ethtooltip = useSignal<boolean>(false);
 
   const getPrices = async () => {
+    const data = cachedData; // get data from summary's cached values
+    const result = await data;
+    timestamp.value = result.timestamp; // timestamp for last update
+    await PriceHistory(); // get chart data
     let arbprice = 0,
       ethprice = 0,
       bscprice = 0,
       baseprice = 0,
       avaxprice = 0;
-    const data = await Dex();
-    const result = await data
-    for (let i = 0; i < result.pairs.length; i++) {
+
+    for (let i = 0; i < result.pairs.length; i++) { // for each item in sanatized list, assign values
       const fixedvalue = result.pairs[i].priceUsd ? Number(result.pairs[i].priceUsd).toFixed(5) : 0;
       const fixedliq = result.pairs[i].liquidity.usd ? Number(result.pairs[i].liquidity.usd).toFixed(5) : 0;
       const fixedvol =  result.pairs[i].volume.h24 ? result.pairs[i].volume.h24 : 0;
-      const fixedtx = result.pairs[i].txns.h24.buys && result.pairs[i].txns.h24.sells ? result.pairs[i].txns.h24.buys + result.pairs[i].txns.h24.sells : 0;
+      const fixedbuys = result.pairs[i].txns.h24.buys ? result.pairs[i].txns.h24.buys : 0;
+      const fixedsells = result.pairs[i].txns.h24.sells ? result.pairs[i].txns.h24.sells : 0;
       const fixedh24 = result.pairs[i].priceChange.h24 ? result.pairs[i].priceChange.h24 : 0;
       switch (result.pairs[i].url) {
         case "https://dexscreener.com/ethereum/0xb7a71c2e31920019962cb62aeea1dbf502905b81":
           token_eth.value = ethprice = Number(fixedvalue);
-          liq_eth.value = Number(fixedliq)
+          liq_eth.value = fixedliq
           vol24_eth.value = fixedvol
-          tx_eth.value = fixedtx
+          tx_eth.value = fixedbuys + fixedsells
           h24_eth.value = fixedh24
           break;
         case "https://dexscreener.com/arbitrum/0x05c5bdbc7b3c64109ddcce058ce99f4515fe1c83":
           token_arb.value = arbprice = Number(fixedvalue);
-          liq_arb.value = Number(fixedliq)
+          liq_arb.value = fixedliq
           vol24_arb.value = fixedvol
-          tx_arb.value = fixedtx
+          tx_arb.value = fixedbuys + fixedsells
           h24_arb.value = fixedh24
           break;
         case "https://dexscreener.com/bsc/0x642089a5da2512db761d325a868882ece6e387f5":
           token_bsc.value = bscprice = Number(fixedvalue);
-          liq_bsc.value = Number(fixedliq)
+          liq_bsc.value = fixedliq
           vol24_bsc.value = fixedvol
-          tx_bsc.value = fixedtx
+          tx_bsc.value = fixedbuys + fixedsells
           h24_bsc.value = fixedh24
           break;
         case "https://dexscreener.com/base/0xb64dff20dd5c47e6dbb56ead80d23568006dec1e":
           token_base.value = baseprice = Number(fixedvalue);
-          liq_base.value = Number(fixedliq)
+          liq_base.value = fixedliq
           vol24_base.value = fixedvol
-          tx_base.value = fixedtx
+          tx_base.value = fixedbuys + fixedsells
           h24_base.value = fixedh24
           break;
         case "https://dexscreener.com/avalanche/0x523a04633b6c0c4967824471dda0abbce7c5e643":
           token_avax.value = avaxprice = Number(fixedvalue);
-          liq_avax.value = Number(fixedliq)
+          liq_avax.value = fixedliq
           vol24_avax.value = fixedvol
-          tx_avax.value = fixedtx
+          tx_avax.value = fixedbuys + fixedsells
           h24_avax.value = fixedh24
           break;
         default:
           break;
       }
-      await PriceHistory();
     }
-    largestPriceDelta(ethprice, arbprice, bscprice, baseprice, avaxprice);
     initialloading.value = false;
+    if (sortby.value === "price") { // when sorting by price, default 
+      sortPairs(ethprice, arbprice, bscprice, baseprice, avaxprice);
+    } else if (sortby.value === "liquidity") { // by liquidity
+      sortPairs(
+        liq_eth.value,
+        liq_arb.value,
+        liq_bsc.value,
+        liq_base.value,
+        liq_avax.value
+      );
+    } else if (sortby.value === "volume") {  // by volume
+      sortPairs(
+        vol24_eth.value,
+        vol24_arb.value,
+        vol24_bsc.value,
+        vol24_base.value,
+        vol24_avax.value
+      );
+    } else if (sortby.value === "txn") { // by txn
+      sortPairs(
+        tx_eth.value,
+        tx_arb.value,
+        tx_bsc.value,
+        tx_base.value,
+        tx_avax.value
+      );
+    } else if (sortby.value === "24h") { // by 24h change
+      sortPairs(
+        h24_eth.value,
+        h24_arb.value,
+        h24_bsc.value,
+        h24_base.value,
+        h24_avax.value
+      );
+    }
   };
-  const getChiffres = async() => {
+  const getChiffres = async () => {
     if (!ethholders.value) {
       const chiffres = await Chiffres();
       if (chiffres) {
@@ -140,8 +181,8 @@ export function MarketBarsContainer() {
         avaxtransfers.value = chiffres.transfers.avax;
       }
     }
-  }
-  function largestPriceDelta(
+  };
+  function sortPairs(
     token_eth: number,
     token_arb: number,
     token_bsc: number,
@@ -180,32 +221,53 @@ export function MarketBarsContainer() {
   }
   const starttimer = () => {
     // auto refresh logic
-    let x = 0;
-    const intervalId = setInterval(() => {
-      if (x < 100) {
-        x += 0.05;
-      } else {
-        setTimeout(() => {
-          getPrices();
-          starttimer();
-        }, 250);
-        clearInterval(intervalId); // Stop the interval when x reaches 100
-      }
-    }, 10);
+    setInterval(() => {
+      getPrices();
+      now.value = new Date();
+    }, 500);
   };
+  function timediff(now: number, timestamp: number): string {
+    const timeDiff = (now - timestamp) / 1000;
+    if (timeDiff >= 1) {
+      if (timeDiff >= 7200) {
+        const hours = Math.floor(timeDiff / 3600);
+        return `${hours}hrs ago`;
+      }
+      if (timeDiff >= 3600) {
+        const hours = Math.floor(timeDiff / 3600);
+        return `${hours}hr ago`;
+      }
+      if (timeDiff >= 120) {
+        const minutes = Math.floor(timeDiff / 60);
+        return `${minutes}mins ago`;
+      }
+      if (timeDiff >= 60) {
+        const minutes = Math.floor(timeDiff / 60);
+        return `${minutes}min ago`;
+      } else {
+        const seconds = Math.floor(timeDiff);
+        return `${seconds}s ago`;
+      }
+    } else {
+      return "just now";
+    }
+  }
   useState(() => {
-    // on load, fetch data and start timer
-    getPrices();
-    getChiffres();
+    // on load, start cache loop and get holder & transfer counts
     starttimer();
+    getChiffres();
   });
-
   return (
-    <>
-      <div class="w-full flex flex-col gap-[5px] sm:gap-1">
+    <div class="relative">
+      {timestamp.value != 0 ? (
+        <p class="dark:text-[#9ca3af] text-[#313131] font-[Poppins] font-light unselectable sm:text-[10px] text-[7px] absolute -top-[9px] sm:-top-[18px] left-[1.5%] sm:left-[87%] z-[5]">
+          {timediff(now.value, timestamp.value)}
+        </p>
+      ) : null}
+      <div class="w-full flex flex-col gap-[6px]">
         {/* ETH MarketBar */}
         <Omnibar
-          chain="eth" 
+          chain="eth"
           link="https://dexscreener.com/ethereum/0xb7a71c2e31920019962cb62aeea1dbf502905b81"
           ico="/chains/token_eth.png"
           initialloading={initialloading}
@@ -294,6 +356,6 @@ export function MarketBarsContainer() {
           trade="https://pancakeswap.finance/swap?outputCurrency=0x3419875B4D3Bca7F3FddA2dB7a476A79fD31B4fE&chainId=56"
         />
       </div>
-    </>
+    </div>
   );
 }

@@ -5,7 +5,7 @@ import { Weekly } from "$fresh_charts/stats/Requests/Weekly.tsx";
 import { IS_BROWSER } from "$fresh/runtime.ts";
 import { useSignal, Signal } from "@preact/signals";
 import { useState } from "preact/hooks";
-import { cachedData, cache } from './cache.tsx';
+import { cachedData, cache } from '$fresh_charts/stats/Requests/caches/weeklyCache.tsx';
 
 export function Omniweekly(props: { name: Signal<any>; type: Signal<any> }) {
   if (!IS_BROWSER) return <></>;
@@ -86,17 +86,18 @@ export function Omniweekly(props: { name: Signal<any>; type: Signal<any> }) {
       <p class="font-[Poppins] text-[12px] dark:text-[#d0d0d0] text-[#3d3d3d] unselectable text-center italic pl-1 absolute">
         Weekly {name}
       </p>
+      {!isLoading.value ? (
       <p class="font-[Poppins] text-[8px] dark:text-[#d0d0d0] text-[#3d3d3d] vignets unselectable text-center absolute top-[2px] right-1">
         {firstdate + " > " + lastdate}
-      </p>
+      </p> ) : null}
       <div class="unselectable vignets absolute -bottom-1 left-0 sm:h-[110px] sm:w-[455px] h-[85px] w-[345px]">
-        {fetchedData.value && fetchedData.value.length > 0 && (
+        {!isLoading.value ? (
           <Chart
             type="bar"
             options={isMobile ? chartOptions_M : chartOptions}
             data={chartData}
           />
-        )}
+        ) : <div class="h-full w-full"><img class="absolute left-[51.5%] translate-x-[-50%] translate-y-[-50%] top-[50%] size-[30px] contrast-0 invert-0 dark:invert" src="./svgs/tail-spin.svg"></img></div>}
       </div>
     </>
   );

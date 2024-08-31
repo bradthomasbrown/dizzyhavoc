@@ -1,31 +1,18 @@
-import { Omnichart } from "../charts/mod.ts";
-import { Signal } from "@preact/signals";
-import { formatNumber } from "../../../lib/common/formatNumber.tsx";
-export function Values(props: {
-  chain: Signal<string>;
-  token: Signal<number>;
-  h24: Signal<number>;
-  liq: Signal<number>;
-  vol24: Signal<number>;
-  tx: Signal<number>;
-  chart: Signal<boolean>;
-}) {
-  const { chain, token, h24, liq, vol24, tx, chart } = props;
+import { Placeholder } from "../charts/placeholder.tsx";
+export function DummyValues() {
   return (
-    <div class="flex w-full items-start sm:items-center flex-row">
+    <div class="flex opacity-15 w-full items-start sm:items-center flex-row">
       <div class="z-[1] vignets2 justify-around w-[305px] flex sm:mx-3 mx-0 sm:flex-col flex-row">
         <div class="flex sm:flex-row flex-col">
           <section class="mt-[0px] sm:mt-0 flex sm:flex-row flex-col w-full ml-0">
             <h1 class="font-[Poppins] text-[#000000] font-medium dark:text-[#ccb286] text-[1rem] sm:text-[1.2rem] inline">
-              ${formatNumber(token.value)}
+              $0.0000
             </h1>
             <h1
               title="24h price change"
-              class={`font-[Poppins] unselectable font-medium text-[0.7rem] ml-1 sm:text-[0.7rem] inline ${
-                h24.value < 0 ? "text-[#a23535]" : "text-[#4da235]"
-              }`}
+              class={`font-[Poppins] unselectable text-[#4da235] font-medium text-[0.7rem] ml-1 sm:text-[0.7rem] inline `}
             >
-              {h24.value}%
+              +0%
             </h1>
           </section>
         </div>
@@ -36,7 +23,7 @@ export function Values(props: {
                 Liquidity:{" "}
               </h2>
               <h1 class="mx-1 font-[Poppins] text-[#000000] dark:text-[#ffffff] text-[0.80rem] sm:text-[1rem] inline">
-                ${formatNumber(liq.value)}
+                $0K
               </h1>
             </section>
           </div>
@@ -48,7 +35,7 @@ export function Values(props: {
                 24h Vol:{" "}
               </h2>
               <h1 class="mx-1 font-[Poppins] text-[#000000] dark:text-[#ffffff] text-[0.80rem] sm:text-[1rem] inline">
-                ${formatNumber(vol24.value)}
+                $0K
               </h1>
             </section>
           </div>
@@ -60,19 +47,15 @@ export function Values(props: {
                 24h Tx:{" "}
               </h2>
               <h1 class="mx-1 font-[Poppins] text-[#000000] dark:text-[#ffffff] text-[0.80rem] sm:text-[1rem] inline">
-                {Number(formatNumber(tx.value)).toFixed(0)}
+                0
               </h1>
             </section>
           </div>
         </div>
       </div>
-      {!chart.value ? (
-        <div class="flex vignets2 sm:z-[2] z-0 absolute sm:left-[35%] -left-[5%] flex-row">
-          <Omnichart chain={chain} />
-        </div>
-      ) : (
-        <></>
-      )}
+      <div class="flex vignets2 sm:z-[2] z-0 absolute sm:left-[37.5%] left-[0%] flex-row">
+        <Placeholder />
+      </div>
     </div>
   );
 }

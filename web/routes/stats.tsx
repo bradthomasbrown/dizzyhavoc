@@ -1,25 +1,35 @@
-import ActiveContainer from "../islands/stats/ActiveContainer.tsx";
+import { MainContainer } from "../islands/stats/MainContainer.tsx";
+import { Noise } from "../components/common/backgrounds/Noise.tsx";
 export default function Stats() {
   return (
-    <div class="h-full">
-      <p class="mb-[1.5rem]
-  font-medium
+    <>
+      <div class="h-full top-0 opacity-50">
+        <Noise />
+      </div>
+      <p
+        class="
+  mt-[2.5rem]
   sm:text-[1.7rem]
   text-[1.4rem]
   unselectable
   mx-auto
   text-center
-  dark:text-[#d0d0d0]
-  text-[#3d3d3d]
+  tracking-tight
+  dark:text-[#ededed]
+  text-[#1c1c1c]
   font-[Poppins]
-  mt-[1rem]
-  bg-transparent
   lg:max-w-[32rem]
   max-w-full
-  rounded-xl">
-      Ecosystem Analytics
+  rounded-xl
+  xl-mt"
+      >
+        Ecosystem Analytics
       </p>
-      <ActiveContainer />
-    </div>
+      <div class="h-full">
+        <div>
+          <MainContainer />
+        </div>
+      </div>
+    </>
   );
 }

@@ -1,4 +1,4 @@
-import { cache, cachedData } from "$fresh_charts/stats/Requests/cache.tsx";
+import { cache, cachedData } from "$fresh_charts/stats/Requests/caches/chartCache.tsx";
 export async function PriceHistory() {
   if (cachedData[0] == undefined) {
   try {
